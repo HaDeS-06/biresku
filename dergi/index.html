@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biresku Sanat | Güncel Sanat, Eleştiri ve Sergi Mecrası</title>
-  <meta name="description" content="Biresku Sanat: Çağdaş resim, heykel, atölye söyleşileri, sergi takvimi ve bağımsız sanat eleştirileri.">
+  <title>Biresku Sanat | Güncel Sanat, Sanatçılar ve Sergi Mecrası</title>
+  <meta name="description" content="Biresku Sanat: Sanatçılarımız, bağımsız atölyeler, güncel sergiler ve Google Sanat Akışı.">
 
   <!-- Google Fonts: Editorial Serif & Clean Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,7 +64,6 @@
       justify-content: space-between;
       align-items: center;
     }
-    .utility-meta { display: flex; gap: 18px; }
     .live-feed-badge {
       display: inline-flex;
       align-items: center;
@@ -80,7 +79,7 @@
 
     /* 2. LOGO & MASTHEAD */
     .masthead-main {
-      padding: 38px 0 28px;
+      padding: 38px 0 24px;
       text-align: center;
       border-bottom: 3px double var(--border);
     }
@@ -99,7 +98,6 @@
       font-style: italic;
       color: var(--text-muted);
       margin-top: 8px;
-      letter-spacing: 0.02em;
     }
 
     /* 3. NAVİGASYON */
@@ -135,13 +133,6 @@
       color: #ffffff;
       border-color: var(--accent);
     }
-    .nav-search {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-left: 1px solid var(--border);
-      padding-left: 20px;
-    }
     .nav-search input {
       background: transparent;
       border: 1px solid var(--border);
@@ -149,7 +140,6 @@
       padding: 6px 10px;
       color: #fff;
       font-size: 0.8rem;
-      font-family: var(--font-sans);
       outline: none;
       width: 160px;
     }
@@ -157,7 +147,7 @@
 
     /* 4. MANŞET DÜZENİ */
     .lead-section {
-      padding: 36px 0 48px;
+      padding: 36px 0 44px;
       border-bottom: 1px solid var(--border);
     }
     .lead-grid {
@@ -167,7 +157,6 @@
       align-items: stretch;
     }
 
-    /* SOL: RÖPORTAJ ALANI (GERÇEKÇİ & YAKINDA / HAZIRLIK MODU) */
     .interview-feature {
       background: var(--bg-surface);
       border: 1px solid var(--border);
@@ -177,7 +166,6 @@
       justify-content: space-between;
       padding: 40px 36px;
       min-height: 520px;
-      position: relative;
     }
     .interview-kicker {
       align-self: flex-start;
@@ -190,12 +178,9 @@
       padding-bottom: 4px;
       margin-bottom: 24px;
     }
-    .interview-main-text {
-      margin: auto 0;
-    }
     .interview-headline {
       font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+      font-size: clamp(1.8rem, 2.5vw, 2.3rem);
       font-weight: 700;
       line-height: 1.25;
       color: #ffffff;
@@ -219,16 +204,8 @@
       font-size: 0.82rem;
       color: var(--accent-hover);
     }
-    .interview-footer-note {
-      border-top: 1px solid var(--border);
-      padding-top: 18px;
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      display: flex;
-      justify-content: space-between;
-    }
 
-    /* SAĞ: CANLI GOOGLE SANAT AKIŞI (TAM 4 ADET & KAYDIRILABİLİR) */
+    /* SAĞ: CANLI GOOGLE HABERLERİ */
     .news-feed-box {
       background: var(--bg-surface);
       border: 1px solid var(--border);
@@ -282,7 +259,6 @@
       color: #fff;
       border-color: var(--accent);
     }
-
     .feed-scroll-area {
       flex: 1;
       overflow-y: auto;
@@ -349,21 +325,288 @@
       margin-top: 4px;
     }
 
-    /* FOOTER */
+    /* ==========================================================================
+       5. SANATÇILARIMIZ BÖLÜMÜ (Kartlar Listesi)
+       ========================================================================== */
+    .artists-section {
+      padding: 50px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 10px;
+      margin-bottom: 32px;
+    }
+    .section-bar-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .section-bar-subtitle {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .artists-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .artist-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+    .artist-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -10px rgba(0,0,0,0.7);
+    }
+    .artist-card-cover {
+      height: 240px;
+      width: 100%;
+      background: #1c1d24;
+      overflow: hidden;
+      position: relative;
+    }
+    .artist-card-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .artist-card:hover .artist-card-cover img {
+      transform: scale(1.05);
+    }
+    .artist-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 16, 19, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+    }
+    .artist-card-body {
+      padding: 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .artist-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .artist-discipline {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .artist-statement {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .artist-card-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    .view-profile-btn {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .artist-card:hover .view-profile-btn {
+      color: var(--accent-hover);
+    }
+
+    /* ==========================================================================
+       6. HER SANATÇIYA ÖZEL ALAN (DEDICATED PROFILE VIEW)
+       ========================================================================== */
+    .artist-profile-view {
+      display: none; /* Varsayılan gizli, kart tıklanınca açılır */
+      padding: 40px 0 60px;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .back-nav-bar {
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .back-btn:hover {
+      background: var(--accent);
+      color: #0b0c10;
+      border-color: var(--accent);
+    }
+
+    .profile-hero {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 40px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 36px;
+      border-radius: 4px;
+      margin-bottom: 48px;
+    }
+    .profile-avatar-wrap {
+      aspect-ratio: 1 / 1.15;
+      background: #1c1d24;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .profile-avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .profile-title {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .profile-discipline {
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .profile-bio-text {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .profile-meta-list {
+      display: flex;
+      gap: 28px;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    .profile-meta-list strong { color: #fff; }
+
+    /* Sanatçı Eserler Vitrini */
+    .artworks-heading {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    .artworks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .artwork-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .artwork-item:hover { border-color: var(--accent); }
+    .artwork-img-wrap {
+      height: 260px;
+      background: #1c1d24;
+      overflow: hidden;
+    }
+    .artwork-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .artwork-info {
+      padding: 16px 18px;
+    }
+    .artwork-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .artwork-meta {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    /* 7. FOOTER */
     .site-footer {
       padding: 50px 0 30px;
       font-size: 0.82rem;
       color: var(--text-dim);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
     }
     .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
       display: flex;
       justify-content: space-between;
     }
 
     @media (max-width: 960px) {
       .lead-grid { grid-template-columns: 1fr; }
+      .artists-grid { grid-template-columns: 1fr; }
+      .profile-hero { grid-template-columns: 1fr; }
+      .artworks-grid { grid-template-columns: 1fr; }
       .news-feed-box { height: 460px; }
       .nav-list { display: none; }
     }
@@ -371,7 +614,7 @@
 </head>
 <body>
 
-  <!-- Üst Bilgi Barı -->
+  <!-- 1. ÜST BİLGİ BARI -->
   <div class="masthead-utility">
     <div class="container masthead-utility-inner">
       <div class="utility-meta">
@@ -379,7 +622,7 @@
         <span>•</span>
         <span>7 Kasım 2026</span>
         <span>•</span>
-        <span>Biresku Sanat</span>
+        <span>Biresku Sanat Mecrası</span>
       </div>
       <div class="live-feed-badge">
         <span class="live-dot"></span>
@@ -388,72 +631,123 @@
     </div>
   </div>
 
-  <!-- Logo -->
+  <!-- 2. MASTHEAD / MARKA LOGO -->
   <header class="masthead-main">
     <div class="container">
       <a href="/dergi">
         <h1 class="brand-title">BIRESKU</h1>
-        <p class="brand-tagline">Çağdaş Sanat, Görsel Kültür ve Sergi Mecrası</p>
+        <p class="brand-tagline">Çağdaş Sanat, Sanatçılar ve Sergi Mecrası</p>
       </a>
     </div>
   </header>
 
-  <!-- Menü -->
+  <!-- 3. NAVİGASYON -->
   <nav class="site-nav">
     <div class="container nav-inner">
       <ul class="nav-list">
-        <li><a href="/dergi" class="active">Ana Sayfa</a></li>
-        <li><a href="#roportaj">Söyleşi</a></li>
-        <li><a href="#haberler">Haber Akışı</a></li>
+        <li><a href="/dergi" class="active" onclick="showMainPage(event)">Ana Sayfa</a></li>
+        <li><a href="#sanatcilarimiz" onclick="showMainPage(event, '#sanatcilarimiz')">Sanatçılarımız</a></li>
+        <li><a href="#haberler" onclick="showMainPage(event, '#haberler')">Haber Akışı</a></li>
+        <li><a href="#soylesi" onclick="showMainPage(event, '#soylesi')">Söyleşi</a></li>
       </ul>
       <div class="nav-search">
-        <input type="text" id="searchInput" placeholder="Haber ara..." onkeyup="filterNews(this.value)">
+        <input type="text" id="searchInput" placeholder="Sanatçı veya haber ara..." onkeyup="filterNews(this.value)">
       </div>
     </div>
   </nav>
 
   <main class="container">
 
-    <!-- MANŞET ALANI -->
-    <section class="lead-section" id="roportaj">
-      <div class="lead-grid">
+    <!-- ==========================================
+         ANA SAYFA GÖRÜNÜMÜ (Main View)
+         ========================================== -->
+    <div id="mainPageView">
 
-        <!-- SOL: RÖPORTAJ ALANI (TEMİZ, UYDURMASIZ, GERÇEKÇİ BEKLEMEDE) -->
-        <article class="interview-feature">
-          <div class="interview-kicker">Biresku Söyleşileri</div>
-          <div class="interview-main-text">
-            <h2 class="interview-headline">Atölye Buluşmaları ve Sanatçı Söyleşileri</h2>
-            <p class="interview-desc">
-              Ressamlar, heykeltıraşlar ve çağdaş sanatçılarla gerçekleştireceğimiz derinlikli atölye röportajları ilk sayımızla birlikte burada yayınlanacaktır.
-            </p>
-            <div class="interview-status-box">
-              <span style="font-size: 1rem;">⏳</span>
-              <span>İlk röportaj hazırlık aşamasında • Çok Yakında</span>
+      <!-- MANŞET ALANI -->
+      <section class="lead-section" id="soylesi">
+        <div class="lead-grid">
+
+          <!-- SOL: RÖPORTAJ ALANI (YAKINDA / HAZIRLIK) -->
+          <article class="interview-feature">
+            <div class="interview-kicker">Biresku Söyleşileri</div>
+            <div>
+              <h2 class="interview-headline">Atölye Buluşmaları ve Sanatçı Söyleşileri</h2>
+              <p class="interview-desc">
+                Ressamlar, heykeltıraşlar ve çağdaş sanatçılarla gerçekleştireceğimiz derinlikli atölye röportajları ilk sayımızla birlikte burada yayınlanacaktır.
+              </p>
+              <div class="interview-status-box">
+                <span style="font-size: 1rem;">⏳</span>
+                <span>İlk röportaj hazırlık aşamasında • Çok Yakında</span>
+              </div>
+            </div>
+            <div style="border-top: 1px solid var(--border); padding-top: 16px; font-size: 0.78rem; color: var(--text-dim); display: flex; justify-content: space-between;">
+              <span>Biresku Yayın Kurulu</span>
+              <span>Özel Söyleşi Masası</span>
+            </div>
+          </article>
+
+          <!-- SAĞ: GOOGLE SANAT AKIŞI (TAM 4 ADET & KAYDIRILABİLİR) -->
+          <div class="news-feed-box" id="haberler">
+            <div class="news-feed-header">
+              <div class="feed-heading">Google Sanat Akışı</div>
+              <div class="feed-controls">
+                <button class="feed-nav-btn" onclick="scrollNews(-104)" title="Yukarı">▲</button>
+                <button class="feed-nav-btn" onclick="scrollNews(104)" title="Aşağı">▼</button>
+              </div>
+            </div>
+
+            <div class="feed-scroll-area" id="newsList">
+              <!-- Google Haberleri JSON ile dolar -->
             </div>
           </div>
-          <div class="interview-footer-note">
-            <span>Biresku Yayın Kurulu</span>
-            <span>Özel Röportaj Köşesi</span>
-          </div>
-        </article>
 
-        <!-- SAĞ: CANLI GOOGLE SANAT HABERLERİ (TAM 4 TANE, KAYDIRILABİLİR) -->
-        <div class="news-feed-box" id="haberler">
-          <div class="news-feed-header">
-            <div class="feed-heading">Google Sanat Akışı</div>
-            <div class="feed-controls">
-              <button class="feed-nav-btn" onclick="scrollNews(-104)" title="Yukarı">▲</button>
-              <button class="feed-nav-btn" onclick="scrollNews(104)" title="Aşağı">▼</button>
-            </div>
-          </div>
+        </div>
+      </section>
 
-          <div class="feed-scroll-area" id="newsList">
-            <!-- Gerçek Google Haberleri JSON'dan yüklenir -->
+      <!-- SANATÇILARIMIZ BÖLÜMÜ -->
+      <section class="artists-section" id="sanatcilarimiz">
+        <div class="section-bar">
+          <div>
+            <h2 class="section-bar-title">Sanatçılarımız</h2>
+          </div>
+          <div class="section-bar-subtitle">
+            Biresku Sanatçı Kolektifi & Eserleri
           </div>
         </div>
 
+        <!-- 3'LÜ SANATÇI KARTLARI (Tıklayınca o sanatçının özel alanına gider) -->
+        <div class="artists-grid" id="artistsGrid">
+          <!-- JavaScript ile dinamik basılır -->
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ==========================================
+         HER SANATÇIYA ÖZEL ALAN (Artist Dedicated View)
+         ========================================== -->
+    <div id="artistProfileView" class="artist-profile-view">
+      <div class="back-nav-bar">
+        <button class="back-btn" onclick="showMainPage(event, '#sanatcilarimiz')">
+          <span>&larr;</span>
+          <span>Tüm Sanatçılarımıza Dön</span>
+        </button>
+        <span id="profileNavBreadcrumb" style="font-size: 0.85rem; color: var(--text-dim);">Sanatçılarımız / Profil</span>
       </div>
-    </section>
+
+      <!-- Sanatçı Başlık & Biyografi Kartı -->
+      <div class="profile-hero" id="profileHeroArea">
+        <!-- JS ile doldurulur -->
+      </div>
+
+      <!-- Sanatçının Eserleri -->
+      <div>
+        <h3 class="artworks-heading">Sanatçının Eserleri</h3>
+        <div class="artworks-grid" id="artworksGridArea">
+          <!-- JS ile doldurulur -->
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -469,10 +763,224 @@
     </div>
   </footer>
 
-  <!-- GOOGLE SANAT HABERLERİNİ İŞLEYEN CANLI SCRİPT -->
+  <!-- SANATÇILAR VE GOOGLE HABERLERİ VERİ SİSTEMİ -->
   <script>
-    let newsItems = [];
+    // ==========================================
+    // 1. SANATÇILAR VERİ TABANI (Kolayca Yeni Sanatçı Eklenebilir)
+    // ==========================================
+    const ARTISTS_DATA = [
+      {
+        id: "sanatci-1",
+        name: "Sanatçı Adı 01",
+        discipline: "Ressam & Görsel Sanatçı",
+        coverImage: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
+        bio: "Tuval üzerine yağlıboya ve karma tekniklerle çalışan sanatçı; biçim, boşluk ve renk armonisi üzerine yoğunlaşmaktadır. Eserlerinde geleneksel fırça tekniklerini çağdaş görsel dil ile harmanlar.",
+        city: "İstanbul",
+        studio: "Karaköy Atölyesi",
+        artworks: [
+          {
+            title: "Sessizliğin Katmanları I",
+            technique: "Tuval üzerine yağlıboya",
+            dimensions: "120 x 100 cm",
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Renklerin Yankısı II",
+            technique: "Karma Teknik",
+            dimensions: "140 x 120 cm",
+            year: "2025",
+            image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Ufkun Ötesi III",
+            technique: "Tuval üzerine akrilik",
+            dimensions: "90 x 90 cm",
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80"
+          }
+        ]
+      },
+      {
+        id: "sanatci-2",
+        name: "Sanatçı Adı 02",
+        discipline: "Heykeltıraş & Form Tasarımcısı",
+        coverImage: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80",
+        bio: "Taş, mermer ve metal formlarla üç boyutlu heykeller üreten sanatçı; heykelin mekân ve ışıkla kurduğu diyalog üzerine çalışmalarını sürdürmektedir.",
+        city: "Ankara",
+        studio: "Merkez Heykel Stüdyosu",
+        artworks: [
+          {
+            title: "Denge ve Boşluk",
+            technique: "Mermer ve Pirinç",
+            dimensions: "75 x 40 x 30 cm",
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Mekânın Nefesi",
+            technique: "Döküm Bronz",
+            dimensions: "60 x 50 x 40 cm",
+            year: "2025",
+            image: "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Zamanın İzi",
+            technique: "Doğal Taş",
+            dimensions: "90 x 35 x 35 cm",
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80"
+          }
+        ]
+      },
+      {
+        id: "sanatci-3",
+        name: "Sanatçı Adı 03",
+        discipline: "Çağdaş Resim & İllüstrasyon",
+        coverImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+        bio: "Portre ve figüratif soyutlama ekseninde eserler üreten sanatçı, insan psikolojisinin ve bakışın tuvaldeki yansımalarını araştırmaktadır.",
+        city: "İzmir",
+        studio: "Alsancak Sanat Atölyesi",
+        artworks: [
+          {
+            title: "Tanık Bakışlar",
+            technique: "Tuval üzerine yağlıboya",
+            dimensions: "100 x 80 cm",
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "Gölgenin Dansı",
+            technique: "Ahşap panel üzerine akrilik",
+            dimensions: "110 x 95 cm",
+            year: "2025",
+            image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            title: "İçsel Portre",
+            technique: "Karakalem & Yağlıboya",
+            dimensions: "70 x 50 cm",
+            year: "2026",
+            image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80"
+          }
+        ]
+      }
+    ];
 
+    // ==========================================
+    // 2. SANATÇILARI LİSTELEME
+    // ==========================================
+    function renderArtistsGrid() {
+      const grid = document.getElementById("artistsGrid");
+      if (!grid) return;
+
+      grid.innerHTML = ARTISTS_DATA.map(artist => `
+        <article class="artist-card" onclick="openArtistProfile('${artist.id}')">
+          <div class="artist-card-cover">
+            <span class="artist-card-badge">Sanatçı Alanı</span>
+            <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80'">
+          </div>
+          <div class="artist-card-body">
+            <div>
+              <h3 class="artist-name">${artist.name}</h3>
+              <div class="artist-discipline">${artist.discipline}</div>
+              <p class="artist-statement">${artist.bio}</p>
+            </div>
+            <div class="artist-card-footer">
+              <span>📍 ${artist.city}</span>
+              <span class="view-profile-btn">
+                <span>Özel Alanına Git</span>
+                <span>&rarr;</span>
+              </span>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // ==========================================
+    // 3. SANATÇIYA ÖZEL ALANA GEÇİŞ
+    // ==========================================
+    function openArtistProfile(artistId) {
+      const artist = ARTISTS_DATA.find(a => a.id === artistId);
+      if (!artist) return;
+
+      // URL Hash güncelle (Direkt link paylaşabilmek için)
+      window.location.hash = "sanatci=" + artist.id;
+
+      // Görünümü değiştir
+      document.getElementById("mainPageView").style.display = "none";
+      const profileView = document.getElementById("artistProfileView");
+      profileView.style.display = "block";
+
+      // Breadcrumb güncelle
+      document.getElementById("profileNavBreadcrumb").textContent = "Sanatçılarımız / " + artist.name;
+
+      // Profil başlığı & biyografi alanını doldur
+      document.getElementById("profileHeroArea").innerHTML = `
+        <div class="profile-avatar-wrap">
+          <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80'">
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+          <h2 class="profile-title">${artist.name}</h2>
+          <div class="profile-discipline">${artist.discipline}</div>
+          <p class="profile-bio-text">${artist.bio}</p>
+          <div class="profile-meta-list">
+            <div>Konum: <strong>${artist.city}</strong></div>
+            <div>Atölye: <strong>${artist.studio}</strong></div>
+            <div>Kayıtlı Eser: <strong>${artist.artworks.length} Eser</strong></div>
+          </div>
+        </div>
+      `;
+
+      // Eserler vitrinini doldur
+      document.getElementById("artworksGridArea").innerHTML = artist.artworks.map(art => `
+        <div class="artwork-item">
+          <div class="artwork-img-wrap">
+            <img src="${art.image}" alt="${art.title}" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80'">
+          </div>
+          <div class="artwork-info">
+            <h4 class="artwork-title">${art.title}</h4>
+            <div class="artwork-meta">${art.technique} • ${art.dimensions} (${art.year})</div>
+          </div>
+        </div>
+      `).join("");
+
+      // Sayfayı yukarı kaydır
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ==========================================
+    // 4. ANA SAYFAYA GERİ DÖNÜŞ
+    // ==========================================
+    function showMainPage(e, targetHash) {
+      if (e) e.preventDefault();
+      document.getElementById("artistProfileView").style.display = "none";
+      document.getElementById("mainPageView").style.display = "block";
+      
+      if (targetHash) {
+        history.pushState(null, null, targetHash);
+        const targetEl = document.querySelector(targetHash);
+        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        history.pushState(null, null, window.location.pathname);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Sayfa doğrudan sanatçı linkiyle açıldıysa (#sanatci=sanatci-1)
+    function handleInitialRoute() {
+      const hash = window.location.hash;
+      if (hash.startsWith("#sanatci=")) {
+        const artistId = hash.replace("#sanatci=", "");
+        openArtistProfile(artistId);
+      }
+    }
+
+    // ==========================================
+    // 5. GOOGLE HABERLERİ YÜKLEYİCİ
+    // ==========================================
+    let newsItems = [];
     async function initNews() {
       const container = document.getElementById("newsList");
       try {
@@ -488,7 +996,7 @@
     function renderNewsList(items) {
       const container = document.getElementById("newsList");
       if (!items || items.length === 0) {
-        container.innerHTML = '<div style="padding: 24px; text-align: center; color: var(--text-dim); font-size: 0.85rem;">Haber akışı yükleniyor...</div>';
+        container.innerHTML = '<div style="padding: 24px; text-align: center; color: var(--text-dim); font-size: 0.85rem;">Haber akışı güncelleniyor...</div>';
         return;
       }
 
@@ -496,7 +1004,7 @@
         <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="feed-item">
           <div class="feed-item-thumb">
             <img src="${item.image || 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=300&q=80'}" 
-                 alt="Haber Görseli" 
+                 alt="Haber" 
                  onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=300&q=80'">
           </div>
           <div class="feed-item-info">
@@ -521,12 +1029,18 @@
       const k = keyword.toLowerCase();
       const filtered = newsItems.filter(item => 
         item.title.toLowerCase().includes(k) || 
-        (item.source && item.source.toLowerCase().includes(k))
+        (item.source && item.source.toLowerCase().includes(k)) ||
+        (item.category && item.category.toLowerCase().includes(k))
       );
       renderNewsList(filtered);
     }
 
-    document.addEventListener("DOMContentLoaded", initNews);
+    // Başlangıç fonksiyonları
+    document.addEventListener("DOMContentLoaded", () => {
+      renderArtistsGrid();
+      initNews();
+      handleInitialRoute();
+    });
   </script>
 
 </body>
