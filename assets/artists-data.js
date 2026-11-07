@@ -1,7 +1,7 @@
-// BIRESKU SANATCILAR VERISI (BIYOGRAFI, HAYATA BAKISI & 5 ADET ESER)
+// BIRESKU SANATCILAR VERISI
 const ARTISTS_DATA = [
   {
-    "id": "sanatci-1",
+    "id": "ahmet-selim-yilmaz",
     "name": "Ahmet Selim Yılmaz",
     "discipline": "Çağdaş Yağlıboya & Soyutlama",
     "category": "Ressam",
@@ -20,35 +20,35 @@ const ARTISTS_DATA = [
     ],
     "artworks": [
       {
-        "title": "Sessizliğin Katmanları I",
+        "title": "Sessizliğin Katmanları",
         "technique": "Tuval üzerine yağlıboya ve doğal pigment",
         "dimensions": "140 x 120 cm",
         "year": "2026",
         "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80"
       },
       {
-        "title": "Zamanın Yankısı II",
+        "title": "Zamanın Yankısı",
         "technique": "Ham keten bezi üzerine yağlıboya",
         "dimensions": "160 x 130 cm",
         "year": "2025",
         "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1000&q=80"
       },
       {
-        "title": "Ufkun Ötesi III",
+        "title": "Ufkun Ötesi",
         "technique": "Tuval üzerine akrilik ve yağlıboya",
         "dimensions": "110 x 95 cm",
         "year": "2026",
         "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80"
       },
       {
-        "title": "Gece ve Bellek IV",
+        "title": "Gece ve Bellek",
         "technique": "Tuval üzerine katmanlı yağlıboya",
         "dimensions": "150 x 120 cm",
         "year": "2025",
         "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=1000&q=80"
       },
       {
-        "title": "Işığın İlk Nefesi V",
+        "title": "Işığın İlk Nefesi",
         "technique": "Büyük boy tuval üzerine karışık teknik",
         "dimensions": "180 x 140 cm",
         "year": "2026",
@@ -57,7 +57,7 @@ const ARTISTS_DATA = [
     ]
   },
   {
-    "id": "sanatci-2",
+    "id": "zeynep-karahan",
     "name": "Zeynep Karahan",
     "discipline": "Heykel, Mermer & Bronz Döküm",
     "category": "Heykeltıraş",
@@ -113,7 +113,7 @@ const ARTISTS_DATA = [
     ]
   },
   {
-    "id": "sanatci-3",
+    "id": "kerem-sancar",
     "name": "Kerem Sancar",
     "discipline": "Figüratif Resim & Karışık Teknik",
     "category": "Çağdaş",
@@ -169,7 +169,7 @@ const ARTISTS_DATA = [
     ]
   },
   {
-    "id": "sanatci-4",
+    "id": "defne-akalin",
     "name": "Defne Akalın",
     "discipline": "Lirik Soyutlama & Suluboya",
     "category": "Ressam",
@@ -195,7 +195,7 @@ const ARTISTS_DATA = [
         "image": "https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1000&q=80"
       },
       {
-        "title": "Lirik Manzara II",
+        "title": "Lirik Manzara",
         "technique": "Doğal pigment ve suluboya",
         "dimensions": "100 x 70 cm",
         "year": "2025",
