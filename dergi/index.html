@@ -726,7 +726,132 @@
       .nav-list a { padding: 12px 0; font-size: 0.8rem; }
       .theme-toggle-btn { padding: 5px 10px; font-size: 0.72rem; }
     }
+  
+    /* SANATÇI DETAY ALANI (BİYOGRAFİ, HAYATA BAKIŞI & 5 ESER) */
+    .artist-deep-dive-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .artist-section-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+    .artist-section-heading {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .philosophy-card {
+      border-left: 3px solid var(--accent);
+    }
+    .philosophy-quote {
+      font-family: var(--font-reading);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      padding-left: 16px;
+      border-left: 2px solid var(--accent);
+    }
+    .artist-section-body p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .artist-section-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .artworks-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid var(--border-accent);
+      padding-bottom: 12px;
+      margin-bottom: 32px;
+    }
+    .artworks-count {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .artworks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .artwork-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: var(--card-shadow);
+    }
+    .artwork-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    .artwork-img-wrap {
+      height: 250px;
+      background: var(--bg-hover);
+      overflow: hidden;
+      position: relative;
+    }
+    .artwork-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .artwork-item:hover .artwork-img-wrap img {
+      transform: scale(1.05);
+    }
+    .artwork-info {
+      padding: 18px 20px;
+    }
+    .artwork-kicker {
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .artwork-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 6px;
+    }
+    .artwork-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
   </style>
+  <script src="/assets/artists-data.js"></script>
 </head>
 <body>
 
@@ -853,8 +978,17 @@
         <!-- JS ile dolar -->
       </div>
 
-      <div>
-        <h3 class="artworks-heading">Sanatçının Eserleri</h3>
+      <!-- 2. Biyografi ve Hayata Bakışı -->
+      <div id="profileDeepDiveArea">
+        <!-- JS ile dolar -->
+      </div>
+
+      <!-- 3. Sanatçının 5 Eseri -->
+      <div class="artworks-section-container">
+        <div class="artworks-header-bar">
+          <h3 class="artworks-heading" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">Sanatçının 5 Eseri</h3>
+          <span class="artworks-count">5 / 5 Koleksiyon Eseri</span>
+        </div>
         <div class="artworks-grid" id="artworksGridArea">
           <!-- JS ile dolar -->
         </div>
@@ -896,105 +1030,233 @@
     // SANATÇILAR VERİSİ
     // ==========================================
     const ARTISTS_DATA = [
+  {
+    "id": "sanatci-1",
+    "name": "Ahmet Selim Yılmaz",
+    "discipline": "Çağdaş Yağlıboya & Soyutlama",
+    "category": "Ressam",
+    "city": "İstanbul",
+    "studio": "Moda Sanat Atölyesi",
+    "coverImage": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80",
+    "shortBio": "Ham pigmentler ve keten dokusu üzerinde zamanın ve belleğin soyut katmanlarını araştıran çağdaş ressam.",
+    "biography": [
+      "Mimar Sinan Güzel Sanatlar Üniversitesi Resim Bölümü'nden mezun olduktan sonra yüksek lisans çalışmalarını Viyana Güzel Sanatlar Akademisi'nde tamamladı. 15 yılı aşkın süredir tuval üzerine yağlıboya, ham pigment ve keten bezi dokularıyla çalışan sanatçı; İstanbul, Berlin ve Paris'te 8 kişisel sergi açtı ve çok sayıda uluslararası bienal ve fuarda yer aldı.",
+      "Sanatçının atölye pratiği; boyanın fiziksel ağırlığı ile tuvalin ışık geçirgenliği arasındaki dengeyi araştırmaya dayanır. Eserleri bugün çağdaş sanat müzeleri ve Türkiye ile Avrupa'daki seçkin özel koleksiyonlarda sergilenmektedir."
+    ],
+    "quote": "Sanat, gözün gördüğü dünyayı tekrarlamak değil; ruhun ve belleğin görünmeyen yankılarını görünür kılmaktır.",
+    "philosophy": [
+      "Hayatı statik ve tekil bir gerçeklik değil, sürekli devinen, üst üste binen katmanlar ve ışık kırılmaları bütünü olarak görüyorum. Yaşamın hızı içerisinde insanın unuttuğu en kıymetli şey 'sessizlik'tir; bu yüzden tuvallerimde sessizliğin ve içsel boşluğun mekânını inşa etmeye çalışıyorum.",
+      "Fırçanın tuvale değdiği an, zamanın askıya alındığı kutsal bir andır. Boyanın akışı rastlantısal değil; doğanın ve insanın iç çatışmalarının yüzeye vuran doğal bir sonucudur. Sanat benim için bir süsleme değil, varoluşun hakikatine dokunma çabasıdır."
+    ],
+    "artworks": [
       {
-        id: "sanatci-1",
-        name: "Sanatçı Adı 01",
-        discipline: "Ressam & Görsel Sanatçı",
-        coverImage: ART_THUMBNAILS[0],
-        bio: "Tuval üzerine yağlıboya ve karma tekniklerle çalışan sanatçı; biçim, boşluk ve renk armonisi üzerine yoğunlaşmaktadır. Eserlerinde geleneksel fırça tekniklerini çağdaş görsel dil ile harmanlar.",
-        city: "İstanbul",
-        studio: "Karaköy Atölyesi",
-        artworks: [
-          {
-            title: "Sessizliğin Katmanları I",
-            technique: "Tuval üzerine yağlıboya",
-            dimensions: "120 x 100 cm",
-            year: "2026",
-            image: ART_THUMBNAILS[0]
-          },
-          {
-            title: "Renklerin Yankısı II",
-            technique: "Karma Teknik",
-            dimensions: "140 x 120 cm",
-            year: "2025",
-            image: ART_THUMBNAILS[1]
-          },
-          {
-            title: "Ufkun Ötesi III",
-            technique: "Tuval üzerine akrilik",
-            dimensions: "90 x 90 cm",
-            year: "2026",
-            image: ART_THUMBNAILS[2]
-          }
-        ]
+        "title": "Sessizliğin Katmanları I",
+        "technique": "Tuval üzerine yağlıboya ve doğal pigment",
+        "dimensions": "140 x 120 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80"
       },
       {
-        id: "sanatci-2",
-        name: "Sanatçı Adı 02",
-        discipline: "Heykeltıraş & Form Tasarımcısı",
-        coverImage: ART_THUMBNAILS[3],
-        bio: "Taş, mermer ve metal formlarla üç boyutlu heykeller üreten sanatçı; heykelin mekân ve ışıkla kurduğu diyalog üzerine çalışmalarını sürdürmektedir.",
-        city: "Ankara",
-        studio: "Merkez Heykel Stüdyosu",
-        artworks: [
-          {
-            title: "Denge ve Boşluk",
-            technique: "Mermer ve Pirinç",
-            dimensions: "75 x 40 x 30 cm",
-            year: "2026",
-            image: ART_THUMBNAILS[3]
-          },
-          {
-            title: "Mekânın Nefesi",
-            technique: "Döküm Bronz",
-            dimensions: "60 x 50 x 40 cm",
-            year: "2025",
-            image: ART_THUMBNAILS[4]
-          },
-          {
-            title: "Zamanın İzi",
-            technique: "Doğal Taş",
-            dimensions: "90 x 35 x 35 cm",
-            year: "2026",
-            image: ART_THUMBNAILS[5]
-          }
-        ]
+        "title": "Zamanın Yankısı II",
+        "technique": "Ham keten bezi üzerine yağlıboya",
+        "dimensions": "160 x 130 cm",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1000&q=80"
       },
       {
-        id: "sanatci-3",
-        name: "Sanatçı Adı 03",
-        discipline: "Çağdaş Resim & İllüstrasyon",
-        coverImage: ART_THUMBNAILS[6],
-        bio: "Portre ve figüratif soyutlama ekseninde eserler üreten sanatçı, insan psikolojisinin ve bakışın tuvaldeki yansımalarını araştırmaktadır.",
-        city: "İzmir",
-        studio: "Alsancak Sanat Atölyesi",
-        artworks: [
-          {
-            title: "Tanık Bakışlar",
-            technique: "Tuval üzerine yağlıboya",
-            dimensions: "100 x 80 cm",
-            year: "2026",
-            image: ART_THUMBNAILS[6]
-          },
-          {
-            title: "Gölgenin Dansı",
-            technique: "Ahşap panel üzerine akrilik",
-            dimensions: "110 x 95 cm",
-            year: "2025",
-            image: ART_THUMBNAILS[7]
-          },
-          {
-            title: "İçsel Portre",
-            technique: "Karakalem & Yağlıboya",
-            dimensions: "70 x 50 cm",
-            year: "2026",
-            image: ART_THUMBNAILS[2]
-          }
-        ]
+        "title": "Ufkun Ötesi III",
+        "technique": "Tuval üzerine akrilik ve yağlıboya",
+        "dimensions": "110 x 95 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Gece ve Bellek IV",
+        "technique": "Tuval üzerine katmanlı yağlıboya",
+        "dimensions": "150 x 120 cm",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Işığın İlk Nefesi V",
+        "technique": "Büyük boy tuval üzerine karışık teknik",
+        "dimensions": "180 x 140 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=1000&q=80"
       }
-    ];
+    ]
+  },
+  {
+    "id": "sanatci-2",
+    "name": "Zeynep Karahan",
+    "discipline": "Heykel, Mermer & Bronz Döküm",
+    "category": "Heykeltıraş",
+    "city": "Ankara",
+    "studio": "Kavaklıdere Heykel Stüdyosu",
+    "coverImage": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=1000&q=80",
+    "shortBio": "Doğal taş ve bronzun mekanla kurduğu mimari diyaloğu kütle ve boşluk dengesiyle şekillendiren heykeltıraş.",
+    "biography": [
+      "Hacettepe Üniversitesi Güzel Sanatlar Fakültesi Heykel Bölümü'nden dereceyle mezun oldu. Ardından İtalya Carrara Mermer Akademisi'nde taş yontu ve mekânsal form üzerine araştırmalar yürüttü. Doğal taş, mermer, ham pirinç ve döküm bronz materyalleri bir arada kullanarak formun boşlukla ve mimari ışıkla kurduğu etkileşimi inceler.",
+      "Sanatçı; kamusal alan heykelleri, mimari enstalasyonlar ve Akdeniz bienallerinde sergilenen monolitik formlarıyla çağdaş heykel sanatında kendine özgü yalın bir dil geliştirmiştir."
+    ],
+    "quote": "Taşı yontarken ona yeni bir biçim vermiyorum; taşın kendi içinde milyonlarca yıldır sakladığı gizli formu özgür bırakıyorum.",
+    "philosophy": [
+      "Hayatın temel yasası, kütle ile boşluk arasındaki dengedir. İnsan varlığı da böyledir; var olduğumuz alan kadar, çevremizde bıraktığımız boşlukla tanımlanırız. Heykel yaparken fazlalıkları atmak, tıpkı yaşamda gereksiz yüklerden arınmak gibidir.",
+      "Doğal taş milyonlarca yıllık jeolojik bir hafıza taşır. Bir heykeltıraş olarak benim rolüm, bu kadim hafızaya saygı duyarak insan aklının estetik arayışını doğanın sert kabuğunda görünür kılmaktır."
+    ],
+    "artworks": [
+      {
+        "title": "Mermerin Uyanışı",
+        "technique": "Marmara mermeri ve pirinç kaide",
+        "dimensions": "85 x 45 x 35 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Boşluğun Ritmi",
+        "technique": "Döküm bronz ve patine",
+        "dimensions": "70 x 50 x 45 cm",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Doğa ve Direnç",
+        "technique": "Doğal bazalt ve çelik",
+        "dimensions": "110 x 40 x 40 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Hafıza Parçaları",
+        "technique": "Yontulmuş traverten taş",
+        "dimensions": "60 x 60 x 30 cm",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Yerçekimsiz Denge",
+        "technique": "Pirinç ve monolitik mermer",
+        "dimensions": "95 x 50 x 35 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1576769267415-9642010aa962?auto=format&fit=crop&w=1000&q=80"
+      }
+    ]
+  },
+  {
+    "id": "sanatci-3",
+    "name": "Kerem Sancar",
+    "discipline": "Figüratif Resim & Karışık Teknik",
+    "category": "Çağdaş",
+    "city": "İzmir",
+    "studio": "Alsancak Sanat Atölyesi",
+    "coverImage": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1000&q=80",
+    "shortBio": "İnsan psikolojisinin, yüzlerdeki sessiz fırtınaların ve modern yabancılaşmanın portrelerini çizen figüratif ressam.",
+    "biography": [
+      "Dokuz Eylül Üniversitesi Güzel Sanatlar Fakültesi Resim Bölümü'nden mezun oldu. İnsan psikolojisi, kimlik, yabancılaşma ve şehir hayatındaki bireyin iç çatışmalarını odağına alan sanatçı, ahşap paneller ve el yapımı kağıtlar üzerine yağlıboya, füzen ve mürekkep katmanları uygular.",
+      "Viyana ve Barselona'da misafir sanatçı programlarına katılmış olan Sancar, figüratif çağdaş resim alanında yurt içi ve yurt dışında geniş yankı uyandıran sergilere imza atmıştır."
+    ],
+    "quote": "Bir insan yüzü, yeryüzünün en derin ve en dürüst coğrafyasıdır. Fırçam o coğrafyadaki sessiz fırtınaları takip eder.",
+    "philosophy": [
+      "İnsan, modern dünyada sürekli bir rol oynamak ve maskeler takmak zorunda kalıyor. Benim resimlerimde aradığım şey ise o maskelerin düştüğü, insanın kendi çıplak hakikatiyle baş başa kaldığı kırılgan anlardır.",
+      "Kusursuzluk estetiğine inanmıyorum; hayat da sanat da çatlaklarıyla, yarım kalmışlıklarıyla ve ham fırça darbeleriyle gerçektir. Tuvaldeki her iz, insanın dünyada var olma direnişinin bir kaydıdır."
+    ],
+    "artworks": [
+      {
+        "title": "Tanık Bakışlar",
+        "technique": "Ahşap panel üzerine yağlıboya",
+        "dimensions": "120 x 90 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Gölgenin Şiiri",
+        "technique": "Tuval üzerine yağlıboya ve füzen",
+        "dimensions": "100 x 80 cm",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Şehir ve Yalnızlık",
+        "technique": "Karışık teknik ve yağlıboya",
+        "dimensions": "140 x 100 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "İçsel Diyalog",
+        "technique": "Keten üzerine yağlıboya",
+        "dimensions": "90 x 70 cm",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Zamanın Yüzü",
+        "technique": "Ahşap üzerine yağlıboya ve altın varak",
+        "dimensions": "110 x 85 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1000&q=80"
+      }
+    ]
+  },
+  {
+    "id": "sanatci-4",
+    "name": "Defne Akalın",
+    "discipline": "Lirik Soyutlama & Suluboya",
+    "category": "Ressam",
+    "city": "Bursa & İstanbul",
+    "studio": "Atölye Nilüfer",
+    "coverImage": "https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1000&q=80",
+    "shortBio": "Suyun ve pigmentin serbest akışında doğanın lirik ritmini ve varoluşun hafifliğini tuvale aktaran ressam.",
+    "biography": [
+      "Marmara Üniversitesi Güzel Sanatlar Fakültesi'nde eğitim gördükten sonra geleneksel Türk su sanatlarındaki akışkan boya prensiplerini modern soyutlama ile buluşturdu. 300 gram saf pamuklu Arches kağıtlar ve doğal bitkisel pigmentlerle ürettiği eserleriyle uluslararası suluboya bienallerinde Türkiye'yi temsil etti.",
+      "Sanatçının çalışmaları Doğu ve Batı estetiği arasındaki lirik köprü olarak değerlendirilmekte; suyun kontrol edilemez gücünü zihinsel disiplinle dengeleyen serileri müzelerde sergilenmektedir."
+    ],
+    "quote": "Su akar, pigment dağılır; sanatçı sadece doğanın kendi kendini çizmesine rehberlik eder.",
+    "philosophy": [
+      "Hayatı kontrol edilemeyen, öngörülemez ama büyüleyici bir nehir gibi görüyorum. İnsan hayatı zorla yönlendirmeye çalıştıkça yorulur; oysa su gibi akışa uyum sağlamak en büyük güçtür.",
+      "Resim yaparken kontrolü tamamen elimde tutmam; suyun kağıt üzerinde nereye gitmek istediğini dinlerim. Bu, yaşamın karşımıza çıkardığı sürprizleri kabul etmenin sanatsal bir provasıdır. Sanat benim için evrenin uyumuna katılma biçimidir."
+    ],
+    "artworks": [
+      {
+        "title": "Suyun Rüyası",
+        "technique": "Saf pamuk kağıt üzerine suluboya",
+        "dimensions": "76 x 56 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Lirik Manzara II",
+        "technique": "Doğal pigment ve suluboya",
+        "dimensions": "100 x 70 cm",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Baharın İlk Titreşimi",
+        "technique": "Akışkan suluboya tekniği",
+        "dimensions": "80 x 60 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Rüzgarın İzi",
+        "technique": "El yapımı kağıt üzerine lirik soyut",
+        "dimensions": "90 x 65 cm",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Derin Mavi Melodi",
+        "technique": "Ham kağıt üzerine suluboya ve çini mürekkebi",
+        "dimensions": "110 x 75 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=1000&q=80"
+      }
+    ]
+  }
+];
 
-    function renderArtistsGrid() {
+function renderArtistsGrid() {
       const grid = document.getElementById("artistsGrid");
       if (!grid) return;
 
@@ -1008,7 +1270,7 @@
             <div>
               <h3 class="artist-name">${artist.name}</h3>
               <div class="artist-discipline">${artist.discipline}</div>
-              <p class="artist-statement">${artist.bio}</p>
+              <p class="artist-statement">${artist.shortBio || artist.bio}</p>
             </div>
             <div class="artist-card-footer">
               <span>📍 ${artist.city}</span>
@@ -1023,37 +1285,74 @@
     }
 
     function openArtistProfile(artistId) {
-      const artist = ARTISTS_DATA.find(a => a.id === artistId);
+      const dataList = (typeof ARTISTS_DATA !== 'undefined') ? ARTISTS_DATA : window.ARTISTS_DATA;
+      const artist = dataList.find(a => a.id === artistId);
       if (!artist) return;
 
       window.location.hash = "sanatci=" + artist.id;
       document.getElementById("mainPageView").style.display = "none";
       const profileView = document.getElementById("artistProfileView");
       profileView.style.display = "block";
-      document.getElementById("profileNavBreadcrumb").textContent = "Sanatçılarımız / " + artist.name;
 
+      const breadcrumb = document.getElementById("profileNavBreadcrumb");
+      if (breadcrumb) {
+        breadcrumb.textContent = "Sanatçılarımız / " + artist.name;
+      }
+
+      // 1. Hero
       document.getElementById("profileHeroArea").innerHTML = `
         <div class="profile-avatar-wrap">
           <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
         </div>
         <div style="display: flex; flex-direction: column; justify-content: center;">
+          <div style="margin-bottom: 8px;">
+            <span class="artist-card-badge" style="position: static; display: inline-block;">${artist.category}</span>
+          </div>
           <h2 class="profile-title">${artist.name}</h2>
           <div class="profile-discipline">${artist.discipline}</div>
-          <p class="profile-bio-text">${artist.bio}</p>
-          <div class="profile-meta-list">
+          <p class="profile-bio-text" style="margin-top: 10px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.7;">${artist.shortBio}</p>
+          <div class="profile-meta-list" style="margin-top: 18px;">
             <div>Konum: <strong>${artist.city}</strong></div>
             <div>Atölye: <strong>${artist.studio}</strong></div>
-            <div>Kayıtlı Eser: <strong>${artist.artworks.length} Eser</strong></div>
+            <div>Kayıtlı Eser: <strong style="color: var(--accent);">5 Eser</strong></div>
           </div>
         </div>
       `;
 
-      document.getElementById("artworksGridArea").innerHTML = artist.artworks.map(art => `
+      // 2. Biyografi & Hayata Bakışı
+      const bioParagraphs = Array.isArray(artist.biography) ? artist.biography.map(p => `<p>${p}</p>`).join("") : `<p>${artist.biography}</p>`;
+      const philParagraphs = Array.isArray(artist.philosophy) ? artist.philosophy.map(p => `<p>${p}</p>`).join("") : `<p>${artist.philosophy || ''}</p>`;
+      const quoteHtml = artist.quote ? `<blockquote class="philosophy-quote">"${artist.quote}"</blockquote>` : "";
+
+      const deepDiveArea = document.getElementById("profileDeepDiveArea");
+      if (deepDiveArea) {
+        deepDiveArea.innerHTML = `
+          <div class="artist-deep-dive-grid">
+            <section class="artist-section-card">
+              <h3 class="artist-section-heading">Biyografi & Sanatsal Yolculuk</h3>
+              <div class="artist-section-body">
+                ${bioParagraphs}
+              </div>
+            </section>
+            <section class="artist-section-card philosophy-card">
+              <h3 class="artist-section-heading">Hayata ve Sanata Bakışı</h3>
+              <div class="artist-section-body">
+                ${quoteHtml}
+                ${philParagraphs}
+              </div>
+            </section>
+          </div>
+        `;
+      }
+
+      // 3. 5 Adet Resim
+      document.getElementById("artworksGridArea").innerHTML = artist.artworks.map((art, idx) => `
         <div class="artwork-item">
           <div class="artwork-img-wrap">
             <img src="${art.image}" alt="${art.title}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
           </div>
           <div class="artwork-info">
+            <div class="artwork-kicker">0${idx + 1} / Koleksiyon Eseri</div>
             <h4 class="artwork-title">${art.title}</h4>
             <div class="artwork-meta">${art.technique} • ${art.dimensions} (${art.year})</div>
           </div>
