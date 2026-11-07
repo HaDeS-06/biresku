@@ -7,7 +7,7 @@ const ARTISTS_DATA = [
     "category": "Ressam & Sanat Tarihçisi",
     "city": "Ankara / İstanbul",
     "studio": "Turani Atölyesi",
-    "coverImage": "/assets/adnan-turani/portre.jpg",
+    "coverImage": "/assets/adnan-turani/adnan-turani-pp.jpg",
     "shortBio": "Türk çağdaş resim sanatının soyut ekoldeki öncülerinden; Türk sanat literatürünün temel başvuru kaynaklarını kaleme alan bilge sanat tarihçisi ve akademisyen.",
     "quote": "Sanat doğayı kopyalamak değil; doğadaki gizli tınıyı, ritmi ve insanın özgürlük arzusunu lekenin ve çizginin saf enerjisiyle yeniden var etmektir.",
     "biography": [
@@ -27,6 +27,7 @@ const ARTISTS_DATA = [
         "dimensions": "130 × 140 cm",
         "collection": "Özel Koleksiyon",
         "description": "Ege'nin ışığını, rüzgarını ve kıyıların dinamik ritmini lirik soyut leke düzeni ve zengin boya katmanlarıyla buluşturan ikonik çalışma.",
+        "image": "/assets/adnan-turani/marmaris-serisi.jpg",
         "imageUrl": "/assets/adnan-turani/marmaris-serisi.jpg"
       },
       {
@@ -37,6 +38,7 @@ const ARTISTS_DATA = [
         "dimensions": "120 × 120 cm",
         "collection": "Sanatçı Aile Koleksiyonu",
         "description": "Müziğin tınısını ve çalgının akustik titreşimlerini ritmik fırça darbeleri ve derinlikli renk armonileriyle görselleştiren başyapıt.",
+        "image": "/assets/adnan-turani/viyolonsel-calan-kadin.jpg",
         "imageUrl": "/assets/adnan-turani/viyolonsel-calan-kadin.jpg"
       },
       {
@@ -47,6 +49,7 @@ const ARTISTS_DATA = [
         "dimensions": "140 × 140 cm",
         "collection": "Müze & Özel Koleksiyon",
         "description": "İnsan ruhunun yakınlaşmasını, tutkuyu ve kavuşma duygusunu figürün sınırlarını aşan soyut dışavurumcu bir enerjiyle tuvale yansıtan anıtsal kompozisyon.",
+        "image": "/assets/adnan-turani/asiklar-serisi.jpg",
         "imageUrl": "/assets/adnan-turani/asiklar-serisi.jpg"
       },
       {
@@ -57,6 +60,7 @@ const ARTISTS_DATA = [
         "dimensions": "100 × 130 cm",
         "collection": "Kurumsal Sanat Koleksiyonu",
         "description": "Üç müzisyenin ortak tınısını polifonik renk lekeleri, kıvrak konturlar ve güçlü boya plastiğiyle sahneleyen ritmik çalışma.",
+        "image": "/assets/adnan-turani/muzisyenler-trio.jpg",
         "imageUrl": "/assets/adnan-turani/muzisyenler-trio.jpg"
       },
       {
@@ -67,6 +71,7 @@ const ARTISTS_DATA = [
         "dimensions": "115 × 170 cm",
         "collection": "Özel Koleksiyon",
         "description": "Bedenin hareket halindeki enerjisini, uçuşan kumaş kıvrımlarını ve ışık kırılmalarını coşkulu jestüel fırça vuruşlarıyla ölümsüzleştiren dinamik yapıt.",
+        "image": "/assets/adnan-turani/dansci.jpg",
         "imageUrl": "/assets/adnan-turani/dansci.jpg"
       }
     ]
