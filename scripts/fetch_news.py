@@ -5,15 +5,32 @@ import re
 import os
 
 ART_IMAGES = [
-    "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
 ]
+
+MONTHS_TR = {
+    "Jan": "Ocak", "Feb": "Şubat", "Mar": "Mart", "Apr": "Nisan",
+    "May": "Mayıs", "Jun": "Haziran", "Jul": "Temmuz", "Aug": "Ağustos",
+    "Sep": "Eylül", "Oct": "Ekim", "Nov": "Kasım", "Dec": "Aralık"
+}
+
+def format_turkish_date(pub_date_str):
+    if not pub_date_str:
+        return "Bugün"
+    # Format örneği: "Sat, 07 Nov 2026 11:07:44 GMT" veya "07 Nov 2026"
+    match = re.search(r"(\d{1,2})\s+([A-Za-z]{3})\s+(\d{4})", pub_date_str)
+    if match:
+        day, mon, year = match.groups()
+        mon_tr = MONTHS_TR.get(mon, mon)
+        return f"{day.zfill(2)} {mon_tr} {year}"
+    return "Bugün"
 
 def fetch_google_art_news():
     url = "https://news.google.com/rss/search?q=sanat+OR+sergi+OR+ressam+OR+galeri&hl=tr&gl=TR&ceid=TR:tr"
@@ -52,7 +69,7 @@ def fetch_google_art_news():
             "title": clean_title,
             "link": link,
             "source": source,
-            "date": pub_date[:16] if pub_date else "Bugün",
+            "date": format_turkish_date(pub_date),
             "category": cat,
             "image": ART_IMAGES[idx % len(ART_IMAGES)]
         })
