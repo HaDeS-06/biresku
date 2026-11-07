@@ -1104,8 +1104,8 @@
       <!-- 3. Sanatçının 8 Eseri -->
       <div class="artworks-section-container">
         <div class="artworks-header-bar">
-          <h3 class="artworks-heading" id="artworksSectionHeading" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">Sanatçının 8 Eseri</h3>
-          <span class="artworks-count" id="artworksSectionCount">8 / 8 Koleksiyon Eseri</span>
+          <h3 class="artworks-heading" id="artworksSectionHeading" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">Sanatçının Eserleri</h3>
+          <span class="artworks-count" id="artworksSectionCount"></span>
         </div>
         <div class="artworks-grid" id="artworksGridArea">
           <!-- JS ile dolar -->
@@ -1630,8 +1630,11 @@ function renderArtistsGrid() {
       }
 
       // 3. 5 Adet Resim
-      const hEl = document.getElementById("artworksSectionHeading"); if (hEl) hEl.textContent = `Sanatçının ${artist.artworks.length} Eseri`;
-      const cEl = document.getElementById("artworksSectionCount"); if (cEl) cEl.textContent = `${artist.artworks.length} / ${artist.artworks.length} Koleksiyon Eseri`;
+      const artworksLen = (artist.artworks && Array.isArray(artist.artworks)) ? artist.artworks.length : 0;
+      const hEl = document.getElementById("artworksSectionHeading");
+      if (hEl) hEl.textContent = artworksLen > 0 ? ("Sanatçının " + artworksLen + " Eseri") : "Sanatçının Eserleri";
+      const cEl = document.getElementById("artworksSectionCount");
+      if (cEl) cEl.textContent = artworksLen > 0 ? (artworksLen + " / " + artworksLen + " KOLEKSİYON ESERİ") : "0 Eser";
       document.getElementById("artworksGridArea").innerHTML = artist.artworks.map((art, idx) => `
         <div class="artwork-item">
           <div class="artwork-img-wrap">
