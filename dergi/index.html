@@ -3,622 +3,819 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biresku Dergi | Kültür, Sanat ve Edebiyat</title>
-  <meta name="description" content="Biresku Dergi - Sanat, edebiyat, düşünce ve kültürün dijital buluşma noktası.">
-  
+  <title>Biresku Sanat & Dergi | Sanatın ve Kültürün Dijital Buluşma Noktası</title>
+  <meta name="description" content="Biresku Sanat Dergisi; sanatçılar, galeriler, güncel sergiler, röportajlar ve sanat eleştirilerinin bağımsız platformu.">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-dark: #0e0f17;
-      --bg-card: rgba(255, 255, 255, 0.03);
-      --card-border: rgba(255, 255, 255, 0.08);
+      --bg-body: #0b0c10;
+      --bg-surface: #12131a;
+      --bg-card: #181a24;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(197, 160, 89, 0.35);
       --gold: #c5a059;
-      --gold-light: #e2c078;
+      --gold-light: #dfb76c;
       --gold-dark: #8c6a2e;
       --text: #f3f4f6;
       --text-muted: #9ca3af;
       --text-dim: #6b7280;
+      --radius: 12px;
+      --transition: all 0.25s ease;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--bg-dark);
+      background-color: var(--bg-body);
       color: var(--text);
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Üst Menü (Navbar) */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      background: rgba(14, 15, 23, 0.85);
-      border-bottom: 1px solid var(--card-border);
-      padding: 16px 24px;
-    }
+    a { color: inherit; text-decoration: none; transition: var(--transition); }
+    img { max-width: 100%; display: block; object-fit: cover; }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .brand-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      background: linear-gradient(135deg, #fff 0%, var(--gold-light) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .brand-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      padding: 2px 8px;
-      border: 1px solid rgba(197, 160, 89, 0.4);
-      border-radius: 9999px;
-      color: var(--gold-light);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--gold-light);
-    }
-
-    .nav-btn {
-      padding: 8px 18px;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-      color: #0b0c12;
-      font-weight: 700;
-      font-size: 0.85rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .nav-btn:hover {
-      filter: brightness(1.15);
-      transform: translateY(-1px);
-    }
-
-    /* Sayfa Kapsayıcı */
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Hero Alanı - Son Sayı */
-    .hero {
-      padding: 60px 0 80px;
-      position: relative;
+    /* 1. ÜST BİLGİ BARI (Top Bar) */
+    .top-bar {
+      background-color: #08090d;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      padding: 8px 0;
     }
-
-    .hero-glow {
-      position: absolute;
-      top: 20%;
-      right: 10%;
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(197, 160, 89, 0.12) 0%, transparent 70%);
-      filter: blur(80px);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 60px;
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
     }
+    .top-bar-links a { margin-left: 16px; color: var(--text-muted); }
+    .top-bar-links a:hover { color: var(--gold-light); }
 
-    .hero-badge {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-light);
-      margin-bottom: 16px;
+    /* 2. ANA LOGO & MARKA BÖLÜMÜ */
+    .main-header {
+      padding: 32px 0 24px;
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+      position: relative;
     }
-
-    .hero-title {
+    .logo {
       font-family: 'Cinzel', serif;
       font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      background: linear-gradient(135deg, #ffffff 30%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+    }
+    .logo-slogan {
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* 3. NAVİGASYON MENÜSÜ */
+    .navbar {
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      padding: 14px 0;
+    }
+    .nav-menu a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+    .nav-menu a:hover, .nav-menu a.active {
+      color: var(--gold-light);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 6px 14px;
+      gap: 8px;
+    }
+    .search-box input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 0.85rem;
+      width: 140px;
+    }
+    .search-box input::placeholder { color: var(--text-dim); }
+
+    /* 4. MANŞET BÖLÜMÜ (Hero Grid) */
+    .hero-section {
+      padding: 36px 0 48px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    /* Büyük Ana Manşet */
+    .main-featured {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: #15161f;
+      border: 1px solid var(--border-color);
+    }
+    .main-featured img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .main-featured:hover img {
+      transform: scale(1.03);
+    }
+    .main-featured-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11, 12, 16, 0.1) 0%, rgba(11, 12, 16, 0.95) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 36px;
+    }
+    .badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--gold);
+      color: #0b0c10;
+      font-size: 0.75rem;
       font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 20px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .main-featured-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 12px;
       color: #fff;
     }
-
-    .hero-desc {
-      font-size: 1.15rem;
+    .main-featured-meta {
+      font-size: 0.85rem;
       color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 32px;
-    }
-
-    .hero-actions {
       display: flex;
       gap: 16px;
-      flex-wrap: wrap;
     }
 
-    .btn-primary {
-      padding: 14px 28px;
-      background: linear-gradient(135deg, var(--gold) 0%, #a87f3b 100%);
-      color: #0b0c12;
-      font-weight: 700;
-      border-radius: 12px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 10px 25px -5px rgba(197, 160, 89, 0.35);
-      transition: all 0.25s ease;
+    /* Yan Alt Manşetler */
+    .side-featured {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
-
-    .btn-primary:hover {
-      filter: brightness(1.15);
+    .side-card {
+      display: flex;
+      gap: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 14px;
+      transition: var(--transition);
+    }
+    .side-card:hover {
+      border-color: var(--border-hover);
       transform: translateY(-2px);
     }
-
-    .btn-secondary {
-      padding: 14px 28px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      border: 1px solid var(--card-border);
-      font-weight: 600;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.2s ease;
+    .side-card img {
+      width: 120px;
+      height: 100px;
+      border-radius: 8px;
     }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Dergi Kapak Mockup */
-    .cover-card {
-      position: relative;
-      background: linear-gradient(145deg, #181924, #0b0c13);
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      border-radius: 20px;
-      padding: 40px 32px;
-      aspect-ratio: 1 / 1.4;
+    .side-card-info {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(197, 160, 89, 0.1);
-      transition: transform 0.3s ease;
+      justify-content: center;
     }
-
-    .cover-card:hover {
-      transform: translateY(-6px) rotate(1deg);
-    }
-
-    .cover-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 16px;
-    }
-
-    .cover-mag-name {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      letter-spacing: 0.15em;
-      color: var(--gold-light);
-    }
-
-    .cover-issue {
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      color: var(--text-dim);
-    }
-
-    .cover-body {
-      margin: auto 0;
-      text-align: center;
-    }
-
-    .cover-feature-tag {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .cover-main-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
-      line-height: 1.3;
-      color: #fff;
-    }
-
-    .cover-footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 16px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--text-dim);
-    }
-
-    /* Bölüm Başlıkları */
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 36px;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
-      color: #fff;
-    }
-
-    .section-link {
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    /* Makaleler Grid */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-      margin-bottom: 80px;
-    }
-
-    .article-card {
-      background: var(--bg-card);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .article-card:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(197, 160, 89, 0.3);
-      transform: translateY(-3px);
-    }
-
-    .article-category {
-      font-size: 0.75rem;
+    .side-card-cat {
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
     }
-
-    .article-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.35rem;
-      line-height: 1.35;
-      margin-bottom: 14px;
-      color: #fff;
-    }
-
-    .article-excerpt {
-      color: var(--text-muted);
+    .side-card-title {
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .article-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 14px;
-    }
-
-    /* Editörden Not Kutusu */
-    .editorial-quote {
-      background: linear-gradient(135deg, rgba(197, 160, 89, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border-left: 3px solid var(--gold);
-      border-radius: 0 16px 16px 0;
-      padding: 32px;
-      margin-bottom: 80px;
-    }
-
-    .editorial-quote p {
-      font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
-      font-style: italic;
-      line-height: 1.6;
-      color: #e5e7eb;
-      margin-bottom: 14px;
-    }
-
-    .editorial-author {
-      font-size: 0.9rem;
-      color: var(--gold-light);
       font-weight: 600;
-    }
-
-    /* E-Bülten Kutusu */
-    .newsletter-section {
-      background: radial-gradient(circle at center, #1b1c28 0%, #10111a 100%);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 48px 36px;
-      text-align: center;
-      margin-bottom: 80px;
-    }
-
-    .newsletter-title {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      margin-bottom: 12px;
+      line-height: 1.35;
       color: #fff;
+      margin-bottom: 6px;
+    }
+    .side-card-date {
+      font-size: 0.75rem;
+      color: var(--text-dim);
     }
 
-    .newsletter-desc {
-      color: var(--text-muted);
-      max-width: 500px;
-      margin: 0 auto 28px;
-    }
-
-    .newsletter-form {
+    /* 5. KATEGORİ SEKMELERİ */
+    .category-filter {
       display: flex;
       gap: 12px;
-      max-width: 460px;
-      margin: 0 auto;
+      margin-bottom: 32px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-color);
     }
-
-    .newsletter-input {
-      flex: 1;
-      padding: 14px 18px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-      outline: none;
+    .filter-btn {
+      padding: 8px 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
     }
-
-    .newsletter-input:focus {
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gold);
+      color: #0b0c10;
       border-color: var(--gold);
     }
 
-    /* Alt Bilgi (Footer) */
-    .footer {
-      border-top: 1px solid var(--card-border);
-      padding: 40px 0;
-      text-align: center;
-      color: var(--text-dim);
-      font-size: 0.85rem;
+    /* 6. SANATÇILAR & RÖPORTAJLAR BÖLÜMÜ */
+    .section-title-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .section-heading {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      position: relative;
+      padding-left: 14px;
+    }
+    .section-heading::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15%;
+      height: 70%;
+      width: 4px;
+      background: var(--gold);
+      border-radius: 2px;
     }
 
-    .footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin: 0 10px;
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
     }
 
-    .footer a:hover {
+    .art-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .art-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+    }
+    .art-card-img {
+      height: 220px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .art-card-img img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+    .art-card:hover .art-card-img img {
+      transform: scale(1.05);
+    }
+    .art-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .art-card-tag {
+      font-size: 0.75rem;
       color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .art-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .art-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .art-card-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
     }
 
-    /* Mobil Uyumluluk */
-    @media (max-width: 868px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .hero-title {
-        font-size: 2.4rem;
-      }
-      .nav-links {
-        display: none; /* Mobilde temiz tutuyoruz */
-      }
-      .newsletter-form {
-        flex-direction: column;
-      }
+    /* 7. GÜNCEL SERGİLER VE GALERİLER VİTRİNİ */
+    .exhibition-banner {
+      background: linear-gradient(135deg, #161824 0%, #0d0e15 100%);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-radius: 16px;
+      padding: 36px;
+      margin-bottom: 60px;
+    }
+    .exhibition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .exhibit-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      transition: var(--transition);
+    }
+    .exhibit-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--gold);
+    }
+    .exhibit-date {
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .exhibit-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .exhibit-gallery {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* 8. YAZARLAR KÖŞESİ */
+    .authors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    .author-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .author-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+    }
+    .author-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .author-title {
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+    .author-article {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* 9. ALT BİLGİ (Footer) */
+    .footer {
+      background: #08090d;
+      border-top: 1px solid var(--border-color);
+      padding: 60px 0 24px;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .footer-about {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { color: var(--text-muted); font-size: 0.85rem; }
+    .footer-col a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .authors-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .authors-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .nav-menu { display: none; }
+      .logo { font-size: 2.4rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Üst Menü -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="/dergi" class="brand">
-        <span class="brand-logo">BIRESKU</span>
-        <span class="brand-tag">Dergi</span>
+  <!-- 1. ÜST BİLGİ BARI -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div id="currentDate">İstanbul | 7 Kasım 2026</div>
+      <div class="top-bar-links">
+        <a href="#sanatcilar">Sanatçılar</a>
+        <a href="#galeriler">Galeriler</a>
+        <a href="#yazarlar">Yazarlar</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ANA MARKA & LOGO BAŞLIĞI -->
+  <header class="main-header">
+    <div class="container">
+      <a href="/dergi" style="display: inline-block;">
+        <h1 class="logo">BIRESKU</h1>
+        <div class="logo-slogan">Sanatın & Kültürün Dijital Buluşma Noktası</div>
       </a>
-      <ul class="nav-links">
-        <li><a href="#son-sayi" class="active">Son Sayı</a></li>
-        <li><a href="#yazilar">Yazılar</a></li>
-        <li><a href="#editor">Editörden</a></li>
-        <li><a href="#bulten">E-Bülten</a></li>
+    </div>
+  </header>
+
+  <!-- 3. MENÜ BARI -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <ul class="nav-menu">
+        <li><a href="/dergi" class="active">Ana Sayfa</a></li>
+        <li><a href="#haberler">Haberler</a></li>
+        <li><a href="#sanatcilar">Sanatçılar</a></li>
+        <li><a href="#galeriler">Sanat Galerileri</a></li>
+        <li><a href="#roportaj">Röportajlar</a></li>
+        <li><a href="#yazarlar">Yazarlar</a></li>
+        <li><a href="#inceleme">Eser İncelemeleri</a></li>
       </ul>
-      <a href="#bulten" class="nav-btn">Takip Et</a>
+      <div class="nav-actions">
+        <div class="search-box">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="text" placeholder="Sanatçı veya yazı ara...">
+        </div>
+      </div>
     </div>
   </nav>
 
   <main class="container">
     
-    <!-- Hero / Son Sayı -->
-    <section class="hero" id="son-sayi">
-      <div class="hero-glow"></div>
+    <!-- 4. MANŞET BÖLÜMÜ (sanatdergi.com stili) -->
+    <section class="hero-section" id="haberler">
       <div class="hero-grid">
-        <div class="hero-content">
-          <span class="hero-badge">Yeni Sayı Yayında • Sayı 01</span>
-          <h1 class="hero-title">Görünmeyenin Peşinde: Sanat ve İnsan</h1>
-          <p class="hero-desc">
-            Biresku Dergisi'nin ilk sayısıyla edebiyat, çağdaş sanat, derin söyleşiler ve düşünce yazılarını sizlerle buluşturuyoruz. Kelimelerin ve renklerin yeni durağına hoş geldiniz.
-          </p>
-          <div class="hero-actions">
-            <a href="#yazilar" class="btn-primary">
-              <span>Sayıyı İncele</span>
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
-            <a href="#bulten" class="btn-secondary">Dijital Abonelik</a>
+        <!-- Büyük Manşet -->
+        <article class="main-featured">
+          <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80" alt="Çağdaş Sanat">
+          <div class="main-featured-overlay">
+            <span class="badge">Öne Çıkan Dosya</span>
+            <h2 class="main-featured-title">Modernizmin Işığında: Tuvaldeki Sessiz Devrim ve Türk Resmi</h2>
+            <div class="main-featured-meta">
+              <span>Biresku Sanat Masası</span>
+              <span>•</span>
+              <span>7 Kasım 2026</span>
+              <span>•</span>
+              <span>6 dk okuma</span>
+            </div>
           </div>
+        </article>
+
+        <!-- Yan Manşetler -->
+        <div class="side-featured">
+          <article class="side-card">
+            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80" alt="Heykel Sergisi">
+            <div class="side-card-info">
+              <span class="side-card-cat">Sergi</span>
+              <h3 class="side-card-title">Mermerin Nefesi: Çağdaş Heykel Sanatında Yeni Formlar</h3>
+              <span class="side-card-date">6 Kasım 2026</span>
+            </div>
+          </article>
+
+          <article class="side-card">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80" alt="Sanatçı Atölyesi">
+            <div class="side-card-info">
+              <span class="side-card-cat">Röportaj</span>
+              <h3 class="side-card-title">Atölye Buluşmaları: Renklerin Ritmini Yakalamak</h3>
+              <span class="side-card-date">5 Kasım 2026</span>
+            </div>
+          </article>
+
+          <article class="side-card">
+            <img src="https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80" alt="Galeri">
+            <div class="side-card-info">
+              <span class="side-card-cat">Galeri</span>
+              <h3 class="side-card-title">Sonbaharın En Çok Konuşulan 10 Galeri Sergisi</h3>
+              <span class="side-card-date">4 Kasım 2026</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. KATEGORİ FİLTRELERİ -->
+    <div class="category-filter">
+      <button class="filter-btn active">Tüm İçerikler</button>
+      <button class="filter-btn">Ressamlar</button>
+      <button class="filter-btn">Heykeltıraşlar</button>
+      <button class="filter-btn">Sanat Galerileri</button>
+      <button class="filter-btn">Eser İncelemeleri</button>
+      <button class="filter-btn">Röportajlar</button>
+    </div>
+
+    <!-- 6. SANATÇILAR VE ESER İNCELEMELERİ (3'LÜ KARTLAR) -->
+    <section id="sanatcilar">
+      <div class="section-title-wrap">
+        <h2 class="section-heading">Sanatçı Dosyaları & İncelemeler</h2>
+        <a href="#" style="color: var(--gold); font-size: 0.9rem; font-weight: 600;">Tümünü Gör &rarr;</a>
+      </div>
+
+      <div class="grid-3">
+        <!-- Kart 1 -->
+        <article class="art-card">
+          <div class="art-card-img">
+            <img src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=600&q=80" alt="Ressam Dosyası">
+          </div>
+          <div class="art-card-body">
+            <div>
+              <div class="art-card-tag">Sanatçı Portresi</div>
+              <h3 class="art-card-title">Işığın Peşinde Bir Ömür: Soyut Dışavurumculuk</h3>
+              <p class="art-card-desc">Fırçanın tuvalle buluştuğu ilk andan son dokunuşa kadar yaşanan yaratım sancısı ve renklerin derin dili.</p>
+            </div>
+            <div class="art-card-footer">
+              <span>Yazan: Selin Yıldız</span>
+              <span>4 dk okuma</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kart 2 -->
+        <article class="art-card">
+          <div class="art-card-img">
+            <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=600&q=80" alt="Eser İncelemesi">
+          </div>
+          <div class="art-card-body">
+            <div>
+              <div class="art-card-tag">Eser İncelemesi</div>
+              <h3 class="art-card-title">Sessiz Tanıklar: Portre Sanatında Bakışın Gücü</h3>
+              <p class="art-card-desc">Gözlerin anlattığı hikayeler, portre ressamlığında psikolojik derinlik ve izleyiciyle kurulan görünmez bağ.</p>
+            </div>
+            <div class="art-card-footer">
+              <span>Yazan: Emre Kaya</span>
+              <span>6 dk okuma</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kart 3 -->
+        <article class="art-card">
+          <div class="art-card-img">
+            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80" alt="Röportaj">
+          </div>
+          <div class="art-card-body">
+            <div>
+              <div class="art-card-tag">Röportaj</div>
+              <h3 class="art-card-title">"Sanat, Ruhun Günlük Tozunu Temizler"</h3>
+              <p class="art-card-desc">Usta ressamla sanat eğitimi, günümüz sanat piyasası ve genç kuşak ressamların arayışları üzerine özel söyleşi.</p>
+            </div>
+            <div class="art-card-footer">
+              <span>Biresku Özel</span>
+              <span>8 dk okuma</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. GÜNCEL SERGİLER & GALERİLER VİTRİNİ -->
+    <section id="galeriler" class="exhibition-banner">
+      <div class="section-title-wrap" style="margin-bottom: 8px;">
+        <h2 class="section-heading" style="color: #fff;">Güncel Sanat Galerileri & Sergiler</h2>
+        <span style="font-size: 0.85rem; color: var(--gold-light);">Kasım - Aralık 2026 Ajandası</span>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Kaçırmamanız gereken çağdaş resim, heykel ve enstalasyon sergileri.</p>
+
+      <div class="exhibition-grid">
+        <div class="exhibit-item">
+          <div class="exhibit-date">01 KASIM - 28 KASIM 2026</div>
+          <h4 class="exhibit-title">Zamanın Katmanları</h4>
+          <div class="exhibit-gallery">📍 Biresku Sanat Galerisi / Nişantaşı, İstanbul</div>
         </div>
 
-        <!-- Dergi Kapak Tasarımı Mockup -->
-        <div class="cover-card">
-          <div class="cover-header">
-            <span class="cover-mag-name">BIRESKU</span>
-            <span class="cover-issue">SAYI: 01 / 2026</span>
-          </div>
-          <div class="cover-body">
-            <div class="cover-feature-tag">DOSYA KONUSU</div>
-            <h2 class="cover-main-title">Zamanın Ötesindeki Çizgiler</h2>
-          </div>
-          <div class="cover-footer">
-            <span>Kültür & Sanat Dergisi</span>
-            <span>biresku.com/dergi</span>
-          </div>
+        <div class="exhibit-item">
+          <div class="exhibit-date">10 KASIM - 15 ARALIK 2026</div>
+          <h4 class="exhibit-title">Toprak ve Renk: Anadolu İzleri</h4>
+          <div class="exhibit-gallery">📍 Çağdaş Sanatlar Merkezi / Çankaya, Ankara</div>
+        </div>
+
+        <div class="exhibit-item">
+          <div class="exhibit-date">15 KASIM - 30 ARALIK 2026</div>
+          <h4 class="exhibit-title">Görünmeyenin Ötesi: Yeni Ufuklar</h4>
+          <div class="exhibit-gallery">📍 Alsancak Kültür Sanat / İzmir</div>
         </div>
       </div>
     </section>
 
-    <!-- Editörden Alıntı -->
-    <section class="editorial-quote" id="editor">
-      <p>"Bir fırça darbesiyle başlayan yolculuk, zihnin en derin kıvrımlarında kelimelere dönüşür. Biresku, bu dönüşümün sessiz tanığıdır."</p>
-      <div class="editorial-author">— Biresku Yayın Kurulu</div>
-    </section>
-
-    <!-- Öne Çıkan Yazılar -->
-    <section id="yazilar">
-      <div class="section-header">
-        <h2 class="section-title">Bu Sayıdan Yazılar</h2>
-        <a href="#" class="section-link">Tüm Arşiv &rarr;</a>
+    <!-- 8. YAZARLARIMIZ BÖLÜMÜ -->
+    <section id="yazarlar">
+      <div class="section-title-wrap">
+        <h2 class="section-heading">Yazarlarımız & Sanat Eleştirmenleri</h2>
+        <a href="#" style="color: var(--gold); font-size: 0.9rem; font-weight: 600;">Tüm Yazarlar &rarr;</a>
       </div>
 
-      <div class="articles-grid">
-        <!-- Makale 1 -->
-        <article class="article-card">
-          <div>
-            <div class="article-category">Kültür & Sanat</div>
-            <h3 class="article-title">Modern Tuvalde Geleneksel İzler</h3>
-            <p class="article-excerpt">
-              Çağdaş resim sanatında köklerine dönen sanatçıların estetik arayışları ve biçimsel yenilikleri üzerine kapsamlı bir inceleme.
-            </p>
-          </div>
-          <div class="article-meta">
-            <span>Biresku Sanat Masası</span>
-            <span>5 dk okuma</span>
-          </div>
-        </article>
+      <div class="authors-grid">
+        <div class="author-card">
+          <img class="author-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Yazar">
+          <h4 class="author-name">Deniz Aksoy</h4>
+          <div class="author-title">Sanat Tarihçisi</div>
+          <div class="author-article">"Mitolojinin Resimdeki Şifreleri"</div>
+        </div>
 
-        <!-- Makale 2 -->
-        <article class="article-card">
-          <div>
-            <div class="article-category">Edebiyat & Şiir</div>
-            <h3 class="article-title">Kelimelerin Sessizliği ve Yankısı</h3>
-            <p class="article-excerpt">
-              Şiirde boşlukların ve duraklamaların anlama kattığı derinlik; söylenmeyenin gücü hakkında bir edebi deneme.
-            </p>
-          </div>
-          <div class="article-meta">
-            <span>Edebiyat Kurulu</span>
-            <span>4 dk okuma</span>
-          </div>
-        </article>
+        <div class="author-card">
+          <img class="author-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Yazar">
+          <h4 class="author-name">Murat Çelik</h4>
+          <div class="author-title">Küratör & Eleştirmen</div>
+          <div class="author-article">"Bienalden Kalanlar ve Gelecek"</div>
+        </div>
 
-        <!-- Makale 3 -->
-        <article class="article-card">
-          <div>
-            <div class="article-category">Dosya / Söyleşi</div>
-            <h3 class="article-title">Yeni Nesil Yayıncılık ve Dijitalleşme</h3>
-            <p class="article-excerpt">
-              Kâğıdın kokusundan dijital ekranlara: Bağımsız dergiciliğin geleceği ve kolektif üretim modelleri.
-            </p>
-          </div>
-          <div class="article-meta">
-            <span>Röportaj</span>
-            <span>7 dk okuma</span>
-          </div>
-        </article>
+        <div class="author-card">
+          <img class="author-avatar" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80" alt="Yazar">
+          <h4 class="author-name">Aslı Tezcan</h4>
+          <div class="author-title">Görsel Sanatlar Uzmanı</div>
+          <div class="author-article">"Dijital Sanat ve Tuvalin Geleceği"</div>
+        </div>
+
+        <div class="author-card">
+          <img class="author-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Yazar">
+          <h4 class="author-name">Caner Demir</h4>
+          <div class="author-title">Ressam & Yazar</div>
+          <div class="author-article">"Atölyeden Notlar: Boyanın Kimyası"</div>
+        </div>
       </div>
-    </section>
-
-    <!-- E-Bülten / Takip -->
-    <section class="newsletter-section" id="bulten">
-      <h2 class="newsletter-title">Biresku ile İletişimde Kalın</h2>
-      <p class="newsletter-desc">
-        Yeni sayılarımız, sergi duyurularımız ve özel içeriklerimiz yayınlandığında ilk siz haberdar olun.
-      </p>
-      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Kaydınız alındı! Teşekkür ederiz.');">
-        <input type="email" class="newsletter-input" placeholder="E-posta adresinizi girin..." required>
-        <button type="submit" class="btn-primary" style="cursor: pointer; border: none;">Kayıt Ol</button>
-      </form>
     </section>
 
   </main>
 
-  <!-- Alt Bilgi (Footer) -->
-  <footer class="footer">
+  <!-- 9. ALT BİLGİ (Footer) -->
+  <footer class="footer" id="iletisim">
     <div class="container">
-      <p>&copy; 2026 Biresku Dergi. Tüm hakları saklıdır.</p>
-      <div style="margin-top: 12px;">
-        <a href="/">Ana Yönlendirme</a>
-        <a href="#son-sayi">Son Sayı</a>
-        <a href="#yazilar">Yazılar</a>
-        <a href="#bulten">İletişim</a>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">BIRESKU SANAT</div>
+          <p class="footer-about">
+            Biresku, sanatın tüm disiplinlerini bağımsız, özgür ve estetik bir bakış açısıyla okuyucuya sunan yeni nesil dijital kültür ve sanat mecrasıdır.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kategoriler</h4>
+          <ul>
+            <li><a href="#haberler">Sanat Haberleri</a></li>
+            <li><a href="#sanatcilar">Sanatçı Portreleri</a></li>
+            <li><a href="#galeriler">Sanat Galerileri</a></li>
+            <li><a href="#roportaj">Söyleşiler</a></li>
+            <li><a href="#inceleme">Eser Eleştirileri</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kurumsal</h4>
+          <ul>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Yayın İlkeleri</a></li>
+            <li><a href="#">Yazarlık Başvurusu</a></li>
+            <li><a href="#">Reklam & Sponsorluk</a></li>
+            <li><a href="#">İletişim</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>E-Bülten</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Haftalık sanat ajandası e-postanıza gelsin.</p>
+          <div style="display: flex; gap: 6px;">
+            <input type="email" placeholder="E-posta..." style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; width: 100%;">
+            <button style="background: var(--gold); border: none; color: #0b0c10; font-weight: 700; padding: 8px 14px; border-radius: 6px; cursor: pointer;">Kayıt</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Biresku Sanat Dergisi. Tüm hakları saklıdır.</div>
+        <div>
+          <a href="/" style="color: var(--gold);">Ana Yönlendirme</a> •
+          <a href="/dergi" style="color: var(--text-muted);">biresku.com/dergi</a>
+        </div>
       </div>
     </div>
   </footer>
