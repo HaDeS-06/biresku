@@ -988,8 +988,8 @@
   <nav class="site-nav">
     <div class="container nav-inner">
       <ul class="nav-list">
-        <li><a href="/dergi" class="active">Ana Sayfa</a></li>
-        <li><a href="/dergi/sanatcilar/">Sanatçılarımız</a></li>
+        <li><a href="/dergi" class="active" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Ana Sayfa</a></li>
+        <li><a href="#sanatcilarimiz" onclick="scrollToSection(event, 'sanatcilarimiz')">Sanatçılarımız</a></li>
       </ul>
       <div class="nav-actions">
         <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
@@ -1647,17 +1647,37 @@ function renderArtistsGrid() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+        function scrollToSection(e, sectionId) {
+      if (e) e.preventDefault();
+      const profileView = document.getElementById("artistProfileView");
+      const mainView = document.getElementById("mainPageView");
+      if (profileView && profileView.style.display === "block") {
+        profileView.style.display = "none";
+        if (mainView) mainView.style.display = "block";
+      }
+      history.replaceState(null, null, window.location.pathname);
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
     function showMainPage(e, targetHash) {
       if (e) e.preventDefault();
       document.getElementById("artistProfileView").style.display = "none";
       document.getElementById("mainPageView").style.display = "block";
       
+      // Adres çubuğundaki hash karmaşasını temizle
+      history.replaceState(null, null, window.location.pathname);
+
       if (targetHash) {
-        history.pushState(null, null, targetHash);
         const targetEl = document.querySelector(targetHash);
-        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+        if (targetEl) {
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }, 60);
+        }
       } else {
-        history.pushState(null, null, window.location.pathname);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
@@ -1667,6 +1687,16 @@ function renderArtistsGrid() {
       if (hash.startsWith("#sanatci=")) {
         const artistId = hash.replace("#sanatci=", "");
         openArtistProfile(artistId);
+      } else if (hash === "#sanatcilarimiz") {
+        // Eğer doğrudan #sanatcilarimiz linkiyle gelinmişse en tepeye değil bölüme kay
+        setTimeout(() => {
+          const targetEl = document.getElementById("sanatcilarimiz");
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+          // URL'yi temiz tut
+          history.replaceState(null, null, window.location.pathname);
+        }, 150);
       }
     }
 
