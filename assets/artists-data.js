@@ -73,6 +73,39 @@ const ARTISTS_DATA = [
         "description": "Bedenin hareket halindeki enerjisini, uçuşan kumaş kıvrımlarını ve ışık kırılmalarını coşkulu jestüel fırça vuruşlarıyla ölümsüzleştiren dinamik yapıt.",
         "image": "/assets/adnan-turani/dansci.jpg",
         "imageUrl": "/assets/adnan-turani/dansci.jpg"
+      },
+      {
+        "id": "turani-6",
+        "title": "Kemancı Kadın",
+        "year": "2002",
+        "technique": "Tuval Üzerine Yağlıboya",
+        "dimensions": "120 × 120 cm",
+        "collection": "Özel Koleksiyon",
+        "description": "Keman yayının dinamik hareketini, müziğin ses dalgalarını ve sanatçının içsel ritmini yoğun pentür hamuruyla buluşturan lirik kompozisyon.",
+        "image": "/assets/adnan-turani/kemanci.jpg",
+        "imageUrl": "/assets/adnan-turani/kemanci.jpg"
+      },
+      {
+        "id": "turani-7",
+        "title": "Soyut Natürmort",
+        "year": "1996",
+        "technique": "Tuval Üzerine Yağlıboya",
+        "dimensions": "110 × 140 cm",
+        "collection": "Kurumsal Sanat Koleksiyonu",
+        "description": "Geleneksel nesne formlarını kırarak onları ışık, renk lekeleri ve geometrik ritim dengesiyle modern bir dille yeniden inşa eden başyapıt.",
+        "image": "/assets/adnan-turani/naturmort.jpg",
+        "imageUrl": "/assets/adnan-turani/naturmort.jpg"
+      },
+      {
+        "id": "turani-8",
+        "title": "Sokak Çalgıcıları",
+        "year": "1999",
+        "technique": "Tuval Üzerine Yağlıboya",
+        "dimensions": "100 × 100 cm",
+        "collection": "Özel Koleksiyon",
+        "description": "Kentin seslerini, halk ezgilerini ve sokak müzisyenlerinin coşkusunu soyut dışavurumcu leke paletiyle yansıtan dinamik yapıt.",
+        "image": "/assets/adnan-turani/sokak-calgicilari.jpg",
+        "imageUrl": "/assets/adnan-turani/sokak-calgicilari.jpg"
       }
     ]
   },
@@ -129,6 +162,30 @@ const ARTISTS_DATA = [
         "dimensions": "95 x 50 x 35 cm",
         "year": "2026",
         "image": "https://images.unsplash.com/photo-1576769267415-9642010aa962?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Boşluğun Formu",
+        "technique": "Bronz döküm ve patina",
+        "dimensions": "65 x 40 x 30 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "title": "Denge ve Sonsuzluk",
+        "technique": "Marmara mermeri & siyah granit kaide",
+        "dimensions": "110 x 50 x 45 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "title": "Kanatlı Rüzgar",
+        "technique": "Dövme bakır ve paslanmaz çelik",
+        "dimensions": "95 x 60 x 35 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80"
       }
     ]
   },
@@ -185,6 +242,30 @@ const ARTISTS_DATA = [
         "dimensions": "110 x 85 cm",
         "year": "2026",
         "image": "https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Gece Nöbeti",
+        "technique": "Keten tuval üzerine yağlıboya",
+        "dimensions": "130 x 100 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "title": "Bellek Odası",
+        "technique": "Karışık teknik ve yağlıboya",
+        "dimensions": "110 x 110 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1582561141999-52e803a67d0f?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1582561141999-52e803a67d0f?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "title": "Arayış",
+        "technique": "Ahşap panel üzerine yağlıboya",
+        "dimensions": "140 x 95 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?auto=format&fit=crop&w=800&q=80"
       }
     ]
   },
@@ -241,6 +322,30 @@ const ARTISTS_DATA = [
         "dimensions": "110 x 75 cm",
         "year": "2026",
         "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        "title": "Güz Yankısı",
+        "technique": "Saf pamuk kağıt üzerine suluboya",
+        "dimensions": "76 x 56 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "title": "Mavi Düşler",
+        "technique": "Arches kağıt üzerine suluboya ve mürekkep",
+        "dimensions": "80 x 60 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "title": "Işığın Dansı",
+        "technique": "Tuval üzerine akrilik ve suluboya",
+        "dimensions": "100 x 120 cm",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80",
+        "imageUrl": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80"
       }
     ]
   }
