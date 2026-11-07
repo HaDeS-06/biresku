@@ -3,722 +3,866 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biresku Sanat & Dergi | Sanatın ve Kültürün Dijital Buluşma Noktası</title>
-  <meta name="description" content="Biresku Sanat Dergisi; sanatçılar, galeriler, güncel sergiler, röportajlar ve sanat eleştirilerinin bağımsız platformu.">
+  <title>Biresku Sanat | Güncel Sanat, Eleştiri ve Sergi Mecrası</title>
+  <meta name="description" content="Biresku Sanat: Çağdaş resim, heykel, atölye söyleşileri, sergi takvimi ve bağımsız sanat eleştirileri.">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Editorial Serif (Playfair + Cormorant) ve Temiz Grotesk (Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 
   <style>
+    /* ==========================================================================
+       1. TİPOGRAFİK VE RENK PALETİ: Galeri & Editoryal Basın Standardı
+       (Neon, abartılı blur ve yapay zeka klişelerinden tamamen arındırılmış)
+       ========================================================================== */
     :root {
-      --bg-body: #0b0c10;
-      --bg-surface: #12131a;
-      --bg-card: #181a24;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(197, 160, 89, 0.4);
-      --gold: #c5a059;
-      --gold-light: #dfb76c;
-      --gold-dark: #8c6a2e;
-      --text: #f3f4f6;
-      --text-muted: #9ca3af;
-      --text-dim: #6b7280;
-      --radius: 14px;
-      --transition: all 0.25s ease;
+      --bg: #0f1013;             /* Mürekkep siyahı */
+      --bg-surface: #15161b;     /* Editoryal kart zemini */
+      --bg-hover: #1b1d24;
+      --border: #242630;         /* Net, keskin hairline çizgiler */
+      --border-accent: #3a3d4d;
+      --text-main: #f0f1f5;       /* Temiz baskı beyazı */
+      --text-muted: #9fa3b2;     /* İkincil okuma metni */
+      --text-dim: #646877;       /* Tarih ve künye tonu */
+      --accent: #c09a58;         /* Doğal galeri pirinci / astar sarısı */
+      --accent-hover: #d8b26e;
+      --editorial-kicker: #c94a3b; /* Klasik dergi dipnot/vurgu kırmızısı */
+      
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-reading: 'Cormorant Garamond', Garamond, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--bg-body);
-      color: var(--text);
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; transition: var(--transition); }
+    a { color: inherit; text-decoration: none; transition: color 0.15s ease; }
     img { max-width: 100%; display: block; object-fit: cover; }
 
     .container {
-      max-width: 1280px;
+      max-width: 1260px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* 1. ÜST BİLGİ BARI */
-    .top-bar {
-      background-color: #08090d;
-      border-bottom: 1px solid var(--border-color);
-      font-size: 0.8rem;
+    /* ==========================================================================
+       2. MASTHEAD (Gazete / Dergi Üst Başlığı)
+       ========================================================================== */
+    .masthead-utility {
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--text-dim);
-      padding: 8px 0;
+      padding: 10px 0;
     }
-    .top-bar-inner {
+    .masthead-utility-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .live-indicator {
+    .utility-meta {
+      display: flex;
+      gap: 18px;
+    }
+    .live-feed-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: var(--gold-light);
-      font-weight: 600;
+      color: var(--text-muted);
     }
     .live-dot {
-      width: 7px;
-      height: 7px;
-      background: #10b981;
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
       border-radius: 50%;
-      box-shadow: 0 0 8px #10b981;
-      animation: pulse 2s infinite;
     }
-    @keyframes pulse { 0%,100% {opacity:1;} 50% {opacity:0.3;} }
-    .top-bar-links a { margin-left: 16px; color: var(--text-muted); }
-    .top-bar-links a:hover { color: var(--gold-light); }
 
-    /* 2. ANA MARKA & LOGO */
-    .main-header {
-      padding: 32px 0 20px;
-      border-bottom: 1px solid var(--border-color);
+    /* Ana Logo Alanı */
+    .masthead-main {
+      padding: 38px 0 28px;
       text-align: center;
+      border-bottom: 3px double var(--border);
     }
-    .logo {
-      font-family: 'Cinzel', serif;
-      font-size: 3.2rem;
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6vw, 4.4rem);
       font-weight: 800;
-      letter-spacing: 0.15em;
-      background: linear-gradient(135deg, #ffffff 30%, var(--gold-light) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      line-height: 1.1;
-    }
-    .logo-slogan {
-      font-size: 0.85rem;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      line-height: 1;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 6px;
-      font-weight: 500;
+    }
+    .brand-tagline {
+      font-family: var(--font-reading);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 8px;
+      letter-spacing: 0.02em;
     }
 
-    /* 3. MENÜ */
-    .navbar {
-      background-color: var(--bg-surface);
-      border-bottom: 1px solid var(--border-color);
+    /* Navigasyon Barı */
+    .site-nav {
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(15, 16, 19, 0.96);
+      backdrop-filter: blur(8px);
+      z-index: 50;
     }
     .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0;
     }
-    .nav-menu {
+    .nav-list {
       display: flex;
       list-style: none;
-      gap: 28px;
+      gap: 32px;
+    }
+    .nav-list a {
+      display: block;
       padding: 14px 0;
-    }
-    .nav-menu a {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--text-muted);
+      border-bottom: 2px solid transparent;
     }
-    .nav-menu a:hover, .nav-menu a.active { color: var(--gold-light); }
-    .search-box {
+    .nav-list a:hover, .nav-list a.active {
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+    .nav-search {
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 6px 14px;
       gap: 8px;
+      border-left: 1px solid var(--border);
+      padding-left: 20px;
     }
-    .search-box input {
+    .nav-search input {
       background: transparent;
-      border: none;
-      outline: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 10px;
       color: #fff;
-      font-size: 0.85rem;
-      width: 150px;
+      font-size: 0.8rem;
+      font-family: var(--font-sans);
+      outline: none;
+      width: 160px;
+      transition: border-color 0.2s ease;
     }
+    .nav-search input:focus { border-color: var(--accent); }
 
-    /* 4. MANŞET BÖLÜMÜ (SOL: RÖPORTAJ | SAĞ: 4'LÜ KAYDIRILABİLİR GOOGLE HABERLERİ) */
-    .hero-section {
-      padding: 32px 0 44px;
+    /* ==========================================================================
+       3. EDİTORYAL MANŞET GRID: Sol (Özel Röportaj) & Sağ (4'lü Google Akışı)
+       ========================================================================== */
+    .lead-section {
+      padding: 36px 0 48px;
+      border-bottom: 1px solid var(--border);
     }
-    .hero-grid {
+    .lead-grid {
       display: grid;
-      grid-template-columns: 1.35fr 1fr;
-      gap: 24px;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 32px;
       align-items: stretch;
     }
 
-    /* SOL KUTU: EN SON YAPILAN RÖPORTAJLAR */
-    .interview-card {
-      position: relative;
-      background: linear-gradient(145deg, #161822 0%, #0d0e15 100%);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      overflow: hidden;
+    /* SOL: En Son Yapılan Röportaj */
+    .interview-feature {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      min-height: 540px;
-      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.6);
+      overflow: hidden;
+      min-height: 520px;
     }
-
-    .interview-bg-img {
-      position: absolute;
-      inset: 0;
+    .interview-visual {
+      position: relative;
+      height: 290px;
+      width: 100%;
+      background: #1c1d24;
+      overflow: hidden;
+    }
+    .interview-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.55;
-      transition: transform 0.6s ease, opacity 0.4s ease;
-      z-index: 1;
+      filter: grayscale(15%);
+      transition: transform 0.6s ease;
     }
-    .interview-card:hover .interview-bg-img {
-      transform: scale(1.03);
-      opacity: 0.7;
+    .interview-feature:hover .interview-visual img {
+      transform: scale(1.02);
+      filter: grayscale(0%);
     }
-
-    .interview-overlay {
-      position: relative;
-      z-index: 2;
-      background: linear-gradient(180deg, rgba(11,12,16,0.1) 0%, rgba(11,12,16,0.85) 50%, rgba(11,12,16,0.98) 100%);
-      padding: 36px 32px;
-      margin-top: auto;
-    }
-
-    .interview-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-      color: #0b0c10;
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+    .interview-kicker {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 6px;
-      margin-bottom: 14px;
+      padding: 4px 10px;
     }
-
-    .interview-title {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
+    .interview-content {
+      padding: 26px 28px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .interview-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.2vw, 1.85rem);
       font-weight: 700;
       line-height: 1.25;
       color: #ffffff;
       margin-bottom: 12px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
-
     .interview-quote {
-      font-size: 1rem;
+      font-family: var(--font-reading);
+      font-size: 1.15rem;
       font-style: italic;
-      color: #d1d5db;
-      line-height: 1.6;
-      margin-bottom: 18px;
-      border-left: 2px solid var(--gold);
-      padding-left: 12px;
-    }
-
-    .interview-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.85rem;
       color: var(--text-muted);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 14px;
+      line-height: 1.55;
+      margin-bottom: 16px;
+      border-left: 2px solid var(--accent);
+      padding-left: 14px;
     }
-
-    .interview-btn {
+    .interview-byline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+    .interview-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid var(--border-color);
-      color: var(--gold-light);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: var(--transition);
+      gap: 4px;
     }
-    .interview-btn:hover {
-      background: var(--gold);
-      color: #0b0c10;
-    }
+    .interview-link:hover { color: var(--accent-hover); }
 
-    /* SAĞ KUTU: 4'LÜ KAYDIRILABİLİR GÜNCEL SANAT HABERLERİ */
-    .news-column {
+    /* SAĞ: Canlı Sanat Haberleri (Google News - Tam 4 tane, aşağı kaydırılır) */
+    .news-feed-box {
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      border-radius: 4px;
       display: flex;
       flex-direction: column;
-      height: 540px; /* Sol kutuyla birebir aynı yükseklik */
+      height: 520px; /* Sol kutuyla matematiksel eşitlik */
       overflow: hidden;
-      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
     }
-
-    .news-header {
-      padding: 16px 20px;
-      background: #151722;
-      border-bottom: 1px solid var(--border-color);
+    .news-feed-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      background: #111217;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    .news-header-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
+    .feed-heading {
+      font-size: 0.8rem;
       font-weight: 700;
-      color: #fff;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-
-    .news-scroll-controls {
-      display: flex;
-      gap: 6px;
+    .feed-heading::before {
+      content: '';
+      width: 4px;
+      height: 12px;
+      background: var(--editorial-kicker);
     }
-
-    .scroll-btn {
-      width: 28px;
-      height: 28px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
+    .feed-controls {
+      display: flex;
+      gap: 4px;
+    }
+    .feed-nav-btn {
+      width: 26px;
+      height: 26px;
+      background: transparent;
+      border: 1px solid var(--border);
       color: var(--text-muted);
+      border-radius: 2px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      font-size: 0.75rem;
-      transition: var(--transition);
+      font-size: 0.7rem;
+      transition: all 0.15s ease;
     }
-    .scroll-btn:hover {
-      background: var(--gold);
-      color: #0b0c10;
+    .feed-nav-btn:hover {
+      background: var(--bg-hover);
+      color: #fff;
+      border-color: var(--accent);
     }
 
-    /* Kaydırılabilir Liste (Aynı anda tam 4 tane görünür) */
-    .news-scroll-list {
+    /* Akış Listesi */
+    .feed-scroll-area {
       flex: 1;
       overflow-y: auto;
       scroll-behavior: smooth;
       padding: 10px 14px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
+    /* İnce, sade kaydırma çubuğu */
+    .feed-scroll-area::-webkit-scrollbar { width: 4px; }
+    .feed-scroll-area::-webkit-scrollbar-track { background: transparent; }
+    .feed-scroll-area::-webkit-scrollbar-thumb { background: #2f323f; }
+    .feed-scroll-area::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-    /* Özel Altın Yaldızlı Kaydırma Çubuğu */
-    .news-scroll-list::-webkit-scrollbar {
-      width: 5px;
-    }
-    .news-scroll-list::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 10px;
-    }
-    .news-scroll-list::-webkit-scrollbar-thumb {
-      background: var(--gold-dark);
-      border-radius: 10px;
-    }
-    .news-scroll-list::-webkit-scrollbar-thumb:hover {
-      background: var(--gold);
-    }
-
-    /* Her Haber Kartı - Tam 4 tane sığacak yükseklik */
-    .news-item {
+    /* Tek Haber Kartı (Ekranda aynı anda tam 4 tane görünecek ölçü) */
+    .feed-item {
       display: flex;
       align-items: center;
       gap: 12px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
       padding: 10px;
-      height: 106px; /* 4 kart + boşluklar = tam 500px görünür alan */
+      border-bottom: 1px solid var(--border);
+      background: transparent;
+      height: 104px;
       flex-shrink: 0;
-      transition: var(--transition);
+      transition: background 0.15s ease;
     }
-    .news-item:hover {
-      border-color: var(--border-hover);
-      background: #1e202e;
-      transform: translateX(4px);
+    .feed-item:last-child { border-bottom: none; }
+    .feed-item:hover {
+      background: var(--bg-hover);
     }
-
-    .news-thumb {
-      width: 90px;
-      height: 84px;
-      border-radius: 8px;
-      flex-shrink: 0;
+    .feed-item-thumb {
+      width: 82px;
+      height: 82px;
+      border-radius: 2px;
       overflow: hidden;
-      background: #252838;
+      flex-shrink: 0;
+      background: #1c1d24;
     }
-    .news-thumb img {
+    .feed-item-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
     }
-    .news-item:hover .news-thumb img {
-      transform: scale(1.08);
-    }
-
-    .news-content {
+    .feed-item-info {
       flex: 1;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-width: 0;
     }
-
-    .news-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.7rem;
+    .feed-item-kicker {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
       margin-bottom: 4px;
     }
-
-    .news-cat {
-      color: var(--gold-light);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .news-source {
-      color: var(--text-dim);
-    }
-
-    .news-title {
-      font-size: 0.86rem;
+    .feed-item-title {
+      font-size: 0.85rem;
       font-weight: 600;
       line-height: 1.35;
-      color: #f3f4f6;
+      color: #e5e7eb;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-
-    .news-date {
-      font-size: 0.7rem;
+    .feed-item-meta {
+      font-size: 0.72rem;
       color: var(--text-dim);
       margin-top: 4px;
     }
 
-    /* 5. DİĞER BÖLÜMLER */
-    .section-title-wrap {
+    /* ==========================================================================
+       4. EDİTORYAL DERGİ YAZILARI & ELEŞTİRİ (3 Kolonlu Asimetrik Düzen)
+       ========================================================================== */
+    .editorial-section {
+      padding: 50px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-bar {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin: 48px 0 24px;
+      align-items: flex-end;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 8px;
+      margin-bottom: 28px;
     }
-    .section-heading {
-      font-family: 'Cinzel', serif;
-      font-size: 1.6rem;
-      position: relative;
-      padding-left: 14px;
+    .section-bar-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
-    .section-heading::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 15%;
-      height: 70%;
-      width: 4px;
-      background: var(--gold);
-      border-radius: 2px;
+    .section-bar-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
     }
 
-    .grid-3 {
+    .triptych-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 56px;
+      gap: 28px;
     }
-    .art-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: var(--transition);
+    .essay-card {
       display: flex;
       flex-direction: column;
-    }
-    .art-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-    }
-    .art-card-img {
-      height: 220px;
-      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
       overflow: hidden;
-      background: #1c1e2b;
+      transition: border-color 0.2s ease;
     }
-    .art-card-img img {
+    .essay-card:hover { border-color: var(--border-accent); }
+    .essay-image {
+      height: 210px;
+      width: 100%;
+      background: #1c1d24;
+      overflow: hidden;
+    }
+    .essay-image img {
       width: 100%;
       height: 100%;
       transition: transform 0.4s ease;
     }
-    .art-card:hover .art-card-img img {
-      transform: scale(1.05);
-    }
-    .art-card-body {
-      padding: 20px;
+    .essay-card:hover .essay-image img { transform: scale(1.03); }
+    .essay-body {
+      padding: 22px;
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-
-    /* FOOTER */
-    .footer {
-      background: #08090d;
-      border-top: 1px solid var(--border-color);
-      padding: 50px 0 24px;
-      font-size: 0.9rem;
+    .essay-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
     }
-    .footer-bottom {
-      border-top: 1px solid var(--border-color);
-      padding-top: 20px;
-      margin-top: 30px;
+    .essay-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .essay-abstract {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .essay-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
       display: flex;
       justify-content: space-between;
+      font-size: 0.75rem;
       color: var(--text-dim);
-      font-size: 0.8rem;
     }
 
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .news-column { height: 480px; }
-      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    /* ==========================================================================
+       5. GÜNCEL SERGİ AJANDASI (Müze & Galeri Takvimi)
+       ========================================================================== */
+    .agenda-section {
+      padding: 50px 0;
+      border-bottom: 1px solid var(--border);
     }
-    @media (max-width: 640px) {
-      .grid-3 { grid-template-columns: 1fr; }
-      .nav-menu { display: none; }
-      .logo { font-size: 2.3rem; }
-      .interview-title { font-size: 1.5rem; }
+    .agenda-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    .agenda-table th {
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .agenda-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .agenda-table tr:hover td {
+      background: var(--bg-surface);
+    }
+    .agenda-date-col {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .agenda-title-col {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .agenda-place-col {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       6. KURUMSAL EDİTORYAL FOOTER
+       ========================================================================== */
+    .site-footer {
+      padding: 60px 0 32px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .footer-desc {
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 440px;
+    }
+    .footer-col h5 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: var(--text-muted); }
+    .footer-col a:hover { color: #fff; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      font-size: 0.78rem;
+    }
+
+    /* Responsive Uyarlamalar */
+    @media (max-width: 960px) {
+      .lead-grid { grid-template-columns: 1fr; }
+      .news-feed-box { height: 480px; }
+      .triptych-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .nav-list { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Üst Bilgi Barı -->
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="live-indicator">
+  <!-- 1. ÜST BİLGİ BARI -->
+  <div class="masthead-utility">
+    <div class="container masthead-utility-inner">
+      <div class="utility-meta">
+        <span>İstanbul</span>
+        <span>•</span>
+        <span id="mastheadDate">7 Kasım 2026</span>
+        <span>•</span>
+        <span>Sayı 01 / Güz Dönemi</span>
+      </div>
+      <div class="live-feed-badge">
         <span class="live-dot"></span>
         <span>Google Sanat Akışı Canlı</span>
-      </div>
-      <div class="top-bar-links">
-        <a href="#roportajlar">Röportajlar</a>
-        <a href="#haberler">Haberler</a>
-        <a href="#sergiler">Sergiler</a>
-        <a href="#iletisim">İletişim</a>
       </div>
     </div>
   </div>
 
-  <!-- Logo -->
-  <header class="main-header">
+  <!-- 2. MASTHEAD / MARKA LOGO -->
+  <header class="masthead-main">
     <div class="container">
-      <a href="/dergi" style="display: inline-block;">
-        <h1 class="logo">BIRESKU</h1>
-        <div class="logo-slogan">Sanatın & Kültürün Dijital Buluşma Noktası</div>
+      <a href="/dergi">
+        <h1 class="brand-title">BIRESKU</h1>
+        <p class="brand-tagline">Çağdaş Sanat, Görsel Kültür ve Eleştiri Mecrası</p>
       </a>
     </div>
   </header>
 
-  <!-- Menü -->
-  <nav class="navbar">
+  <!-- 3. NAVİGASYON -->
+  <nav class="site-nav">
     <div class="container nav-inner">
-      <ul class="nav-menu">
+      <ul class="nav-list">
         <li><a href="/dergi" class="active">Ana Sayfa</a></li>
-        <li><a href="#roportajlar">Röportajlar</a></li>
-        <li><a href="#haberler">Sanat Haberleri</a></li>
-        <li><a href="#sergiler">Galeriler & Sergiler</a></li>
-        <li><a href="#yazarlar">Yazarlar</a></li>
+        <li><a href="#roportaj">Söyleşi</a></li>
+        <li><a href="#haberler">Haber Akışı</a></li>
+        <li><a href="#elestiri">Yazılar & İnceleme</a></li>
+        <li><a href="#ajanda">Sergi Takvimi</a></li>
+        <li><a href="#kunye">Künye</a></li>
       </ul>
-      <div class="search-box">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <input type="text" id="searchInput" placeholder="Sanat veya sergi ara..." onkeyup="filterNews(this.value)">
+      <div class="nav-search">
+        <input type="text" id="searchInput" placeholder="Sanatçı veya konu ara..." onkeyup="filterNews(this.value)">
       </div>
     </div>
   </nav>
 
   <main class="container">
-    
-    <!-- MANŞET BÖLÜMÜ -->
-    <section class="hero-section" id="roportajlar">
-      <div class="hero-grid">
-        
-        <!-- SOL KUTU: EN SON YAPILAN RÖPORTAJ -->
-        <article class="interview-card">
-          <!-- Güvenilir yüksek çözünürlüklü sanatçı görseli -->
-          <img class="interview-bg-img" 
-               src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80" 
-               alt="Biresku Özel Röportaj"
-               onerror="this.src='https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1200&q=80'">
-          
-          <div class="interview-overlay">
-            <span class="interview-badge">★ En Son Yapılan Röportaj</span>
-            <h2 class="interview-title">Atölye Söyleşileri: Tuvaldeki Sessiz Devrim ve Renklerin Felsefesi</h2>
-            <p class="interview-quote">
-              "Sanat, insanın kendine en dürüst aynayı tuttuğu andır. Fırçanın her dokunuşu ruhun görünmeyen derinliklerine açılan bir kapıdır..."
-            </p>
-            <div class="interview-meta">
+
+    <!-- 4. EDİTORYAL MANŞET GRID -->
+    <section class="lead-section" id="roportaj">
+      <div class="lead-grid">
+
+        <!-- SOL: En Son Yapılan Röportaj -->
+        <article class="interview-feature">
+          <div class="interview-visual">
+            <span class="interview-kicker">Özel Söyleşi</span>
+            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Sanatçı Atölyesi" 
+                 onerror="this.src='https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1200&q=80'">
+          </div>
+          <div class="interview-content">
+            <div>
+              <h2 class="interview-headline">Atölye Buluşmaları: Tuvaldeki Sessiz Direniş ve Renklerin Felsefesi</h2>
+              <blockquote class="interview-quote">
+                "Resim yapmak, dünyanın gürültüsüne karşı kendi suskunluğunu inşa etmektir. Fırçanın yüzeyle temas ettiği ilk an, bildiğiniz tüm teoriler susar."
+              </blockquote>
+            </div>
+            <div class="interview-byline">
               <div>
-                <strong style="color: #fff;">Konuk: Ressam Mehmet Yılmaz</strong>
-                <div style="font-size: 0.75rem; color: var(--gold-light);">Söyleşi Masası: Deniz Aksoy • 7 Kasım 2026</div>
+                <strong>Konuk: Ressam Mehmet Yılmaz</strong>
+                <div>Söyleşi: Selin Yıldız • Fotoğraf: Atölye Arşivi</div>
               </div>
-              <a href="#yazilar" class="interview-btn">
-                <span>Röportajı Oku</span>
+              <a href="#elestiri" class="interview-link">
+                <span>Metni Oku</span>
                 <span>&rarr;</span>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- SAĞ KUTU: EN SON SANAT HABERLERİ (GOOGLE NEWS - AYNI ANDA 4 TANE & KAYDIRILABİLİR) -->
-        <div class="news-column" id="haberler">
-          <div class="news-header">
-            <div class="news-header-title">
-              <span style="color: var(--gold);">●</span>
-              <span>Son Sanat Haberleri</span>
-            </div>
-            <div class="news-scroll-controls">
-              <button class="scroll-btn" onclick="scrollNews(-116)" title="Yukarı Kaydır">▲</button>
-              <button class="scroll-btn" onclick="scrollNews(116)" title="Aşağı Kaydır">▼</button>
+        <!-- SAĞ: En Son Sanat Haberleri (Canlı Google Akışı - Tam 4 tane ve kaydırılabilir) -->
+        <div class="news-feed-box" id="haberler">
+          <div class="news-feed-header">
+            <div class="feed-heading">Google Sanat Akışı</div>
+            <div class="feed-controls">
+              <button class="feed-nav-btn" onclick="scrollNews(-104)" title="Yukarı">▲</button>
+              <button class="feed-nav-btn" onclick="scrollNews(104)" title="Aşağı">▼</button>
             </div>
           </div>
 
-          <!-- Canlı Google Haberler Listesi (CSS ile 4'lü görüntüleme) -->
-          <div class="news-scroll-list" id="newsList">
-            <!-- JavaScript burayı otomatik ve anında doldurur -->
+          <div class="feed-scroll-area" id="newsList">
+            <!-- JavaScript burayı dinamik olarak doldurur -->
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SANATÇI DOSYALARI & İNCELEMELER -->
-    <section id="yazilar">
-      <div class="section-title-wrap">
-        <h2 class="section-heading">Öne Çıkan Sanatçı Dosyaları</h2>
-        <span style="color: var(--gold-light); font-size: 0.85rem;">Biresku Özel Seçkisi</span>
+    <!-- 5. ELEŞTİRİ & İNCELEME (3'lü Asimetrik Düzen) -->
+    <section class="editorial-section" id="elestiri">
+      <div class="section-bar">
+        <h3 class="section-bar-title">Eleştiri & İnceleme</h3>
+        <span class="section-bar-link">Güncel Dosyalar</span>
       </div>
 
-      <div class="grid-3">
-        <article class="art-card">
-          <div class="art-card-img">
-            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Çağdaş Sanat">
+      <div class="triptych-grid">
+        <!-- Yazı 1 -->
+        <article class="essay-card">
+          <div class="essay-image">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Türk Resmi">
           </div>
-          <div class="art-card-body">
+          <div class="essay-body">
             <div>
-              <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 6px;">PORTRE DOSYASI</div>
-              <h3 style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: #fff; margin-bottom: 10px;">Işığın ve Mekânın Ötesinde</h3>
-              <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">Soyut dışavurumculuğun günümüz Türk resmine yansımaları ve genç sanatçıların üslup arayışları.</p>
+              <div class="essay-tag">Resim Sanatı</div>
+              <h4 class="essay-title">Modern Tuvalde Geleneksel Hafızanın Katmanları</h4>
+              <p class="essay-abstract">Çağdaş resimde kök arayışları, minyatür mekanından soyutlamaya geçişin estetik gerilimi üzerine bir çözümleme.</p>
             </div>
-            <div style="display:flex; justify-content:space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 14px; border-top: 1px solid var(--border-color); padding-top: 10px;">
-              <span>Selin Yıldız</span>
-              <span>5 dk</span>
+            <div class="essay-footer">
+              <span>Yazar: Deniz Aksoy</span>
+              <span>6 dk okuma</span>
             </div>
           </div>
         </article>
 
-        <article class="art-card">
-          <div class="art-card-img">
-            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=600&q=80" alt="Heykel Sanatı">
+        <!-- Yazı 2 -->
+        <article class="essay-card">
+          <div class="essay-image">
+            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=600&q=80" alt="Heykel Form">
           </div>
-          <div class="art-card-body">
+          <div class="essay-body">
             <div>
-              <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 6px;">HEYKEL & FORM</div>
-              <h3 style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: #fff; margin-bottom: 10px;">Mermerin ve Metalin Dansı</h3>
-              <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">Hacim, boşluk ve kütle dengesi: Üç boyutlu sanat üretiminde malzemenin konuşan dili.</p>
+              <div class="essay-tag">Heykel & Mekân</div>
+              <h4 class="essay-title">Kütle, Boşluk ve Heykelin Kamusal Sessizliği</h4>
+              <p class="essay-abstract">Kent mekânında heykelin varlığı: Yalnızca anıtsal değil, bireyin gündelik rotasıyla kurduğu temas noktaları.</p>
             </div>
-            <div style="display:flex; justify-content:space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 14px; border-top: 1px solid var(--border-color); padding-top: 10px;">
-              <span>Murat Çelik</span>
-              <span>4 dk</span>
+            <div class="essay-footer">
+              <span>Yazar: Murat Çelik</span>
+              <span>5 dk okuma</span>
             </div>
           </div>
         </article>
 
-        <article class="art-card">
-          <div class="art-card-img">
+        <!-- Yazı 3 -->
+        <article class="essay-card">
+          <div class="essay-image">
             <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Galeri ve Sergi">
           </div>
-          <div class="art-card-body">
+          <div class="essay-body">
             <div>
-              <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 6px;">SERGİ ELEŞTİRİSİ</div>
-              <h3 style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: #fff; margin-bottom: 10px;">Görünmeyenin İzinde Bir Sonbahar</h3>
-              <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">Kasım ayında sanatseverlerle buluşan yeni karma sergilerin tematik karşılaştırması.</p>
+              <div class="essay-tag">Küratöryel Yaklaşım</div>
+              <h4 class="essay-title">Beyaz Küpün Sınırları: Yeni Nesil Galericilik</h4>
+              <p class="essay-abstract">Sanat galerilerinin salt sergileme alanı olmaktan çıkıp kamusal tartışma ve kolektif atölye mekânlarına evrilmesi.</p>
             </div>
-            <div style="display:flex; justify-content:space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 14px; border-top: 1px solid var(--border-color); padding-top: 10px;">
-              <span>Emre Kaya</span>
-              <span>6 dk</span>
+            <div class="essay-footer">
+              <span>Yazar: Aslı Tezcan</span>
+              <span>7 dk okuma</span>
             </div>
           </div>
         </article>
       </div>
     </section>
 
+    <!-- 6. SERGİ VE GALERİ AJANDASI (Basın Standardı Liste) -->
+    <section class="agenda-section" id="ajanda">
+      <div class="section-bar">
+        <h3 class="section-bar-title">Sergi Takvimi</h3>
+        <span class="section-bar-link">Kasım – Aralık 2026</span>
+      </div>
+
+      <table class="agenda-table">
+        <thead>
+          <tr>
+            <th style="width: 20%;">Tarih</th>
+            <th style="width: 45%;">Sergi Adı</th>
+            <th style="width: 35%;">Mekân / Şehir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="agenda-date-col">01 – 28 Kasım 2026</td>
+            <td class="agenda-title-col">Zamanın Katmanları: Karma Resim Sergisi</td>
+            <td class="agenda-place-col">Arter Çağdaş Sanat Müzesi • İstanbul</td>
+          </tr>
+          <tr>
+            <td class="agenda-date-col">10 Kasım – 15 Aralık 2026</td>
+            <td class="agenda-title-col">Toprak ve Bellek: Anadolu Heykel Seçkisi</td>
+            <td class="agenda-place-col">CerModern Sanatlar Merkezi • Ankara</td>
+          </tr>
+          <tr>
+            <td class="agenda-date-col">15 Kasım – 30 Aralık 2026</td>
+            <td class="agenda-title-col">Görünmeyenin Ötesi: Yeni Medya ve Tuval</td>
+            <td class="agenda-place-col">Dirimart Galeri • Nişantaşı, İstanbul</td>
+          </tr>
+          <tr>
+            <td class="agenda-date-col">02 – 24 Aralık 2026</td>
+            <td class="agenda-title-col">Ege'nin Işığı: Akdenizli Ressamlar</td>
+            <td class="agenda-place-col">Alsancak Kültür Sanat • İzmir</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer" id="iletisim">
+  <!-- 7. KURUMSAL FOOTER -->
+  <footer class="site-footer" id="kunye">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 24px;">
-        <div style="font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 6px;">BIRESKU SANAT</div>
-        <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 500px; margin: 0 auto;">
-          Sanatçı söyleşileri, sergi rehberleri ve Google Akışı ile güncellenen bağımsız sanat mecrası.
-        </p>
-      </div>
-      <div class="footer-bottom">
-        <div>&copy; 2026 Biresku Dergi. Tüm hakları saklıdır.</div>
+      <div class="footer-top">
         <div>
-          <a href="/" style="color: var(--gold);">Giriş Portalı</a> •
+          <div class="footer-brand-name">BIRESKU</div>
+          <p class="footer-desc">
+            Biresku, sanatın tüm disiplinlerini bağımsız, titiz ve editoryal bir standartla ele alan süreli yayın ve dijital kültür mecrasıdır.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Yayın Bölümleri</h5>
+          <ul>
+            <li><a href="#roportaj">Atölye Söyleşileri</a></li>
+            <li><a href="#elestiri">Eleştiri Yazıları</a></li>
+            <li><a href="#ajanda">Sergi Takvimi</a></li>
+            <li><a href="#haberler">Google Sanat Akışı</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Kurumsal</h5>
+          <ul>
+            <li><a href="#">Yayın İlkeleri</a></li>
+            <li><a href="#">Yazı Kabul Koşulları</a></li>
+            <li><a href="#">Arşiv</a></li>
+            <li><a href="#">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Biresku Sanat Yayıncılığı. Tüm hakları saklıdır.</div>
+        <div>
+          <a href="/" style="color: var(--accent); margin-right: 12px;">Giriş Portalı</a>
           <a href="/dergi" style="color: var(--text-muted);">biresku.com/dergi</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- GOOGLE SANAT HABERLERİNİ CANLI YÜKLEYEN VE KAYDIRAN SCRİPT -->
+  <!-- CANLI GOOGLE HABERLERİNİ İŞLEYEN SCRİPT -->
   <script>
-    let allNews = [];
+    let newsItems = [];
 
-    // 1. news.json dosyasından haberleri çek
-    async function loadNews() {
-      const newsListEl = document.getElementById("newsList");
+    async function initNews() {
+      const container = document.getElementById("newsList");
       try {
-        const res = await fetch("news.json?v=" + Date.now());
-        if (!res.ok) throw new Error("news.json bulunamadı");
-        allNews = await res.json();
-        renderNews(allNews);
+        const response = await fetch("news.json?t=" + Date.now());
+        if (!response.ok) throw new Error("news.json okunamadı");
+        newsItems = await response.json();
+        renderNewsList(newsItems);
       } catch (err) {
-        console.warn("Yerel haberler yüklenemedi, yedek akış devreye giriyor:", err);
-        // Yedek varsayılan Google haberleri
-        allNews = [
+        console.warn("news.json doğrudan yüklenemedi, yedek akış devreye alınıyor:", err);
+        newsItems = [
           {
-            title: "İstanbul’da Kasım Ayı Sergileri: Güncel Sergi Rehberi (2026)",
+            title: "İstanbul’da Kasım Ayı Sergileri: Güncel Sergi Rehberi",
             link: "https://news.google.com",
             source: "Oggusto",
             date: "Bugün",
@@ -744,75 +888,59 @@
           {
             title: "Büyükşehir’den Kasım’da Dolu Dolu Kültür Sanat Programı",
             link: "https://news.google.com",
-            source: "Sanat Ajansı",
+            source: "Kültür Servisi",
             date: "Bugün",
             category: "Etkinlik",
             image: "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
-          },
-          {
-            title: "Yılmaz Erdoğan Fethiyelilerle buluştu: Sanat yolculuğunu anlattı",
-            link: "https://news.google.com",
-            source: "Fethiye Haber",
-            date: "Dün",
-            category: "Röportaj",
-            image: "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
           }
         ];
-        renderNews(allNews);
+        renderNewsList(newsItems);
       }
     }
 
-    // 2. Haber Kartlarını DOM'a Bas (Tam 4 tane görünür, kalanları aşağı kaydırılır)
-    function renderNews(items) {
+    function renderNewsList(items) {
       const container = document.getElementById("newsList");
       if (!items || items.length === 0) {
-        container.innerHTML = `<div style="text-align:center; padding: 40px; color: #9ca3af;">Haber bulunamadı.</div>`;
+        container.innerHTML = '<div style="padding: 24px; text-align: center; color: var(--text-dim); font-size: 0.85rem;">Haber akışı güncelleniyor...</div>';
         return;
       }
 
       container.innerHTML = items.map(item => `
-        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-item">
-          <div class="news-thumb">
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="feed-item">
+          <div class="feed-item-thumb">
             <img src="${item.image || 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=300&q=80'}" 
-                 alt="Haber Görseli" 
+                 alt="Haber" 
                  onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=300&q=80'">
           </div>
-          <div class="news-content">
-            <div class="news-meta">
-              <span class="news-cat">${item.category || 'SANAT'}</span>
-              <span>•</span>
-              <span class="news-source">${item.source || 'Google'}</span>
-            </div>
-            <h4 class="news-title">${item.title}</h4>
-            <div class="news-date">${item.date || 'Bugün'}</div>
+          <div class="feed-item-info">
+            <div class="feed-item-kicker">${item.category || 'SANAT'}</div>
+            <h5 class="feed-item-title">${item.title}</h5>
+            <div class="feed-item-meta">${item.source || 'Google'} • ${item.date || 'Bugün'}</div>
           </div>
         </a>
-      `).join("");
+      `).join('');
     }
 
-    // 3. Yukarı / Aşağı Kaydırma Butonları
-    function scrollNews(offset) {
-      const list = document.getElementById("newsList");
-      list.scrollBy({ top: offset, behavior: 'smooth' });
+    function scrollNews(delta) {
+      const el = document.getElementById("newsList");
+      el.scrollBy({ top: delta, behavior: 'smooth' });
     }
 
-    // 4. Arama Kutusu Filtreleme
-    function filterNews(query) {
-      if (!query || query.trim() === "") {
-        renderNews(allNews);
+    function filterNews(keyword) {
+      if (!keyword || keyword.trim() === '') {
+        renderNewsList(newsItems);
         return;
       }
-      const q = query.toLowerCase();
-      const filtered = allNews.filter(n => 
-        n.title.toLowerCase().includes(q) || 
-        (n.category && n.category.toLowerCase().includes(q)) ||
-        (n.source && n.source.toLowerCase().includes(q))
+      const k = keyword.toLowerCase();
+      const filtered = newsItems.filter(item => 
+        item.title.toLowerCase().includes(k) || 
+        (item.source && item.source.toLowerCase().includes(k)) ||
+        (item.category && item.category.toLowerCase().includes(k))
       );
-      renderNews(filtered);
+      renderNewsList(filtered);
     }
 
-    // Sayfa açıldığında başlat
-    document.addEventListener("DOMContentLoaded", loadNews);
+    document.addEventListener("DOMContentLoaded", initNews);
   </script>
 
 </body>
