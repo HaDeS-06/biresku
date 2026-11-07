@@ -64,27 +64,31 @@
       align-items: center;
     }
 
-    /* Logo */
+    /* Logo Banner */
     .masthead-main {
-      padding: 34px 0 22px;
+      padding: 24px 0 20px;
       text-align: center;
-      border-bottom: 3px double var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    .brand-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 5vw, 3.8rem);
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      color: #ffffff;
-      line-height: 1;
-      text-transform: uppercase;
+    .brand-banner-link {
+      display: inline-block;
+      max-width: 840px;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.7);
+      transition: transform 0.25s ease;
     }
-    .brand-tagline {
-      font-family: var(--font-reading);
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--text-muted);
-      margin-top: 6px;
+    .brand-banner-link:hover {
+      transform: scale(1.01);
+    }
+    .brand-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      border-radius: 8px;
     }
 
     /* Menü */
@@ -447,12 +451,14 @@
 </head>
 <body>
 
-  <!-- Logo -->
+  <!-- Logo Banner -->
   <header class="masthead-main">
     <div class="container">
-      <a href="/dergi">
-        <h1 class="brand-title">BIRESKU</h1>
-        <p class="brand-tagline">Birleşmiş Ressamlar Kulübü</p>
+      <a href="/dergi" class="brand-banner-link">
+        <img src="/assets/biresku-banner.jpg" 
+             alt="BİRESKU - Birleşmiş Ressamlar Kulübü" 
+             class="brand-banner-img"
+             loading="eager">
       </a>
     </div>
   </header>
