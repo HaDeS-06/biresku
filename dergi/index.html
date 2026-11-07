@@ -963,6 +963,23 @@
       }
     }
 
+    function formatTurkishDate(str) {
+      if (!str) return "Bugün";
+      const months = {
+        "Jan": "Ocak", "Feb": "Şubat", "Mar": "Mart", "Apr": "Nisan",
+        "May": "Mayıs", "Jun": "Haziran", "Jul": "Temmuz", "Aug": "Ağustos",
+        "Sep": "Eylül", "Oct": "Ekim", "Nov": "Kasım", "Dec": "Aralık"
+      };
+      const match = String(str).match(/(\d{1,2})\s+([A-Za-z]{3})\s+(\d{4})/);
+      if (match) {
+        const day = match[1].padStart(2, '0');
+        const mon = months[match[2]] || match[2];
+        const yr = match[3];
+        return `${day} ${mon} ${yr}`;
+      }
+      return str;
+    }
+
     function renderNewsList(items) {
       const container = document.getElementById("newsList");
       if (!items || items.length === 0) {
@@ -983,7 +1000,7 @@
             <div class="feed-item-info">
               <div class="feed-item-kicker">${item.category || 'SANAT'}</div>
               <h5 class="feed-item-title">${item.title}</h5>
-              <div class="feed-item-meta">${item.source || 'Haber'} • ${item.date || 'Bugün'}</div>
+              <div class="feed-item-meta">${item.source || 'Haber'} • ${formatTurkishDate(item.date)}</div>
             </div>
           </a>
         `;
