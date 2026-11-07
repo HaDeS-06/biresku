@@ -1,0 +1,31 @@
+name: Auto Update Google Art News
+
+on:
+  schedule:
+    # Her 6 saatte bir otomatik çalışır
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Manuel tetikleme butonu
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch Google Art News
+        run: python scripts/fetch_news.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Biresku Bot"
+          git config --global user.email "bot@biresku.com"
+          git add dergi/news.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto update Google Art News [skip ci]" && git push)
