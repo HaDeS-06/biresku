@@ -5,7 +5,7 @@ const ARTISTS_DATA = [
     "name": "Prof. Dr. Adnan Turani",
     "discipline": "Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı",
     "category": "Ressam & Sanat Tarihçisi",
-    "city": "Ankara / İstanbul",
+    "city": "İstanbul / Ankara",
     "studio": "Turani Atölyesi",
     "coverImage": "/assets/adnan-turani/adnan-turani-pp.jpg",
     "shortBio": "Türk çağdaş resim sanatının soyut ekoldeki öncülerinden; Türk sanat literatürünün temel başvuru kaynaklarını kaleme alan bilge sanat tarihçisi ve akademisyen.",
@@ -107,7 +107,9 @@ const ARTISTS_DATA = [
         "image": "/assets/adnan-turani/sokak-calgicilari.jpg",
         "imageUrl": "/assets/adnan-turani/sokak-calgicilari.jpg"
       }
-    ]
+    ],
+    "addedDate": "2026-11-08",
+    "period": "1925 – 2016"
   },
   {
     "id": "sanatci-2",
@@ -187,7 +189,8 @@ const ARTISTS_DATA = [
         "image": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
         "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80"
       }
-    ]
+    ],
+    "addedDate": "2026-10-01"
   },
   {
     "id": "sanatci-3",
@@ -267,7 +270,8 @@ const ARTISTS_DATA = [
         "image": "https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?auto=format&fit=crop&w=800&q=80",
         "imageUrl": "https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?auto=format&fit=crop&w=800&q=80"
       }
-    ]
+    ],
+    "addedDate": "2026-10-01"
   },
   {
     "id": "sanatci-4",
@@ -347,6 +351,7 @@ const ARTISTS_DATA = [
         "image": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80",
         "imageUrl": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80"
       }
-    ]
+    ],
+    "addedDate": "2026-10-01"
   }
 ];
