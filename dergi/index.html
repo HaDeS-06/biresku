@@ -78,23 +78,24 @@
       border-radius: 50%;
     }
 
-    /* 2. LOGO & MASTHEAD BANNER */
+    /* 2. LOGO & MASTHEAD BANNER (Tam Genişlikte Kusursuz Uyum) */
     .masthead-main {
-      padding: 24px 0 20px;
+      padding: 14px 0 12px;
       text-align: center;
       border-bottom: 1px solid var(--border);
     }
     .brand-banner-link {
-      display: inline-block;
-      max-width: 840px;
+      display: block;
       width: 100%;
-      border-radius: 8px;
+      max-width: 1260px;
+      margin: 0 auto;
+      border-radius: 4px;
       overflow: hidden;
-      box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.7);
-      transition: transform 0.25s ease;
+      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.7);
+      transition: opacity 0.2s ease;
     }
     .brand-banner-link:hover {
-      transform: scale(1.01);
+      opacity: 0.96;
     }
     .brand-banner-img {
       width: 100%;
@@ -102,7 +103,7 @@
       display: block;
       object-fit: contain;
       image-rendering: -webkit-optimize-contrast;
-      border-radius: 8px;
+      border-radius: 4px;
     }
 
     /* 3. NAVİGASYON */
