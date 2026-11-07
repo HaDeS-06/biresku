@@ -6,6 +6,19 @@
   <title>Sanatçılarımız | Biresku Sanat</title>
   <meta name="description" content="Biresku Sanat bünyesindeki tüm ressamlar, heykeltıraşlar ve görsel sanatçılar kataloğu.">
 
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('biresku-theme');
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,18 +28,43 @@
     :root {
       --bg: #0f1013;
       --bg-surface: #15161b;
-      --bg-hover: #1b1d24;
+      --bg-card: #1c1d24;
+      --bg-hover: #1f212a;
       --border: #242630;
       --border-accent: #3a3d4d;
       --text-main: #f0f1f5;
+      --text-heading: #ffffff;
       --text-muted: #9fa3b2;
       --text-dim: #646877;
       --accent: #c09a58;
       --accent-hover: #d8b26e;
+      --nav-bg: rgba(15, 16, 19, 0.96);
+      --card-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.7);
+      --badge-bg: rgba(192, 154, 88, 0.1);
+      --badge-border: rgba(192, 154, 88, 0.25);
       
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-reading: 'Cormorant Garamond', Garamond, serif;
       --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8f7f4;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --bg-hover: #f1efe9;
+      --border: #e2ddd4;
+      --border-accent: #c8c1b4;
+      --text-main: #1d1e22;
+      --text-heading: #0f1013;
+      --text-muted: #535665;
+      --text-dim: #7f8393;
+      --accent: #a8813a;
+      --accent-hover: #8e6826;
+      --nav-bg: rgba(248, 247, 244, 0.95);
+      --card-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.08);
+      --badge-bg: rgba(168, 129, 58, 0.08);
+      --badge-border: rgba(168, 129, 58, 0.22);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,6 +76,19 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .site-nav,
+    .catalog-header,
+    .filter-btn,
+    .artist-card,
+    .profile-hero,
+    .artwork-item,
+    .site-footer,
+    .theme-toggle-btn,
+    .back-btn {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
     }
 
     a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
@@ -95,7 +146,7 @@
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      background: rgba(15, 16, 19, 0.96);
+      background: var(--nav-bg);
       backdrop-filter: blur(8px);
       z-index: 50;
     }
@@ -120,8 +171,69 @@
       border-bottom: 2px solid transparent;
     }
     .nav-list a:hover, .nav-list a.active {
-      color: #ffffff;
+      color: var(--text-heading);
       border-color: var(--accent);
+    }
+
+    /* TEMA DEĞİŞTİRME BUTONU (GÜNDÜZ / GECE) */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      user-select: none;
+    }
+    .theme-toggle-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--bg-hover);
+      transform: translateY(-1px);
+    }
+    .theme-toggle-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .theme-toggle-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .theme-toggle-btn:hover .theme-toggle-icon {
+      transform: rotate(20deg);
+    }
+
+    /* Koyu modda güneş ikonunu göster, hilali gizle */
+    :root:not([data-theme="light"]) .theme-toggle-moon,
+    [data-theme="dark"] .theme-toggle-moon {
+      display: none !important;
+    }
+    :root:not([data-theme="light"]) .theme-toggle-sun,
+    [data-theme="dark"] .theme-toggle-sun {
+      display: inline-flex !important;
+    }
+
+    /* Açık (Gündüz) modda hilal ikonunu göster, güneşi gizle */
+    [data-theme="light"] .theme-toggle-sun {
+      display: none !important;
+    }
+    [data-theme="light"] .theme-toggle-moon {
+      display: inline-flex !important;
     }
     .nav-search input {
       background: transparent;
@@ -149,7 +261,7 @@
       font-family: var(--font-serif);
       font-size: 2.4rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-heading);
       line-height: 1.2;
     }
     .catalog-desc {
@@ -194,7 +306,7 @@
     }
     .filter-btn:hover, .filter-btn.active {
       background: var(--accent);
-      color: #0b0c10;
+      color: #ffffff;
       border-color: var(--accent);
     }
 
@@ -263,7 +375,7 @@
       font-family: var(--font-serif);
       font-size: 1.4rem;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text-heading);
       margin-bottom: 6px;
     }
     .artist-discipline {
@@ -335,7 +447,7 @@
     }
     .back-btn:hover {
       background: var(--accent);
-      color: #0b0c10;
+      color: #ffffff;
       border-color: var(--accent);
     }
 
@@ -361,7 +473,7 @@
       font-family: var(--font-serif);
       font-size: 2.4rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-heading);
       margin-bottom: 6px;
     }
     .profile-discipline {
@@ -386,7 +498,7 @@
       font-size: 0.85rem;
       color: var(--text-dim);
     }
-    .profile-meta-list strong { color: #fff; }
+    .profile-meta-list strong { color: var(--text-heading); }
 
     .artworks-heading {
       font-family: var(--font-serif);
@@ -422,7 +534,7 @@
       font-family: var(--font-serif);
       font-size: 1.1rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text-heading);
       margin-bottom: 4px;
     }
     .artwork-meta { font-size: 0.78rem; color: var(--text-dim); }
@@ -444,7 +556,10 @@
       .artists-catalog-grid { grid-template-columns: 1fr; }
       .profile-hero { grid-template-columns: 1fr; }
       .artworks-grid { grid-template-columns: 1fr; }
-      .nav-list { display: none; }
+      .nav-inner { padding: 4px 16px; }
+      .nav-list { display: flex; gap: 16px; }
+      .nav-list a { padding: 12px 0; font-size: 0.8rem; }
+      .theme-toggle-btn { padding: 5px 10px; font-size: 0.72rem; }
     }
   </style>
 </head>
@@ -461,12 +576,36 @@
   </header>
 
   <!-- Navigasyon -->
+  <!-- Navigasyon -->
   <nav class="site-nav">
     <div class="container nav-inner">
       <ul class="nav-list">
         <li><a href="/dergi">Ana Sayfa</a></li>
         <li><a href="/dergi/sanatcilar/" class="active" onclick="showCatalogPage(event)">Sanatçılarımız</a></li>
       </ul>
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
+          <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-text">Gündüz</span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -767,7 +906,49 @@
       }
     }
 
+    
+    // --- TEMA YÖNETİMİ (GÜNDÜZ / GECE MODU) ---
+    function initTheme() {
+      const toggleBtn = document.getElementById("themeToggleBtn");
+      if (!toggleBtn) return;
+      const textSpan = toggleBtn.querySelector(".theme-toggle-text");
+
+      function updateBtn(theme) {
+        if (textSpan) {
+          textSpan.textContent = (theme === "light") ? "Gece" : "Gündüz";
+        }
+        const label = (theme === "light") ? "Gece moduna geç" : "Gündüz moduna geç";
+        toggleBtn.setAttribute("aria-label", label);
+        toggleBtn.setAttribute("title", label);
+      }
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        try {
+          localStorage.setItem("biresku-theme", theme);
+        } catch (e) {}
+        updateBtn(theme);
+      }
+
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      updateBtn(current);
+
+      toggleBtn.addEventListener("click", () => {
+        const active = document.documentElement.getAttribute("data-theme") || "dark";
+        const next = (active === "light") ? "dark" : "light";
+        setTheme(next);
+      });
+
+      window.addEventListener("storage", (e) => {
+        if (e.key === "biresku-theme" && e.newValue) {
+          document.documentElement.setAttribute("data-theme", e.newValue);
+          updateBtn(e.newValue);
+        }
+      });
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
+      initTheme();
       renderCatalog(ARTISTS_DATA);
       handleInitialRoute();
     });
