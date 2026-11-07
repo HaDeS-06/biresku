@@ -4,296 +4,203 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biresku | Yönlendiriliyorsunuz</title>
-  <meta name="description" content="Biresku Dergisi yönlendirme sayfası.">
+  <meta name="description" content="Biresku Sanat & Kültür Mecrası resmi karşılama ve yönlendirme sayfası.">
   
-  <!-- JavaScript devre dışıysa yedek otomatik yönlendirme (5 saniye) -->
-  <meta http-equiv="refresh" content="5;url=/dergi">
+  <meta http-equiv="refresh" content="4;url=/dergi">
 
+  <!-- Google Fonts: Editorial Serif & Clean Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-gradient: radial-gradient(circle at top center, #1a1b26 0%, #0c0d14 100%);
-      --card-bg: rgba(255, 255, 255, 0.04);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --accent: #c5a059;
-      --accent-hover: #dfb76c;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
+      --bg: #0f1013;
+      --card-bg: #15161b;
+      --border: #242630;
+      --accent: #c09a58;
+      --accent-hover: #d8b26e;
+      --text: #f0f1f5;
+      --text-muted: #9fa3b2;
+      --text-dim: #646877;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-reading: 'Cormorant Garamond', Garamond, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--bg-gradient);
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      color: var(--text-main);
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
       padding: 24px;
-      overflow-x: hidden;
       position: relative;
     }
 
-    /* Arka plan ışık efekti */
-    .glow-sphere {
-      position: absolute;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      filter: blur(60px);
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 480px;
+    .gateway-card {
+      max-width: 460px;
       width: 100%;
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-radius: 28px;
-      padding: 48px 36px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 44px 36px 36px;
       text-align: center;
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      animation: fadeIn 0.8s ease-out;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .brand-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 9999px;
-      background: rgba(197, 160, 89, 0.12);
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      color: #dfb76c;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      background: #dfb76c;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #dfb76c;
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
-
-    .title {
-      font-family: 'Cinzel', serif;
-      font-size: 2.8rem;
+    .brand-kicker {
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-      color: #ffffff;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
     }
 
-    .subtitle {
-      font-size: 1.05rem;
-      line-height: 1.6;
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-family: var(--font-reading);
+      font-size: 1.15rem;
+      font-style: italic;
       color: var(--text-muted);
       margin-bottom: 28px;
     }
 
-    /* Geri sayım ve otomatik yönlendirme alanı */
-    .redirect-notice {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 16px 20px;
-      margin-bottom: 28px;
+    .redirect-status {
+      background: #111217;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
     }
 
-    .countdown-text {
-      font-size: 0.95rem;
-      color: #e5e7eb;
-      margin-bottom: 10px;
+    .redirect-status p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
     }
 
-    .countdown-number {
-      display: inline-block;
+    .countdown-val {
+      color: var(--accent);
       font-weight: 700;
-      color: var(--accent-hover);
-      min-width: 14px;
     }
 
-    /* İlerleme çubuğu */
-    .progress-bar-wrap {
+    .progress-track {
       width: 100%;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 9999px;
+      height: 2px;
+      background: var(--border);
       overflow: hidden;
     }
 
-    .progress-bar-fill {
+    .progress-bar {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+      background: var(--accent);
       transition: width 0.1s linear;
     }
 
-    /* Buton */
-    .action-btn {
+    .enter-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 8px;
       width: 100%;
-      padding: 16px 28px;
-      background: linear-gradient(135deg, var(--accent) 0%, #a87f3b 100%);
-      color: #0b0c12;
-      font-size: 1.05rem;
+      padding: 14px 20px;
+      background: var(--accent);
+      color: #0b0c10;
+      font-size: 0.88rem;
       font-weight: 700;
-      border-radius: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 2px;
       text-decoration: none;
-      transition: all 0.25s ease;
-      box-shadow: 0 10px 22px -5px rgba(197, 160, 89, 0.38);
+      transition: background 0.15s ease;
       cursor: pointer;
       border: none;
     }
 
-    .action-btn:hover {
-      background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px -5px rgba(197, 160, 89, 0.55);
+    .enter-btn:hover {
+      background: var(--accent-hover);
     }
 
-    .action-btn:active {
-      transform: translateY(0);
-    }
-
-    .icon-arrow {
-      width: 20px;
-      height: 20px;
-      transition: transform 0.2s ease;
-    }
-
-    .action-btn:hover .icon-arrow {
-      transform: translateX(4px);
-    }
-
-    .target-url {
+    .target-hint {
       display: inline-block;
-      margin-top: 18px;
-      font-size: 0.85rem;
-      color: #6b7280;
-      text-decoration: none;
-      transition: color 0.2s ease;
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
     }
+    .target-hint:hover { color: var(--accent); }
 
-    .target-url:hover {
-      color: var(--accent-hover);
-    }
-
-    .footer {
-      margin-top: 36px;
-      font-size: 0.8rem;
-      color: #6b7280;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding-top: 20px;
+    .card-footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-dim);
     }
   </style>
 </head>
 <body>
-  <div class="glow-sphere"></div>
 
-  <main class="container">
-    <div class="brand-badge">
-      <span class="badge-dot"></span>
-      <span>Yönlendirme</span>
-    </div>
+  <main class="gateway-card">
+    <div class="brand-kicker">Resmi Giriş Portalı</div>
+    <h1 class="brand-logo">BIRESKU</h1>
+    <p class="brand-subtitle">Çağdaş Sanat, Görsel Kültür ve Eleştiri Mecrası</p>
 
-    <h1 class="title">BIRESKU</h1>
-    <p class="subtitle">
-      Biresku Dergisi'ne yönlendiriliyorsunuz. Lütfen bekleyin veya aşağıdaki butona tıklayın.
-    </p>
-
-    <!-- Otomatik Yönlendirme ve Geri Sayım Kutusu -->
-    <div class="redirect-notice">
-      <p class="countdown-text">
-        <span class="countdown-number" id="countdown">4</span> saniye içinde otomatik yönlendiriliyorsunuz...
-      </p>
-      <div class="progress-bar-wrap">
-        <div class="progress-bar-fill" id="progressFill"></div>
+    <div class="redirect-status">
+      <p><span class="countdown-val" id="countNum">4</span> saniye içinde dergi sayfasına aktarılıyorsunuz...</p>
+      <div class="progress-track">
+        <div class="progress-bar" id="barFill"></div>
       </div>
     </div>
 
-    <!-- Hemen Git Butonu -->
-    <a href="/dergi" class="action-btn" id="redirectBtn">
-      <span>Hemen Git</span>
-      <svg class="icon-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-      </svg>
+    <a href="/dergi" class="enter-btn">
+      <span>Dergiyi Aç</span>
+      <span>&rarr;</span>
     </a>
 
     <div>
-      <a href="/dergi" class="target-url">Hedef: biresku.com/dergi</a>
+      <a href="/dergi" class="target-hint">Hedef: biresku.com/dergi</a>
     </div>
 
-    <footer class="footer">
-      &copy; 2026 Biresku. Tüm hakları saklıdır.
+    <footer class="card-footer">
+      &copy; 2026 Biresku Sanat Yayıncılığı
     </footer>
   </main>
 
   <script>
-    // Hedef adres: biresku.com/dergi (veya /dergi)
-    const TARGET_URL = "/dergi";
-    const TOTAL_SECONDS = 4;
-    let remainingTime = TOTAL_SECONDS;
-    const countdownEl = document.getElementById("countdown");
-    const progressFill = document.getElementById("progressFill");
+    const TARGET = "/dergi";
+    const TOTAL_MS = 4000;
+    const start = Date.now();
+    const countEl = document.getElementById("countNum");
+    const fillEl = document.getElementById("barFill");
 
-    // İlerleme çubuğu ve sayaç akışı
-    const startTime = Date.now();
-    const duration = TOTAL_SECONDS * 1000;
+    const timer = setInterval(() => {
+      const elapsed = Date.now() - start;
+      const pct = Math.min((elapsed / TOTAL_MS) * 100, 100);
+      fillEl.style.width = pct + "%";
 
-    const interval = setInterval(() => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min((elapsed / duration) * 100, 100);
-      progressFill.style.width = progress + "%";
+      const left = Math.max(0, Math.ceil((TOTAL_MS - elapsed) / 1000));
+      countEl.textContent = left;
 
-      const secondsLeft = Math.max(0, Math.ceil((duration - elapsed) / 1000));
-      countdownEl.textContent = secondsLeft;
-
-      if (elapsed >= duration) {
-        clearInterval(interval);
-        window.location.href = TARGET_URL;
+      if (elapsed >= TOTAL_MS) {
+        clearInterval(timer);
+        window.location.href = TARGET;
       }
     }, 50);
   </script>
