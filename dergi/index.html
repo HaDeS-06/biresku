@@ -1091,17 +1091,39 @@
     // ==========================================
     let newsItems = [];
 
+    // Politik, parti ve bürokratik haberleri ayıklama filtresi
+    const BLOCKED_POLITICAL_TERMS = [
+      "erdoğan", "erdogan", "kılıçdaroğlu", "kilicdaroglu", "imamoğlu", "imamoglu",
+      "yavaş", "yavas", "özel", "ozel", "bahçeli", "bahceli", "akşener", "aksener",
+      "cumhurbaşkanı", "cumhurbaskani", "başbakan", "basbakan", "bakanı", "bakani",
+      "bakanlığı", "bakanligi", "bakan ", "milletvekili", "vali ", "kaymakam",
+      "belediye", "belediyesi", "büyükşehir", "buyuksehir", "başkan ", "baskan ",
+      "başkan", "baskan", "akp", "ak parti", "chp", "mhp", "iyi parti", "dem parti",
+      "hdp", "zafer partisi", "tbmm", "meclis", "hükümet", "hukumet", "muhalefet",
+      "koalisyon", "siyaset", "siyasi", "politika", "politik", "seçim", "secim",
+      "oy pusulası", "propaganda", "ihale", "ödenek", "odenek", "bütçe", "butce",
+      "kayyum", "tutuklama", "soruşturma", "sorusturma", "kamu davası", "adliye",
+      "ortaokulu", "ilkokulu", "lisesi", "milli eğitim", "milli egitim", "meb",
+      "müdürlüğü", "mudurlugu", "vietnam", "ministerstvo"
+    ];
+
+    function isPureArtNews(item) {
+      if (!item || !item.title) return false;
+      const text = (item.title + " " + (item.source || "") + " " + (item.category || "")).toLowerCase();
+      return !BLOCKED_POLITICAL_TERMS.some(term => text.includes(term));
+    }
+
     async function initNews() {
       const container = document.getElementById("newsList");
       try {
         const response = await fetch("news.json?t=" + Date.now());
         if (!response.ok) throw new Error("news.json okunamadı");
-        newsItems = await response.json();
+        const raw = await response.json();
+        newsItems = Array.isArray(raw) ? raw.filter(isPureArtNews) : [];
       } catch (err) {
         console.warn("news.json doğrudan yüklenemedi:", err);
       }
 
-      // Her habere garantili bir thumbnail ata
       if (newsItems && newsItems.length > 0) {
         newsItems = newsItems.map((item, idx) => ({
           ...item,
