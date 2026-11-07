@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası | Biresku Sanat</title>
+  <meta name="description" content="Biresku (Birleşmiş Ressamlar Kulübü) resmi Gizlilik ve Kişisel Verilerin Korunması Politikası.">
+
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('biresku-theme');
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f1013;
+      --bg-surface: #15161b;
+      --bg-card: #1c1d24;
+      --border: #242630;
+      --border-accent: #3a3d4d;
+      --text-main: #f0f1f5;
+      --text-heading: #ffffff;
+      --text-muted: #9fa3b2;
+      --text-dim: #646877;
+      --accent: #c09a58;
+      --accent-hover: #d8b26e;
+      --nav-bg: rgba(15, 16, 19, 0.96);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-reading: 'Cormorant Garamond', Garamond, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8f7f4;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --border: #e2ddd4;
+      --border-accent: #c8c1b4;
+      --text-main: #1d1e22;
+      --text-heading: #0f1013;
+      --text-muted: #535665;
+      --text-dim: #7f8393;
+      --accent: #a8813a;
+      --accent-hover: #8e6826;
+      --nav-bg: rgba(248, 247, 244, 0.95);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .masthead-main {
+      width: 100%;
+      background: #0f1013;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .brand-banner-link { display: block; width: 100%; line-height: 0; }
+    .brand-banner-img {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 24px;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+    .nav-list { display: flex; gap: 24px; list-style: none; }
+    .nav-list a {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 10px 0;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-list a:hover { color: var(--accent); }
+
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .theme-toggle-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .legal-content {
+      padding: 60px 0 80px;
+    }
+    .legal-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+    }
+    .legal-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .legal-title {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      color: var(--text-heading);
+      line-height: 1.2;
+    }
+    .legal-date {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 10px;
+    }
+
+    .legal-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      margin-bottom: 28px;
+    }
+    .legal-section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-section p {
+      color: var(--text-main);
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+    .legal-section li { margin-bottom: 8px; }
+
+    .site-footer {
+      padding: 36px 0 28px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: var(--bg-surface);
+      text-align: center;
+    }
+    .footer-legal-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+    .footer-brand-title {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .footer-link-item {
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--border-accent);
+      padding-bottom: 2px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .footer-link-item:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Masthead -->
+  <header class="masthead-main">
+    <a href="/dergi" class="brand-banner-link">
+      <img src="/assets/biresku-banner.jpg" alt="BİRESKU - Birleşmiş Ressamlar Kulübü" class="brand-banner-img" loading="eager">
+    </a>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <ul class="nav-list">
+        <li><a href="/dergi">Ana Sayfa</a></li>
+        <li><a href="/dergi/sanatcilar/">Sanatçılarımız</a></li>
+        <li><a href="/iletisim/">İletişim</a></li>
+      </ul>
+      <div>
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç">
+          <span>Gündüz / Gece Modu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Legal Body -->
+  <main class="container legal-content">
+    <div class="legal-header">
+      <div class="legal-kicker">Yasal Bilgilendirme & KVKK Uyum</div>
+      <h1 class="legal-title">Gizlilik ve Veri Güvenliği Politikası</h1>
+      <div class="legal-date">Son Güncelleme: 2026 • BİRESKU (Birleşmiş Ressamlar Kulübü)</div>
+    </div>
+
+    <div class="legal-section">
+      <h2>1. Veri Sorumlusu ve Genel Yaklaşım</h2>
+      <p>Bu metin; <strong>BİRESKU (Birleşmiş Ressamlar Kulübü)</strong> ve <strong>biresku.com</strong> platformu üzerinden sunulan dijital sanat dergisi, sanatçı profilleri, sergi haberleri ve kültür-sanat içeriklerinin kullanımı sırasında ziyaretçilerimizin kişisel verilerinin korunması amacıyla hazırlanmıştır.</p>
+      <p>BİRESKU olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") ve uluslararası genel veri koruma ilkeleri uyarınca ziyaretçilerimizin gizlilik ve veri güvenliğini en yüksek etik değer olarak kabul etmekteyiz.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. İşlenen Veriler ve Çerez Politikası</h2>
+      <p>BİRESKU, gizliliğe saygılı yalın bir mimariyle geliştirilmiştir:</p>
+      <ul>
+        <li><strong>Tercih Verileri:</strong> Sitede yer alan Gündüz / Gece teması gibi görsel tercihleriniz yalnızca cihazınızın tarayıcı belleğinde (<code>localStorage</code>) saklanır; merkezi sunucularımıza herhangi bir kullanıcı kimliği veya profil verisi aktarılmaz.</li>
+        <li><strong>Takip Çerezleri:</strong> Sitemizde üçüncü şahıslara veya reklam ağlarına ait kullanıcı davranışlarını izleyen profil çıkarıcı çerezler (tracking cookies) bulunmaz.</li>
+        <li><strong>İletişim Bilgileri:</strong> İletişim e-postalarımız üzerinden sanatçı başvurusu veya bilgi talebinde bulunduğunuzda paylaştığınız ad, soyad ve e-posta bilgileriniz sadece ilgili sanat/yayın başvurusunu sonuçlandırmak amacıyla saklanır; üçüncü şahıslara satılmaz veya devredilmez.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Telif Hakları ve Sanatsal Fikri Mülkiyet</h2>
+      <p>Biresku platformunda yayınlanan tüm sanatçı biyografileri, makaleler, eleştiri yazıları, fotoğrafik dökümantasyonlar ve <strong>sanatçıların eser görselleri</strong>, 5846 sayılı Fikir ve Sanat Eserleri Kanunu ve uluslararası telif hakları sözleşmeleri ile korunmaktadır.</p>
+      <p>Platformda sergilenen resim, heykel ve çağdaş sanat eserleri ilgili sanatçıların ya da yasal mirasçılarının / koleksiyonerlerinin mülkiyetindedir. Yazılı izin alınmaksızın bu eserlerin ticari amaçla indirilmesi, çoğaltılması, değiştirilmesi veya başka mecralarda yayınlanması kesinlikle yasaktır.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. KVKK Kapsamındaki Haklarınız</h2>
+      <p>KVKK'nın 11. maddesi kapsamında her ziyaretçi ve sanatçı;</p>
+      <ul>
+        <li>Kişisel verisinin işlenip işlenmediğini öğrenme,</li>
+        <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
+        <li>İşlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+        <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme haklarına sahiptir.</li>
+      </ul>
+      <p>Haklarınıza ilişkin her türlü başvuruyu <strong>iletisim@biresku.com</strong> resmi e-posta adresimize iletebilirsiniz.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal-line">
+        Copyright 2026 &copy; <strong class="footer-brand-title">BİRESKU</strong> | Tüm hakları saklıdır. | <a href="/gizlilik-politikasi/" class="footer-link-item">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item">İletişim</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function() {
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('biresku-theme', next); } catch(e) {}
+      });
+    }
+  </script>
+
+</body>
+</html>

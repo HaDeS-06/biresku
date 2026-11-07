@@ -850,6 +850,124 @@
       line-height: 1.4;
     }
 
+  
+    /* Biresku Modal & Footer Styling */
+    .site-footer {
+      padding: 36px 0 28px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: var(--bg-surface);
+      text-align: center;
+      margin-top: 60px;
+    }
+    .footer-legal-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+    .footer-brand-title {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .footer-link-item {
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--border-accent);
+      padding-bottom: 2px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+    }
+    .footer-link-item:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .biresku-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .biresku-modal-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-accent);
+      border-radius: 10px;
+      max-width: 620px;
+      width: 100%;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.6);
+      color: var(--text-main);
+    }
+    .biresku-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .biresku-modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin: 0;
+    }
+    .biresku-modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: color 0.15s, background-color 0.15s;
+    }
+    .biresku-modal-close:hover {
+      color: var(--text-heading);
+      background: var(--bg-hover);
+    }
+    .biresku-modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+    .biresku-modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+    }
+    .biresku-modal-btn {
+      background: var(--accent);
+      color: #0f1013 !important;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      padding: 8px 18px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .biresku-modal-btn:hover {
+      background: var(--accent-hover);
+    }
+
   </style>
 </head>
 <body>
@@ -996,17 +1114,58 @@
 
   </main>
 
+    <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-bottom">
-        <div>&copy; 2026 Biresku Sanat Yayıncılığı ve Dijital Platformu. Tüm hakları saklıdır.</div>
-        <div>
-          <a href="/" style="color: var(--accent); margin-right: 12px;">Giriş Portalı</a>
-          <a href="/dergi" style="color: var(--text-muted);">biresku.com/dergi</a>
-        </div>
+      <div class="footer-legal-line">
+        Copyright 2026 &copy; <strong class="footer-brand-title">BİRESKU</strong> | Tüm hakları saklıdır. | <a href="/gizlilik-politikasi/" class="footer-link-item footer-modal-trigger" data-modal="privacyModal">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item footer-modal-trigger" data-modal="contactModal">İletişim</a>
       </div>
     </div>
   </footer>
+
+  <!-- Gizlilik Politikası Modal -->
+  <div id="privacyModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+    <div class="biresku-modal-box">
+      <div class="biresku-modal-header">
+        <h3 id="privacyModalTitle" class="biresku-modal-title">Gizlilik ve Veri Güvenliği Politikası</h3>
+        <button type="button" class="biresku-modal-close" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="biresku-modal-body">
+        <p><strong>BİRESKU (Birleşmiş Ressamlar Kulübü)</strong> olarak 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") ve evrensel gizlilik ilkelerine tam uyum sağlamaktayız.</p>
+        <h4 style="color: var(--accent); margin: 16px 0 8px;">1. Tercihler ve Çerezler</h4>
+        <p>Sitemizde kullanıcıları takip eden veya reklam hedefleyen 3. taraf çerezler bulunmaz. Gece / Gündüz modu gibi görsel tercihleriniz yalnızca kendi cihazınızda (<code>localStorage</code>) saklanır.</p>
+        <h4 style="color: var(--accent); margin: 16px 0 8px;">2. Fikri Mülkiyet ve Sanatçı Eser Hakları</h4>
+        <p>Platformda sergilenen tüm sanatçı biyografileri, fotoğraflar ve <strong>eser görselleri</strong> 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile korunmaktadır. Eserler sanatçıların veya yasal hak sahiplerinin mülkiyetindedir; izinsiz kopyalanamaz veya ticari amaçla çoğaltılamaz.</p>
+        <h4 style="color: var(--accent); margin: 16px 0 8px;">3. İletişim & Haklarınız</h4>
+        <p>KVKK'nın 11. maddesi kapsamındaki talepleriniz için <a href="mailto:iletisim@biresku.com" style="color: var(--accent);">iletisim@biresku.com</a> adresinden bize ulaşabilirsiniz.</p>
+      </div>
+      <div class="biresku-modal-footer">
+        <a href="/gizlilik-politikasi/" class="biresku-modal-btn">Tam Sayfayı Görüntüle &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- İletişim Modal -->
+  <div id="contactModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+    <div class="biresku-modal-box">
+      <div class="biresku-modal-header">
+        <h3 id="contactModalTitle" class="biresku-modal-title">İletişim & Sanatçı Başvurusu</h3>
+        <button type="button" class="biresku-modal-close" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="biresku-modal-body">
+        <p>BİRESKU (Birleşmiş Ressamlar Kulübü) yayın kurulu, sanatçı başvuruları ve sergi duyuruları için bize ulaşabilirsiniz:</p>
+        <div style="background: var(--bg-card); padding: 16px; border-radius: 6px; border: 1px solid var(--border); margin: 16px 0;">
+          <p style="margin-bottom: 8px;"><strong>Genel İletişim:</strong> <a href="mailto:iletisim@biresku.com" style="color: var(--accent); font-weight: 600;">iletisim@biresku.com</a></p>
+          <p style="margin-bottom: 8px;"><strong>Sanatçı & Portfolyo Masası:</strong> <a href="mailto:editor@biresku.com" style="color: var(--accent); font-weight: 600;">editor@biresku.com</a></p>
+          <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 0;">Konum: İstanbul & Ankara, Türkiye</p>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Sanatçı seçkisine dahil olmak için 8 adet yüksek çözünürlüklü eser görseliniz, biyografiniz ve sanatsal manifestonuzla birlikte e-posta iletebilirsiniz.</p>
+      </div>
+      <div class="biresku-modal-footer">
+        <a href="/iletisim/" class="biresku-modal-btn">Ayrıntılı Sayfaya Git &rarr;</a>
+      </div>
+    </div>
+  </div>
 
   <script>
     // ==========================================
@@ -1668,6 +1827,52 @@ function renderArtistsGrid() {
       initNews();
       handleInitialRoute();
     });
+  
+    // ==========================================
+    // MODAL POPUP YÖNETİMİ
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', function() {
+      const triggers = document.querySelectorAll('.footer-modal-trigger');
+      triggers.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          // Açılacak modalı kontrol et
+          const modalId = btn.getAttribute('data-modal');
+          const modal = document.getElementById(modalId);
+          if (modal) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      // Kapatma butonları ve arka plan tıklaması
+      const overlays = document.querySelectorAll('.biresku-modal-overlay');
+      overlays.forEach(function(overlay) {
+        const closeBtn = overlay.querySelector('.biresku-modal-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function() {
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+          });
+        }
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) {
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+      });
+
+      // Escape tuşu ile kapatma
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          overlays.forEach(function(o) { o.style.display = 'none'; });
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
   </script>
 
 </body>

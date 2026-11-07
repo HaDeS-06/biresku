@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim & Sanatçı Başvurusu | Biresku Sanat</title>
+  <meta name="description" content="Biresku (Birleşmiş Ressamlar Kulübü) iletişim, sanatçı başvurusu, portfolyo gönderimi ve sergi duyuruları.">
+
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('biresku-theme');
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f1013;
+      --bg-surface: #15161b;
+      --bg-card: #1c1d24;
+      --border: #242630;
+      --border-accent: #3a3d4d;
+      --text-main: #f0f1f5;
+      --text-heading: #ffffff;
+      --text-muted: #9fa3b2;
+      --text-dim: #646877;
+      --accent: #c09a58;
+      --accent-hover: #d8b26e;
+      --nav-bg: rgba(15, 16, 19, 0.96);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-reading: 'Cormorant Garamond', Garamond, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8f7f4;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --border: #e2ddd4;
+      --border-accent: #c8c1b4;
+      --text-main: #1d1e22;
+      --text-heading: #0f1013;
+      --text-muted: #535665;
+      --text-dim: #7f8393;
+      --accent: #a8813a;
+      --accent-hover: #8e6826;
+      --nav-bg: rgba(248, 247, 244, 0.95);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .masthead-main {
+      width: 100%;
+      background: #0f1013;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .brand-banner-link { display: block; width: 100%; line-height: 0; }
+    .brand-banner-img {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 24px;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+    .nav-list { display: flex; gap: 24px; list-style: none; }
+    .nav-list a {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 10px 0;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-list a:hover { color: var(--accent); }
+
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .theme-toggle-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .contact-content {
+      padding: 60px 0 80px;
+    }
+    .contact-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+    }
+    .contact-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .contact-title {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      color: var(--text-heading);
+      line-height: 1.2;
+    }
+    .contact-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .contact-card h2 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-card p {
+      color: var(--text-main);
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+    }
+    .contact-card ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+    .contact-card li { margin-bottom: 8px; }
+
+    .email-link {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-top: 6px;
+      transition: color 0.2s;
+    }
+    .email-link:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .contact-box-accent {
+      background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-card) 100%);
+      border: 1px solid var(--accent);
+    }
+
+    .site-footer {
+      padding: 36px 0 28px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: var(--bg-surface);
+      text-align: center;
+    }
+    .footer-legal-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+    .footer-brand-title {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .footer-link-item {
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--border-accent);
+      padding-bottom: 2px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .footer-link-item:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Masthead -->
+  <header class="masthead-main">
+    <a href="/dergi" class="brand-banner-link">
+      <img src="/assets/biresku-banner.jpg" alt="BİRESKU - Birleşmiş Ressamlar Kulübü" class="brand-banner-img" loading="eager">
+    </a>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <ul class="nav-list">
+        <li><a href="/dergi">Ana Sayfa</a></li>
+        <li><a href="/dergi/sanatcilar/">Sanatçılarımız</a></li>
+        <li><a href="/gizlilik-politikasi/">Gizlilik Politikası</a></li>
+      </ul>
+      <div>
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç">
+          <span>Gündüz / Gece Modu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Body -->
+  <main class="container contact-content">
+    <div class="contact-header">
+      <div class="contact-kicker">Birleşmiş Ressamlar Kulübü</div>
+      <h1 class="contact-title">İletişim & Sanatçı Başvurusu</h1>
+      <div class="contact-subtitle">Sergi duyuruları, basın bültenleri ve platforma sanatçı katılımı için bize ulaşın.</div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h2>Genel İletişim & Yayın Masası</h2>
+        <p>BİRESKU Sanat Platformu ile ilgili her türlü soru, iş birliği ve sergi duyurusu için:</p>
+        <p><strong>Genel E-posta:</strong><br><a href="mailto:iletisim@biresku.com" class="email-link">iletisim@biresku.com</a></p>
+        <p><strong>Editöryal & Yayın Masası:</strong><br><a href="mailto:editor@biresku.com" class="email-link">editor@biresku.com</a></p>
+        <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-dim);">Konum: İstanbul & Ankara, Türkiye</p>
+      </div>
+
+      <div class="contact-card contact-box-accent">
+        <h2>Sanatçı Başvurusu & Portfolyo</h2>
+        <p>BİRESKU sanatçı seçkisine dahil olmak ve profilinizin dergide yer almasını sağlamak için e-posta yoluyla başvurabilirsiniz:</p>
+        <ul>
+          <li>Sanatçı özgeçmişiniz ve sanatsal disiplininiz (Resim, Heykel, vb.)</li>
+          <li>Hayata ve sanata bakış açınızı anlatan kısa manifesto metni</li>
+          <li>Yüksek çözünürlüklü 8 adet eser görseli (başlık, teknik, ebat ve yıl bilgisiyle)</li>
+          <li>Kendi net profil fotoğrafınız (tercihen atölye veya portre)</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: var(--accent); font-weight: 600;">Başvurular Yayın Kurulu tarafından titizlikle incelenmektedir.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal-line">
+        Copyright 2026 &copy; <strong class="footer-brand-title">BİRESKU</strong> | Tüm hakları saklıdır. | <a href="/gizlilik-politikasi/" class="footer-link-item">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item">İletişim</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function() {
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('biresku-theme', next); } catch(e) {}
+      });
+    }
+  </script>
+
+</body>
+</html>
