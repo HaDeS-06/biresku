@@ -1482,10 +1482,20 @@ let currentArtistList = [...ARTISTS_DATA];
 
     function handleInitialRoute() {
       const hash = window.location.hash;
+      const profileView = document.getElementById("artistProfileView");
+      const catalogView = document.getElementById("catalogPageView");
+
       if (hash.startsWith("#profil=")) {
         const id = hash.replace("#profil=", "");
         openArtistProfile(id);
+      } else {
+        if (profileView) profileView.style.display = "none";
+        if (catalogView) catalogView.style.display = "block";
       }
+    }
+
+    window.addEventListener("hashchange", handleInitialRoute);
+    window.addEventListener("popstate", handleInitialRoute);
     }
 
     

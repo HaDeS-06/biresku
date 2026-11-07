@@ -988,7 +988,7 @@
   <nav class="site-nav">
     <div class="container nav-inner">
       <ul class="nav-list">
-        <li><a href="/dergi" class="active" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Ana Sayfa</a></li>
+        <li><a href="/dergi" class="active" onclick="showMainPage(event); return false;">Ana Sayfa</a></li>
         <li><a href="#sanatcilarimiz" onclick="scrollToSection(event, 'sanatcilarimiz')">Sanatçılarımız</a></li>
         <li><a href="/iletisim/">İletişim</a></li>
       </ul>
@@ -1664,12 +1664,16 @@ function renderArtistsGrid() {
     }
 
     function showMainPage(e, targetHash) {
-      if (e) e.preventDefault();
-      document.getElementById("artistProfileView").style.display = "none";
-      document.getElementById("mainPageView").style.display = "block";
-      
-      // Adres çubuğundaki hash karmaşasını temizle
-      history.replaceState(null, null, window.location.pathname);
+      if (e && e.preventDefault) e.preventDefault();
+      const profileView = document.getElementById("artistProfileView");
+      const mainView = document.getElementById("mainPageView");
+      if (profileView) profileView.style.display = "none";
+      if (mainView) mainView.style.display = "block";
+
+      // Adres çubuğundaki hash'i temizle
+      if (window.location.hash) {
+        history.pushState(null, null, window.location.pathname);
+      }
 
       if (targetHash) {
         const targetEl = document.querySelector(targetHash);
@@ -1685,21 +1689,30 @@ function renderArtistsGrid() {
 
     function handleInitialRoute() {
       const hash = window.location.hash;
+      const profileView = document.getElementById("artistProfileView");
+      const mainView = document.getElementById("mainPageView");
+
       if (hash.startsWith("#sanatci=")) {
         const artistId = hash.replace("#sanatci=", "");
         openArtistProfile(artistId);
       } else if (hash === "#sanatcilarimiz") {
-        // Eğer doğrudan #sanatcilarimiz linkiyle gelinmişse en tepeye değil bölüme kay
+        if (profileView) profileView.style.display = "none";
+        if (mainView) mainView.style.display = "block";
         setTimeout(() => {
           const targetEl = document.getElementById("sanatcilarimiz");
           if (targetEl) {
             targetEl.scrollIntoView({ behavior: 'smooth' });
           }
-          // URL'yi temiz tut
-          history.replaceState(null, null, window.location.pathname);
-        }, 150);
+        }, 100);
+      } else {
+        // Hash yok veya /dergi/ ana sayfadayız
+        if (profileView) profileView.style.display = "none";
+        if (mainView) mainView.style.display = "block";
       }
     }
+
+    window.addEventListener("hashchange", handleInitialRoute);
+    window.addEventListener("popstate", handleInitialRoute);
 
     // ==========================================
     // HABERLERİ YÜKLEME (TİTREŞİMSİZ & SABİT GÖRSELLER)
