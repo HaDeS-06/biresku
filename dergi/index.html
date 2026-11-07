@@ -78,32 +78,29 @@
       border-radius: 50%;
     }
 
-    /* 2. LOGO & MASTHEAD BANNER (Tam Genişlikte Kusursuz Uyum) */
+    /* 2. LOGO & MASTHEAD BANNER (Ekranı Uçtan Uca Saran Tam Genişlik) */
     .masthead-main {
-      padding: 14px 0 12px;
-      text-align: center;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      background: #0f1013;
       border-bottom: 1px solid var(--border);
+      overflow: hidden;
     }
     .brand-banner-link {
       display: block;
       width: 100%;
-      max-width: 1260px;
-      margin: 0 auto;
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.7);
-      transition: opacity 0.2s ease;
-    }
-    .brand-banner-link:hover {
-      opacity: 0.96;
+      margin: 0;
+      padding: 0;
+      line-height: 0;
     }
     .brand-banner-img {
       width: 100%;
-      height: auto;
+      height: clamp(140px, 17vw, 250px);
       display: block;
-      object-fit: contain;
+      object-fit: cover;
+      object-position: center;
       image-rendering: -webkit-optimize-contrast;
-      border-radius: 4px;
     }
 
     /* 3. NAVİGASYON */
@@ -612,16 +609,14 @@
 </head>
 <body>
 
-  <!-- 2. MASTHEAD / MARKA LOGO BANNER -->
+  <!-- 2. MASTHEAD / MARKA LOGO BANNER (Ekranı Uçtan Uca Saran Tam Genişlik) -->
   <header class="masthead-main">
-    <div class="container">
-      <a href="/dergi" class="brand-banner-link">
-        <img src="/assets/biresku-banner.jpg" 
-             alt="BİRESKU - Birleşmiş Ressamlar Kulübü" 
-             class="brand-banner-img"
-             loading="eager">
-      </a>
-    </div>
+    <a href="/dergi" class="brand-banner-link">
+      <img src="/assets/biresku-banner.jpg" 
+           alt="BİRESKU - Birleşmiş Ressamlar Kulübü" 
+           class="brand-banner-img"
+           loading="eager">
+    </a>
   </header>
 
   <!-- 3. NAVİGASYON -->
