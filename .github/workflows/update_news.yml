@@ -2,8 +2,8 @@ name: Auto Update Google Art News
 
 on:
   schedule:
-    # Her 6 saatte bir otomatik çalışır
-    - cron: '0 */6 * * *'
+    # Her 1 saatte bir otomatik güncellenir
+    - cron: '0 * * * *'
   workflow_dispatch: # Manuel tetikleme butonu
 
 jobs:
