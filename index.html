@@ -8,6 +8,19 @@
   
   <meta http-equiv="refresh" content="4;url=/dergi">
 
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('biresku-theme');
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Google Fonts: Editorial Serif & Clean Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +41,17 @@
       --font-sans: 'Inter', -apple-system, sans-serif;
     }
 
+    [data-theme="light"] {
+      --bg: #f8f7f4;
+      --card-bg: #ffffff;
+      --border: #e2ddd4;
+      --accent: #a8813a;
+      --accent-hover: #8e6826;
+      --text: #1d1e22;
+      --text-muted: #535665;
+      --text-dim: #7f8393;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -40,6 +64,7 @@
       font-family: var(--font-sans);
       padding: 24px;
       position: relative;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     .gateway-card {
