@@ -1,58 +1,73 @@
 // BIRESKU SANATCILAR VERISI
 const ARTISTS_DATA = [
   {
-    "id": "sanatci-1",
-    "name": "Sanatçı 1",
-    "discipline": "Çağdaş Yağlıboya & Soyutlama",
-    "category": "Ressam",
-    "city": "İstanbul",
-    "studio": "Sanat Atölyesi",
-    "coverImage": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80",
-    "shortBio": "Ham pigmentler ve keten dokusu üzerinde zamanın ve belleğin soyut katmanlarını araştıran çağdaş ressam.",
+    "id": "adnan-turani",
+    "name": "Prof. Dr. Adnan Turani",
+    "discipline": "Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı",
+    "category": "Ressam & Sanat Tarihçisi",
+    "city": "Ankara / İstanbul",
+    "studio": "Turani Atölyesi",
+    "coverImage": "/assets/adnan-turani/portre.jpg",
+    "shortBio": "Türk çağdaş resim sanatının soyut ekoldeki öncülerinden; Türk sanat literatürünün temel başvuru kaynaklarını kaleme alan bilge sanat tarihçisi ve akademisyen.",
+    "quote": "Sanat doğayı kopyalamak değil; doğadaki gizli tınıyı, ritmi ve insanın özgürlük arzusunu lekenin ve çizginin saf enerjisiyle yeniden var etmektir.",
     "biography": [
-      "Güzel Sanatlar Fakültesi Resim Bölümü mezuniyetinin ardından çağdaş sanat alanında lisansüstü çalışmalarını tamamladı. 15 yılı aşkın süredir tuval üzerine yağlıboya, ham pigment ve keten bezi dokularıyla çalışan sanatçı; yurt içi ve yurt dışında çok sayıda kişisel ve karma sergide yer aldı.",
-      "Sanatçının atölye pratiği; boyanın fiziksel dokusu ile tuvalin ışık geçirgenliği arasındaki dengeyi araştırmaya dayanır. Eserleri bugün çağdaş sanat koleksiyonlarında ve müzelerde sergilenmektedir."
+      "1925 yılında İstanbul Beşiktaş'ta doğan Prof. Dr. Adnan Turani, İstanbul Öğretmen Okulu'nun ardından 1945'te yetenek sınavlarını kazanarak Ankara Gazi Eğitim Enstitüsü Resim-İş Bölümü'ne girdi ve 1948 yılında mezun oldu. Bir süre resim öğretmenliği yaptıktan sonra kazandığı devlet bursuyla 1953'te Almanya'ya gitti. Münih Güzel Sanatlar Akademisi'nde Franz Nagel, Stuttgart Güzel Sanatlar Akademisi'nde Willi Baumeister ve Henninger, Hamburg Güzel Sanatlar Akademisi'nde ise Heinz Trökes atölyelerinde eğitim görerek Avrupa soyut sanatının ve Bauhaus ilkelerinin kuramsal temellerini özümsedi.",
+      "1959'da Türkiye'ye dönen Turani; Gazi Eğitim Enstitüsü, Hacettepe Üniversitesi ve Bilkent Üniversitesi Güzel Sanatlar Fakültesi Resim Bölümü'nde kurucu öğretim üyeliği ve bölüm başkanlığı yaptı. 1973'te doktor, 1978'de doçent, 1986'da profesör unvanını aldı. 'Dünya Sanat Tarihi', 'Sanat Terimleri Sözlüğü', 'Batı Anlayışına Dönük Türk Resim Sanatı' ve 'Resimde Geometri' gibi Türkiye'de plastik sanatlar eğitiminin temel başvuru kaynakları haline gelen anıtsal kitapları kaleme aldı. Birleşmiş Ressamlar ve Heykeltıraşlar Derneği'nin (BRHD) kurucuları ve onur üyeleri arasında yer alarak Türk sanat ortamının kurumsallaşmasına ömrünü adadı."
     ],
-    "quote": "Sanat, gözün gördüğü dünyayı tekrarlamak değil; ruhun ve belleğin görünmeyen yankılarını görünür kılmaktır.",
     "philosophy": [
-      "Hayatı statik ve tekil bir gerçeklik değil, sürekli devinen, üst üste binen katmanlar ve ışık kırılmaları bütünü olarak görüyorum. Yaşamın hızı içerisinde insanın unuttuğu en kıymetli şey 'sessizlik'tir; bu yüzden tuvallerimde sessizliğin ve içsel boşluğun mekânını inşa etmeye çalışıyorum.",
-      "Fırçanın tuvale değdiği an, zamanın askıya alındığı kutsal bir andır. Boyanın akışı rastlantısal değil; doğanın ve insanın iç dünyasının yüzeye yansıyan doğal bir sonucudur. Sanat bir süsleme değil, varoluşun hakikatine dokunma çabasıdır."
+      "Adnan Turani'nin sanatsal ve düşünsel evreninin merkezinde 'özgürlük, mantıksal disiplin ve içtenlik' yer alır. Turani'ye göre soyutlama, keyfi bir karmaşa veya biçim bozuşumu değil; sanatçının zihnindeki geometrik mantık ile fırçanın kontrolsüz gibi görünen ama yüksek bir iç disipline dayanan lirik coşkusunun mükemmel dengesidir. Boyanın tuval üzerindeki yoğun dokusal varlığı (pentür lezzeti) ve çizginin kıvraklığı, tıpkı müzikteki polifonik sesler gibi kendi melodisini yaratmalıdır.",
+      "Resimlerinde müzik, dans ve doğa en belirleyici tinsel esin kaynaklarıdır. Keman ve viyolonsel çalan müzisyenler ile dansçılar, somut bir anatomik temsil olmaktan sıyrılarak ışık, ritim ve renkten oluşan saf bir enerji alanına dönüşür. Turani; sanatın sadece atölyede tuval başında üretilen bir nesne değil, aynı zamanda felsefi derinliği olan, geçmişle gelecek arasında köprü kuran evrensel bir düşünce biçimi olduğuna inanmıştır."
     ],
     "artworks": [
       {
-        "title": "Sessizliğin Katmanları",
-        "technique": "Tuval üzerine yağlıboya ve doğal pigment",
-        "dimensions": "140 x 120 cm",
-        "year": "2026",
-        "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80"
+        "id": "turani-1",
+        "title": "Marmaris Serisi",
+        "year": "1998",
+        "technique": "Tuval Üzerine Yağlıboya",
+        "dimensions": "130 × 140 cm",
+        "collection": "Özel Koleksiyon",
+        "description": "Ege'nin ışığını, rüzgarını ve kıyıların dinamik ritmini lirik soyut leke düzeni ve zengin boya katmanlarıyla buluşturan ikonik çalışma.",
+        "imageUrl": "/assets/adnan-turani/marmaris-serisi.jpg"
       },
       {
-        "title": "Zamanın Yankısı",
-        "technique": "Ham keten bezi üzerine yağlıboya",
-        "dimensions": "160 x 130 cm",
-        "year": "2025",
-        "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1000&q=80"
+        "id": "turani-2",
+        "title": "Viyolonsel Çalan Kadın",
+        "year": "2004",
+        "technique": "Tuval Üzerine Yağlıboya",
+        "dimensions": "120 × 120 cm",
+        "collection": "Sanatçı Aile Koleksiyonu",
+        "description": "Müziğin tınısını ve çalgının akustik titreşimlerini ritmik fırça darbeleri ve derinlikli renk armonileriyle görselleştiren başyapıt.",
+        "imageUrl": "/assets/adnan-turani/viyolonsel-calan-kadin.jpg"
       },
       {
-        "title": "Ufkun Ötesi",
-        "technique": "Tuval üzerine akrilik ve yağlıboya",
-        "dimensions": "110 x 95 cm",
-        "year": "2026",
-        "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80"
+        "id": "turani-3",
+        "title": "Âşıklar Serisi",
+        "year": "2001",
+        "technique": "Tuval Üzerine Yağlıboya",
+        "dimensions": "140 × 140 cm",
+        "collection": "Müze & Özel Koleksiyon",
+        "description": "İnsan ruhunun yakınlaşmasını, tutkuyu ve kavuşma duygusunu figürün sınırlarını aşan soyut dışavurumcu bir enerjiyle tuvale yansıtan anıtsal kompozisyon.",
+        "imageUrl": "/assets/adnan-turani/asiklar-serisi.jpg"
       },
       {
-        "title": "Gece ve Bellek",
-        "technique": "Tuval üzerine katmanlı yağlıboya",
-        "dimensions": "150 x 120 cm",
-        "year": "2025",
-        "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=1000&q=80"
+        "id": "turani-4",
+        "title": "Müzisyenler - Trio",
+        "year": "1995",
+        "technique": "Tuval Üzerine Yağlıboya",
+        "dimensions": "100 × 130 cm",
+        "collection": "Kurumsal Sanat Koleksiyonu",
+        "description": "Üç müzisyenin ortak tınısını polifonik renk lekeleri, kıvrak konturlar ve güçlü boya plastiğiyle sahneleyen ritmik çalışma.",
+        "imageUrl": "/assets/adnan-turani/muzisyenler-trio.jpg"
       },
       {
-        "title": "Işığın İlk Nefesi",
-        "technique": "Büyük boy tuval üzerine karışık teknik",
-        "dimensions": "180 x 140 cm",
-        "year": "2026",
-        "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=1000&q=80"
+        "id": "turani-5",
+        "title": "Dansçı (Dansöz Serisi)",
+        "year": "2003",
+        "technique": "Tuval Üzerine Yağlıboya",
+        "dimensions": "115 × 170 cm",
+        "collection": "Özel Koleksiyon",
+        "description": "Bedenin hareket halindeki enerjisini, uçuşan kumaş kıvrımlarını ve ışık kırılmalarını coşkulu jestüel fırça vuruşlarıyla ölümsüzleştiren dinamik yapıt.",
+        "imageUrl": "/assets/adnan-turani/dansci.jpg"
       }
     ]
   },
