@@ -1707,8 +1707,8 @@
     }
 
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v13">
-  <script src="/assets/artists-data.js?v=20261108_v13"></script>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v14">
+  <script src="/assets/artists-data.js?v=20261108_v14"></script>
 </head>
 <body>
 
@@ -1871,7 +1871,7 @@
 
       <!-- Sanatçı Kartları -->
       <div class="artists-catalog-grid" id="catalogGrid">
-        <article class="artist-card" onclick="openArtistProfile('adnan-turani')">
+        <article class="artist-card" data-artist-id="adnan-turani" onclick="openArtistProfile('adnan-turani')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam & Sanat Tarihçisi</span>
             <img src="/assets/adnan-turani/adnan-turani-pp.jpg" alt="Prof. Dr. Adnan Turani" loading="lazy">
@@ -1891,7 +1891,7 @@
             </div>
           </div>
         </article>
-        <article class="artist-card" onclick="openArtistProfile('mustafa-ayaz')">
+        <article class="artist-card" data-artist-id="mustafa-ayaz" onclick="openArtistProfile('mustafa-ayaz')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam & Sanat Eğitimcisi</span>
             <img src="/assets/mustafa-ayaz/mustafa-ayaz-pp.jpg" alt="Prof. Dr. Mustafa Ayaz" loading="lazy">
@@ -1911,10 +1911,10 @@
             </div>
           </div>
         </article>
-        <article class="artist-card" onclick="openArtistProfile('tuncay-umay')">
+        <article class="artist-card" data-artist-id="tuncay-umay" onclick="openArtistProfile('tuncay-umay')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam & Sanat Eğitimcisi</span>
-            <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v13" alt="Tuncay Umay" loading="lazy">
+            <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v14" alt="Tuncay Umay" loading="lazy">
           </div>
           <div class="artist-card-body">
             <div>
@@ -1931,7 +1931,7 @@
             </div>
           </div>
         </article>
-        <article class="artist-card" onclick="openArtistProfile('hikmet-cetinkaya')">
+        <article class="artist-card" data-artist-id="hikmet-cetinkaya" onclick="openArtistProfile('hikmet-cetinkaya')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam</span>
             <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg" alt="Hikmet Çetinkaya" loading="lazy">
@@ -2185,7 +2185,7 @@
     "category": "Ressam & Sanat Eğitimcisi",
     "city": "Ankara",
     "studio": "Tuncay Umay Atölyeleri (Ankara)",
-    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v13",
+    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v14",
     "shortBio": "1980 Ankara doğumlu ressam; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
     "quote": "Denizi resmetmek, aslında zamanın akışını ve bu amansız devinimi tek bir fırça vuruşunda dondurma cesaretidir. Her tablo, dalgaların sonsuz değişimi karşısında kendi iç dengesini arayan, hayatın fırtınasında doğru hamleyi yapmaya çalışan ve karanlığa rağmen içindeki ışığı söndürmeyen ruhun görsel bir manifestosudur.",
     "biography": [
@@ -2322,7 +2322,43 @@
   }
 ];
 
-function getArtistsList() {
+// ==========================================
+    // GELİŞMİŞ & HATA TOLERANSLI SANATÇI ÇÖZÜMLEME
+    // ==========================================
+    const ARTIST_ALIASES = {
+      'hikmet-cetin-kaya': 'hikmet-cetinkaya',
+      'hikmet_cetinkaya': 'hikmet-cetinkaya',
+      'hikmetcetinkaya': 'hikmet-cetinkaya',
+      'hikmet': 'hikmet-cetinkaya',
+      'cetinkaya': 'hikmet-cetinkaya',
+      'çetinkaya': 'hikmet-cetinkaya',
+      'tuncay': 'tuncay-umay',
+      'umay': 'tuncay-umay',
+      'tuncayumay': 'tuncay-umay',
+      'tuncay_umay': 'tuncay-umay',
+      'adnan': 'adnan-turani',
+      'turani': 'adnan-turani',
+      'adnanturani': 'adnan-turani',
+      'adnan_turani': 'adnan-turani',
+      'mustafa': 'mustafa-ayaz',
+      'ayaz': 'mustafa-ayaz',
+      'mustafaayaz': 'mustafa-ayaz',
+      'mustafa_ayaz': 'mustafa-ayaz'
+    };
+
+    function normStr(s) {
+      if (!s) return "";
+      return String(s).toLowerCase()
+        .replace(/ç/g, 'c')
+        .replace(/ğ/g, 'g')
+        .replace(/ı/g, 'i')
+        .replace(/ö/g, 'o')
+        .replace(/ş/g, 's')
+        .replace(/ü/g, 'u')
+        .replace(/[-_\s]/g, '');
+    }
+
+    function getArtistsList() {
       if (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
         return window.ARTISTS_DATA.filter(function(a) {
           return a && a.id && !a.id.startsWith('sanatci-');
@@ -2330,50 +2366,99 @@ function getArtistsList() {
       }
       return [];
     }
+
+    function findArtist(query) {
+      if (!query) return null;
+      const list = getArtistsList();
+      if (!list || !list.length) return null;
+
+      let q = String(query).trim().toLowerCase();
+      q = q.replace(/^#+/, '');
+      q = q.replace(/^(?:profil|sanatci)=/, '');
+      q = q.replace(/\?.*$/, ''); // strip query string
+      q = q.replace(/\/+$/, ''); // strip trailing slash
+      try { q = decodeURIComponent(q); } catch(e) {}
+
+      // 1. Doğrudan tam ID eşleşmesi
+      let match = list.find(a => a.id.toLowerCase() === q);
+      if (match) return match;
+
+      // 2. Takma ad (Alias) eşleşmesi
+      if (ARTIST_ALIASES[q]) {
+        match = list.find(a => a.id === ARTIST_ALIASES[q]);
+        if (match) return match;
+      }
+
+      // 3. Karakter normalizasyonlu eşleşme (Türkçe karakter ve tire/alt çizgi esnekliği)
+      const qNorm = normStr(q);
+      match = list.find(a => normStr(a.id) === qNorm || normStr(a.name).includes(qNorm));
+      if (match) return match;
+
+      // 4. İsim / ID alt metin (substring) eşleşmesi
+      match = list.find(a => a.id.toLowerCase().includes(q) || a.name.toLowerCase().includes(q));
+      return match || null;
+    }
+
     var currentArtistList = getArtistsList();
 
     function renderCatalog(artists) {
       const grid = document.getElementById("catalogGrid");
-      document.getElementById("artistCountBadge").textContent = artists.length + " Kayıtlı Sanatçı";
+      const badge = document.getElementById("artistCountBadge");
+      if (badge) badge.textContent = artists.length + " Kayıtlı Sanatçı";
 
       if (!artists || artists.length === 0) {
-        grid.innerHTML = '<div style="grid-column: 1/-1; padding: 48px; text-align: center; color: var(--text-dim);">Eşleşen sanatçı bulunamadı.</div>';
+        if (grid) grid.innerHTML = '<div style="grid-column: 1/-1; padding: 48px; text-align: center; color: var(--text-dim);">Eşleşen sanatçı bulunamadı.</div>';
         return;
       }
 
-      grid.innerHTML = artists.map(artist => `
-        <article class="artist-card" onclick="openArtistProfile('${artist.id}')">
-          <div class="artist-card-cover">
-            <span class="artist-card-badge">Sanatçı Alanı</span>
-            <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
-          </div>
-          <div class="artist-card-body">
-            <div>
-              <h3 class="artist-name">${artist.name}</h3>
-              <div class="artist-discipline">${artist.discipline}</div>
-              <p class="artist-statement">${artist.shortBio || artist.bio}</p>
+      if (grid) {
+        grid.innerHTML = artists.map(artist => `
+          <article class="artist-card" data-artist-id="${artist.id}" onclick="openArtistProfile('${artist.id}')" style="cursor: pointer;">
+            <div class="artist-card-cover">
+              <span class="artist-card-badge">Sanatçı Alanı</span>
+              <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
             </div>
-            <div class="artist-card-footer">
-              <span>📍 ${artist.city}</span>
-              <span class="view-profile-btn">
-                <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+            <div class="artist-card-body">
+              <div>
+                <h3 class="artist-name">${artist.name}</h3>
+                <div class="artist-discipline">${artist.discipline}</div>
+                <p class="artist-statement">${artist.shortBio || artist.bio || ''}</p>
+              </div>
+              <div class="artist-card-footer">
+                <span>📍 ${artist.city || 'Ankara'}</span>
+                <span class="view-profile-btn">
+                  <span>Özel Alanına Git</span>
+                  <span>&rarr;</span>
+                </span>
+              </div>
             </div>
-          </div>
-        </article>
-      `).join("");
+          </article>
+        `).join("");
+      }
     }
 
-    function openArtistProfile(artistId) {
-      const dataList = getArtistsList();
-      const artist = dataList.find(a => a.id === artistId);
-      if (!artist) return;
+    function openArtistProfile(artistIdentifier) {
+      const artist = findArtist(artistIdentifier);
+      if (!artist) {
+        console.warn("Sanatçı profili bulunamadı:", artistIdentifier);
+        return;
+      }
 
-      window.location.hash = "profil=" + artist.id;
-      document.getElementById("catalogPageView").style.display = "none";
+      // Hash senkronizasyonu
+      if (window.location.hash !== "#profil=" + artist.id) {
+        try {
+          history.pushState(null, null, "#profil=" + artist.id);
+        } catch(e) {
+          window.location.hash = "profil=" + artist.id;
+        }
+      }
+
+      const catalogView = document.getElementById("catalogPageView");
       const profileView = document.getElementById("artistProfileView");
-      profileView.style.display = "block";
+      if (catalogView) catalogView.style.display = "none";
+      if (profileView) {
+        profileView.style.display = "block";
+      }
 
       const breadcrumb = document.getElementById("profileNavBreadcrumb");
       if (breadcrumb) {
@@ -2381,26 +2466,29 @@ function getArtistsList() {
       }
 
       // 1. Hero
-      document.getElementById("profileHeroArea").innerHTML = `
-        <div class="profile-avatar-wrap">
-          <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
-        </div>
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-          <div style="margin-bottom: 8px;">
-            <span class="artist-card-badge" style="position: static; display: inline-block;">${artist.category}</span>
+      const heroArea = document.getElementById("profileHeroArea");
+      if (heroArea) {
+        heroArea.innerHTML = `
+          <div class="profile-avatar-wrap">
+            <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
           </div>
-          <h2 class="profile-title">${artist.name}</h2>
-          <div class="profile-discipline">${artist.discipline}</div>
-          <p class="profile-bio-text" style="margin-top: 10px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.7;">${artist.shortBio}</p>
-          <div class="profile-meta-list" style="margin-top: 18px;">
-            ${artist.period ? `<div>Dönem: <strong>${artist.period}</strong></div>` : (artist.city ? `<div>Köken: <strong>${artist.city}</strong></div>` : '')}
-            <div>Kayıtlı Eser: <strong style="color: var(--accent);">${artist.artworks.length} Eser</strong></div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div style="margin-bottom: 8px;">
+              <span class="artist-card-badge" style="position: static; display: inline-block;">${artist.category || 'Sanatçı'}</span>
+            </div>
+            <h2 class="profile-title">${artist.name}</h2>
+            <div class="profile-discipline">${artist.discipline || ''}</div>
+            <p class="profile-bio-text" style="margin-top: 10px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.7;">${artist.shortBio || ''}</p>
+            <div class="profile-meta-list" style="margin-top: 18px;">
+              ${artist.period ? `<div>Dönem: <strong>${artist.period}</strong></div>` : (artist.city ? `<div>Köken: <strong>${artist.city}</strong></div>` : '')}
+              <div>Kayıtlı Eser: <strong style="color: var(--accent);">${(artist.artworks && artist.artworks.length) || 0} Eser</strong></div>
+            </div>
           </div>
-        </div>
-      `;
+        `;
+      }
 
       // 2. Biyografi & Hayata Bakışı
-      const bioParagraphs = Array.isArray(artist.biography) ? artist.biography.map(p => `<p>${p}</p>`).join("") : `<p>${artist.biography}</p>`;
+      const bioParagraphs = Array.isArray(artist.biography) ? artist.biography.map(p => `<p>${p}</p>`).join("") : `<p>${artist.biography || ''}</p>`;
       const philParagraphs = Array.isArray(artist.philosophy) ? artist.philosophy.map(p => `<p>${p}</p>`).join("") : `<p>${artist.philosophy || ''}</p>`;
       const quoteHtml = artist.quote ? `<blockquote class="philosophy-quote">"${artist.quote}"</blockquote>` : "";
 
@@ -2425,43 +2513,53 @@ function getArtistsList() {
         `;
       }
 
-      // 3. 5 Adet Resim
+      // 3. Eserler Galerisi
       const artworksLen = (artist.artworks && Array.isArray(artist.artworks)) ? artist.artworks.length : 0;
       const hEl = document.getElementById("artworksSectionHeading");
       if (hEl) hEl.textContent = artworksLen > 0 ? ("Sanatçının " + artworksLen + " Eseri") : "Sanatçının Eserleri";
       const cEl = document.getElementById("artworksSectionCount");
       if (cEl) cEl.textContent = artworksLen > 0 ? (artworksLen + " / " + artworksLen + " KOLEKSİYON ESERİ") : "0 Eser";
-      document.getElementById("artworksGridArea").innerHTML = (artist.artworks || []).map((art, idx) => {
-        const hasTitle = Boolean(art.title && String(art.title).trim() !== "");
-        const metaParts = [];
-        if (art.technique) metaParts.push(art.technique);
-        if (art.dimensions) metaParts.push(art.dimensions);
-        if (art.year) metaParts.push(`(${art.year})`);
-        const metaStr = metaParts.join(' • ');
+      
+      const gridArea = document.getElementById("artworksGridArea");
+      if (gridArea) {
+        gridArea.innerHTML = (artist.artworks || []).map((art, idx) => {
+          const hasTitle = Boolean(art.title && String(art.title).trim() !== "");
+          const metaParts = [];
+          if (art.technique) metaParts.push(art.technique);
+          if (art.dimensions) metaParts.push(art.dimensions);
+          if (art.year) metaParts.push(`(${art.year})`);
+          const metaStr = metaParts.join(' • ');
 
-        return `
-          <div class="artwork-item ${!hasTitle ? 'pure-gallery-card' : ''}">
-            <div class="artwork-img-wrap" style="${!hasTitle ? 'height: 320px;' : ''}">
-              <img src="${art.image || art.imageUrl}" alt="${hasTitle ? art.title : (artist.name + ' Eseri')}" loading="lazy" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
+          return `
+            <div class="artwork-item ${!hasTitle ? 'pure-gallery-card' : ''}">
+              <div class="artwork-img-wrap" style="${!hasTitle ? 'height: 320px;' : ''}">
+                <img src="${art.image || art.imageUrl}" alt="${hasTitle ? art.title : (artist.name + ' Eseri')}" loading="lazy" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
+              </div>
+              ${hasTitle ? `
+              <div class="artwork-info">
+                <div class="artwork-kicker">Özgün Koleksiyon Eseri</div>
+                <h4 class="artwork-title">${art.title}</h4>
+                ${metaStr ? `<div class="artwork-meta">${metaStr}</div>` : ''}
+              </div>` : ''}
             </div>
-            ${hasTitle ? `
-            <div class="artwork-info">
-              <div class="artwork-kicker">Özgün Koleksiyon Eseri</div>
-              <h4 class="artwork-title">${art.title}</h4>
-              ${metaStr ? `<div class="artwork-meta">${metaStr}</div>` : ''}
-            </div>` : ''}
-          </div>
-        `;
-      }).join("");
+          `;
+        }).join("");
+      }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showCatalogPage(e) {
       if (e) e.preventDefault();
-      history.pushState(null, null, window.location.pathname);
-      document.getElementById("artistProfileView").style.display = "none";
-      document.getElementById("catalogPageView").style.display = "block";
+      try {
+        history.pushState(null, null, window.location.pathname);
+      } catch(err) {
+        window.location.hash = "";
+      }
+      const profileView = document.getElementById("artistProfileView");
+      const catalogView = document.getElementById("catalogPageView");
+      if (profileView) profileView.style.display = "none";
+      if (catalogView) catalogView.style.display = "block";
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -2472,7 +2570,7 @@ function getArtistsList() {
       if (discipline === "Tümü") {
         currentArtistList = getArtistsList();
       } else {
-        currentArtistList = getArtistsList().filter(a => a.category.includes(discipline) || a.discipline.includes(discipline));
+        currentArtistList = getArtistsList().filter(a => (a.category && a.category.includes(discipline)) || (a.discipline && a.discipline.includes(discipline)));
       }
       renderCatalog(currentArtistList);
     }
@@ -2484,10 +2582,10 @@ function getArtistsList() {
       }
       const q = query.toLowerCase();
       const filtered = currentArtistList.filter(a => 
-        a.name.toLowerCase().includes(q) || 
-        a.discipline.toLowerCase().includes(q) || 
-        a.city.toLowerCase().includes(q) ||
-        a.bio.toLowerCase().includes(q)
+        (a.name && a.name.toLowerCase().includes(q)) || 
+        (a.discipline && a.discipline.toLowerCase().includes(q)) || 
+        (a.city && a.city.toLowerCase().includes(q)) ||
+        ((a.shortBio || a.bio || '').toLowerCase().includes(q))
       );
       renderCatalog(filtered);
     }
@@ -2497,9 +2595,15 @@ function getArtistsList() {
       const profileView = document.getElementById("artistProfileView");
       const catalogView = document.getElementById("catalogPageView");
 
-      if (hash.startsWith("#profil=") || hash.startsWith("#sanatci=")) {
-        const id = hash.replace(/^#(?:profil|sanatci)=/, "");
-        openArtistProfile(id);
+      if (!hash || hash === "#" || hash === "#katalog" || hash === "#tum-sanatcilar") {
+        if (profileView) profileView.style.display = "none";
+        if (catalogView) catalogView.style.display = "block";
+        return;
+      }
+
+      const artist = findArtist(hash);
+      if (artist) {
+        openArtistProfile(artist.id);
       } else {
         if (profileView) profileView.style.display = "none";
         if (catalogView) catalogView.style.display = "block";
@@ -2508,6 +2612,21 @@ function getArtistsList() {
 
     window.addEventListener("hashchange", handleInitialRoute);
     window.addEventListener("popstate", handleInitialRoute);
+
+    // Global Delegated Click Listener (Kart tıklamalarını %100 yakalar)
+    document.addEventListener("click", function(e) {
+      const card = e.target.closest("[data-artist-id]");
+      if (card) {
+        const artistId = card.getAttribute("data-artist-id");
+        if (artistId) {
+          const isAnchorToOtherPage = card.tagName === 'A' && card.getAttribute('href') && !card.getAttribute('href').startsWith('#');
+          if (!isAnchorToOtherPage) {
+            e.preventDefault();
+            openArtistProfile(artistId);
+          }
+        }
+      }
+    });
 
     // --- TEMA YÖNETİMİ (GÜNDÜZ / GECE MODU) ---
     function initTheme() {
@@ -2609,8 +2728,8 @@ function getArtistsList() {
 
   </script>
 
-<script src="/assets/auth-client.js?v=20261108_v13"></script>
-<script src="/assets/biresku-auth.js?v=20261108_v13"></script>
+<script src="/assets/auth-client.js?v=20261108_v14"></script>
+<script src="/assets/biresku-auth.js?v=20261108_v14"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)

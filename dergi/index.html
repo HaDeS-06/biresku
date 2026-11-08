@@ -2335,8 +2335,8 @@
     }
 
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v13">
-  <script src="/assets/artists-data.js?v=20261108_v13"></script>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v14">
+  <script src="/assets/artists-data.js?v=20261108_v14"></script>
 </head>
 <body>
 
@@ -2775,7 +2775,7 @@
     "category": "Ressam & Sanat Eğitimcisi",
     "city": "Ankara",
     "studio": "Tuncay Umay Atölyeleri (Ankara)",
-    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v13",
+    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v14",
     "shortBio": "1980 Ankara doğumlu ressam; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
     "quote": "Denizi resmetmek, aslında zamanın akışını ve bu amansız devinimi tek bir fırça vuruşunda dondurma cesaretidir. Her tablo, dalgaların sonsuz değişimi karşısında kendi iç dengesini arayan, hayatın fırtınasında doğru hamleyi yapmaya çalışan ve karanlığa rağmen içindeki ışığı söndürmeyen ruhun görsel bir manifestosudur.",
     "biography": [
@@ -2916,6 +2916,71 @@
     // ==========================================
     // YENİ EKLENEN SANATÇILAR VİTRİNİ (MAKSİMUM 1 HAFTA)
     // ==========================================
+    
+    // ==========================================
+    // GELİŞMİŞ & HATA TOLERANSLI SANATÇI ÇÖZÜMLEME
+    // ==========================================
+    const ARTIST_ALIASES = {
+      'hikmet-cetin-kaya': 'hikmet-cetinkaya',
+      'hikmet_cetinkaya': 'hikmet-cetinkaya',
+      'hikmetcetinkaya': 'hikmet-cetinkaya',
+      'hikmet': 'hikmet-cetinkaya',
+      'cetinkaya': 'hikmet-cetinkaya',
+      'çetinkaya': 'hikmet-cetinkaya',
+      'tuncay': 'tuncay-umay',
+      'umay': 'tuncay-umay',
+      'tuncayumay': 'tuncay-umay',
+      'tuncay_umay': 'tuncay-umay',
+      'adnan': 'adnan-turani',
+      'turani': 'adnan-turani',
+      'adnanturani': 'adnan-turani',
+      'adnan_turani': 'adnan-turani',
+      'mustafa': 'mustafa-ayaz',
+      'ayaz': 'mustafa-ayaz',
+      'mustafaayaz': 'mustafa-ayaz',
+      'mustafa_ayaz': 'mustafa-ayaz'
+    };
+
+    function normStr(s) {
+      if (!s) return "";
+      return String(s).toLowerCase()
+        .replace(/ç/g, 'c')
+        .replace(/ğ/g, 'g')
+        .replace(/ı/g, 'i')
+        .replace(/ö/g, 'o')
+        .replace(/ş/g, 's')
+        .replace(/ü/g, 'u')
+        .replace(/[-_\s]/g, '');
+    }
+
+    function findArtist(query) {
+      if (!query) return null;
+      let list = (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA : [];
+      if (!list || !list.length) return null;
+
+      let q = String(query).trim().toLowerCase();
+      q = q.replace(/^#+/, '');
+      q = q.replace(/^(?:profil|sanatci)=/, '');
+      q = q.replace(/\?.*$/, '');
+      q = q.replace(/\/+$/, '');
+      try { q = decodeURIComponent(q); } catch(e) {}
+
+      let match = list.find(a => a.id.toLowerCase() === q);
+      if (match) return match;
+
+      if (ARTIST_ALIASES[q]) {
+        match = list.find(a => a.id === ARTIST_ALIASES[q]);
+        if (match) return match;
+      }
+
+      const qNorm = normStr(q);
+      match = list.find(a => normStr(a.id) === qNorm || normStr(a.name).includes(qNorm));
+      if (match) return match;
+
+      match = list.find(a => a.id.toLowerCase().includes(q) || a.name.toLowerCase().includes(q));
+      return match || null;
+    }
+
     function renderNewArtistsFeature() {
       const container = document.getElementById("newArtistsContainer");
       if (!container) return;
@@ -2987,19 +3052,21 @@
       `).join("");
     }
 
-    function openArtistProfile(artistId) {
-      if (!artistId) return;
-      artistId = String(artistId).trim().replace(/^#?(?:sanatci|profil)=/, '').replace(/\/$/, '');
-
-      let dataList = (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA : [];
-      let artist = dataList.find(a => a.id === artistId);
+    function openArtistProfile(artistIdentifier) {
+      const artist = findArtist(artistIdentifier);
       if (!artist) {
-        console.warn("Artist not found:", artistId);
+        console.warn("Artist not found:", artistIdentifier);
         return;
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      window.location.hash = "sanatci=" + artist.id;
+      if (window.location.hash !== "#sanatci=" + artist.id && window.location.hash !== "#profil=" + artist.id) {
+        try {
+          history.pushState(null, null, "#sanatci=" + artist.id);
+        } catch(e) {
+          window.location.hash = "sanatci=" + artist.id;
+        }
+      }
       const mainView = document.getElementById("mainPageView");
       if (mainView) mainView.style.display = "none";
       const profileView = document.getElementById("artistProfileView");
@@ -3138,9 +3205,15 @@
       const profileView = document.getElementById("artistProfileView");
       const mainView = document.getElementById("mainPageView");
 
-      if (hash.startsWith("#sanatci=") || hash.startsWith("#profil=")) {
-        const artistId = hash.replace(/^#(?:sanatci|profil)=/, "");
-        openArtistProfile(artistId);
+      if (!hash || hash === "#" || hash === "#main") {
+        if (profileView) profileView.style.display = "none";
+        if (mainView) mainView.style.display = "block";
+        return;
+      }
+
+      const artist = findArtist(hash);
+      if (artist) {
+        openArtistProfile(artist.id);
       } else if (hash === "#sanatcilarimiz") {
         if (profileView) profileView.style.display = "none";
         if (mainView) mainView.style.display = "block";
@@ -3365,8 +3438,8 @@
 
   </script>
 
-<script src="/assets/auth-client.js?v=20261108_v13"></script>
-<script src="/assets/biresku-auth.js?v=20261108_v13"></script>
+<script src="/assets/auth-client.js?v=20261108_v14"></script>
+<script src="/assets/biresku-auth.js?v=20261108_v14"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
