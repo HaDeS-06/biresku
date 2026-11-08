@@ -652,6 +652,101 @@ window.ARTISTS_DATA = [
     ],
     "addedDate": "2026-11-08",
     "period": "1941 – 2022"
+  },
+  {
+    "id": "ibrahim-balaban",
+    "name": "İbrahim Balaban",
+    "discipline": "Çağdaş Türk Resmi, Toplumsal Gerçekçilik & Anadolu Efsaneleri",
+    "category": "Ressam & Yazar",
+    "city": "Bursa / İstanbul",
+    "studio": "Seçköy & İstanbul Atölyeleri",
+    "coverImage": "/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg?v=20261108_v34",
+    "shortBio": "Nâzım Hikmet'in Bursa Cezaevi'nde keşfedip 'Ressam Yunus Emre' olarak adlandırdığı; Anadolu insanını, köy yaşamını ve emeğin destansı kavgasını diyalektik bir tutkuyla tuvale aktaran bilge usta.",
+    "quote": "Sanat yaşantımızın izdüşümüdür. Konu bir özdür, her öz kendi kabuğunu yapar. Ben insanı santimetrik ölçülerle değil, diyalektik yöntemlerle resmediyorum. Ata göre insan değil, insana göre at çiziyorum.",
+    "biography": [
+      "1921 yılında Bursa'nın Seçköy köyünde doğan İbrahim Balaban, köyün üç yıllık ilkokulunu bitirdikten sonra çobanlık, tarım işçiliği ve taş kırma gibi kırsal yaşamın ağır işlerinde çalıştı. Genç yaşta girdiği Bursa Cezaevi'nde, yaşamının en büyük dönüm noktası olarak büyük şair Nâzım Hikmet ile tanıştı. Nâzım Hikmet, Balaban'ın içindeki eşsiz görsel sezgiyi keşfederek ona 'Ressam Yunus Emre' dedi ve kesintisiz yedi yıl boyunca ona resim sanatının inceliklerinin yanı sıra felsefe, sosyoloji ve ekonomi-politik dersleri verdi.",
+      "1950 yılındaki genel afla özgürlüğüne kavuşan Balaban, 1953 yılında İstanbul Fransız Kültür Merkezi'nde ilk kişisel sergisini açtı. Köy yaşamını, karasabanı, anaları, hasadı ve emeğin kavgasını yansıtan resimleri kısa sürede Türk sanat ortamında derin yankı uyandırdı. Resmin yanı sıra 'Şair Baba ve Damdakiler', 'Nâzım Hikmet'le Yedi Yıl' gibi unutulmaz anı ve anlatı kitapları kaleme alan usta sanatçı, 2019 yılında İstanbul'da 98 yaşında aramızdan ayrıldı."
+    ],
+    "philosophy": [
+      "İbrahim Balaban'ın sanat felsefesinin temelinde 'halk gerçekçiliği' ve 'üretici emeğin kutsallığı' yer alır. Nâzım Hikmet'in 'Balabanizm' olarak tanımladığı bu üslup, Batı'nın akademik kalıplarına ya da mekanik anatomik kurgularına sığmayan; doğrudan Anadolu köylüsünün topraktan, kederden ve umuttan beslenen içsel dinamizmini dile getirir. Balaban için figür soyut bir estetik süs değil; alın teri döken, toprağı çapalayan, gurbeti ve tutsaklığı omuzlayan yaşayan insandır.",
+      "Sanatçının resimlerinde kadınlar hem doğurgan analar hem de üretimin en ön cephesindeki kahramanlardır. Kompozisyonlarındaki anıtsal dairesel hareketler, deformasyonlar ve canlı toprak renkleri; insanın doğayla, emeğin sermayeyle olan diyalektik mücadelesini simgeler. Balaban'a göre sanat, seyirlik bir lüks değil; ezilen halkın sesini, tarihsel direncini ve yaşama tutkusunu geleceğe taşıyan sarsılmaz bir vicdan aynasıdır."
+    ],
+    "artworks": [
+      {
+        "id": "balaban-1",
+        "title": "Kış",
+        "technique": "Kağıt üzerine karışık teknik, imzalı",
+        "dimensions": "31 × 47 cm",
+        "year": "1953",
+        "image": "/assets/ibrahim-balaban/kis-1953-31x47.jpg?v=20261108_v34",
+        "imageUrl": "/assets/ibrahim-balaban/kis-1953-31x47.jpg?v=20261108_v34"
+      },
+      {
+        "id": "balaban-2",
+        "title": "Gurbetçi",
+        "technique": "Duralit üzerine yağlıboya, imzalı",
+        "dimensions": "70 × 50 cm",
+        "year": "1979",
+        "image": "/assets/ibrahim-balaban/gurbetci-1979-70x50.jpg?v=20261108_v34",
+        "imageUrl": "/assets/ibrahim-balaban/gurbetci-1979-70x50.jpg?v=20261108_v34"
+      },
+      {
+        "id": "balaban-3",
+        "title": "Anne ve Çocuk",
+        "technique": "Duralit üzerine yağlıboya, imzalı",
+        "dimensions": "35 × 25 cm",
+        "year": "1995",
+        "image": "/assets/ibrahim-balaban/anne-ve-cocuk-1995-35x25.jpg?v=20261108_v34",
+        "imageUrl": "/assets/ibrahim-balaban/anne-ve-cocuk-1995-35x25.jpg?v=20261108_v34"
+      },
+      {
+        "id": "balaban-4",
+        "title": "",
+        "technique": "Duralit üzerine yağlıboya, imzalı",
+        "dimensions": "80 × 110 cm",
+        "year": "1976",
+        "image": "/assets/ibrahim-balaban/koy-kompozisyonu-1976-80x110.jpg?v=20261108_v34",
+        "imageUrl": "/assets/ibrahim-balaban/koy-kompozisyonu-1976-80x110.jpg?v=20261108_v34"
+      },
+      {
+        "id": "balaban-5",
+        "title": "",
+        "technique": "Duralit üzerine yağlıboya, imzalı",
+        "dimensions": "48 × 68 cm",
+        "year": "1965",
+        "image": "/assets/ibrahim-balaban/anadolu-insani-1965-48x68.jpg?v=20261108_v34",
+        "imageUrl": "/assets/ibrahim-balaban/anadolu-insani-1965-48x68.jpg?v=20261108_v34"
+      },
+      {
+        "id": "balaban-6",
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "50 × 60 cm",
+        "year": "1986",
+        "image": "/assets/ibrahim-balaban/koy-yasaminda-emek-1986-50x60.jpg?v=20261108_v34",
+        "imageUrl": "/assets/ibrahim-balaban/koy-yasaminda-emek-1986-50x60.jpg?v=20261108_v34"
+      },
+      {
+        "id": "balaban-7",
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "40 × 50 cm",
+        "year": "2001",
+        "image": "/assets/ibrahim-balaban/tarla-hasat-2001-40x50.jpg?v=20261108_v34",
+        "imageUrl": "/assets/ibrahim-balaban/tarla-hasat-2001-40x50.jpg?v=20261108_v34"
+      },
+      {
+        "id": "balaban-8",
+        "title": "",
+        "technique": "Tuval üzerine karışık teknik (duralite marufle), imzalı",
+        "dimensions": "70 × 52 cm",
+        "year": "1969",
+        "image": "/assets/ibrahim-balaban/destansi-kompozisyon-1969-70x52.jpg?v=20261108_v34",
+        "imageUrl": "/assets/ibrahim-balaban/destansi-kompozisyon-1969-70x52.jpg?v=20261108_v34"
+      }
+    ],
+    "addedDate": "2026-11-08",
+    "period": "1921 – 2019"
   }
 ];
 
