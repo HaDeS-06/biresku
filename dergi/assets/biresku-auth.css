@@ -1,9 +1,52 @@
+
+/* ===================================================
+   KESİN MOR RENK VE PURPLE VISITED ENGELLEME KURALLARI
+   =================================================== */
+a, a:visited, a:active, a:focus {
+  color: inherit;
+  outline: none;
+}
+
+::selection {
+  background: rgba(192, 154, 88, 0.3) !important;
+  color: #ffffff !important;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 1px;
+}
+
+.auth-login-trigger-btn,
+.auth-login-trigger-btn:visited {
+  color: var(--accent) !important;
+  outline: none !important;
+}
+
+.auth-login-trigger-btn:hover {
+  background: var(--accent) !important;
+  color: #0f1013 !important;
+}
+
+.auth-kvkk-text a,
+.auth-kvkk-text a:visited {
+  color: var(--accent) !important;
+  text-decoration: underline;
+}
+
+.auth-tab-btn,
+.auth-tab-btn:visited {
+  outline: none !important;
+}
+
 /**
  * BİRESKU GÜVENLİ KİMLİK DOĞRULAMA & KVKK CSS STİLLERİ
  */
 
 /* Navigasyon Giriş & Kullanıcı Rozeti Butonları */
 .auth-login-trigger-btn {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
   display: inline-flex;
   align-items: center;
   gap: 6px;
