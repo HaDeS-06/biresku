@@ -1,14 +1,26 @@
-# Biresku Portal
+# BİRESKU — Birleşmiş Ressamlar Kulübü
 
-Biresku Dergisi resmi yönlendirme ve karşılama sayfası.
+Türk çağdaş sanatını, ressamlarımızın bağımsız üretimlerini ve koleksiyonerleri tek çatı altında toplayan ana sanat portalı ve dijital kültür merkezi.
 
-- **Alan Adı:** [biresku.com](https://biresku.com)
-- **Hedef:** `biresku.com/dergi`
-- **Barındırma:** GitHub Pages + Cloudflare DNS
+- **Canlı Adres:** [biresku.com](https://biresku.com)
+- **Barındırma:** GitHub Pages (Özel CNAME: `biresku.com`) + Cloudflare DNS
+- **Teknoloji:** Modern Vanilla HTML5 / CSS3 / ES6+ JavaScript (Bağımsız, Sıfır Bağımlılık)
 
-## Dosya Yapısı
+---
 
-- `index.html`: Karşılama ve otomatik yönlendirme (sayaç & buton) sayfası.
-- `CNAME`: GitHub Pages özel alan adı (`biresku.com`) tanımı.
-- `.nojekyll`: Statik dosyaların doğrudan sunulmasını sağlar.
-- `404.html`: Hatalı linklerde otomatik olarak `/dergi` adresine yönlendiren yedek sayfa.
+## 📌 Yapay Zekâ & Geliştirici Devir Dokümanı (Handover)
+
+Geliştirici veya yapay zekâ geçişlerinde projenin mimarisi, veri modelleri, alınan kritik kararlar, kullanıcı kuralları ve son güncellemeler için lütfen detaylı devir dosyasını inceleyin:
+
+👉 **[AI_HANDOVER.md](./AI_HANDOVER.md)**
+
+---
+
+## Proje Yapısı
+
+- `index.html`: Ana portal (Brand Hero, Karşılama Resepsiyonu, Biresku Haberleri, Sanatçılar & Yeni Eklenenler vitrini).
+- `dergi/`: Biresku Sanat & Edebiyat Dergisi (editoryal yazılar, sergiler, yeni eklenenler).
+- `dergi/sanatcilar/`: Sanatçılar kataloğu ve dinamik tek sayfa profil alanları (`#profil=...`).
+- `assets/artists-data.js`: Tek doğruluk kaynağı olan sanatçı, biyografi ve eser veritabanı.
+- `assets/biresku-auth.js`: Kimlik doğrulama, üye girişi ve oturum yönetimi.
+- `AI_HANDOVER.md`: Detaylı AI bağlamı, kullanıcı kuralları, sanatçı bilgileri ve son yapılan güncellemeler.

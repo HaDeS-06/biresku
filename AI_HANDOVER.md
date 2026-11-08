@@ -1,0 +1,158 @@
+# BİRESKU — AI & Geliştirici Devir / El Kitabı (Handover Documentation)
+
+> **Tarih:** 8 Kasım 2026  
+> **Canlı Adres:** [biresku.com](https://biresku.com)  
+> **GitHub Deposu:** `HaDeS-06/biresku` (`main` dalı)  
+> **Barındırma:** GitHub Pages (Özel CNAME: `biresku.com`) + Cloudflare DNS  
+> **Amaç:** Bu doküman, Biresku projesini devralacak sonraki yapay zekâ (AI) modelleri veya yazılımcılar için projenin güncel mimarisini, veri kaynaklarını, alınan kritik kararları, kullanıcı kurallarını ve dağıtım süreçlerini eksiksiz aktarmak üzere hazırlanmıştır.
+
+---
+
+## 1. Proje Mimarisi ve Dizin Yapısı
+
+Proje saf, modern, bağımlılıksız (Vanilla HTML5 / Modern CSS3 / Modern ES6+ JavaScript) mimariyle inşa edilmiştir. Build tool (Webpack/Vite vb.) zorunluluğu yoktur; dosyalar doğrudan GitHub Pages tarafından statik olarak sunulmaktadır.
+
+```text
+biresku/
+├── index.html                     # Ana Karşılama Portalı (Resepsiyon, Haberler, Sanatçı Vitrini)
+├── CNAME                          # GitHub Pages özel domain (biresku.com)
+├── .nojekyll                      # Jekyll derleyicisini devre dışı bırakır
+├── 404.html                       # Hatalı link yönlendirmesi
+├── AI_HANDOVER.md                 # Bu devir ve bağlam dokümanı
+├── dergi/
+│   ├── index.html                 # Biresku Sanat & Edebiyat Dergisi Ana Sayfası
+│   └── sanatcilar/
+│       └── index.html             # Sanatçılar Kataloğu & Dinamik Tek Sayfa Profil Alanları (#profil=...)
+├── iletisim/
+│   └── index.html                 # İletişim Sayfası
+├── gizlilik-politikasi/
+│   └── index.html                 # KVKK ve Gizlilik Politikası
+└── assets/
+    ├── artists-data.js            # TEK DOĞRULUK KAYNAĞI: Tüm sanatçı verileri, biyografiler, eserler
+    ├── biresku-auth.js            # Üye giriş/kayıt istemci mantığı & oturum yönetimi
+    ├── biresku-auth.css           # Kimlik doğrulama arayüz stilleri
+    ├── auth-client.js             # Supabase / Local auth köprüsü
+    ├── adnan-turani/              # Prof. Dr. Adnan Turani profil fotoğrafı ve eser görselleri
+    ├── mustafa-ayaz/              # Prof. Dr. Mustafa Ayaz profil fotoğrafı ve eser görselleri
+    ├── tuncay-umay/               # Tuncay Umay profil fotoğrafı ve eser görselleri
+    └── hikmet-cetinkaya/          # Hikmet Çetinkaya profil fotoğrafı ve 8 doğrulanmış Artam eseri
+```
+
+---
+
+## 2. Merkezi Veri Modeli (`assets/artists-data.js`)
+
+Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonları `window.ARTISTS_DATA` dizisinde saklanır. Sitedeki profil sayfaları ve vitrinler bu veriyi dinamik olarak okur.
+
+### Kayıtlı 4 Sanatçı ve Kritik Detayları:
+
+#### 1. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
+- **Disiplin:** Çağdaş Türk Resmi, Lirik Dışavurumculuk & Gelincikler
+- **Profil Fotoğrafı:** `assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg` (MAG Dergisi atölye çekimi; tuval başında spatulalı yüksek çözünürlüklü fotoğraf).
+- **Gerçek Alıntı:** *"Gelincik unutmamaktır, hatırlamaktır, vefadır."* (Sanatçının kendi söyleşilerinde yayımlanmış özgün sözüdür, uydurma alıntı kullanılmamalıdır).
+- **ÖNEMLİ KURAL (Paris ile bağı yok):** Kullanıcı talimatı: *"Hikmet Çetinkaya'nın Paris ile işi yok"*. Biyografisinde, eğitiminde veya sergilerinde Paris referansı yer almaz.
+- **Doğrulanmış 8 Eser (Artam Antik A.Ş. Müzayede Kayıtları & Gerçek Ölçüler):**
+  1. *Gelincikler (Geniş Ufuk)* — Tuval üzerine yağlıboya, **80 × 100 cm** (2022)
+  2. *Gelincikler (Dikey Işık Süzülmesi)* — Tuval üzerine yağlıboya, **136 × 56 cm** (2021)
+  3. *Gelincikler (Kır Çiçekleri Kompozisyonu)* — Tuval üzerine yağlıboya, **70 × 70 cm** (2022)
+  4. *Gelincikler (Spatula & Impasto Dokusu)* — Tuval üzerine yağlıboya, **50 × 35 cm** (2022)
+  5. *Gelincikler (Kare Büyük Tuval)* — Tuval üzerine yağlıboya, **100 × 100 cm** (2022)
+  6. *Gelincikler (Yatay Panoramik Tuval)* — Tuval üzerine yağlıboya, **60 × 30 cm** (2022)
+  7. *Gelincikler (Kare Dışavurumcu Seri)* — Tuval üzerine yağlıboya, **50 × 50 cm** (2021)
+  8. *Gelincikler (Minyatür Spatula Çalışması)* — Tuval üzerine yağlıboya, **30 × 30 cm** (2020)
+  *(Not: Önceden sehven eklenen portre çalışması kaldırılmış, 8 eserin tamamı Artam Antik A.Ş. doğrulamalı gelincik temalı orijinal eserlerle yenilenmiştir).*
+
+#### 2. Tuncay Umay (`id: "tuncay-umay"`)
+- **Disiplin:** Denizlerin Devinimi & Sürrealist Satranç Manifestosu
+- **ÖNEMLİ KURAL (Akademisyen DEĞİL):** Kullanıcı talimatı: *"akademisyen değilki o nerden çıktı"*. Tuncay Umay bağımsız ressam ve Biresku'nun kurucu sanatçısıdır; biyografisinde veya unvanında "akademisyen" ifadesi **kesinlikle geçmemelidir**.
+- **Kayıtlı Eser Sayısı:** 13 Eser
+
+#### 3. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
+- **Disiplin:** Çağdaş Türk Resmi, Dışavurumcu Figürasyon & Dinamik Kompozisyon
+- **Kayıtlı Eser Sayısı:** 13 Eser (Mustafa Ayaz Plastik Sanatlar Müzesi koleksiyonu referanslı)
+
+#### 4. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
+- **Disiplin:** Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı
+- **Kayıtlı Eser Sayısı:** 13 Eser (Marmaris Serisi, Viyolonsel Çalan Kadın, Müzisyenler Trio vb.)
+
+---
+
+## 3. Kullanıcı İstekleri Doğrultusunda Yapılan Kritik Düzenlemeler
+
+Gelecekte geri alma veya hata yapmamak adına kullanıcının doğrudan verdiği talimatlar ve çözümleri:
+
+| Konu / İstek | Kullanıcı Uyarısı | Çözüm & Mevcut Durum |
+| :--- | :--- | :--- |
+| **Biresku Haberleri Mavi Nokta** | *"biresku haberleri yazısının yanındaki mavi noktayı kaldır"* | `.biresku-news-widget-kicker::before` içerisindeki yanıp sönen mavi pulsing dot kaldırıldı. |
+| **Tuncay Umay Unvanı** | *"akademisiyen değilki o nerden çıktı"* | Tüm sayfalardan (index, dergi, artists-data) "akademisyen" ifadesi kaldırıldı; "ressam ve Biresku kurucusu sanatçı" olarak düzeltildi. |
+| **Hikmet Çetinkaya Profiline Gitme Hatası** | *"Hikmet hocaya tıklayınca onun profiline atmıyor bi sorun var düzelt bi daha da o sorun olmicak şekilde ayarlarmısın"* | `dergi/sanatcilar/index.html` içerisindeki hash parser `loadArtistProfileFromHash()` normalize edildi; `#profil=hikmet-cetinkaya` ve `#sanatci=...` formatları hatasız açılacak şekilde evrensel router kuruldu. |
+| **Paris İddiası** | *"hikmet çetin kayanın paris ileişi yok"* | Sanatçı biyografisindeki hatalı Paris/Fransa atıfları tamamen kaldırıldı; Ankara/Gazi/Türkiye merkezli gerçek kariyeri yazıldı. |
+| **Eser Doğruluğu & Boyutları** | *"bu resimleri bi daha check et sadece güvenilir kaynak kullan ve bunlara ölçü yazabilirsin güvenilir kaynaklardan resimlerin ölçüsü ile beraber al"* | Tüm görseller Artam Antik A.Ş. müzayede kataloglarından çekilerek doğrulanmış ölçüleri (`80x100 cm`, `136x56 cm` vb.) karta ve modal detayına işlendi. |
+| **8 Eser & Hatalı Eser Değişimi** | *"bak buraya 8 eser ekle ve o sol alttaki eser onun değil değiştir onu"* | Sanatçıya ait olmayan kadın portresi kaldırıldı; Artam kayıtlı 8 adet orijinal gelincik tablosu tam set halinde yüklendi. |
+| **Alıntı Doğruluğu** | *"burada alıntı yaptığın sözü gerçek mi gerçekten böyle bir şey söylemişmi"* | Yapay alıntı yerine Hikmet Çetinkaya'nın basında yayımlanmış otantik sözü konuldu: *"Gelincik unutmamaktır, hatırlamaktır, vefadır."* |
+| **Profil Fotoğrafı** | *"pp olarak farklı daha güzel bir foto koyabilirsin bence hikmet hocaya"* | *MAG Dergisi* kaynaklı, elinde spatula ile tuval başında yer aldığı yüksek kaliteli stüdyo fotoğrafı profil fotoğrafı yapıldı. |
+| **Biresku Haberleri Mobil Uyumu** | *"burdaki biresku haberleri kısmı telde gözükmüyo güzelce yedirirmisin"* | `@media (max-width: 768px)` altında gizlenmiş olan `.mansion-gate-section` aktifleştirildi; mobilde şık, taşma yapmayan (`overflow-x: hidden`), tam oturan editoryal haber kartına dönüştürüldü. |
+| **"Sanatçı Alanı" Rozetinin Kaldırılması** | *"sanatçı alanı yazıyo ya onu kaldır sana"* | Sanatçı fotoğraflarının sol üst köşesindeki siyah-altın `SANATÇI ALANI` rozeti ana sayfa ve dergi listelerindeki tüm kartlardan kaldırıldı. |
+| **Yeni Eklenen Sanatçıların Sola Gelmesi** | *"burdaki sanatçılarımız kısmında yeni eklenenler sol tarafa eklenicek otomatik olarak en son eklenen de sağa doğru kayıcak ve kaybolucak"* | Ana sayfa rayı ve dergi vitrini ters kronolojik sıralamaya uyarlandı: En son eklenen **Hikmet Çetinkaya en solda (1. sırada)**, eskiler sağa doğru kayıyor. Ayrıca `syncArtistsRailWithData()` fonksiyonu ile `window.ARTISTS_DATA`'ya yeni sanatçı eklendiğinde otomatik en başa/sola yerleşmesi sağlandı. |
+
+---
+
+## 4. Sayfa Bileşenleri ve Çalışma Mantığı
+
+### A. Ana Sayfa (`index.html`)
+
+1. **Brand Hero Masthead:**
+   - Üst kısımda logotip: **BİRESKU / BİRLEŞMİŞ RESSAMLAR KULÜBÜ / UNITED ARTIST CLUB**.
+   - Mobilde `clamp()` yazı boyutları ve `white-space: normal` ile taşma yapmaz.
+
+2. **Mansion Gate (Giriş & Resepsiyon + Biresku Haberleri):**
+   - Masaüstünde 2 sütun: Solda Biresku Karşılama & İstatistik Hapları; Sağda Biresku Haberleri.
+   - Mobilde tek sütun: Üstte karşılama, altında tam genişlikte Biresku Haberleri editoryal kartı.
+   - **Biresku Haberleri Fonksiyonları:**
+     - `toggleBireskuNewsSort()`: Haberleri kronolojik veya ters kronolojik sıralar ("Yeniden Eskiye ⇄" / "Eskiden Yeniye ⇄").
+     - `openBireskuNewsModal(id)`: Habere tıklandığında tam basın metnini, sergi mekanını ve detayları pop-up modalda açar.
+
+3. **Sanatçılarımız & Yeni Eklenenler Rayı (`#artistsRail`):**
+   - Yatay kaydırılabilir akış (`flow-rail`).
+   - Sıralama Kuralı: **En Yeni Eklenen En Solda!**
+     - 1. Hikmet Çetinkaya *(En Yeni)*
+     - 2. Tuncay Umay
+     - 3. Prof. Dr. Mustafa Ayaz
+     - 4. Prof. Dr. Adnan Turani
+     - 5. BİRESKU SANATÇI KOLEKTİFİ (*Tüm Sanatçıları Keşfet* vitrin kartı)
+   - Otomatik JS Motoru: `syncArtistsRailWithData()` sayfa açılışında `window.ARTISTS_DATA.slice().reverse()` çalıştırarak kartları dinamik olarak en yeni solda olacak şekilde senkronize eder.
+
+### B. Dergi ve Sanatçı Kataloğu (`dergi/sanatcilar/index.html`)
+
+1. **Hash Tabanlı Router:**
+   - URL'de `#profil=adnan-turani` veya `#profil=hikmet-cetinkaya` bulunduğunda otomatik olarak ilgili sanatçının profil görünümünü açar, vitrini gizler.
+   - Sanatçı bulunamazsa veya hash temizlenirse katalog listesini görüntüler.
+2. **Eser Galerisi & Lightbox:**
+   - Her sanatçının eserleri grid halinde listelenir.
+   - Eser üzerine tıklandığında tam ekran yüksek çözünürlüklü modal açılır; eser adı, tekniği, **santimetre cinsinden boyutları** ve yılı gösterilir.
+
+---
+
+## 5. Dağıtım ve Yayına Alma Süreci (Deployment Workflow)
+
+Site doğrudan GitHub Pages üzerinden yayınlanmaktadır. Değişiklik yapıldığında şu adımlar takip edilmelidir:
+
+1. **Önbellek Kırma (Cache Busting):**
+   - CSS ve JS bağlantılarına versiyon etiketi eklenmiştir (örn: `?v=20261108_v24`).
+   - Yapılan her kritik frontend değişikliğinde versiyon numarası (`v24 -> v25`) artırılmalıdır.
+2. **GitHub API ile Dağıtım:**
+   - Dosyalar `HaDeS-06/biresku` deposunun `main` dalına commit edilir.
+   - GitHub Actions `pages build and deployment` iş akışını tetikler (~30-60 saniye sürer).
+   - İş akışı `conclusion=success` olduğunda değişiklikler doğrudan `https://biresku.com` üzerinde canlıya geçer.
+
+---
+
+## 6. Yeni Gelecek AI İçin Altın Kurallar (Checklist)
+
+1. ⚠️ **Tuncay Umay'a asla "akademisyen" yazma.** Kendisi bağımsız ressam ve kulüp kurucusudur.
+2. ⚠️ **Hikmet Çetinkaya'ya asla Paris/Fransa bağlantısı ekleme.**
+3. ⚠️ **Hikmet Çetinkaya eserlerini değiştireceksen mutlaka Artam Antik A.Ş. kayıtlı orijinal gelincik serisi ve cm ölçülerini kullan.** Asla portre veya ilgisiz resim yükleme.
+4. ⚠️ **Sanatçı vitrininde yeni eklenen sanatçıyı daima sol başa ekle.** Eski sanatçılar sağa doğru kaymalıdır.
+5. ⚠️ **Sanatçı kapak fotoğraflarının üstüne "Sanatçı Alanı" vb. görseli kapatan rozet koyma.** Fotoğraflar temiz ve net kalmalıdır.
+6. ⚠️ **Mobilde yatay taşma (horizontal overflow) oluşturma.** `html, body` üzerinde `overflow-x: hidden` kuralını ve container sınırlarını koru.
+7. ⚠️ **Tüm yeni sanatçı veya eser eklemelerini `assets/artists-data.js` dosyasına kaydet.** Tek doğruluk kaynağı orasıdır.
