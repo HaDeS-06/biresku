@@ -44,9 +44,29 @@ biresku/
 
 Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonları `window.ARTISTS_DATA` dizisinde saklanır. Sitedeki profil sayfaları ve vitrinler bu veriyi dinamik olarak okur.
 
-### Kayıtlı 7 Sanatçı ve Kritik Detayları:
+### Kayıtlı 8 Sanatçı ve Kritik Detayları:
 
-#### 1. Mehmet Güleryüz (`id: "mehmet-guleryuz"`) — *En Son Eklenen (En Sol / Spot 1)*
+#### 1. Komet (`id: "komet"`) — *En Son Eklenen (En Sol / Spot 1)*
+- **Unvan & Disiplin:** Komet (Gürkan Coşkun) — Çağdaş Türk Resmi, Düşsel & Şiirsel Figüratif Dışavurumculuk
+- **Kategori:** Ressam & Şair
+- **Şehir / Atölye:** İstanbul / Paris — Paris & İstanbul Atölyeleri
+- **Dönem:** 1941 – 2022
+- **Profil Fotoğrafı:** Artam Arşivi'nden alınan 800×800 boyutunda doğrulanmış özgün koltukta düşünceli portresi (`assets/komet/komet-pp.jpg`).
+- **Önemli Bilgi:** 1941 Çorum doğumludur. İDGSA Halil Dikmen ve Zeki Faik İzer atölyelerinde eğitim gördü; İkinci Yeni şairleriyle (Edip Cansever, Cemal Süreya) yakın dostluklar kurdu. 1971'de Paris'e yerleşerek Vincennes ve Beaux-Arts'ta çalıştı. Max Ernst ve Panik Grubu'ndan (Mouvement Panique) esinlendi; düş, bilinçaltı ve gerçekliği harmanlayarak Türk resminde eşsiz bir şiirsel figürasyon ekolü yarattı.
+- **Doğrulanmış Otantik Alıntı:**  
+  *"Şiiri de resmin kendi diliyle vermeye çalışırım. İsterim ki resim, kendi organik yapısından ayrı olarak insanları bir yere götürsün. Düşsellik de burada çok etkilidir; benim resmim düşseldir çünkü dünyaya bakışım da öyle. Yaşadığımız, gördüğümüz her şey bir düş ve ben resmimde bunların peşine düşerim."*
+- **Koleksiyon Eserleri & İsim Politikası (Kullanıcı Kuralı: "En bilinen resimlerini koy, isimlerini bilmiyorsan koyma ama katiyen kafandan bir şey atma"):**
+  1. *"Deux Poids, Deux Mesures"* — 1973 tarihli ünlü erken dönem başyapıtı. Tuval üzerine karışık teknik, imzalı. **65 × 92 cm** (Artam 407. Müzayede)
+  2. *"Masada İzdüşüm"* — 2008 tarihli anıtsal müze ölçeği tablosu. Tuval üzerine karışık teknik, imzalı. **186 × 186 cm** (Artam 377. Müzayede)
+  3. *(İsmi Belirtilmemiş / Düşsel Ufuk Kompozisyonu)* — 380. Müzayede Komet Retrospektifi eseri. Özel bir isim konmadığı için isim alanı boş bırakılmıştır (`title: ""`). Tuval üzerine yağlıboya, imzalı. **100 × 130 cm**
+  4. *(İsmi Belirtilmemiş / Figüratif Kompozisyon)* — 2001 tarihli. Kağıt üzerine yağlıboya (tuvale marufle), imzalı. **68 × 98 cm** (`title: ""`)
+  5. *(İsmi Belirtilmemiş / Duralit Kompozisyon)* — Duralit üzerine yağlıboya, imzalı. **100 × 120 cm** (`title: ""`)
+  6. *(İsmi Belirtilmemiş / Düşsel Sahne)* — Tuval üzerine yağlıboya, imzalı. **60 × 73 cm** (`title: ""`)
+  7. *(İsmi Belirtilmemiş / 2001 Tarihli Eser)* — 2001 tarihli. Tuval üzerine yağlıboya, imzalı. **50 × 60 cm** (`title: ""`)
+  8. *(İsmi Belirtilmemiş / Minyatür Figür)* — Tuval üzerine yağlıboya (duralite marufle), imzalı. **30 × 40 cm** (`title: ""`)
+- **Sanat Felsefesi & Estetik:** Şiirsel düşsellik, trajikomik melankoli, arkadan gelen teatral loş ışık ve yabancılaşmış insan figürleri.
+
+#### 2. Mehmet Güleryüz (`id: "mehmet-guleryuz"`)
 - **Unvan & Disiplin:** Mehmet Güleryüz — Çağdaş Türk Resmi, Eleştirel Figürasyon & Dışavurumculuk (Neo-Ekspresyonizm)
 - **Kategori:** Ressam & Heykeltıraş
 - **Şehir / Atölye:** İstanbul / Paris — İstanbul Atölyesi
@@ -66,7 +86,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *2000 Tarihli Özgün Eser* — Müzayede kaydındaki genel etiket yerine sanatçının özgün başlığı bilinmediğinden isim alanı boş bırakılmıştır (`title: ""`). Tuval üzerine yağlıboya, imzalı. **58 × 74 cm**
 - **Sanat Felsefesi & Estetik:** Tavizsiz eleştirel figürasyon, dışavurumcu dramatik gerilim, varoluşsal başkaldırı ve insanın içgüdüleriyle yüzleşmesi.
 
-#### 2. Gülbin Nurgenç (`id: "gulbin-nurgenc"`)
+#### 3. Gülbin Nurgenç (`id: "gulbin-nurgenc"`)
 - **Unvan & Disiplin:** Gülbin Nurgenç — Çağdaş Türk Resmi, Soyut (Abstract), Fovizm & Ekspresyonizm
 - **Kategori:** Ressam & Sanat Eğitmeni
 - **Şehir / Atölye:** İstanbul — Nurgenç Sanat Atölyesi
@@ -80,7 +100,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   *"Sanat sadece gözle görüleni tuvale aktarmak değil; hayatın zorluklarını, kuralların insanlar üzerindeki dayatmasını süzerek en yalın, en saf haline indirgeme çabasıdır. Sanatçının görevi dünyayı olduğu gibi kopyalamak değil, kendi süzgecinden geçirerek ona yeni bir kimlik kazandırmaktır."*
 - **Sanat Felsefesi & Estetik:** Çalışmalarında soyut (abstract), fovist ve ekspresyonist bir estetiği benimser, renkleri kirletmeden sahip olduğu canlılığı korumaya özen gösterir.
 
-#### 3. Prof. Süleyman Saim Tekcan (`id: "suleyman-saim-tekcan"`) — *En Son Eklenen (En Sol / Spot 1)*
+#### 4. Prof. Süleyman Saim Tekcan (`id: "suleyman-saim-tekcan"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Unvan & Disiplin:** Prof. Süleyman Saim Tekcan — Özgün Baskı Resim, Gravür & Çağdaş Türk Resmi (Atlar & Hat Serisi)
 - **Kategori:** Ressam & Özgün Baskı Ustası
 - **Şehir / Atölye:** İstanbul / Trabzon — IMOGA (İstanbul Grafik Sanatlar Müzesi) / Tekcan Atölyesi
@@ -96,7 +116,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *"Figüratif"* — Tuval üzerine yağlıboya, imzalı. 2015 tarihli. **50 × 60 cm** (Lot ID: 46317)
 - **Doğrulanmış Otantik Alıntı:** *"Sanat bir serüvendir; özgün baskı ise bu serüvenin disiplin, sabır ve bilgelikle kâğıda mühürlenen en saf halidir."*
 
-#### 4. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
+#### 5. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Dışavurumculuk & Gelincikler
 - **Profil Fotoğrafı:** `assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg` (MAG Dergisi atölye çekimi; tuval başında spatulalı yüksek çözünürlüklü fotoğraf).
 - **Gerçek Alıntı:** *"Gelincik unutmamaktır, hatırlamaktır, vefadır."* (Sanatçının kendi söyleşilerinde yayımlanmış özgün sözüdür, uydurma alıntı kullanılmamalıdır).
@@ -112,16 +132,16 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *Gelincikler (Minyatür Spatula Çalışması)* — Tuval üzerine yağlıboya, **30 × 30 cm** (2020)
   *(Not: Önceden sehven eklenen portre çalışması kaldırılmış, 8 eserin tamamı Artam Antik A.Ş. doğrulamalı gelincik temalı orijinal eserlerle yenilenmiştir).*
 
-#### 5. Tuncay Umay (`id: "tuncay-umay"`)
+#### 6. Tuncay Umay (`id: "tuncay-umay"`)
 - **Disiplin:** Denizlerin Devinimi & Sürrealist Satranç Manifestosu
 - **ÖNEMLİ KURAL (Akademisyen DEĞİL):** Kullanıcı talimatı: *"akademisyen değilki o nerden çıktı"*. Tuncay Umay bağımsız ressam ve Biresku'nun kurucu sanatçısıdır; biyografisinde veya unvanında "akademisyen" ifadesi **kesinlikle geçmemelidir**.
 - **Kayıtlı Eser Sayısı:** 13 Eser
 
-#### 6. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
+#### 7. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
 - **Disiplin:** Çağdaş Türk Resmi, Dışavurumcu Figürasyon & Dinamik Kompozisyon
 - **Kayıtlı Eser Sayısı:** 13 Eser (Mustafa Ayaz Plastik Sanatlar Müzesi koleksiyonu referanslı)
 
-#### 7. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
+#### 8. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı
 - **Kayıtlı Eser Sayısı:** 13 Eser (Marmaris Serisi, Viyolonsel Çalan Kadın, Müzisyenler Trio vb.)
 

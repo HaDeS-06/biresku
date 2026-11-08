@@ -557,6 +557,101 @@ window.ARTISTS_DATA = [
     ],
     "addedDate": "2026-11-08",
     "period": "1938 – 2024"
+  },
+  {
+    "id": "komet",
+    "name": "Komet",
+    "discipline": "Çağdaş Türk Resmi, Düşsel & Şiirsel Figüratif Dışavurumculuk",
+    "category": "Ressam & Şair",
+    "city": "İstanbul / Paris",
+    "studio": "Paris & İstanbul Atölyeleri",
+    "coverImage": "/assets/komet/komet-pp.jpg?v=20261108_v33",
+    "shortBio": "Türk çağdaş resminde bilinçaltı, düşsellik ve ironiyi harmanlayarak kendine has melankolik figürler yaratan; resminde daima şiiri ve insanın varoluşsal yalnızlığını arayan efsanevi 'kuyruklu yıldız'.",
+    "quote": "Şiiri de resmin kendi diliyle vermeye çalışırım. İsterim ki resim, kendi organik yapısından ayrı olarak insanları bir yere götürsün. Düşsellik de burada çok etkilidir; benim resmim düşseldir çünkü dünyaya bakışım da öyle. Yaşadığımız, gördüğümüz her şey bir düş ve ben resmimde bunların peşine düşerim.",
+    "biography": [
+      "1941 yılında Çorum'da doğan Komet (asıl adıyla Gürkan Coşkun), 1960-1967 yılları arasında İstanbul Devlet Güzel Sanatlar Akademisi Resim Bölümü'nde Halil Dikmen ve Zeki Faik İzer atölyelerinde eğitim gördü. Akademi yıllarından itibaren edebiyat, şiir ve felsefeyle iç içe bir yaşam sürdü; Edip Cansever, Cemal Süreya ve Tomris Uyar gibi İkinci Yeni şairleriyle derin dostluklar kurdu. 1971 yılında devlet bursunu kazanarak Paris'e gitti; Vincennes Üniversitesi Sanat Bölümü'ne devam etti ve Ecole des Beaux-Arts'ta Gustave Singier ile çalıştı.",
+      "1974 yılında Fransa'da açtığı ilk kişisel sergisinden itibaren Paris ve İstanbul arasında sanatsal üretimini aralıksız sürdürdü. Max Ernst'in gerçeküstü atmosferinden ve Roland Topor'un öncülüğünü yaptığı 'Panik Hareketi'nden (Mouvement Panique) esinlenen Komet; resimden videoya, enstalasyondan şiire uzanan çok katmanlı bir üretim dili geliştirdi. Viyana, Brüksel, Cenevre, Paris ve İstanbul'da yüzlerce sergi açan usta sanatçı, 2022 yılında İstanbul'da aramızdan ayrılmıştır."
+    ],
+    "philosophy": [
+      "Komet'in sanat felsefesinin merkezinde 'şiirsel düşsellik', 'trajikomik melankoli' ve 'bilinçaltı ile gerçeğin harmanlanması' yer alır. Komet için figürler önceden tasarlanmış şablonlar değil; zihnin derinliklerinde aniden beliren, gizemli ve tekinsiz gölgelerdir. Resimlerinde arkadan gelen teatral ışık, figürleri siluetleştirirken izleyiciyi zamanın ve mekânın askıya alındığı esrarengiz bir rüya atmosferine davet eder.",
+      "Eserlerindeki siyah ceketli gizemli adamlar, melankolik kadınlar, ıssız ufuklar ve kaotik insan kalabalıkları; modern insanın yabancılaşmasını ve yalnızlığını ironik bir şiirsellikle dile getirir. Komet'e göre resim, dünyayı taklit eden pasif bir ayna değil; insanın kendi içsel düşlerini özgürce kurduğu, sınırları ve kuralları yıkan varoluşsal bir oyundur."
+    ],
+    "artworks": [
+      {
+        "id": "komet-1",
+        "title": "Deux Poids, Deux Mesures",
+        "technique": "Tuval üzerine karışık teknik, imzalı",
+        "dimensions": "65 × 92 cm",
+        "year": "1973",
+        "image": "/assets/komet/deux-poids-deux-mesures-65x92.jpg?v=20261108_v33",
+        "imageUrl": "/assets/komet/deux-poids-deux-mesures-65x92.jpg?v=20261108_v33"
+      },
+      {
+        "id": "komet-2",
+        "title": "Masada İzdüşüm",
+        "technique": "Tuval üzerine karışık teknik, imzalı",
+        "dimensions": "186 × 186 cm",
+        "year": "2008",
+        "image": "/assets/komet/masada-izdusum-186x186.jpg?v=20261108_v33",
+        "imageUrl": "/assets/komet/masada-izdusum-186x186.jpg?v=20261108_v33"
+      },
+      {
+        "id": "komet-3",
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "100 × 130 cm",
+        "year": "Özgün Koleksiyon Eseri",
+        "image": "/assets/komet/dussel-kompozisyon-100x130.jpg?v=20261108_v33",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-100x130.jpg?v=20261108_v33"
+      },
+      {
+        "id": "komet-4",
+        "title": "",
+        "technique": "Kağıt üzerine yağlıboya (tuvale marufle), imzalı",
+        "dimensions": "68 × 98 cm",
+        "year": "2001",
+        "image": "/assets/komet/dussel-kompozisyon-68x98.jpg?v=20261108_v33",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-68x98.jpg?v=20261108_v33"
+      },
+      {
+        "id": "komet-5",
+        "title": "",
+        "technique": "Duralit üzerine yağlıboya, imzalı",
+        "dimensions": "100 × 120 cm",
+        "year": "Özgün Koleksiyon Eseri",
+        "image": "/assets/komet/dussel-kompozisyon-100x120.jpg?v=20261108_v33",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-100x120.jpg?v=20261108_v33"
+      },
+      {
+        "id": "komet-6",
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "60 × 73 cm",
+        "year": "Özgün Koleksiyon Eseri",
+        "image": "/assets/komet/dussel-kompozisyon-60x73.jpg?v=20261108_v33",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-60x73.jpg?v=20261108_v33"
+      },
+      {
+        "id": "komet-7",
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "50 × 60 cm",
+        "year": "2001",
+        "image": "/assets/komet/dussel-kompozisyon-50x60.jpg?v=20261108_v33",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-50x60.jpg?v=20261108_v33"
+      },
+      {
+        "id": "komet-8",
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya (duralite marufle), imzalı",
+        "dimensions": "30 × 40 cm",
+        "year": "Özgün Koleksiyon Eseri",
+        "image": "/assets/komet/dussel-kompozisyon-30x40.jpg?v=20261108_v33",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-30x40.jpg?v=20261108_v33"
+      }
+    ],
+    "addedDate": "2026-11-08",
+    "period": "1941 – 2022"
   }
 ];
 
