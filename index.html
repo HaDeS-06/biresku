@@ -94,6 +94,12 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
     body {
       background-color: var(--bg);
       color: var(--text-main);
@@ -2138,9 +2144,146 @@
         color: var(--accent);
       }
 
-      /* 2. Tekrar eden gereksiz devasa başlık ve stat haplarını mobilde gizle */
-      .mansion-gate-section {
+            /* Mobil Üst Başlık Taşma Düzeltmesi */
+      .brand-hero-masthead {
+        padding: 24px 12px 18px !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .brand-name {
+        font-size: clamp(1.8rem, 8vw, 2.4rem) !important;
+        letter-spacing: 0.12em !important;
+        padding-left: 0.12em !important;
+        max-width: 100% !important;
+      }
+      .brand-sub-badge {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-top: 8px !important;
+        max-width: 100% !important;
+      }
+      .brand-ornament-line {
         display: none !important;
+      }
+      .brand-tagline-tr {
+        font-size: 0.72rem !important;
+        letter-spacing: 0.12em !important;
+        padding-left: 0.12em !important;
+        white-space: normal !important;
+        text-align: center !important;
+      }
+      .brand-tagline-en {
+        font-size: 0.56rem !important;
+        letter-spacing: 0.18em !important;
+        padding-left: 0.18em !important;
+        white-space: normal !important;
+        text-align: center !important;
+      }
+
+      /* 2. Mobilde Karşılama ve Biresku Haberlerini Şık ve Kompakt Şekilde Yedir */
+      .mansion-gate-section {
+        display: block !important;
+        padding: 22px 0 18px !important;
+        border-bottom: 1px solid var(--border);
+        overflow-x: hidden !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .gate-layout-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .gate-intro-col {
+        text-align: center !important;
+        padding: 0 4px;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .gate-kicker {
+        font-size: 0.68rem !important;
+        letter-spacing: 0.14em !important;
+        margin: 0 auto 8px !important;
+        display: inline-block;
+      }
+      .gate-title {
+        font-size: clamp(1.35rem, 5.2vw, 1.7rem) !important;
+        line-height: 1.22 !important;
+        margin-bottom: 8px !important;
+        word-break: normal !important;
+      }
+      .gate-desc {
+        font-size: 0.88rem !important;
+        line-height: 1.55 !important;
+        margin: 0 auto 14px !important;
+        max-width: 100% !important;
+        color: var(--text-muted);
+      }
+      .reception-stats-bar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-bottom: 4px !important;
+      }
+      .reception-stat-pill {
+        padding: 4px 10px !important;
+        font-size: 0.72rem !important;
+        gap: 5px !important;
+      }
+
+      /* BİRESKU HABERLERİ MOBİL ENTEGRASYONU */
+      .gate-news-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        padding: 14px 12px 12px !important;
+        overflow: hidden !important;
+      }
+      .biresku-news-widget,
+      .biresku-news-card,
+      .biresku-news-feed {
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .biresku-news-widget-header {
+        margin-bottom: 10px !important;
+        padding-bottom: 8px !important;
+      }
+      .biresku-news-widget-title {
+        font-size: 1.08rem !important;
+      }
+      .biresku-news-sort-btn {
+        font-size: 0.68rem !important;
+        padding: 3px 6px !important;
+      }
+      .biresku-news-feed {
+        max-height: 230px !important;
+        gap: 6px !important;
+      }
+      .biresku-news-card {
+        padding: 8px 6px 8px 10px !important;
+      }
+      .biresku-news-card-title {
+        font-size: 0.84rem !important;
+        line-height: 1.35 !important;
+      }
+      .biresku-news-card-meta {
+        font-size: 0.68rem !important;
+        margin-bottom: 2px !important;
+      }
+      .biresku-news-card-venue {
+        font-size: 0.70rem !important;
       }
 
       /* 3. Site Nav tek satırda pürüzsüz yatay akış */
@@ -2845,7 +2988,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v19">
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v22">
 </head>
 <body>
 
@@ -3290,7 +3433,7 @@
             <a href="/dergi/sanatcilar/#profil=tuncay-umay" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
                 <span class="artist-card-badge">Sanatçı Alanı</span>
-                <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v19" alt="Tuncay Umay" loading="lazy">
+                <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v22" alt="Tuncay Umay" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3311,7 +3454,7 @@
             <a href="/dergi/sanatcilar/#profil=hikmet-cetinkaya" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
                 <span class="artist-card-badge">Sanatçı Alanı</span>
-                <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261108_v19" alt="Hikmet Çetinkaya" loading="lazy">
+                <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261108_v22" alt="Hikmet Çetinkaya" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3845,9 +3988,9 @@
     </div>
   </div>
 
-<script src="/assets/artists-data.js?v=20261108_v19"></script>
-<script src="/assets/auth-client.js?v=20261108_v19"></script>
-<script src="/assets/biresku-auth.js?v=20261108_v19"></script>
+<script src="/assets/artists-data.js?v=20261108_v22"></script>
+<script src="/assets/auth-client.js?v=20261108_v22"></script>
+<script src="/assets/biresku-auth.js?v=20261108_v22"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
