@@ -21,6 +21,16 @@
         }
       } catch (e) {}
     })();
+  
+    // YATAY AKIŞ RAYLARINI SAĞA/SOLA KAYDIRMA
+    function scrollFlowRail(railId, direction) {
+      const rail = document.getElementById(railId);
+      if (rail) {
+        const scrollAmount = 320 * direction;
+        rail.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    }
+
   </script>
 
   <!-- Google Fonts: Editorial Serif & Clean Sans -->
@@ -720,6 +730,363 @@
     }
     
     /* RESEPSİYON / GİRİŞ (HERO SECTION) */
+    
+    /* ========================================================
+       YENİ DİNAMİK AKIŞ BÖLÜMÜ (HORIZONTAL FLOW SHOWCASE ROWS)
+       Biresku Dergisi (Sanatçılar) + Müzayede (Eserler) + Sergiler
+       ======================================================== */
+    .flow-showcase-section {
+      padding: 50px 0 70px;
+    }
+    
+    .flow-row-block {
+      margin-bottom: 54px;
+    }
+    .flow-row-block:last-child {
+      margin-bottom: 30px;
+    }
+
+    .flow-row-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .flow-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .flow-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      letter-spacing: -0.01em;
+    }
+    .flow-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .flow-view-all-link {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s ease, transform 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .flow-view-all-link:hover {
+      color: #dfb974;
+      transform: translateX(2px);
+    }
+    .flow-nav-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-heading);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .flow-nav-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--bg-hover);
+    }
+
+    /* AKICI YATAY RAY (HORIZONTAL STREAM CONTAINER) */
+    .flow-rail-container {
+      position: relative;
+    }
+    .flow-rail {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      padding: 8px 4px 18px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) var(--bg-card);
+    }
+    .flow-rail::-webkit-scrollbar {
+      height: 6px;
+    }
+    .flow-rail::-webkit-scrollbar-track {
+      background: var(--bg-surface);
+      border-radius: 3px;
+    }
+    .flow-rail::-webkit-scrollbar-thumb {
+      background: rgba(192, 154, 88, 0.4);
+      border-radius: 3px;
+    }
+    .flow-rail::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+
+    /* KART GENEL STİLİ */
+    .flow-card {
+      flex: 0 0 295px;
+      max-width: 295px;
+      scroll-snap-align: start;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .flow-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 1. DERGİ / SANATÇI KARTI */
+    .artist-flow-card {
+      padding: 22px 20px;
+    }
+    .artist-card-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .artist-avatar-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #111;
+    }
+    .artist-avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .artist-name-title {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+    .artist-cat-sub {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .artist-card-discipline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 16px;
+      min-height: 40px;
+    }
+    .artist-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .badge-art-count {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 3px 9px;
+      border-radius: 12px;
+    }
+    .badge-new-artist {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #2ecc71;
+      background: rgba(46, 204, 113, 0.14);
+      border: 1px solid rgba(46, 204, 113, 0.35);
+      padding: 3px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .card-link-action {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* 2. MÜZAYEDE ESER KARTI */
+    .artwork-flow-card {
+      cursor: pointer;
+    }
+    .artwork-thumb-wrap {
+      width: 100%;
+      height: 190px;
+      background: #0d0e11;
+      overflow: hidden;
+      position: relative;
+    }
+    .artwork-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.35s ease;
+    }
+    .artwork-flow-card:hover .artwork-thumb-wrap img {
+      transform: scale(1.05);
+    }
+    .artwork-badge-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(15, 16, 19, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    .artwork-info-box {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .artwork-art-title {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.3;
+    }
+    .artwork-artist-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .artwork-tech-meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .artwork-action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      margin-top: 6px;
+    }
+    .artwork-status-pill {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* 3. SERGİ / HABER KARTI */
+    .news-flow-card {
+      cursor: pointer;
+    }
+    .news-thumb-wrap {
+      width: 100%;
+      height: 155px;
+      background: #15171c;
+      overflow: hidden;
+      position: relative;
+    }
+    .news-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .news-flow-card:hover .news-thumb-wrap img {
+      transform: scale(1.04);
+    }
+    .news-tag-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(192, 154, 88, 0.9);
+      color: #0f1013;
+      font-size: 0.66rem;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .news-info-box {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .news-card-title {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .news-meta-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .flow-card {
+        flex: 0 0 260px;
+        max-width: 260px;
+      }
+      .flow-title {
+        font-size: 1.35rem;
+      }
+    }
+
+
     .mansion-gate-section {
       padding: 56px 0 36px;
       text-align: center;
@@ -1356,102 +1723,390 @@
     </div>
   </section>
 
-  <!-- ODALAR -->
-  <main class="rooms-section">
+  <!-- ========================================================
+       DİNAMİK AKIŞ BÖLÜMÜ (SOLDAN SAĞA AKAN SATIRLAR)
+       1. Biresku Dergisi: Sanatçılar (Yeni Eklenenler Öncelikli)
+       2. Biresku Müzayede: Seçkin Eserler
+       3. Sergiler & Güncel Sanat Etkinlikleri
+       ======================================================== -->
+  <main class="flow-showcase-section">
     <div class="container">
-      
-      <div class="section-headline-wrap">
-        <div class="section-kicker">BİRESKU ODALARI</div>
-        <h2 class="section-title">Biresku Odaları</h2>
-      </div>
 
-      <div class="rooms-grid">
-
-        <!-- 1. ODA: BİRESKU DERGİ -->
-        <article class="room-card" id="dergi-odasi">
+      <!-- 1. SATIR: BİRESKU DERGİSİ (SANATÇILAR - SOLDAN SAĞA AKIŞ) -->
+      <section class="flow-row-block" id="dergi-satiri">
+        <div class="flow-row-header">
           <div>
-            <div class="room-top">
-              <span class="room-kicker">YAYIN &amp; DERGİ</span>
-              <span class="room-status-badge status-active">
-                <span class="status-dot"></span>
-                <span>Yayında</span>
-              </span>
-            </div>
-            <h3 class="room-title">Biresku Sanat Dergisi</h3>
-            <p class="room-desc">
-              Güncel sanat haberleri, sergi bültenleri, sanatçıların biyografi ve felsefeleri ile orijinal koleksiyon eserlerinin yer aldığı ana yayın alanımız.
-            </p>
-            <ul class="room-highlights">
-              <li><span class="room-bullet">✦</span> <span>Güncel Sanat Haberleri &amp; Eleştiriler</span></li>
-              <li><span class="room-bullet">✦</span> <span>Usta ve Çağdaş Sanatçılar Portföyü</span></li>
-              <li><span class="room-bullet">✦</span> <span>Haftanın Yeni Eklenen Sanatçıları Vitrini</span></li>
-            </ul>
+            <div class="flow-kicker">BİRESKU DERGİSİ</div>
+            <h2 class="flow-title">Sanatçılarımız &amp; Yeni Eklenenler</h2>
           </div>
-          <div>
-            <a href="/dergi/" class="room-action-btn">
-              <span>Dergiye Giriş Yap</span>
-              <span>&rarr;</span>
+          <div class="flow-controls">
+            <a href="/dergi/" class="flow-view-all-link">Dergiyi İncele &rarr;</a>
+            <button type="button" class="flow-nav-btn" onclick="scrollFlowRail('artistsRail', -1)" aria-label="Sola Kaydır">&lsaquo;</button>
+            <button type="button" class="flow-nav-btn" onclick="scrollFlowRail('artistsRail', 1)" aria-label="Sağa Kaydır">&rsaquo;</button>
+          </div>
+        </div>
+
+        <div class="flow-rail-container">
+          <div class="flow-rail" id="artistsRail">
+            
+            <!-- Sanatçı 1: Prof. Dr. Adnan Turani (Yeni Eklenen) -->
+            <a href="/dergi/#sanatci=adnan-turani" class="flow-card artist-flow-card">
+              <div>
+                <div class="artist-card-top">
+                  <div class="artist-avatar-wrap">
+                    <img src="/assets/adnan-turani/adnan-turani-pp.jpg" alt="Prof. Dr. Adnan Turani">
+                  </div>
+                  <div>
+                    <h3 class="artist-name-title">Prof. Dr. Adnan Turani</h3>
+                    <span class="artist-cat-sub">Ressam &amp; Sanat Tarihçisi</span>
+                  </div>
+                </div>
+                <p class="artist-card-discipline">
+                  Çağdaş Türk Resmi, Lirik Soyutlama &amp; Sanat Kuramı ekolünün öncüsü.
+                </p>
+              </div>
+              <div class="artist-card-bottom">
+                <span class="badge-new-artist">● Son 7 Gün</span>
+                <span class="badge-art-count">8 Eser</span>
+                <span class="card-link-action">Profili Aç &rarr;</span>
+              </div>
             </a>
-          </div>
-        </article>
 
-        <!-- 2. ODA: BİRESKU MÜZAYEDE -->
-        <article class="room-card" id="muzayede-odasi">
+            <!-- Sanatçı 2: Bedri Rahmi Eyüboğlu -->
+            <a href="/dergi/" class="flow-card artist-flow-card">
+              <div>
+                <div class="artist-card-top">
+                  <div class="artist-avatar-wrap" style="border-color: #888;">
+                    <img src="/assets/biresku-banner.jpg" alt="Bedri Rahmi Eyüboğlu">
+                  </div>
+                  <div>
+                    <h3 class="artist-name-title">Bedri Rahmi Eyüboğlu</h3>
+                    <span class="artist-cat-sub">Usta Ressam &amp; Şair</span>
+                  </div>
+                </div>
+                <p class="artist-card-discipline">
+                  Türk resminde geleneksel halk motifi, renk coşkusu ve D Grubu mirası.
+                </p>
+              </div>
+              <div class="artist-card-bottom">
+                <span class="badge-art-count">Usta Arşivi</span>
+                <span class="card-link-action">Dergide Gör &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Sanatçı 3: İbrahim Çallı -->
+            <a href="/dergi/" class="flow-card artist-flow-card">
+              <div>
+                <div class="artist-card-top">
+                  <div class="artist-avatar-wrap" style="border-color: #888;">
+                    <img src="/assets/adnan-turani/marmaris-serisi.jpg" alt="İbrahim Çallı">
+                  </div>
+                  <div>
+                    <h3 class="artist-name-title">İbrahim Çallı</h3>
+                    <span class="artist-cat-sub">1914 Kuşağı Öncüsü</span>
+                  </div>
+                </div>
+                <p class="artist-card-discipline">
+                  İzlenimci Türk resmi, Çallı Kuşağı üslubu ve Meşrutiyet dönemi tuvalleri.
+                </p>
+              </div>
+              <div class="artist-card-bottom">
+                <span class="badge-art-count">Koleksiyon</span>
+                <span class="card-link-action">Dergide Gör &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Sanatçı 4: Nuri İyem -->
+            <a href="/dergi/" class="flow-card artist-flow-card">
+              <div>
+                <div class="artist-card-top">
+                  <div class="artist-avatar-wrap" style="border-color: #888;">
+                    <img src="/assets/adnan-turani/viyolonsel-calan-kadin.jpg" alt="Nuri İyem">
+                  </div>
+                  <div>
+                    <h3 class="artist-name-title">Nuri İyem</h3>
+                    <span class="artist-cat-sub">Toplumcu Gerçekçi</span>
+                  </div>
+                </div>
+                <p class="artist-card-discipline">
+                  Anadolu insanının derinlikli gözleri ve toplumsal gerçekçi figürasyon.
+                </p>
+              </div>
+              <div class="artist-card-bottom">
+                <span class="badge-art-count">Özel Dosya</span>
+                <span class="card-link-action">Dergide Gör &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Sanatçı 5: Fikret Mualla -->
+            <a href="/dergi/" class="flow-card artist-flow-card">
+              <div>
+                <div class="artist-card-top">
+                  <div class="artist-avatar-wrap" style="border-color: #888;">
+                    <img src="/assets/adnan-turani/asiklar-serisi.jpg" alt="Fikret Mualla">
+                  </div>
+                  <div>
+                    <h3 class="artist-name-title">Fikret Mualla</h3>
+                    <span class="artist-cat-sub">Paris Ekolü</span>
+                  </div>
+                </div>
+                <p class="artist-card-discipline">
+                  Paris kafeleri, caz müzisyenleri ve kendine has guaj anlatımı.
+                </p>
+              </div>
+              <div class="artist-card-bottom">
+                <span class="badge-art-count">Arşiv Seçkisi</span>
+                <span class="card-link-action">Dergide Gör &rarr;</span>
+              </div>
+            </a>
+
+            <!-- Tüm Sanatçılarımız Vitrini Kartı -->
+            <a href="/dergi/sanatcilar/" class="flow-card artist-flow-card" style="border-style: dashed; justify-content: center; align-items: center; text-align: center; background: rgba(192, 154, 88, 0.05);">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: 12px; color: var(--accent);">🎨</div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-heading); margin-bottom: 6px;">Tüm Sanatçılarımız</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">Kataloğumuzdaki tüm usta ve çağdaş isimleri keşfedin.</p>
+                <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent);">Kataloğu Aç &rarr;</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. SATIR: BİRESKU MÜZAYEDE (ESERLER - SOLDAN SAĞA AKIŞ) -->
+      <section class="flow-row-block" id="muzayede-satiri">
+        <div class="flow-row-header">
           <div>
-            <div class="room-top">
-              <span class="room-kicker">AÇIK ARTIRMA &amp; KOLEKSİYON</span>
-              <span class="room-status-badge status-pending">
-                <span class="status-dot"></span>
-                <span>Küratör Hazırlığında</span>
-              </span>
+            <div class="flow-kicker">BİRESKU MÜZAYEDE</div>
+            <h2 class="flow-title">Küratör Seçkisi &amp; Müzayede Koleksiyonu</h2>
+          </div>
+          <div class="flow-controls">
+            <button type="button" class="flow-view-all-link" onclick="openModal('auctionModal')" style="background:none;border:none;cursor:pointer;">Müzayede Masası &rarr;</button>
+            <button type="button" class="flow-nav-btn" onclick="scrollFlowRail('auctionRail', -1)" aria-label="Sola Kaydır">&lsaquo;</button>
+            <button type="button" class="flow-nav-btn" onclick="scrollFlowRail('auctionRail', 1)" aria-label="Sağa Kaydır">&rsaquo;</button>
+          </div>
+        </div>
+
+        <div class="flow-rail-container">
+          <div class="flow-rail" id="auctionRail">
+            
+            <!-- Eser 1: Marmaris Serisi -->
+            <div class="flow-card artwork-flow-card" onclick="openModal('auctionModal');">
+              <div class="artwork-thumb-wrap">
+                <img src="/assets/adnan-turani/marmaris-serisi.jpg" alt="Marmaris Serisi">
+                <span class="artwork-badge-overlay">● Ekspertiz Onaylı</span>
+              </div>
+              <div class="artwork-info-box">
+                <h3 class="artwork-art-title">Marmaris Serisi</h3>
+                <span class="artwork-artist-name">Prof. Dr. Adnan Turani (2005)</span>
+                <span class="artwork-tech-meta">Tuval Üzerine Yağlıboya • 80 x 80 cm</span>
+                <div class="artwork-action-row">
+                  <span class="artwork-status-pill">Küratör Seçkisi</span>
+                  <span class="card-link-action">İncele &rarr;</span>
+                </div>
+              </div>
             </div>
-            <h3 class="room-title">Biresku Müzayede</h3>
-            <p class="room-desc">
-              Sertifikalı tuvaller, özgün desenler ve seçkin koleksiyon parçalarının sanatseverlerle şeffaf kurallarla buluşacağı dijital müzayede alanı.
-            </p>
-            <ul class="room-highlights">
-              <li><span class="room-bullet">✦</span> <span>Küratör Onaylı Özgün Sanat Eserleri</span></li>
-              <li><span class="room-bullet">✦</span> <span>Şeffaf Provinans &amp; Durum Raporu</span></li>
-              <li><span class="room-bullet">✦</span> <span>Canlı ve Süreli Açık Artırma Oturumları</span></li>
-            </ul>
-          </div>
-          <div>
-            <button type="button" class="room-action-btn secondary" onclick="openModal('auctionModal')">
-              <span>Küratör Seçkisi Hazırlanıyor</span>
-              <span>ℹ</span>
-            </button>
-          </div>
-        </article>
 
-        <!-- 3. ODA: BİRESKU SOHBET & KULÜP -->
-        <article class="room-card" id="sohbet-odasi">
-          <div>
-            <div class="room-top">
-              <span class="room-kicker">SANATÇI ÖZEL ALANI</span>
-              <span class="room-status-badge status-locked">
-                <span class="status-dot"></span>
-                <span>Sanatçı Odası</span>
-              </span>
+            <!-- Eser 2: Viyolonsel Çalan Kadın -->
+            <div class="flow-card artwork-flow-card" onclick="openModal('auctionModal');">
+              <div class="artwork-thumb-wrap">
+                <img src="/assets/adnan-turani/viyolonsel-calan-kadin.jpg" alt="Viyolonsel Çalan Kadın">
+                <span class="artwork-badge-overlay">● Sertifikalı</span>
+              </div>
+              <div class="artwork-info-box">
+                <h3 class="artwork-art-title">Viyolonsel Çalan Kadın</h3>
+                <span class="artwork-artist-name">Prof. Dr. Adnan Turani (2001)</span>
+                <span class="artwork-tech-meta">Tuval Üzerine Yağlıboya • 100 x 100 cm</span>
+                <div class="artwork-action-row">
+                  <span class="artwork-status-pill">Özel Koleksiyon</span>
+                  <span class="card-link-action">İncele &rarr;</span>
+                </div>
+              </div>
             </div>
-            <h3 class="room-title">Biresku Sohbet &amp; Kulüp</h3>
-            <p class="room-desc">
-              Yalnızca kayıtlı ressamların ve akademisyenlerin kendi aralarında fikir alışverişi yapabileceği, atölye tekniklerini ve üretimlerini paylaşabileceği özel sanatçı ağı.
-            </p>
-            <ul class="room-highlights">
-              <li><span class="room-bullet">✦</span> <span>Sanatçılar Arası Özel Diyalog &amp; Tartışma</span></li>
-              <li><span class="room-bullet">✦</span> <span>Atölye Süreçleri ve Teknik Paylaşımı</span></li>
-              <li><span class="room-bullet">✦</span> <span>Kolektif Proje &amp; Sergi Birliktelikleri</span></li>
-            </ul>
-          </div>
-          <div>
-            <button type="button" class="room-action-btn secondary" onclick="openModal('clubModal')">
-              <span>Sanatçı Başvurusu Yap</span>
-              <span>&rarr;</span>
-            </button>
-          </div>
-        </article>
 
-      </div>
+            <!-- Eser 3: Müzisyenler - Trio -->
+            <div class="flow-card artwork-flow-card" onclick="openModal('auctionModal');">
+              <div class="artwork-thumb-wrap">
+                <img src="/assets/adnan-turani/muzisyenler-trio.jpg" alt="Müzisyenler - Trio">
+                <span class="artwork-badge-overlay">● Anıtsal Tual</span>
+              </div>
+              <div class="artwork-info-box">
+                <h3 class="artwork-art-title">Müzisyenler - Trio</h3>
+                <span class="artwork-artist-name">Prof. Dr. Adnan Turani (2009)</span>
+                <span class="artwork-tech-meta">Tuval Üzerine Yağlıboya • 130 x 165 cm</span>
+                <div class="artwork-action-row">
+                  <span class="artwork-status-pill">Büyük Boyut</span>
+                  <span class="card-link-action">İncele &rarr;</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Eser 4: Âşıklar Serisi -->
+            <div class="flow-card artwork-flow-card" onclick="openModal('auctionModal');">
+              <div class="artwork-thumb-wrap">
+                <img src="/assets/adnan-turani/asiklar-serisi.jpg" alt="Âşıklar Serisi">
+                <span class="artwork-badge-overlay">● İmzalı Eser</span>
+              </div>
+              <div class="artwork-info-box">
+                <h3 class="artwork-art-title">Âşıklar Serisi</h3>
+                <span class="artwork-artist-name">Prof. Dr. Adnan Turani (2010)</span>
+                <span class="artwork-tech-meta">Tuval Üzerine Yağlıboya • 50 x 50 cm</span>
+                <div class="artwork-action-row">
+                  <span class="artwork-status-pill">Lirik Ekol</span>
+                  <span class="card-link-action">İncele &rarr;</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Eser 5: Dansçı (Dansöz Serisi) -->
+            <div class="flow-card artwork-flow-card" onclick="openModal('auctionModal');">
+              <div class="artwork-thumb-wrap">
+                <img src="/assets/adnan-turani/dansci.jpg" alt="Dansçı">
+                <span class="artwork-badge-overlay">● Özgün Eser</span>
+              </div>
+              <div class="artwork-info-box">
+                <h3 class="artwork-art-title">Dansçı (Dansöz Serisi)</h3>
+                <span class="artwork-artist-name">Prof. Dr. Adnan Turani (2008)</span>
+                <span class="artwork-tech-meta">Kağıt Üzerine Yağlıboya • 50 x 70 cm</span>
+                <div class="artwork-action-row">
+                  <span class="artwork-status-pill">Figüratif Ritim</span>
+                  <span class="card-link-action">İncele &rarr;</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Eser 6: Kemancı -->
+            <div class="flow-card artwork-flow-card" onclick="openModal('auctionModal');">
+              <div class="artwork-thumb-wrap">
+                <img src="/assets/adnan-turani/kemanci.jpg" alt="Kemancı">
+                <span class="artwork-badge-overlay">● Orijinal</span>
+              </div>
+              <div class="artwork-info-box">
+                <h3 class="artwork-art-title">Kemancı</h3>
+                <span class="artwork-artist-name">Prof. Dr. Adnan Turani (2010)</span>
+                <span class="artwork-tech-meta">Prestuval Üzerine Yağlıboya • 35 x 35 cm</span>
+                <div class="artwork-action-row">
+                  <span class="artwork-status-pill">Koleksiyoner Seçkisi</span>
+                  <span class="card-link-action">İncele &rarr;</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SATIR: SERGİLER & GÜNCEL SANAT (SOLDAN SAĞA AKIŞ) -->
+      <section class="flow-row-block" id="sergiler-satiri">
+        <div class="flow-row-header">
+          <div>
+            <div class="flow-kicker">GÜNCEL SANAT &amp; ETKİNLİKLER</div>
+            <h2 class="flow-title">Sergiler, Fuarlar ve Bienaller</h2>
+          </div>
+          <div class="flow-controls">
+            <a href="/dergi/" class="flow-view-all-link">Tüm Haberler &rarr;</a>
+            <button type="button" class="flow-nav-btn" onclick="scrollFlowRail('exhibitionsRail', -1)" aria-label="Sola Kaydır">&lsaquo;</button>
+            <button type="button" class="flow-nav-btn" onclick="scrollFlowRail('exhibitionsRail', 1)" aria-label="Sağa Kaydır">&rsaquo;</button>
+          </div>
+        </div>
+
+        <div class="flow-rail-container">
+          <div class="flow-rail" id="exhibitionsRail">
+            
+            <!-- Sergi 1: Venedik Bienali -->
+            <a href="/dergi/" class="flow-card news-flow-card">
+              <div class="news-thumb-wrap">
+                <img src="/assets/adnan-turani/muzisyenler-trio.jpg" alt="Venedik Bienali 61. Uluslararası Sanat Sergisi">
+                <span class="news-tag-overlay">BİENAL</span>
+              </div>
+              <div class="news-info-box">
+                <h3 class="news-card-title">Venedik Bienali 61. Uluslararası Sanat Sergisi Türkiye Pavyonu</h3>
+                <div class="news-meta-foot">
+                  <span>İKSV</span>
+                  <span>05 Mayıs 2026</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Sergi 2: Saltanat Dizeleri -->
+            <a href="/dergi/" class="flow-card news-flow-card">
+              <div class="news-thumb-wrap">
+                <img src="/assets/adnan-turani/marmaris-serisi.jpg" alt="Saltanat Dizeleri Sergisi">
+                <span class="news-tag-overlay">SERGİ</span>
+              </div>
+              <div class="news-info-box">
+                <h3 class="news-card-title">"Saltanat Dizeleri" Sergisi Dolmabahçe Sarayı Galerisi'nde Sanatseverlerle Buluştu</h3>
+                <div class="news-meta-foot">
+                  <span>Anadolu Ajansı</span>
+                  <span>20 Ekim 2026</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Sergi 3: Art Basel & Contemporary Istanbul -->
+            <a href="/dergi/" class="flow-card news-flow-card">
+              <div class="news-thumb-wrap">
+                <img src="/assets/adnan-turani/viyolonsel-calan-kadin.jpg" alt="Art Basel Paris ve Contemporary Istanbul">
+                <span class="news-tag-overlay">FUAR</span>
+              </div>
+              <div class="news-info-box">
+                <h3 class="news-card-title">Art Basel Paris ve Contemporary Istanbul: Çağdaş Sanat Fuarları Analizi</h3>
+                <div class="news-meta-foot">
+                  <span>PlumeMag</span>
+                  <span>06 Kasım 2026</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Sergi 4: Koç Topluluğu 100. Yıl -->
+            <a href="/dergi/" class="flow-card news-flow-card">
+              <div class="news-thumb-wrap">
+                <img src="/assets/adnan-turani/asiklar-serisi.jpg" alt="Yüzyılın İzleri Sergisi">
+                <span class="news-tag-overlay">SERGİ</span>
+              </div>
+              <div class="news-info-box">
+                <h3 class="news-card-title">Koç Topluluğu'nun 100. Yılı: "Yüzyılın İzleri" Kapsamlı Seçki Sergisi</h3>
+                <div class="news-meta-foot">
+                  <span>Oggusto</span>
+                  <span>16 Eylül 2026</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Sergi 5: Türk Ressam HOFA Kadrosunda -->
+            <a href="/dergi/" class="flow-card news-flow-card">
+              <div class="news-thumb-wrap">
+                <img src="/assets/adnan-turani/dansci.jpg" alt="Dilan Tanburoğlu HOFA Kadrosunda">
+                <span class="news-tag-overlay">GALERİ</span>
+              </div>
+              <div class="news-info-box">
+                <h3 class="news-card-title">Türk Ressam Dilan Tanburoğlu, Londra Galerisi HOFA'nın Temsil Kadrosuna Girdi</h3>
+                <div class="news-meta-foot">
+                  <span>Onedio Sanat</span>
+                  <span>04 Kasım 2026</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Sergi 6: Genç Ressam Lâl Yılmaz -->
+            <a href="/dergi/" class="flow-card news-flow-card">
+              <div class="news-thumb-wrap">
+                <img src="/assets/adnan-turani/kemanci.jpg" alt="Londra'nın konuştuğu genç ressam">
+                <span class="news-tag-overlay">SÖYLEŞİ</span>
+              </div>
+              <div class="news-info-box">
+                <h3 class="news-card-title">Londra'nın Konuştuğu Genç Ressam: Lâl Yılmaz ve Özgün Figürasyon Dili</h3>
+                <div class="news-meta-foot">
+                  <span>Gazete Oksijen</span>
+                  <span>02 Nisan 2026</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
 
       <!-- RESEPSİYON DANIŞMA KARTI -->
       <section class="reception-info-card">
