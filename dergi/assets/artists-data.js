@@ -132,7 +132,7 @@ window.ARTISTS_DATA = [
     "category": "Ressam & Sanat Eğitimcisi",
     "city": "Ankara",
     "studio": "Tuncay Umay Atölyeleri (Ankara)",
-    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v16",
+    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v17",
     "shortBio": "1980 Ankara doğumlu ressam; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
     "quote": "Denizi resmetmek, aslında zamanın akışını ve bu amansız devinimi tek bir fırça vuruşunda dondurma cesaretidir. Her tablo, dalgaların sonsuz değişimi karşısında kendi iç dengesini arayan, hayatın fırtınasında doğru hamleyi yapmaya çalışan ve karanlığa rağmen içindeki ışığı söndürmeyen ruhun görsel bir manifestosudur.",
     "biography": [
@@ -240,8 +240,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "80 x 100 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/gelincikler-1.jpg",
-            "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-1.jpg"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v17",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v17"
       },
       {
             "id": "cetinkaya-2",
@@ -249,8 +249,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "136 x 56 cm",
             "year": "2021",
-            "image": "/assets/hikmet-cetinkaya/gelincikler-2.jpg",
-            "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-2.jpg"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v17",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v17"
       },
       {
             "id": "cetinkaya-3",
@@ -258,8 +258,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "70 x 70 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/gelincikler-3.jpg",
-            "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-3.jpg"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v17",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v17"
       },
       {
             "id": "cetinkaya-4",
@@ -267,8 +267,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "50 x 35 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/gelincikler-4.jpg",
-            "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-4.jpg"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v17",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v17"
       },
       {
             "id": "cetinkaya-5",
@@ -276,8 +276,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "100 x 100 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/gelincikler-5.jpg",
-            "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-5.jpg"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v17",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v17"
       },
       {
             "id": "cetinkaya-6",
@@ -285,8 +285,26 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "60 x 30 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/gelincikler-6.jpg",
-            "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-6.jpg"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v17",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v17"
+      },
+      {
+            "id": "cetinkaya-7",
+            "title": "Gelincikler",
+            "technique": "Tuval üzerine yağlıboya",
+            "dimensions": "50 x 50 cm",
+            "year": "2022",
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v17",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v17"
+      },
+      {
+            "id": "cetinkaya-8",
+            "title": "Gelincikler",
+            "technique": "Tuval üzerine yağlıboya",
+            "dimensions": "30 x 30 cm",
+            "year": "2022",
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v17",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v17"
       }
 ],
     "addedDate": "2026-11-08"
