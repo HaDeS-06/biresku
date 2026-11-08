@@ -122,16 +122,16 @@
 
     /* SOL ÜST BUTON (BANNER ÜZERİNDE TEK BAŞINA DURAN MENÜ BUTONU) */
     .top-menu-btn {
-      position: absolute;
+      position: fixed;
       top: 16px;
       left: 20px;
-      z-index: 50;
+      z-index: 1200;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(18, 20, 24, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(18, 20, 24, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(192, 154, 88, 0.5);
       border-radius: 4px;
       color: #f5f5f7;
@@ -142,21 +142,33 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       cursor: pointer;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
       transition: all 0.22s ease;
     }
     .top-menu-btn:hover,
     .top-menu-btn.is-open {
       border-color: var(--accent);
       color: var(--accent);
-      background: rgba(26, 28, 34, 0.96);
-      box-shadow: 0 6px 22px rgba(192, 154, 88, 0.3);
+      background: rgba(26, 28, 34, 0.98);
+      box-shadow: 0 6px 24px rgba(192, 154, 88, 0.35);
       transform: translateY(-1px);
     }
+    .top-menu-btn.is-open .nav-hub-chevron {
+      transform: rotate(180deg);
+    }
+    .top-menu-btn.is-open .nav-hamburger-icon span:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+    .top-menu-btn.is-open .nav-hamburger-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    .top-menu-btn.is-open .nav-hamburger-icon span:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
     [data-theme="light"] .top-menu-btn {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       color: #111;
-      border-color: rgba(192, 154, 88, 0.6);
+      border-color: rgba(192, 154, 88, 0.65);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
     @media (max-width: 600px) {
@@ -1111,7 +1123,7 @@
         <span></span>
         <span></span>
       </span>
-      <span>SEKMELER &amp; MENÜ</span>
+      <span class="nav-btn-label">SEKMELER &amp; MENÜ</span>
       <span class="nav-hub-chevron" aria-hidden="true">&#9662;</span>
     </button>
 
@@ -1210,35 +1222,17 @@
               </a>
             </div>
 
-            <!-- 3. AYARLAR (KÜÇÜK BUTONLAR & KONTROLLER) -->
+            <!-- 3. AYARLAR (İLETİŞİM GİBİ BUTONLU KART) -->
             <div class="sidebar-widget-card">
               <div class="widget-header">
                 <span class="widget-icon">⚙️</span>
                 <span class="widget-title">Ayarlar</span>
               </div>
-              <div class="widget-settings-list">
-                <!-- Tema Seçimi -->
-                <div class="widget-setting-row">
-                  <span class="s-label">Görünüm:</span>
-                  <button id="panelThemeToggleBtn" type="button" class="setting-toggle-btn" aria-label="Temayı Değiştir">
-                    <span class="theme-sun-icon">☀️ Gündüz</span>
-                    <span class="theme-moon-icon">🌙 Gece</span>
-                  </button>
-                </div>
-                <!-- Okuma Boyutu -->
-                <div class="widget-setting-row">
-                  <span class="s-label">Yazı Boyutu:</span>
-                  <div class="font-scale-buttons">
-                    <button type="button" id="scaleNormalBtn" class="scale-btn active" onclick="setFontScale('normal')">A</button>
-                    <button type="button" id="scaleLargeBtn" class="scale-btn" onclick="setFontScale('large')">A+</button>
-                  </div>
-                </div>
-                <!-- Gizlilik Politikası -->
-                <a href="/gizlilik-politikasi/" class="widget-link-row" onclick="closeSlidingNav();">
-                  <span>Gizlilik Politikası &amp; KVKK</span>
-                  <span class="btn-arrow">&rarr;</span>
-                </a>
-              </div>
+              <p class="widget-desc">Görünüm teması (gündüz/gece), okuma metin boyutu ve kişisel tercihler.</p>
+              <button type="button" class="widget-action-btn" onclick="closeSlidingNav(); openModal('settingsModal');">
+                <span>Ayarları Aç</span>
+                <span class="btn-arrow">&rarr;</span>
+              </button>
             </div>
 
           </div>
@@ -1552,6 +1546,8 @@
       slidingBackdrop.setAttribute("aria-hidden", "false");
       hubTrigger.classList.add("is-open");
       hubTrigger.setAttribute("aria-expanded", "true");
+      const label = hubTrigger.querySelector(".nav-btn-label");
+      if (label) label.textContent = "KAPAT";
       document.body.style.overflow = "hidden";
     }
 
@@ -1560,6 +1556,8 @@
       slidingBackdrop.setAttribute("aria-hidden", "true");
       hubTrigger.classList.remove("is-open");
       hubTrigger.setAttribute("aria-expanded", "false");
+      const label = hubTrigger.querySelector(".nav-btn-label");
+      if (label) label.textContent = "SEKMELER & MENÜ";
       document.body.style.overflow = "";
     }
 
@@ -1654,5 +1652,54 @@
       }
     });
   </script>
+  <!-- AYARLAR MODALI -->
+  <div id="settingsModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
+    <div class="biresku-modal-box">
+      <div class="biresku-modal-header">
+        <h3 id="settingsModalTitle" class="biresku-modal-title">Sistem &amp; Görünüm Ayarları</h3>
+        <button type="button" class="biresku-modal-close" onclick="closeModal('settingsModal')" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="biresku-modal-body">
+        
+        <!-- Görünüm Teması -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border);">
+          <div>
+            <strong style="color: var(--text-heading); display: block; font-size: 0.95rem;">Görünüm Teması</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Karanlık / Gece veya Aydınlık / Gündüz modu</span>
+          </div>
+          <button id="modalThemeToggleBtn" type="button" class="setting-toggle-btn" onclick="toggleTheme()" style="padding: 7px 16px; font-size: 0.82rem;">
+            <span class="theme-sun-icon">☀️ Gündüz Modu</span>
+            <span class="theme-moon-icon">🌙 Gece Modu</span>
+          </button>
+        </div>
+
+        <!-- Yazı Boyutu -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border);">
+          <div>
+            <strong style="color: var(--text-heading); display: block; font-size: 0.95rem;">Okuma Metin Boyutu</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Yazı ölçeğini büyütün veya normale döndürün</span>
+          </div>
+          <div class="font-scale-buttons">
+            <button type="button" class="scale-btn active" onclick="setFontScale('normal')" style="padding: 6px 14px; font-size: 0.85rem;">Standart</button>
+            <button type="button" class="scale-btn" onclick="setFontScale('large')" style="padding: 6px 14px; font-size: 0.85rem;">Büyük (A+)</button>
+          </div>
+        </div>
+
+        <!-- Gizlilik Politikası -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0;">
+          <div>
+            <strong style="color: var(--text-heading); display: block; font-size: 0.95rem;">Gizlilik &amp; KVKK</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Kullanıcı verileri ve çerez politikası</span>
+          </div>
+          <a href="/gizlilik-politikasi/" class="setting-link-arrow" style="font-size: 0.88rem; color: var(--accent); font-weight: 600; text-decoration: none;">Politikayı İncele &rarr;</a>
+        </div>
+
+      </div>
+      <div class="biresku-modal-footer">
+        <button type="button" class="biresku-modal-btn" onclick="closeModal('settingsModal')">Tamam</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
