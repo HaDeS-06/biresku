@@ -478,6 +478,38 @@
         return;
       }
 
+      // 1. Backend API (JWT + Session) Kontrolü
+      if (window.BireskuAuthClient) {
+        try {
+          const apiRes = await BireskuAuthClient.login(email, password);
+          if (apiRes && apiRes.success) {
+            resetFailedAttempts();
+            const sessionUser = {
+              id: apiRes.user.id,
+              email: apiRes.user.email,
+              name: apiRes.user.full_name || 'Sanatçı',
+              role: apiRes.user.role || 'user',
+              isVerified: apiRes.user.is_verified,
+              loginTime: new Date().toISOString()
+            };
+            setCurrentUser(sessionUser);
+            this.showAlert('Giriş başarılı! Oturumunuz açılıyor...', 'success');
+            setTimeout(() => {
+              this.closeAuthModal();
+              this.updateNavbarUi();
+            }, 700);
+            return;
+          } else if (apiRes && apiRes.message) {
+            recordFailedAttempt();
+            this.showAlert(apiRes.message, 'error');
+            return;
+          }
+        } catch (err) {
+          // Backend API offline ise yerel kasaya (Vault) geri düş
+          console.info("[AUTH] Backend API offline veya ulaşılamıyor, yerel güvenli vault devrede.");
+        }
+      }
+
       const vault = getAccountsVault();
       const account = vault[email];
 
@@ -538,6 +570,28 @@
       if (!kvkkChecked) {
         this.showAlert('6698 sayılı KVKK uyarınca aydınlatma ve açık rıza onayı zorunludur.', 'error');
         return;
+      }
+
+      // 1. Backend API (JWT + PBKDF2) ile Kayıt
+      if (window.BireskuAuthClient) {
+        try {
+          const regRes = await BireskuAuthClient.register(name, email, password);
+          if (regRes && regRes.success) {
+            if (regRes.requires_verification) {
+              this._otpEmail = email;
+              this.showAlert(regRes.message, 'success');
+              this.switchTab('otp');
+              const otpEmailInput = document.getElementById('otpEmailInput');
+              if (otpEmailInput) otpEmailInput.value = email;
+              return;
+            }
+          } else if (regRes && regRes.message) {
+            this.showAlert(regRes.message, 'error');
+            return;
+          }
+        } catch (err) {
+          console.info("[AUTH] Backend API offline, yerel güvenli vault ile kayıt yapılıyor.");
+        }
       }
 
       const vault = getAccountsVault();
