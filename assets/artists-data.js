@@ -132,7 +132,7 @@ window.ARTISTS_DATA = [
     "category": "Ressam & Sanat Eğitimcisi",
     "city": "Ankara",
     "studio": "Tuncay Umay Atölyeleri (Ankara)",
-    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v17",
+    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v18",
     "shortBio": "1980 Ankara doğumlu ressam; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
     "quote": "Denizi resmetmek, aslında zamanın akışını ve bu amansız devinimi tek bir fırça vuruşunda dondurma cesaretidir. Her tablo, dalgaların sonsuz değişimi karşısında kendi iç dengesini arayan, hayatın fırtınasında doğru hamleyi yapmaya çalışan ve karanlığa rağmen içindeki ışığı söndürmeyen ruhun görsel bir manifestosudur.",
     "biography": [
@@ -224,7 +224,7 @@ window.ARTISTS_DATA = [
     "studio": "Çetinkaya Atölyesi (Ankara)",
     "coverImage": "/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg",
     "shortBio": "Türk çağdaş resminde gelincik teması ve lirik dışavurumcu renk coşkusuyla özdeşleşen; ulusal ve uluslararası 150'den fazla kişisel sergiye imza atan usta ressam.",
-    "quote": "Gelincik benim için yalnızca bir çiçek değil; doğanın en narin ama en dirençli tutkusunun, rengin ve sevginin tuvaldeki çığlığıdır.",
+    "quote": "Gelincik unutmamaktır, hatırlamaktır, vefadır.",
     "biography": [
       "1958 yılında Denizli'de doğan Hikmet Çetinkaya, ilk ve orta öğrenimini tamamladıktan sonra 1978 yılında Ankara Gazi Üniversitesi Gazi Eğitim Fakültesi Resim Bölümü'ne girdi ve 1982 yılında mezun oldu.",
       "2001 yılında katıldığı Stockholm Sanat Fuarı'ndan itibaren sanatında 'gelincik' temasını merkeze aldı ve 'Gelincik Ressamı' olarak anılmaya başladı. Ulusal ve uluslararası alanda 150'den fazla kişisel sergi açtı ve 800'ü aşkın karma sergiye katıldı. Birleşmiş Ressamlar ve Heykeltıraşlar Derneği (BRHD) üyesi olan sanatçının eserleri Ottawa Savaş Müzesi, Bulgaristan Silistra Sanat Müzesi ve çok sayıda ulusal ile uluslararası resmi ve özel koleksiyonda yer almaktadır. Sanatsal üretimini Ankara'daki atölyesinde sürdürmektedir."
@@ -240,8 +240,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "80 x 100 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v17",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v17"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v18",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v18"
       },
       {
             "id": "cetinkaya-2",
@@ -249,8 +249,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "136 x 56 cm",
             "year": "2021",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v17",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v17"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v18",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v18"
       },
       {
             "id": "cetinkaya-3",
@@ -258,8 +258,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "70 x 70 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v17",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v17"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v18",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v18"
       },
       {
             "id": "cetinkaya-4",
@@ -267,8 +267,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "50 x 35 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v17",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v17"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v18",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v18"
       },
       {
             "id": "cetinkaya-5",
@@ -276,8 +276,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "100 x 100 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v17",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v17"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v18",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v18"
       },
       {
             "id": "cetinkaya-6",
@@ -285,8 +285,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "60 x 30 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v17",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v17"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v18",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v18"
       },
       {
             "id": "cetinkaya-7",
@@ -294,8 +294,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "50 x 50 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v17",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v17"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v18",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v18"
       },
       {
             "id": "cetinkaya-8",
@@ -303,8 +303,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "30 x 30 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v17",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v17"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v18",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v18"
       }
 ],
     "addedDate": "2026-11-08"
