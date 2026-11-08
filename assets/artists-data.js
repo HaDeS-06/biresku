@@ -557,4 +557,4 @@ window.ARTISTS_DATA = [
   }
 ];
 
-var ARTISTS_DATA = window.ARTISTS_DATA;
+// window.ARTISTS_DATA ready

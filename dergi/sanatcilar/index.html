@@ -1707,8 +1707,8 @@
     }
 
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v5">
-  <script src="/assets/artists-data.js?v=20261108_v5"></script>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v6">
+  <script src="/assets/artists-data.js?v=20261108_v6"></script>
 </head>
 <body>
 
@@ -1858,7 +1858,7 @@
             Biresku bünyesinde yer alan tüm ressamlar, heykeltıraşlar ve bağımsız sanatçıların profillerini ve eser koleksiyonlarını inceleyebilirsiniz.
           </p>
         </div>
-        <div class="catalog-count-badge" id="artistCountBadge">Sanatçılar Yükleniyor...</div>
+        <div class="catalog-count-badge" id="artistCountBadge">3 Kayıtlı Sanatçı</div>
       </div>
 
       <!-- Kategori Filtresi -->
@@ -1871,7 +1871,66 @@
 
       <!-- Sanatçı Kartları -->
       <div class="artists-catalog-grid" id="catalogGrid">
-        <!-- JS ile dolar -->
+        <article class="artist-card" onclick="openArtistProfile('adnan-turani')">
+          <div class="artist-card-cover">
+            <span class="artist-card-badge">Ressam & Sanat Tarihçisi</span>
+            <img src="/assets/adnan-turani/adnan-turani-pp.jpg" alt="Prof. Dr. Adnan Turani" loading="lazy">
+          </div>
+          <div class="artist-card-body">
+            <div>
+              <h3 class="artist-name">Prof. Dr. Adnan Turani</h3>
+              <div class="artist-discipline">Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı</div>
+              <p class="artist-statement">Türk çağdaş resim sanatının soyut ekoldeki öncülerinden; Türk sanat literatürünün temel başvuru kaynaklarını kaleme alan bilge sanat tarihçisi ve akademisyen.</p>
+            </div>
+            <div class="artist-card-footer">
+              <span>📍 İstanbul / Ankara</span>
+              <span class="view-profile-btn">
+                <span>Özel Alanına Git</span>
+                <span>&rarr;</span>
+              </span>
+            </div>
+          </div>
+        </article>
+        <article class="artist-card" onclick="openArtistProfile('mustafa-ayaz')">
+          <div class="artist-card-cover">
+            <span class="artist-card-badge">Ressam & Sanat Eğitimcisi</span>
+            <img src="/assets/mustafa-ayaz/mustafa-ayaz-pp.jpg" alt="Prof. Dr. Mustafa Ayaz" loading="lazy">
+          </div>
+          <div class="artist-card-body">
+            <div>
+              <h3 class="artist-name">Prof. Dr. Mustafa Ayaz</h3>
+              <div class="artist-discipline">Çağdaş Türk Resmi, Dışavurumcu Figürasyon & Dinamik Kompozisyon</div>
+              <p class="artist-statement">Türk çağdaş resminde figüratif dışavurumculuğun ve kadının lirik deviniminin öncüsü; Ankara'da Türkiye'nin en kapsamlı özel plastik sanatlar müzesini kuran bilge usta.</p>
+            </div>
+            <div class="artist-card-footer">
+              <span>📍 Ankara / Trabzon</span>
+              <span class="view-profile-btn">
+                <span>Özel Alanına Git</span>
+                <span>&rarr;</span>
+              </span>
+            </div>
+          </div>
+        </article>
+        <article class="artist-card" onclick="openArtistProfile('tuncay-umay')">
+          <div class="artist-card-cover">
+            <span class="artist-card-badge">Ressam & Sanat Eğitimcisi</span>
+            <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v6" alt="Tuncay Umay" loading="lazy">
+          </div>
+          <div class="artist-card-body">
+            <div>
+              <h3 class="artist-name">Tuncay Umay</h3>
+              <div class="artist-discipline">Denizlerin Devinimi & Sürrealist Satranç Manifestosu</div>
+              <p class="artist-statement">1980 Ankara doğumlu ressam ve akademisyen; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.</p>
+            </div>
+            <div class="artist-card-footer">
+              <span>📍 Ankara</span>
+              <span class="view-profile-btn">
+                <span>Özel Alanına Git</span>
+                <span>&rarr;</span>
+              </span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
 
@@ -2203,7 +2262,7 @@
   "category": "Ressam & Sanat Eğitimcisi",
   "city": "Ankara",
   "studio": "Tuncay Umay Atölyeleri (Ankara)",
-  "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v5",
+  "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v6",
   "shortBio": "1980 Ankara doğumlu ressam ve akademisyen; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
   "quote": "Denizi resmetmek, aslında zamanın akışını ve bu amansız devinimi tek bir fırça vuruşunda dondurma cesaretidir. Her tablo, dalgaların sonsuz değişimi karşısında kendi iç dengesini arayan, hayatın fırtınasında doğru hamleyi yapmaya çalışan ve karanlığa rağmen içindeki ışığı söndürmeyen ruhun görsel bir manifestosudur.",
   "biography": [
@@ -2531,8 +2590,15 @@
   }
 ];
 
-const ARTISTS_DATA = (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA : [];
-let currentArtistList = [...ARTISTS_DATA];
+function getArtistsList() {
+      if (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
+        return window.ARTISTS_DATA.filter(function(a) {
+          return a && a.id && !a.id.startsWith('sanatci-');
+        });
+      }
+      return [];
+    }
+    var currentArtistList = getArtistsList();
 
     function renderCatalog(artists) {
       const grid = document.getElementById("catalogGrid");
@@ -2568,7 +2634,7 @@ let currentArtistList = [...ARTISTS_DATA];
     }
 
     function openArtistProfile(artistId) {
-      const dataList = (typeof ARTISTS_DATA !== 'undefined') ? ARTISTS_DATA : window.ARTISTS_DATA;
+      const dataList = getArtistsList();
       const artist = dataList.find(a => a.id === artistId);
       if (!artist) return;
 
@@ -2672,9 +2738,9 @@ let currentArtistList = [...ARTISTS_DATA];
       if (btnEl) btnEl.classList.add("active");
 
       if (discipline === "Tümü") {
-        currentArtistList = [...ARTISTS_DATA];
+        currentArtistList = getArtistsList();
       } else {
-        currentArtistList = ARTISTS_DATA.filter(a => a.category.includes(discipline) || a.discipline.includes(discipline));
+        currentArtistList = getArtistsList().filter(a => a.category.includes(discipline) || a.discipline.includes(discipline));
       }
       renderCatalog(currentArtistList);
     }
@@ -2751,11 +2817,18 @@ let currentArtistList = [...ARTISTS_DATA];
       });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
+    function initSanatcilarPage() {
       initTheme();
-      renderCatalog(ARTISTS_DATA);
+      currentArtistList = getArtistsList();
+      renderCatalog(currentArtistList);
       handleInitialRoute();
-    });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initSanatcilarPage);
+    } else {
+      initSanatcilarPage();
+    }
   
     // ==========================================
     // MODAL POPUP YÖNETİMİ
@@ -2804,8 +2877,8 @@ let currentArtistList = [...ARTISTS_DATA];
 
   </script>
 
-<script src="/assets/auth-client.js?v=20261108_v5"></script>
-<script src="/assets/biresku-auth.js?v=20261108_v5"></script>
+<script src="/assets/auth-client.js?v=20261108_v6"></script>
+<script src="/assets/biresku-auth.js?v=20261108_v6"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
