@@ -716,7 +716,7 @@
     /* Alt 2 Büyük Kart Yan Yana */
     .big-rooms-subgrid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 18px;
     }
 
@@ -1505,7 +1505,7 @@
       <ul class="nav-list">
         <li><a href="/" class="active">Ana Sayfa</a></li>
         <li><a href="/dergi/">Biresku Dergi</a></li>
-        <li><a href="#muzayede" onclick="openModal('auctionModal'); return false;">Müzayede</a></li>
+        <li style="display: none;"><a href="#muzayede" onclick="openModal('auctionModal'); return false;">Müzayede</a></li>
         <li><a href="#sohbet" onclick="openModal('clubModal'); return false;">Sanatçı Odası</a></li>
         <li><a href="/iletisim/">İletişim</a></li>
       </ul>
@@ -1638,8 +1638,8 @@
             <!-- ALT 2 BÜYÜK KART YAN YANA: MÜZAYEDE & SANATÇI ODASI -->
             <div class="big-rooms-subgrid">
               
-              <!-- 2. BÜYÜK KART: BİRESKU MÜZAYEDE -->
-              <div class="big-room-card">
+              <!-- 2. BÜYÜK KART: BİRESKU MÜZAYEDE (Şimdilik Gizli) -->
+              <div class="big-room-card" style="display: none;">
                 <div class="big-room-header">
                   <div class="big-room-title-group">
                     <div class="room-kicker">AÇIK ARTIRMA</div>
@@ -1875,7 +1875,7 @@
       </section>
 
       <!-- 2. SATIR: BİRESKU MÜZAYEDE (ESERLER - SOLDAN SAĞA AKIŞ) -->
-      <section class="flow-row-block" id="muzayede-satiri">
+      <section class="flow-row-block" id="muzayede-satiri" style="display: none;">
         <div class="flow-row-header">
           <div>
             <div class="flow-kicker">BİRESKU MÜZAYEDE</div>
@@ -2113,7 +2113,7 @@
         <div class="reception-info-text">
           <h3>Resepsiyon &amp; Sanatçı Başvuruları</h3>
           <p>
-            Biresku bünyesinde eserlerinizi sergilemek, dergi sayfalarında yer almak veya yaklaşan müzayede seçkisine dahil olmak isteyen sanatçılarımız iletişim üzerinden başvuru yapabilir.
+            Biresku bünyesinde eserlerinizi sergilemek veya dergi sayfalarında yer almak isteyen sanatçılarımız iletişim üzerinden başvuru yapabilir.
           </p>
         </div>
         <div>
