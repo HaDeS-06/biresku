@@ -1147,11 +1147,45 @@
     }
 
 
-    .mansion-gate-section {
-      padding: 56px 0 36px;
-      text-align: center;
+        .mansion-gate-section {
+      padding: 52px 0 38px;
       border-bottom: 1px solid var(--border);
       background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg) 100%);
+    }
+    .gate-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (min-width: 992px) {
+      .gate-layout-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 36px;
+        align-items: stretch;
+      }
+      .gate-intro-col {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .gate-intro-col .gate-desc {
+        margin: 0 0 24px 0;
+      }
+      .gate-intro-col .reception-stats-bar {
+        justify-content: flex-start;
+      }
+    }
+    @media (max-width: 991px) {
+      .gate-intro-col {
+        text-align: center;
+      }
+      .gate-news-col {
+        max-width: 580px;
+        margin: 0 auto;
+        width: 100%;
+      }
     }
     .gate-kicker {
       display: inline-block;
@@ -1162,37 +1196,38 @@
       color: var(--accent);
       border-bottom: 2px solid var(--accent);
       padding-bottom: 4px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      width: fit-content;
     }
     .gate-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-size: clamp(2rem, 3.6vw, 3.2rem);
       font-weight: 800;
       color: var(--text-heading);
       line-height: 1.18;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       letter-spacing: -0.01em;
     }
     .gate-desc {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
-      max-width: 760px;
-      margin: 0 auto 32px;
-      line-height: 1.75;
+      max-width: 680px;
+      margin: 0 auto 28px;
+      line-height: 1.72;
     }
     .reception-stats-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 12px;
     }
     .reception-stat-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 8px 18px;
+      padding: 7px 16px;
       border-radius: 20px;
       font-size: 0.82rem;
       color: var(--text-main);
@@ -1200,6 +1235,178 @@
     .reception-stat-pill strong {
       color: var(--accent);
       font-weight: 700;
+    }
+
+    /* BİRESKU HABERLERİ WIDGET (SAĞ KOLON) */
+    .biresku-news-widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent, rgba(200, 160, 90, 0.25));
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 310px;
+      position: relative;
+      text-align: left;
+    }
+    .biresku-news-widget::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, rgba(200, 160, 90, 0.15) 100%);
+    }
+    .biresku-news-widget-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .biresku-news-widget-kicker {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+    .biresku-news-widget-title {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .biresku-news-bullet-live {
+      color: #38bdf8;
+      font-size: 0.85rem;
+      animation: pulseLive 2.2s infinite;
+    }
+    @keyframes pulseLive {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.9); }
+    }
+    .biresku-news-sort-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .biresku-news-sort-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(200, 160, 90, 0.08);
+    }
+    .biresku-news-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 250px;
+      overflow-y: auto;
+      padding-right: 6px;
+      flex: 1;
+    }
+    .biresku-news-feed::-webkit-scrollbar {
+      width: 4px;
+    }
+    .biresku-news-feed::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 4px;
+    }
+    .biresku-news-feed::-webkit-scrollbar-thumb {
+      background: var(--border-accent);
+      border-radius: 4px;
+    }
+    .biresku-news-feed::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+    .biresku-news-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .biresku-news-card:hover {
+      border-color: var(--accent);
+      transform: translateX(3px);
+      background: rgba(200, 160, 90, 0.05);
+    }
+    .biresku-news-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 5px;
+      font-size: 0.72rem;
+    }
+    .biresku-news-card-date {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .biresku-news-card-source {
+      background: rgba(200, 160, 90, 0.12);
+      color: var(--accent);
+      padding: 1px 7px;
+      border-radius: 5px;
+      font-size: 0.68rem;
+      font-weight: 600;
+    }
+    .biresku-news-card-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      line-height: 1.35;
+      margin: 0 0 4px 0;
+    }
+    .biresku-news-card-venue {
+      font-size: 0.73rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .biresku-news-widget-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+    .biresku-news-count-pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 8px;
+      color: var(--accent);
+      font-weight: 600;
     }
 
     /* ODALAR BÖLÜMÜ */
@@ -2649,7 +2856,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v7">
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v8">
 </head>
 <body>
 
@@ -2959,28 +3166,66 @@
   </div>
 
   <!-- GİRİŞ & RESEPSİYON KARŞILAMA -->
+    <!-- GİRİŞ & RESEPSİYON KARŞILAMA (İKİ SÜTUN: SOLDA KARŞILAMA, SAĞDA BİRESKU HABERLERİ) -->
   <section class="mansion-gate-section">
     <div class="container">
-      <span class="gate-kicker">BİRESKU</span>
-      <h1 class="gate-title">Birleşmiş Ressamlar Kulübü</h1>
-      <p class="gate-desc">
-        Türk çağdaş sanatını, ressamlarımızın bağımsız üretimlerini ve koleksiyonerleri tek çatı altında toplayan ana merkez. 
-        Aşağıdaki özel bölümlerden dilediğinize doğrudan geçiş yapabilirsiniz.
-      </p>
+      <div class="gate-layout-grid">
+        
+        <!-- SOL SÜTUN: BİRESKU TANITIM & RESEPSİYON -->
+        <div class="gate-intro-col">
+          <span class="gate-kicker">BİRESKU</span>
+          <h1 class="gate-title">Birleşmiş Ressamlar Kulübü</h1>
+          <p class="gate-desc">
+            Türk çağdaş sanatını, ressamlarımızın bağımsız üretimlerini ve koleksiyonerleri tek çatı altında toplayan ana merkez. 
+            Aşağıdaki özel bölümlerden dilediğinize doğrudan geçiş yapabilirsiniz.
+          </p>
 
-      <div class="reception-stats-bar">
-        <div class="reception-stat-pill">
-          <span>🏛️ Aktif Alanlar:</span>
-          <strong>3 Özel Alan</strong>
+          <div class="reception-stats-bar">
+            <div class="reception-stat-pill">
+              <span>🏛️ Aktif Alanlar:</span>
+              <strong>3 Özel Alan</strong>
+            </div>
+            <div class="reception-stat-pill">
+              <span>🎨 Arşiv &amp; Koleksiyon:</span>
+              <strong>Güncel Seçki</strong>
+            </div>
+            <div class="reception-stat-pill">
+              <span>🛡️ Sanat İnisiyatifi:</span>
+              <strong>Bağımsız Platform</strong>
+            </div>
+          </div>
         </div>
-        <div class="reception-stat-pill">
-          <span>🎨 Arşiv &amp; Koleksiyon:</span>
-          <strong>Güncel Seçki</strong>
+
+        <!-- SAĞ SÜTUN: BİRESKU HABERLERİ (KRONOLOJİK BASIN ARŞİVİ) -->
+        <div class="gate-news-col">
+          <div class="biresku-news-widget">
+            <div class="biresku-news-widget-header">
+              <div class="biresku-news-widget-title-wrap">
+                <span class="biresku-news-widget-kicker">BASIN &amp; ARŞİV</span>
+                <h3 class="biresku-news-widget-title">
+                  <span class="biresku-news-bullet-live">●</span> Biresku Haberleri
+                </h3>
+              </div>
+              <div class="biresku-news-header-actions">
+                <button type="button" id="bireskuNewsSortBtn" class="biresku-news-sort-btn" onclick="toggleBireskuNewsSort()" title="Kronolojik Sıralamayı Değiştir">
+                  <span id="bireskuNewsSortLabel">Yeniden Eskiye</span>
+                  <span class="sort-icon">&rlarr;</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- KRONOLOJİK HABER AKIŞI LİSTESİ -->
+            <div class="biresku-news-feed" id="bireskuNewsFeed" role="region" aria-label="Biresku Kronolojik Haberler">
+              <!-- JavaScript ile doldurulur -->
+            </div>
+
+            <div class="biresku-news-widget-footer">
+              <span class="biresku-news-count-pill" id="bireskuNewsCountBadge">12 Tarihsel Kayıt</span>
+              <span class="biresku-news-footer-note">Ulusal &amp; Yerel Basın Yansımaları</span>
+            </div>
+          </div>
         </div>
-        <div class="reception-stat-pill">
-          <span>🛡️ Sanat İnisiyatifi:</span>
-          <strong>Bağımsız Platform</strong>
-        </div>
+
       </div>
     </div>
   </section>
@@ -3011,7 +3256,7 @@
         <div class="flow-rail-container">
           <div class="flow-rail" id="artistsRail">
             <!-- Sanatçı 1: Prof. Dr. Adnan Turani (Yeni Eklenen) -->
-            <a href="/dergi/?v=20261108_v7#sanatci=adnan-turani" class="flow-card artist-flow-card">
+            <a href="/dergi/?v=20261108_v8#sanatci=adnan-turani" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
                 <span class="artist-card-badge">Sanatçı Alanı</span>
                 <img src="/assets/adnan-turani/adnan-turani-pp.jpg" alt="Prof. Dr. Adnan Turani" loading="lazy">
@@ -3033,7 +3278,7 @@
 
             
             <!-- Sanatçı 2: Prof. Dr. Mustafa Ayaz -->
-            <a href="/dergi/?v=20261108_v7#sanatci=mustafa-ayaz" class="flow-card artist-flow-card">
+            <a href="/dergi/?v=20261108_v8#sanatci=mustafa-ayaz" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
                 <span class="artist-card-badge">Sanatçı Alanı</span>
                 <img src="/assets/mustafa-ayaz/mustafa-ayaz-pp.jpg" alt="Prof. Dr. Mustafa Ayaz" loading="lazy">
@@ -3057,7 +3302,7 @@
             <a href="/dergi/sanatcilar/#profil=tuncay-umay" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
                 <span class="artist-card-badge">Sanatçı Alanı</span>
-                <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v7" alt="Ressam Tuncay Umay" loading="lazy">
+                <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v8" alt="Ressam Tuncay Umay" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3075,7 +3320,7 @@
             </a>
 
             <!-- Sanatçı 2: Heykel, Mermer & Bronz Döküm -->
-            <a href="/dergi/?v=20261108_v7#sanatci=sanatci-2" class="flow-card artist-flow-card">
+            <a href="/dergi/?v=20261108_v8#sanatci=sanatci-2" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
                 <span class="artist-card-badge">Sanatçı Alanı</span>
                 <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=1000&q=80" alt="Sanatçı 2" loading="lazy">
@@ -3096,7 +3341,7 @@
             </a>
 
             <!-- Sanatçı 3: Figüratif Resim & Karışık Teknik -->
-            <a href="/dergi/?v=20261108_v7#sanatci=sanatci-3" class="flow-card artist-flow-card">
+            <a href="/dergi/?v=20261108_v8#sanatci=sanatci-3" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
                 <span class="artist-card-badge">Sanatçı Alanı</span>
                 <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1000&q=80" alt="Sanatçı 3" loading="lazy">
@@ -3117,7 +3362,7 @@
             </a>
 
             <!-- Sanatçı 4: Lirik Soyutlama & Suluboya -->
-            <a href="/dergi/?v=20261108_v7#sanatci=sanatci-4" class="flow-card artist-flow-card">
+            <a href="/dergi/?v=20261108_v8#sanatci=sanatci-4" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
                 <span class="artist-card-badge">Sanatçı Alanı</span>
                 <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1000&q=80" alt="Sanatçı 4" loading="lazy">
@@ -3408,6 +3653,31 @@
     </div>
   </footer>
 
+  
+  <!-- BİRESKU HABER DETAY MODALI -->
+  <div id="bireskuNewsModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="bireskuNewsModalTitle">
+    <div class="biresku-modal-box">
+      <div class="biresku-modal-header">
+        <div>
+          <span id="bireskuNewsModalDate" style="font-size: 0.74rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;"></span>
+          <h3 id="bireskuNewsModalTitle" class="biresku-modal-title" style="margin-top: 4px;"></h3>
+        </div>
+        <button type="button" class="biresku-modal-close" onclick="closeModal('bireskuNewsModal')" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="biresku-modal-body">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+          <span id="bireskuNewsModalSource" style="background: rgba(200, 160, 90, 0.12); color: var(--accent); padding: 3px 10px; border-radius: 6px; font-size: 0.76rem; font-weight: 600;"></span>
+          <span id="bireskuNewsModalVenue" style="background: var(--bg-surface); color: var(--text-muted); border: 1px solid var(--border); padding: 3px 10px; border-radius: 6px; font-size: 0.76rem;"></span>
+        </div>
+        <p id="bireskuNewsModalSummary" style="font-size: 0.96rem; line-height: 1.7; color: var(--text-main);"></p>
+      </div>
+      <div class="biresku-modal-footer">
+        <button type="button" class="biresku-modal-btn" onclick="closeModal('bireskuNewsModal')">Kapat</button>
+        <a id="bireskuNewsModalLink" href="#" target="_blank" rel="noopener noreferrer" class="biresku-modal-btn" style="background: var(--accent); color: #000 !important; font-weight: 700; text-decoration: none;">Basın Kaynağına Git &rarr;</a>
+      </div>
+    </div>
+  </div>
+
   <!-- MÜZAYEDE BİLGİ MODALI -->
   <div id="auctionModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="auctionModalTitle">
     <div class="biresku-modal-box">
@@ -3629,9 +3899,9 @@
     </div>
   </div>
 
-<script src="/assets/artists-data.js?v=20261108_v7"></script>
-<script src="/assets/auth-client.js?v=20261108_v7"></script>
-<script src="/assets/biresku-auth.js?v=20261108_v7"></script>
+<script src="/assets/artists-data.js?v=20261108_v8"></script>
+<script src="/assets/auth-client.js?v=20261108_v8"></script>
+<script src="/assets/biresku-auth.js?v=20261108_v8"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
@@ -3695,6 +3965,222 @@
       if (e.key === "Escape") closeMobileDropdownNav();
     });
   })();
+
+  /* ========================================================
+     BİRESKU KRONOLOJİK BASIN & HABER ARŞİVİ
+     ======================================================== */
+  var BIRESKU_NEWS_DATA = [
+    {
+      id: 1,
+      title: "15. BİRESKU Türkiye Sergisi: 'Bahara Merhaba' Zafer Sanat Galerisi'nde Açıldı",
+      date: "18 Nisan 2026",
+      year: 2026,
+      order: 12,
+      source: "Başkent Gazetesi & AnkHaber",
+      venue: "Zafer Sanat Galerisi, Ankara",
+      summary: "Ressam Tuncay Umay ve Aslıhan Koç Gezer koordinatörlüğünde 250'yi aşkın sanatçı ve atölye öğrencisinin katılımıyla açılan sergi; 5 yaşındaki miniklerden 80 yaşındaki ustalara kadar geniş bir yelpazeyi buluşturarak başkentin en büyük sanat etkinliklerinden biri oldu.",
+      linkText: "Başkent Gazetesi Haberi",
+      url: "https://baskentgazete.com.tr"
+    },
+    {
+      id: 2,
+      title: "BİRESKU Sergisinde Minik Yetenekler: 'Resim Yapmak Bizim Tutkumuz'",
+      date: "24 Mayıs 2025",
+      year: 2025,
+      order: 11,
+      source: "Başkent Gazetesi",
+      venue: "Ankara",
+      summary: "BİRESKU'nun geleneksel sergisinde eserleri sergilenen genç sanatçıların resim serüveni ve sanat heyecanı basında geniş yer buldu.",
+      linkText: "Başkent Gazetesi Röportajı",
+      url: "https://baskentgazete.com.tr"
+    },
+    {
+      id: 3,
+      title: "14. BİRESKU Türkiye Sergisi Bahara Merhaba Dedi",
+      date: "12 Nisan 2025",
+      year: 2025,
+      order: 10,
+      source: "Esanmel Sanat Basını",
+      venue: "Zafer Çarşısı Güzel Sanatlar Galerisi, Ankara",
+      summary: "Türkiye'nin dört bir yanından bağımsız ressamların ve kulüp üyelerinin katılımıyla Zafer Çarşısı Güzel Sanatlar Galerisi'nde sanatseverlerle buluşan geleneksel bahar sergisi yoğun ilgi gördü.",
+      linkText: "Esanmel Sanat Arşivi",
+      url: "https://esanmel.com"
+    },
+    {
+      id: 4,
+      title: "BİRESKU'dan 23 Nisan'a Özel 'Çocuk ve Gençlik' Sergisi (13. Sergi)",
+      date: "20 Nisan 2024",
+      year: 2024,
+      order: 9,
+      source: "AnkHaber",
+      venue: "Zafer Sanat Galerisi, Ankara",
+      summary: "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı haftasında çocuk ve genç ressamların eserlerine öncelik veren özel tematik 13. Türkiye sergisi Zafer Sanat Galerisi'nde kapılarını açtı.",
+      linkText: "AnkHaber Kültür Sanat",
+      url: "https://ankhaber.com"
+    },
+    {
+      id: 5,
+      title: "Büyük BİRESKU Türkiye Sergilerinin 12'ncisi Açıldı: 'Bana Sevgini Anlat'",
+      date: "16 Eylül 2023",
+      year: 2023,
+      order: 8,
+      source: "AnkHaber (Sema Kumrulu)",
+      venue: "Zafer Sanat Galerisi, Ankara",
+      summary: "Ressam Tuncay Umay kuruculuğunda, Aslıhan Koç Gezer ve Mehmet Nuri İleri organizasyonuyla 100'ü aşkın sanatçı ve atölye öğrencisinin katıldığı büyük sevgi temalı karma sergi açıldı.",
+      linkText: "AnkHaber Yazısı",
+      url: "https://ankhaber.com"
+    },
+    {
+      id: 6,
+      title: "BİRESKU Türkiye Sergileri'nin 11'incisi Başkentte Sanatseverlerle Buluştu",
+      date: "19 Mart 2022",
+      year: 2022,
+      order: 7,
+      source: "AnkHaber (Sema Kumrulu)",
+      venue: "Zafer Sanat Galerisi, Ankara",
+      summary: "Sosyal medyada başlayan sanat hareketinin 11. büyük buluşması; amatör ve profesyonel ressamları aynı salonda bir araya getirdi.",
+      linkText: "AnkHaber İncelemesi",
+      url: "https://ankhaber.com"
+    },
+    {
+      id: 7,
+      title: "BİRESKU Ankara'da Sanat Rüzgârı Estirdi (8. Türkiye Sergisi)",
+      date: "28 Kasım 2018",
+      year: 2018,
+      order: 6,
+      source: "Sabah Gazetesi",
+      venue: "Ankara",
+      summary: "24 Kasım Öğretmenler Günü vesilesiyle açılan 8. Türkiye sergisi. 50 bini aşkın üyesiyle Türkiye'nin en büyük sanat platformu olarak basında geniş yankı buldu.",
+      linkText: "Sabah Gazetesi Haberi",
+      url: "https://sabah.com.tr"
+    },
+    {
+      id: 8,
+      title: "BİRESKU Fethiye Sergisi Sanatseverlerle Buluştu",
+      date: "14 Nisan 2018",
+      year: 2018,
+      order: 5,
+      source: "Gerçek Fethiye Gazetesi",
+      venue: "Fethiye Belediyesi Kültür Merkezi, Muğla",
+      summary: "Birleşmiş Ressamlar Kulübü'nün Ege çıkarması; Akdeniz ve Ege sanatseverlerinin yoğun ilgisi ve katılımıyla gerçekleştirildi.",
+      linkText: "Gerçek Fethiye Haberi",
+      url: "https://gercekfethiye.com"
+    },
+    {
+      id: 9,
+      title: "BİRESKU Eskişehir Sergisi Turgut Özakman Salonu'nda Açıldı",
+      date: "21 Ekim 2017",
+      year: 2017,
+      order: 4,
+      source: "Milliyet & Haber3",
+      venue: "Turgut Özakman Sergi Salonu, Eskişehir",
+      summary: "Eskişehir Sanat Derneği iş birliği ile Türkiye'nin farklı şehirlerinden ressamların yapıtları Eskişehirli sanatseverlerle buluştu.",
+      linkText: "Milliyet Sanat Haberi",
+      url: "https://milliyet.com.tr"
+    },
+    {
+      id: 10,
+      title: "5. BİRESKU Türkiye Sergisi Turizm Haftası'nda Hatay'da Açıldı",
+      date: "18 Nisan 2017",
+      year: 2017,
+      order: 3,
+      source: "Hürriyet / Hatay Yerel Basını",
+      venue: "Hatay Kültür Merkezi",
+      summary: "Turizm Haftası kutlamaları çerçevesinde Hatay'da düzenlenen 5. Türkiye sergisi yoğun bir katılımcı kitlesiyle sanatseverlere kapılarını açtı.",
+      linkText: "Hürriyet Yerel Arşivi",
+      url: "https://hurriyet.com.tr"
+    },
+    {
+      id: 11,
+      title: "BİRESKU Sanatçılarından Vakıf Eserleri Müzesi Sergisi",
+      date: "13 Ocak 2016",
+      year: 2016,
+      order: 2,
+      source: "Sabah Gazetesi",
+      venue: "Vakıf Eserleri Müzesi, Ankara",
+      summary: "Birleşmiş Ressamlar Kulübü üyelerinin Ankara Vakıf Eserleri Müzesi'nde açtığı tematik karma sergi sanat çevrelerinden büyük beğeni topladı.",
+      linkText: "Sabah Gazetesi Arşivi",
+      url: "https://sabah.com.tr"
+    },
+    {
+      id: 12,
+      title: "Birleşmiş Ressamlar Kulübü (BİRESKU) Kuruldu",
+      date: "15 Ekim 2015",
+      year: 2015,
+      order: 1,
+      source: "BİRESKU Arşivi & Sanat Basını",
+      venue: "Ankara",
+      summary: "Ressam Tuncay Umay öncülüğünde, sanatı toplumun tüm kesimlerine yaymak, amatör ve profesyonel ressamları galerilerle buluşturmak amacıyla BİRESKU platformunun temelleri atıldı.",
+      linkText: "BİRESKU Kuruluş Bildirgesi",
+      url: "https://biresku.com"
+    }
+  ];
+
+  var bireskuNewsSortAsc = false; // false = Yeniden Eskiye (default), true = Eskiden Yeniye
+
+  function renderBireskuNews() {
+    var container = document.getElementById("bireskuNewsFeed");
+    if (!container) return;
+
+    var sorted = BIRESKU_NEWS_DATA.slice().sort(function(a, b) {
+      return bireskuNewsSortAsc ? (a.order - b.order) : (b.order - a.order);
+    });
+
+    container.innerHTML = sorted.map(function(item) {
+      return `
+        <article class="biresku-news-card" onclick="openBireskuNewsModal(${item.id})" role="button" tabindex="0">
+          <div class="biresku-news-card-meta">
+            <span class="biresku-news-card-date">🗓️ ${item.date}</span>
+            <span class="biresku-news-card-source">${item.source}</span>
+          </div>
+          <h4 class="biresku-news-card-title">${item.title}</h4>
+          <div class="biresku-news-card-venue">📍 ${item.venue}</div>
+        </article>
+      `;
+    }).join("");
+
+    var lbl = document.getElementById("bireskuNewsSortLabel");
+    if (lbl) {
+      lbl.textContent = bireskuNewsSortAsc ? "Eskiden Yeniye" : "Yeniden Eskiye";
+    }
+  }
+
+  function toggleBireskuNewsSort() {
+    bireskuNewsSortAsc = !bireskuNewsSortAsc;
+    renderBireskuNews();
+  }
+
+  function openBireskuNewsModal(id) {
+    var item = BIRESKU_NEWS_DATA.find(function(n) { return n.id === id; });
+    if (!item) return;
+
+    var dateEl = document.getElementById("bireskuNewsModalDate");
+    var titleEl = document.getElementById("bireskuNewsModalTitle");
+    var sourceEl = document.getElementById("bireskuNewsModalSource");
+    var venueEl = document.getElementById("bireskuNewsModalVenue");
+    var summaryEl = document.getElementById("bireskuNewsModalSummary");
+    var linkEl = document.getElementById("bireskuNewsModalLink");
+
+    if (dateEl) dateEl.textContent = "🗓️ " + item.date;
+    if (titleEl) titleEl.textContent = item.title;
+    if (sourceEl) sourceEl.textContent = "Haber Kaynağı: " + item.source;
+    if (venueEl) venueEl.textContent = "Mekan: " + item.venue;
+    if (summaryEl) summaryEl.textContent = item.summary;
+    if (linkEl) {
+      linkEl.href = item.url;
+      linkEl.textContent = item.linkText + " →";
+    }
+
+    openModal("bireskuNewsModal");
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    renderBireskuNews();
+  });
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    renderBireskuNews();
+  }
+
 </script>
 </body>
 </html>
