@@ -1426,7 +1426,7 @@
     }
   
     /* ========================================================
-       KULLANICI DOSTU AŞAĞI AÇILIR MOBİL DROPDOWN MENÜ
+       KULLANICI DOSTU AŞAĞI AÇILIR MOBİL DROPDOWN MENÜ (FIXED TOP)
        ======================================================== */
     .mobile-menu-trigger {
       display: none;
@@ -1453,25 +1453,31 @@
       .mobile-menu-trigger {
         display: inline-flex !important;
         align-items: center;
+        justify-content: center;
         gap: 8px;
         background: var(--bg-card);
         border: 1px solid var(--border-accent);
         color: var(--text-heading);
-        padding: 7px 13px;
+        padding: 8px 14px;
         border-radius: 4px;
         font-family: var(--font-sans);
-        font-size: 0.78rem;
+        font-size: 0.82rem;
         font-weight: 700;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.08em;
         cursor: pointer;
         flex-shrink: 0;
         transition: all 0.2s ease;
         outline: none !important;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        user-select: none;
+        z-index: 1001;
       }
+      .mobile-menu-trigger:active,
       .mobile-menu-trigger.is-open {
         border-color: var(--accent);
         color: var(--accent);
-        background: rgba(192, 154, 88, 0.12);
+        background: rgba(192, 154, 88, 0.15);
       }
 
       /* 3. Sabit Tek Satır Navigasyon Barı */
@@ -1479,6 +1485,7 @@
         position: sticky;
         top: 0;
         z-index: 1000;
+        overflow: visible !important;
       }
       .nav-inner {
         display: flex !important;
@@ -1509,32 +1516,32 @@
       /* 4. AŞAĞI DOĞRU AÇILAN MOBİL MENÜ LİSTESİ */
       .mobile-nav-dropdown {
         display: block !important;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--bg-surface);
-        border-bottom: 2px solid var(--accent);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
-        opacity: 0;
-        pointer-events: none;
-        z-index: 999;
+        position: fixed !important;
+        top: 54px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: var(--bg-surface) !important;
+        border-bottom: 2px solid var(--accent) !important;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        z-index: 99999 !important;
       }
       .mobile-nav-dropdown.is-open {
-        max-height: 85vh;
-        opacity: 1;
-        pointer-events: auto;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        max-height: 85vh !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
       }
       .mobile-nav-dropdown-inner {
-        padding: 16px 14px 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
+        padding: 16px 14px 28px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
       }
       .mobile-nav-group-title {
         font-size: 0.68rem;
@@ -1542,9 +1549,9 @@
         letter-spacing: 0.14em;
         color: var(--text-dim);
         text-transform: uppercase;
-        padding: 6px 8px 4px;
+        padding: 4px 6px;
         border-bottom: 1px solid var(--border);
-        margin-bottom: 4px;
+        margin-bottom: 2px;
       }
       .mobile-nav-row {
         display: flex;
@@ -1558,6 +1565,7 @@
         color: var(--text-main);
         transition: all 0.18s ease;
         -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
       }
       .mobile-nav-row:active {
         background: var(--bg-hover);
@@ -1601,22 +1609,22 @@
       /* Karartma arka planı */
       .mobile-nav-backdrop {
         display: block !important;
-        position: fixed;
-        top: 54px;
-        left: 0;
-        width: 100%;
-        height: calc(100% - 54px);
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.25s ease;
-        z-index: 998;
+        position: fixed !important;
+        top: 54px !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: calc(100% - 54px) !important;
+        background: rgba(0, 0, 0, 0.65) !important;
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity 0.25s ease !important;
+        z-index: 99998 !important;
       }
       .mobile-nav-backdrop.is-open {
-        opacity: 1;
-        pointer-events: auto;
+        opacity: 1 !important;
+        pointer-events: auto !important;
       }
 
       /* Sanatçı Sayfası Geri Dön Butonu ve Breadcrumb Çakışmasını Engelle */
@@ -2639,5 +2647,81 @@ let currentArtistList = [...ARTISTS_DATA];
   </script>
 
 <script src="/assets/biresku-auth.js?v=20261108_mobile"></script>
+<script>
+  /* ========================================================
+     BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (GARANTİLİ & ETKİLEŞİMLİ)
+     ======================================================== */
+  function toggleMobileDropdownNav(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (e && e.stopPropagation) e.stopPropagation();
+    var dd = document.getElementById("mobileNavDropdown");
+    var bd = document.getElementById("mobileNavBackdrop");
+    var btn = document.querySelector(".mobile-menu-trigger");
+    if (!dd) return;
+    
+    var isOpen = dd.classList.contains("is-open");
+    if (isOpen) {
+      closeMobileDropdownNav();
+    } else {
+      dd.classList.add("is-open");
+      if (bd) bd.classList.add("is-open");
+      if (btn) {
+        btn.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closeMobileDropdownNav() {
+    var dd = document.getElementById("mobileNavDropdown");
+    var bd = document.getElementById("mobileNavBackdrop");
+    var btn = document.querySelector(".mobile-menu-trigger");
+    if (dd) dd.classList.remove("is-open");
+    if (bd) bd.classList.remove("is-open");
+    if (btn) {
+      btn.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+    document.body.style.overflow = "";
+  }
+
+  (function initMobileMenuTrigger() {
+    function bindEvents() {
+      var btn = document.querySelector(".mobile-menu-trigger");
+      if (btn) {
+        btn.onclick = toggleMobileDropdownNav;
+        btn.addEventListener("click", toggleMobileDropdownNav);
+        btn.addEventListener("touchstart", function(e) {
+          toggleMobileDropdownNav(e);
+        }, { passive: false });
+      }
+      var bd = document.getElementById("mobileNavBackdrop");
+      if (bd) {
+        bd.onclick = closeMobileDropdownNav;
+        bd.addEventListener("click", closeMobileDropdownNav);
+        bd.addEventListener("touchstart", function(e) {
+          closeMobileDropdownNav();
+        }, { passive: true });
+      }
+      var menuLinks = document.querySelectorAll(".mobile-nav-row");
+      menuLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+          closeMobileDropdownNav();
+        });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", bindEvents);
+    } else {
+      bindEvents();
+    }
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") closeMobileDropdownNav();
+    });
+  })();
+</script>
 </body>
 </html>

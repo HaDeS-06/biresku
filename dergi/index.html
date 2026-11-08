@@ -2054,7 +2054,7 @@
     }
   
     /* ========================================================
-       KULLANICI DOSTU AŞAĞI AÇILIR MOBİL DROPDOWN MENÜ
+       KULLANICI DOSTU AŞAĞI AÇILIR MOBİL DROPDOWN MENÜ (FIXED TOP)
        ======================================================== */
     .mobile-menu-trigger {
       display: none;
@@ -2081,25 +2081,31 @@
       .mobile-menu-trigger {
         display: inline-flex !important;
         align-items: center;
+        justify-content: center;
         gap: 8px;
         background: var(--bg-card);
         border: 1px solid var(--border-accent);
         color: var(--text-heading);
-        padding: 7px 13px;
+        padding: 8px 14px;
         border-radius: 4px;
         font-family: var(--font-sans);
-        font-size: 0.78rem;
+        font-size: 0.82rem;
         font-weight: 700;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.08em;
         cursor: pointer;
         flex-shrink: 0;
         transition: all 0.2s ease;
         outline: none !important;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        user-select: none;
+        z-index: 1001;
       }
+      .mobile-menu-trigger:active,
       .mobile-menu-trigger.is-open {
         border-color: var(--accent);
         color: var(--accent);
-        background: rgba(192, 154, 88, 0.12);
+        background: rgba(192, 154, 88, 0.15);
       }
 
       /* 3. Sabit Tek Satır Navigasyon Barı */
@@ -2107,6 +2113,7 @@
         position: sticky;
         top: 0;
         z-index: 1000;
+        overflow: visible !important;
       }
       .nav-inner {
         display: flex !important;
@@ -2137,32 +2144,32 @@
       /* 4. AŞAĞI DOĞRU AÇILAN MOBİL MENÜ LİSTESİ */
       .mobile-nav-dropdown {
         display: block !important;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--bg-surface);
-        border-bottom: 2px solid var(--accent);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
-        opacity: 0;
-        pointer-events: none;
-        z-index: 999;
+        position: fixed !important;
+        top: 54px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: var(--bg-surface) !important;
+        border-bottom: 2px solid var(--accent) !important;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        z-index: 99999 !important;
       }
       .mobile-nav-dropdown.is-open {
-        max-height: 85vh;
-        opacity: 1;
-        pointer-events: auto;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        max-height: 85vh !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
       }
       .mobile-nav-dropdown-inner {
-        padding: 16px 14px 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
+        padding: 16px 14px 28px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
       }
       .mobile-nav-group-title {
         font-size: 0.68rem;
@@ -2170,9 +2177,9 @@
         letter-spacing: 0.14em;
         color: var(--text-dim);
         text-transform: uppercase;
-        padding: 6px 8px 4px;
+        padding: 4px 6px;
         border-bottom: 1px solid var(--border);
-        margin-bottom: 4px;
+        margin-bottom: 2px;
       }
       .mobile-nav-row {
         display: flex;
@@ -2186,6 +2193,7 @@
         color: var(--text-main);
         transition: all 0.18s ease;
         -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
       }
       .mobile-nav-row:active {
         background: var(--bg-hover);
@@ -2229,22 +2237,22 @@
       /* Karartma arka planı */
       .mobile-nav-backdrop {
         display: block !important;
-        position: fixed;
-        top: 54px;
-        left: 0;
-        width: 100%;
-        height: calc(100% - 54px);
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.25s ease;
-        z-index: 998;
+        position: fixed !important;
+        top: 54px !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: calc(100% - 54px) !important;
+        background: rgba(0, 0, 0, 0.65) !important;
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity 0.25s ease !important;
+        z-index: 99998 !important;
       }
       .mobile-nav-backdrop.is-open {
-        opacity: 1;
-        pointer-events: auto;
+        opacity: 1 !important;
+        pointer-events: auto !important;
       }
 
       /* Sanatçı Sayfası Geri Dön Butonu ve Breadcrumb Çakışmasını Engelle */
@@ -3051,61 +3059,37 @@
       const container = document.getElementById("newArtistsContainer");
       if (!container) return;
 
-      const dataList = (typeof ARTISTS_DATA !== 'undefined') ? ARTISTS_DATA : window.ARTISTS_DATA;
+      const dataList = (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA : [];
       if (!dataList || !dataList.length) return;
 
-      const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-      const now = new Date();
-
-      // En fazla 1 hafta (7 gün) önce eklenen sanatçıları filtrele (Sayı sınırı yok!)
-      const recentArtists = dataList.filter(artist => {
-        if (!artist.addedDate) return false;
-        const addedTime = new Date(artist.addedDate).getTime();
-        if (isNaN(addedTime)) return false;
-        const diff = now.getTime() - addedTime;
-        return diff >= 0 && diff <= ONE_WEEK_MS;
-      });
+      // Hem Prof. Dr. Adnan Turani hem de Prof. Dr. Mustafa Ayaz yeni eklenenler vitrininde sabit ve garantili yer alır
+      const recentArtists = dataList.filter(artist => 
+        artist.id === 'adnan-turani' || 
+        artist.id === 'mustafa-ayaz'
+      );
 
       const badgeEl = document.getElementById("newArtistsBadge");
       if (badgeEl) {
-        badgeEl.textContent = recentArtists.length > 0 ? `${recentArtists.length} Sanatçı (Son 7 Gün)` : `0 Sanatçı`;
-      }
-
-      if (recentArtists.length === 0) {
-        container.innerHTML = `
-          <div class="new-artists-empty">
-            <div style="font-size: 2rem; margin-bottom: 12px; color: var(--accent); opacity: 0.8;">✦</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-heading); margin-bottom: 8px;">Bu Hafta Eklenen Yeni Sanatçı Yok</h3>
-            <p style="font-size: 0.85rem; line-height: 1.6; max-width: 360px; margin-bottom: 18px;">
-              Yeni eklenen her sanatçı 1 hafta boyunca otomatik olarak bu vitrinde sergilenir.
-            </p>
-            <a href="#sanatcilarimiz" onclick="scrollToSection(event, 'sanatcilarimiz')" class="biresku-modal-btn" style="text-decoration: none;">
-              Tüm Sanatçıları Keşfet &darr;
-            </a>
-          </div>
-        `;
-        return;
+        badgeEl.textContent = `${recentArtists.length} Sanatçı (Son 7 Gün)`;
       }
 
       container.innerHTML = recentArtists.map(artist => {
         const artCount = (artist.artworks && Array.isArray(artist.artworks)) ? artist.artworks.length : 0;
-        const addedDateObj = new Date(artist.addedDate);
-        const dayDiff = Math.floor((now.getTime() - addedDateObj.getTime()) / (1000 * 60 * 60 * 24));
-        const timeLabel = dayDiff === 0 ? "Bugün Katıldı" : `${dayDiff} Gün Önce Katıldı`;
-
         return `
-          <div class="new-artist-item" onclick="openArtistProfile('${artist.id}')" role="button" tabindex="0">
+          <div class="new-artist-item" onclick="openArtistProfile('${artist.id}')" role="button" tabindex="0" style="cursor: pointer;">
             <img src="${artist.coverImage}" alt="${artist.name}" class="new-artist-avatar" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
-            <div class="new-artist-info">
-              <h3 class="new-artist-name">${artist.name}</h3>
-              <div class="new-artist-sub">${artist.discipline || 'Sanatçı'}</div>
+            <div class="new-artist-details">
+              <h4 class="new-artist-name">${artist.name}</h4>
+              <div class="new-artist-discipline">${artist.discipline || ''}</div>
               <div class="new-artist-meta">
-                <span class="new-artist-pill">${artCount} Eser</span>
-                <span>•</span>
-                <span style="color: var(--accent); font-weight: 500;">${timeLabel}</span>
+                <span class="new-artist-count">${artCount} Eser</span>
+                <span class="new-artist-dot">•</span>
+                <span class="new-artist-time">Yeni Katıldı</span>
               </div>
             </div>
-            <div class="new-artist-action" title="Profili Görüntüle">&rarr;</div>
+            <div class="new-artist-action">
+              <span>&rarr;</span>
+            </div>
           </div>
         `;
       }).join("");
@@ -3114,9 +3098,10 @@
     function renderArtistsGrid() {
       const grid = document.getElementById("artistsGrid");
       if (!grid) return;
+      const dataList = (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA : [];
 
-      grid.innerHTML = ARTISTS_DATA.map(artist => `
-        <article class="artist-card" onclick="openArtistProfile('${artist.id}')">
+      grid.innerHTML = dataList.map(artist => `
+        <article class="artist-card" onclick="openArtistProfile('${artist.id}')" style="cursor: pointer;">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Sanatçı Alanı</span>
             <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
@@ -3124,11 +3109,11 @@
           <div class="artist-card-body">
             <div>
               <h3 class="artist-name">${artist.name}</h3>
-              <div class="artist-discipline">${artist.discipline}</div>
-              <p class="artist-statement">${artist.shortBio || artist.bio}</p>
+              <div class="artist-discipline">${artist.discipline || ''}</div>
+              <p class="artist-statement">${artist.shortBio || artist.bio || ''}</p>
             </div>
             <div class="artist-card-footer">
-              <span>📍 ${artist.city}</span>
+              <span>📍 ${artist.city || 'Ankara'}</span>
               <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
                 <span>&rarr;</span>
@@ -3143,32 +3128,14 @@
       if (!artistId) return;
       artistId = String(artistId).trim().replace(/^#?(?:sanatci|profil)=/, '').replace(/\/$/, '');
 
-      let dataList = (typeof ARTISTS_DATA !== 'undefined' && Array.isArray(ARTISTS_DATA)) ? ARTISTS_DATA : [];
-      if (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
-        window.ARTISTS_DATA.forEach(a => {
-          if (!dataList.some(x => x.id === a.id)) dataList.push(a);
-        });
-      }
-
+      let dataList = (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA : [];
       let artist = dataList.find(a => a.id === artistId);
       if (!artist) {
-        console.warn("Artist not found in initial memory:", artistId, "Loading fresh artists-data.js...");
-        if (!window._artistsFetching) {
-          window._artistsFetching = true;
-          const s = document.createElement("script");
-          s.src = "/assets/artists-data.js?v=" + Date.now();
-          s.onload = function() {
-            window._artistsFetching = false;
-            openArtistProfile(artistId);
-          };
-          s.onerror = function() {
-            window._artistsFetching = false;
-          };
-          document.head.appendChild(s);
-        }
+        console.warn("Artist not found:", artistId);
         return;
       }
 
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       window.location.hash = "sanatci=" + artist.id;
       const mainView = document.getElementById("mainPageView");
       if (mainView) mainView.style.display = "none";
@@ -3526,5 +3493,81 @@
   </script>
 
 <script src="/assets/biresku-auth.js?v=20261108_mobile"></script>
+<script>
+  /* ========================================================
+     BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (GARANTİLİ & ETKİLEŞİMLİ)
+     ======================================================== */
+  function toggleMobileDropdownNav(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (e && e.stopPropagation) e.stopPropagation();
+    var dd = document.getElementById("mobileNavDropdown");
+    var bd = document.getElementById("mobileNavBackdrop");
+    var btn = document.querySelector(".mobile-menu-trigger");
+    if (!dd) return;
+    
+    var isOpen = dd.classList.contains("is-open");
+    if (isOpen) {
+      closeMobileDropdownNav();
+    } else {
+      dd.classList.add("is-open");
+      if (bd) bd.classList.add("is-open");
+      if (btn) {
+        btn.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closeMobileDropdownNav() {
+    var dd = document.getElementById("mobileNavDropdown");
+    var bd = document.getElementById("mobileNavBackdrop");
+    var btn = document.querySelector(".mobile-menu-trigger");
+    if (dd) dd.classList.remove("is-open");
+    if (bd) bd.classList.remove("is-open");
+    if (btn) {
+      btn.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+    document.body.style.overflow = "";
+  }
+
+  (function initMobileMenuTrigger() {
+    function bindEvents() {
+      var btn = document.querySelector(".mobile-menu-trigger");
+      if (btn) {
+        btn.onclick = toggleMobileDropdownNav;
+        btn.addEventListener("click", toggleMobileDropdownNav);
+        btn.addEventListener("touchstart", function(e) {
+          toggleMobileDropdownNav(e);
+        }, { passive: false });
+      }
+      var bd = document.getElementById("mobileNavBackdrop");
+      if (bd) {
+        bd.onclick = closeMobileDropdownNav;
+        bd.addEventListener("click", closeMobileDropdownNav);
+        bd.addEventListener("touchstart", function(e) {
+          closeMobileDropdownNav();
+        }, { passive: true });
+      }
+      var menuLinks = document.querySelectorAll(".mobile-nav-row");
+      menuLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+          closeMobileDropdownNav();
+        });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", bindEvents);
+    } else {
+      bindEvents();
+    }
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") closeMobileDropdownNav();
+    });
+  })();
+</script>
 </body>
 </html>
