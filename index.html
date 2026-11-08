@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BİRESKU | Birleşmiş Ressamlar Kulübü Sanat Yerleşkesi</title>
-  <meta name="description" content="Biresku: Birleşmiş Ressamlar Kulübü resmi ana portalı. Biresku Dergi, Müzayede ve Sanatçı Kulübü salonlarına açılan dijital sanat merkezi.">
+  <title>BİRESKU | Birleşmiş Ressamlar Kulübü</title>
+  <meta name="description" content="Biresku: Birleşmiş Ressamlar Kulübü resmi ana portalı. Biresku Dergi, Müzayede ve Sanatçı Kulübü bölümlerine açılan dijital sanat merkezi.">
 
   <script>
     (function() {
@@ -316,7 +316,7 @@
       color: var(--accent);
     }
 
-    /* 4 SÜTUNLU GRİD: SEKMELER / SALONLAR + DESTEK + İLETİŞİM + AYARLAR */
+    /* 4 SÜTUNLU GRİD: SEKMELER + DESTEK + İLETİŞİM + AYARLAR */
     .sliding-panel-grid {
       display: grid;
       grid-template-columns: 1.3fr 1fr 1fr 1fr;
@@ -347,7 +347,7 @@
       color: var(--text-heading);
     }
 
-    /* 1. SÜTUN: SEKMELER / SALONLAR */
+    /* 1. SÜTUN: SEKMELER (ODALAR) */
     .sliding-links-list {
       list-style: none;
       display: flex;
@@ -589,7 +589,7 @@
       transform: translateX(3px);
     }
 
-    /* RESEPSİYON / MALİKÂNE KAPISI (HERO SECTION) */
+    /* RESEPSİYON / GİRİŞ (HERO SECTION) */
     .mansion-gate-section {
       padding: 56px 0 36px;
       text-align: center;
@@ -645,7 +645,7 @@
       font-weight: 700;
     }
 
-    /* ODALAR / SALONLAR BÖLÜMÜ */
+    /* ODALAR BÖLÜMÜ */
     .rooms-section {
       padding: 60px 0 70px;
       flex: 1;
@@ -669,7 +669,7 @@
       color: var(--text-heading);
     }
 
-    /* 3 ODALI SALON IZGARASI */
+    /* 3 ODALI IZGARA */
     .rooms-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1045,7 +1045,7 @@
         <!-- Panel Başlığı -->
         <div class="sliding-panel-header">
           <div>
-            <div class="sliding-panel-kicker">BİRESKU SANAT YERLEŞKESİ</div>
+            <div class="sliding-panel-kicker">BİRESKU</div>
             <h2 class="sliding-panel-title">Merkez Menü, Destek &amp; Ayarlar</h2>
           </div>
           <button id="closeSlidingNavBtn" class="sliding-panel-close-btn" type="button" aria-label="Pencereyi Kapat">
@@ -1057,7 +1057,7 @@
         <!-- 4 Sütunlu Kayan Pencere Gövdesi -->
         <div class="sliding-panel-grid">
           
-          <!-- 1. SÜTUN: SEKMELER / SALONLAR -->
+          <!-- 1. SÜTUN: SEKMELER (ODALAR) -->
           <div class="sliding-col">
             <div class="sliding-col-header">
               <span class="col-icon">🏛️</span>
@@ -1067,17 +1067,17 @@
               <li>
                 <a href="/" class="sliding-link-item active" onclick="closeSlidingNav();">
                   <div class="item-title-row">
-                    <span class="item-name">Ana Yerleşke</span>
+                    <span class="item-name">Ana Sayfa</span>
                     <span class="item-badge active-badge">Aktif</span>
                   </div>
-                  <p class="item-desc">Birleşmiş Ressamlar Kulübü ana giriş kapısı ve salon seçkisi.</p>
+                  <p class="item-desc">Birleşmiş Ressamlar Kulübü resmi ana sayfası ve bölüm seçkisi.</p>
                 </a>
               </li>
               <li>
                 <a href="/dergi/" class="sliding-link-item" onclick="closeSlidingNav();">
                   <div class="item-title-row">
                     <span class="item-name">Biresku Dergi</span>
-                    <span class="item-badge green-badge">Açık Salon</span>
+                    <span class="item-badge green-badge">Yayında</span>
                   </div>
                   <p class="item-desc">Sanat haberleri, sanatçı biyografileri, eser galerisi ve haftalık vitrin.</p>
                 </a>
@@ -1152,7 +1152,7 @@
               <div class="contact-row">
                 <span class="c-icon">🏛️</span>
                 <div>
-                  <span class="c-title">Atölye &amp; Yerleşke:</span>
+                  <span class="c-title">Temsilcilikler:</span>
                   <span class="c-val">İstanbul &amp; Ankara</span>
                 </div>
               </div>
@@ -1173,7 +1173,7 @@
           <div class="sliding-col">
             <div class="sliding-col-header">
               <span class="col-icon">⚙️</span>
-              <h3>Yerleşke Ayarları</h3>
+              <h3>Ayarlar</h3>
             </div>
             <div class="settings-card-box">
               
@@ -1228,20 +1228,20 @@
     </div>
   </div>
 
-  <!-- MALİKÂNE KAPISI & RESEPSİYON KARŞILAMA -->
+  <!-- GİRİŞ & RESEPSİYON KARŞILAMA -->
   <section class="mansion-gate-section">
     <div class="container">
-      <span class="gate-kicker">BİRESKU SANAT YERLEŞKESİ</span>
-      <h1 class="gate-title">Birleşmiş Ressamlar Kulübü Ana Kapısı</h1>
+      <span class="gate-kicker">BİRESKU</span>
+      <h1 class="gate-title">Birleşmiş Ressamlar Kulübü</h1>
       <p class="gate-desc">
         Türk çağdaş sanatını, ressamlarımızın bağımsız üretimlerini ve koleksiyonerleri tek çatı altında toplayan ana merkez. 
-        Giriş lobimizdesiniz; aşağıdaki özel salonlardan dilediğinize doğrudan geçiş yapabilirsiniz.
+        Aşağıdaki özel bölümlerden dilediğinize doğrudan geçiş yapabilirsiniz.
       </p>
 
       <div class="reception-stats-bar">
         <div class="reception-stat-pill">
-          <span>🏛️ Faal Salonlar:</span>
-          <strong>3 Özel Oda</strong>
+          <span>🏛️ Aktif Alanlar:</span>
+          <strong>3 Özel Alan</strong>
         </div>
         <div class="reception-stat-pill">
           <span>🎨 Arşiv &amp; Koleksiyon:</span>
@@ -1255,13 +1255,13 @@
     </div>
   </section>
 
-  <!-- ODALAR (SALONLAR) -->
+  <!-- ODALAR -->
   <main class="rooms-section">
     <div class="container">
       
       <div class="section-headline-wrap">
         <div class="section-kicker">BİRESKU ODALARI</div>
-        <h2 class="section-title">Yerleşke Salonları</h2>
+        <h2 class="section-title">Biresku Odaları</h2>
       </div>
 
       <div class="rooms-grid">
@@ -1270,15 +1270,15 @@
         <article class="room-card" id="dergi-odasi">
           <div>
             <div class="room-top">
-              <span class="room-kicker">YAYIN &amp; DERGİ SALONU</span>
+              <span class="room-kicker">YAYIN &amp; DERGİ</span>
               <span class="room-status-badge status-active">
                 <span class="status-dot"></span>
-                <span>Açık Salon</span>
+                <span>Yayında</span>
               </span>
             </div>
             <h3 class="room-title">Biresku Sanat Dergisi</h3>
             <p class="room-desc">
-              Güncel sanat haberleri, sergi bültenleri, sanatçıların biyografi ve felsefeleri ile orijinal koleksiyon eserlerinin yer aldığı ana yayın odamız.
+              Güncel sanat haberleri, sergi bültenleri, sanatçıların biyografi ve felsefeleri ile orijinal koleksiyon eserlerinin yer aldığı ana yayın alanımız.
             </p>
             <ul class="room-highlights">
               <li><span class="room-bullet">✦</span> <span>Güncel Sanat Haberleri &amp; Eleştiriler</span></li>
@@ -1288,7 +1288,7 @@
           </div>
           <div>
             <a href="/dergi/" class="room-action-btn">
-              <span>Salona Giriş Yap</span>
+              <span>Dergiye Giriş Yap</span>
               <span>&rarr;</span>
             </a>
           </div>
@@ -1298,7 +1298,7 @@
         <article class="room-card" id="muzayede-odasi">
           <div>
             <div class="room-top">
-              <span class="room-kicker">AÇIK ARTIRMA &amp; ESER SALONU</span>
+              <span class="room-kicker">AÇIK ARTIRMA &amp; KOLEKSİYON</span>
               <span class="room-status-badge status-pending">
                 <span class="status-dot"></span>
                 <span>Küratör Hazırlığında</span>
@@ -1306,7 +1306,7 @@
             </div>
             <h3 class="room-title">Biresku Müzayede</h3>
             <p class="room-desc">
-              Sertifikalı tuvaller, özgün desenler ve seçkin koleksiyon parçalarının sanatseverlerle şeffaf kurallarla buluşacağı dijital müzayede odası.
+              Sertifikalı tuvaller, özgün desenler ve seçkin koleksiyon parçalarının sanatseverlerle şeffaf kurallarla buluşacağı dijital müzayede alanı.
             </p>
             <ul class="room-highlights">
               <li><span class="room-bullet">✦</span> <span>Küratör Onaylı Özgün Sanat Eserleri</span></li>
@@ -1357,7 +1357,7 @@
         <div class="reception-info-text">
           <h3>Resepsiyon &amp; Sanatçı Başvuruları</h3>
           <p>
-            Biresku yerleşkesinde eserlerinizi sergilemek, dergi sayfalarında yer almak veya yaklaşan müzayede seçkisine dahil olmak isteyen sanatçılarımız resepsiyonumuz üzerinden başvuru yapabilir.
+            Biresku bünyesinde eserlerinizi sergilemek, dergi sayfalarında yer almak veya yaklaşan müzayede seçkisine dahil olmak isteyen sanatçılarımız iletişim üzerinden başvuru yapabilir.
           </p>
         </div>
         <div>
@@ -1383,11 +1383,11 @@
   <div id="auctionModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="auctionModalTitle">
     <div class="biresku-modal-box">
       <div class="biresku-modal-header">
-        <h3 id="auctionModalTitle" class="biresku-modal-title">Biresku Müzayede Salonu</h3>
+        <h3 id="auctionModalTitle" class="biresku-modal-title">Biresku Müzayede</h3>
         <button type="button" class="biresku-modal-close" onclick="closeModal('auctionModal')" aria-label="Kapat">&times;</button>
       </div>
       <div class="biresku-modal-body">
-        <p><strong>Biresku Müzayede Salonu</strong> hazırlık aşamasındadır.</p>
+        <p><strong>Biresku Müzayede</strong> hazırlık aşamasındadır.</p>
         <p style="margin-top: 12px;">
           Küratör kurulumuz, Türk çağdaş sanatının saygın isimleri ve gelecek vadeden yeteneklerinin özgün eserlerini titizlikle belgelemekte ve dijital açık artırma standartlarını oluşturmaktadır.
         </p>
