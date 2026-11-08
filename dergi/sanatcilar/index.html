@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanatçılarımız | Biresku Sanat</title>
@@ -839,6 +842,7 @@
     }
 
   </style>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108">
 </head>
 <body>
 
@@ -1022,7 +1026,8 @@
       "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=600&q=80"
     ];
 
-    const ARTISTS_DATA = [
+    window.ARTISTS_DATA = [
+
   {
     "id": "adnan-turani",
     "name": "Prof. Dr. Adnan Turani",
@@ -1646,8 +1651,8 @@ let currentArtistList = [...ARTISTS_DATA];
       const profileView = document.getElementById("artistProfileView");
       const catalogView = document.getElementById("catalogPageView");
 
-      if (hash.startsWith("#profil=")) {
-        const id = hash.replace("#profil=", "");
+      if (hash.startsWith("#profil=") || hash.startsWith("#sanatci=")) {
+        const id = hash.replace(/^#(?:profil|sanatci)=/, "");
         openArtistProfile(id);
       } else {
         if (profileView) profileView.style.display = "none";
@@ -1753,5 +1758,6 @@ let currentArtistList = [...ARTISTS_DATA];
 
   </script>
 
+<script src="/assets/biresku-auth.js?v=20261108"></script>
 </body>
 </html>

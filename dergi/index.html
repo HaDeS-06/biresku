@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biresku Sanat | Güncel Sanat, Sanatçılar ve Haberler</title>
@@ -1162,6 +1165,7 @@
     }
 
   </style>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108">
 </head>
 <body>
 
@@ -1386,7 +1390,8 @@
     // ==========================================
     // SANATÇILAR VERİSİ
     // ==========================================
-    const ARTISTS_DATA = [
+    window.ARTISTS_DATA = [
+
   {
     "id": "adnan-turani",
     "name": "Prof. Dr. Adnan Turani",
@@ -1950,14 +1955,40 @@
     }
 
     function openArtistProfile(artistId) {
-      const dataList = (typeof ARTISTS_DATA !== 'undefined') ? ARTISTS_DATA : window.ARTISTS_DATA;
-      const artist = dataList.find(a => a.id === artistId);
-      if (!artist) return;
+      if (!artistId) return;
+      artistId = String(artistId).trim().replace(/^#?(?:sanatci|profil)=/, '').replace(/\/$/, '');
+
+      let dataList = (typeof ARTISTS_DATA !== 'undefined' && Array.isArray(ARTISTS_DATA)) ? ARTISTS_DATA : [];
+      if (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
+        window.ARTISTS_DATA.forEach(a => {
+          if (!dataList.some(x => x.id === a.id)) dataList.push(a);
+        });
+      }
+
+      let artist = dataList.find(a => a.id === artistId);
+      if (!artist) {
+        console.warn("Artist not found in initial memory:", artistId, "Loading fresh artists-data.js...");
+        if (!window._artistsFetching) {
+          window._artistsFetching = true;
+          const s = document.createElement("script");
+          s.src = "/assets/artists-data.js?v=" + Date.now();
+          s.onload = function() {
+            window._artistsFetching = false;
+            openArtistProfile(artistId);
+          };
+          s.onerror = function() {
+            window._artistsFetching = false;
+          };
+          document.head.appendChild(s);
+        }
+        return;
+      }
 
       window.location.hash = "sanatci=" + artist.id;
-      document.getElementById("mainPageView").style.display = "none";
+      const mainView = document.getElementById("mainPageView");
+      if (mainView) mainView.style.display = "none";
       const profileView = document.getElementById("artistProfileView");
-      profileView.style.display = "block";
+      if (profileView) profileView.style.display = "block";
 
       const breadcrumb = document.getElementById("profileNavBreadcrumb");
       if (breadcrumb) {
@@ -1965,26 +1996,29 @@
       }
 
       // 1. Hero
-      document.getElementById("profileHeroArea").innerHTML = `
-        <div class="profile-avatar-wrap">
-          <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
-        </div>
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-          <div style="margin-bottom: 8px;">
-            <span class="artist-card-badge" style="position: static; display: inline-block;">${artist.category}</span>
+      const heroArea = document.getElementById("profileHeroArea");
+      if (heroArea) {
+        heroArea.innerHTML = `
+          <div class="profile-avatar-wrap">
+            <img src="${artist.coverImage}" alt="${artist.name}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
           </div>
-          <h2 class="profile-title">${artist.name}</h2>
-          <div class="profile-discipline">${artist.discipline}</div>
-          <p class="profile-bio-text" style="margin-top: 10px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.7;">${artist.shortBio}</p>
-          <div class="profile-meta-list" style="margin-top: 18px;">
-            ${artist.period ? `<div>Dönem: <strong>${artist.period}</strong></div>` : (artist.city ? `<div>Köken: <strong>${artist.city}</strong></div>` : '')}
-            <div>Kayıtlı Eser: <strong style="color: var(--accent);">${artist.artworks.length} Eser</strong></div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div style="margin-bottom: 8px;">
+              <span class="artist-card-badge" style="position: static; display: inline-block;">${artist.category || 'Sanatçı'}</span>
+            </div>
+            <h2 class="profile-title">${artist.name}</h2>
+            <div class="profile-discipline">${artist.discipline || ''}</div>
+            <p class="profile-bio-text" style="margin-top: 10px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.7;">${artist.shortBio || ''}</p>
+            <div class="profile-meta-list" style="margin-top: 18px;">
+              ${artist.period ? `<div>Dönem: <strong>${artist.period}</strong></div>` : (artist.city ? `<div>Köken: <strong>${artist.city}</strong></div>` : '')}
+              <div>Kayıtlı Eser: <strong style="color: var(--accent);">${(artist.artworks && artist.artworks.length) || 0} Eser</strong></div>
+            </div>
           </div>
-        </div>
-      `;
+        `;
+      }
 
       // 2. Biyografi & Hayata Bakışı
-      const bioParagraphs = Array.isArray(artist.biography) ? artist.biography.map(p => `<p>${p}</p>`).join("") : `<p>${artist.biography}</p>`;
+      const bioParagraphs = Array.isArray(artist.biography) ? artist.biography.map(p => `<p>${p}</p>`).join("") : `<p>${artist.biography || ''}</p>`;
       const philParagraphs = Array.isArray(artist.philosophy) ? artist.philosophy.map(p => `<p>${p}</p>`).join("") : `<p>${artist.philosophy || ''}</p>`;
       const quoteHtml = artist.quote ? `<blockquote class="philosophy-quote">"${artist.quote}"</blockquote>` : "";
 
@@ -2009,24 +2043,28 @@
         `;
       }
 
-      // 3. 5 Adet Resim
+      // 3. Eserler Galerisi
       const artworksLen = (artist.artworks && Array.isArray(artist.artworks)) ? artist.artworks.length : 0;
       const hEl = document.getElementById("artworksSectionHeading");
       if (hEl) hEl.textContent = artworksLen > 0 ? ("Sanatçının " + artworksLen + " Eseri") : "Sanatçının Eserleri";
       const cEl = document.getElementById("artworksSectionCount");
       if (cEl) cEl.textContent = artworksLen > 0 ? (artworksLen + " / " + artworksLen + " KOLEKSİYON ESERİ") : "0 Eser";
-      document.getElementById("artworksGridArea").innerHTML = artist.artworks.map((art, idx) => `
-        <div class="artwork-item">
-          <div class="artwork-img-wrap">
-            <img src="${art.image || art.imageUrl}" alt="${art.title}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
+      
+      const gridArea = document.getElementById("artworksGridArea");
+      if (gridArea) {
+        gridArea.innerHTML = (artist.artworks || []).map((art, idx) => `
+          <div class="artwork-item">
+            <div class="artwork-img-wrap">
+              <img src="${art.image || art.imageUrl}" alt="${art.title}" onerror="this.onerror=null; this.src='${FALLBACK_SVG}';">
+            </div>
+            <div class="artwork-info">
+              <div class="artwork-kicker">Özgün Koleksiyon Eseri</div>
+              <h4 class="artwork-title">${art.title}</h4>
+              <div class="artwork-meta">${art.technique} • ${art.dimensions} (${art.year})</div>
+            </div>
           </div>
-          <div class="artwork-info">
-            <div class="artwork-kicker">Özgün Koleksiyon Eseri</div>
-            <h4 class="artwork-title">${art.title}</h4>
-            <div class="artwork-meta">${art.technique} • ${art.dimensions} (${art.year})</div>
-          </div>
-        </div>
-      `).join("");
+        `).join("");
+      }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -2075,20 +2113,17 @@
       const profileView = document.getElementById("artistProfileView");
       const mainView = document.getElementById("mainPageView");
 
-      if (hash.startsWith("#sanatci=")) {
-        const artistId = hash.replace("#sanatci=", "");
+      if (hash.startsWith("#sanatci=") || hash.startsWith("#profil=")) {
+        const artistId = hash.replace(/^#(?:sanatci|profil)=/, "");
         openArtistProfile(artistId);
       } else if (hash === "#sanatcilarimiz") {
         if (profileView) profileView.style.display = "none";
         if (mainView) mainView.style.display = "block";
         setTimeout(() => {
           const targetEl = document.getElementById("sanatcilarimiz");
-          if (targetEl) {
-            targetEl.scrollIntoView({ behavior: 'smooth' });
-          }
+          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       } else {
-        // Hash yok veya /dergi/ ana sayfadayız
         if (profileView) profileView.style.display = "none";
         if (mainView) mainView.style.display = "block";
       }
@@ -2096,6 +2131,8 @@
 
     window.addEventListener("hashchange", handleInitialRoute);
     window.addEventListener("popstate", handleInitialRoute);
+    // Execute routing immediately on parse in addition to DOMContentLoaded
+    handleInitialRoute();
 
     // ==========================================
     // HABERLERİ YÜKLEME (TİTREŞİMSİZ & SABİT GÖRSELLER)
@@ -2303,5 +2340,6 @@
 
   </script>
 
+<script src="/assets/biresku-auth.js?v=20261108"></script>
 </body>
 </html>

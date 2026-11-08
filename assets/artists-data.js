@@ -1,5 +1,6 @@
 // BIRESKU SANATCILAR VERISI
-const ARTISTS_DATA = [
+window.ARTISTS_DATA = [
+
   {
     "id": "adnan-turani",
     "name": "Prof. Dr. Adnan Turani",
@@ -465,3 +466,5 @@ const ARTISTS_DATA = [
     "addedDate": "2026-10-01"
   }
 ];
+
+var ARTISTS_DATA = window.ARTISTS_DATA;
