@@ -218,7 +218,10 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
 - **Hero Alanı:** Fotoğraf alanına tıklandığında doğrudan bilgisayardan görsel seçilir/yüklenir; başlık, kategori ve disiplin alanları doğrudan sayfa tipografisi içinde yazılabilir.
 - **Biyografi & Sanatsal Yolculuk Kartı:** Sol taraftaki editoryal kartın altında boş ve şık bir metin alanı yer alır; yönetici doğrudan biyografiyi buraya yazar veya düzenler.
 - **Hayata ve Sanata Bakışı Kartı:** Sağ taraftaki altın çerçeveli tırnak içi alıntı kutusu ve felsefe metin alanı doğrudan profil sayfasındaki gibi doldurulur.
-- **Eser Koleksiyonu:** Gerçek profil sayfasındaki grid düzeninde eser kartları yer alır; görsel yükleme, eser adı, tekniği, santimetre (cm) ölçüsü ve yılı doğrudan kartın içine yazılır.
+- **Eser Koleksiyonu & İsteğe Bağlı Alan Kuralı:** Gerçek profil sayfasındaki grid düzeninde eser kartları yer alır.
+  - **ÖNEMLİ KURAL (Kullanıcı Talimatı):** *"bu resimlerin isimlerini sildim ve eser 1 eser-2 fln yazdı illa eser adı veya boyutu yazmasına gerek yok"*. Eser adı, tekniği, santimetre ölçüleri ve yılı **tamamen isteğe bağlıdır (optional)**.
+  - Eğer kullanıcı eser adını veya boyutunu boş bırakırsa sistem **ASLA** `"Eser #1"`, `"Eser #2"` veya `"Özgün Koleksiyon Eseri"` gibi varsayılan/yapay metinler üretmez.
+  - Alt bilgiler boş bırakıldığında eserler doğrudan **saf resim kartı (`pure-gallery-card`)** olarak çerçevesiz, tam yükseklikte sadece sanat eserini gösterecek şekilde tertemiz sergilenir.
 - **Üst Sticky Yönetici Çubuğu:**
   - `← Kataloğa Dön (Vazgeç)`
   - Açılır sanatçı seçici (kayıtlı sanatçılar arasında anında geçiş)

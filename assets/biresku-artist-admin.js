@@ -484,11 +484,23 @@
     addVisualArtworkCard: function(artData) {
       artData = artData || {
         title: "",
-        technique: "Tuval üzerine yağlıboya",
+        technique: "",
         dimensions: "",
-        year: new Date().getFullYear().toString(),
+        year: "",
         image: "/assets/biresku-banner.jpg"
       };
+
+      let rawTitle = (artData.title || '').trim();
+      if (/^Eser #\d+$/i.test(rawTitle)) rawTitle = '';
+
+      let rawTech = (artData.technique || '').trim();
+      if (rawTech === 'Özgün Koleksiyon Eseri') rawTech = '';
+
+      let rawDim = (artData.dimensions || '').trim();
+      if (rawDim === 'Özgün Koleksiyon Eseri') rawDim = '';
+
+      let rawYear = (artData.year || '').trim();
+      if (rawYear === 'Özgün Koleksiyon Eseri') rawYear = '';
 
       const cardId = 'studioArtCard_' + Math.random().toString(36).substr(2, 9);
       const fileInputId = 'file_' + cardId;
@@ -505,11 +517,11 @@
           <input type="file" id="${fileInputId}" accept="image/*" style="display:none;" onchange="BireskuArtistAdmin.handleArtworkCardFile(this, '${cardId}')">
         </div>
         <div class="studio-artwork-fields">
-          <input type="text" class="studio-art-input-title studio-art-title" value="${escapeHtml(artData.title || '')}" placeholder="Eser Adı (Örn: Soyut Denge)">
+          <input type="text" class="studio-art-input-title studio-art-title" value="${escapeHtml(rawTitle)}" placeholder="Eser Adı (İsteğe Bağlı)">
           <div class="studio-art-row">
-            <input type="text" class="studio-art-input-sub studio-art-tech" value="${escapeHtml(artData.technique || 'Tuval üzerine yağlıboya')}" placeholder="Teknik">
-            <input type="text" class="studio-art-input-sub studio-art-dim" value="${escapeHtml(artData.dimensions || '')}" placeholder="Ölçü (Örn: 100 × 100 cm)">
-            <input type="text" class="studio-art-input-sub studio-art-year" value="${escapeHtml(artData.year || '2024')}" placeholder="Yıl" style="max-width:65px;">
+            <input type="text" class="studio-art-input-sub studio-art-tech" value="${escapeHtml(rawTech)}" placeholder="Teknik (İsteğe Bağlı)">
+            <input type="text" class="studio-art-input-sub studio-art-dim" value="${escapeHtml(rawDim)}" placeholder="Ölçü (İsteğe Bağlı)">
+            <input type="text" class="studio-art-input-sub studio-art-year" value="${escapeHtml(rawYear)}" placeholder="Yıl (İsteğe Bağlı)" style="max-width:85px;">
           </div>
           <button type="button" class="studio-art-delete-btn" onclick="document.getElementById('${cardId}').remove()">✕ Eseri Kaldır</button>
         </div>
@@ -612,12 +624,24 @@
         const artYear = yearEl ? yearEl.value.trim() : '';
 
         if (imgSrc && !imgSrc.includes('biresku-fallback')) {
+          let cleanTitle = artTitle;
+          if (/^Eser #\d+$/i.test(cleanTitle) || cleanTitle === "Özgün Koleksiyon Eseri") cleanTitle = "";
+
+          let cleanDim = artDim;
+          if (cleanDim === "Özgün Koleksiyon Eseri") cleanDim = "";
+
+          let cleanTech = artTech;
+          if (cleanTech === "Özgün Koleksiyon Eseri") cleanTech = "";
+
+          let cleanYear = artYear;
+          if (cleanYear === "Özgün Koleksiyon Eseri") cleanYear = "";
+
           artworks.push({
             id: `art-${idx + 1}`,
-            title: artTitle || `Eser #${idx + 1}`,
-            technique: artTech || "Tuval üzerine yağlıboya",
-            dimensions: artDim || "Özgün Koleksiyon Eseri",
-            year: artYear || new Date().getFullYear().toString(),
+            title: cleanTitle,
+            technique: cleanTech,
+            dimensions: cleanDim,
+            year: cleanYear,
             image: imgSrc,
             imageUrl: imgSrc
           });
@@ -879,6 +903,14 @@
         if (Array.isArray(stored)) {
           stored.forEach(art => {
             if (art && art.id) {
+              if (Array.isArray(art.artworks)) {
+                art.artworks.forEach(w => {
+                  if (w.title && /^Eser #\d+$/i.test(w.title)) w.title = "";
+                  if (w.dimensions === "Özgün Koleksiyon Eseri") w.dimensions = "";
+                  if (w.technique === "Özgün Koleksiyon Eseri") w.technique = "";
+                  if (w.year === "Özgün Koleksiyon Eseri") w.year = "";
+                });
+              }
               const exIdx = window.ARTISTS_DATA.findIndex(a => a.id === art.id);
               if (exIdx !== -1) {
                 window.ARTISTS_DATA[exIdx] = art; // Güncelle
@@ -887,6 +919,9 @@
               }
             }
           });
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+          } catch(e) {}
           if (typeof syncArtistsRailWithData === 'function') {
             syncArtistsRailWithData();
           }
