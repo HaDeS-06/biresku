@@ -1,5 +1,119 @@
 
 /* ===================================================
+   MODAL OVERLAY & POPUP STYLES (GARANTİLİ GÖRÜNÜRLÜK & Z-INDEX)
+   =================================================== */
+#bireskuAuthContainer {
+  display: contents !important;
+}
+
+.biresku-modal-overlay,
+#bireskuAuthModal,
+#bireskuUserAccountModal {
+  position: fixed !important;
+  inset: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 9999999 !important; /* Navbar (99999) ve Açılır Menünün (100000) üstünde */
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+}
+
+.biresku-modal-overlay.is-open,
+#bireskuAuthModal.is-open,
+#bireskuUserAccountModal.is-open {
+  display: flex !important;
+}
+
+.biresku-modal-box {
+  background: var(--bg-surface, #14171d);
+  border: 1px solid var(--border, #2a2e37);
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  position: relative;
+  z-index: 10000000 !important;
+}
+
+.biresku-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border, #2a2e37);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.biresku-modal-title {
+  font-family: var(--font-serif, "Cinzel", Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-heading, #ffffff);
+  margin: 0;
+}
+
+.biresku-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted, #8b92a0);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+.biresku-modal-close:hover {
+  color: var(--accent, #c09a58);
+}
+
+.biresku-modal-body {
+  padding: 20px;
+  font-size: 0.9rem;
+  color: var(--text-main, #d1d5db);
+  max-height: 75vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.biresku-modal-footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--border, #2a2e37);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.biresku-modal-btn {
+  background: var(--accent, #c09a58);
+  color: #0f1013 !important;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  padding: 9px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.18s ease;
+}
+.biresku-modal-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+
+/* ===================================================
    KESİN MOR RENK VE PURPLE VISITED ENGELLEME KURALLARI
    =================================================== */
 a, a:visited, a:active, a:focus {
@@ -23,6 +137,9 @@ a, a:visited, a:active, a:focus {
   outline: none !important;
 }
 
+.auth-login-trigger-btn * {
+  pointer-events: none;
+}
 .auth-login-trigger-btn:hover {
   background: var(--accent) !important;
   color: #0f1013 !important;
@@ -45,6 +162,8 @@ a, a:visited, a:active, a:focus {
 
 /* Navigasyon Giriş & Kullanıcı Rozeti Butonları */
 .auth-login-trigger-btn {
+  touch-action: manipulation;
+  user-select: none;
   outline: none !important;
   -webkit-tap-highlight-color: transparent;
   display: inline-flex;
@@ -61,6 +180,9 @@ a, a:visited, a:active, a:focus {
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
+}
+.auth-login-trigger-btn * {
+  pointer-events: none;
 }
 .auth-login-trigger-btn:hover {
   background: var(--accent);

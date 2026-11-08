@@ -340,6 +340,7 @@
       `;
 
       const div = document.createElement('div');
+      div.id = 'bireskuAuthContainer';
       div.innerHTML = modalHtml;
       document.body.appendChild(div);
     },
@@ -486,13 +487,12 @@
           const apiRes = await BireskuAuthClient.login(email, password);
           if (apiRes && apiRes.success) {
             resetFailedAttempts();
-            const userRole = (email === 'ardaumay06@gmail.com') ? 'admin' : (account.role || 'user');
-      const sessionUser = {
-        role: userRole,
+            const userRole = (email === 'ardaumay06@gmail.com') ? 'admin' : (apiRes.user.role || 'user');
+            const sessionUser = {
               id: apiRes.user.id,
               email: apiRes.user.email,
               name: apiRes.user.full_name || 'Sanatçı',
-              role: (apiRes.user.email.toLowerCase() === 'ardaumay06@gmail.com') ? 'admin' : (apiRes.user.role || 'user'),
+              role: userRole,
               isVerified: apiRes.user.is_verified,
               loginTime: new Date().toISOString()
             };
@@ -774,39 +774,86 @@
 
     // 11. Modal Açma / Kapama Kontrolleri
     openAuthModal: function() {
-      const modal = document.getElementById('bireskuAuthModal');
-      if (modal) {
-        modal.classList.add('is-open');
-        this.hideAlert();
-        this.switchTab('login');
+      try {
+        if (!document.getElementById('bireskuAuthModal')) {
+          this.injectAuthModals();
+        }
+        const modal = document.getElementById('bireskuAuthModal');
+        if (modal) {
+          modal.style.setProperty('display', 'flex', 'important');
+          modal.classList.add('is-open');
+          this.hideAlert();
+          this.switchTab('login');
+          document.body.style.overflow = 'hidden';
+        } else {
+          console.error('[AUTH] bireskuAuthModal DOM üzerinde bulunamadı.');
+        }
+      } catch (err) {
+        console.error('[AUTH] openAuthModal hatası:', err);
       }
     },
 
     closeAuthModal: function() {
-      const modal = document.getElementById('bireskuAuthModal');
-      if (modal) modal.classList.remove('is-open');
+      try {
+        const modal = document.getElementById('bireskuAuthModal');
+        if (modal) {
+          modal.style.setProperty('display', 'none', 'important');
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      } catch (err) {
+        console.error('[AUTH] closeAuthModal hatası:', err);
+      }
     },
 
     openAccountModal: function() {
-      const user = getCurrentUser();
-      if (!user) {
-        this.openAuthModal();
-        return;
-      }
+      try {
+        if (!document.getElementById('bireskuUserAccountModal')) {
+          this.injectAuthModals();
+        }
+        const user = getCurrentUser();
+        if (!user) {
+          this.openAuthModal();
+          return;
+        }
 
-      const modal = document.getElementById('bireskuUserAccountModal');
-      if (modal) {
-        document.getElementById('accountDisplayName').textContent = user.name || 'Sanatsever';
-        document.getElementById('accountDisplayEmail').textContent = user.email;
-        document.getElementById('accountAvatarLetter').textContent = (user.name || user.email || 'U').charAt(0).toUpperCase();
-        document.getElementById('accountConsentInfo').textContent = `KVKK Açık Rıza: ${new Date(user.kvkkConsentDate).toLocaleDateString('tr-TR')} tarihinde onaylandı.`;
-        modal.classList.add('is-open');
+        const modal = document.getElementById('bireskuUserAccountModal');
+        if (modal) {
+          const nameEl = document.getElementById('accountDisplayName');
+          if (nameEl) nameEl.textContent = user.name || 'Sanatsever';
+          const emailEl = document.getElementById('accountDisplayEmail');
+          if (emailEl) emailEl.textContent = user.email;
+          const avatarEl = document.getElementById('accountAvatarLetter');
+          if (avatarEl) avatarEl.textContent = (user.name || user.email || 'U').charAt(0).toUpperCase();
+          const consentEl = document.getElementById('accountConsentInfo');
+          if (consentEl) consentEl.textContent = `KVKK Açık Rıza: ${new Date(user.kvkkConsentDate || Date.now()).toLocaleDateString('tr-TR')} tarihinde onaylandı.`;
+          const loginDateEl = document.getElementById('accLoginDate');
+          if (loginDateEl) loginDateEl.textContent = new Date(user.loginTime || Date.now()).toLocaleString('tr-TR');
+          const roleEl = document.getElementById('accUserRole');
+          if (roleEl) {
+            const isAdm = (user.role === 'admin' || (user.email && user.email.toLowerCase() === 'ardaumay06@gmail.com'));
+            roleEl.innerHTML = isAdm ? '<span style="color:#c09a58; font-weight:700;">👑 Baş Yönetici (Admin)</span>' : '<span style="color:var(--text-main);">Kayıtlı Sanatçı / Üye</span>';
+          }
+          modal.style.setProperty('display', 'flex', 'important');
+          modal.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        }
+      } catch (err) {
+        console.error('[AUTH] openAccountModal hatası:', err);
       }
     },
 
     closeAccountModal: function() {
-      const modal = document.getElementById('bireskuUserAccountModal');
-      if (modal) modal.classList.remove('is-open');
+      try {
+        const modal = document.getElementById('bireskuUserAccountModal');
+        if (modal) {
+          modal.style.setProperty('display', 'none', 'important');
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      } catch (err) {
+        console.error('[AUTH] closeAccountModal hatası:', err);
+      }
     },
 
     // Uyarı Kutusu Yönetimi
@@ -824,12 +871,33 @@
     },
 
     bindEvents: function() {
-      // Backdrop tıklamasıyla kapatma
-      window.addEventListener('click', (e) => {
+      // Global delegasyon: sayfadaki tüm Giriş ve Hesap butonlarını güvenle dinle
+      document.addEventListener('click', (e) => {
+        const loginTrigger = e.target.closest('.auth-login-trigger-btn, [data-auth-action="login"]');
+        if (loginTrigger) {
+          e.preventDefault();
+          e.stopPropagation();
+          this.openAuthModal();
+          return;
+        }
+
+        const accountTrigger = e.target.closest('.auth-user-badge-btn, [data-auth-action="account"]');
+        if (accountTrigger) {
+          e.preventDefault();
+          e.stopPropagation();
+          this.openAccountModal();
+          return;
+        }
+
+        // Backdrop tıklamasıyla kapatma
         const authModal = document.getElementById('bireskuAuthModal');
         const accModal = document.getElementById('bireskuUserAccountModal');
-        if (e.target === authModal) this.closeAuthModal();
-        if (e.target === accModal) this.closeAccountModal();
+        if (e.target === authModal) {
+          this.closeAuthModal();
+        }
+        if (e.target === accModal) {
+          this.closeAccountModal();
+        }
       });
 
       // ESC tuşu ile kapatma
