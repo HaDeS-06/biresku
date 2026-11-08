@@ -44,9 +44,23 @@ biresku/
 
 Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonları `window.ARTISTS_DATA` dizisinde saklanır. Sitedeki profil sayfaları ve vitrinler bu veriyi dinamik olarak okur.
 
-### Kayıtlı 5 Sanatçı ve Kritik Detayları:
+### Kayıtlı 6 Sanatçı ve Kritik Detayları:
 
-#### 1. Prof. Süleyman Saim Tekcan (`id: "suleyman-saim-tekcan"`) — *En Son Eklenen (En Sol / Spot 1)*
+#### 1. Gülbin Nurgenç (`id: "gulbin-nurgenc"`) — *En Son Eklenen (En Sol / Spot 1)*
+- **Unvan & Disiplin:** Gülbin Nurgenç — Çağdaş Türk Resmi, Soyut (Abstract), Fovizm & Ekspresyonizm
+- **Kategori:** Ressam & Sanat Eğitmeni
+- **Şehir / Atölye:** İstanbul — Nurgenç Sanat Atölyesi
+- **Önemli Bilgi:** 1970 İstanbul doğumludur. Beyoğlu Olgunlaşma Enstitüsü Resim Bölümü mezunudur. Alanında yetkin isimlerden aldığı uzun soluklu desen eğitiminin ardından tekstil sektöründe profesyonel desinatör olarak çalışmış; yurt dışı ve İstanbul’un önde gelen firmaları için özgün koleksiyonlar hazırlamıştır. 12 yıldır resim eğitmenliği yapmaktadır.
+- **Koleksiyon Eserleri (Masaüstü 'ressam gülbin' Klasöründen İşlenen Orijinal Eserler):**
+  1. *"Soyut Kompozisyon & Denge"* — Tuval üzerine yağlıboya. **100 × 100 cm** (Özgün Koleksiyon Eseri)
+  2. *"Fovist Renk Coşkusu"* — Tuval üzerine yağlıboya. **70 × 90 cm** (Özgün Koleksiyon Eseri)
+  3. *"Saf Rengin İfadesi"* — Tuval üzerine yağlıboya. **70 × 100 cm** (Özgün Koleksiyon Eseri)
+  4. *"Ekspresyonist Devinim"* — Tuval üzerine yağlıboya. **120 × 85 cm** (Özgün Koleksiyon Eseri)
+- **Doğrulanmış Otantik Alıntı:**  
+  *"Sanat sadece gözle görüleni tuvale aktarmak değil; hayatın zorluklarını, kuralların insanlar üzerindeki dayatmasını süzerek en yalın, en saf haline indirgeme çabasıdır. Sanatçının görevi dünyayı olduğu gibi kopyalamak değil, kendi süzgecinden geçirerek ona yeni bir kimlik kazandırmaktır."*
+- **Sanat Felsefesi & Estetik:** Çalışmalarında soyut (abstract), fovist ve ekspresyonist bir estetiği benimser, renkleri kirletmeden sahip olduğu canlılığı korumaya özen gösterir.
+
+#### 2. Prof. Süleyman Saim Tekcan (`id: "suleyman-saim-tekcan"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Unvan & Disiplin:** Prof. Süleyman Saim Tekcan — Özgün Baskı Resim, Gravür & Çağdaş Türk Resmi (Atlar & Hat Serisi)
 - **Kategori:** Ressam & Özgün Baskı Ustası
 - **Şehir / Atölye:** İstanbul / Trabzon — IMOGA (İstanbul Grafik Sanatlar Müzesi) / Tekcan Atölyesi
@@ -62,7 +76,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *"Figüratif"* — Tuval üzerine yağlıboya, imzalı. 2015 tarihli. **50 × 60 cm** (Lot ID: 46317)
 - **Doğrulanmış Otantik Alıntı:** *"Sanat bir serüvendir; özgün baskı ise bu serüvenin disiplin, sabır ve bilgelikle kâğıda mühürlenen en saf halidir."*
 
-#### 2. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
+#### 3. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Dışavurumculuk & Gelincikler
 - **Profil Fotoğrafı:** `assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg` (MAG Dergisi atölye çekimi; tuval başında spatulalı yüksek çözünürlüklü fotoğraf).
 - **Gerçek Alıntı:** *"Gelincik unutmamaktır, hatırlamaktır, vefadır."* (Sanatçının kendi söyleşilerinde yayımlanmış özgün sözüdür, uydurma alıntı kullanılmamalıdır).
@@ -78,16 +92,16 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *Gelincikler (Minyatür Spatula Çalışması)* — Tuval üzerine yağlıboya, **30 × 30 cm** (2020)
   *(Not: Önceden sehven eklenen portre çalışması kaldırılmış, 8 eserin tamamı Artam Antik A.Ş. doğrulamalı gelincik temalı orijinal eserlerle yenilenmiştir).*
 
-#### 3. Tuncay Umay (`id: "tuncay-umay"`)
+#### 4. Tuncay Umay (`id: "tuncay-umay"`)
 - **Disiplin:** Denizlerin Devinimi & Sürrealist Satranç Manifestosu
 - **ÖNEMLİ KURAL (Akademisyen DEĞİL):** Kullanıcı talimatı: *"akademisyen değilki o nerden çıktı"*. Tuncay Umay bağımsız ressam ve Biresku'nun kurucu sanatçısıdır; biyografisinde veya unvanında "akademisyen" ifadesi **kesinlikle geçmemelidir**.
 - **Kayıtlı Eser Sayısı:** 13 Eser
 
-#### 4. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
+#### 5. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
 - **Disiplin:** Çağdaş Türk Resmi, Dışavurumcu Figürasyon & Dinamik Kompozisyon
 - **Kayıtlı Eser Sayısı:** 13 Eser (Mustafa Ayaz Plastik Sanatlar Müzesi koleksiyonu referanslı)
 
-#### 5. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
+#### 6. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı
 - **Kayıtlı Eser Sayısı:** 13 Eser (Marmaris Serisi, Viyolonsel Çalan Kadın, Müzisyenler Trio vb.)
 
@@ -154,8 +168,8 @@ Gelecekte geri alma veya hata yapmamak adına kullanıcının doğrudan verdiği
 Site doğrudan GitHub Pages üzerinden yayınlanmaktadır. Değişiklik yapıldığında şu adımlar takip edilmelidir:
 
 1. **Önbellek Kırma (Cache Busting):**
-   - CSS ve JS bağlantılarına versiyon etiketi eklenmiştir (örn: `?v=20261108_v25`).
-   - Yapılan her kritik frontend değişikliğinde versiyon numarası (`v25 -> v25`) artırılmalıdır.
+   - CSS ve JS bağlantılarına versiyon etiketi eklenmiştir (örn: `?v=20261108_v26`).
+   - Yapılan her kritik frontend değişikliğinde versiyon numarası (`v26 -> v26`) artırılmalıdır.
 2. **GitHub API ile Dağıtım:**
    - Dosyalar `HaDeS-06/biresku` deposunun `main` dalına commit edilir.
    - GitHub Actions `pages build and deployment` iş akışını tetikler (~30-60 saniye sürer).

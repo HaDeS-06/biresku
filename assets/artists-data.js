@@ -132,7 +132,7 @@ window.ARTISTS_DATA = [
     "category": "Ressam & Sanat Eğitimcisi",
     "city": "Ankara",
     "studio": "Tuncay Umay Atölyeleri (Ankara)",
-    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v19",
+    "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v26",
     "shortBio": "1980 Ankara doğumlu ressam; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
     "quote": "Denizi resmetmek, aslında zamanın akışını ve bu amansız devinimi tek bir fırça vuruşunda dondurma cesaretidir. Her tablo, dalgaların sonsuz değişimi karşısında kendi iç dengesini arayan, hayatın fırtınasında doğru hamleyi yapmaya çalışan ve karanlığa rağmen içindeki ışığı söndürmeyen ruhun görsel bir manifestosudur.",
     "biography": [
@@ -222,7 +222,7 @@ window.ARTISTS_DATA = [
     "category": "Ressam",
     "city": "Ankara",
     "studio": "Çetinkaya Atölyesi (Ankara)",
-    "coverImage": "/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261108_v19",
+    "coverImage": "/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261108_v26",
     "shortBio": "Türk çağdaş resminde gelincik teması ve lirik dışavurumcu renk coşkusuyla özdeşleşen; ulusal ve uluslararası 150'den fazla kişisel sergiye imza atan usta ressam.",
     "quote": "Gelincik unutmamaktır, hatırlamaktır, vefadır.",
     "biography": [
@@ -240,8 +240,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "80 x 100 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v19",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v19"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26"
       },
       {
             "id": "cetinkaya-2",
@@ -249,8 +249,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "136 x 56 cm",
             "year": "2021",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v19",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v19"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26"
       },
       {
             "id": "cetinkaya-3",
@@ -258,8 +258,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "70 x 70 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v19",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v19"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26"
       },
       {
             "id": "cetinkaya-4",
@@ -267,8 +267,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "50 x 35 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v19",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v19"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26"
       },
       {
             "id": "cetinkaya-5",
@@ -276,8 +276,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "100 x 100 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v19",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v19"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26"
       },
       {
             "id": "cetinkaya-6",
@@ -285,8 +285,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "60 x 30 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v19",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v19"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26"
       },
       {
             "id": "cetinkaya-7",
@@ -294,8 +294,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "50 x 50 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v19",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v19"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26"
       },
       {
             "id": "cetinkaya-8",
@@ -303,8 +303,8 @@ window.ARTISTS_DATA = [
             "technique": "Tuval üzerine yağlıboya",
             "dimensions": "30 x 30 cm",
             "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v19",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v19"
+            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26",
+            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26"
       }
 ],
     "addedDate": "2026-11-08"
@@ -316,7 +316,7 @@ window.ARTISTS_DATA = [
     "category": "Ressam & Özgün Baskı Ustası",
     "city": "İstanbul / Trabzon",
     "studio": "IMOGA (İstanbul Grafik Sanatlar Müzesi) / Tekcan Atölyesi",
-    "coverImage": "/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261108_v25",
+    "coverImage": "/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261108_v26",
     "shortBio": "Türk özgün baskı sanatının ve gravür ekolünün uluslararası duayeni; Türkiye'nin ilk çağdaş grafik sanatlar müzesi IMOGA'nın kurucusu ve anıtsal 'Atlar' serisinin bilge ustası.",
     "quote": "Sanat bir serüvendir; özgün baskı ise bu serüvenin disiplin, sabır ve bilgelikle kâğıda mühürlenen en saf halidir.",
     "biography": [
@@ -334,8 +334,8 @@ window.ARTISTS_DATA = [
         "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "100 × 140 cm",
         "year": "2022",
-        "image": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v25",
-        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v25"
+        "image": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v26",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-2",
@@ -343,8 +343,8 @@ window.ARTISTS_DATA = [
         "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "80 × 60 cm",
         "year": "2021",
-        "image": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v25",
-        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v25"
+        "image": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v26",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-3",
@@ -352,8 +352,8 @@ window.ARTISTS_DATA = [
         "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "70 × 55 cm",
         "year": "1999",
-        "image": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v25",
-        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v25"
+        "image": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v26",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-4",
@@ -361,8 +361,8 @@ window.ARTISTS_DATA = [
         "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "60 × 70 cm",
         "year": "2022",
-        "image": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v25",
-        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v25"
+        "image": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v26",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-5",
@@ -370,8 +370,8 @@ window.ARTISTS_DATA = [
         "technique": "Özgün Baskı Gravür (E.A. 8/20), imzalı",
         "dimensions": "62 × 70 cm",
         "year": "1998",
-        "image": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v25",
-        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v25"
+        "image": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v26",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-6",
@@ -379,8 +379,8 @@ window.ARTISTS_DATA = [
         "technique": "Kağıt üzerine karışık teknik, imzalı",
         "dimensions": "69 × 93 cm",
         "year": "Koleksiyon Eseri",
-        "image": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v25",
-        "imageUrl": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v25"
+        "image": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v26",
+        "imageUrl": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-7",
@@ -388,8 +388,8 @@ window.ARTISTS_DATA = [
         "technique": "Özgün Baskı Gravür (Edition 28/50), imzalı",
         "dimensions": "50 × 31 cm",
         "year": "1989",
-        "image": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v25",
-        "imageUrl": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v25"
+        "image": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v26",
+        "imageUrl": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-8",
@@ -397,11 +397,70 @@ window.ARTISTS_DATA = [
         "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "50 × 60 cm",
         "year": "2015",
-        "image": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v25",
-        "imageUrl": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v25"
+        "image": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v26",
+        "imageUrl": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v26"
       }
     ],
     "addedDate": "2026-11-08",
     "period": "1940 – Günümüz"
+  },
+  {
+    "id": "gulbin-nurgenc",
+    "name": "Gülbin Nurgenç",
+    "discipline": "Çağdaş Türk Resmi, Soyut (Abstract), Fovizm & Ekspresyonizm",
+    "category": "Ressam & Sanat Eğitmeni",
+    "city": "İstanbul",
+    "studio": "Nurgenç Sanat Atölyesi (İstanbul)",
+    "coverImage": "/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261108_v26",
+    "shortBio": "Beyoğlu Olgunlaşma Enstitüsü mezunu; desen ve desinatörlük birikimini soyut, fovist ve ekspresyonist estetikle tuvale aktaran ressam ve sanat eğitmeni.",
+    "quote": "Sanat sadece gözle görüleni tuvale aktarmak değil; hayatın zorluklarını, kuralların insanlar üzerindeki dayatmasını süzerek en yalın, en saf haline indirgeme çabasıdır. Sanatçının görevi dünyayı olduğu gibi kopyalamak değil, kendi süzgecinden geçirerek ona yeni bir kimlik kazandırmaktır.",
+    "biography": [
+      "1970 İstanbul doğumlu Gülbin Nurgenç, Beyoğlu Olgunlaşma Enstitüsü Resim Bölümü mezunudur. Alanında yetkin isimlerden aldığı uzun soluklu desen eğitiminin ardından tekstil sektöründe profesyonel desinatör olarak çalışmış; yurt dışı ve İstanbul’un önde gelen firmaları için özgün koleksiyonlar hazırlamıştır.",
+      "12 yıldır resim eğitmenliği yaparak pek çok yeteneğin gelişimine katkı sağlamaya devam eden sanatçı, atölyesinde yağlıboya çalışmalarını ve eğitim faaliyetlerini sürdürmektedir."
+    ],
+    "philosophy": [
+      "Gülbin Nurgenç'in sanata bakış açısı şu temel ilkeye dayanır: 'Sanat sadece gözle görüleni tuvale aktarmak değil; hayatın zorluklarını, kuralların insanlar üzerindeki dayatmasını süzerek en yalın, en saf haline indirgeme çabasıdır. Sanatçının görevi dünyayı olduğu gibi kopyalamak değil, kendi süzgecinden geçirerek ona yeni bir kimlik kazandırmaktır.'",
+      "Çalışmalarında soyut (abstract), fovist ve ekspresyonist bir estetiği benimseyen sanatçı, renkleri kirletmeden sahip olduğu canlılığı ve lirik enerjiyi korumaya özen göstermektedir."
+    ],
+    "artworks": [
+      {
+        "id": "nurgenc-1",
+        "title": "Soyut Kompozisyon & Denge",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "100 × 100 cm",
+        "year": "Özgün Koleksiyon Eseri",
+        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261108_v26",
+        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261108_v26"
+      },
+      {
+        "id": "nurgenc-2",
+        "title": "Fovist Renk Coşkusu",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "70 × 90 cm",
+        "year": "Özgün Koleksiyon Eseri",
+        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261108_v26",
+        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261108_v26"
+      },
+      {
+        "id": "nurgenc-3",
+        "title": "Saf Rengin İfadesi",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "70 × 100 cm",
+        "year": "Özgün Koleksiyon Eseri",
+        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261108_v26",
+        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261108_v26"
+      },
+      {
+        "id": "nurgenc-4",
+        "title": "Ekspresyonist Devinim",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "120 × 85 cm",
+        "year": "Özgün Koleksiyon Eseri",
+        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261108_v26",
+        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261108_v26"
+      }
+    ],
+    "addedDate": "2026-11-08",
+    "period": "1970 – Günümüz"
   }
 ];
