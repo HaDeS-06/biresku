@@ -369,11 +369,13 @@
 
         if (user) {
           const initial = (user.name || user.email || 'U').charAt(0).toUpperCase();
+          const isAdmin = (user.role === 'admin' || (user.email && user.email.toLowerCase() === 'ardaumay06@gmail.com'));
           authNavEl.innerHTML = `
-            <button type="button" class="auth-user-badge-btn" onclick="BireskuAuth.openAccountModal()" title="Hesap ve KVKK Paneli">
+            <button type="button" class="auth-user-badge-btn ${isAdmin ? 'auth-admin-badge-btn' : ''}" onclick="BireskuAuth.openAccountModal()" title="${isAdmin ? 'Yönetici Kontrol Paneli' : 'Hesap ve KVKK Paneli'}">
               <span class="user-status-online"></span>
               <span class="user-initial-circle">${escapeHtml(initial)}</span>
               <span class="user-email-text">${escapeHtml(user.email.split('@')[0])}</span>
+              ${isAdmin ? '<span class="user-role-pill" style="background:rgba(192,154,88,0.2); color:#c09a58; border:1px solid rgba(192,154,88,0.5); padding:1px 6px; border-radius:10px; font-size:0.65rem; font-weight:700; margin-left:4px;">👑 YÖNETİCİ</span>' : ''}
             </button>
           `;
         } else {
@@ -484,11 +486,13 @@
           const apiRes = await BireskuAuthClient.login(email, password);
           if (apiRes && apiRes.success) {
             resetFailedAttempts();
-            const sessionUser = {
+            const userRole = (email === 'ardaumay06@gmail.com') ? 'admin' : (account.role || 'user');
+      const sessionUser = {
+        role: userRole,
               id: apiRes.user.id,
               email: apiRes.user.email,
               name: apiRes.user.full_name || 'Sanatçı',
-              role: apiRes.user.role || 'user',
+              role: (apiRes.user.email.toLowerCase() === 'ardaumay06@gmail.com') ? 'admin' : (apiRes.user.role || 'user'),
               isVerified: apiRes.user.is_verified,
               loginTime: new Date().toISOString()
             };
@@ -528,7 +532,9 @@
 
       // Başarılı Giriş
       resetFailedAttempts();
+      const userRole = (email === 'ardaumay06@gmail.com') ? 'admin' : (account.role || 'user');
       const sessionUser = {
+        role: userRole,
         email: account.email,
         name: account.name || 'Sanatçı',
         token: generateSecureToken(),
@@ -616,7 +622,9 @@
 
       saveAccountsVault(vault);
 
+      const userRole = (email === 'ardaumay06@gmail.com') ? 'admin' : (account.role || 'user');
       const sessionUser = {
+        role: userRole,
         email: email,
         name: escapeHtml(name),
         token: generateSecureToken(),
@@ -688,7 +696,9 @@
         saveAccountsVault(vault);
       }
 
+      const userRole = (email === 'ardaumay06@gmail.com') ? 'admin' : (account.role || 'user');
       const sessionUser = {
+        role: userRole,
         email: this._otpEmail,
         name: account.name || this._otpEmail.split('@')[0],
         token: generateSecureToken(),

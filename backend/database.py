@@ -74,12 +74,25 @@ def init_db():
             )
         """)
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_logs_user_action ON user_activity_logs(user_id, action)")
+        conn.execute("UPDATE users SET role = 'admin', is_verified = 1 WHERE LOWER(email) = 'ardaumay06@gmail.com'")
         conn.commit()
 
 
 # --- KULLANICI İŞLEMLERİ ---
 
+
+SUPERADMIN_EMAILS = {"ardaumay06@gmail.com"}
+
+def is_superadmin_email(email: str) -> bool:
+    return email.lower().strip() in SUPERADMIN_EMAILS
+
 def create_user(email: str, password: str, full_name: str, role: str = "user", phone: Optional[str] = None) -> Optional[int]:
+    email_clean = email.lower().strip()
+    if is_superadmin_email(email_clean):
+        role = "admin"
+        is_verified_val = 1
+    else:
+        is_verified_val = 0
     """Yeni kullanıcı oluşturur, şifreyi PBKDF2 ile hashler."""
     now_str = datetime.now(timezone.utc).isoformat()
     pwd_hash = generate_password_hash(password, method="pbkdf2:sha256", salt_length=16)
@@ -89,8 +102,8 @@ def create_user(email: str, password: str, full_name: str, role: str = "user", p
             cursor = conn.cursor()
             cursor.execute("""
                 INSERT INTO users (email, password_hash, full_name, role, phone, is_verified, created_at)
-                VALUES (?, ?, ?, ?, ?, 0, ?)
-            """, (email.lower().strip(), pwd_hash, full_name.strip(), role, phone, now_str))
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (email_clean, pwd_hash, full_name.strip(), role, phone, is_verified_val, now_str))
             conn.commit()
             return cursor.lastrowid
         except sqlite3.IntegrityError:
