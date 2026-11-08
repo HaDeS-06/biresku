@@ -189,26 +189,40 @@ Site doğrudan GitHub Pages üzerinden yayınlanmaktadır. Değişiklik yapıld�
 
 ## 7. Admin Sanatçı Yönetim & Şablon Motoru (`BireskuArtistAdmin`)
 
-Yöneticinin (`ardaumay06@gmail.com` veya `role: admin`) dışarıdan bir yapay zekaya ihtiyaç duymadan yeni sanatçıları, biyografileri, felsefeleri ve eserleri doğrudan ekleyebilmesi için **güvenlik açığı barındırmayan (Zero-Vulnerability)** bir Sanatçı Yönetim ve Şablon Motoru geliştirilmiştir.
+Yöneticinin (`ardaumay06@gmail.com` veya `role: admin`) dışarıdan bir yapay zekaya ihtiyaç duymadan yeni sanatçıları, biyografileri, felsefeleri ve eserleri doğrudan ekleyebilmesi ve **önceden eklenmiş tüm sanatçıları düzenleyebilmesi** için geliştirilmiş gizli, dinamik ve **güvenlik açığı barındırmayan (Zero-Vulnerability / OWASP Uyumlu)** bir Sanatçı Yönetim ve Şablon Motorudur.
 
-### A. Mimari Bileşenler ve Güvenlik Standartları
+### A. Gizlilik & Görünmezlik Standartları (Stealth Architecture)
+Kullanıcının kesin talimatı gereği:
+1. **Kaynak Kodda Sıfır İz:** HTML kaynak kodlarında (`index.html`, `dergi/index.html`, `dergi/sanatcilar/index.html`) statik hiçbir buton, form veya `+` kartı **asla yer almaz**. Sayfa kaynağını görüntüleyen (View Source) hiç kimse admin panelinin varlığını dahi göremez.
+2. **Çalışma Zamanı Enjeksiyonu (Dynamic Runtime Injection):** Yalnızca yetkili Admin (`ardaumay06@gmail.com` / `role: admin`) güvenli oturum açtığında JavaScript motoru devreye girer:
+   - `dergi/sanatcilar/` sayfasındaki `#catalogGrid` alanının **en sol üst köşesine (1. sıraya)** fotoğraf yerine zarif altın `+` sembolü taşıyan bir kart enjekte edilir.
+   - `index.html` sayfasındaki `#artistsRail` vitrin rayının en soluna da aynı `+` kartı dinamik eklenir.
+   - Mevcut tüm sanatçı kartlarının kapak fotoğrafının sağ üst köşesine `✏️ Düzenle` butonu iliştirilir.
+3. **Oturum Kapanınca Otomatik Temizlik:** Çıkış yapıldığında veya yetkisiz ziyaretçilerde tüm injected elemanlar DOM'dan derhal temizlenir.
+
+### B. Mimari Bileşenler ve Güvenlik Standartları
 - **Dosyalar:**
-  - `assets/biresku-artist-admin.js` ve `dergi/assets/biresku-artist-admin.js` (İstemci mantığı ve şablon motoru)
-  - `assets/biresku-auth.css` (Lüks karanlık mod stüdyo ve canlı önizleme arayüzü)
-  - `assets/biresku-auth.js` (Yönetici oturumu kontrolü, modal tetikleyicisi ve navbar hızlı butonu)
-  - `backend/app.py` (`@auth_bp.route("/admin/artists/add")` korumalı backend API)
+  - `assets/biresku-artist-admin.js` ve `dergi/assets/biresku-artist-admin.js` (İstemci mantığı, enjeksiyon motoru, şablon doldurucu)
+  - `assets/biresku-auth.css` ve `dergi/assets/biresku-auth.css` (`.admin-plus-card`, `.admin-plus-cover`, `.admin-card-edit-btn`, lüks karanlık stüdyo ve canlı simülasyon stilleri)
+  - `assets/biresku-auth.js` ve `dergi/assets/biresku-auth.js` (Admin oturum yönetimi & state change event köprüsü)
 - **Tavizsiz Güvenlik Kuralları (OWASP Uyumlu):**
-  1. **Yetki Denetimi (RBAC):** Yalnızca `role === 'admin'` veya `ardaumay06@gmail.com` kullanıcıları paneli görebilir ve açabilir. Yetkisiz çağrılar sessizce reddedilir.
+  1. **Yetki Denetimi (RBAC):** Yalnızca `role === 'admin'` veya `ardaumay06@gmail.com` kullanıcıları paneli açabilir ve kaydedebilir. Yetkisiz çağrılar sessizce reddedilir.
   2. **Sıfır XSS (Zero-XSS):** Tüm form girdileri `escapeHtml()` ve güvenli DOM yöntemleriyle sanitize edilir; asla `eval()` veya `new Function()` çalıştırılmaz.
   3. **Protokol Güvenliği:** Görsel URL'lerinde yalnızca `https://`, `http://`, `data:image/` ve `/assets/` kabul edilir; `javascript:`, `vbscript:` vb. saldırı protokolleri anında elenir.
   4. **Dosya Güvenliği:** Yalnızca `image/*` MIME türleri ve maksimum 5MB dosya boyutu sınırı uygulanır.
   5. **ID Sanitizasyonu:** Sanatçı slug'ı `^[a-z0-9\-]+$` kuralına göre otomatik temizlenir.
 
-### B. Kullanım ve Yetenekler
-1. **Hazır Şablon Doldurucu:** "⚡ Hazır Şablonu Doldur (Örnek Taslak)" butonuna basıldığında formu eksiksiz örnek bir veriyle doldurur; yönetici yalnızca isim, metin ve resimleri değiştirir.
-2. **Dinamik Eser Ekleme:** Eser başlığı, tekniği, ölçüleri (örn: `80 × 100 cm`), yılı ve görseliyle sınırsız sayıda eser eklenebilir.
-3. **Canlı Simülasyon:** Sağ panelde Biresku vitrin kartının ve profil sayfasının birebir canlı önizlemesi anlık olarak akar.
-4. **Çoklu Dağıtım & Kayıt:**
-   - **"🚀 Sisteme Ekle ve Vitrine Al (Canlı)":** Sanatçıyı anında `window.ARTISTS_DATA`ya ve `biresku_custom_artists_v1` kalıcı deposuna ekler, vitrinde 1. sıraya (en sola) taşır.
+### C. Kullanım ve Yetenekler
+1. **Sol Üstteki `+` Kartına Tıklayarak Ekleme:** Sanatçılarımız vitrininde en sol üstteki `+` kartına tıklandığında boş şablon açılır.
+2. **Eski Eklenen Sanatçıları Düzenleme (Edit Flow):**
+   - Her sanatçı kartının üzerindeki `✏️ Düzenle` butonuna basıldığında o sanatçının tüm bilgileri (biyo, felsefe, alıntı, profil resmi, tüm eserleri ve cm boyutları) forma yüklenir.
+   - Formun üstündeki açılır menüden (`#studioArtistSelector`) kayıtlı tüm sanatçılar arasında anında geçiş yapılabilir veya "Yeni Sanatçı Ekle" moduna dönülebilir.
+   - İstenilen metin veya görseller değiştirilip `💾 Değişiklikleri Kaydet & Vitrine Uygula` butonuna basıldığında hem sitede hem hafızada anında güncellenir.
+   - `🗑️ Sanatçıyı Sistemden Kaldır` seçeneğiyle sanatçı kolayca silinebilir.
+3. **Hazır Şablon Doldurucu:** "⚡ Hazır Şablonu Doldur (Örnek Taslak)" butonu tek tıkla eksiksiz örnek bir veri yükler; kullanıcı sadece isim ve eserleri değiştirir.
+4. **Dinamik Eser Ekleme:** Eser başlığı, tekniği, ölçüleri (örn: `80 × 100 cm`), yılı ve görseliyle sınırsız sayıda eser eklenebilir.
+5. **Canlı Simülasyon:** Sağ panelde vitrin kartının ve profil sayfasının birebir canlı önizlemesi anlık olarak akar.
+6. **Çoklu Dağıtım & Kayıt:**
+   - **"🚀 Sisteme Ekle / Güncelle (Canlı)":** Sanatçıyı anında `window.ARTISTS_DATA`ya ve `biresku_custom_artists_v1` kalıcı deposuna ekler, vitrinde 1. sıraya (en sola) taşır.
    - **"📋 artists-data.js Kodunu Kopyala":** `artists-data.js` dosyasına doğrudan yapıştırılabilecek standart JavaScript / JSON kodunu tek tıkla panoya kopyalar.
    - **"💾 JSON Olarak İndir":** Tek tıkla `[id].json` olarak indirir.

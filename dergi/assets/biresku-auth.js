@@ -389,7 +389,6 @@
           const initial = (user.name || user.email || 'U').charAt(0).toUpperCase();
           const isAdmin = (user.role === 'admin' || (user.email && user.email.toLowerCase() === 'ardaumay06@gmail.com'));
           authNavEl.innerHTML = `
-            ${isAdmin ? '<button type="button" class="admin-nav-artist-btn" onclick="BireskuArtistAdmin.openStudio()" title="Sanatçı Ekleme Sihirbazı"><span>+ Sanatçı Ekle</span></button>' : ''}
             <button type="button" class="auth-user-badge-btn ${isAdmin ? 'auth-admin-badge-btn' : ''}" onclick="BireskuAuth.openAccountModal()" title="${isAdmin ? 'Yönetici Kontrol Paneli' : 'Hesap ve KVKK Paneli'}">
               <span class="user-status-online"></span>
               <span class="user-initial-circle">${escapeHtml(initial)}</span>
@@ -783,7 +782,11 @@
       this.updateNavbarUi();
     },
 
-    // 10. Güvenli Çıkış (Logout)
+    // 10. Güvenli Çıkış (Logout) & Oturum Bilgisi
+    getCurrentUser: function() {
+      return getCurrentUser();
+    },
+
     logout: function() {
       setCurrentUser(null);
       this.closeAccountModal();

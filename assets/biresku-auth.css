@@ -824,3 +824,131 @@ a, a:visited, a:active, a:focus {
     align-items: flex-start;
   }
 }
+
+/* ==========================================================================
+   ADMIN GIZLI SANATCI YONETIMI & "+" KARTI STILLERI
+   (Sadece yetkili admin oturum actiginda JS tarafindan enjekte edilir)
+   ========================================================================== */
+
+/* 1. Admin "+" Karti (Sol Ust Vitrin Karti) */
+.admin-plus-card {
+  position: relative !important;
+  background: linear-gradient(145deg, #16181f 0%, #0d0f14 100%) !important;
+  border: 1px dashed rgba(192, 154, 88, 0.45) !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.admin-plus-card:hover {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(192, 154, 88, 0.25) !important;
+}
+
+/* Fotograf olmasi gereken alandaki "+" alani */
+.admin-plus-cover {
+  width: 100% !important;
+  background: radial-gradient(circle at center, rgba(192, 154, 88, 0.14) 0%, rgba(13, 15, 20, 0.98) 75%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-bottom: 1px dashed rgba(192, 154, 88, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 195px !important;
+}
+
+/* Catalog Grid'de cover yuksekligi */
+#catalogGrid .admin-plus-cover {
+  height: 260px !important;
+}
+
+/* Home Rail'de cover yuksekligi */
+#artistsRail .admin-plus-cover {
+  height: 195px !important;
+}
+
+/* Ortadaki altin halka ve "+" ikonu */
+.admin-plus-circle-inner {
+  width: 76px !important;
+  height: 76px !important;
+  border-radius: 50% !important;
+  border: 2px dashed #c09a58 !important;
+  background: rgba(192, 154, 88, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 0 18px rgba(192, 154, 88, 0.15) !important;
+}
+
+.admin-plus-sign {
+  font-size: 2.4rem !important;
+  line-height: 0.9 !important;
+  font-weight: 300 !important;
+  color: #c09a58 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  transition: all 0.3s ease !important;
+}
+
+.admin-plus-label {
+  font-size: 0.62rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #c09a58 !important;
+  margin-top: 2px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Hover durumunda halkanin parlamasi */
+.admin-plus-card:hover .admin-plus-circle-inner {
+  transform: scale(1.1) !important;
+  background: #c09a58 !important;
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+  box-shadow: 0 0 28px rgba(192, 154, 88, 0.6) !important;
+}
+
+.admin-plus-card:hover .admin-plus-sign,
+.admin-plus-card:hover .admin-plus-label {
+  color: #0e1015 !important;
+}
+
+/* 2. Mevcut Sanatci Kartlarindaki "✏️ Duzenle" Butonu */
+.admin-card-edit-btn {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  z-index: 15 !important;
+  background: rgba(13, 15, 20, 0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(192, 154, 88, 0.6) !important;
+  color: #c09a58 !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  padding: 5px 10px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.2s ease !important;
+}
+
+.admin-card-edit-btn:hover {
+  background: #c09a58 !important;
+  color: #0e1015 !important;
+  border-color: #c09a58 !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 6px 18px rgba(192, 154, 88, 0.4) !important;
+}
