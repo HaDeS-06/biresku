@@ -327,8 +327,19 @@
       box-shadow: 0 0 0 2px rgba(192, 154, 88, 0.2) !important;
     }
 
+      /* MOBILE_EXTRAS */
+
+    @media (max-width: 768px) {
+      .container { padding: 0 16px !important; }
+      .site-nav { min-height: 52px; }
+      .nav-inner { padding: 4px 12px; }
+      .portal-back-btn { padding: 5px 8px; font-size: 0.74rem; }
+      .theme-toggle-btn { padding: 5px 8px; font-size: 0.72rem; }
+      .theme-toggle-text { display: none; }
+    }
+
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v4">
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_mobile">
 </head>
 <body>
 
@@ -417,6 +428,6 @@
     }
   </script>
 
-<script src="/assets/biresku-auth.js?v=20261108_v4"></script>
+<script src="/assets/biresku-auth.js?v=20261108_mobile"></script>
 </body>
 </html>

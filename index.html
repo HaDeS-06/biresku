@@ -1575,8 +1575,141 @@
       box-shadow: 0 0 0 2px rgba(192, 154, 88, 0.2) !important;
     }
 
+  
+    /* =========================================================
+       GELİŞMİŞ TELEFON & MOBİL GÖRÜNÜM OPTİMİZASYONU (index.html)
+       ========================================================= */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      .masthead-main {
+        max-height: 140px;
+      }
+      .top-menu-btn {
+        top: 8px;
+        left: 8px;
+        padding: 6px 10px;
+        font-size: 0.72rem;
+        border-radius: 3px;
+        backdrop-filter: blur(8px);
+        background: rgba(21, 22, 27, 0.92);
+      }
+      .site-nav {
+        height: auto;
+        min-height: 52px;
+      }
+      .nav-inner {
+        height: auto;
+        min-height: 52px;
+        padding: 4px 12px;
+        flex-wrap: nowrap;
+        gap: 10px;
+      }
+      .nav-list {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        white-space: nowrap;
+        flex: 1;
+        padding: 4px 0;
+      }
+      .nav-list::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-list a {
+        padding: 8px 4px;
+        font-size: 0.76rem;
+        flex-shrink: 0;
+      }
+      .nav-right-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      .auth-login-trigger-btn {
+        padding: 5px 8px;
+        font-size: 0.72rem;
+        white-space: nowrap;
+      }
+      .theme-toggle-btn {
+        padding: 5px 8px;
+      }
+      .theme-toggle-text {
+        display: none;
+      }
+
+      /* Yatay Akış Kartları (Dokunmatik Swipe Optimizasyonu) */
+      .flow-rail-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 12px;
+        scrollbar-width: none;
+      }
+      .flow-rail-container::-webkit-scrollbar {
+        display: none;
+      }
+      .flow-card {
+        flex: 0 0 240px;
+        max-width: 240px;
+        scroll-snap-align: start;
+      }
+      .flow-showcase-section {
+        padding: 30px 0 45px;
+      }
+      .flow-row-block {
+        margin-bottom: 36px;
+      }
+      .flow-title {
+        font-size: 1.22rem;
+      }
+      .flow-sub {
+        font-size: 0.78rem;
+      }
+
+      /* Açılır Merkez Menü */
+      .sliding-nav-panel {
+        max-height: 90vh;
+        width: 100%;
+        padding: 20px 14px;
+      }
+      .sliding-panel-layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .panel-left-sidebar {
+        order: 2;
+      }
+      .panel-right-rooms {
+        order: 1;
+      }
+      .big-room-card {
+        padding: 18px 16px;
+      }
+      .big-room-name {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .flow-card {
+        flex: 0 0 220px;
+        max-width: 220px;
+      }
+      .artist-card-cover {
+        height: 150px;
+      }
+      .artist-name-title {
+        font-size: 1.05rem;
+      }
+    }
+
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v4">
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_mobile">
 </head>
 <body>
 
@@ -2452,6 +2585,6 @@
   </div>
 
 <script src="/assets/artists-data.js?v=20261108"></script>
-<script src="/assets/biresku-auth.js?v=20261108_v4"></script>
+<script src="/assets/biresku-auth.js?v=20261108_mobile"></script>
 </body>
 </html>

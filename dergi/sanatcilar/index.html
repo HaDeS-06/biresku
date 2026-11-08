@@ -879,8 +879,63 @@
       box-shadow: 0 0 0 2px rgba(192, 154, 88, 0.2) !important;
     }
 
+  
+    /* =========================================================
+       GELİŞMİŞ TELEFON & MOBİL GÖRÜNÜM OPTİMİZASYONU (sanatcilar)
+       ========================================================= */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      .catalog-header {
+        padding: 28px 0 20px;
+      }
+      .catalog-title {
+        font-size: 1.65rem;
+      }
+      .catalog-controls {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .search-box input {
+        width: 100%;
+        font-size: 16px !important;
+        min-height: 44px;
+      }
+      .filter-pills-bar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        white-space: nowrap;
+        padding-bottom: 4px;
+      }
+      .artists-catalog-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+
+      /* Profil Görünümü */
+      .profile-hero {
+        grid-template-columns: 1fr !important;
+        padding: 20px 16px;
+        text-align: center;
+      }
+      .profile-avatar-wrap {
+        max-width: 170px;
+        margin: 0 auto;
+      }
+      .artist-deep-dive-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+      }
+      .artworks-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+      }
+    }
+
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v4">
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_mobile">
 </head>
 <body>
 
@@ -1796,6 +1851,6 @@ let currentArtistList = [...ARTISTS_DATA];
 
   </script>
 
-<script src="/assets/biresku-auth.js?v=20261108_v4"></script>
+<script src="/assets/biresku-auth.js?v=20261108_mobile"></script>
 </body>
 </html>

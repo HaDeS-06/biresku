@@ -1202,8 +1202,188 @@
       box-shadow: 0 0 0 2px rgba(192, 154, 88, 0.2) !important;
     }
 
+  
+    /* =========================================================
+       GELİŞMİŞ TELEFON & MOBİL GÖRÜNÜM OPTİMİZASYONU (dergi/index.html)
+       ========================================================= */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      .site-nav {
+        height: auto;
+        min-height: 52px;
+      }
+      .nav-inner {
+        padding: 6px 12px;
+        flex-wrap: nowrap;
+        gap: 8px;
+      }
+      .nav-left-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .nav-left-group::-webkit-scrollbar {
+        display: none;
+      }
+      .portal-back-btn {
+        padding: 5px 8px;
+        font-size: 0.72rem;
+        flex-shrink: 0;
+      }
+      .portal-back-btn span {
+        display: inline;
+      }
+      .nav-list {
+        display: flex;
+        gap: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .nav-list a {
+        padding: 6px 2px;
+        font-size: 0.76rem;
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      .auth-login-trigger-btn {
+        padding: 5px 8px;
+        font-size: 0.72rem;
+        white-space: nowrap;
+      }
+      .theme-toggle-btn {
+        padding: 5px 8px;
+      }
+      .theme-toggle-text {
+        display: none;
+      }
+
+      /* Dergi Ana Sayfa Kutuları */
+      .lead-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 36px;
+      }
+      .new-artists-feature {
+        height: auto;
+        max-height: 420px;
+      }
+      .news-feed-box {
+        height: auto;
+        max-height: 420px;
+      }
+
+      /* SANATÇI PROFİLİ MOBİL DÜZENİ */
+      .profile-hero {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 20px 16px;
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      .profile-avatar-wrap {
+        max-width: 170px;
+        margin: 0 auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .profile-avatar-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .profile-title {
+        font-size: 1.55rem;
+        margin-top: 6px;
+      }
+      .profile-discipline {
+        font-size: 0.88rem;
+      }
+      .profile-bio-text {
+        font-size: 0.95rem !important;
+        text-align: left;
+      }
+      .profile-meta-list {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.8rem;
+      }
+
+      /* Biyografi ve Hayata Bakışı Kartları (Tek Sütun) */
+      .artist-deep-dive-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        margin-bottom: 32px !important;
+      }
+      .artist-section-card {
+        padding: 20px 16px;
+      }
+      .artist-section-heading {
+        font-size: 1.18rem;
+        margin-bottom: 14px;
+        padding-bottom: 8px;
+      }
+      .philosophy-quote {
+        font-size: 1.05rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
+        padding-left: 10px;
+      }
+      .artist-section-body p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin-bottom: 12px;
+      }
+
+      /* Sanatçının Eserleri Galerisi */
+      .artworks-header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 20px;
+      }
+      .artworks-header-bar h3 {
+        font-size: 1.35rem;
+      }
+      .artworks-count {
+        font-size: 0.76rem;
+      }
+      .artworks-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        margin-bottom: 40px !important;
+      }
+      .artwork-item {
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .artwork-img-wrap {
+        aspect-ratio: 4 / 3;
+      }
+      .artwork-info {
+        padding: 14px 16px;
+      }
+      .artwork-title {
+        font-size: 1.05rem;
+      }
+      .artwork-meta {
+        font-size: 0.8rem;
+      }
+    }
+
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v4">
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_mobile">
 </head>
 <body>
 
@@ -2378,6 +2558,6 @@
 
   </script>
 
-<script src="/assets/biresku-auth.js?v=20261108_v4"></script>
+<script src="/assets/biresku-auth.js?v=20261108_mobile"></script>
 </body>
 </html>
