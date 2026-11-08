@@ -229,7 +229,7 @@ window.ARTISTS_DATA = [
   "category": "Ressam & Sanat Eğitimcisi",
   "city": "Ankara",
   "studio": "Tuncay Umay Atölyeleri (Ankara)",
-  "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg",
+  "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v5",
   "shortBio": "1980 Ankara doğumlu ressam ve akademisyen; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
   "quote": "Denizi resmetmek, aslında zamanın akışını ve bu amansız devinimi tek bir fırça vuruşunda dondurma cesaretidir. Her tablo, dalgaların sonsuz değişimi karşısında kendi iç dengesini arayan, hayatın fırtınasında doğru hamleyi yapmaya çalışan ve karanlığa rağmen içindeki ışığı söndürmeyen ruhun görsel bir manifestosudur.",
   "biography": [
@@ -245,149 +245,71 @@ window.ARTISTS_DATA = [
   ],
   "artworks": [
     {
-      "id": "umay-1",
-      "title": "Varoluşsal Gerilim & Fener Kuleleri I",
-      "year": "2025",
-      "technique": "Tuval Üzerine Yağlıboya (Özel Çerçeveli)",
-      "dimensions": "90 × 90 cm",
-      "collection": "Sanatçı Özel Koleksiyonu",
-      "description": "Fırtınalı denizin ortasında dimdik duran satranç taşları; atın asil direnci ve pencerelerinden sızan fener ışığıyla insan ruhundaki umudu simgeleyen sürrealist manifesto eseri.",
-      "image": "/assets/tuncay-umay/varolus-hamlesi-1.jpg",
-      "imageUrl": "/assets/tuncay-umay/varolus-hamlesi-1.jpg"
+        "id": "umay-1",
+        "image": "/assets/tuncay-umay/varolus-hamlesi-1.jpg",
+        "imageUrl": "/assets/tuncay-umay/varolus-hamlesi-1.jpg"
     },
     {
-      "id": "umay-2",
-      "title": "Dolunay ve Şahın Nöbeti II",
-      "year": "2025",
-      "technique": "Tuval Üzerine Yağlıboya (Özel Çerçeveli)",
-      "dimensions": "90 × 90 cm",
-      "collection": "Sanatçı Özel Koleksiyonu",
-      "description": "Gökyüzünde parıldayan dolunayın altında, kabaran dalgaların hırpaladığı kayalıklarda birer sığınak gibi ışıldayan satranç taşlarının varoluş mücadelesi.",
-      "image": "/assets/tuncay-umay/gece-ve-sah.jpg",
-      "imageUrl": "/assets/tuncay-umay/gece-ve-sah.jpg"
+        "id": "umay-2",
+        "image": "/assets/tuncay-umay/gece-ve-sah.jpg",
+        "imageUrl": "/assets/tuncay-umay/gece-ve-sah.jpg"
     },
     {
-      "id": "umay-3",
-      "title": "Sular Altında Kalan Hamle & Sıcak Eşik",
-      "year": "2026",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "110 × 110 cm",
-      "collection": "Müze Sergileme Koleksiyonu",
-      "description": "Dalgaların içeri hücum ettiği tarihi bir mekânda, sulara kapılan satranç taşları ile ardına kadar açık sıcacık bir eşikten yayılan kurtarıcı ışığın sürrealist diyaloğu.",
-      "image": "/assets/tuncay-umay/istila-ve-siginak.jpg",
-      "imageUrl": "/assets/tuncay-umay/istila-ve-siginak.jpg"
+        "id": "umay-3",
+        "image": "/assets/tuncay-umay/istila-ve-siginak.jpg",
+        "imageUrl": "/assets/tuncay-umay/istila-ve-siginak.jpg"
     },
     {
-      "id": "umay-4",
-      "title": "Fırtınada Kırılan Hamle & Kozmik Satranç",
-      "year": "2026",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "110 × 110 cm",
-      "collection": "Müze Sergileme Koleksiyonu",
-      "description": "Hayatın öngörülemez fırtınalarıyla sarsılan satranç tahtası, havada uçuşan mağrur taşlar ve alevlerle dalgalar arasında insanın içsel ışığı.",
-      "image": "/assets/tuncay-umay/harabeler-ve-sah.jpg",
-      "imageUrl": "/assets/tuncay-umay/harabeler-ve-sah.jpg"
+        "id": "umay-4",
+        "image": "/assets/tuncay-umay/harabeler-ve-sah.jpg",
+        "imageUrl": "/assets/tuncay-umay/harabeler-ve-sah.jpg"
     },
     {
-      "id": "umay-5",
-      "title": "Yelkenlinin İmtihanı",
-      "year": "2025",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "120 × 80 cm",
-      "collection": "Kurumsal Sanat Koleksiyonu",
-      "description": "Fırtınalı okyanusta kabaran hırçın dalgalara karşı rotasını koruyan klasik yelkenlinin destansı mücadelesi ve gökyüzünden süzülen umut ışığı.",
-      "image": "/assets/tuncay-umay/yelkenlinin-imtihani.jpg",
-      "imageUrl": "/assets/tuncay-umay/yelkenlinin-imtihani.jpg"
+        "id": "umay-5",
+        "image": "/assets/tuncay-umay/yelkenlinin-imtihani.jpg",
+        "imageUrl": "/assets/tuncay-umay/yelkenlinin-imtihani.jpg"
     },
     {
-      "id": "umay-6",
-      "title": "Dalgaların Kaosu & Saf Enerji",
-      "year": "2022",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "80 × 80 cm",
-      "collection": "Özel Koleksiyon",
-      "description": "Kabaran dalgaların dinamik heybetini, suyun köpük beyazına evrilen şeffaf gövdesini ve evrenin hareket enerjisini tek bir fırça vuruşunda donduran kompozisyon.",
-      "image": "/assets/tuncay-umay/dalgalarin-kaosu.jpg",
-      "imageUrl": "/assets/tuncay-umay/dalgalarin-kaosu.jpg"
+        "id": "umay-6",
+        "image": "/assets/tuncay-umay/dalgalarin-kaosu.jpg",
+        "imageUrl": "/assets/tuncay-umay/dalgalarin-kaosu.jpg"
     },
     {
-      "id": "umay-7",
-      "title": "Zümrüt Köpükler",
-      "year": "2023",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "90 × 90 cm",
-      "collection": "Özel Koleksiyon",
-      "description": "Denizin üstten bakışla yakalanan turkuaz ve zümrüt derinliğini, köpüklerin amansız devinimini ve suyun akışkan gücünü sahneleyen lirik çalışma.",
-      "image": "/assets/tuncay-umay/zumrut-kopukler.jpg",
-      "imageUrl": "/assets/tuncay-umay/zumrut-kopukler.jpg"
+        "id": "umay-7",
+        "image": "/assets/tuncay-umay/zumrut-kopukler.jpg",
+        "imageUrl": "/assets/tuncay-umay/zumrut-kopukler.jpg"
     },
     {
-      "id": "umay-8",
-      "title": "Okyanusun Ritmi & İsyan",
-      "year": "2022",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "100 × 100 cm",
-      "collection": "Kurumsal Sanat Koleksiyonu",
-      "description": "Dev dalganın şahlanışını, patlayan su serpintilerini ve doğanın baş eğmez kudretini yoğun pentür dokusuyla buluşturan başyapıt.",
-      "image": "/assets/tuncay-umay/okyanusun-ritmi.jpg",
-      "imageUrl": "/assets/tuncay-umay/okyanusun-ritmi.jpg"
+        "id": "umay-8",
+        "image": "/assets/tuncay-umay/okyanusun-ritmi.jpg",
+        "imageUrl": "/assets/tuncay-umay/okyanusun-ritmi.jpg"
     },
     {
-      "id": "umay-9",
-      "title": "Hırçın Kıyılar & Gece Dalgaları",
-      "year": "2022",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "85 × 85 cm",
-      "collection": "Sanatçı Atölye Koleksiyonu",
-      "description": "Karanlık suların kıyı kayalıklarına çarpıp havaya savrulan her bir su damlasındaki kaotik sıçrayışı ve ışık kırılmalarını yansıtan anıtsal yapıt.",
-      "image": "/assets/tuncay-umay/hircin-kiyilar.jpg",
-      "imageUrl": "/assets/tuncay-umay/hircin-kiyilar.jpg"
+        "id": "umay-9",
+        "image": "/assets/tuncay-umay/hircin-kiyilar.jpg",
+        "imageUrl": "/assets/tuncay-umay/hircin-kiyilar.jpg"
     },
     {
-      "id": "umay-10",
-      "title": "Kırılma Anı (Zümrüt Seri)",
-      "year": "2023",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "75 × 75 cm",
-      "collection": "Özel Koleksiyon",
-      "description": "Tek bir dalganın kıyıya ulaşmadan hemen önceki anatomisini, suyun ışıkla kırılarak zümrütten köpük beyazına evrilişini belgeleyen çalışma.",
-      "image": "/assets/tuncay-umay/kirilma-ani.jpg",
-      "imageUrl": "/assets/tuncay-umay/kirilma-ani.jpg"
+        "id": "umay-10",
+        "image": "/assets/tuncay-umay/kirilma-ani.jpg",
+        "imageUrl": "/assets/tuncay-umay/kirilma-ani.jpg"
     },
     {
-      "id": "umay-11",
-      "title": "Güneşte Dalgalar & Kıyı Senfonisi",
-      "year": "2025",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "120 × 75 cm",
-      "collection": "Özel Koleksiyon",
-      "description": "Işığın, hareketin ve dengenin hakikati; zümrüt ve amber tonlarının birbirine karıştığı panoramik deniz peyzajı.",
-      "image": "/assets/tuncay-umay/gun-isiginda-dalga.jpg",
-      "imageUrl": "/assets/tuncay-umay/gun-isiginda-dalga.jpg"
+        "id": "umay-11",
+        "image": "/assets/tuncay-umay/gun-isiginda-dalga.jpg",
+        "imageUrl": "/assets/tuncay-umay/gun-isiginda-dalga.jpg"
     },
     {
-      "id": "umay-12",
-      "title": "Zirve Dalgası (Piramit)",
-      "year": "2026",
-      "technique": "Tuval Üzerine Yağlıboya (Özel Çerçeveli)",
-      "dimensions": "80 × 80 cm",
-      "collection": "Özel Koleksiyon",
-      "description": "Bir dağ zirvesi gibi göğe yükselen tekil dalganın kusursuz geometrisi ve köpüklerin kristal berraklığı.",
-      "image": "/assets/tuncay-umay/zirve-dalgasi.jpg",
-      "imageUrl": "/assets/tuncay-umay/zirve-dalgasi.jpg"
+        "id": "umay-12",
+        "image": "/assets/tuncay-umay/zirve-dalgasi.jpg",
+        "imageUrl": "/assets/tuncay-umay/zirve-dalgasi.jpg"
     },
     {
-      "id": "umay-13",
-      "title": "Derin Kabarış & Altın Işık",
-      "year": "2022",
-      "technique": "Tuval Üzerine Yağlıboya",
-      "dimensions": "70 × 90 cm",
-      "collection": "Özel Koleksiyon",
-      "description": "Gün ışığının dalgaların sırtına vurduğu altın yansımalar ve suyun devasa akışkan gövdesi arasındaki tinsel dengeyi arayan dikey kompozisyon.",
-      "image": "/assets/tuncay-umay/derin-kabaris.jpg",
-      "imageUrl": "/assets/tuncay-umay/derin-kabaris.jpg"
+        "id": "umay-13",
+        "image": "/assets/tuncay-umay/derin-kabaris.jpg",
+        "imageUrl": "/assets/tuncay-umay/derin-kabaris.jpg"
     }
-  ],
+],
   "addedDate": "2026-11-08"
 },
   {
