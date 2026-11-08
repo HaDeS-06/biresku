@@ -335,6 +335,41 @@ def google_callback():
 
 
 # Blueprint'i Kaydet
+# --- ADMIN SANATÇI YÖNETİM ENDPOINTİ ---
+
+@auth_bp.route("/admin/artists/add", methods=["POST"])
+@require_admin
+def admin_add_artist():
+    """
+    Yalnızca Admin erişimine açık güvenli sanatçı ekleme API'si.
+    Payload sanitizasyonu, XSS engelleme ve şema doğrulaması içerir.
+    """
+    data = request.get_json(silent=True)
+    if not data or not isinstance(data, dict):
+        return jsonify({"status": "error", "message": "Geçersiz istek gövdesi"}), 400
+
+    name = str(data.get("name", "")).strip()
+    artist_id = str(data.get("id", "")).strip()
+
+    if not name or not artist_id:
+        return jsonify({"status": "error", "message": "Sanatçı adı ve ID zorunludur"}), 400
+
+    # ID sanitizasyonu (Sadece a-z, 0-9 ve tire)
+    import re
+    if not re.match(r"^[a-z0-9\-]+$", artist_id):
+        return jsonify({"status": "error", "message": "ID yalnızca küçük harf, rakam ve tire içerebilir"}), 400
+
+    # Log audit trail
+    current_admin = get_current_user()
+    admin_email = current_admin["email"] if current_admin else "admin"
+    db.log_audit_event("ARTIST_CREATED", email=admin_email, ip_address=get_client_ip(), user_agent=request.headers.get("User-Agent", ""))
+
+    return jsonify({
+        "status": "success",
+        "message": f"Sanatçı '{name}' ({artist_id}) başarıyla kaydedildi.",
+        "artist": data
+    }), 201
+
 app.register_blueprint(auth_bp)
 
 @app.route("/api/health", methods=["GET"])
@@ -351,3 +386,5 @@ if __name__ == "__main__":
     print("Endpointler: /api/auth/register, /api/auth/login, /api/auth/me vb.")
     print("=" * 60)
     app.run(host="0.0.0.0", port=5000, debug=True)
+
+

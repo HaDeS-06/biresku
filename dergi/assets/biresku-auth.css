@@ -537,3 +537,290 @@ a, a:visited, a:active, a:focus {
     min-height: 40px;
   }
 }
+
+
+/* ===================================================
+   BİRESKU SANATÇI YÖNETİM & ŞABLON STÜDYOSU STYLES
+   =================================================== */
+.artist-studio-modal-box {
+  max-width: 1060px !important;
+  width: 95vw !important;
+  max-height: 92vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #111318 !important;
+  border: 1px solid rgba(192, 154, 88, 0.35) !important;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.95), 0 0 30px rgba(192, 154, 88, 0.1) !important;
+}
+
+.studio-quick-toolbar {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border, #2a2e37);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.studio-modal-body {
+  overflow-y: auto !important;
+  padding: 20px !important;
+  flex: 1 !important;
+}
+
+.studio-grid-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 24px;
+}
+
+.studio-section-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.studio-section-title {
+  font-family: var(--font-serif, "Cinzel", Georgia, serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent, #c09a58);
+  margin: 0 0 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.studio-section-title span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(192, 154, 88, 0.15);
+  color: #c09a58;
+  font-size: 0.75rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  border: 1px solid rgba(192, 154, 88, 0.4);
+}
+
+.studio-form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.studio-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.studio-form-group label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-muted, #8b92a0);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.studio-form-group input,
+.studio-form-group select,
+.studio-form-group textarea {
+  background: #171a21 !important;
+  border: 1px solid #2a2e37 !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  padding: 8px 12px !important;
+  font-size: 0.84rem !important;
+  font-family: inherit !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.studio-form-group input:focus,
+.studio-form-group select:focus,
+.studio-form-group textarea:focus {
+  border-color: var(--accent, #c09a58) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(192, 154, 88, 0.2) !important;
+}
+
+.file-picker-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(192, 154, 88, 0.12);
+  border: 1px solid rgba(192, 154, 88, 0.4);
+  color: #c09a58;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.file-picker-label:hover {
+  background: rgba(192, 154, 88, 0.22);
+  border-color: #c09a58;
+}
+
+/* Eser Listesi Öğeleri */
+.studio-artwork-item {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.studio-remove-art-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.studio-remove-art-btn:hover {
+  background: rgba(231, 76, 60, 0.15);
+}
+
+/* Buton Varyasyonları */
+.studio-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.studio-btn-gold {
+  background: linear-gradient(135deg, #c09a58, #dfba73);
+  color: #0e1015;
+}
+.studio-btn-gold:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 12px rgba(192, 154, 88, 0.3);
+}
+
+.studio-btn-green {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: #ffffff;
+}
+.studio-btn-green:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.studio-btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted, #8b92a0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.studio-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Önizleme Paneli */
+.studio-preview-box {
+  background: rgba(20, 23, 29, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.preview-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-heading, #ffffff);
+}
+
+.preview-live-badge {
+  background: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.code-export-box {
+  background: #090b0e;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.studio-modal-footer {
+  padding: 14px 20px !important;
+  background: #0d0f13 !important;
+  border-top: 1px solid var(--border, #2a2e37) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+/* Admin Nav Quick Trigger */
+.admin-nav-artist-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(192, 154, 88, 0.15);
+  border: 1px solid rgba(192, 154, 88, 0.5);
+  color: #c09a58;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+}
+.admin-nav-artist-btn:hover {
+  background: #c09a58;
+  color: #0e1015;
+  box-shadow: 0 0 10px rgba(192, 154, 88, 0.4);
+}
+
+@media (max-width: 860px) {
+  .studio-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  .studio-quick-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

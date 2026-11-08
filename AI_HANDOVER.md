@@ -168,8 +168,8 @@ Gelecekte geri alma veya hata yapmamak adına kullanıcının doğrudan verdiği
 Site doğrudan GitHub Pages üzerinden yayınlanmaktadır. Değişiklik yapıldığında şu adımlar takip edilmelidir:
 
 1. **Önbellek Kırma (Cache Busting):**
-   - CSS ve JS bağlantılarına versiyon etiketi eklenmiştir (örn: `?v=20261108_v26`).
-   - Yapılan her kritik frontend değişikliğinde versiyon numarası (`v26 -> v26`) artırılmalıdır.
+   - CSS ve JS bağlantılarına versiyon etiketi eklenmiştir (örn: `?v=20261108_v27`).
+   - Yapılan her kritik frontend değişikliğinde versiyon numarası (`v27 -> v27`) artırılmalıdır.
 2. **GitHub API ile Dağıtım:**
    - Dosyalar `HaDeS-06/biresku` deposunun `main` dalına commit edilir.
    - GitHub Actions `pages build and deployment` iş akışını tetikler (~30-60 saniye sürer).
@@ -186,3 +186,29 @@ Site doğrudan GitHub Pages üzerinden yayınlanmaktadır. Değişiklik yapıld�
 5. ⚠️ **Sanatçı kapak fotoğraflarının üstüne "Sanatçı Alanı" vb. görseli kapatan rozet koyma.** Fotoğraflar temiz ve net kalmalıdır.
 6. ⚠️ **Mobilde yatay taşma (horizontal overflow) oluşturma.** `html, body` üzerinde `overflow-x: hidden` kuralını ve container sınırlarını koru.
 7. ⚠️ **Tüm yeni sanatçı veya eser eklemelerini `assets/artists-data.js` dosyasına kaydet.** Tek doğruluk kaynağı orasıdır.
+
+## 7. Admin Sanatçı Yönetim & Şablon Motoru (`BireskuArtistAdmin`)
+
+Yöneticinin (`ardaumay06@gmail.com` veya `role: admin`) dışarıdan bir yapay zekaya ihtiyaç duymadan yeni sanatçıları, biyografileri, felsefeleri ve eserleri doğrudan ekleyebilmesi için **güvenlik açığı barındırmayan (Zero-Vulnerability)** bir Sanatçı Yönetim ve Şablon Motoru geliştirilmiştir.
+
+### A. Mimari Bileşenler ve Güvenlik Standartları
+- **Dosyalar:**
+  - `assets/biresku-artist-admin.js` ve `dergi/assets/biresku-artist-admin.js` (İstemci mantığı ve şablon motoru)
+  - `assets/biresku-auth.css` (Lüks karanlık mod stüdyo ve canlı önizleme arayüzü)
+  - `assets/biresku-auth.js` (Yönetici oturumu kontrolü, modal tetikleyicisi ve navbar hızlı butonu)
+  - `backend/app.py` (`@auth_bp.route("/admin/artists/add")` korumalı backend API)
+- **Tavizsiz Güvenlik Kuralları (OWASP Uyumlu):**
+  1. **Yetki Denetimi (RBAC):** Yalnızca `role === 'admin'` veya `ardaumay06@gmail.com` kullanıcıları paneli görebilir ve açabilir. Yetkisiz çağrılar sessizce reddedilir.
+  2. **Sıfır XSS (Zero-XSS):** Tüm form girdileri `escapeHtml()` ve güvenli DOM yöntemleriyle sanitize edilir; asla `eval()` veya `new Function()` çalıştırılmaz.
+  3. **Protokol Güvenliği:** Görsel URL'lerinde yalnızca `https://`, `http://`, `data:image/` ve `/assets/` kabul edilir; `javascript:`, `vbscript:` vb. saldırı protokolleri anında elenir.
+  4. **Dosya Güvenliği:** Yalnızca `image/*` MIME türleri ve maksimum 5MB dosya boyutu sınırı uygulanır.
+  5. **ID Sanitizasyonu:** Sanatçı slug'ı `^[a-z0-9\-]+$` kuralına göre otomatik temizlenir.
+
+### B. Kullanım ve Yetenekler
+1. **Hazır Şablon Doldurucu:** "⚡ Hazır Şablonu Doldur (Örnek Taslak)" butonuna basıldığında formu eksiksiz örnek bir veriyle doldurur; yönetici yalnızca isim, metin ve resimleri değiştirir.
+2. **Dinamik Eser Ekleme:** Eser başlığı, tekniği, ölçüleri (örn: `80 × 100 cm`), yılı ve görseliyle sınırsız sayıda eser eklenebilir.
+3. **Canlı Simülasyon:** Sağ panelde Biresku vitrin kartının ve profil sayfasının birebir canlı önizlemesi anlık olarak akar.
+4. **Çoklu Dağıtım & Kayıt:**
+   - **"🚀 Sisteme Ekle ve Vitrine Al (Canlı)":** Sanatçıyı anında `window.ARTISTS_DATA`ya ve `biresku_custom_artists_v1` kalıcı deposuna ekler, vitrinde 1. sıraya (en sola) taşır.
+   - **"📋 artists-data.js Kodunu Kopyala":** `artists-data.js` dosyasına doğrudan yapıştırılabilecek standart JavaScript / JSON kodunu tek tıkla panoya kopyalar.
+   - **"💾 JSON Olarak İndir":** Tek tıkla `[id].json` olarak indirir.

@@ -294,6 +294,23 @@
               </div>
             </div>
 
+            <!-- YÖNETİCİ SANATÇI YÖNETİM STÜDYOSU (SADECE ADMİN) -->
+            <div id="adminArtistStudioBox" style="display:none; margin-top:16px; padding:14px; background:linear-gradient(135deg, rgba(192,154,88,0.12), rgba(20,23,29,0.9)); border:1px solid rgba(192,154,88,0.4); border-radius:8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                <div>
+                  <div style="font-weight:700; color:#c09a58; font-size:0.92rem; display:flex; align-items:center; gap:6px;">
+                    <span>👑</span> Biresku Sanatçı Yönetim &amp; Şablon Stüdyosu
+                  </div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">
+                    Hazır şablonla yeni sanatçı ekleyin, eserleri düzenleyin veya vitrine taşıyın.
+                  </div>
+                </div>
+                <button type="button" class="studio-btn studio-btn-gold" onclick="BireskuAuth.closeAccountModal(); BireskuArtistAdmin.openStudio();" style="font-size:0.8rem; padding:6px 14px;">
+                  🎨 Sanatçı Sihirbazını Aç
+                </button>
+              </div>
+            </div>
+
             <!-- KVKK Hakları ve Veri İşlemleri Bölümü -->
             <div style="margin-top:20px; border-top:1px solid var(--border); padding-top:16px;">
               <h5 style="color:var(--text-heading); font-size:0.92rem; margin-bottom:12px; display:flex; align-items:center; gap:6px;">
@@ -372,6 +389,7 @@
           const initial = (user.name || user.email || 'U').charAt(0).toUpperCase();
           const isAdmin = (user.role === 'admin' || (user.email && user.email.toLowerCase() === 'ardaumay06@gmail.com'));
           authNavEl.innerHTML = `
+            ${isAdmin ? '<button type="button" class="admin-nav-artist-btn" onclick="BireskuArtistAdmin.openStudio()" title="Sanatçı Ekleme Sihirbazı"><span>+ Sanatçı Ekle</span></button>' : ''}
             <button type="button" class="auth-user-badge-btn ${isAdmin ? 'auth-admin-badge-btn' : ''}" onclick="BireskuAuth.openAccountModal()" title="${isAdmin ? 'Yönetici Kontrol Paneli' : 'Hesap ve KVKK Paneli'}">
               <span class="user-status-online"></span>
               <span class="user-initial-circle">${escapeHtml(initial)}</span>

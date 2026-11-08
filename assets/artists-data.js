@@ -464,3 +464,24 @@ window.ARTISTS_DATA = [
     "period": "1970 – Günümüz"
   }
 ];
+
+// ========================================================
+// BİRESKU ADMİN PANELİNDEN EKLENEN ÖZEL SANATÇILARI YÜKLE
+// ========================================================
+(function() {
+  try {
+    var raw = localStorage.getItem('biresku_custom_artists_v1');
+    if (raw && window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
+      var customList = JSON.parse(raw);
+      if (Array.isArray(customList)) {
+        customList.forEach(function(item) {
+          if (item && item.id && !window.ARTISTS_DATA.some(function(a) { return a.id === item.id; })) {
+            window.ARTISTS_DATA.push(item);
+          }
+        });
+      }
+    }
+  } catch(e) {
+    console.warn("Custom artists load error:", e);
+  }
+})();
