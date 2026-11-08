@@ -1426,7 +1426,7 @@
     }
   
     /* ========================================================
-       KULLANICI DOSTU AŞAĞI AÇILIR MOBİL DROPDOWN MENÜ (FIXED TOP)
+       KULLANICI DOSTU AŞAĞI AÇILIR MOBİL DROPDOWN MENÜ (FIXED TOP & SHARP CONTRAST)
        ======================================================== */
     .mobile-menu-trigger {
       display: none;
@@ -1449,7 +1449,7 @@
         display: none !important;
       }
 
-      /* 2. Tek ve Net Mobil Menü Butonu (Solda) */
+      /* 2. Tek ve Net Mobil Menü Butonu (Solda, Her Zaman En Üstte) */
       .mobile-menu-trigger {
         display: inline-flex !important;
         align-items: center;
@@ -1471,7 +1471,7 @@
         -webkit-tap-highlight-color: transparent;
         touch-action: manipulation;
         user-select: none;
-        z-index: 1001;
+        z-index: 100001 !important;
       }
       .mobile-menu-trigger:active,
       .mobile-menu-trigger.is-open {
@@ -1480,11 +1480,11 @@
         background: rgba(192, 154, 88, 0.15);
       }
 
-      /* 3. Sabit Tek Satır Navigasyon Barı */
+      /* 3. Sabit Tek Satır Navigasyon Barı (En Yüksek Katmanda) */
       .site-nav {
         position: sticky;
         top: 0;
-        z-index: 1000;
+        z-index: 99999 !important;
         overflow: visible !important;
       }
       .nav-inner {
@@ -1513,22 +1513,22 @@
         display: none !important;
       }
 
-      /* 4. AŞAĞI DOĞRU AÇILAN MOBİL MENÜ LİSTESİ */
+      /* 4. AŞAĞI DOĞRU AÇILAN MOBİL MENÜ LİSTESİ (NET, PARLAK, ASLA BULANIK DEĞİL) */
       .mobile-nav-dropdown {
         display: block !important;
         position: fixed !important;
         top: 54px !important;
         left: 0 !important;
         width: 100% !important;
-        background: var(--bg-surface) !important;
+        background: #14171d !important;
         border-bottom: 2px solid var(--accent) !important;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.95) !important;
         max-height: 0 !important;
         overflow: hidden !important;
         transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
         opacity: 0 !important;
         pointer-events: none !important;
-        z-index: 99999 !important;
+        z-index: 100000 !important;
       }
       .mobile-nav-dropdown.is-open {
         max-height: 85vh !important;
@@ -1538,7 +1538,7 @@
         -webkit-overflow-scrolling: touch !important;
       }
       .mobile-nav-dropdown-inner {
-        padding: 16px 14px 28px !important;
+        padding: 18px 14px 28px !important;
         display: flex !important;
         flex-direction: column !important;
         gap: 8px !important;
@@ -1547,66 +1547,66 @@
         font-size: 0.68rem;
         font-weight: 700;
         letter-spacing: 0.14em;
-        color: var(--text-dim);
+        color: var(--accent) !important;
         text-transform: uppercase;
         padding: 4px 6px;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid rgba(192, 154, 88, 0.2);
         margin-bottom: 2px;
       }
       .mobile-nav-row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 12px 14px;
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        text-decoration: none;
-        color: var(--text-main);
-        transition: all 0.18s ease;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        padding: 13px 14px !important;
+        background: #1c212a !important;
+        border: 1px solid rgba(192, 154, 88, 0.25) !important;
+        border-radius: 6px !important;
+        text-decoration: none !important;
+        color: #ffffff !important;
+        transition: all 0.18s ease !important;
+        -webkit-tap-highlight-color: transparent !important;
+        touch-action: manipulation !important;
       }
       .mobile-nav-row:active {
-        background: var(--bg-hover);
-        border-color: var(--accent);
-        transform: scale(0.99);
+        background: #252b37 !important;
+        border-color: var(--accent) !important;
+        transform: scale(0.99) !important;
       }
       .mobile-row-icon {
-        font-size: 1.25rem;
-        width: 26px;
-        text-align: center;
-        flex-shrink: 0;
+        font-size: 1.3rem !important;
+        width: 28px !important;
+        text-align: center !important;
+        flex-shrink: 0 !important;
       }
       .mobile-row-text {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        min-width: 0;
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2px !important;
+        min-width: 0 !important;
       }
       .mobile-row-title {
-        font-size: 0.92rem;
-        font-weight: 700;
-        color: var(--text-heading);
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
       }
       .mobile-row-sub {
-        font-size: 0.74rem;
-        color: var(--text-muted);
-        line-height: 1.3;
+        font-size: 0.76rem !important;
+        color: #a4abb8 !important;
+        line-height: 1.3 !important;
       }
       .mobile-row-arrow {
-        color: var(--accent);
-        font-size: 1rem;
-        font-weight: 700;
-        flex-shrink: 0;
+        color: var(--accent) !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        flex-shrink: 0 !important;
       }
       .mobile-nav-row.highlight-row {
-        border-color: rgba(192, 154, 88, 0.4);
-        background: rgba(192, 154, 88, 0.08);
+        border-color: var(--accent) !important;
+        background: rgba(192, 154, 88, 0.12) !important;
       }
 
-      /* Karartma arka planı */
+      /* Karartma arka planı (Menünün ARKASINDA: z-index: 99997) */
       .mobile-nav-backdrop {
         display: block !important;
         position: fixed !important;
@@ -1614,13 +1614,11 @@
         left: 0 !important;
         width: 100% !important;
         height: calc(100% - 54px) !important;
-        background: rgba(0, 0, 0, 0.65) !important;
-        backdrop-filter: blur(4px) !important;
-        -webkit-backdrop-filter: blur(4px) !important;
+        background: rgba(0, 0, 0, 0.72) !important;
         opacity: 0 !important;
         pointer-events: none !important;
         transition: opacity 0.25s ease !important;
-        z-index: 99998 !important;
+        z-index: 99997 !important;
       }
       .mobile-nav-backdrop.is-open {
         opacity: 1 !important;
@@ -1680,9 +1678,9 @@
 
       <!-- MASAÜSTÜ MENÜ LİSTESİ (Mobilde Tamamen Gizlenir) -->
       <ul class="nav-list desktop-only-nav">
-        <li><a href="/" class="active">Ana Sayfa</a></li>
+        <li><a href="/">Ana Sayfa</a></li>
         <li><a href="/dergi/">Biresku Dergi</a></li>
-        <li><a href="/dergi/sanatcilar/">Sanatçılarımız</a></li>
+        <li><a href="/dergi/sanatcilar/" class="active">Sanatçılarımız</a></li>
         <li><a href="/iletisim/">İletişim</a></li>
       </ul>
 
@@ -1799,7 +1797,7 @@
             Biresku bünyesinde yer alan tüm ressamlar, heykeltıraşlar ve bağımsız sanatçıların profillerini ve eser koleksiyonlarını inceleyebilirsiniz.
           </p>
         </div>
-        <div class="catalog-count-badge" id="artistCountBadge">3 Kayıtlı Sanatçı</div>
+        <div class="catalog-count-badge" id="artistCountBadge">Sanatçılar Yükleniyor...</div>
       </div>
 
       <!-- Kategori Filtresi -->
@@ -2382,6 +2380,7 @@
   }
 ];
 
+const ARTISTS_DATA = (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA : [];
 let currentArtistList = [...ARTISTS_DATA];
 
     function renderCatalog(artists) {
