@@ -1708,14 +1708,100 @@
       }
     }
 
+  
+    /* ========================================================
+       BİRESKU ÖZGÜN TİPOGRAFİK MARKA BAŞLIĞI (BANNER YERİNE)
+       ======================================================== */
+    .brand-hero-masthead {
+      width: 100%;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 20px 42px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .brand-identity-link {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 6.2vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      line-height: 1.05;
+      color: var(--text-heading);
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0;
+      padding-left: 0.18em;
+      transition: color 0.22s ease, transform 0.22s ease;
+    }
+
+    .brand-identity-link:hover .brand-name {
+      color: var(--accent);
+    }
+
+    .brand-tagline-tr {
+      font-family: var(--font-sans);
+      font-size: clamp(0.78rem, 1.8vw, 1.02rem);
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 10px;
+      padding-left: 0.24em;
+      transition: color 0.2s ease;
+    }
+
+    .brand-tagline-en {
+      font-family: var(--font-sans);
+      font-size: clamp(0.62rem, 1.25vw, 0.76rem);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 6px;
+      padding-left: 0.3em;
+      opacity: 0.85;
+      transition: color 0.2s ease;
+    }
+
+    @media (max-width: 768px) {
+      .brand-hero-masthead {
+        padding: 30px 16px 24px;
+      }
+      .brand-tagline-tr {
+        margin-top: 8px;
+        letter-spacing: 0.18em;
+        padding-left: 0.18em;
+      }
+      .brand-tagline-en {
+        margin-top: 5px;
+        letter-spacing: 0.22em;
+        padding-left: 0.22em;
+      }
+    }
+
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_mobile">
 </head>
 <body>
 
     <!-- RESMİ TABLO ÇİZİMİ ÜST BANNER & SOL ÜST MENÜ BUTONU -->
-  <header class="brand-hero-banner">
-    <!-- SOL ÜST: SADECE MENÜ BUTONU (TEK BAŞINA YUKARIDA) -->
+    <header class="brand-hero-masthead">
+    <!-- SOL ÜST: MENÜ BUTONU (TEK BAŞINA YUKARIDA) -->
     <button id="navHubTrigger" class="top-menu-btn" type="button" aria-expanded="false" aria-controls="slidingNavPanel">
       <span class="nav-hamburger-icon" aria-hidden="true">
         <span></span>
@@ -1726,8 +1812,10 @@
       <span class="nav-hub-chevron" aria-hidden="true">&#9662;</span>
     </button>
 
-    <a href="/" style="display:block;line-height:0;" title="BİRESKU">
-      <img src="/assets/biresku-banner.jpg?v=20261108_4k_crisp" alt="BİRESKU - Birleşmiş Ressamlar Kulübü">
+    <a href="/" class="brand-identity-link" title="BİRESKU">
+      <h1 class="brand-name">BİRESKU</h1>
+      <span class="brand-tagline-tr">BİRLEŞMİŞ RESSAMLAR KULÜBÜ</span>
+      <span class="brand-tagline-en">UNITED ARTIST CLUB</span>
     </a>
   </header>
 
