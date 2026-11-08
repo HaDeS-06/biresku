@@ -231,21 +231,21 @@
     [data-theme="light"] .theme-toggle-moon { display: inline-flex; }
 
     /* ========================================================
-       AŞAĞI DOĞRU KAYAN PENCERE (SLIDING HUB PANEL)
+       AŞAĞI DOĞRU KAYAN PENCERE (SLIDING HUB PANEL - TOP COVER & FROSTED BLUR)
        ======================================================== */
     .sliding-nav-backdrop {
       position: fixed;
-      top: 60px; /* nav barın hemen altından başlar */
+      top: 0; /* Ekranın ve banner'ın en tepesinden başlar */
       left: 0;
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.72);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      z-index: 99;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
     }
     .sliding-nav-backdrop.is-open {
       opacity: 1;
@@ -253,49 +253,57 @@
     }
 
     .sliding-nav-panel {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      background: var(--bg-surface);
+      background: rgba(18, 20, 24, 0.88);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
       border-bottom: 2px solid var(--accent);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.85);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
       transform: translateY(-100%);
-      transition: transform 0.36s cubic-bezier(0.16, 1, 0.3, 1);
-      max-height: calc(100vh - 70px);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      max-height: 94vh;
       overflow-y: auto;
+      z-index: 1050;
+    }
+    [data-theme="light"] .sliding-nav-panel {
+      background: rgba(248, 247, 244, 0.92);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
     }
     .sliding-nav-backdrop.is-open .sliding-nav-panel {
       transform: translateY(0);
     }
 
     .sliding-panel-inner {
-      max-width: 1260px;
+      max-width: 1300px;
       margin: 0 auto;
-      padding: 28px 24px 34px;
+      padding: 26px 24px 34px;
     }
 
     .sliding-panel-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 18px;
+      padding-bottom: 16px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
     .sliding-panel-kicker {
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 4px;
     }
     .sliding-panel-title {
       font-family: var(--font-serif);
-      font-size: 1.55rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--text-heading);
+      letter-spacing: -0.01em;
     }
     .sliding-panel-close-btn {
       display: inline-flex;
@@ -303,10 +311,10 @@
       gap: 8px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 7px 16px;
+      color: var(--text-heading);
+      padding: 8px 18px;
       border-radius: 4px;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -314,281 +322,311 @@
     .sliding-panel-close-btn:hover {
       border-color: var(--accent);
       color: var(--accent);
-    }
-
-    /* 4 SÜTUNLU GRİD: SEKMELER + DESTEK + İLETİŞİM + AYARLAR */
-    .sliding-panel-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr 1fr;
-      gap: 26px;
-    }
-
-    .sliding-col {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 22px 20px;
-      display: flex;
-      flex-direction: column;
-    }
-    .sliding-col-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 16px;
-    }
-    .col-icon { font-size: 1.15rem; }
-    .sliding-col-header h3 {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-heading);
-    }
-
-    /* 1. SÜTUN: SEKMELER (ODALAR) */
-    .sliding-links-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .sliding-link-item {
-      display: block;
-      padding: 10px 12px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      transition: all 0.2s ease;
-    }
-    .sliding-link-item:hover {
-      border-color: var(--accent);
       background: var(--bg-hover);
-      transform: translateX(3px);
-    }
-    .sliding-link-item.active {
-      border-color: var(--accent);
-      background: rgba(192, 154, 88, 0.08);
-    }
-    .item-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3px;
-    }
-    .item-name {
-      font-weight: 700;
-      font-size: 0.88rem;
-      color: var(--text-heading);
-    }
-    .item-badge {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      padding: 2px 7px;
-      border-radius: 10px;
-      text-transform: uppercase;
-    }
-    .active-badge {
-      background: rgba(192, 154, 88, 0.2);
-      color: var(--accent);
-      border: 1px solid rgba(192, 154, 88, 0.4);
-    }
-    .green-badge {
-      background: rgba(46, 204, 113, 0.15);
-      color: #2ecc71;
-      border: 1px solid rgba(46, 204, 113, 0.35);
-    }
-    .gold-badge {
-      background: rgba(192, 154, 88, 0.12);
-      color: var(--accent);
-      border: 1px solid rgba(192, 154, 88, 0.3);
-    }
-    .lock-badge {
-      background: rgba(149, 165, 166, 0.15);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-    }
-    .item-desc {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      line-height: 1.4;
     }
 
-    /* 2. SÜTUN: DESTEK */
-    .support-card-box {
+    /* 2 SÜTUNLU ANA DÜZEN: SOL (KÜÇÜK BUTONLAR) / SAĞ (BÜYÜK KARTLAR) */
+    .sliding-panel-layout {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ========================================================
+       SOL TARAF: DESTEK, İLETİŞİM, AYARLAR (KÜÇÜK BUTONLAR ŞEKLİNDE)
+       ======================================================== */
+    .panel-left-sidebar {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      height: 100%;
-      justify-content: space-between;
     }
-    .support-info-item {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    .support-label {
-      display: block;
-      font-weight: 700;
-      color: var(--accent);
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .support-faq-mini {
-      list-style: none;
+    .sidebar-widget-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px 18px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      font-size: 0.78rem;
-      margin-top: 6px;
-    }
-    .col-btn-action {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 14px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-accent);
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      border-radius: 4px;
-      margin-top: auto;
-      transition: all 0.2s ease;
-      text-align: center;
-    }
-    .col-btn-action:hover {
-      background: var(--accent);
-      color: #0f1013 !important;
-      border-color: var(--accent);
-    }
-
-    /* 3. SÜTUN: İLETİŞİM */
-    .contact-card-box {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      height: 100%;
-      justify-content: space-between;
-    }
-    .contact-row {
-      display: flex;
       gap: 10px;
-      align-items: flex-start;
-      font-size: 0.8rem;
+      transition: all 0.2s ease;
     }
-    .c-icon {
-      font-size: 0.95rem;
-      line-height: 1.3;
-      flex-shrink: 0;
+    .sidebar-widget-card:hover {
+      border-color: rgba(192, 154, 88, 0.45);
+      background: var(--bg-hover);
     }
-    .c-title {
-      display: block;
-      font-size: 0.74rem;
-      color: var(--text-dim);
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-    .c-val {
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    /* 4. SÜTUN: AYARLAR */
-    .settings-card-box {
+    .widget-header {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-      height: 100%;
-    }
-    .setting-item {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      gap: 9px;
     }
-    .setting-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .setting-name {
-      font-size: 0.82rem;
+    .widget-icon { font-size: 1.1rem; line-height: 1; }
+    .widget-title {
+      font-family: var(--font-serif);
+      font-size: 1.02rem;
       font-weight: 700;
       color: var(--text-heading);
     }
-    .setting-sub {
-      font-size: 0.72rem;
-      color: var(--text-dim);
+    .widget-desc {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .widget-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 8px 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-heading);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .widget-action-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(192, 154, 88, 0.08);
+      transform: translateX(2px);
+    }
+    .btn-arrow { color: var(--accent); font-weight: bold; }
+
+    /* Ayarlar Kontrolleri */
+    .widget-settings-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .widget-setting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .s-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-heading);
     }
     .setting-toggle-btn {
       background: var(--bg-surface);
-      border: 1px solid var(--border-accent);
-      color: var(--text-main);
+      border: 1px solid var(--border);
+      color: var(--text-heading);
       padding: 5px 12px;
       border-radius: 14px;
-      font-size: 0.75rem;
-      font-weight: 700;
+      font-size: 0.74rem;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
-      white-space: nowrap;
     }
     .setting-toggle-btn:hover {
       border-color: var(--accent);
       color: var(--accent);
     }
-    [data-theme="dark"] .setting-toggle-btn .theme-moon-icon { display: none; }
-    [data-theme="dark"] .setting-toggle-btn .theme-sun-icon { display: inline; }
-    [data-theme="light"] .setting-toggle-btn .theme-sun-icon { display: none; }
-    [data-theme="light"] .setting-toggle-btn .theme-moon-icon { display: inline; }
-
     .font-scale-buttons {
       display: inline-flex;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
+      gap: 4px;
     }
     .scale-btn {
-      background: none;
-      border: none;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 4px 10px;
-      font-size: 0.78rem;
+      padding: 3px 9px;
+      border-radius: 3px;
+      font-size: 0.74rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.15s ease;
     }
     .scale-btn.active, .scale-btn:hover {
-      background: var(--accent);
-      color: #0f1013;
-    }
-    .setting-status-pill {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #2ecc71;
-      background: rgba(46, 204, 113, 0.12);
-      border: 1px solid rgba(46, 204, 113, 0.3);
-      padding: 2px 8px;
-      border-radius: 10px;
-    }
-    .setting-link-arrow {
+      border-color: var(--accent);
       color: var(--accent);
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 2px 6px;
+      background: rgba(192, 154, 88, 0.12);
     }
-    .setting-link-arrow:hover {
-      transform: translateX(3px);
+    .widget-link-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding-top: 4px;
+      transition: color 0.15s;
+    }
+    .widget-link-row:hover {
+      color: var(--accent);
     }
 
+    /* ========================================================
+       SAĞ TARAF: BÖLÜMLER & ODALAR (DAHA BÜYÜK KARTLAR ŞEKLİNDE)
+       ======================================================== */
+    .panel-right-rooms {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .big-room-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .big-room-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .big-room-card.featured {
+      border-color: rgba(192, 154, 88, 0.55);
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(192, 154, 88, 0.06) 100%);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+    }
+    .big-room-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .room-kicker {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .big-room-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      letter-spacing: -0.01em;
+    }
+    .room-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .room-status-badge.green {
+      background: rgba(46, 204, 113, 0.16);
+      color: #2ecc71;
+      border: 1px solid rgba(46, 204, 113, 0.38);
+    }
+    .room-status-badge.gold {
+      background: rgba(192, 154, 88, 0.16);
+      color: var(--accent);
+      border: 1px solid rgba(192, 154, 88, 0.4);
+    }
+    .room-status-badge.lock {
+      background: rgba(149, 165, 166, 0.14);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .pulse-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2ecc71;
+      box-shadow: 0 0 8px #2ecc71;
+    }
+    .big-room-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .big-room-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .room-feat-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 3px 9px;
+      border-radius: 3px;
+    }
+    .big-room-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 4px;
+    }
+    .big-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      border-radius: 4px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    .big-card-cta.primary {
+      background: var(--accent);
+      color: #0f1013;
+      border: 1px solid var(--accent);
+    }
+    .big-card-cta.primary:hover {
+      background: #d8b270;
+      transform: translateX(3px);
+      box-shadow: 0 6px 20px rgba(192, 154, 88, 0.35);
+    }
+    .big-card-cta.secondary {
+      background: var(--bg-surface);
+      color: var(--text-heading);
+      border: 1px solid var(--border);
+    }
+    .big-card-cta.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateX(3px);
+    }
+    .cta-arrow { font-weight: bold; transition: transform 0.2s ease; }
+    .big-card-cta:hover .cta-arrow { transform: translateX(3px); }
+
+    /* Alt 2 Büyük Kart Yan Yana */
+    .big-rooms-subgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    @media (max-width: 960px) {
+      .sliding-panel-layout {
+        grid-template-columns: 1fr;
+      }
+      .big-rooms-subgrid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     /* RESEPSİYON / GİRİŞ (HERO SECTION) */
     .mansion-gate-section {
       padding: 56px 0 36px;
@@ -984,11 +1022,6 @@
 </head>
 <body>
 
-  <!-- RESMİ TABLO ÇİZİMİ ÜST BANNER -->
-  <header class="brand-hero-banner">
-    <img src="/assets/biresku-banner.jpg" alt="BİRESKU - Birleşmiş Ressamlar Kulübü">
-  </header>
-
   <!-- ÜST MENÜ (SITE-NAV) -->
   <nav class="site-nav">
     <div class="container nav-inner">
@@ -1035,18 +1068,25 @@
     </div>
   </nav>
 
+  <!-- RESMİ TABLO ÇİZİMİ ÜST BANNER -->
+  <header class="brand-hero-banner">
+    <img src="/assets/biresku-banner.jpg" alt="BİRESKU - Birleşmiş Ressamlar Kulübü">
+  </header>
+
+  
+
   <!-- ========================================================
        AŞAĞI DOĞRU KAYAN PENCERE (SEKMELER, DESTEK, İLETİŞİM, AYARLAR)
        ======================================================== -->
   <div id="slidingNavBackdrop" class="sliding-nav-backdrop" aria-hidden="true">
-    <div id="slidingNavPanel" class="sliding-nav-panel" role="region" aria-label="Biresku Sekmeler, Destek, İletişim ve Ayarlar Penceresi">
+    <div id="slidingNavPanel" class="sliding-nav-panel" role="region" aria-label="Biresku Merkez Menü, Destek ve Ayarlar">
       <div class="sliding-panel-inner">
         
-        <!-- Panel Başlığı -->
+        <!-- Panel Başlığı & Kapat Butonu -->
         <div class="sliding-panel-header">
           <div>
             <div class="sliding-panel-kicker">BİRESKU</div>
-            <h2 class="sliding-panel-title">Merkez Menü, Destek &amp; Ayarlar</h2>
+            <h2 class="sliding-panel-title">Merkez Menü</h2>
           </div>
           <button id="closeSlidingNavBtn" class="sliding-panel-close-btn" type="button" aria-label="Pencereyi Kapat">
             <span style="font-size: 1.2rem; line-height: 1;">&times;</span>
@@ -1054,172 +1094,155 @@
           </button>
         </div>
 
-        <!-- 4 Sütunlu Kayan Pencere Gövdesi -->
-        <div class="sliding-panel-grid">
+        <!-- 2 Sütunlu Ana Gövde (Sol: Küçük Butonlar / Sağ: Büyük Kartlar) -->
+        <div class="sliding-panel-layout">
           
-          <!-- 1. SÜTUN: SEKMELER (ODALAR) -->
-          <div class="sliding-col">
-            <div class="sliding-col-header">
-              <span class="col-icon">🏛️</span>
-              <h3>Biresku Sekmeleri</h3>
-            </div>
-            <ul class="sliding-links-list">
-              <li>
-                <a href="/" class="sliding-link-item active" onclick="closeSlidingNav();">
-                  <div class="item-title-row">
-                    <span class="item-name">Ana Sayfa</span>
-                    <span class="item-badge active-badge">Aktif</span>
-                  </div>
-                  <p class="item-desc">Birleşmiş Ressamlar Kulübü resmi ana sayfası ve bölüm seçkisi.</p>
-                </a>
-              </li>
-              <li>
-                <a href="/dergi/" class="sliding-link-item" onclick="closeSlidingNav();">
-                  <div class="item-title-row">
-                    <span class="item-name">Biresku Dergi</span>
-                    <span class="item-badge green-badge">Yayında</span>
-                  </div>
-                  <p class="item-desc">Sanat haberleri, sanatçı biyografileri, eser galerisi ve haftalık vitrin.</p>
-                </a>
-              </li>
-              <li>
-                <a href="#muzayede" class="sliding-link-item" onclick="closeSlidingNav(); openModal('auctionModal'); return false;">
-                  <div class="item-title-row">
-                    <span class="item-name">Biresku Müzayede</span>
-                    <span class="item-badge gold-badge">Küratörde</span>
-                  </div>
-                  <p class="item-desc">Seçkin tuvaller ve heykeller için güvenilir açık artırma odası.</p>
-                </a>
-              </li>
-              <li>
-                <a href="#sohbet" class="sliding-link-item" onclick="closeSlidingNav(); openModal('clubModal'); return false;">
-                  <div class="item-title-row">
-                    <span class="item-name">Sanatçı Odası (Sohbet)</span>
-                    <span class="item-badge lock-badge">Kapalı Ağ</span>
-                  </div>
-                  <p class="item-desc">Yalnızca davetli sanatçıların fikir ve teknik paylaşım alanı.</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- 2. SÜTUN: DESTEK -->
-          <div class="sliding-col">
-            <div class="sliding-col-header">
-              <span class="col-icon">🆘</span>
-              <h3>Destek Masası</h3>
-            </div>
-            <div class="support-card-box">
-              <div class="support-info-item">
-                <span class="support-label">Sanatçı &amp; Ziyaretçi Destek</span>
-                <p>Eser sergileme, profil açma, biyografi düzeltme veya müzayede seçkisi için destek masamız aktiftir.</p>
+          <!-- SOL SÜTUN: DESTEK, İLETİŞİM, AYARLAR (KÜÇÜK BUTONLAR ŞEKLİNDE) -->
+          <div class="panel-left-sidebar">
+            
+            <!-- 1. DESTEK (KÜÇÜK BUTON & WIDGET) -->
+            <div class="sidebar-widget-card">
+              <div class="widget-header">
+                <span class="widget-icon">🎧</span>
+                <span class="widget-title">Destek Masası</span>
               </div>
-              <div class="support-info-item">
-                <span class="support-label">Sıkça Sorulan Sorular</span>
-                <ul class="support-faq-mini">
-                  <li>✦ <strong>Eserler nasıl incelenir?</strong> Küratör kurulumuz doğrudan orijinal arşivleri tarar.</li>
-                  <li>✦ <strong>Haftalık vitrin kuralı:</strong> Yeni sanatçılar 7 gün boyunca otomatik listelenir.</li>
-                  <li>✦ <strong>Telif güvencesi:</strong> Tüm eserlerin telif hakkı sanatçılara aittir.</li>
-                </ul>
-              </div>
-              <a href="/iletisim/" class="col-btn-action" onclick="closeSlidingNav();">
-                <span>Destek Talebi Oluştur &rarr;</span>
+              <p class="widget-desc">Eser sergileme, sanatçı profili açma ve koleksiyoner danışmanlığı.</p>
+              <a href="/iletisim/" class="widget-action-btn" onclick="closeSlidingNav();">
+                <span>Destek Talebi Aç</span>
+                <span class="btn-arrow">&rarr;</span>
               </a>
             </div>
-          </div>
 
-          <!-- 3. SÜTUN: İLETİŞİM -->
-          <div class="sliding-col">
-            <div class="sliding-col-header">
-              <span class="col-icon">✉️</span>
-              <h3>İletişim &amp; Temsilcilik</h3>
-            </div>
-            <div class="contact-card-box">
-              <div class="contact-row">
-                <span class="c-icon">📧</span>
-                <div>
-                  <span class="c-title">Resmi Yazışma:</span>
-                  <span class="c-val">iletisim@biresku.com</span>
-                </div>
+            <!-- 2. İLETİŞİM (KÜÇÜK BUTON & WIDGET) -->
+            <div class="sidebar-widget-card">
+              <div class="widget-header">
+                <span class="widget-icon">✉️</span>
+                <span class="widget-title">İletişim &amp; Temsilcilik</span>
               </div>
-              <div class="contact-row">
-                <span class="c-icon">🎨</span>
-                <div>
-                  <span class="c-title">Küratör &amp; Sanat Masası:</span>
-                  <span class="c-val">editor@biresku.com</span>
-                </div>
-              </div>
-              <div class="contact-row">
-                <span class="c-icon">🏛️</span>
-                <div>
-                  <span class="c-title">Temsilcilikler:</span>
-                  <span class="c-val">İstanbul &amp; Ankara</span>
-                </div>
-              </div>
-              <div class="contact-row">
-                <span class="c-icon">⏱️</span>
-                <div>
-                  <span class="c-title">Geri Dönüş:</span>
-                  <span class="c-val">24 Saat İçinde</span>
-                </div>
-              </div>
-              <a href="/iletisim/" class="col-btn-action" onclick="closeSlidingNav();">
-                <span>Detaylı İletişim Formu &rarr;</span>
+              <p class="widget-desc">Resmi yazışma: <strong>iletisim@biresku.com</strong><br>İstanbul &amp; Ankara temsilcilikleri.</p>
+              <a href="/iletisim/" class="widget-action-btn" onclick="closeSlidingNav();">
+                <span>İletişime Geç</span>
+                <span class="btn-arrow">&rarr;</span>
               </a>
             </div>
+
+            <!-- 3. AYARLAR (KÜÇÜK BUTONLAR & KONTROLLER) -->
+            <div class="sidebar-widget-card">
+              <div class="widget-header">
+                <span class="widget-icon">⚙️</span>
+                <span class="widget-title">Ayarlar</span>
+              </div>
+              <div class="widget-settings-list">
+                <!-- Tema Seçimi -->
+                <div class="widget-setting-row">
+                  <span class="s-label">Görünüm:</span>
+                  <button id="panelThemeToggleBtn" type="button" class="setting-toggle-btn" aria-label="Temayı Değiştir">
+                    <span class="theme-sun-icon">☀️ Gündüz</span>
+                    <span class="theme-moon-icon">🌙 Gece</span>
+                  </button>
+                </div>
+                <!-- Okuma Boyutu -->
+                <div class="widget-setting-row">
+                  <span class="s-label">Yazı Boyutu:</span>
+                  <div class="font-scale-buttons">
+                    <button type="button" id="scaleNormalBtn" class="scale-btn active" onclick="setFontScale('normal')">A</button>
+                    <button type="button" id="scaleLargeBtn" class="scale-btn" onclick="setFontScale('large')">A+</button>
+                  </div>
+                </div>
+                <!-- Gizlilik Politikası -->
+                <a href="/gizlilik-politikasi/" class="widget-link-row" onclick="closeSlidingNav();">
+                  <span>Gizlilik Politikası &amp; KVKK</span>
+                  <span class="btn-arrow">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
           </div>
 
-          <!-- 4. SÜTUN: AYARLAR -->
-          <div class="sliding-col">
-            <div class="sliding-col-header">
-              <span class="col-icon">⚙️</span>
-              <h3>Ayarlar</h3>
+          <!-- SAĞ SÜTUN: ODALAR & BÖLÜMLER (DAHA BÜYÜK KARTLAR ŞEKLİNDE) -->
+          <div class="panel-right-rooms">
+            
+            <!-- 1. BÜYÜK KART: BİRESKU DERGİ (YAYINDA) -->
+            <div class="big-room-card featured">
+              <div class="big-room-header">
+                <div class="big-room-title-group">
+                  <div class="room-kicker">RESMİ YAYIN ORGANI</div>
+                  <h3 class="big-room-name">Biresku Dergi</h3>
+                </div>
+                <span class="room-status-badge green">
+                  <span class="pulse-dot"></span> Yayında
+                </span>
+              </div>
+              <p class="big-room-desc">
+                Bağımsız çağdaş sanatçılarımızın tescilli eserleri, 7 gün boyunca kesintisiz sergilenen haftalık vitrin, 
+                derinlikli atölye röportajları ve dünya sanat gündeminden anlık haberler.
+              </p>
+              <div class="big-room-features">
+                <span class="room-feat-tag">Haftalık 7 Günlük Vitrin</span>
+                <span class="room-feat-tag">Sanatçı Galerisi &amp; Arşiv</span>
+                <span class="room-feat-tag">Güncel Sanat Haberleri</span>
+              </div>
+              <div class="big-room-actions">
+                <a href="/dergi/" class="big-card-cta primary" onclick="closeSlidingNav();">
+                  <span>Dergiyi Aç &amp; Eserleri İncele</span>
+                  <span class="cta-arrow">&rarr;</span>
+                </a>
+              </div>
             </div>
-            <div class="settings-card-box">
+
+            <!-- ALT 2 BÜYÜK KART YAN YANA: MÜZAYEDE & SANATÇI ODASI -->
+            <div class="big-rooms-subgrid">
               
-              <!-- Tema Ayarı -->
-              <div class="setting-item">
-                <div class="setting-text">
-                  <span class="setting-name">Görünüm Teması</span>
-                  <span class="setting-sub" id="panelThemeSub">Karanlık / Gece</span>
+              <!-- 2. BÜYÜK KART: BİRESKU MÜZAYEDE -->
+              <div class="big-room-card">
+                <div class="big-room-header">
+                  <div class="big-room-title-group">
+                    <div class="room-kicker">AÇIK ARTIRMA</div>
+                    <h3 class="big-room-name">Biresku Müzayede</h3>
+                  </div>
+                  <span class="room-status-badge gold">Küratörde</span>
                 </div>
-                <button id="panelThemeToggleBtn" type="button" class="setting-toggle-btn" aria-label="Temayı Değiştir">
-                  <span class="theme-sun-icon">☀️ Gündüz</span>
-                  <span class="theme-moon-icon">🌙 Gece</span>
-                </button>
+                <p class="big-room-desc">
+                  Seçkin tuvaller, özgün heykeller ve koleksiyonluk nadir eserler için güvenilir, şeffaf açık artırma platformu.
+                </p>
+                <div class="big-room-features">
+                  <span class="room-feat-tag">Ekspertiz Onayı</span>
+                  <span class="room-feat-tag">Şeffaf Teklif</span>
+                </div>
+                <div class="big-room-actions">
+                  <button type="button" class="big-card-cta secondary" onclick="closeSlidingNav(); openModal('auctionModal');">
+                    <span>Müzayede Detayları</span>
+                    <span class="cta-arrow">&rarr;</span>
+                  </button>
+                </div>
               </div>
 
-              <!-- Metin Boyutu -->
-              <div class="setting-item">
-                <div class="setting-text">
-                  <span class="setting-name">Metin Boyutu</span>
-                  <span class="setting-sub">Okuma ölçeği</span>
+              <!-- 3. BÜYÜK KART: SANATÇI ODASI (SOHBET) -->
+              <div class="big-room-card">
+                <div class="big-room-header">
+                  <div class="big-room-title-group">
+                    <div class="room-kicker">KULÜP &amp; TOPLULUK</div>
+                    <h3 class="big-room-name">Sanatçı Odası (Sohbet)</h3>
+                  </div>
+                  <span class="room-status-badge lock">Özel Ağ</span>
                 </div>
-                <div class="font-scale-buttons">
-                  <button type="button" id="scaleNormalBtn" class="scale-btn active" onclick="setFontScale('normal')">A</button>
-                  <button type="button" id="scaleLargeBtn" class="scale-btn" onclick="setFontScale('large')">A+</button>
+                <p class="big-room-desc">
+                  Yalnızca davetli sanatçıların teknik, atölye deneyimi ve estetik fikirlerini tartıştığı kapalı etkileşim alanı.
+                </p>
+                <div class="big-room-features">
+                  <span class="room-feat-tag">Atölye Masası</span>
+                  <span class="room-feat-tag">Kapalı Sohbet</span>
                 </div>
-              </div>
-
-              <!-- Akıcılık & Animasyon -->
-              <div class="setting-item">
-                <div class="setting-text">
-                  <span class="setting-name">Arayüz Akıcılığı</span>
-                  <span class="setting-sub">Yumuşak geçişler</span>
+                <div class="big-room-actions">
+                  <button type="button" class="big-card-cta secondary" onclick="closeSlidingNav(); openModal('clubModal');">
+                    <span>Kulüp Bilgisi</span>
+                    <span class="cta-arrow">&rarr;</span>
+                  </button>
                 </div>
-                <span class="setting-status-pill">Aktif</span>
-              </div>
-
-              <!-- Gizlilik & KVKK -->
-              <div class="setting-item" style="border-bottom: none;">
-                <div class="setting-text">
-                  <span class="setting-name">Gizlilik &amp; KVKK</span>
-                  <span class="setting-sub">Veri güvenliği</span>
-                </div>
-                <a href="/gizlilik-politikasi/" class="setting-link-arrow" onclick="closeSlidingNav();" title="Gizlilik Politikası">&rarr;</a>
               </div>
 
             </div>
+
           </div>
 
         </div>
