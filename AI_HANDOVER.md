@@ -44,9 +44,25 @@ biresku/
 
 Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonları `window.ARTISTS_DATA` dizisinde saklanır. Sitedeki profil sayfaları ve vitrinler bu veriyi dinamik olarak okur.
 
-### Kayıtlı 4 Sanatçı ve Kritik Detayları:
+### Kayıtlı 5 Sanatçı ve Kritik Detayları:
 
-#### 1. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
+#### 1. Prof. Süleyman Saim Tekcan (`id: "suleyman-saim-tekcan"`) — *En Son Eklenen (En Sol / Spot 1)*
+- **Unvan & Disiplin:** Prof. Süleyman Saim Tekcan — Özgün Baskı Resim, Gravür & Çağdaş Türk Resmi (Atlar & Hat Serisi)
+- **Kategori:** Ressam & Özgün Baskı Ustası
+- **Şehir / Atölye:** İstanbul / Trabzon — IMOGA (İstanbul Grafik Sanatlar Müzesi) / Tekcan Atölyesi
+- **Önemli Bilgi:** Türk özgün baskı sanatının ve gravür ekolünün uluslararası duayeni; Türkiye'nin ilk çağdaş grafik sanatlar müzesi IMOGA'nın kurucusudur. Mimar Sinan Üniversitesi Güzel Sanatlar Fakültesi Dekanlığı ve öğretim üyeliği yapmıştır.
+- **Koleksiyon Eserleri (Tam 8 Adet, Artam Antik A.Ş. Müzayede Kayıtlı & Kesin Ölçülü):**
+  1. *"Atlar" (Anıtsal Başyapıt)* — Tuval üzerine yağlıboya, imzalı. 2022 tarihli. **100 × 140 cm** (Lot ID: 61209)
+  2. *"Atlar"* — Tuval üzerine yağlıboya, imzalı. 2021 tarihli. **80 × 60 cm** (Lot ID: 56551)
+  3. *"Atlar"* — Tuval üzerine yağlıboya, imzalı. 1999 tarihli. **70 × 55 cm** (Lot ID: 59508)
+  4. *"Atlar"* — Tuval üzerine yağlıboya, imzalı. 2022 tarihli. **60 × 70 cm** (Lot ID: 59841)
+  5. *"Atlar" (Özgün Gravür)* — Baskı. Edition: E.A. 8/20 Gravür, imzalı. 1998 tarihli. **62 × 70 cm** (Lot ID: 56969)
+  6. *"Riva'da Bir Sabah"* — Kağıt üzerine karışık teknik, imzalı. **69 × 93 cm** (Lot ID: 61047)
+  7. *"Alacahöyük Sembol"* — Baskı. Edition: 28/50 Gravür, imzalı. 1989 tarihli. **50 × 31 cm** (Lot ID: 59813)
+  8. *"Figüratif"* — Tuval üzerine yağlıboya, imzalı. 2015 tarihli. **50 × 60 cm** (Lot ID: 46317)
+- **Doğrulanmış Otantik Alıntı:** *"Sanat bir serüvendir; özgün baskı ise bu serüvenin disiplin, sabır ve bilgelikle kâğıda mühürlenen en saf halidir."*
+
+#### 2. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Dışavurumculuk & Gelincikler
 - **Profil Fotoğrafı:** `assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg` (MAG Dergisi atölye çekimi; tuval başında spatulalı yüksek çözünürlüklü fotoğraf).
 - **Gerçek Alıntı:** *"Gelincik unutmamaktır, hatırlamaktır, vefadır."* (Sanatçının kendi söyleşilerinde yayımlanmış özgün sözüdür, uydurma alıntı kullanılmamalıdır).
@@ -62,16 +78,16 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *Gelincikler (Minyatür Spatula Çalışması)* — Tuval üzerine yağlıboya, **30 × 30 cm** (2020)
   *(Not: Önceden sehven eklenen portre çalışması kaldırılmış, 8 eserin tamamı Artam Antik A.Ş. doğrulamalı gelincik temalı orijinal eserlerle yenilenmiştir).*
 
-#### 2. Tuncay Umay (`id: "tuncay-umay"`)
+#### 3. Tuncay Umay (`id: "tuncay-umay"`)
 - **Disiplin:** Denizlerin Devinimi & Sürrealist Satranç Manifestosu
 - **ÖNEMLİ KURAL (Akademisyen DEĞİL):** Kullanıcı talimatı: *"akademisyen değilki o nerden çıktı"*. Tuncay Umay bağımsız ressam ve Biresku'nun kurucu sanatçısıdır; biyografisinde veya unvanında "akademisyen" ifadesi **kesinlikle geçmemelidir**.
 - **Kayıtlı Eser Sayısı:** 13 Eser
 
-#### 3. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
+#### 4. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
 - **Disiplin:** Çağdaş Türk Resmi, Dışavurumcu Figürasyon & Dinamik Kompozisyon
 - **Kayıtlı Eser Sayısı:** 13 Eser (Mustafa Ayaz Plastik Sanatlar Müzesi koleksiyonu referanslı)
 
-#### 4. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
+#### 5. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı
 - **Kayıtlı Eser Sayısı:** 13 Eser (Marmaris Serisi, Viyolonsel Çalan Kadın, Müzisyenler Trio vb.)
 
@@ -138,8 +154,8 @@ Gelecekte geri alma veya hata yapmamak adına kullanıcının doğrudan verdiği
 Site doğrudan GitHub Pages üzerinden yayınlanmaktadır. Değişiklik yapıldığında şu adımlar takip edilmelidir:
 
 1. **Önbellek Kırma (Cache Busting):**
-   - CSS ve JS bağlantılarına versiyon etiketi eklenmiştir (örn: `?v=20261108_v24`).
-   - Yapılan her kritik frontend değişikliğinde versiyon numarası (`v24 -> v25`) artırılmalıdır.
+   - CSS ve JS bağlantılarına versiyon etiketi eklenmiştir (örn: `?v=20261108_v25`).
+   - Yapılan her kritik frontend değişikliğinde versiyon numarası (`v25 -> v25`) artırılmalıdır.
 2. **GitHub API ile Dağıtım:**
    - Dosyalar `HaDeS-06/biresku` deposunun `main` dalına commit edilir.
    - GitHub Actions `pages build and deployment` iş akışını tetikler (~30-60 saniye sürer).

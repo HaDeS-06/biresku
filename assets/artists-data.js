@@ -308,5 +308,100 @@ window.ARTISTS_DATA = [
       }
 ],
     "addedDate": "2026-11-08"
+  },
+  {
+    "id": "suleyman-saim-tekcan",
+    "name": "Prof. Süleyman Saim Tekcan",
+    "discipline": "Özgün Baskı Resim, Gravür & Çağdaş Türk Resmi (Atlar & Hat Serisi)",
+    "category": "Ressam & Özgün Baskı Ustası",
+    "city": "İstanbul / Trabzon",
+    "studio": "IMOGA (İstanbul Grafik Sanatlar Müzesi) / Tekcan Atölyesi",
+    "coverImage": "/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261108_v25",
+    "shortBio": "Türk özgün baskı sanatının ve gravür ekolünün uluslararası duayeni; Türkiye'nin ilk çağdaş grafik sanatlar müzesi IMOGA'nın kurucusu ve anıtsal 'Atlar' serisinin bilge ustası.",
+    "quote": "Sanat bir serüvendir; özgün baskı ise bu serüvenin disiplin, sabır ve bilgelikle kâğıda mühürlenen en saf halidir.",
+    "biography": [
+      "1940 yılında Trabzon'da doğan Prof. Süleyman Saim Tekcan, 1961'de Ankara Gazi Eğitim Enstitüsü Resim-İş Bölümü'nden mezun oldu. İstanbul Devlet Tatbiki Güzel Sanatlar Yüksekokulu (Marmara Üniversitesi GSF) Grafik Bölümü'nde öğretim görevlisi olarak göreve başladı ve Almanya'da litografi ile gravür teknikleri üzerine derinlemesine araştırmalar gerçekleştirdi.",
+      "1975'te Devlet Güzel Sanatlar Akademisi'nde (Mimar Sinan Güzel Sanatlar Üniversitesi) sanatta yeterlilik ve doçentlik unvanlarını aldı; grafik anasanat dalı başkanlığı ve dekanlık görevlerinde bulundu. 1974'te Kuyubaşı'nda kurduğu ilk özel gravür atölyesini yıllar içinde geliştirerek, 2004 yılında İstanbul Ünalan'da Türkiye'nin ilk ve en kapsamlı grafik sanatlar müzesi olan IMOGA'yı (İstanbul Grafik Sanatlar Müzesi) kurdu. Yaşamı boyunca yüzlerce uluslararası bienal ve sergiye katılan Tekcan, Türk çağdaş sanatının en saygın ve üretken duayenleri arasında yer almaktadır."
+    ],
+    "philosophy": [
+      "Süleyman Saim Tekcan'ın yapıtlarında Anadolu uygarlıklarının köklü mirası, Hitit ve Selçuklu sembolizmi, hat sanatının lirik kıvraklığı ve Türk kültürünün mitolojik simgesi olan at figürü merkezdedir. Tekcan için at; yalnızca estetik bir anatomi değil, rüzgârın, özgürlüğün, soyluluğun ve zamana meydan okuyan direncin tinsel temsilcisidir.",
+      "Özgün baskı (gravür, serigrafi, litografi) ve tuval üzeri yağlıboya üretiminde geliştirdiği teknik yetkinlik; çizginin mutlak disiplini ile lekenin spontane ritmini bir araya getirir. Sanatçıya göre resim; geçmişin kültürel hafızasını geleceğe taşıyan, disiplin ve sevgiyle yoğrulmuş evrensel bir tanıklıktır."
+    ],
+    "artworks": [
+      {
+        "id": "tekcan-1",
+        "title": "Atlar (Anıtsal Başyapıt)",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "100 × 140 cm",
+        "year": "2022",
+        "image": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v25",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v25"
+      },
+      {
+        "id": "tekcan-2",
+        "title": "Atlar",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "80 × 60 cm",
+        "year": "2021",
+        "image": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v25",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v25"
+      },
+      {
+        "id": "tekcan-3",
+        "title": "Atlar",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "70 × 55 cm",
+        "year": "1999",
+        "image": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v25",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v25"
+      },
+      {
+        "id": "tekcan-4",
+        "title": "Atlar",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "60 × 70 cm",
+        "year": "2022",
+        "image": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v25",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v25"
+      },
+      {
+        "id": "tekcan-5",
+        "title": "Atlar (Özgün Gravür)",
+        "technique": "Özgün Baskı Gravür (E.A. 8/20), imzalı",
+        "dimensions": "62 × 70 cm",
+        "year": "1998",
+        "image": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v25",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v25"
+      },
+      {
+        "id": "tekcan-6",
+        "title": "Riva'da Bir Sabah",
+        "technique": "Kağıt üzerine karışık teknik, imzalı",
+        "dimensions": "69 × 93 cm",
+        "year": "Koleksiyon Eseri",
+        "image": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v25",
+        "imageUrl": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v25"
+      },
+      {
+        "id": "tekcan-7",
+        "title": "Alacahöyük Sembol",
+        "technique": "Özgün Baskı Gravür (Edition 28/50), imzalı",
+        "dimensions": "50 × 31 cm",
+        "year": "1989",
+        "image": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v25",
+        "imageUrl": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v25"
+      },
+      {
+        "id": "tekcan-8",
+        "title": "Figüratif",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "50 × 60 cm",
+        "year": "2015",
+        "image": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v25",
+        "imageUrl": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v25"
+      }
+    ],
+    "addedDate": "2026-11-08",
+    "period": "1940 – Günümüz"
   }
 ];
