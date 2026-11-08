@@ -1600,6 +1600,186 @@
       }
     }
 
+  
+    /* =========================================================
+       KULLANICI DOSTU GELİŞMİŞ MOBİL UX (dergi/index.html)
+       ========================================================= */
+    @media (max-width: 768px) {
+      .site-nav {
+        height: auto;
+        min-height: 52px;
+      }
+      .nav-inner {
+        padding: 4px 12px !important;
+        gap: 8px !important;
+      }
+      .nav-left-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .nav-left-group::-webkit-scrollbar {
+        display: none;
+      }
+      .portal-back-btn {
+        padding: 5px 8px !important;
+        font-size: 0.72rem !important;
+        flex-shrink: 0;
+      }
+      .nav-list {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+      .nav-list a {
+        padding: 6px 4px !important;
+        font-size: 0.76rem !important;
+        white-space: nowrap;
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+      }
+      .auth-login-trigger-btn {
+        padding: 5px 8px !important;
+        font-size: 0.72rem !important;
+      }
+      .theme-toggle-btn {
+        padding: 5px 8px !important;
+      }
+      .theme-toggle-text {
+        display: none !important;
+      }
+
+      /* Dergi Vitrini & Haberler */
+      .lead-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-bottom: 24px !important;
+      }
+      .new-artists-feature {
+        height: auto !important;
+        max-height: 380px !important;
+        border-radius: 6px;
+      }
+      .news-feed-box {
+        height: auto !important;
+        max-height: 380px !important;
+        border-radius: 6px;
+      }
+
+      /* SANATÇI PROFİLİ DERİNLİK VE ESERLER */
+      .profile-hero {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        padding: 22px 16px !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        margin-bottom: 22px !important;
+      }
+      .profile-avatar-wrap {
+        max-width: 140px !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important;
+        margin: 0 auto !important;
+        border: 3px solid var(--accent) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+        overflow: hidden;
+      }
+      .profile-avatar-wrap img {
+        border-radius: 50% !important;
+      }
+      .profile-title {
+        font-size: 1.55rem !important;
+        margin-top: 8px !important;
+      }
+      .profile-discipline {
+        font-size: 0.85rem !important;
+        color: var(--accent) !important;
+      }
+      .profile-bio-text {
+        font-size: 0.92rem !important;
+        line-height: 1.65 !important;
+        text-align: left !important;
+        margin-top: 12px !important;
+      }
+      .profile-meta-list {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        font-size: 0.78rem !important;
+      }
+
+      /* Biyografi & Felsefe Kartları */
+      .artist-deep-dive-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-bottom: 24px !important;
+      }
+      .artist-section-card {
+        padding: 18px 16px !important;
+        border-radius: 6px !important;
+      }
+      .artist-section-heading {
+        font-size: 1.15rem !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 8px !important;
+      }
+      .philosophy-quote {
+        font-size: 1.02rem !important;
+        line-height: 1.55 !important;
+        padding-left: 10px !important;
+        margin-bottom: 14px !important;
+      }
+      .artist-section-body p {
+        font-size: 0.9rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 10px !important;
+      }
+
+      /* Eserler Galerisi */
+      .artworks-header-bar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        margin-bottom: 16px !important;
+        padding-bottom: 10px !important;
+      }
+      .artworks-header-bar h3 {
+        font-size: 1.25rem !important;
+      }
+      .artworks-count {
+        font-size: 0.74rem !important;
+      }
+      .artworks-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        margin-bottom: 36px !important;
+      }
+      .artwork-item {
+        border-radius: 6px !important;
+        overflow: hidden !important;
+      }
+      .artwork-img-wrap {
+        aspect-ratio: 4 / 3 !important;
+      }
+      .artwork-info {
+        padding: 14px 16px !important;
+      }
+      .artwork-title {
+        font-size: 1.05rem !important;
+      }
+      .artwork-meta {
+        font-size: 0.8rem !important;
+      }
+    }
+
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_mobile">
 </head>
