@@ -470,7 +470,7 @@ window.ARTISTS_DATA = [
     "category": "Ressam & Heykeltıraş",
     "city": "İstanbul / Paris",
     "studio": "İstanbul Atölyesi",
-    "coverImage": "/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261108_v31",
+    "coverImage": "/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261108_v32",
     "shortBio": "Türk çağdaş resminde eleştirel figürasyonun ve dışavurumcu başkaldırının anıtsal ustası; insan doğasının karmaşasını, tutkularını ve çelişkilerini tavizsiz bir pentür gücüyle tuvale aktaran bilge usta.",
     "quote": "Resim yapmak benim için bir hesaplaşmadır; insanın kendi vahşetiyle, ikiyüzlülüğüyle ve toplumun dayattığı maskelerle yüzleştiği tavizsiz bir alan.",
     "biography": [
@@ -485,74 +485,74 @@ window.ARTISTS_DATA = [
       {
         "id": "guleryuz-1",
         "title": "Oğlum Oğlum",
-        "technique": "Tuval üzerine yağlıboya",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "162 × 130 cm",
         "year": "2000",
-        "image": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v31",
-        "imageUrl": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v31"
+        "image": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v32",
+        "imageUrl": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-2",
         "title": "Turnuva",
-        "technique": "Tuval üzerine yağlıboya",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "90 × 90 cm",
         "year": "1996",
-        "image": "/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v31",
-        "imageUrl": "/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v31"
+        "image": "/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v32",
+        "imageUrl": "/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-3",
         "title": "Her Şey Kontrolümüz Altında",
-        "technique": "Tuval üzerine yağlıboya",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "162 × 130 cm",
-        "year": "1998",
-        "image": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v31",
-        "imageUrl": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v31"
+        "year": "2001",
+        "image": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v32",
+        "imageUrl": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-4",
-        "title": "Figüratif",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "58 × 74 cm",
-        "year": "2000",
-        "image": "/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v31",
-        "imageUrl": "/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v31"
+        "title": "Happy Hours",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "65 × 54 cm",
+        "year": "2007",
+        "image": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v32",
+        "imageUrl": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-5",
-        "title": "Untitled (İsimsiz)",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "65 × 54 cm",
-        "year": "2020",
-        "image": "/assets/mehmet-guleryuz/untitled-65x54.jpg?v=20261108_v31",
-        "imageUrl": "/assets/mehmet-guleryuz/untitled-65x54.jpg?v=20261108_v31"
+        "title": "Mucize",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "90 × 114 cm",
+        "year": "2024",
+        "image": "/assets/mehmet-guleryuz/mucize-2024.jpg?v=20261108_v32",
+        "imageUrl": "/assets/mehmet-guleryuz/mucize-2024.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-6",
-        "title": "Happy Hours",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "65 × 54 cm",
-        "year": "2007",
-        "image": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v31",
-        "imageUrl": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v31"
+        "title": "Erol Akyavaş Portresi",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "41 × 46 cm",
+        "year": "1983",
+        "image": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v32",
+        "imageUrl": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-7",
-        "title": "Portre (Erol Akyavaş)",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "41 × 46 cm",
-        "year": "1983",
-        "image": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v31",
-        "imageUrl": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v31"
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "90 × 98 cm",
+        "year": "1964",
+        "image": "/assets/mehmet-guleryuz/erken-donem-1964.jpg?v=20261108_v32",
+        "imageUrl": "/assets/mehmet-guleryuz/erken-donem-1964.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-8",
-        "title": "Figüratif Kompozisyon",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "35 × 46 cm",
-        "year": "2011",
-        "image": "/assets/mehmet-guleryuz/figuratif-kompozisyon-35x46.jpg?v=20261108_v31",
-        "imageUrl": "/assets/mehmet-guleryuz/figuratif-kompozisyon-35x46.jpg?v=20261108_v31"
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "58 × 74 cm",
+        "year": "2000",
+        "image": "/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v32",
+        "imageUrl": "/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v32"
       }
     ],
     "addedDate": "2026-11-08",

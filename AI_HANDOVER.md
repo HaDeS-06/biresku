@@ -54,15 +54,16 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
 - **Önemli Bilgi:** 1938 İstanbul doğumludur. İstanbul Devlet Güzel Sanatlar Akademisi Resim Bölümü'nde Neşet Günal Atölyesi'nde öğrenim görmüş; tiyatro oyunculuğu ve dekoratörlük yapmıştır. Paris Ecole Nationale Supérieure des Beaux-Arts'ta yüksek resim ve litografi ihtisası tamamlamıştır. Uluslararası Plastik Sanatlar Derneği'nin (UPSD) kurucu başkanıdır. 2015 yılında İstanbul Modern'de büyük 'Ressam ve Resim' retrospektifi açılmıştır.
 - **Doğrulanmış Otantik Alıntı:**  
   *"Resim yapmak benim için bir hesaplaşmadır; insanın kendi vahşetiyle, ikiyüzlülüğüyle ve toplumun dayattığı maskelerle yüzleştiği tavizsiz bir alan."*
-- **Koleksiyon Eserleri (Tam 8 Adet, Artam Antik A.Ş. Müzayede Kayıtlı & Kesin Ölçülü):**
-  1. *"Oğlum Oğlum"* — 2000 tarihli. Tuval üzerine yağlıboya, imzalı. **162 × 130 cm** (Lot ID: 52890, 390. Müzayede)
-  2. *"Turnuva"* — 1996 tarihli. Tuval üzerine yağlıboya, imzalı. **90 × 90 cm** (Lot ID: 47751, 381. Müzayede)
-  3. *"Her Şey Kontrolümüz Altında"* — Tuval üzerine yağlıboya, imzalı. **162 × 130 cm** (Lot ID: 48127, 382. Müzayede)
-  4. *"Figüratif"* — 2000 tarihli. Tuval üzerine yağlıboya, imzalı. **58 × 74 cm** (Lot ID: 48129, 382. Müzayede)
-  5. *"Untitled (İsimsiz)"* — 2020 tarihli. Tuval üzerine yağlıboya, imzalı. **65 × 54 cm** (Lot ID: 56994, 398. Müzayede)
-  6. *"Happy Hours"* — 2007 tarihli. Tuval üzerine yağlıboya, imzalı. **65 × 54 cm** (Lot ID: 54913, 394. Müzayede)
-  7. *"Portre (Erol Akyavaş)"* — 1983 tarihli. Tuval üzerine yağlıboya, imzalı. **41 × 46 cm** (Lot ID: 54837, 393. Müzayede)
-  8. *"Figüratif Kompozisyon"* — 2011 tarihli. Tuval üzerine yağlıboya, imzalı. **35 × 46 cm** (Lot ID: 60363, 405. Müzayede)
+- **Profil Fotoğrafı:** Artam Arşivi'nden alınan 800×800 boyutunda doğrulanmış özgün stüdyo portresi (Mehmet Güleryüz'ün kendi çehresi).
+- **Koleksiyon Eserleri & İsim Politikası (Kullanıcı Kuralı: "En bilinen resimlerini koy, isimlerini bilmiyorsan koyma ama katiyen kafandan bir şey atma"):**
+  1. *"Oğlum Oğlum"* — 2000 tarihli anıtsal başyapıt. Tuval üzerine yağlıboya, imzalı. **162 × 130 cm**
+  2. *"Turnuva"* — 1996 tarihli ünlü masa tenisi tablosu. Tuval üzerine yağlıboya, imzalı. **90 × 90 cm**
+  3. *"Her Şey Kontrolümüz Altında"* — 2001 tarihli anıtsal eleştirel figürasyon. Tuval üzerine yağlıboya, imzalı. **162 × 130 cm**
+  4. *"Happy Hours"* — 2007 tarihli modern yaşam satiri. Tuval üzerine yağlıboya, imzalı. **65 × 54 cm**
+  5. *"Mucize"* — Mart 2024 tarihli son dönem başyapıtı. Tuval üzerine yağlıboya, imzalı. **90 × 114 cm**
+  6. *"Erol Akyavaş Portresi"* — 1983 tarihli tarihi ressam portresi. Tuval üzerine yağlıboya, imzalı. **41 × 46 cm**
+  7. *Erken Dönem Başyapıtı (1964)* — Sanatçının kendi koyduğu özel bir başlık bulunmadığından isim alanı boş bırakılmıştır (`title: ""`); uydurma ad verilmemiştir. Tuval üzerine yağlıboya, imzalı. **90 × 98 cm**
+  8. *2000 Tarihli Özgün Eser* — Müzayede kaydındaki genel etiket yerine sanatçının özgün başlığı bilinmediğinden isim alanı boş bırakılmıştır (`title: ""`). Tuval üzerine yağlıboya, imzalı. **58 × 74 cm**
 - **Sanat Felsefesi & Estetik:** Tavizsiz eleştirel figürasyon, dışavurumcu dramatik gerilim, varoluşsal başkaldırı ve insanın içgüdüleriyle yüzleşmesi.
 
 #### 2. Gülbin Nurgenç (`id: "gulbin-nurgenc"`)
