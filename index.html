@@ -861,52 +861,109 @@
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
     }
 
-    /* 1. DERGİ / SANATÇI KARTI */
+    /* 1. DERGİ / SANATÇI KARTI (Foto 1 Dergi Kartı Yansıması) */
     .artist-flow-card {
-      padding: 22px 20px;
-    }
-    .artist-card-top {
+      padding: 0;
       display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 14px;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .artist-avatar-wrap {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
+    .artist-flow-card .artist-card-cover {
+      height: 195px;
+      width: 100%;
+      position: relative;
       overflow: hidden;
-      flex-shrink: 0;
-      background: #111;
+      background: #15161b;
     }
-    .artist-avatar-wrap img {
+    .artist-flow-card .artist-card-cover img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.45s ease;
     }
-    .artist-name-title {
+    .artist-flow-card:hover .artist-card-cover img {
+      transform: scale(1.05);
+    }
+    .artist-flow-card .artist-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(10, 10, 14, 0.85);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(192, 154, 88, 0.45);
+      color: var(--accent);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .artist-flow-card .badge-new-artist {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(46, 125, 50, 0.9);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+      z-index: 2;
+    }
+    .artist-flow-card .artist-card-body {
+      padding: 16px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .artist-flow-card .artist-name-title {
       font-family: var(--font-serif);
-      font-size: 1.12rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--text-heading);
       line-height: 1.25;
-      margin-bottom: 3px;
+      margin-bottom: 5px;
     }
-    .artist-cat-sub {
+    .artist-flow-card .artist-cat-sub {
       font-size: 0.72rem;
       font-weight: 600;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      display: block;
     }
-    .artist-card-discipline {
+    .artist-flow-card .artist-card-discipline {
       font-size: 0.8rem;
       color: var(--text-muted);
       line-height: 1.45;
       margin-bottom: 16px;
-      min-height: 40px;
+      min-height: 52px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .artist-flow-card .artist-card-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+    .artist-flow-card .artist-city-tag {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
     .artist-card-bottom {
       display: flex;
@@ -1748,128 +1805,103 @@
 
         <div class="flow-rail-container">
           <div class="flow-rail" id="artistsRail">
-            
             <!-- Sanatçı 1: Prof. Dr. Adnan Turani (Yeni Eklenen) -->
             <a href="/dergi/#sanatci=adnan-turani" class="flow-card artist-flow-card">
-              <div>
-                <div class="artist-card-top">
-                  <div class="artist-avatar-wrap">
-                    <img src="/assets/adnan-turani/adnan-turani-pp.jpg" alt="Prof. Dr. Adnan Turani">
-                  </div>
-                  <div>
-                    <h3 class="artist-name-title">Prof. Dr. Adnan Turani</h3>
-                    <span class="artist-cat-sub">Ressam &amp; Sanat Tarihçisi</span>
-                  </div>
-                </div>
-                <p class="artist-card-discipline">
-                  Çağdaş Türk Resmi, Lirik Soyutlama &amp; Sanat Kuramı ekolünün öncüsü.
-                </p>
-              </div>
-              <div class="artist-card-bottom">
+              <div class="artist-card-cover">
+                <span class="artist-card-badge">Sanatçı Alanı</span>
                 <span class="badge-new-artist">● Son 7 Gün</span>
-                <span class="badge-art-count">8 Eser</span>
-                <span class="card-link-action">Profili Aç &rarr;</span>
+                <img src="/assets/adnan-turani/adnan-turani-pp.jpg" alt="Prof. Dr. Adnan Turani" loading="lazy">
+              </div>
+              <div class="artist-card-body">
+                <div>
+                  <h3 class="artist-name-title">Prof. Dr. Adnan Turani</h3>
+                  <span class="artist-cat-sub">Çağdaş Türk Resmi, Lirik Soyutlama &amp; Sanat Kuramı</span>
+                  <p class="artist-card-discipline">
+                    Türk çağdaş resim sanatının soyut ekoldeki öncülerinden; Türk sanat literatürünün temel başvuru kaynaklarını kaleme alan bilge sanat tarihçisi ve akademisyen.
+                  </p>
+                </div>
+                <div class="artist-card-bottom">
+                  <span class="artist-city-tag">📍 İstanbul / Ankara</span>
+                  <span class="card-link-action">Özel Alanına Git &rarr;</span>
+                </div>
               </div>
             </a>
 
-            <!-- Sanatçı 2: Bedri Rahmi Eyüboğlu -->
-            <a href="/dergi/" class="flow-card artist-flow-card">
-              <div>
-                <div class="artist-card-top">
-                  <div class="artist-avatar-wrap" style="border-color: #888;">
-                    <img src="/assets/adnan-turani/asiklar-serisi.jpg" alt="Bedri Rahmi Eyüboğlu">
-                  </div>
-                  <div>
-                    <h3 class="artist-name-title">Bedri Rahmi Eyüboğlu</h3>
-                    <span class="artist-cat-sub">Usta Ressam &amp; Şair</span>
-                  </div>
-                </div>
-                <p class="artist-card-discipline">
-                  Türk resminde geleneksel halk motifi, renk coşkusu ve D Grubu mirası.
-                </p>
+            <!-- Sanatçı 2: Heykel, Mermer & Bronz Döküm -->
+            <a href="/dergi/#sanatci=sanatci-2" class="flow-card artist-flow-card">
+              <div class="artist-card-cover">
+                <span class="artist-card-badge">Sanatçı Alanı</span>
+                <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=1000&q=80" alt="Sanatçı 2" loading="lazy">
               </div>
-              <div class="artist-card-bottom">
-                <span class="badge-art-count">Usta Arşivi</span>
-                <span class="card-link-action">Dergide Gör &rarr;</span>
+              <div class="artist-card-body">
+                <div>
+                  <h3 class="artist-name-title">Sanatçı 2</h3>
+                  <span class="artist-cat-sub">Heykel, Mermer &amp; Bronz Döküm</span>
+                  <p class="artist-card-discipline">
+                    Doğal taş ve bronzun mekanla kurduğu mimari diyaloğu kütle ve boşluk dengesiyle şekillendiren heykeltıraş.
+                  </p>
+                </div>
+                <div class="artist-card-bottom">
+                  <span class="artist-city-tag">📍 Ankara</span>
+                  <span class="card-link-action">Özel Alanına Git &rarr;</span>
+                </div>
               </div>
             </a>
 
-            <!-- Sanatçı 3: İbrahim Çallı -->
-            <a href="/dergi/" class="flow-card artist-flow-card">
-              <div>
-                <div class="artist-card-top">
-                  <div class="artist-avatar-wrap" style="border-color: #888;">
-                    <img src="/assets/adnan-turani/marmaris-serisi.jpg" alt="İbrahim Çallı">
-                  </div>
-                  <div>
-                    <h3 class="artist-name-title">İbrahim Çallı</h3>
-                    <span class="artist-cat-sub">1914 Kuşağı Öncüsü</span>
-                  </div>
-                </div>
-                <p class="artist-card-discipline">
-                  İzlenimci Türk resmi, Çallı Kuşağı üslubu ve Meşrutiyet dönemi tuvalleri.
-                </p>
+            <!-- Sanatçı 3: Figüratif Resim & Karışık Teknik -->
+            <a href="/dergi/#sanatci=sanatci-3" class="flow-card artist-flow-card">
+              <div class="artist-card-cover">
+                <span class="artist-card-badge">Sanatçı Alanı</span>
+                <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1000&q=80" alt="Sanatçı 3" loading="lazy">
               </div>
-              <div class="artist-card-bottom">
-                <span class="badge-art-count">Koleksiyon</span>
-                <span class="card-link-action">Dergide Gör &rarr;</span>
+              <div class="artist-card-body">
+                <div>
+                  <h3 class="artist-name-title">Sanatçı 3</h3>
+                  <span class="artist-cat-sub">Figüratif Resim &amp; Karışık Teknik</span>
+                  <p class="artist-card-discipline">
+                    İnsan psikolojisinin, yüzlerdeki sessiz fırtınaların ve modern yabancılaşmanın portrelerini çizen figüratif ressam.
+                  </p>
+                </div>
+                <div class="artist-card-bottom">
+                  <span class="artist-city-tag">📍 İzmir</span>
+                  <span class="card-link-action">Özel Alanına Git &rarr;</span>
+                </div>
               </div>
             </a>
 
-            <!-- Sanatçı 4: Nuri İyem -->
-            <a href="/dergi/" class="flow-card artist-flow-card">
-              <div>
-                <div class="artist-card-top">
-                  <div class="artist-avatar-wrap" style="border-color: #888;">
-                    <img src="/assets/adnan-turani/viyolonsel-calan-kadin.jpg" alt="Nuri İyem">
-                  </div>
-                  <div>
-                    <h3 class="artist-name-title">Nuri İyem</h3>
-                    <span class="artist-cat-sub">Toplumcu Gerçekçi</span>
-                  </div>
+            <!-- Sanatçı 4: Lirik Soyutlama & Suluboya -->
+            <a href="/dergi/#sanatci=sanatci-4" class="flow-card artist-flow-card">
+              <div class="artist-card-cover">
+                <span class="artist-card-badge">Sanatçı Alanı</span>
+                <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1000&q=80" alt="Sanatçı 4" loading="lazy">
+              </div>
+              <div class="artist-card-body">
+                <div>
+                  <h3 class="artist-name-title">Sanatçı 4</h3>
+                  <span class="artist-cat-sub">Lirik Soyutlama &amp; Suluboya</span>
+                  <p class="artist-card-discipline">
+                    Suyun ve pigmentin serbest akışında doğanın lirik ritmini ve varoluşun hafifliğini tuvale aktaran ressam.
+                  </p>
                 </div>
-                <p class="artist-card-discipline">
-                  Anadolu insanının derinlikli gözleri ve toplumsal gerçekçi figürasyon.
-                </p>
-              </div>
-              <div class="artist-card-bottom">
-                <span class="badge-art-count">Özel Dosya</span>
-                <span class="card-link-action">Dergide Gör &rarr;</span>
-              </div>
-            </a>
-
-            <!-- Sanatçı 5: Fikret Mualla -->
-            <a href="/dergi/" class="flow-card artist-flow-card">
-              <div>
-                <div class="artist-card-top">
-                  <div class="artist-avatar-wrap" style="border-color: #888;">
-                    <img src="/assets/adnan-turani/asiklar-serisi.jpg" alt="Fikret Mualla">
-                  </div>
-                  <div>
-                    <h3 class="artist-name-title">Fikret Mualla</h3>
-                    <span class="artist-cat-sub">Paris Ekolü</span>
-                  </div>
+                <div class="artist-card-bottom">
+                  <span class="artist-city-tag">📍 Bursa</span>
+                  <span class="card-link-action">Özel Alanına Git &rarr;</span>
                 </div>
-                <p class="artist-card-discipline">
-                  Paris kafeleri, caz müzisyenleri ve kendine has guaj anlatımı.
-                </p>
-              </div>
-              <div class="artist-card-bottom">
-                <span class="badge-art-count">Arşiv Seçkisi</span>
-                <span class="card-link-action">Dergide Gör &rarr;</span>
               </div>
             </a>
 
             <!-- Tüm Sanatçılarımız Vitrini Kartı -->
-            <a href="/dergi/sanatcilar/" class="flow-card artist-flow-card" style="border-style: dashed; justify-content: center; align-items: center; text-align: center; background: rgba(192, 154, 88, 0.05);">
-              <div>
-                <div style="font-size: 2rem; margin-bottom: 12px; color: var(--accent);">🎨</div>
-                <h3 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-heading); margin-bottom: 6px;">Tüm Sanatçılarımız</h3>
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">Kataloğumuzdaki tüm usta ve çağdaş isimleri keşfedin.</p>
-                <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent);">Kataloğu Aç &rarr;</span>
+            <a href="/dergi/sanatcilar/" class="flow-card artist-flow-card" style="border-style: dashed; justify-content: center; align-items: center; text-align: center; background: rgba(192, 154, 88, 0.04); padding: 24px 20px;">
+              <div style="margin: auto 0;">
+                <div style="font-size: 2.2rem; margin-bottom: 12px;">🎨</div>
+                <span class="artist-cat-sub" style="display:block; margin-bottom: 6px;">BİRESKU SANATÇI KOLEKTİFİ</span>
+                <h3 class="artist-name-title" style="margin-bottom: 10px;">Tüm Sanatçılarımız</h3>
+                <p class="artist-card-discipline" style="min-height: auto; margin-bottom: 18px;">
+                  Kolektifimize kayıtlı sanatçılarımızın tüm portföyünü ve biyografilerini dergide keşfedin.
+                </p>
+                <span class="flow-view-all-link" style="display: inline-block;">Tüm Kataloğu İncele &rarr;</span>
               </div>
             </a>
-
           </div>
         </div>
       </section>
@@ -2356,5 +2388,6 @@
     </div>
   </div>
 
+<script src="/assets/artists-data.js?v=20261108"></script>
 </body>
 </html>
