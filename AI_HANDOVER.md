@@ -44,9 +44,28 @@ biresku/
 
 Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonları `window.ARTISTS_DATA` dizisinde saklanır. Sitedeki profil sayfaları ve vitrinler bu veriyi dinamik olarak okur.
 
-### Kayıtlı 6 Sanatçı ve Kritik Detayları:
+### Kayıtlı 7 Sanatçı ve Kritik Detayları:
 
-#### 1. Gülbin Nurgenç (`id: "gulbin-nurgenc"`) — *En Son Eklenen (En Sol / Spot 1)*
+#### 1. Mehmet Güleryüz (`id: "mehmet-guleryuz"`) — *En Son Eklenen (En Sol / Spot 1)*
+- **Unvan & Disiplin:** Mehmet Güleryüz — Çağdaş Türk Resmi, Eleştirel Figürasyon & Dışavurumculuk (Neo-Ekspresyonizm)
+- **Kategori:** Ressam & Heykeltıraş
+- **Şehir / Atölye:** İstanbul / Paris — İstanbul Atölyesi
+- **Dönem:** 1938 – 2024
+- **Önemli Bilgi:** 1938 İstanbul doğumludur. İstanbul Devlet Güzel Sanatlar Akademisi Resim Bölümü'nde Neşet Günal Atölyesi'nde öğrenim görmüş; tiyatro oyunculuğu ve dekoratörlük yapmıştır. Paris Ecole Nationale Supérieure des Beaux-Arts'ta yüksek resim ve litografi ihtisası tamamlamıştır. Uluslararası Plastik Sanatlar Derneği'nin (UPSD) kurucu başkanıdır. 2015 yılında İstanbul Modern'de büyük 'Ressam ve Resim' retrospektifi açılmıştır.
+- **Doğrulanmış Otantik Alıntı:**  
+  *"Resim yapmak benim için bir hesaplaşmadır; insanın kendi vahşetiyle, ikiyüzlülüğüyle ve toplumun dayattığı maskelerle yüzleştiği tavizsiz bir alan."*
+- **Koleksiyon Eserleri (Tam 8 Adet, Artam Antik A.Ş. Müzayede Kayıtlı & Kesin Ölçülü):**
+  1. *"Oğlum Oğlum"* — 2000 tarihli. Tuval üzerine yağlıboya, imzalı. **162 × 130 cm** (Lot ID: 52890, 390. Müzayede)
+  2. *"Turnuva"* — 1996 tarihli. Tuval üzerine yağlıboya, imzalı. **90 × 90 cm** (Lot ID: 47751, 381. Müzayede)
+  3. *"Her Şey Kontrolümüz Altında"* — Tuval üzerine yağlıboya, imzalı. **162 × 130 cm** (Lot ID: 48127, 382. Müzayede)
+  4. *"Figüratif"* — 2000 tarihli. Tuval üzerine yağlıboya, imzalı. **58 × 74 cm** (Lot ID: 48129, 382. Müzayede)
+  5. *"Untitled (İsimsiz)"* — 2020 tarihli. Tuval üzerine yağlıboya, imzalı. **65 × 54 cm** (Lot ID: 56994, 398. Müzayede)
+  6. *"Happy Hours"* — 2007 tarihli. Tuval üzerine yağlıboya, imzalı. **65 × 54 cm** (Lot ID: 54913, 394. Müzayede)
+  7. *"Portre (Erol Akyavaş)"* — 1983 tarihli. Tuval üzerine yağlıboya, imzalı. **41 × 46 cm** (Lot ID: 54837, 393. Müzayede)
+  8. *"Figüratif Kompozisyon"* — 2011 tarihli. Tuval üzerine yağlıboya, imzalı. **35 × 46 cm** (Lot ID: 60363, 405. Müzayede)
+- **Sanat Felsefesi & Estetik:** Tavizsiz eleştirel figürasyon, dışavurumcu dramatik gerilim, varoluşsal başkaldırı ve insanın içgüdüleriyle yüzleşmesi.
+
+#### 2. Gülbin Nurgenç (`id: "gulbin-nurgenc"`)
 - **Unvan & Disiplin:** Gülbin Nurgenç — Çağdaş Türk Resmi, Soyut (Abstract), Fovizm & Ekspresyonizm
 - **Kategori:** Ressam & Sanat Eğitmeni
 - **Şehir / Atölye:** İstanbul — Nurgenç Sanat Atölyesi
@@ -60,7 +79,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   *"Sanat sadece gözle görüleni tuvale aktarmak değil; hayatın zorluklarını, kuralların insanlar üzerindeki dayatmasını süzerek en yalın, en saf haline indirgeme çabasıdır. Sanatçının görevi dünyayı olduğu gibi kopyalamak değil, kendi süzgecinden geçirerek ona yeni bir kimlik kazandırmaktır."*
 - **Sanat Felsefesi & Estetik:** Çalışmalarında soyut (abstract), fovist ve ekspresyonist bir estetiği benimser, renkleri kirletmeden sahip olduğu canlılığı korumaya özen gösterir.
 
-#### 2. Prof. Süleyman Saim Tekcan (`id: "suleyman-saim-tekcan"`) — *En Son Eklenen (En Sol / Spot 1)*
+#### 3. Prof. Süleyman Saim Tekcan (`id: "suleyman-saim-tekcan"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Unvan & Disiplin:** Prof. Süleyman Saim Tekcan — Özgün Baskı Resim, Gravür & Çağdaş Türk Resmi (Atlar & Hat Serisi)
 - **Kategori:** Ressam & Özgün Baskı Ustası
 - **Şehir / Atölye:** İstanbul / Trabzon — IMOGA (İstanbul Grafik Sanatlar Müzesi) / Tekcan Atölyesi
@@ -76,7 +95,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *"Figüratif"* — Tuval üzerine yağlıboya, imzalı. 2015 tarihli. **50 × 60 cm** (Lot ID: 46317)
 - **Doğrulanmış Otantik Alıntı:** *"Sanat bir serüvendir; özgün baskı ise bu serüvenin disiplin, sabır ve bilgelikle kâğıda mühürlenen en saf halidir."*
 
-#### 3. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
+#### 4. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Dışavurumculuk & Gelincikler
 - **Profil Fotoğrafı:** `assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg` (MAG Dergisi atölye çekimi; tuval başında spatulalı yüksek çözünürlüklü fotoğraf).
 - **Gerçek Alıntı:** *"Gelincik unutmamaktır, hatırlamaktır, vefadır."* (Sanatçının kendi söyleşilerinde yayımlanmış özgün sözüdür, uydurma alıntı kullanılmamalıdır).
@@ -92,16 +111,16 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *Gelincikler (Minyatür Spatula Çalışması)* — Tuval üzerine yağlıboya, **30 × 30 cm** (2020)
   *(Not: Önceden sehven eklenen portre çalışması kaldırılmış, 8 eserin tamamı Artam Antik A.Ş. doğrulamalı gelincik temalı orijinal eserlerle yenilenmiştir).*
 
-#### 4. Tuncay Umay (`id: "tuncay-umay"`)
+#### 5. Tuncay Umay (`id: "tuncay-umay"`)
 - **Disiplin:** Denizlerin Devinimi & Sürrealist Satranç Manifestosu
 - **ÖNEMLİ KURAL (Akademisyen DEĞİL):** Kullanıcı talimatı: *"akademisyen değilki o nerden çıktı"*. Tuncay Umay bağımsız ressam ve Biresku'nun kurucu sanatçısıdır; biyografisinde veya unvanında "akademisyen" ifadesi **kesinlikle geçmemelidir**.
 - **Kayıtlı Eser Sayısı:** 13 Eser
 
-#### 5. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
+#### 6. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
 - **Disiplin:** Çağdaş Türk Resmi, Dışavurumcu Figürasyon & Dinamik Kompozisyon
 - **Kayıtlı Eser Sayısı:** 13 Eser (Mustafa Ayaz Plastik Sanatlar Müzesi koleksiyonu referanslı)
 
-#### 6. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
+#### 7. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı
 - **Kayıtlı Eser Sayısı:** 13 Eser (Marmaris Serisi, Viyolonsel Çalan Kadın, Müzisyenler Trio vb.)
 

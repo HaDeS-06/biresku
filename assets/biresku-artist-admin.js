@@ -672,11 +672,11 @@
         if (idx !== -1) {
           window.ARTISTS_DATA[idx] = artistData;
         } else {
-          window.ARTISTS_DATA.unshift(artistData);
+          window.ARTISTS_DATA.push(artistData);
         }
       } else {
         // Yeni Sanatçı: Daima en sola (1. sıraya) ekle
-        window.ARTISTS_DATA.unshift(artistData);
+        window.ARTISTS_DATA.push(artistData);
       }
 
       // LocalStorage'a kalıcı olarak kaydet

@@ -235,78 +235,78 @@ window.ARTISTS_DATA = [
     ],
     "artworks": [
       {
-            "id": "cetinkaya-1",
-            "title": "Gelincikler",
-            "technique": "Tuval üzerine yağlıboya",
-            "dimensions": "80 x 100 cm",
-            "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26"
+        "id": "cetinkaya-1",
+        "title": "Gelincikler",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "80 x 100 cm",
+        "year": "2022",
+        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26"
       },
       {
-            "id": "cetinkaya-2",
-            "title": "Gelincikler",
-            "technique": "Tuval üzerine yağlıboya",
-            "dimensions": "136 x 56 cm",
-            "year": "2021",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26"
+        "id": "cetinkaya-2",
+        "title": "Gelincikler",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "136 x 56 cm",
+        "year": "2021",
+        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26"
       },
       {
-            "id": "cetinkaya-3",
-            "title": "Gelincikler",
-            "technique": "Tuval üzerine yağlıboya",
-            "dimensions": "70 x 70 cm",
-            "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26"
+        "id": "cetinkaya-3",
+        "title": "Gelincikler",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "70 x 70 cm",
+        "year": "2022",
+        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26"
       },
       {
-            "id": "cetinkaya-4",
-            "title": "Gelincikler",
-            "technique": "Tuval üzerine yağlıboya",
-            "dimensions": "50 x 35 cm",
-            "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26"
+        "id": "cetinkaya-4",
+        "title": "Gelincikler",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "50 x 35 cm",
+        "year": "2022",
+        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26"
       },
       {
-            "id": "cetinkaya-5",
-            "title": "Gelincikler",
-            "technique": "Tuval üzerine yağlıboya",
-            "dimensions": "100 x 100 cm",
-            "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26"
+        "id": "cetinkaya-5",
+        "title": "Gelincikler",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "100 x 100 cm",
+        "year": "2022",
+        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26"
       },
       {
-            "id": "cetinkaya-6",
-            "title": "Gelincikler",
-            "technique": "Tuval üzerine yağlıboya",
-            "dimensions": "60 x 30 cm",
-            "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26"
+        "id": "cetinkaya-6",
+        "title": "Gelincikler",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "60 x 30 cm",
+        "year": "2022",
+        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26"
       },
       {
-            "id": "cetinkaya-7",
-            "title": "Gelincikler",
-            "technique": "Tuval üzerine yağlıboya",
-            "dimensions": "50 x 50 cm",
-            "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26"
+        "id": "cetinkaya-7",
+        "title": "Gelincikler",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "50 x 50 cm",
+        "year": "2022",
+        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26"
       },
       {
-            "id": "cetinkaya-8",
-            "title": "Gelincikler",
-            "technique": "Tuval üzerine yağlıboya",
-            "dimensions": "30 x 30 cm",
-            "year": "2022",
-            "image": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26",
-            "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26"
+        "id": "cetinkaya-8",
+        "title": "Gelincikler",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "30 x 30 cm",
+        "year": "2022",
+        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26"
       }
-],
+    ],
     "addedDate": "2026-11-08"
   },
   {
@@ -462,6 +462,101 @@ window.ARTISTS_DATA = [
     ],
     "addedDate": "2026-11-08",
     "period": "1970 – Günümüz"
+  },
+  {
+    "id": "mehmet-guleryuz",
+    "name": "Mehmet Güleryüz",
+    "discipline": "Çağdaş Türk Resmi, Eleştirel Figürasyon & Dışavurumculuk (Neo-Ekspresyonizm)",
+    "category": "Ressam & Heykeltıraş",
+    "city": "İstanbul / Paris",
+    "studio": "İstanbul Atölyesi",
+    "coverImage": "/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261108_v31",
+    "shortBio": "Türk çağdaş resminde eleştirel figürasyonun ve dışavurumcu başkaldırının anıtsal ustası; insan doğasının karmaşasını, tutkularını ve çelişkilerini tavizsiz bir pentür gücüyle tuvale aktaran bilge usta.",
+    "quote": "Resim yapmak benim için bir hesaplaşmadır; insanın kendi vahşetiyle, ikiyüzlülüğüyle ve toplumun dayattığı maskelerle yüzleştiği tavizsiz bir alan.",
+    "biography": [
+      "1938 yılında İstanbul'da doğan Mehmet Güleryüz, 1958-1966 yılları arasında İstanbul Devlet Güzel Sanatlar Akademisi Resim Bölümü'nde Neşet Günal Atölyesi'nde öğrenim gördü. Akademi yıllarında aynı zamanda profesyonel tiyatro oyunculuğu ve dekoratörlük yaparak tiyatro sahnesinin dramatik kurgusunu, insan psikolojisini ve beden dilini derinlemesine inceledi. 1970-1975 yılları arasında devlet bursuyla Paris'e giderek Ecole Nationale Supérieure des Beaux-Arts'ta yüksek resim ve litografi ihtisası yaptı; Jean-Eugène Bersier atölyesinde gravür çalıştı.",
+      "1980'lerden itibaren New York, Paris, Brüksel ve İstanbul arasında sanatsal üretimini sürdüren Güleryüz; 1989-1992 yıllarında Bilkent Üniversitesi Güzel Sanatlar Fakültesi'nde ders verdi. 1988'de kurulan Uluslararası Plastik Sanatlar Derneği'nin (UPSD) kurucu başkanlığını yürüttü ve Türkiye'de sanatçı haklarının korunmasında öncü rol üstlendi. 2015 yılında İstanbul Modern'de düzenlenen kapsamlı 'Ressam ve Resim' retrospektif sergisiyle yarım asrı aşan sanat serüveni geniş kitlelerle buluştu. Eleştirel figüratif üslubu, toplumsal dinamikleri ve insanın varoluşsal çelişkilerini sarsıcı bir görsel dille ele alan Güleryüz, 2024 yılında Paris'te vefat etmiştir."
+    ],
+    "philosophy": [
+      "Mehmet Güleryüz'ün sanat anlayışının merkezinde tavizsiz bir 'eleştirel figürasyon' ve 'varoluşsal başkaldırı' yer alır. Güleryüz için figür, yalnızca estetik bir form veya anatomik bir beden değil; insanın içgüdülerini, toplumsal rollerini, zaaflarını ve güç ilişkilerini teşhir eden dramatik bir sahnedir. Çizgilerindeki dinamizm ve boya katmanlarındaki agresif enerji, izleyiciyi pasif bir seyirci olmaktan çıkarıp doğrudan tablonun içindeki gerilimle yüzleşmeye zorlar.",
+      "Sanatında tiyatro geçmişinin getirdiği jest, mimik ve gövde devinimi büyük bir role sahiptir. Hayvan ve insan melezleri, maskeler, güç savaşları ve ironik sahneler aracılığıyla modern insanın yabancılaşmasını irdeler. Güleryüz'e göre resim, süsleyici veya avutucu bir nesne olamaz; aksine insanı sarsan, kendi gerçekliğiyle baş başa bırakan ve hiçbir uzlaşmaya yanaşmayan sahici bir eylemdir."
+    ],
+    "artworks": [
+      {
+        "id": "guleryuz-1",
+        "title": "Oğlum Oğlum",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "162 × 130 cm",
+        "year": "2000",
+        "image": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v31",
+        "imageUrl": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v31"
+      },
+      {
+        "id": "guleryuz-2",
+        "title": "Turnuva",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "90 × 90 cm",
+        "year": "1996",
+        "image": "/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v31",
+        "imageUrl": "/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v31"
+      },
+      {
+        "id": "guleryuz-3",
+        "title": "Her Şey Kontrolümüz Altında",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "162 × 130 cm",
+        "year": "1998",
+        "image": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v31",
+        "imageUrl": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v31"
+      },
+      {
+        "id": "guleryuz-4",
+        "title": "Figüratif",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "58 × 74 cm",
+        "year": "2000",
+        "image": "/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v31",
+        "imageUrl": "/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v31"
+      },
+      {
+        "id": "guleryuz-5",
+        "title": "Untitled (İsimsiz)",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "65 × 54 cm",
+        "year": "2020",
+        "image": "/assets/mehmet-guleryuz/untitled-65x54.jpg?v=20261108_v31",
+        "imageUrl": "/assets/mehmet-guleryuz/untitled-65x54.jpg?v=20261108_v31"
+      },
+      {
+        "id": "guleryuz-6",
+        "title": "Happy Hours",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "65 × 54 cm",
+        "year": "2007",
+        "image": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v31",
+        "imageUrl": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v31"
+      },
+      {
+        "id": "guleryuz-7",
+        "title": "Portre (Erol Akyavaş)",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "41 × 46 cm",
+        "year": "1983",
+        "image": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v31",
+        "imageUrl": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v31"
+      },
+      {
+        "id": "guleryuz-8",
+        "title": "Figüratif Kompozisyon",
+        "technique": "Tuval üzerine yağlıboya",
+        "dimensions": "35 × 46 cm",
+        "year": "2011",
+        "image": "/assets/mehmet-guleryuz/figuratif-kompozisyon-35x46.jpg?v=20261108_v31",
+        "imageUrl": "/assets/mehmet-guleryuz/figuratif-kompozisyon-35x46.jpg?v=20261108_v31"
+      }
+    ],
+    "addedDate": "2026-11-08",
+    "period": "1938 – 2024"
   }
 ];
 
