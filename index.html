@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biresku | Yönlendiriliyorsunuz</title>
-  <meta name="description" content="Biresku Sanat & Kültür Platformu resmi karşılama ve yönlendirme sayfası.">
-  
-  <meta http-equiv="refresh" content="4;url=/dergi">
+  <title>BİRESKU | Birleşmiş Ressamlar Kulübü Sanat Yerleşkesi</title>
+  <meta name="description" content="Biresku: Birleşmiş Ressamlar Kulübü resmi ana portalı. Biresku Dergi, Müzayede ve Sanatçı Kulübü salonlarına açılan dijital sanat merkezi.">
 
   <script>
     (function() {
@@ -21,7 +19,7 @@
     })();
   </script>
 
-  <!-- Google Fonts: Editorial Serif & Clean Sans -->
+  <!-- Google Fonts: Editorial Serif & Clean Sans (Dergi ile Birebir Aynı) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
@@ -29,13 +27,24 @@
   <style>
     :root {
       --bg: #0f1013;
-      --card-bg: #15161b;
+      --bg-surface: #15161b;
+      --bg-card: #1c1d24;
+      --bg-hover: #1f212a;
       --border: #242630;
-      --accent: #c09a58;
-      --accent-hover: #d8b26e;
-      --text: #f0f1f5;
+      --border-accent: #3a3d4d;
+      --text-main: #f0f1f5;
+      --text-heading: #ffffff;
       --text-muted: #9fa3b2;
       --text-dim: #646877;
+      --accent: #c09a58;
+      --accent-hover: #d8b26e;
+      --editorial-kicker: #c94a3b;
+      --nav-bg: rgba(15, 16, 19, 0.96);
+      --scrollbar-thumb: #2f323f;
+      --card-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.7);
+      --badge-bg: rgba(192, 154, 88, 0.1);
+      --badge-border: rgba(192, 154, 88, 0.25);
+      
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-reading: 'Cormorant Garamond', Garamond, serif;
       --font-sans: 'Inter', -apple-system, sans-serif;
@@ -43,192 +52,808 @@
 
     [data-theme="light"] {
       --bg: #f8f7f4;
-      --card-bg: #ffffff;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --bg-hover: #f1efe9;
       --border: #e2ddd4;
-      --accent: #a8813a;
-      --accent-hover: #8e6826;
-      --text: #1d1e22;
+      --border-accent: #c8c1b4;
+      --text-main: #1d1e22;
+      --text-heading: #0f1013;
       --text-muted: #535665;
       --text-dim: #7f8393;
+      --accent: #a8813a;
+      --accent-hover: #8e6826;
+      --editorial-kicker: #c0392b;
+      --nav-bg: rgba(248, 247, 244, 0.95);
+      --scrollbar-thumb: #d2cdc4;
+      --card-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.08);
+      --badge-bg: rgba(168, 129, 58, 0.08);
+      --badge-border: rgba(168, 129, 58, 0.22);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.25s ease, color 0.25s ease;
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      padding: 24px;
-      position: relative;
-      transition: background-color 0.25s ease, color 0.25s ease;
+      flex-direction: column;
     }
 
-    .gateway-card {
-      max-width: 460px;
+    a { color: inherit; text-decoration: none; transition: color 0.15s ease; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 24px;
       width: 100%;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 44px 36px 36px;
-      text-align: center;
-      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
     }
 
-    .brand-kicker {
-      font-size: 0.72rem;
+    /* ÜST BANNER (RESMİ BİRESKU TABLO ÇİZİMİ) */
+    .brand-hero-banner {
+      width: 100%;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-hero-banner img {
+      width: 100%;
+      max-height: 190px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ÜST MENÜ (SITE-NAV) */
+    .site-nav {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 58px;
+    }
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-list a {
+      display: block;
+      padding: 16px 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .nav-list a:hover {
+      color: var(--text-heading);
+      border-bottom-color: var(--accent);
+    }
+    .nav-list a.active {
+      color: var(--text-heading);
+      border-bottom-color: var(--accent);
+    }
+
+    /* GECE / GÜNDÜZ MODU BUTONU */
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .theme-toggle-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .theme-toggle-icon { display: inline-flex; align-items: center; }
+    [data-theme="dark"] .theme-toggle-moon { display: none; }
+    [data-theme="dark"] .theme-toggle-sun { display: inline-flex; }
+    [data-theme="light"] .theme-toggle-sun { display: none; }
+    [data-theme="light"] .theme-toggle-moon { display: inline-flex; }
+
+    /* RESEPSİYON / MALİKÂNE KAPISI (HERO SECTION) */
+    .mansion-gate-section {
+      padding: 56px 0 36px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg) 100%);
+    }
+    .gate-kicker {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 4px;
+      margin-bottom: 18px;
+    }
+    .gate-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      line-height: 1.18;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .gate-desc {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+    .reception-stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .reception-stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      color: var(--text-main);
+    }
+    .reception-stat-pill strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ODALAR / SALONLAR BÖLÜMÜ */
+    .rooms-section {
+      padding: 60px 0 70px;
+      flex: 1;
+    }
+    .section-headline-wrap {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .section-kicker {
+      font-size: 0.74rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 14px;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-heading);
     }
 
-    .brand-logo {
-      font-family: var(--font-serif);
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: #ffffff;
-      line-height: 1;
-      margin-bottom: 10px;
+    /* 3 ODALI SALON IZGARASI */
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .room-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 34px 30px;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .room-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow);
+    }
+
+    .room-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .room-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .room-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 12px;
       text-transform: uppercase;
     }
-
-    .brand-subtitle {
-      font-family: var(--font-reading);
-      font-size: 1.15rem;
-      font-style: italic;
+    .status-active {
+      background: rgba(46, 204, 113, 0.12);
+      color: #2ecc71;
+      border: 1px solid rgba(46, 204, 113, 0.3);
+    }
+    .status-pending {
+      background: rgba(192, 154, 88, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(192, 154, 88, 0.3);
+    }
+    .status-locked {
+      background: rgba(149, 165, 166, 0.12);
       color: var(--text-muted);
-      margin-bottom: 28px;
+      border: 1px solid var(--border);
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
     }
 
-    .redirect-status {
-      background: #111217;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 14px 18px;
+    .room-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .room-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
       margin-bottom: 24px;
     }
 
-    .redirect-status p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+    .room-highlights {
+      list-style: none;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-
-    .countdown-val {
+    .room-highlights li {
+      font-size: 0.84rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .room-bullet {
       color: var(--accent);
       font-weight: 700;
+      font-size: 0.95rem;
     }
 
-    .progress-track {
-      width: 100%;
-      height: 2px;
-      background: var(--border);
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background: var(--accent);
-      transition: width 0.1s linear;
-    }
-
-    .enter-btn {
+    .room-action-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       width: 100%;
-      padding: 14px 20px;
+      padding: 13px 20px;
       background: var(--accent);
-      color: #0b0c10;
-      font-size: 0.88rem;
+      color: #0f1013 !important;
+      font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      border-radius: 2px;
+      border-radius: 3px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .room-action-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    .room-action-btn.secondary {
+      background: var(--bg-card);
+      color: var(--text-main) !important;
+      border: 1px solid var(--border-accent);
+    }
+    .room-action-btn.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent) !important;
+      background: var(--bg-hover);
+    }
+
+    /* RESEPSİYON BİLGİ & DAVET BÖLÜMÜ */
+    .reception-info-card {
+      margin-top: 50px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 34px 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+    }
+    .reception-info-text h3 {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+    }
+    .reception-info-text p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      line-height: 1.65;
+    }
+    .reception-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 3px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .reception-cta-btn:hover {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #0f1013 !important;
+    }
+
+    /* FOOTER (BİRESKU RESMİ TELİF VE BAĞLANTILARI) */
+    .site-footer {
+      padding: 36px 0 28px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: var(--bg-surface);
+      text-align: center;
+      margin-top: auto;
+    }
+    .footer-legal-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+    .footer-brand-title {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .footer-link-item {
+      color: var(--text-main);
       text-decoration: none;
-      transition: background 0.15s ease;
+      border-bottom: 1px dashed var(--border-accent);
+      padding-bottom: 2px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+    }
+    .footer-link-item:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* MODAL POPUP */
+    .biresku-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .biresku-modal-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+      animation: modalFade 0.25s ease;
+    }
+    @keyframes modalFade {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .biresku-modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .biresku-modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+    .biresku-modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.6rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .biresku-modal-close:hover { color: var(--accent); }
+    .biresku-modal-body {
+      padding: 24px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+    .biresku-modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .biresku-modal-btn {
+      background: var(--accent);
+      color: #0f1013 !important;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      padding: 8px 18px;
+      border-radius: 3px;
+      text-decoration: none;
       cursor: pointer;
       border: none;
     }
 
-    .enter-btn:hover {
-      background: var(--accent-hover);
-    }
-
-    .target-hint {
-      display: inline-block;
-      margin-top: 16px;
-      font-size: 0.78rem;
-      color: var(--text-dim);
-    }
-    .target-hint:hover { color: var(--accent); }
-
-    .card-footer {
-      margin-top: 32px;
-      padding-top: 18px;
-      border-top: 1px solid var(--border);
-      font-size: 0.75rem;
-      color: var(--text-dim);
+    @media (max-width: 960px) {
+      .rooms-grid { grid-template-columns: 1fr; }
+      .reception-info-card { flex-direction: column; text-align: center; }
+      .nav-list { gap: 16px; }
     }
   </style>
 </head>
 <body>
 
-  <main class="gateway-card">
-    <div class="brand-kicker">Resmi Giriş Portalı</div>
-    <div style="margin-bottom: 24px; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
-      <img src="/assets/biresku-banner.jpg" alt="BİRESKU - Birleşmiş Ressamlar Kulübü" style="width: 100%; height: auto; display: block;">
-    </div>
+  <!-- RESMİ TABLO ÇİZİMİ ÜST BANNER -->
+  <header class="brand-hero-banner">
+    <img src="/assets/biresku-banner.jpg" alt="BİRESKU - Birleşmiş Ressamlar Kulübü">
+  </header>
 
-    <div class="redirect-status">
-      <p><span class="countdown-val" id="countNum">4</span> saniye içinde dergi sayfasına aktarılıyorsunuz...</p>
-      <div class="progress-track">
-        <div class="progress-bar" id="barFill"></div>
+  <!-- ÜST MENÜ (SITE-NAV) -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <ul class="nav-list">
+        <li><a href="/" class="active">Ana Yerleşke</a></li>
+        <li><a href="/dergi/">Biresku Dergi</a></li>
+        <li><a href="#muzayede" onclick="openModal('auctionModal'); return false;">Müzayede</a></li>
+        <li><a href="#sohbet" onclick="openModal('clubModal'); return false;">Sanatçı Odası</a></li>
+        <li><a href="/iletisim/">İletişim</a></li>
+      </ul>
+      <div>
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
+          <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-text">Gündüz</span>
+        </button>
       </div>
     </div>
+  </nav>
 
-    <a href="/dergi" class="enter-btn">
-      <span>Dergiyi Aç</span>
-      <span>&rarr;</span>
-    </a>
+  <!-- MALİKÂNE KAPISI & RESEPSİYON KARŞILAMA -->
+  <section class="mansion-gate-section">
+    <div class="container">
+      <span class="gate-kicker">BİRESKU SANAT YERLEŞKESİ</span>
+      <h1 class="gate-title">Birleşmiş Ressamlar Kulübü Ana Kapısı</h1>
+      <p class="gate-desc">
+        Türk çağdaş sanatını, ressamlarımızın bağımsız üretimlerini ve koleksiyonerleri tek çatı altında toplayan ana merkez. 
+        Giriş lobimizdesiniz; aşağıdaki özel salonlardan dilediğinize doğrudan geçiş yapabilirsiniz.
+      </p>
 
-    <div>
-      <a href="/dergi" class="target-hint">Hedef: biresku.com/dergi</a>
+      <div class="reception-stats-bar">
+        <div class="reception-stat-pill">
+          <span>🏛️ Faal Salonlar:</span>
+          <strong>3 Özel Oda</strong>
+        </div>
+        <div class="reception-stat-pill">
+          <span>🎨 Arşiv & Koleksiyon:</span>
+          <strong>Güncel Seçki</strong>
+        </div>
+        <div class="reception-stat-pill">
+          <span>🛡️ Sanat İnisiyatifi:</span>
+          <strong>Bağımsız Platform</strong>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <footer class="card-footer">
-      &copy; 2026 BİRESKU
-    </footer>
+  <!-- ODALAR (SALONLAR) -->
+  <main class="rooms-section">
+    <div class="container">
+      
+      <div class="section-headline-wrap">
+        <div class="section-kicker">BİRESKU ODALARI</div>
+        <h2 class="section-title">Yerleşke Salonları</h2>
+      </div>
+
+      <div class="rooms-grid">
+
+        <!-- 1. ODA: BİRESKU DERGİ -->
+        <article class="room-card" id="dergi-odasi">
+          <div>
+            <div class="room-top">
+              <span class="room-kicker">YAYIN & DERGİ SALONU</span>
+              <span class="room-status-badge status-active">
+                <span class="status-dot"></span>
+                <span>Açık Salon</span>
+              </span>
+            </div>
+            <h3 class="room-title">Biresku Sanat Dergisi</h3>
+            <p class="room-desc">
+              Güncel sanat haberleri, sergi bültenleri, sanatçıların biyografi ve felsefeleri ile orijinal koleksiyon eserlerinin yer aldığı ana yayın odamız.
+            </p>
+            <ul class="room-highlights">
+              <li><span class="room-bullet">✦</span> <span>Güncel Sanat Haberleri & Eleştiriler</span></li>
+              <li><span class="room-bullet">✦</span> <span>Usta ve Çağdaş Sanatçılar Portföyü</span></li>
+              <li><span class="room-bullet">✦</span> <span>Haftanın Yeni Eklenen Sanatçıları Vitrini</span></li>
+            </ul>
+          </div>
+          <div>
+            <a href="/dergi/" class="room-action-btn">
+              <span>Salona Giriş Yap</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. ODA: BİRESKU MÜZAYEDE -->
+        <article class="room-card" id="muzayede-odasi">
+          <div>
+            <div class="room-top">
+              <span class="room-kicker">AÇIK ARTIRMA & ESER SALONU</span>
+              <span class="room-status-badge status-pending">
+                <span class="status-dot"></span>
+                <span>Küratör Hazırlığında</span>
+              </span>
+            </div>
+            <h3 class="room-title">Biresku Müzayede</h3>
+            <p class="room-desc">
+              Sertifikalı tuvaller, özgün desenler ve seçkin koleksiyon parçalarının sanatseverlerle şeffaf kurallarla buluşacağı dijital müzayede odası.
+            </p>
+            <ul class="room-highlights">
+              <li><span class="room-bullet">✦</span> <span>Küratör Onaylı Özgün Sanat Eserleri</span></li>
+              <li><span class="room-bullet">✦</span> <span>Şeffaf Provinans & Durum Raporu</span></li>
+              <li><span class="room-bullet">✦</span> <span>Canlı ve Süreli Açık Artırma Oturumları</span></li>
+            </ul>
+          </div>
+          <div>
+            <button type="button" class="room-action-btn secondary" onclick="openModal('auctionModal')">
+              <span>Küratör Seçkisi Hazırlanıyor</span>
+              <span>ℹ</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. ODA: BİRESKU SOHBET & KULÜP -->
+        <article class="room-card" id="sohbet-odasi">
+          <div>
+            <div class="room-top">
+              <span class="room-kicker">SANATÇI ÖZEL ALANI</span>
+              <span class="room-status-badge status-locked">
+                <span class="status-dot"></span>
+                <span>Sanatçı Odası</span>
+              </span>
+            </div>
+            <h3 class="room-title">Biresku Sohbet & Kulüp</h3>
+            <p class="room-desc">
+              Yalnızca kayıtlı ressamların ve akademisyenlerin kendi aralarında fikir alışverişi yapabileceği, atölye tekniklerini ve üretimlerini paylaşabileceği özel sanatçı ağı.
+            </p>
+            <ul class="room-highlights">
+              <li><span class="room-bullet">✦</span> <span>Sanatçılar Arası Özel Diyalog & Tartışma</span></li>
+              <li><span class="room-bullet">✦</span> <span>Atölye Süreçleri ve Teknik Paylaşımı</span></li>
+              <li><span class="room-bullet">✦</span> <span>Kolektif Proje & Sergi Birliktelikleri</span></li>
+            </ul>
+          </div>
+          <div>
+            <button type="button" class="room-action-btn secondary" onclick="openModal('clubModal')">
+              <span>Sanatçı Başvurusu Yap</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- RESEPSİYON DANIŞMA KARTI -->
+      <section class="reception-info-card">
+        <div class="reception-info-text">
+          <h3>Resepsiyon & Sanatçı Başvuruları</h3>
+          <p>
+            Biresku yerleşkesinde eserlerinizi sergilemek, dergi sayfalarında yer almak veya yaklaşan müzayede seçkisine dahil olmak isteyen sanatçılarımız resepsiyonumuz üzerinden başvuru yapabilir.
+          </p>
+        </div>
+        <div>
+          <a href="/iletisim/" class="reception-cta-btn">
+            <span>İletişime Geçin &rarr;</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
   </main>
 
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-legal-line">
+        &copy; 2026 <strong class="footer-brand-title">BİRESKU</strong> | <a href="/gizlilik-politikasi/" class="footer-link-item">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item">İletişim</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MÜZAYEDE BİLGİ MODALI -->
+  <div id="auctionModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="auctionModalTitle">
+    <div class="biresku-modal-box">
+      <div class="biresku-modal-header">
+        <h3 id="auctionModalTitle" class="biresku-modal-title">Biresku Müzayede Salonu</h3>
+        <button type="button" class="biresku-modal-close" onclick="closeModal('auctionModal')" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="biresku-modal-body">
+        <p><strong>Biresku Müzayede Salonu</strong> hazırlık aşamasındadır.</p>
+        <p style="margin-top: 12px;">
+          Küratör kurulumuz, Türk çağdaş sanatının saygın isimleri ve gelecek vadeden yeteneklerinin özgün eserlerini titizlikle belgelemekte ve dijital açık artırma standartlarını oluşturmaktadır.
+        </p>
+        <p style="margin-top: 12px;">
+          Koleksiyonunuzdaki eserleri müzayede havuzuna sunmak veya ilk oturum duyurularından haberdar olmak için iletişim sekmesinden bize ulaşabilirsiniz.
+        </p>
+      </div>
+      <div class="biresku-modal-footer">
+        <button type="button" class="biresku-modal-btn" onclick="closeModal('auctionModal')">Anladım</button>
+        <a href="/iletisim/" class="biresku-modal-btn" style="background: var(--bg-card); color: var(--text-main) !important; border: 1px solid var(--border-accent);">İletişime Geç</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SANATÇI ODASI BİLGİ MODALI -->
+  <div id="clubModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="clubModalTitle">
+    <div class="biresku-modal-box">
+      <div class="biresku-modal-header">
+        <h3 id="clubModalTitle" class="biresku-modal-title">Biresku Sohbet & Sanatçı Kulübü</h3>
+        <button type="button" class="biresku-modal-close" onclick="closeModal('clubModal')" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="biresku-modal-body">
+        <p><strong>Sanatçı Sohbet Odası</strong>, Biresku tüzüğüne uygun biçimde yalnızca davetli ve onaylı sanatçıların erişimine açık olan kapalı devre bir sanatçı ağıdır.</p>
+        <p style="margin-top: 12px;">
+          Bu odada ressamlar atölye çalışmalarını, malzeme ve teknik deneyimlerini, güncel sergi projelerini meslektaşlarıyla paylaşır.
+        </p>
+        <p style="margin-top: 12px;">
+          Kulüp odasında yer almak ve sanatçı profilinizi oluşturmak için sanatçı başvuru formunu doldurabilirsiniz.
+        </p>
+      </div>
+      <div class="biresku-modal-footer">
+        <button type="button" class="biresku-modal-btn" onclick="closeModal('clubModal')">Kapat</button>
+        <a href="/iletisim/" class="biresku-modal-btn">Sanatçı Başvurusu Yap &rarr;</a>
+      </div>
+    </div>
+  </div>
+
   <script>
-    const TARGET = "/dergi";
-    const TOTAL_MS = 4000;
-    const start = Date.now();
-    const countEl = document.getElementById("countNum");
-    const fillEl = document.getElementById("barFill");
+    // TEMA YÖNETİMİ (GÜNDÜZ / GECE)
+    function initTheme() {
+      const toggleBtn = document.getElementById("themeToggleBtn");
+      if (!toggleBtn) return;
+      const textSpan = toggleBtn.querySelector(".theme-toggle-text");
 
-    const timer = setInterval(() => {
-      const elapsed = Date.now() - start;
-      const pct = Math.min((elapsed / TOTAL_MS) * 100, 100);
-      fillEl.style.width = pct + "%";
-
-      const left = Math.max(0, Math.ceil((TOTAL_MS - elapsed) / 1000));
-      countEl.textContent = left;
-
-      if (elapsed >= TOTAL_MS) {
-        clearInterval(timer);
-        window.location.href = TARGET;
+      function updateBtn(theme) {
+        if (textSpan) {
+          textSpan.textContent = (theme === "light") ? "Gece" : "Gündüz";
+        }
       }
-    }, 50);
+
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      updateBtn(current);
+
+      toggleBtn.addEventListener("click", () => {
+        const active = document.documentElement.getAttribute("data-theme") || "dark";
+        const next = (active === "dark") ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("biresku-theme", next);
+        updateBtn(next);
+      });
+    }
+
+    // MODAL YÖNETİMİ
+    function openModal(modalId) {
+      const el = document.getElementById(modalId);
+      if (el) el.style.display = "flex";
+    }
+    function closeModal(modalId) {
+      const el = document.getElementById(modalId);
+      if (el) el.style.display = "none";
+    }
+
+    window.addEventListener("click", (e) => {
+      if (e.target.classList.contains("biresku-modal-overlay")) {
+        e.target.style.display = "none";
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initTheme();
+    });
   </script>
 </body>
 </html>
