@@ -212,8 +212,23 @@ Kullanıcının kesin talimatı gereği:
   4. **Dosya Güvenliği:** Yalnızca `image/*` MIME türleri ve maksimum 5MB dosya boyutu sınırı uygulanır.
   5. **ID Sanitizasyonu:** Sanatçı slug'ı `^[a-z0-9\-]+$` kuralına göre otomatik temizlenir.
 
-### C. Kullanım ve Yetenekler
-1. **Sol Üstteki `+` Kartına Tıklayarak Ekleme:** Sanatçılarımız vitrininde en sol üstteki `+` kartına tıklandığında boş şablon açılır.
+### C. Canlı Görsel Stüdyo & Profil Sayfası Birebir Şablon Düzeneği (In-Place Visual Studio)
+Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela biyonun altı boş olucak ben onu doldurucam gibi düşün"* talimatı doğrultusunda:
+- Admin sol üstteki `+` kartına veya mevcut bir sanatçının `✏️ Düzenle` butonuna bastığında, harici bir pop-up yerine **Biresku Profil Sayfası ile 1:1 birebir aynı görsel düzende** Canlı Görsel Stüdyo açılır.
+- **Hero Alanı:** Fotoğraf alanına tıklandığında doğrudan bilgisayardan görsel seçilir/yüklenir; başlık, kategori ve disiplin alanları doğrudan sayfa tipografisi içinde yazılabilir.
+- **Biyografi & Sanatsal Yolculuk Kartı:** Sol taraftaki editoryal kartın altında boş ve şık bir metin alanı yer alır; yönetici doğrudan biyografiyi buraya yazar veya düzenler.
+- **Hayata ve Sanata Bakışı Kartı:** Sağ taraftaki altın çerçeveli tırnak içi alıntı kutusu ve felsefe metin alanı doğrudan profil sayfasındaki gibi doldurulur.
+- **Eser Koleksiyonu:** Gerçek profil sayfasındaki grid düzeninde eser kartları yer alır; görsel yükleme, eser adı, tekniği, santimetre (cm) ölçüsü ve yılı doğrudan kartın içine yazılır.
+- **Üst Sticky Yönetici Çubuğu:**
+  - `← Kataloğa Dön (Vazgeç)`
+  - Açılır sanatçı seçici (kayıtlı sanatçılar arasında anında geçiş)
+  - `⚡ Örnek Taslak Doldur`
+  - `🧹 Temizle`
+  - `💾 Vitrine Kaydet & Yayınla (Canlı)`: Kaydedildiği anda vitrini günceller ve sanatçının canlı yayınlanan profil sayfasına geçiş yapar.
+  - `🗑️ Sanatçıyı Sil`
+
+### D. Kullanım ve Yetenekler
+1. **Sol Üstteki `+` Kartına Tıklayarak Ekleme:** Sanatçılarımız vitrininde en sol üstteki `+` kartına tıklandığında doğrudan bu canlı profil şablonu açılır; biyo ve alıntı alanları boş olarak yöneticiyi bekler.
 2. **Eski Eklenen Sanatçıları Düzenleme (Edit Flow):**
    - Her sanatçı kartının üzerindeki `✏️ Düzenle` butonuna basıldığında o sanatçının tüm bilgileri (biyo, felsefe, alıntı, profil resmi, tüm eserleri ve cm boyutları) forma yüklenir.
    - Formun üstündeki açılır menüden (`#studioArtistSelector`) kayıtlı tüm sanatçılar arasında anında geçiş yapılabilir veya "Yeni Sanatçı Ekle" moduna dönülebilir.

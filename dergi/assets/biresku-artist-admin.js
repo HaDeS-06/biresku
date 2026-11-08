@@ -1,14 +1,16 @@
 /**
- * biresku-artist-admin.js - Biresku Gizli Admin Sanatçı Yönetim & Şablon Motoru
- * --------------------------------------------------------------------------
+ * biresku-artist-admin.js - Biresku Gizli Admin Sanatçı Yönetim & Canlı Görsel Şablon Stüdyosu
+ * ------------------------------------------------------------------------------------------
  * GİZLİLİK VE GÜVENLİK STANDARTLARI:
- * 1. Kaynak Kod Gizliliği: HTML dosyalarında statik hiçbir buton veya "+" kartı yer almaz.
+ * 1. Kaynak Kod Gizliliği: HTML dosyalarında statik hiçbir buton, form veya stüdyo yer almaz.
  * 2. Çalışma Zamanı Enjeksiyonu: Yalnızca yetkili Admin (ardaumay06@gmail.com / role: admin)
- *    giriş yaptığında JavaScript ile DOM'a sol üstte "+" kartı ve "Düzenle" butonları enjekte edilir.
- * 3. Oturum Yoksa Sıfır İz: Giriş yapılmadığında DOM'da veya HTML'de hiçbir iz bulunamaz.
- * 4. Mevcut Sanatçıları Düzenleme: Eski eklenen tüm sanatçılar (biyo, felsefe, alıntı, eserler)
- *    doğrudan seçilip güncellenebilir veya silinebilir.
- * 5. Tam XSS Koruması: escapeHtml, URL şema kontrolü ve parametrik sanitizasyon.
+ *    giriş yaptığında JavaScript ile DOM'a sol üstte "+" kartı, "Düzenle" butonları ve
+ *    profil sayfasıyla 1:1 birebir aynı In-Place Canlı Görsel Stüdyo enjekte edilir.
+ * 3. Birebir Profil Görünümü (Photo 2 / In-Place Visual Editor):
+ *    Admin biyografinin, alıntının, sanat felsefesinin ve eserlerin altını doğrudan
+ *    profil sayfasının kendi estetik kartları ve tipografisi içinde boş olarak görür
+ *    ve doğrudan doldurur / günceller.
+ * 4. Tam XSS Koruması: escapeHtml, URL şema kontrolü ve parametrik sanitizasyon.
  */
 
 (function(window) {
@@ -17,7 +19,7 @@
   const STORAGE_KEY = 'biresku_custom_artists_v1';
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
 
-  let currentEditingId = null; // null ise yeni sanatçı modu
+  let currentEditingId = null; // null veya '__NEW__' ise yeni sanatçı modu
 
   // 1. GÜVENLİK YARDIMCILARI (XSS & Protocol Sanitization)
   function escapeHtml(str) {
@@ -77,20 +79,20 @@
     id: "ornek-sanatci",
     name: "Ressam Defne Karaca",
     discipline: "Çağdaş Türk Resmi, Lirik Soyutlama & Pentür",
-    category: "Ressam",
+    category: "Ressam & Sanat Eğitmeni",
     city: "İstanbul / Kadıköy",
     studio: "Karaca Sanat Atölyesi",
     period: "1985 – Günümüz",
     coverImage: "/assets/biresku-banner.jpg",
-    shortBio: "Mimar Sinan Güzel Sanatlar Fakültesi mezunu; renk katmanları ve lirik fırça tuşlarıyla doğanın içsel ritmini tuvale aktaran çağdaş ressam.",
+    shortBio: "Mimar Sinan Güzel Sanatlar Fakültesi mezunu; renk katmanları ve lirik fırça tuşlarıyla doğanın içsel ritmini tuvale aktaran çağdaş ressam ve eğitmen.",
     quote: "Sanat, doğayı taklit etmek değil; onun ruhumuzda bıraktığı renk titreşimlerini tuvalde özgürleştirmektir.",
     biography: [
-      "1985 yılında İstanbul'da doğan Defne Karaca, 2008 yılında Mimar Sinan Güzel Sanatlar Üniversitesi Resim Bölümü'nden mezun oldu.",
-      "Yurt içi ve yurt dışında çok sayıda sergiye katılan sanatçı, çalışmalarını İstanbul Kadıköy'deki atölyesinde sürdürmektedir."
+      "1985 yılında İstanbul'da doğan Defne Karaca, Mimar Sinan Güzel Sanatlar Üniversitesi Resim Bölümü'nden mezun oldu. Alanında yetkin ustalardan aldığı desen ve renk eğitiminin ardından atölyesinde özgün pentür çalışmalarına başladı.",
+      "Yurt içi ve yurt dışında çok sayıda karma ve kişisel sergiye katılan sanatçı, 10 yılı aşkın süredir sanat eğitmenliği yapmakta; çalışmalarını İstanbul Kadıköy'deki atölyesinde sürdürmektedir."
     ],
     philosophy: [
       "Sanatçıya göre resim; bilincin sınırlarını aşan sezgisel bir arayış, doğadaki gizli geometrinin lirik boya lekesiyle buluştuğu kutsal bir andır.",
-      "Canlı renk paleti ve katmanlı pentür tekniği, izleyiciye dingin ama aynı zamanda coşkulu bir iç yolculuk sunar."
+      "Canlı renk paleti, kalın boya katmanları (impasto) ve katmanlı pentür tekniği, izleyiciye dingin ama aynı zamanda coşkulu bir iç yolculuk sunar."
     ],
     artworks: [
       {
@@ -104,275 +106,27 @@
       },
       {
         id: "art-2",
-        title: "Sessizliğin Yankısı",
+        title: "Renk Devinimi & Denge",
         technique: "Tuval üzerine yağlıboya",
         dimensions: "80 × 100 cm",
         year: "2023",
-        image: "/assets/adnan-turani/viyolonsel-calan-kadin.jpg",
-        imageUrl: "/assets/adnan-turani/viyolonsel-calan-kadin.jpg"
+        image: "/assets/mustafa-ayaz/figuratifs-1.jpg",
+        imageUrl: "/assets/mustafa-ayaz/figuratifs-1.jpg"
       }
     ]
   };
 
-  // 4. MODAL HTML ENJEKSİYONU
-  function injectStudioModal() {
-    if (document.getElementById('bireskuArtistStudioModal')) return;
-
-    const modalHtml = `
-    <div id="bireskuArtistStudioModal" class="biresku-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="artistStudioTitle">
-      <div class="biresku-modal-box artist-studio-modal-box">
-        
-        <!-- ÜST BAŞLIK & BİLGİ -->
-        <div class="biresku-modal-header" style="background: linear-gradient(135deg, rgba(192,154,88,0.15), rgba(20,23,29,0.95)); border-bottom: 1px solid rgba(192,154,88,0.3);">
-          <div style="display:flex; align-items:center; gap:10px;">
-            <span style="font-size:1.3rem;">🎨</span>
-            <div>
-              <h3 id="artistStudioTitle" class="biresku-modal-title" style="color:#c09a58; font-size:1.15rem;">Biresku Sanatçı Yönetim &amp; Düzenleme Stüdyosu</h3>
-              <span id="studioModeSubtitle" style="font-size:0.75rem; color:var(--text-muted);">Yönetici Gizli Paneli &bull; Sıfır-Açık Güvenli Motor</span>
-            </div>
-          </div>
-          <button type="button" class="biresku-modal-close" onclick="BireskuArtistAdmin.closeStudio()" aria-label="Kapat">&times;</button>
-        </div>
-
-        <!-- ÜST SEÇİCİ & HIZLI ARAÇ ÇUBUĞU -->
-        <div class="studio-quick-toolbar">
-          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-            <div style="display:flex; align-items:center; gap:6px;">
-              <label style="font-size:0.75rem; color:#c09a58; font-weight:700; text-transform:uppercase;">Sanatçı Seç:</label>
-              <select id="studioArtistSelector" style="background:#171a21; color:#fff; border:1px solid #c09a58; border-radius:6px; padding:4px 8px; font-size:0.8rem; font-weight:600;" onchange="BireskuArtistAdmin.onSelectArtistChange(this.value)">
-                <option value="__NEW__">✨ + Yeni Sanatçı Ekle</option>
-              </select>
-            </div>
-            <button type="button" class="studio-btn studio-btn-gold" style="font-size:0.75rem; padding:4px 10px;" onclick="BireskuArtistAdmin.loadExampleTemplate()">
-              ⚡ Örnek Taslak Doldur
-            </button>
-            <button type="button" class="studio-btn studio-btn-ghost" style="font-size:0.75rem; padding:4px 8px;" onclick="BireskuArtistAdmin.clearForm()">
-              🧹 Temizle
-            </button>
-          </div>
-          <span id="studioStatusInfo" style="font-size:0.75rem; color:#2ecc71; font-weight:600;"></span>
-        </div>
-
-        <!-- ANA GÖVDE: FORM + CANLI ÖNİZLEME -->
-        <div class="biresku-modal-body studio-modal-body">
-          <div class="studio-grid-layout">
-            
-            <!-- SOL KOLON: GİRİŞ FORMU -->
-            <div class="studio-form-col">
-              
-              <!-- BÖLÜM 1: KİMLİK & KATEGORİ -->
-              <div class="studio-section-card">
-                <h4 class="studio-section-title"><span>1</span> Sanatçı Kimlik Bilgileri</h4>
-                
-                <div class="studio-form-row">
-                  <div class="studio-form-group">
-                    <label>Sanatçı Adı ve Unvanı *</label>
-                    <input type="text" id="studioArtistName" placeholder="örn: Ressam Gülbin Nurgenç" oninput="BireskuArtistAdmin.onNameChange(this.value)">
-                  </div>
-                  <div class="studio-form-group">
-                    <label>URL ID Kodu (Slug) *</label>
-                    <input type="text" id="studioArtistId" placeholder="örn: gulbin-nurgenc" oninput="BireskuArtistAdmin.updateLivePreview()">
-                  </div>
-                </div>
-
-                <div class="studio-form-row">
-                  <div class="studio-form-group">
-                    <label>Kategori</label>
-                    <select id="studioArtistCategory" onchange="BireskuArtistAdmin.updateLivePreview()">
-                      <option value="Ressam">Ressam</option>
-                      <option value="Ressam &amp; Özgün Baskı Ustası">Ressam &amp; Özgün Baskı Ustası</option>
-                      <option value="Ressam &amp; Sanat Eğitmeni">Ressam &amp; Sanat Eğitmeni</option>
-                      <option value="Ressam &amp; Sanat Tarihçisi">Ressam &amp; Sanat Tarihçisi</option>
-                      <option value="Heykeltıraş">Heykeltıraş</option>
-                      <option value="Özgün Baskı Sanatçısı">Özgün Baskı Sanatçısı</option>
-                      <option value="Çağdaş Sanatçı">Çağdaş Sanatçı</option>
-                    </select>
-                  </div>
-                  <div class="studio-form-group">
-                    <label>Dönem / Doğum</label>
-                    <input type="text" id="studioArtistPeriod" placeholder="örn: 1970 – Günümüz" oninput="BireskuArtistAdmin.updateLivePreview()">
-                  </div>
-                </div>
-
-                <div class="studio-form-row">
-                  <div class="studio-form-group">
-                    <label>Disiplin &amp; Ekol *</label>
-                    <input type="text" id="studioArtistDiscipline" placeholder="örn: Çağdaş Türk Resmi, Lirik Soyutlama &amp; Pentür" oninput="BireskuArtistAdmin.updateLivePreview()">
-                  </div>
-                  <div class="studio-form-group">
-                    <label>Şehir / Atölye</label>
-                    <input type="text" id="studioArtistCity" placeholder="örn: İstanbul / Kadıköy" oninput="BireskuArtistAdmin.updateLivePreview()">
-                  </div>
-                </div>
-              </div>
-
-              <!-- BÖLÜM 2: İÇERİK, BİYOGRAFİ & ALINTI -->
-              <div class="studio-section-card">
-                <h4 class="studio-section-title"><span>2</span> Biyografi, Alıntı &amp; Sanat Felsefesi</h4>
-                
-                <div class="studio-form-group">
-                  <label>Kısa Özet Tanıtım (Vitrin Kartı Metni) *</label>
-                  <textarea id="studioArtistShortBio" rows="2" placeholder="Vitrin kartında görünen 1-2 cümlelik biyografi özeti..." oninput="BireskuArtistAdmin.updateLivePreview()"></textarea>
-                </div>
-
-                <div class="studio-form-group">
-                  <label>Otantik Sanat Alıntısı (Tırnak İçi Sözü) *</label>
-                  <textarea id="studioArtistQuote" rows="2" placeholder='Sanatçının sanata ve hayata bakışını özetleyen alıntı...' oninput="BireskuArtistAdmin.updateLivePreview()"></textarea>
-                </div>
-
-                <div class="studio-form-group">
-                  <label>Detaylı Biyografi (1. Paragraf - Doğum &amp; Eğitim)</label>
-                  <textarea id="studioArtistBio1" rows="2" placeholder="Doğum yeri, eğitimi, hocaları ve ilk dönemleri..."></textarea>
-                </div>
-
-                <div class="studio-form-group">
-                  <label>Detaylı Biyografi (2. Paragraf - Kariyer &amp; Sergiler)</label>
-                  <textarea id="studioArtistBio2" rows="2" placeholder="Sergileri, müzeleri, ödülleri ve güncel atölye çalışmaları..."></textarea>
-                </div>
-
-                <div class="studio-form-group">
-                  <label>Sanat Felsefesi (1. Paragraf)</label>
-                  <textarea id="studioArtistPhil1" rows="2" placeholder="Sanat anlayışı, akım ve felsefi temeller..."></textarea>
-                </div>
-
-                <div class="studio-form-group">
-                  <label>Sanat Felsefesi (2. Paragraf)</label>
-                  <textarea id="studioArtistPhil2" rows="2" placeholder="Teknik ustalığı, renk paleti ve biçimsel dili..."></textarea>
-                </div>
-              </div>
-
-              <!-- BÖLÜM 3: PROFİL FOTOĞRAFI -->
-              <div class="studio-section-card">
-                <h4 class="studio-section-title"><span>3</span> Profil Fotoğrafı</h4>
-                <div class="studio-form-row">
-                  <div class="studio-form-group" style="flex:2;">
-                    <label>Görsel URL veya Dosya Seç</label>
-                    <input type="text" id="studioArtistCoverUrl" placeholder="https://... veya dosya yükleyin" oninput="BireskuArtistAdmin.updateLivePreview()">
-                  </div>
-                  <div class="studio-form-group" style="flex:1;">
-                    <label>&nbsp;</label>
-                    <label class="file-picker-label">
-                      📁 Dosya Seç
-                      <input type="file" id="studioCoverFileInput" accept="image/jpeg,image/png,image/webp" style="display:none;" onchange="BireskuArtistAdmin.handleCoverFile(this)">
-                    </label>
-                  </div>
-                </div>
-                <div id="coverUploadStatus" style="font-size:0.75rem; color:#2ecc71; margin-top:4px; display:none;"></div>
-              </div>
-
-              <!-- BÖLÜM 4: ESERLER YÖNETİMİ -->
-              <div class="studio-section-card">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                  <h4 class="studio-section-title" style="margin:0;"><span>4</span> Koleksiyon Eserleri</h4>
-                  <button type="button" class="studio-btn studio-btn-gold" style="font-size:0.75rem; padding:4px 10px;" onclick="BireskuArtistAdmin.addArtworkRow()">
-                    + Yeni Eser Ekle
-                  </button>
-                </div>
-                <div id="studioArtworksContainer" class="studio-artworks-list">
-                  <!-- Dinamik eser satırları -->
-                </div>
-              </div>
-
-            </div>
-
-            <!-- SAĞ KOLON: CANLI ÖNİZLEME & ÇIKTILAR -->
-            <div class="studio-preview-col">
-              
-              <!-- CANLI VİTRİN KARTI ÖNİZLEMESİ -->
-              <div class="studio-preview-box">
-                <div class="preview-box-header">
-                  <span>👁️ Canlı Vitrin Kartı Önizlemesi</span>
-                  <span class="preview-live-badge">Canlı Simülasyon</span>
-                </div>
-                <div class="preview-card-wrap">
-                  <div class="flow-card artist-flow-card" style="width:100%; max-width:320px; margin:0 auto; pointer-events:none;">
-                    <div class="artist-card-cover" style="position:relative;">
-                      <img id="prevCardImg" src="/assets/biresku-banner.jpg" alt="Önizleme" style="width:100%; height:260px; object-fit:cover; display:block;">
-                    </div>
-                    <div class="artist-card-body" style="padding:14px;">
-                      <div>
-                        <h3 id="prevCardName" class="artist-name-title" style="font-size:1.05rem; color:#fff; margin-bottom:4px;">Sanatçı Adı</h3>
-                        <span id="prevCardDiscipline" class="artist-cat-sub" style="font-size:0.75rem; color:#c09a58; display:block; margin-bottom:8px;">Disiplin ve Ekol</span>
-                        <p id="prevCardShortBio" class="artist-card-discipline" style="font-size:0.8rem; color:#8b92a0; line-height:1.5;">Kısa biyografi özeti...</p>
-                      </div>
-                      <div class="artist-card-bottom" style="margin-top:12px; display:flex; justify-content:space-between; font-size:0.75rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:8px;">
-                        <span id="prevCardCity" class="artist-city-tag" style="color:#8b92a0;">📍 Şehir</span>
-                        <span class="card-link-action" style="color:#c09a58; font-weight:700;">Özel Alanına Git &rarr;</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- CANLI ALINTI ÖNİZLEMESİ -->
-              <div class="studio-preview-box" style="margin-top:16px;">
-                <div class="preview-box-header">
-                  <span>📜 Profil Alıntısı Önizlemesi</span>
-                </div>
-                <div style="padding:14px; background:rgba(192,154,88,0.05); border-left:3px solid #c09a58; border-radius:4px; font-style:italic; font-size:0.88rem; color:#d6d8db; line-height:1.6;" id="prevCardQuote">
-                  "Sanatçının sanata ve hayata bakışını yansıtan alıntı metni burada görüntülenir."
-                </div>
-                <div style="margin-top:8px; font-size:0.75rem; color:#c09a58; font-weight:700;" id="prevArtworksCountBadge">
-                  0 Koleksiyon Eseri Kayıtlı
-                </div>
-              </div>
-
-              <!-- HIZLI KOD DIŞA AKTARMA -->
-              <div class="studio-preview-box" style="margin-top:16px;">
-                <div class="preview-box-header">
-                  <span>📋 Hazır Kod Şablonu</span>
-                  <button type="button" class="studio-btn studio-btn-gold" style="font-size:0.72rem; padding:3px 8px;" onclick="BireskuArtistAdmin.copyGeneratedCode()">
-                    Kodu Kopyala
-                  </button>
-                </div>
-                <div class="code-export-box">
-                  <pre id="studioGeneratedCode" style="margin:0; font-family:Consolas, monospace; font-size:0.75rem; color:#a5d6a7; white-space:pre-wrap; max-height:160px; overflow-y:auto;"></pre>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ALT EYLEM ÇUBUĞU -->
-        <div class="biresku-modal-footer studio-modal-footer">
-          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-            <button type="button" id="studioSaveBtn" class="studio-btn studio-btn-green" onclick="BireskuArtistAdmin.saveAndDeployArtist()">
-              🚀 Sisteme Ekle ve Vitrine Al (Canlı)
-            </button>
-            <button type="button" class="studio-btn studio-btn-gold" onclick="BireskuArtistAdmin.downloadJson()">
-              💾 JSON İndir
-            </button>
-            <button type="button" id="studioDeleteArtistBtn" class="studio-btn" style="background:#e74c3c; color:#fff; display:none;" onclick="BireskuArtistAdmin.deleteCurrentArtist()">
-              🗑️ Sanatçıyı Sil
-            </button>
-          </div>
-          <button type="button" class="biresku-modal-btn" onclick="BireskuArtistAdmin.closeStudio()">Kapat</button>
-        </div>
-
-      </div>
-    </div>
-    `;
-
-    const wrap = document.createElement('div');
-    wrap.id = 'bireskuArtistStudioWrap';
-    wrap.innerHTML = modalHtml;
-    document.body.appendChild(wrap);
-  }
-
-  // 5. YEREL RESİM OKUYUCU
+  // 4. DOSYA OKUMA YARDIMCISI (Base64 DataURL)
   function readFileAsDataUrl(file, callback) {
     if (!file) return;
     if (!file.type.startsWith('image/')) {
-      alert("Hata: Yalnızca resim dosyaları (JPEG, PNG, WebP) yüklenebilir.");
+      alert("Lütfen geçerli bir görsel dosyası (JPG, PNG, WebP) seçiniz.");
       return;
     }
     if (file.size > MAX_FILE_SIZE) {
-      alert("Hata: Resim boyutu maksimum 5MB olabilir.");
+      alert("Görsel boyutu 5 MB'dan küçük olmalıdır.");
       return;
     }
-
     const reader = new FileReader();
     reader.onload = function(e) {
       callback(e.target.result);
@@ -383,515 +137,577 @@
     reader.readAsDataURL(file);
   }
 
+  // 5. CANLI GÖRSEL STÜDYO DOM YAPISINI ENJEKTE ET (PROFİL SAYFASIYLA 1:1 AYNI)
+  function ensureStudioViewExists() {
+    let studioView = document.getElementById('artistStudioView');
+    if (studioView) return studioView;
+
+    // artistProfileView'ün hemen yanına dinamik olarak iliştir
+    const profileView = document.getElementById('artistProfileView');
+    const catalogMain = document.querySelector('.catalog-main') || (profileView ? profileView.parentNode : document.body);
+
+    studioView = document.createElement('div');
+    studioView.id = 'artistStudioView';
+    studioView.className = 'artist-profile-view is-studio-mode';
+    studioView.style.display = 'none';
+
+    studioView.innerHTML = `
+      <!-- Üst Sticky Yönetici Kontrol Çubuğu -->
+      <div class="studio-top-bar">
+        <div class="studio-top-left">
+          <button type="button" class="studio-back-btn" onclick="BireskuArtistAdmin.exitVisualStudio()">
+            <span>&larr;</span>
+            <span>Kataloğa Dön (Vazgeç)</span>
+          </button>
+          <div class="studio-mode-pill">
+            <span>👑</span>
+            <span id="visualStudioModeLabel">Yeni Sanatçı Şablon Stüdyosu</span>
+          </div>
+        </div>
+        <div class="studio-top-actions">
+          <select id="visualStudioArtistSelect" class="studio-switch-select" onchange="BireskuArtistAdmin.onSwitcherChange(this.value)">
+            <option value="__NEW__">+ Yeni Sanatçı Ekle (Boş Şablon)</option>
+          </select>
+          <button type="button" class="studio-btn studio-btn-template" onclick="BireskuArtistAdmin.fillSampleTemplate()" title="Örnek taslak bilgileriyle formu otomatik doldurur">
+            ⚡ Örnek Taslak Doldur
+          </button>
+          <button type="button" class="studio-btn studio-btn-clear" onclick="BireskuArtistAdmin.clearStudioFields()" title="Tüm alanları boşaltır">
+            🧹 Temizle
+          </button>
+          <button type="button" class="studio-btn studio-btn-save" onclick="BireskuArtistAdmin.saveFromVisualStudio()">
+            💾 Vitrine Kaydet &amp; Yayınla (Canlı)
+          </button>
+          <button type="button" id="visualStudioDeleteBtn" class="studio-btn studio-btn-delete" style="display:none;" onclick="BireskuArtistAdmin.deleteFromVisualStudio()">
+            🗑️ Sanatçıyı Sil
+          </button>
+        </div>
+      </div>
+
+      <!-- 1. Hero Alanı (Fotoğraf, İsim, Kategori, Disiplin, Kısa Tanıtım) -->
+      <div class="profile-hero studio-profile-hero">
+        <div class="profile-avatar-wrap studio-avatar-picker" onclick="document.getElementById('visualStudioAvatarInput').click()" title="Fotoğraf yüklemek için tıklayın">
+          <img id="visualStudioAvatarImg" src="/assets/biresku-banner.jpg" alt="Sanatçı Profil Fotoğrafı">
+          <div class="studio-avatar-overlay">
+            <span class="studio-camera-icon">📷</span>
+            <span>Fotoğraf Değiştir / Yükle</span>
+            <span style="font-size:0.65rem; opacity:0.8;">(Tıklayın veya Seçin)</span>
+          </div>
+          <input type="file" id="visualStudioAvatarInput" accept="image/*" style="display:none;" onchange="BireskuArtistAdmin.handleVisualAvatarFile(this)">
+        </div>
+
+        <div class="studio-hero-content">
+          <div class="studio-field-row" style="margin-bottom: 6px;">
+            <input type="text" id="visualStudioCategoryInput" class="studio-inplace-badge" value="Ressam &amp; Sanat Eğitmeni" placeholder="Kategori (Örn: Ressam &amp; Sanat Eğitmeni)">
+          </div>
+
+          <div class="studio-field-row">
+            <input type="text" id="visualStudioNameInput" class="studio-inplace-title" value="" placeholder="Sanatçı Adı ve Unvanı (Örn: Gülbin Nurgenç)" oninput="BireskuArtistAdmin.onVisualNameChange(this.value)">
+          </div>
+
+          <div class="studio-field-row">
+            <input type="text" id="visualStudioDisciplineInput" class="studio-inplace-discipline" value="" placeholder="DİSİPLİN &amp; EKOL (Örn: ÇAĞDAŞ TÜRK RESMİ, SOYUT &amp; FOVİZM)">
+          </div>
+
+          <div class="studio-field-row" style="margin-top: 8px;">
+            <textarea id="visualStudioShortBioInput" class="studio-inplace-shortbio" placeholder="Sanatçının vitrin kartında ve başlık altında görünecek 1-2 cümlelik kısa özet tanıtımı..."></textarea>
+          </div>
+
+          <div class="studio-meta-bar">
+            <div class="studio-meta-item">
+              <label>Dönem / Doğum:</label>
+              <input type="text" id="visualStudioPeriodInput" class="studio-inplace-meta" value="" placeholder="Örn: 1970 – Günümüz">
+            </div>
+            <div class="studio-meta-item">
+              <label>Şehir / Atölye:</label>
+              <input type="text" id="visualStudioCityInput" class="studio-inplace-meta" value="İstanbul" placeholder="Örn: İstanbul / Kadıköy">
+            </div>
+            <div class="studio-meta-item">
+              <label>URL ID Kodu:</label>
+              <input type="text" id="visualStudioSlugInput" class="studio-inplace-meta" value="" placeholder="Örn: gulbin-nurgenc">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Biyografi & Sanatsal Yolculuk + Hayata ve Sanata Bakışı (Fotoğraf 2 Düzeneği) -->
+      <div class="artist-deep-dive-grid studio-deep-dive-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px;">
+        <!-- Sol Kart: Biyografi -->
+        <section class="artist-section-card studio-section-card">
+          <h3 class="artist-section-heading">
+            <span>Biyografi &amp; Sanatsal Yolculuk</span>
+            <span class="studio-field-hint">✏️ Biyografi metnini buraya yazın</span>
+          </h3>
+          <div class="artist-section-body">
+            <textarea id="visualStudioBioInput" class="studio-inplace-textarea studio-bio-textarea" rows="12" placeholder="Sanatçının biyografisini buraya doğrudan yazabilirsiniz...
+
+Örnek:
+1970 İstanbul doğumlu Gülbin Nurgenç, Beyoğlu Olgunlaşma Enstitüsü Resim Bölümü mezunudur. Alanında yetkin isimlerden aldığı uzun soluklu desen eğitiminin ardından tekstil sektöründe profesyonel desinatör olarak çalışmış; yurt dışı ve İstanbul’un önde gelen firmaları için özgün koleksiyonlar hazırlamıştır.
+
+12 yıldır resim eğitmenliği yaparak pek çok yeteneğin gelişimine katkı sağlamaya devam eden sanatçı, atölyesinde yağlıboya çalışmalarını sürdürmektedir."></textarea>
+          </div>
+        </section>
+
+        <!-- Sağ Kart: Hayata ve Sanata Bakışı -->
+        <section class="artist-section-card philosophy-card studio-section-card">
+          <h3 class="artist-section-heading">
+            <span>Hayata ve Sanata Bakışı</span>
+            <span class="studio-field-hint">✏️ Alıntı &amp; Sanat Yaklaşımı</span>
+          </h3>
+          <div class="artist-section-body">
+            <div class="studio-quote-container">
+              <div class="studio-quote-mark">“</div>
+              <textarea id="visualStudioQuoteInput" class="studio-inplace-quote-textarea" rows="4" placeholder='"Sanat sadece gözle görüleni tuvale aktarmak değil; hayatın zorluklarını, kuralların insanlar üzerindeki dayatmasını süzerek en yalın, en saf haline indirgeme çabasıdır..." (Otantik Alıntı)'></textarea>
+              <div class="studio-quote-label">Tırnak İçi Sanatçı Alıntısı</div>
+            </div>
+
+            <div style="margin-top: 18px;">
+              <textarea id="visualStudioPhilosophyInput" class="studio-inplace-textarea studio-phil-textarea" rows="7" placeholder="Sanatçının sanata bakış açısı ve estetik yaklaşımını buraya yazabilirsiniz...
+
+Örnek:
+Çalışmalarında soyut (abstract), fovist ve ekspresyonist bir estetiği benimseyen sanatçı, renkleri kirletmeden sahip olduğu canlılığı korumaya özen göstermektedir."></textarea>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- 3. Eserler Koleksiyonu Alanı -->
+      <div class="artworks-section-container studio-artworks-section">
+        <div class="artworks-header-bar" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px;">
+          <div>
+            <h3 class="artworks-heading" style="margin:0;">Eser Koleksiyonu &amp; Seçki</h3>
+            <span class="studio-field-hint" style="margin-left:0; font-size:0.8rem;">Eserlerin görsellerini, teknik ve santimetre (cm) ölçülerini ekleyin</span>
+          </div>
+          <button type="button" class="studio-btn studio-btn-add-art" onclick="BireskuArtistAdmin.addVisualArtworkCard()">
+            <span>+ Yeni Eser Ekle</span>
+          </button>
+        </div>
+
+        <div id="visualStudioArtworksGrid" class="artworks-grid studio-artworks-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px;">
+          <!-- Dinamik Eser Kartları Buraya Eklenir -->
+        </div>
+      </div>
+    `;
+
+    if (profileView && profileView.parentNode) {
+      profileView.parentNode.insertBefore(studioView, profileView.nextSibling);
+    } else if (catalogMain) {
+      catalogMain.appendChild(studioView);
+    } else {
+      document.body.appendChild(studioView);
+    }
+
+    return studioView;
+  }
+
   // 6. SANATÇI STÜDYOSU ANA NESNESİ
   window.BireskuArtistAdmin = {
-    artworksCount: 0,
-
-    // Stüdyoyu Aç (Sadece Admin)
+    // A. Genel Stüdyo Giriş Metodu
     openStudio: function(targetArtistId) {
       if (!checkAdminAuth()) {
         console.warn("Yetkisiz: Sanatçı stüdyosuna yalnızca admin erişebilir.");
         return;
       }
-      injectStudioModal();
-      this.populateArtistSelector();
+
+      // dergi/sanatcilar/ sayfasında mıyız?
+      const isSanatcilarPage = Boolean(document.getElementById('catalogPageView') || document.getElementById('artistProfileView'));
+
+      if (isSanatcilarPage) {
+        this.openVisualStudio(targetArtistId);
+      } else {
+        // index.html veya başka sayfadaysak, parametreli olarak sanatçılar sayfasına git
+        const targetSlug = (targetArtistId && targetArtistId !== '__NEW__') ? targetArtistId : '__NEW__';
+        window.location.href = '/dergi/sanatcilar/#admin-studio=' + encodeURIComponent(targetSlug);
+      }
+    },
+
+    // B. CANLI GÖRSEL STÜDYOYU AÇ (Fotoğraf 2 Birebir Görünümü)
+    openVisualStudio: function(targetArtistId) {
+      if (!checkAdminAuth()) return;
+
+      const studioView = ensureStudioViewExists();
+      const catalogView = document.getElementById('catalogPageView');
+      const profileView = document.getElementById('artistProfileView');
+
+      if (catalogView) catalogView.style.display = 'none';
+      if (profileView) profileView.style.display = 'none';
+      if (studioView) studioView.style.display = 'block';
+
+      this.populateVisualArtistSelector();
 
       if (targetArtistId && targetArtistId !== '__NEW__') {
-        this.loadArtistForEditing(targetArtistId);
+        this.loadVisualArtist(targetArtistId);
       } else {
-        this.setModeNew();
+        this.setVisualModeNew();
       }
 
-      const modal = document.getElementById('bireskuArtistStudioModal');
-      if (modal) {
-        modal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      }
-      this.updateLivePreview();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     },
 
-    // Stüdyoyu Kapat
-    closeStudio: function() {
-      const modal = document.getElementById('bireskuArtistStudioModal');
-      if (modal) {
-        modal.classList.remove('is-open');
-        document.body.style.overflow = '';
+    // C. Canlı Görsel Stüdyoyu Kapat & Kataloğa Dön
+    exitVisualStudio: function() {
+      const studioView = document.getElementById('artistStudioView');
+      const catalogView = document.getElementById('catalogPageView');
+      if (studioView) studioView.style.display = 'none';
+      if (catalogView) catalogView.style.display = 'block';
+      try {
+        history.pushState(null, null, window.location.pathname);
+      } catch (e) {
+        window.location.hash = '';
       }
     },
 
-    // Sanatçı Seçici Dropdown'ını Doldur
-    populateArtistSelector: function() {
-      const select = document.getElementById('studioArtistSelector');
+    // D. Sanatçı Seçici Dropdown Senkronizasyonu
+    populateVisualArtistSelector: function() {
+      const select = document.getElementById('visualStudioArtistSelect');
       if (!select) return;
-      select.innerHTML = '<option value="__NEW__">✨ + Yeni Sanatçı Ekle (Boş/Şablon)</option>';
+      select.innerHTML = '<option value="__NEW__">+ Yeni Sanatçı Ekle (Boş Şablon)</option>';
 
       if (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
         window.ARTISTS_DATA.forEach(artist => {
           if (artist && artist.id) {
             const opt = document.createElement('option');
             opt.value = artist.id;
-            opt.textContent = `✏️ ${artist.name || artist.id} (Düzenle)`;
+            opt.textContent = `✏️ ${artist.name} (${artist.id})`;
             select.appendChild(opt);
           }
         });
       }
     },
 
-    // Dropdown Değişimi
-    onSelectArtistChange: function(val) {
+    onSwitcherChange: function(val) {
       if (val === '__NEW__') {
-        this.setModeNew();
+        this.setVisualModeNew();
       } else {
-        this.loadArtistForEditing(val);
+        this.loadVisualArtist(val);
       }
     },
 
-    // Yeni Ekleme Moduna Geç
-    setModeNew: function() {
-      currentEditingId = null;
-      const title = document.getElementById('artistStudioTitle');
-      if (title) title.textContent = "Biresku Sanatçı Yönetim & Şablon Stüdyosu";
-      const sub = document.getElementById('studioModeSubtitle');
-      if (sub) sub.textContent = "Yeni Sanatçı Ekleme Modu";
-      const saveBtn = document.getElementById('studioSaveBtn');
-      if (saveBtn) saveBtn.textContent = "🚀 Sisteme Ekle ve Vitrine Al (Canlı)";
-      const delBtn = document.getElementById('studioDeleteArtistBtn');
-      if (delBtn) delBtn.style.display = "none";
-      const idInput = document.getElementById('studioArtistId');
-      if (idInput) idInput.readOnly = false;
-      const select = document.getElementById('studioArtistSelector');
-      if (select) select.value = "__NEW__";
+    // E. Yeni Sanatçı Moduna Geç (Boş Alanlar, Fotoğraf 2 Düzeneği)
+    setVisualModeNew: function() {
+      currentEditingId = '__NEW__';
+      const label = document.getElementById('visualStudioModeLabel');
+      if (label) label.textContent = "Yeni Sanatçı Şablon Stüdyosu";
 
-      this.clearForm();
+      const delBtn = document.getElementById('visualStudioDeleteBtn');
+      if (delBtn) delBtn.style.display = 'none';
+
+      const select = document.getElementById('visualStudioArtistSelect');
+      if (select) select.value = '__NEW__';
+
+      // Alanları sıfırla (Biyo ve alıntı boş kalır, kullanıcı doldurur!)
+      document.getElementById('visualStudioNameInput').value = '';
+      document.getElementById('visualStudioCategoryInput').value = 'Ressam & Sanat Eğitmeni';
+      document.getElementById('visualStudioDisciplineInput').value = '';
+      document.getElementById('visualStudioShortBioInput').value = '';
+      document.getElementById('visualStudioPeriodInput').value = '';
+      document.getElementById('visualStudioCityInput').value = 'İstanbul';
+      document.getElementById('visualStudioSlugInput').value = '';
+      document.getElementById('visualStudioAvatarImg').src = '/assets/biresku-banner.jpg';
+
+      document.getElementById('visualStudioBioInput').value = '';
+      document.getElementById('visualStudioQuoteInput').value = '';
+      document.getElementById('visualStudioPhilosophyInput').value = '';
+
+      const grid = document.getElementById('visualStudioArtworksGrid');
+      if (grid) {
+        grid.innerHTML = '';
+        this.addVisualArtworkCard(); // 1 adet boş eser kartı hazır tut
+      }
     },
 
-    // Mevcut Sanatçıyı Düzenleme Moduna Al
-    loadArtistForEditing: function(artistId) {
+    // F. Mevcut Sanatçıyı Düzenleme Modunda Yükle
+    loadVisualArtist: function(artistId) {
       if (!window.ARTISTS_DATA) return;
       const artist = window.ARTISTS_DATA.find(a => a.id === artistId);
       if (!artist) return;
 
       currentEditingId = artist.id;
-      const title = document.getElementById('artistStudioTitle');
-      if (title) title.textContent = `✏️ Düzenleniyor: ${artist.name}`;
-      const sub = document.getElementById('studioModeSubtitle');
-      if (sub) sub.textContent = `Mevcut Sanatçı Verisi Güncelleniyor (ID: ${artist.id})`;
-      const saveBtn = document.getElementById('studioSaveBtn');
-      if (saveBtn) saveBtn.textContent = "💾 Değişiklikleri Kaydet & Vitrine Uygula";
-      const delBtn = document.getElementById('studioDeleteArtistBtn');
-      if (delBtn) delBtn.style.display = "inline-flex";
+      const label = document.getElementById('visualStudioModeLabel');
+      if (label) label.textContent = `Düzenleniyor: ${artist.name}`;
 
-      const select = document.getElementById('studioArtistSelector');
+      const delBtn = document.getElementById('visualStudioDeleteBtn');
+      if (delBtn) delBtn.style.display = 'inline-flex';
+
+      const select = document.getElementById('visualStudioArtistSelect');
       if (select) select.value = artist.id;
 
       // Alanları doldur
-      document.getElementById('studioArtistName').value = artist.name || '';
-      const idInput = document.getElementById('studioArtistId');
-      if (idInput) {
-        idInput.value = artist.id;
-        idInput.readOnly = true; // ID değiştirilemez
-      }
-      document.getElementById('studioArtistCategory').value = artist.category || 'Ressam';
-      document.getElementById('studioArtistPeriod').value = artist.period || '';
-      document.getElementById('studioArtistDiscipline').value = artist.discipline || '';
-      document.getElementById('studioArtistCity').value = artist.city || '';
-      document.getElementById('studioArtistCoverUrl').value = artist.coverImage || '';
-      document.getElementById('studioArtistShortBio').value = artist.shortBio || artist.bio || '';
-      document.getElementById('studioArtistQuote').value = artist.quote || '';
+      document.getElementById('visualStudioNameInput').value = artist.name || '';
+      document.getElementById('visualStudioCategoryInput').value = artist.category || 'Ressam';
+      document.getElementById('visualStudioDisciplineInput').value = artist.discipline || '';
+      document.getElementById('visualStudioShortBioInput').value = artist.shortBio || artist.bio || '';
+      document.getElementById('visualStudioPeriodInput').value = artist.period || '';
+      document.getElementById('visualStudioCityInput').value = artist.city || '';
+      document.getElementById('visualStudioSlugInput').value = artist.id || '';
+      document.getElementById('visualStudioAvatarImg').src = artist.coverImage || '/assets/biresku-banner.jpg';
 
-      const bios = Array.isArray(artist.biography) ? artist.biography : [artist.biography || ''];
-      document.getElementById('studioArtistBio1').value = bios[0] || '';
-      document.getElementById('studioArtistBio2').value = bios[1] || '';
+      // Biyografi paragraflarını metin kutusuna aktar
+      const bios = Array.isArray(artist.biography) ? artist.biography.join('\n\n') : (artist.biography || '');
+      document.getElementById('visualStudioBioInput').value = bios;
 
-      const phils = Array.isArray(artist.philosophy) ? artist.philosophy : [artist.philosophy || ''];
-      document.getElementById('studioArtistPhil1').value = phils[0] || '';
-      document.getElementById('studioArtistPhil2').value = phils[1] || '';
+      // Alıntı ve Felsefe
+      document.getElementById('visualStudioQuoteInput').value = artist.quote || '';
+      const phils = Array.isArray(artist.philosophy) ? artist.philosophy.join('\n\n') : (artist.philosophy || '');
+      document.getElementById('visualStudioPhilosophyInput').value = phils;
 
-      // Eserleri doldur
-      const container = document.getElementById('studioArtworksContainer');
-      if (container) {
-        container.innerHTML = '';
-        this.artworksCount = 0;
-        if (artist.artworks && Array.isArray(artist.artworks)) {
-          artist.artworks.forEach(art => this.addArtworkRow(art));
+      // Eserleri Yükle
+      const grid = document.getElementById('visualStudioArtworksGrid');
+      if (grid) {
+        grid.innerHTML = '';
+        if (artist.artworks && Array.isArray(artist.artworks) && artist.artworks.length > 0) {
+          artist.artworks.forEach(art => this.addVisualArtworkCard(art));
         } else {
-          this.addArtworkRow();
+          this.addVisualArtworkCard();
         }
       }
-
-      this.updateLivePreview();
     },
 
-    // Sanatçı Kartından Doğrudan Düzenleme Aç
-    editArtist: function(artistId) {
-      this.openStudio(artistId);
-    },
-
-    // Sanatçı Adı Değiştikçe Otomatik Slug Üret (Sadece yeni modda)
-    onNameChange: function(name) {
-      if (!currentEditingId) {
-        const idInput = document.getElementById('studioArtistId');
-        if (idInput) idInput.value = slugify(name);
+    // G. İsim değiştikçe otomatik slug üret (Yeni moddaysa)
+    onVisualNameChange: function(val) {
+      if (currentEditingId === '__NEW__') {
+        const slugInput = document.getElementById('visualStudioSlugInput');
+        if (slugInput) slugInput.value = slugify(val);
       }
-      this.updateLivePreview();
     },
 
-    // Profil Fotoğrafı Dosya Seçimi
-    handleCoverFile: function(input) {
-      const file = input.files && input.files[0];
-      if (!file) return;
-      const statusEl = document.getElementById('coverUploadStatus');
-      readFileAsDataUrl(file, (dataUrl) => {
-        const coverInput = document.getElementById('studioArtistCoverUrl');
-        if (coverInput) coverInput.value = dataUrl;
-        if (statusEl) {
-          statusEl.style.display = 'block';
-          statusEl.textContent = `✓ ${escapeHtml(file.name)} (${Math.round(file.size / 1024)} KB) yüklendi.`;
-        }
-        this.updateLivePreview();
-      });
-    },
-
-    // Eser Resmi Dosya Seçimi
-    handleArtFile: function(input, rowId) {
+    // H. Profil Fotoğrafı Yükleme
+    handleVisualAvatarFile: function(input) {
       const file = input.files && input.files[0];
       if (!file) return;
       readFileAsDataUrl(file, (dataUrl) => {
-        const urlInput = document.getElementById(`artUrl_${rowId}`);
-        if (urlInput) urlInput.value = dataUrl;
-        const prevImg = document.getElementById(`artPrev_${rowId}`);
-        if (prevImg) prevImg.src = dataUrl;
-        this.updateLivePreview();
+        const img = document.getElementById('visualStudioAvatarImg');
+        if (img) img.src = dataUrl;
       });
     },
 
-    // Dinamik Eser Satırı Ekle
-    addArtworkRow: function(data) {
-      this.artworksCount++;
-      const rowId = this.artworksCount;
-      const container = document.getElementById('studioArtworksContainer');
-      if (!container) return;
-
-      const art = data || {
+    // I. Eser Ekleme ve Eser Kartı Yönetimi
+    addVisualArtworkCard: function(artData) {
+      artData = artData || {
         title: "",
-        image: "",
         technique: "Tuval üzerine yağlıboya",
-        dimensions: "80 × 100 cm",
-        year: "2024"
+        dimensions: "",
+        year: new Date().getFullYear().toString(),
+        image: "/assets/biresku-banner.jpg"
       };
 
-      const rowDiv = document.createElement('div');
-      rowDiv.className = 'studio-artwork-item';
-      rowDiv.id = `artworkRow_${rowId}`;
-      rowDiv.innerHTML = `
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <span style="font-weight:700; font-size:0.8rem; color:#c09a58;">Eser #${rowId}</span>
-          <button type="button" class="studio-remove-art-btn" onclick="BireskuArtistAdmin.removeArtworkRow(${rowId})" title="Eseri Kaldır">&times; Kaldır</button>
+      const cardId = 'studioArtCard_' + Math.random().toString(36).substr(2, 9);
+      const fileInputId = 'file_' + cardId;
+
+      const card = document.createElement('div');
+      card.className = 'studio-artwork-card';
+      card.id = cardId;
+      card.innerHTML = `
+        <div class="studio-artwork-img-box" onclick="document.getElementById('${fileInputId}').click()" title="Eser görseli yüklemek için tıklayın">
+          <img class="studio-art-img" src="${artData.image || artData.imageUrl || '/assets/biresku-banner.jpg'}" alt="Eser Görseli">
+          <div class="studio-artwork-img-overlay">
+            <span>📷 Görsel Seç / Değiştir</span>
+          </div>
+          <input type="file" id="${fileInputId}" accept="image/*" style="display:none;" onchange="BireskuArtistAdmin.handleArtworkCardFile(this, '${cardId}')">
         </div>
-        <div class="studio-form-row">
-          <div class="studio-form-group" style="flex:2;">
-            <label>Eser Başlığı *</label>
-            <input type="text" id="artTitle_${rowId}" value="${escapeHtml(art.title)}" placeholder="örn: Mavi Sonsuzluk" oninput="BireskuArtistAdmin.updateLivePreview()">
+        <div class="studio-artwork-fields">
+          <input type="text" class="studio-art-input-title studio-art-title" value="${escapeHtml(artData.title || '')}" placeholder="Eser Adı (Örn: Soyut Denge)">
+          <div class="studio-art-row">
+            <input type="text" class="studio-art-input-sub studio-art-tech" value="${escapeHtml(artData.technique || 'Tuval üzerine yağlıboya')}" placeholder="Teknik">
+            <input type="text" class="studio-art-input-sub studio-art-dim" value="${escapeHtml(artData.dimensions || '')}" placeholder="Ölçü (Örn: 100 × 100 cm)">
+            <input type="text" class="studio-art-input-sub studio-art-year" value="${escapeHtml(artData.year || '2024')}" placeholder="Yıl" style="max-width:65px;">
           </div>
-          <div class="studio-form-group" style="flex:1;">
-            <label>Yıl / Durum</label>
-            <input type="text" id="artYear_${rowId}" value="${escapeHtml(art.year)}" placeholder="2024 veya Özgün Eser" oninput="BireskuArtistAdmin.updateLivePreview()">
-          </div>
-        </div>
-        <div class="studio-form-row">
-          <div class="studio-form-group" style="flex:2;">
-            <label>Teknik</label>
-            <input type="text" id="artTech_${rowId}" value="${escapeHtml(art.technique)}" placeholder="Tuval üzerine yağlıboya" oninput="BireskuArtistAdmin.updateLivePreview()">
-          </div>
-          <div class="studio-form-group" style="flex:1;">
-            <label>Kesin Ölçü</label>
-            <input type="text" id="artDim_${rowId}" value="${escapeHtml(art.dimensions)}" placeholder="80 × 100 cm" oninput="BireskuArtistAdmin.updateLivePreview()">
-          </div>
-        </div>
-        <div class="studio-form-row" style="align-items:flex-end;">
-          <div class="studio-form-group" style="flex:3;">
-            <label>Görsel URL veya Dosya</label>
-            <input type="text" id="artUrl_${rowId}" value="${escapeHtml(art.image || art.imageUrl || '')}" placeholder="https://... veya dosya seçin" oninput="BireskuArtistAdmin.onArtUrlChange(${rowId}, this.value)">
-          </div>
-          <div class="studio-form-group" style="flex:1;">
-            <label class="file-picker-label" style="font-size:0.75rem; padding:6px 8px;">
-              📁 Dosya
-              <input type="file" accept="image/*" style="display:none;" onchange="BireskuArtistAdmin.handleArtFile(this, ${rowId})">
-            </label>
-          </div>
-          <div style="flex-shrink:0;">
-            <img id="artPrev_${rowId}" src="${art.image || '/assets/biresku-banner.jpg'}" alt="Önizleme" style="width:40px; height:40px; object-fit:cover; border-radius:4px; border:1px solid rgba(255,255,255,0.2);">
-          </div>
+          <button type="button" class="studio-art-delete-btn" onclick="document.getElementById('${cardId}').remove()">✕ Eseri Kaldır</button>
         </div>
       `;
-      container.appendChild(rowDiv);
-      this.updateLivePreview();
+
+      const grid = document.getElementById('visualStudioArtworksGrid');
+      if (grid) grid.appendChild(card);
     },
 
-    removeArtworkRow: function(rowId) {
-      const row = document.getElementById(`artworkRow_${rowId}`);
-      if (row) {
-        row.remove();
-        this.updateLivePreview();
+    handleArtworkCardFile: function(input, cardId) {
+      const file = input.files && input.files[0];
+      if (!file) return;
+      readFileAsDataUrl(file, (dataUrl) => {
+        const card = document.getElementById(cardId);
+        if (card) {
+          const img = card.querySelector('.studio-art-img');
+          if (img) img.src = dataUrl;
+        }
+      });
+    },
+
+    // J. Örnek Taslak ile Doldur
+    fillSampleTemplate: function() {
+      const ex = TEMPLATE_EXAMPLE;
+      document.getElementById('visualStudioNameInput').value = ex.name;
+      document.getElementById('visualStudioCategoryInput').value = ex.category;
+      document.getElementById('visualStudioDisciplineInput').value = ex.discipline;
+      document.getElementById('visualStudioShortBioInput').value = ex.shortBio;
+      document.getElementById('visualStudioPeriodInput').value = ex.period;
+      document.getElementById('visualStudioCityInput').value = ex.city;
+      document.getElementById('visualStudioSlugInput').value = ex.id;
+      document.getElementById('visualStudioAvatarImg').src = ex.coverImage;
+
+      document.getElementById('visualStudioBioInput').value = ex.biography.join('\n\n');
+      document.getElementById('visualStudioQuoteInput').value = ex.quote;
+      document.getElementById('visualStudioPhilosophyInput').value = ex.philosophy.join('\n\n');
+
+      const grid = document.getElementById('visualStudioArtworksGrid');
+      if (grid) {
+        grid.innerHTML = '';
+        ex.artworks.forEach(art => this.addVisualArtworkCard(art));
       }
     },
 
-    onArtUrlChange: function(rowId, val) {
-      const prev = document.getElementById(`artPrev_${rowId}`);
-      if (prev) {
-        prev.src = sanitizeUrl(val) || '/assets/biresku-banner.jpg';
-      }
-      this.updateLivePreview();
+    // K. Formu Tamamen Temizle
+    clearStudioFields: function() {
+      this.setVisualModeNew();
     },
 
-    // Formu Topla ve Doğrulanmış Nesne Üret
-    collectFormData: function() {
-      const name = (document.getElementById('studioArtistName')?.value || '').trim();
-      let id = (document.getElementById('studioArtistId')?.value || '').trim();
-      if (!id && name) id = slugify(name);
-      id = id.toLowerCase().replace(/[^a-z0-9\-]/g, '');
+    // L. CANLI GÖRSEL STÜDYODAN VİTRİNE KAYDET & YAYINLA
+    saveFromVisualStudio: function() {
+      if (!checkAdminAuth()) {
+        alert("Yetkisiz işlem: Yalnızca yönetici sanatçı ekleyebilir veya düzenleyebilir.");
+        return;
+      }
 
-      const discipline = (document.getElementById('studioArtistDiscipline')?.value || '').trim();
-      const category = (document.getElementById('studioArtistCategory')?.value || 'Ressam').trim();
-      const city = (document.getElementById('studioArtistCity')?.value || '').trim();
-      const period = (document.getElementById('studioArtistPeriod')?.value || '').trim();
-      const coverUrl = sanitizeUrl(document.getElementById('studioArtistCoverUrl')?.value) || '/assets/biresku-banner.jpg';
-      const shortBio = (document.getElementById('studioArtistShortBio')?.value || '').trim();
-      const quote = (document.getElementById('studioArtistQuote')?.value || '').trim();
+      const name = (document.getElementById('visualStudioNameInput')?.value || '').trim();
+      let slug = (document.getElementById('visualStudioSlugInput')?.value || '').trim();
+      const category = (document.getElementById('visualStudioCategoryInput')?.value || 'Ressam & Sanat Eğitmeni').trim();
+      const discipline = (document.getElementById('visualStudioDisciplineInput')?.value || '').trim();
+      const shortBio = (document.getElementById('visualStudioShortBioInput')?.value || '').trim();
+      const period = (document.getElementById('visualStudioPeriodInput')?.value || '').trim();
+      const city = (document.getElementById('visualStudioCityInput')?.value || 'İstanbul').trim();
+      const coverImage = (document.getElementById('visualStudioAvatarImg')?.getAttribute('src') || '/assets/biresku-banner.jpg').trim();
 
-      const bio1 = (document.getElementById('studioArtistBio1')?.value || '').trim();
-      const bio2 = (document.getElementById('studioArtistBio2')?.value || '').trim();
-      const biography = [];
-      if (bio1) biography.push(bio1);
-      if (bio2) biography.push(bio2);
+      const bioRaw = (document.getElementById('visualStudioBioInput')?.value || '').trim();
+      const quoteRaw = (document.getElementById('visualStudioQuoteInput')?.value || '').trim();
+      const philRaw = (document.getElementById('visualStudioPhilosophyInput')?.value || '').trim();
 
-      const phil1 = (document.getElementById('studioArtistPhil1')?.value || '').trim();
-      const phil2 = (document.getElementById('studioArtistPhil2')?.value || '').trim();
-      const philosophy = [];
-      if (phil1) philosophy.push(phil1);
-      if (phil2) philosophy.push(phil2);
+      if (!name) {
+        alert("Lütfen sanatçı adını ve unvanını giriniz.");
+        document.getElementById('visualStudioNameInput')?.focus();
+        return;
+      }
 
+      if (!slug) {
+        slug = slugify(name);
+      } else {
+        slug = slugify(slug);
+      }
+
+      // Paragrafları böl
+      const bioParagraphs = bioRaw ? bioRaw.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean) : [];
+      const philParagraphs = philRaw ? philRaw.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean) : [];
+
+      // Eserleri topla
+      const artworkCards = document.querySelectorAll('#visualStudioArtworksGrid .studio-artwork-card');
       const artworks = [];
-      const rows = document.querySelectorAll('.studio-artwork-item');
-      rows.forEach((row, idx) => {
-        const rowId = row.id.replace('artworkRow_', '');
-        const title = (document.getElementById(`artTitle_${rowId}`)?.value || '').trim();
-        const year = (document.getElementById(`artYear_${rowId}`)?.value || '').trim();
-        const technique = (document.getElementById(`artTech_${rowId}`)?.value || '').trim();
-        const dimensions = (document.getElementById(`artDim_${rowId}`)?.value || '').trim();
-        const rawUrl = document.getElementById(`artUrl_${rowId}`)?.value || '';
-        const image = sanitizeUrl(rawUrl) || '/assets/biresku-banner.jpg';
+      artworkCards.forEach((card, idx) => {
+        const imgEl = card.querySelector('.studio-art-img');
+        const titleEl = card.querySelector('.studio-art-title');
+        const techEl = card.querySelector('.studio-art-tech');
+        const dimEl = card.querySelector('.studio-art-dim');
+        const yearEl = card.querySelector('.studio-art-year');
 
-        if (title || image) {
+        const imgSrc = imgEl ? (imgEl.getAttribute('src') || '') : '';
+        const artTitle = titleEl ? titleEl.value.trim() : '';
+        const artTech = techEl ? techEl.value.trim() : '';
+        const artDim = dimEl ? dimEl.value.trim() : '';
+        const artYear = yearEl ? yearEl.value.trim() : '';
+
+        if (imgSrc && !imgSrc.includes('biresku-fallback')) {
           artworks.push({
-            id: `${id || 'art'}-${idx + 1}`,
-            title: title || `Eser #${idx + 1}`,
-            technique: technique || 'Tuval üzerine yağlıboya',
-            dimensions: dimensions || 'Özgün Boyut',
-            year: year || 'Özgün Koleksiyon Eseri',
-            image: image,
-            imageUrl: image
+            id: `art-${idx + 1}`,
+            title: artTitle || `Eser #${idx + 1}`,
+            technique: artTech || "Tuval üzerine yağlıboya",
+            dimensions: artDim || "Özgün Koleksiyon Eseri",
+            year: artYear || new Date().getFullYear().toString(),
+            image: imgSrc,
+            imageUrl: imgSrc
           });
         }
       });
 
-      return {
-        id: id || "yeni-sanatci",
-        name: name || "İsimsiz Sanatçı",
-        discipline: discipline || "Çağdaş Türk Resmi",
-        category: category || "Ressam",
-        city: city || "İstanbul",
-        studio: city ? `${city} Atölyesi` : "Sanatçı Atölyesi",
-        coverImage: coverUrl,
-        shortBio: shortBio || "Biresku tescilli çağdaş Türk ressamı.",
-        quote: quote || "Sanat, insanın içindeki tutkuların ve hakikatin tuvaldeki saf yankısıdır.",
-        biography: biography.length ? biography : [shortBio],
-        philosophy: philosophy.length ? philosophy : [quote],
-        artworks: artworks,
-        addedDate: new Date().toISOString().split('T')[0],
-        period: period || "Çağdaş Dönem"
+      const artistData = {
+        id: slug,
+        name: name,
+        category: category,
+        discipline: discipline,
+        shortBio: shortBio,
+        city: city,
+        studio: city.includes('Atölye') ? city : (city + " Atölyesi"),
+        period: period,
+        coverImage: coverImage,
+        biography: bioParagraphs.length ? bioParagraphs : [shortBio || name],
+        quote: quoteRaw,
+        philosophy: philParagraphs.length ? philParagraphs : [],
+        artworks: artworks
       };
-    },
 
-    // Canlı Önizlemeyi Güncelle
-    updateLivePreview: function() {
-      const data = this.collectFormData();
+      if (!window.ARTISTS_DATA) window.ARTISTS_DATA = [];
 
-      const imgEl = document.getElementById('prevCardImg');
-      if (imgEl) imgEl.src = data.coverImage;
-
-      const nameEl = document.getElementById('prevCardName');
-      if (nameEl) nameEl.textContent = data.name;
-
-      const discEl = document.getElementById('prevCardDiscipline');
-      if (discEl) discEl.textContent = data.discipline;
-
-      const bioEl = document.getElementById('prevCardShortBio');
-      if (bioEl) bioEl.textContent = data.shortBio;
-
-      const cityEl = document.getElementById('prevCardCity');
-      if (cityEl) cityEl.textContent = `📍 ${data.city}`;
-
-      const quoteEl = document.getElementById('prevCardQuote');
-      if (quoteEl) quoteEl.textContent = `"${data.quote}"`;
-
-      const countBadge = document.getElementById('prevArtworksCountBadge');
-      if (countBadge) countBadge.textContent = `${data.artworks.length} Koleksiyon Eseri Kayıtlı`;
-
-      const codeEl = document.getElementById('studioGeneratedCode');
-      if (codeEl) {
-        codeEl.textContent = JSON.stringify(data, null, 2);
-      }
-    },
-
-    // Hazır Örnek Şablonu Yükle
-    loadExampleTemplate: function() {
-      const ex = TEMPLATE_EXAMPLE;
-      document.getElementById('studioArtistName').value = ex.name;
-      document.getElementById('studioArtistId').value = ex.id;
-      document.getElementById('studioArtistDiscipline').value = ex.discipline;
-      document.getElementById('studioArtistCategory').value = ex.category;
-      document.getElementById('studioArtistCity').value = ex.city;
-      document.getElementById('studioArtistPeriod').value = ex.period;
-      document.getElementById('studioArtistCoverUrl').value = ex.coverImage;
-      document.getElementById('studioArtistShortBio').value = ex.shortBio;
-      document.getElementById('studioArtistQuote').value = ex.quote;
-      document.getElementById('studioArtistBio1').value = ex.biography[0] || '';
-      document.getElementById('studioArtistBio2').value = ex.biography[1] || '';
-      document.getElementById('studioArtistPhil1').value = ex.philosophy[0] || '';
-      document.getElementById('studioArtistPhil2').value = ex.philosophy[1] || '';
-
-      const container = document.getElementById('studioArtworksContainer');
-      if (container) {
-        container.innerHTML = '';
-        this.artworksCount = 0;
-        ex.artworks.forEach(art => this.addArtworkRow(art));
-      }
-      this.updateLivePreview();
-    },
-
-    // Formu Temizle
-    clearForm: function() {
-      ['studioArtistName', 'studioArtistId', 'studioArtistDiscipline', 'studioArtistCity', 
-       'studioArtistPeriod', 'studioArtistCoverUrl', 'studioArtistShortBio', 'studioArtistQuote', 
-       'studioArtistBio1', 'studioArtistBio2', 'studioArtistPhil1', 'studioArtistPhil2'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = '';
-      });
-      const container = document.getElementById('studioArtworksContainer');
-      if (container) {
-        container.innerHTML = '';
-        this.artworksCount = 0;
-        this.addArtworkRow();
-      }
-      this.updateLivePreview();
-    },
-
-    // Kod Şablonunu Panoya Kopyala
-    copyGeneratedCode: function() {
-      const data = this.collectFormData();
-      const codeStr = JSON.stringify(data, null, 2);
-      navigator.clipboard.writeText(codeStr).then(() => {
-        alert("✓ Sanatçı kodu başarıyla panoya kopyalandı!");
-      }).catch(() => {
-        prompt("Kodu kopyalamak için Ctrl+C tuşlarına basınız:", codeStr);
-      });
-    },
-
-    // JSON Olarak İndir
-    downloadJson: function() {
-      const data = this.collectFormData();
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = `${data.id || 'sanatci'}.json`;
-      a.click();
-    },
-
-    // SİSTEME EKLE VEYA GÜNCELLE
-    saveAndDeployArtist: function() {
-      if (!checkAdminAuth()) {
-        alert("Yetkisiz Erişim: Bu işlem yalnızca yönetici tarafından yapılabilir.");
-        return;
-      }
-
-      const data = this.collectFormData();
-      if (!data.name || data.name === "İsimsiz Sanatçı") {
-        alert("Lütfen sanatçının adını giriniz.");
-        document.getElementById('studioArtistName')?.focus();
-        return;
-      }
-      if (!data.id) {
-        alert("Lütfen geçerli bir URL ID kodu giriniz.");
-        return;
-      }
-
-      if (typeof window.ARTISTS_DATA === 'undefined') {
-        window.ARTISTS_DATA = [];
-      }
-      
-      const isUpdate = currentEditingId !== null;
-      const targetId = isUpdate ? currentEditingId : data.id;
-
-      // 1. window.ARTISTS_DATA'da güncelle veya ekle
-      const existingIdx = window.ARTISTS_DATA.findIndex(a => a.id === targetId);
-      if (existingIdx !== -1) {
-        window.ARTISTS_DATA[existingIdx] = data;
-      } else {
-        window.ARTISTS_DATA.push(data); // yeni ise sona ekle (vitrin reverse ile başa alır)
-      }
-
-      // 2. LocalStorage'a kaydet
-      try {
-        let stored = [];
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (raw) stored = JSON.parse(raw);
-        if (!Array.isArray(stored)) stored = [];
-        
-        const stIdx = stored.findIndex(a => a.id === targetId);
-        if (stIdx !== -1) {
-          stored[stIdx] = data;
+      const isUpdate = (currentEditingId && currentEditingId !== '__NEW__');
+      if (isUpdate) {
+        const idx = window.ARTISTS_DATA.findIndex(a => a.id === currentEditingId);
+        if (idx !== -1) {
+          window.ARTISTS_DATA[idx] = artistData;
         } else {
-          stored.push(data);
+          window.ARTISTS_DATA.unshift(artistData);
         }
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
-      } catch (e) {
-        console.warn("LocalStorage save error:", e);
+      } else {
+        // Yeni Sanatçı: Daima en sola (1. sıraya) ekle
+        window.ARTISTS_DATA.unshift(artistData);
       }
 
-      // 3. Vitrin ve Kataloğu güncelle
+      // LocalStorage'a kalıcı olarak kaydet
+      try {
+        let customList = [];
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          customList = JSON.parse(raw);
+          if (!Array.isArray(customList)) customList = [];
+        }
+        const cIdx = customList.findIndex(a => a.id === artistData.id);
+        if (cIdx !== -1) {
+          customList[cIdx] = artistData;
+        } else {
+          customList.unshift(artistData);
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(customList));
+      } catch (e) {
+        console.error("LocalStorage kaydetme hatası:", e);
+      }
+
+      // Vitrinleri ve Kataloğu güncelle
       if (typeof syncArtistsRailWithData === 'function') {
         syncArtistsRailWithData();
       }
       if (typeof renderCatalog === 'function' && typeof getArtistsList === 'function') {
         renderCatalog(getArtistsList());
       }
-      this.injectAdminCards(); // Admin kartlarını tekrar iliştir
+      this.injectAdminCards();
 
-      // 4. Başarı Bildirimi
-      if (isUpdate) {
-        alert(`✓ "${data.name}" sanatçısının bilgileri ve eserleri başarıyla GÜNCELLENDİ!`);
+      alert(isUpdate ? `✓ "${name}" bilgileri başarıyla güncellendi!` : `✓ "${name}" vitrinin en soluna başarıyla eklendi!`);
+
+      // Stüdyodan çık ve doğrudan yayınlanan profil sayfasına geç!
+      const studioView = document.getElementById('artistStudioView');
+      if (studioView) studioView.style.display = 'none';
+
+      if (typeof openArtistProfile === 'function') {
+        openArtistProfile(artistData.id);
       } else {
-        alert(`🎉 TEBRİKLER!\n\n"${data.name}" başarıyla Biresku'ya eklendi!\n\n• Vitrinin 1. sırasına (en sola) yerleşti.\n• Kataloğa kaydedildi.\n• Özel alanı aktif: /dergi/sanatcilar/#profil=${data.id}`);
+        window.location.hash = "profil=" + artistData.id;
       }
-
-      this.closeStudio();
     },
 
-    // Sanatçıyı Sil
-    deleteCurrentArtist: function() {
-      if (!currentEditingId) return;
-      if (!checkAdminAuth()) return;
+    // M. Sanatçıyı Sil
+    deleteFromVisualStudio: function() {
+      if (!currentEditingId || currentEditingId === '__NEW__') return;
+      const name = document.getElementById('visualStudioNameInput')?.value || currentEditingId;
+      if (!confirm(`DİKKAT: "${name}" isimli sanatçıyı sistemden kaldırmak istediğinize emin misiniz?`)) {
+        return;
+      }
 
-      const confirmDel = confirm(`"${currentEditingId}" sanatçısını sistemden ve vitrinden KALDIRMAK istediğinize emin misiniz?`);
-      if (!confirmDel) return;
-
-      // 1. window.ARTISTS_DATA'dan çıkar
-      if (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
+      if (window.ARTISTS_DATA) {
         window.ARTISTS_DATA = window.ARTISTS_DATA.filter(a => a.id !== currentEditingId);
       }
 
-      // 2. LocalStorage'dan çıkar
       try {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (raw) {
@@ -903,38 +719,39 @@
         }
       } catch (e) {}
 
-      // 3. Yeniden çiz
-      if (typeof syncArtistsRailWithData === 'function') {
-        syncArtistsRailWithData();
-      }
-      if (typeof renderCatalog === 'function' && typeof getArtistsList === 'function') {
-        renderCatalog(getArtistsList());
-      }
+      if (typeof syncArtistsRailWithData === 'function') syncArtistsRailWithData();
+      if (typeof renderCatalog === 'function' && typeof getArtistsList === 'function') renderCatalog(getArtistsList());
       this.injectAdminCards();
 
-      alert("✓ Sanatçı başarıyla sistemden kaldırıldı.");
-      this.closeStudio();
+      alert("✓ Sanatçı sistemden kaldırıldı.");
+      this.exitVisualStudio();
+    },
+
+    // N. Karta Tıklandığında Düzenle Aç
+    editArtist: function(artistId) {
+      this.openStudio(artistId);
     },
 
     // 7. GİZLİ "+" KARTINI VE DÜZENLE BUTONLARINI ENJEKTE ET (SADECE ADMİNE GÖRÜNÜR)
     injectAdminCards: function() {
       // Güvenlik: Admin değilse ASLA DOM'a dokunma, sıfır iz bırak
       if (!checkAdminAuth()) {
-        // Varsa temizle
-        document.querySelectorAll('.admin-only-injected-card, .admin-card-edit-btn').forEach(el => el.remove());
+        document.querySelectorAll('.admin-only-injected-card, .admin-card-edit-btn, #artistStudioView').forEach(el => el.remove());
         return;
       }
 
       // A. dergi/sanatcilar/ Kataloğu (#catalogGrid)
       const catalogGrid = document.getElementById('catalogGrid');
       if (catalogGrid) {
-        // Mevcut "+" kartı yoksa sol üste (1. sıraya) ekle
         let existingAddCard = document.getElementById('adminCatalogAddCard');
         if (!existingAddCard) {
           const addCard = document.createElement('article');
           addCard.id = 'adminCatalogAddCard';
           addCard.className = 'artist-card admin-only-injected-card admin-plus-card';
-          addCard.onclick = () => BireskuArtistAdmin.openStudio('__NEW__');
+          addCard.onclick = (e) => {
+            e.stopPropagation();
+            BireskuArtistAdmin.openStudio('__NEW__');
+          };
           addCard.style.cursor = 'pointer';
           addCard.innerHTML = `
             <div class="artist-card-cover admin-plus-cover">
@@ -948,9 +765,9 @@
                 <h3 class="artist-name" style="color:#c09a58; font-size:1.1rem; display:flex; align-items:center; gap:6px;">
                   <span>✨</span> Yeni Sanatçı &amp; Şablon
                 </h3>
-                <div class="artist-discipline" style="color:var(--text-muted); font-size:0.78rem;">Yönetici Hızlı Ekleme Alanı</div>
+                <div class="artist-discipline" style="color:var(--text-muted); font-size:0.78rem;">Yönetici Canlı Şablon Stüdyosu</div>
                 <p class="artist-statement" style="font-size:0.8rem; line-height:1.5;">
-                  Tıklayarak yeni sanatçı profili, biyografisi ve eserlerini vitrinin en soluna ekleyin.
+                  Tıklayarak doğrudan profil sayfası şablonunda yeni sanatçı ve eserleri vitrinin en soluna ekleyin.
                 </p>
               </div>
               <div class="artist-card-footer" style="margin-top:14px; border-top:1px solid rgba(192,154,88,0.2); padding-top:10px;">
@@ -993,7 +810,10 @@
           const railCard = document.createElement('div');
           railCard.id = 'adminRailAddCard';
           railCard.className = 'flow-card artist-flow-card admin-only-injected-card admin-plus-card';
-          railCard.onclick = () => BireskuArtistAdmin.openStudio('__NEW__');
+          railCard.onclick = (e) => {
+            e.stopPropagation();
+            BireskuArtistAdmin.openStudio('__NEW__');
+          };
           railCard.style.cursor = 'pointer';
           railCard.innerHTML = `
             <div class="artist-card-cover admin-plus-cover">
@@ -1005,7 +825,7 @@
             <div class="artist-card-body">
               <div>
                 <h3 class="artist-name-title" style="color:#c09a58;">+ Yeni Sanatçı Ekle</h3>
-                <span class="artist-cat-sub" style="color:var(--text-muted);">Yönetici Hızlı Şablonu</span>
+                <span class="artist-cat-sub" style="color:var(--text-muted);">Yönetici Canlı Şablonu</span>
                 <p class="artist-card-discipline">
                   Yeni sanatçı profili, biyografisi ve eserlerini vitrinin en soluna ekleyin.
                 </p>
@@ -1041,6 +861,12 @@
           }
         });
       }
+
+      // C. Hash Yönlendirmesini Kontrol Et (#admin-studio=...)
+      if (window.location.hash && window.location.hash.startsWith('#admin-studio=')) {
+        const targetId = window.location.hash.replace('#admin-studio=', '');
+        this.openVisualStudio(targetId);
+      }
     }
   };
 
@@ -1057,7 +883,7 @@
               if (exIdx !== -1) {
                 window.ARTISTS_DATA[exIdx] = art; // Güncelle
               } else {
-                window.ARTISTS_DATA.push(art); // Ekle
+                window.ARTISTS_DATA.unshift(art); // Yeni sanatçı en başa
               }
             }
           });
@@ -1068,17 +894,25 @@
       }
     } catch (e) {}
 
-    // Admin kartlarını ve "+" simgesini kontrol edip enjekte et
     setTimeout(() => {
       BireskuArtistAdmin.injectAdminCards();
-    }, 300);
+    }, 250);
   }
 
-  // Oturum durumu değiştiğinde (Giriş / Çıkış) anında güncelle
+  // Oturum durumu değiştiğinde anında güncelle
   window.addEventListener("biresku:auth_state_changed", function(e) {
     setTimeout(() => {
       BireskuArtistAdmin.injectAdminCards();
     }, 150);
+  });
+
+  window.addEventListener("hashchange", function() {
+    if (window.location.hash && window.location.hash.startsWith('#admin-studio=')) {
+      if (checkAdminAuth()) {
+        const targetId = window.location.hash.replace('#admin-studio=', '');
+        BireskuArtistAdmin.openVisualStudio(targetId);
+      }
+    }
   });
 
   if (document.readyState === 'loading') {

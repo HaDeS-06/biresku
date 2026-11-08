@@ -952,3 +952,523 @@ a, a:visited, a:active, a:focus {
   transform: scale(1.06) !important;
   box-shadow: 0 6px 18px rgba(192, 154, 88, 0.4) !important;
 }
+
+/* ==========================================================================
+   CANLI GORSEL SANATCI STUDYOSU (IN-PLACE VISUAL ARTIST STUDIO)
+   (Profil sayfasiyla birebir ayni duzende dogrudan sayfada canli duzenleme)
+   ========================================================================== */
+
+/* Ust Kontrol & Navigasyon Cubugu */
+.studio-top-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  background: rgba(14, 16, 21, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(192, 154, 88, 0.45) !important;
+  border-radius: 8px !important;
+  padding: 12px 18px !important;
+  margin-bottom: 28px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  position: sticky !important;
+  top: 15px !important;
+  z-index: 50 !important;
+}
+
+.studio-top-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.studio-back-btn {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: var(--text-heading, #fff) !important;
+  padding: 7px 14px !important;
+  border-radius: 4px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.2s ease !important;
+}
+.studio-back-btn:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: #c09a58 !important;
+  color: #c09a58 !important;
+}
+
+.studio-mode-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(192, 154, 88, 0.12) !important;
+  border: 1px solid rgba(192, 154, 88, 0.45) !important;
+  color: #c09a58 !important;
+  padding: 6px 12px !important;
+  border-radius: 20px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+}
+
+.studio-top-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.studio-switch-select {
+  background: #15171e !important;
+  border: 1px solid rgba(192, 154, 88, 0.5) !important;
+  color: #c09a58 !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  padding: 7px 12px !important;
+  border-radius: 4px !important;
+  outline: none !important;
+  cursor: pointer !important;
+}
+
+.studio-btn {
+  border: none !important;
+  padding: 8px 14px !important;
+  border-radius: 4px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.studio-btn-template {
+  background: rgba(192, 154, 88, 0.15) !important;
+  border: 1px solid rgba(192, 154, 88, 0.4) !important;
+  color: #c09a58 !important;
+}
+.studio-btn-template:hover {
+  background: #c09a58 !important;
+  color: #0e1015 !important;
+}
+
+.studio-btn-clear {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: var(--text-muted, #9ca3af) !important;
+}
+.studio-btn-clear:hover {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+  border-color: #ef4444 !important;
+}
+
+.studio-btn-save {
+  background: #c09a58 !important;
+  color: #0e1015 !important;
+  box-shadow: 0 4px 14px rgba(192, 154, 88, 0.35) !important;
+}
+.studio-btn-save:hover {
+  background: #d4ae6a !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(192, 154, 88, 0.5) !important;
+}
+
+.studio-btn-delete {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+  color: #ef4444 !important;
+}
+.studio-btn-delete:hover {
+  background: #ef4444 !important;
+  color: #fff !important;
+}
+
+/* In-Place Hero Duzenleme Alanlari */
+.studio-profile-hero {
+  position: relative !important;
+  border: 1px dashed rgba(192, 154, 88, 0.4) !important;
+  background: linear-gradient(145deg, rgba(22, 24, 31, 0.95), rgba(13, 15, 20, 0.95)) !important;
+}
+
+.studio-avatar-picker {
+  position: relative !important;
+  cursor: pointer !important;
+  border: 2px dashed rgba(192, 154, 88, 0.5) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  background: #161820 !important;
+  aspect-ratio: 1 / 1.15 !important;
+}
+.studio-avatar-picker img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+.studio-avatar-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(10, 12, 16, 0.65) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  color: #c09a58 !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  opacity: 0.85 !important;
+  transition: opacity 0.2s ease, background 0.2s ease !important;
+  text-align: center !important;
+  padding: 12px !important;
+}
+.studio-avatar-picker:hover .studio-avatar-overlay {
+  opacity: 1 !important;
+  background: rgba(10, 12, 16, 0.85) !important;
+  color: #fff !important;
+}
+.studio-camera-icon {
+  font-size: 1.8rem !important;
+}
+
+.studio-hero-content {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+.studio-field-row {
+  width: 100% !important;
+}
+
+.studio-inplace-badge {
+  background: rgba(15, 16, 19, 0.9) !important;
+  border: 1px dashed #c09a58 !important;
+  color: var(--accent, #c09a58) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  padding: 5px 12px !important;
+  border-radius: 4px !important;
+  outline: none !important;
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 220px !important;
+}
+
+.studio-inplace-title {
+  background: rgba(15, 17, 23, 0.4) !important;
+  border: 1px dashed rgba(192, 154, 88, 0.4) !important;
+  border-radius: 4px !important;
+  padding: 6px 12px !important;
+  width: 100% !important;
+  color: var(--text-heading, #fff) !important;
+  font-family: var(--font-serif, "Playfair Display", Georgia, serif) !important;
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+.studio-inplace-title:focus {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+  background: rgba(15, 17, 23, 0.8) !important;
+  box-shadow: 0 0 16px rgba(192, 154, 88, 0.2) !important;
+}
+
+.studio-inplace-discipline {
+  background: rgba(15, 17, 23, 0.4) !important;
+  border: 1px dashed rgba(192, 154, 88, 0.35) !important;
+  border-radius: 4px !important;
+  padding: 6px 12px !important;
+  width: 100% !important;
+  color: var(--accent, #c09a58) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+.studio-inplace-discipline:focus {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+  background: rgba(15, 17, 23, 0.8) !important;
+}
+
+.studio-inplace-shortbio {
+  background: rgba(15, 17, 23, 0.4) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.15) !important;
+  border-radius: 4px !important;
+  padding: 10px 12px !important;
+  width: 100% !important;
+  color: var(--text-muted, #d1d5db) !important;
+  font-size: 1.02rem !important;
+  line-height: 1.6 !important;
+  font-family: inherit !important;
+  resize: vertical !important;
+  min-height: 64px !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+.studio-inplace-shortbio:focus {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+  background: rgba(15, 17, 23, 0.8) !important;
+}
+
+.studio-meta-bar {
+  display: flex !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  border-top: 1px solid var(--border, #2a2e37) !important;
+  padding-top: 14px !important;
+  margin-top: 10px !important;
+}
+.studio-meta-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 0.85rem !important;
+  color: var(--text-dim, #9ca3af) !important;
+}
+.studio-meta-item label {
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+}
+.studio-inplace-meta {
+  background: rgba(15, 17, 23, 0.5) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.2) !important;
+  color: var(--text-heading, #fff) !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  outline: none !important;
+}
+.studio-inplace-meta:focus {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+}
+
+/* 2 Derinlemesine Kart Duzenlemesi (Biyografi & Hayata Bakisi) */
+.studio-section-card {
+  border: 1px dashed rgba(192, 154, 88, 0.35) !important;
+  position: relative !important;
+}
+
+.studio-field-hint {
+  font-size: 0.72rem !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #c09a58 !important;
+  font-weight: 600 !important;
+  margin-left: auto !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.studio-inplace-textarea {
+  background: rgba(15, 17, 23, 0.7) !important;
+  border: 1px dashed rgba(192, 154, 88, 0.3) !important;
+  border-radius: 4px !important;
+  padding: 16px !important;
+  width: 100% !important;
+  color: var(--text-muted, #d1d5db) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.8 !important;
+  font-family: inherit !important;
+  resize: vertical !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+.studio-inplace-textarea:focus {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+  background: rgba(15, 17, 23, 0.95) !important;
+  box-shadow: 0 0 18px rgba(192, 154, 88, 0.2) !important;
+}
+
+.studio-quote-container {
+  position: relative !important;
+}
+.studio-quote-mark {
+  position: absolute !important;
+  top: -8px !important;
+  left: 6px !important;
+  font-size: 2.8rem !important;
+  color: rgba(192, 154, 88, 0.2) !important;
+  font-family: Georgia, serif !important;
+  pointer-events: none !important;
+}
+.studio-inplace-quote-textarea {
+  background: rgba(192, 154, 88, 0.05) !important;
+  border: 1px dashed rgba(192, 154, 88, 0.5) !important;
+  border-left: 3px solid #c09a58 !important;
+  border-radius: 4px !important;
+  padding: 14px 18px !important;
+  width: 100% !important;
+  color: var(--accent, #c09a58) !important;
+  font-family: var(--font-reading, Georgia, serif) !important;
+  font-size: 1.18rem !important;
+  font-style: italic !important;
+  line-height: 1.6 !important;
+  resize: vertical !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+.studio-inplace-quote-textarea:focus {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+  background: rgba(192, 154, 88, 0.1) !important;
+  box-shadow: 0 0 16px rgba(192, 154, 88, 0.25) !important;
+}
+.studio-quote-label {
+  font-size: 0.7rem !important;
+  color: var(--text-dim, #9ca3af) !important;
+  margin-top: 4px !important;
+  font-style: normal !important;
+}
+
+/* Eserler Koleksiyonu Gorsel Duzenleme */
+.studio-artworks-section {
+  border: 1px dashed rgba(192, 154, 88, 0.35) !important;
+  border-radius: 6px !important;
+  padding: 24px !important;
+  background: rgba(15, 17, 23, 0.6) !important;
+  margin-top: 36px !important;
+}
+
+.studio-btn-add-art {
+  background: #c09a58 !important;
+  color: #0e1015 !important;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+}
+.studio-btn-add-art:hover {
+  background: #d4ae6a !important;
+}
+
+.studio-artwork-card {
+  background: var(--bg-surface, #15171e) !important;
+  border: 1px solid var(--border, #2a2e37) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  transition: all 0.2s ease !important;
+}
+.studio-artwork-card:hover {
+  border-color: rgba(192, 154, 88, 0.5) !important;
+}
+
+.studio-artwork-img-box {
+  height: 230px !important;
+  background: #101217 !important;
+  position: relative !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+}
+.studio-artwork-img-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+.studio-artwork-img-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(10, 12, 16, 0.7) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  color: #c09a58 !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  opacity: 0.8 !important;
+  transition: opacity 0.2s ease !important;
+}
+.studio-artwork-img-box:hover .studio-artwork-img-overlay {
+  opacity: 1 !important;
+  background: rgba(10, 12, 16, 0.85) !important;
+  color: #fff !important;
+}
+
+.studio-artwork-fields {
+  padding: 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.studio-art-input-title {
+  background: rgba(10, 12, 16, 0.6) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.25) !important;
+  color: var(--text-heading, #fff) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  padding: 6px 8px !important;
+  border-radius: 4px !important;
+  outline: none !important;
+}
+.studio-art-input-title:focus {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+}
+
+.studio-art-row {
+  display: flex !important;
+  gap: 6px !important;
+}
+.studio-art-input-sub {
+  background: rgba(10, 12, 16, 0.6) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.2) !important;
+  color: var(--text-muted, #d1d5db) !important;
+  font-size: 0.8rem !important;
+  padding: 5px 6px !important;
+  border-radius: 4px !important;
+  outline: none !important;
+  flex: 1 !important;
+}
+.studio-art-input-dim {
+  border-color: rgba(192, 154, 88, 0.45) !important;
+  color: #c09a58 !important;
+  font-weight: 700 !important;
+}
+.studio-art-input-sub:focus {
+  border-color: #c09a58 !important;
+  border-style: solid !important;
+}
+
+.studio-art-delete-btn {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  color: #ef4444 !important;
+  font-size: 0.72rem !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  align-self: flex-end !important;
+  margin-top: 4px !important;
+}
+.studio-art-delete-btn:hover {
+  background: #ef4444 !important;
+  color: #fff !important;
+}
