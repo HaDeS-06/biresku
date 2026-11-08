@@ -133,7 +133,7 @@ window.ARTISTS_DATA = [
     "city": "Ankara",
     "studio": "Tuncay Umay Atölyeleri (Ankara)",
     "coverImage": "/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v5",
-    "shortBio": "1980 Ankara doğumlu ressam ve akademisyen; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
+    "shortBio": "1980 Ankara doğumlu ressam; denizlerin dinamik, derin atmosferi ile satrancın varoluşsal kurgusunu sürrealist bir görsel dilde buluşturan Biresku kurucusu sanatçı.",
     "quote": "Denizi resmetmek, aslında zamanın akışını ve bu amansız devinimi tek bir fırça vuruşunda dondurma cesaretidir. Her tablo, dalgaların sonsuz değişimi karşısında kendi iç dengesini arayan, hayatın fırtınasında doğru hamleyi yapmaya çalışan ve karanlığa rağmen içindeki ışığı söndürmeyen ruhun görsel bir manifestosudur.",
     "biography": [
       "Sanat yolculuğu, lise yıllarında İstanbul’da bir bankanın önünde açılan sokak sergisini hayranlıkla izlemesiyle başladı. Birkaç tüp boya, fırça ve bir tuvalle atılan bu ilk adım, mesleki yaşamı boyunca kesintisiz bir tutkuya dönüştü. Sanatının ilk evresinde İstanbul temasının izlerini süren sanatçı, zamanla denizlerin o dinamik, derin ve büyüleyici atmosferiyle bütünleşen özgün bir görsel dil geliştirdi.",
