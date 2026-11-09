@@ -562,3 +562,28 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
   6. *Arter Çağdaş Sanat* (`https://www.arter.org.tr/sergi/1`)
   7. *Artam Global Art* (`https://artam.com/artam-dergi`)
   8. *Artful Living Kültür Sanat Ajandası* (`https://www.artfulliving.com.tr/sanat`)
+
+
+---
+
+## 18. BİRESKU SANAT DERGİSİ — Instagram Monografi & Sanal Dergi Temeli (v50 — Staging)
+
+> [!IMPORTANT]
+> **Kullanıcı Direktifleri:**
+> 1. *"Yok yok yok bu dergi bizim siteden bağımsız bişi bunu instada paylaşıcaz sitede değil"*
+> 2. *"Ya şöye direkt bi drrgide yapıcaz sayfa sayfa bunu siteye eklicez ama ben sadece dosya eklicem siteye başka bişi değil sitede bişi değiştirmicez"*
+> 3. *"Çevir butonu olmicak- biresku sanat dergisi olucak adı - bide şuan sitede hiçbir değişiklik yapma sadece derginin ve instaya post post atıcaz ya onun temelini oluştur sonra devam ederiz"*
+> 4. *"Hazırlayan: Arda Umay"* ibaresi kuralı.
+
+### Mimari ve Uygulama Detayları:
+1. **Siteden Bağımsız Tekil Dosya (`sanal-dergi/index.html`):**
+   - Canlı sitedeki hiçbir mevcut sayfa (`index.html`, `dergi/`, `assets/` vs.) değiştirilmedi.
+   - Dosya tamamen bağımsız çalışır; merkezi `window.ARTISTS_DATA` veri kaynağından beslenir.
+2. **Instagram 4:5 (1080×1350) Sayfa Akışı:**
+   - Sayfa çevirme butonu yok; doğal dikey akışkan (fluid) sayfa kartları.
+   - Sayfa 1 (Kapak): Tescilli BİRESKU panoramik kurumsal banner'ı (`/assets/biresku-panorama-banner.jpg`), "ÖZEL MONOGRAFİ SAYISI", "BİRESKU SANAT DERGİSİ", çerçeveli sanatçı portresi, isim, dönem, doğum/atölye ve "Hazırlayan: Arda Umay".
+   - Sayfa 2 (Biyografi): Büyük harf (drop-cap) ile başlayan akışkan editoryal biyografi metni.
+   - Sayfa 3 (Sanat ve Hayat Felsefesi): Tipografik tırnak bloğunda sanatçı aforizması ve felsefe metinleri.
+   - Sayfa 4+ (Seçkin Eserler): Doğrulanmış Artam/müze eserleri, gerçek ölçü ve teknik detaylarıyla yüksek çözünürlüklü sunum.
+3. **Dağıtım Durumu:**
+   - Değişiklikler YALNIZCA `staging` dalında toplanmış olup, kullanıcının localhost/önizleme onayından sonra canlıya alınacaktır.
