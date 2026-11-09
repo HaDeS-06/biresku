@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BİRESKU SANAT DERGİSİ | Sanal Dergi & Instagram Monografi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========================================================
+       BİRESKU SANAT DERGİSİ — TEMEL EDİTORYAL MİMARİSİ
+       Instagram 4:5 (1080x1350) & Akışkan Monografi Düzeni
+       ======================================================== */
+    :root {
+      --bg-dark: #0a0b0d;
+      --card-bg: #12141a;
+      --card-inner: #161922;
+      --gold: #c09a58;
+      --gold-light: #dfba78;
+      --gold-dim: rgba(192, 154, 88, 0.2);
+      --text-white: #f5f5f7;
+      --text-dim: #9ba1b0;
+      --text-muted: #6b7280;
+      --border: rgba(192, 154, 88, 0.25);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-reading: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px 80px 15px;
+      overflow-x: hidden;
+      background-image: radial-gradient(circle at 50% 0%, rgba(192, 154, 88, 0.06), transparent 50%);
+    }
+
+    /* Üst Bar & Sanatçı Seçici (Sadece Arka Planda Yönetim İçin) */
+    .magazine-toolbar {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding: 12px 18px;
+      background: rgba(18, 20, 26, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      backdrop-filter: blur(10px);
+    }
+
+    .toolbar-brand {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+
+    .toolbar-select {
+      background: #0f1013;
+      border: 1px solid var(--border);
+      color: var(--text-white);
+      font-size: 0.82rem;
+      padding: 6px 12px;
+      border-radius: 3px;
+      outline: none;
+      font-family: var(--font-sans);
+      cursor: pointer;
+    }
+
+    /* Dergi Sayfaları Konteyneri */
+    .magazine-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+      max-width: 580px; /* Standart Instagram 4:5 önizleme oranı */
+    }
+
+    /* Her Dergi Sayfası (4:5 Oranlı veya Akışkan) */
+    .mag-page {
+      width: 100%;
+      min-height: 725px; /* 580px genişlik için 4:5 tam oran min-height */
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 44px 38px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mag-page:hover {
+      border-color: rgba(192, 154, 88, 0.45);
+    }
+
+    /* Sayfa Üst Bilgisi (Header) */
+    .mag-page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 28px;
+    }
+
+    .mag-masthead {
+      font-family: var(--font-display);
+      font-size: 0.76rem;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .mag-page-num {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* Sayfa Alt Bilgisi (Footer) */
+    .mag-page-footer {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .mag-credit {
+      font-family: var(--font-reading);
+      font-size: 0.88rem;
+      color: var(--gold-light);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+
+    /* ========================================================
+       SAYFA 1: KAPAK (COVER) DÜZENİ
+       ======================================================== */
+    .cover-page {
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+      padding: 36px 32px;
+      background: radial-gradient(circle at 50% 25%, #181c26, #0e1015);
+    }
+
+    .cover-banner-wrap {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto 18px auto;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #0d0f14;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .cover-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .cover-top-badge {
+      font-family: var(--font-display);
+      font-size: 0.74rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gold-dim);
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .cover-portrait-frame {
+      width: 250px;
+      height: 250px;
+      margin: 0 auto 26px auto;
+      border: 1px solid var(--gold);
+      padding: 6px;
+      background: rgba(192, 154, 88, 0.05);
+      position: relative;
+    }
+
+    .cover-portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%) contrast(105%);
+    }
+
+    .cover-artist-name {
+      font-family: var(--font-reading);
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .cover-discipline {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      padding: 0 15px;
+    }
+
+    .cover-period {
+      font-family: var(--font-sans);
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    .cover-curator-box {
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-curator-name {
+      font-family: var(--font-reading);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--gold-light);
+      letter-spacing: 0.03em;
+    }
+
+    /* ========================================================
+       SAYFA 2: BİYOGRAFİ DÜZENİ (AKLAN METİN)
+       ======================================================== */
+    .mag-section-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mag-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+
+    .mag-body-text {
+      font-family: var(--font-reading);
+      font-size: 1.18rem;
+      line-height: 1.78;
+      color: #d1d5db;
+      text-align: justify;
+    }
+
+    .mag-body-text p {
+      margin-bottom: 18px;
+      text-indent: 1.4em;
+    }
+
+    .mag-body-text p:first-of-type {
+      text-indent: 0;
+    }
+
+    /* Büyük Başlangıç Harfi (Drop Cap) */
+    .mag-body-text p:first-of-type::first-letter {
+      float: left;
+      font-family: var(--font-display);
+      font-size: 3.4rem;
+      line-height: 0.85;
+      padding-top: 4px;
+      padding-right: 10px;
+      padding-bottom: 2px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ========================================================
+       SAYFA 3: SANAT VE HAYAT FELSEFESİ
+       ======================================================== */
+    .mag-quote-block {
+      background: var(--card-inner);
+      border-left: 2px solid var(--gold);
+      padding: 24px 26px;
+      margin-bottom: 26px;
+      position: relative;
+    }
+
+    .mag-quote-icon {
+      font-family: var(--font-reading);
+      font-size: 3.8rem;
+      line-height: 1;
+      color: var(--gold-dim);
+      position: absolute;
+      top: 6px;
+      right: 14px;
+      user-select: none;
+    }
+
+    .mag-quote-text {
+      font-family: var(--font-reading);
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--gold-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ========================================================
+       SAYFA 4+: ESER KOLEKSİYONU & GALERİ
+       ======================================================== */
+    .mag-artwork-card {
+      background: var(--card-inner);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 24px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mag-art-img-wrap {
+      width: 100%;
+      height: 380px;
+      background: #0d0e12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .mag-art-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .mag-art-caption {
+      padding: 6px 4px 2px 4px;
+    }
+
+    .mag-art-title {
+      font-family: var(--font-reading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 4px;
+    }
+
+    .mag-art-specs {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      letter-spacing: 0.03em;
+      line-height: 1.45;
+    }
+
+    /* Instagram İpucu Kutusu */
+    .insta-helper-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 30px;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Basit Araç Çubuğu (Sanatçı Seçimi İçin) -->
+  <header class="magazine-toolbar">
+    <div class="toolbar-brand">BİRESKU SANAT DERGİSİ</div>
+    <div>
+      <select id="artistSelector" class="toolbar-select" onchange="changeArtist(this.value)">
+        <!-- JS ile doldurulur -->
+      </select>
+    </div>
+  </header>
+
+  <!-- Sanal Dergi Sayfaları Akışı -->
+  <main class="magazine-stream" id="magazineStream">
+    <!-- Sayfalar JavaScript ile dinamik olarak çizilir -->
+  </main>
+
+  <footer class="insta-helper-note">
+    BİRESKU SANAT DERGİSİ • Instagram 4:5 Dikey Format • Hazırlayan: Arda Umay
+  </footer>
+
+  <!-- Sitedeki merkezi sanatçı veri tabanını oku -->
+  <script src="/assets/artists-data.js?v=20261109_v50"></script>
+
+  <script>
+    // URL'den id parametresini al (?id=abidin-dino)
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Seçiciyi ve Dergiyi Başlat
+    function initMagazine() {
+      if (!window.ARTISTS_DATA || !Array.isArray(window.ARTISTS_DATA) || !window.ARTISTS_DATA.length) {
+        document.getElementById('magazineStream').innerHTML = '<div style="padding:40px;text-align:center;">Sanatçı verisi yüklenemedi.</div>';
+        return;
+      }
+
+      const selector = document.getElementById('artistSelector');
+      const allArtists = window.ARTISTS_DATA.slice().reverse(); // En son eklenen en başta
+
+      // Select kutusunu doldur
+      selector.innerHTML = allArtists.map(a => `<option value="${a.id}">${a.name}</option>`).join('');
+
+      let currentId = getQueryParam('id') || allArtists[0].id;
+      let artist = allArtists.find(a => a.id === currentId) || allArtists[0];
+      selector.value = artist.id;
+
+      renderMagazine(artist);
+    }
+
+    function changeArtist(artistId) {
+      const newUrl = window.location.pathname + '?id=' + artistId;
+      window.history.pushState({ path: newUrl }, '', newUrl);
+      const artist = window.ARTISTS_DATA.find(a => a.id === artistId);
+      if (artist) renderMagazine(artist);
+    }
+
+    // Tek Bir Sanatçının Tam Sanal Dergi Sayfalarını Çiz
+    function renderMagazine(artist) {
+      const container = document.getElementById('magazineStream');
+      const artworks = artist.artworks || [];
+      
+      let html = '';
+
+      // ==========================================
+      // SAYFA 1: KAPAK (COVER)
+      // ==========================================
+      html += `
+        <article class="mag-page cover-page" id="page-1">
+          <div>
+            <div class="cover-banner-wrap">
+              <img src="/assets/biresku-panorama-banner.jpg" alt="BİRESKU Sanat Dergisi" class="cover-banner-img">
+            </div>
+            <div class="cover-top-badge">ÖZEL MONOGRAFİ SAYISI</div>
+            <div class="mag-masthead">BİRESKU SANAT DERGİSİ</div>
+          </div>
+
+          <div style="width: 100%;">
+            <div class="cover-portrait-frame">
+              <img src="${artist.coverImage}" alt="${artist.name}" loading="eager">
+            </div>
+            <h1 class="cover-artist-name">${artist.name}</h1>
+            <div class="cover-discipline">${artist.discipline || 'Çağdaş Türk Resmi'}</div>
+            <div class="cover-period">${artist.period || ''} • Doğum / Atölye: ${artist.city || ''}</div>
+          </div>
+
+          <div class="cover-curator-box">
+            <span style="font-size:0.75rem; letter-spacing:0.1em; color:var(--text-muted); text-transform:uppercase;">Küratöryel Seçki</span>
+            <span class="cover-curator-name">Hazırlayan: Arda Umay</span>
+          </div>
+        </article>
+      `;
+
+      // ==========================================
+      // SAYFA 2: BİYOGRAFİ & YAŞAM YOLCULUĞU (AKLAN METİN)
+      // ==========================================
+      let bioParagraphs = '';
+      if (Array.isArray(artist.biography)) {
+        bioParagraphs = artist.biography.map(p => `<p>${p}</p>`).join('');
+      } else if (artist.shortBio) {
+        bioParagraphs = `<p>${artist.shortBio}</p>`;
+      }
+
+      html += `
+        <article class="mag-page" id="page-2">
+          <header class="mag-page-header">
+            <span class="mag-masthead">BİRESKU SANAT DERGİSİ</span>
+            <span class="mag-page-num">SAYFA 02</span>
+          </header>
+
+          <h2 class="mag-section-title">Biyografi &amp; Yaşamı</h2>
+          
+          <div class="mag-body-text">
+            ${bioParagraphs}
+          </div>
+
+          <footer class="mag-page-footer">
+            <span>${artist.name} Portfolyosu</span>
+            <span class="mag-credit">Hazırlayan: Arda Umay</span>
+          </footer>
+        </article>
+      `;
+
+      // ==========================================
+      // SAYFA 3: SANAT VE HAYAT FELSEFESİ
+      // ==========================================
+      let philParagraphs = '';
+      if (Array.isArray(artist.philosophy) && artist.philosophy.length) {
+        philParagraphs = artist.philosophy.map(p => `<p>${p}</p>`).join('');
+      } else {
+        philParagraphs = `<p>${artist.shortBio || ''}</p>`;
+      }
+
+      html += `
+        <article class="mag-page" id="page-3">
+          <header class="mag-page-header">
+            <span class="mag-masthead">BİRESKU SANAT DERGİSİ</span>
+            <span class="mag-page-num">SAYFA 03</span>
+          </header>
+
+          <h2 class="mag-section-title">Sanat ve Hayat Felsefesi</h2>
+
+          ${artist.quote ? `
+            <div class="mag-quote-block">
+              <span class="mag-quote-icon">“</span>
+              <div class="mag-quote-text">${artist.quote}</div>
+            </div>
+          ` : ''}
+
+          <div class="mag-body-text">
+            ${philParagraphs}
+          </div>
+
+          <footer class="mag-page-footer">
+            <span>${artist.name} • Sanat Görüşü</span>
+            <span class="mag-credit">Hazırlayan: Arda Umay</span>
+          </footer>
+        </article>
+      `;
+
+      // ==========================================
+      // SAYFA 4+: ESER KOLEKSİYONU (HER SAYFADA 1 VEYA 2 SEÇKİN ESER)
+      // ==========================================
+      if (artworks && artworks.length > 0) {
+        // Her sayfada 1 veya 2 eser olacak şekilde dergi sayfalarına böl
+        const worksPerPage = 2;
+        let pageCount = 4;
+
+        for (let i = 0; i < artworks.length; i += worksPerPage) {
+          const slice = artworks.slice(i, i + worksPerPage);
+          
+          let cardsHtml = slice.map((art, idx) => `
+            <div class="mag-artwork-card">
+              <div class="mag-art-img-wrap" style="${slice.length === 1 ? 'height: 480px;' : 'height: 280px;'}">
+                <img src="${art.imageUrl || art.image}" alt="${art.title || artist.name + ' Eseri'}" loading="lazy">
+              </div>
+              <div class="mag-art-caption">
+                <h4 class="mag-art-title">${art.title ? '"' + art.title + '"' : 'Başlıksız Eser'}</h4>
+                <div class="mag-art-specs">
+                  ${art.technique || 'Özgün Teknik'} • ${art.dimensions || ''} ${art.year ? '• (' + art.year + ')' : ''}
+                </div>
+              </div>
+            </div>
+          `).join('');
+
+          html += `
+            <article class="mag-page" id="page-${pageCount}">
+              <header class="mag-page-header">
+                <span class="mag-masthead">BİRESKU SANAT DERGİSİ</span>
+                <span class="mag-page-num">SAYFA 0${pageCount}</span>
+              </header>
+
+              <h2 class="mag-section-title">Seçkin Eserler (${i+1}–${Math.min(i + worksPerPage, artworks.length)} / ${artworks.length})</h2>
+
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                ${cardsHtml}
+              </div>
+
+              <footer class="mag-page-footer">
+                <span>Koleksiyon Arşivi • ${artist.name}</span>
+                <span class="mag-credit">Hazırlayan: Arda Umay</span>
+              </footer>
+            </article>
+          `;
+          pageCount++;
+        }
+      }
+
+      container.innerHTML = html;
+    }
+
+    // Sayfa Yüklendiğinde
+    window.addEventListener('DOMContentLoaded', initMagazine);
+  </script>
+</body>
+</html>
