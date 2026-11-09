@@ -1,6 +1,6 @@
 # BİRESKU — AI & Geliştirici Devir / El Kitabı (Handover Documentation)
 
-> **Tarih:** 8 Kasım 2026  
+> **Tarih:** 9 Kasım 2026 (Son Güncelleme)  
 > **Canlı Adres:** [biresku.com](https://biresku.com)  
 > **GitHub Deposu:** `HaDeS-06/biresku` (`main` dalı)  
 > **Barındırma:** GitHub Pages (Özel CNAME: `biresku.com`) + Cloudflare DNS  
@@ -10,9 +10,19 @@
 
 ## 1. Proje Mimarisi ve Dizin Yapısı
 
-> [!IMPORTANT]
-> **ÇOKLU AJAN (MULTI-AGENT) SENKRONİZASYON PROTOKOLÜ:**
-> Projede birden fazla AI ajanı çalışmaktadır. Birbirinizin yaptığı işlerin üzerine yazmamak ("üst üste çıkmamak") için herhangi bir göreve başlamadan önce **MUTLAKA** GitHub `main` dalındaki en son commit'i ve dosyaları çekiniz. Yeni bir ajan işe başladığında ilk verilecek sistem promptu ana dizindeki [`AGENT_PROMPT.md`](file:///C:/Users/ardau/.gemini/antigravity/scratch/biresku-site/AGENT_PROMPT.md) dosyasında mevcuttur.
+> [!CAUTION]
+> **KESİN PROJE YÖNETİMİ VE GÜVENLİK PROTOKOLÜ (CANLI VE ÇOKLU AJAN KURALI):**
+> 1. **ASLA DOĞRUDAN CANLIYA YAZMA (NO DIRECT MAIN COMMITS):**
+>    - Kodlarda yapılan hiçbir güncelleme, ekleme veya düzeltme doğrudan `main` dalına (branch) gönderilmez.
+>    - Tüm değişiklikler önce `staging` dalında toplanır.
+> 2. **LOCALHOST / TEST ONAY DÖNGÜSÜ:**
+>    - Yapay zeka tüm değişiklikleri hazırlayıp `staging` dalına yükler.
+>    - Kullanıcı (Arda), localhost ortamında kapsamlı test ve incelemesini yapar.
+>    - Kullanıcı açık onay vermeden kodlar asla `main` dalına birleştirilmez ve canlı siteye yansıtılmaz.
+> 3. **ÇAKIŞMA ÖNLEME (AI HANDOVER & SYNC):**
+>    - İşe başlamadan önce MUTLAKA GitHub deposundaki en son commit SHA'sı ve `AI_HANDOVER.md` kontrol edilir.
+>    - Diğer ajanın veya kullanıcının yaptığı son değişikliklerin üzerine asla körlemesine yazma yapılmaz; daima en güncel ağaç (base tree) üzerine ekleme yapılır.
+>    - Yapılan her işlem `AI_HANDOVER.md` kütüğüne eksiksiz işlenir.
 
 Proje saf, modern, bağımlılıksız (Vanilla HTML5 / Modern CSS3 / Modern ES6+ JavaScript) mimariyle inşa edilmiştir. Build tool (Webpack/Vite vb.) zorunluluğu yoktur; dosyalar doğrudan GitHub Pages tarafından statik olarak sunulmaktadır.
 
@@ -48,7 +58,7 @@ biresku/
 
 Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonları `window.ARTISTS_DATA` dizisinde saklanır. Sitedeki profil sayfaları ve vitrinler bu veriyi dinamik olarak okur.
 
-### Kayıtlı 9 Sanatçı ve Kritik Detayları:
+### Kayıtlı 10 Sanatçı ve Kritik Detayları:
 
 ### 1. Abidin Dino (`id: "abidin-dino"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Kategori / Alan:** Ressam, Yazar & Karikatürist / Çağdaş Türk Resmi, Çizgi & Figüratif Dışavurumculuk (D Grubu & Yeniler)
