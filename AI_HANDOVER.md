@@ -48,7 +48,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
 
 ### 1. İbrahim Balaban (`id: "ibrahim-balaban"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Kategori / Alan:** Ressam & Yazar / Çağdaş Türk Resmi, Toplumsal Gerçekçilik & Anadolu Efsaneleri
-- **Dönem / Şehir:** 1921 – 2019 / Bursa & İstanbul
+- **Dönem / Konum (Doğum / Atölye):** 1921 – 2019 / Bursa / İstanbul
 - **Özet:** Nâzım Hikmet'in Bursa Cezaevi'nde keşfedip 'Ressam Yunus Emre' olarak adlandırdığı; Anadolu insanını, köy yaşamını ve emeğin destansı kavgasını diyalektik bir tutkuyla tuvale aktaran bilge usta.
 - **Otantik Sanat Alıntısı:** *"Sanat yaşantımızın izdüşümüdür. Konu bir özdür, her öz kendi kabuğunu yapar. Ben insanı santimetrik ölçülerle değil, diyalektik yöntemlerle resmediyorum. Ata göre insan değil, insana göre at çiziyorum."*
 - **Gerçek Profil Fotoğrafı:** Galeri Soyut sanatçı resmi arşivinden 480×480 otantik portresi (`/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg`).
@@ -65,7 +65,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
 #### 2. Komet (`id: "komet"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Unvan & Disiplin:** Komet (Gürkan Coşkun) — Çağdaş Türk Resmi, Düşsel & Şiirsel Figüratif Dışavurumculuk
 - **Kategori:** Ressam & Şair
-- **Şehir / Atölye:** İstanbul / Paris — Paris & İstanbul Atölyeleri
+- **Konum (Doğum / Atölye):** Çorum / Paris — Paris & İstanbul Atölyeleri
 - **Dönem:** 1941 – 2022
 - **Profil Fotoğrafı:** Artam Arşivi'nden alınan 800×800 boyutunda doğrulanmış özgün koltukta düşünceli portresi (`assets/komet/komet-pp.jpg`).
 - **Önemli Bilgi:** 1941 Çorum doğumludur. İDGSA Halil Dikmen ve Zeki Faik İzer atölyelerinde eğitim gördü; İkinci Yeni şairleriyle (Edip Cansever, Cemal Süreya) yakın dostluklar kurdu. 1971'de Paris'e yerleşerek Vincennes ve Beaux-Arts'ta çalıştı. Max Ernst ve Panik Grubu'ndan (Mouvement Panique) esinlendi; düş, bilinçaltı ve gerçekliği harmanlayarak Türk resminde eşsiz bir şiirsel figürasyon ekolü yarattı.
@@ -85,7 +85,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
 #### 3. Mehmet Güleryüz (`id: "mehmet-guleryuz"`)
 - **Unvan & Disiplin:** Mehmet Güleryüz — Çağdaş Türk Resmi, Eleştirel Figürasyon & Dışavurumculuk (Neo-Ekspresyonizm)
 - **Kategori:** Ressam & Heykeltıraş
-- **Şehir / Atölye:** İstanbul / Paris — İstanbul Atölyesi
+- **Konum (Doğum / Atölye):** İstanbul / Paris — Paris & İstanbul Atölyeleri
 - **Dönem:** 1938 – 2024
 - **Önemli Bilgi:** 1938 İstanbul doğumludur. İstanbul Devlet Güzel Sanatlar Akademisi Resim Bölümü'nde Neşet Günal Atölyesi'nde öğrenim görmüş; tiyatro oyunculuğu ve dekoratörlük yapmıştır. Paris Ecole Nationale Supérieure des Beaux-Arts'ta yüksek resim ve litografi ihtisası tamamlamıştır. Uluslararası Plastik Sanatlar Derneği'nin (UPSD) kurucu başkanıdır. 2015 yılında İstanbul Modern'de büyük 'Ressam ve Resim' retrospektifi açılmıştır.
 - **Doğrulanmış Otantik Alıntı:**  
@@ -105,7 +105,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
 #### 4. Gülbin Nurgenç (`id: "gulbin-nurgenc"`)
 - **Unvan & Disiplin:** Gülbin Nurgenç — Çağdaş Türk Resmi, Soyut (Abstract), Fovizm & Ekspresyonizm
 - **Kategori:** Ressam & Sanat Eğitmeni
-- **Şehir / Atölye:** İstanbul — Nurgenç Sanat Atölyesi
+- **Konum (Doğum / Atölye):** İstanbul / İstanbul — Nurgenç Sanat Atölyesi (İstanbul)
 - **Önemli Bilgi:** 1970 İstanbul doğumludur. Beyoğlu Olgunlaşma Enstitüsü Resim Bölümü mezunudur. Alanında yetkin isimlerden aldığı uzun soluklu desen eğitiminin ardından tekstil sektöründe profesyonel desinatör olarak çalışmış; yurt dışı ve İstanbul’un önde gelen firmaları için özgün koleksiyonlar hazırlamıştır. 12 yıldır resim eğitmenliği yapmaktadır.
 - **Koleksiyon Eserleri (Masaüstü 'ressam gülbin' Klasöründen İşlenen Orijinal Eserler):**
   1. *"Soyut Kompozisyon & Denge"* — Tuval üzerine yağlıboya. **100 × 100 cm** (Özgün Koleksiyon Eseri)
@@ -119,7 +119,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
 #### 5. Prof. Süleyman Saim Tekcan (`id: "suleyman-saim-tekcan"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Unvan & Disiplin:** Prof. Süleyman Saim Tekcan — Özgün Baskı Resim, Gravür & Çağdaş Türk Resmi (Atlar & Hat Serisi)
 - **Kategori:** Ressam & Özgün Baskı Ustası
-- **Şehir / Atölye:** İstanbul / Trabzon — IMOGA (İstanbul Grafik Sanatlar Müzesi) / Tekcan Atölyesi
+- **Konum (Doğum / Atölye):** Trabzon / İstanbul — IMOGA (İstanbul Grafik Sanatlar Müzesi) / Tekcan Atölyesi
 - **Önemli Bilgi:** Türk özgün baskı sanatının ve gravür ekolünün uluslararası duayeni; Türkiye'nin ilk çağdaş grafik sanatlar müzesi IMOGA'nın kurucusudur. Mimar Sinan Üniversitesi Güzel Sanatlar Fakültesi Dekanlığı ve öğretim üyeliği yapmıştır.
 - **Koleksiyon Eserleri (Tam 8 Adet, Artam Antik A.Ş. Müzayede Kayıtlı & Kesin Ölçülü):**
   1. *"Atlar" (Anıtsal Başyapıt)* — Tuval üzerine yağlıboya, imzalı. 2022 tarihli. **100 × 140 cm** (Lot ID: 61209)
@@ -132,7 +132,8 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *"Figüratif"* — Tuval üzerine yağlıboya, imzalı. 2015 tarihli. **50 × 60 cm** (Lot ID: 46317)
 - **Doğrulanmış Otantik Alıntı:** *"Sanat bir serüvendir; özgün baskı ise bu serüvenin disiplin, sabır ve bilgelikle kâğıda mühürlenen en saf halidir."*
 
-#### 6. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`) — *En Son Eklenen*
+#### 6. Hikmet Çetinkaya (`id: "hikmet-cetinkaya"`)
+- **Konum (Doğum / Atölye):** Denizli / Ankara — Çetinkaya Atölyesi (Ankara)
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Dışavurumculuk & Gelincikler
 - **Profil Fotoğrafı:** `assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg` (MAG Dergisi atölye çekimi; tuval başında spatulalı yüksek çözünürlüklü fotoğraf).
 - **Gerçek Alıntı:** *"Gelincik unutmamaktır, hatırlamaktır, vefadır."* (Sanatçının kendi söyleşilerinde yayımlanmış özgün sözüdür, uydurma alıntı kullanılmamalıdır).
@@ -149,15 +150,18 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   *(Not: Önceden sehven eklenen portre çalışması kaldırılmış, 8 eserin tamamı Artam Antik A.Ş. doğrulamalı gelincik temalı orijinal eserlerle yenilenmiştir).*
 
 #### 7. Tuncay Umay (`id: "tuncay-umay"`)
+- **Konum (Doğum / Atölye):** Ankara / Ankara — Tuncay Umay Atölyeleri (Ankara)
 - **Disiplin:** Denizlerin Devinimi & Sürrealist Satranç Manifestosu
 - **ÖNEMLİ KURAL (Akademisyen DEĞİL):** Kullanıcı talimatı: *"akademisyen değilki o nerden çıktı"*. Tuncay Umay bağımsız ressam ve Biresku'nun kurucu sanatçısıdır; biyografisinde veya unvanında "akademisyen" ifadesi **kesinlikle geçmemelidir**.
 - **Kayıtlı Eser Sayısı:** 13 Eser
 
 #### 8. Prof. Dr. Mustafa Ayaz (`id: "mustafa-ayaz"`)
+- **Konum (Doğum / Atölye):** Trabzon / Ankara — Mustafa Ayaz Müzesi & Vakıf Atölyesi (Ankara)
 - **Disiplin:** Çağdaş Türk Resmi, Dışavurumcu Figürasyon & Dinamik Kompozisyon
 - **Kayıtlı Eser Sayısı:** 13 Eser (Mustafa Ayaz Plastik Sanatlar Müzesi koleksiyonu referanslı)
 
 #### 9. Prof. Dr. Adnan Turani (`id: "adnan-turani"`)
+- **Konum (Doğum / Atölye):** İstanbul / Ankara — Turani Atölyesi (Ankara)
 - **Disiplin:** Çağdaş Türk Resmi, Lirik Soyutlama & Sanat Kuramı
 - **Kayıtlı Eser Sayısı:** 13 Eser (Marmaris Serisi, Viyolonsel Çalan Kadın, Müzisyenler Trio vb.)
 
