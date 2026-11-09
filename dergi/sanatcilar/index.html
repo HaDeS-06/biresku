@@ -1706,51 +1706,54 @@
       }
     }
 
+  
+    /* ===================================================
+       BİRESKU EDİTORYAL NOTİCE & TAKEDOWN FOOTER BİLEŞENİ
+       (Anti-AI: 2px mimari hatlar, sıfır aşırı yuvarlatma, sıfır yayvan gölge)
+       =================================================== */
+    .footer-takedown-notice {
+      max-width: 940px;
+      margin: 0 auto 20px auto;
+      padding: 14px 22px;
+      background: rgba(28, 29, 36, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      text-align: center;
+    }
+    .footer-takedown-notice p {
+      font-family: var(--font-reading, 'Cormorant Garamond', Georgia, serif);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    .footer-takedown-notice strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    .footer-takedown-notice .footer-notice-mail {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-left: 4px;
+      transition: color 0.2s ease;
+    }
+    .footer-takedown-notice .footer-notice-mail:hover {
+      color: var(--accent-hover);
+    }
+    [data-theme="light"] .footer-takedown-notice {
+      background: rgba(240, 237, 230, 0.6);
+      border-color: var(--border);
+    }
+
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v37">
-  <script src="/assets/artists-data.js?v=20261109_v37"></script>
-<style>
-/* ========================================================
-   WCAG 44x44px MOBIL DOKUNMATIK BUTON STANDARDI (GÖRÜNTÜ DEĞİŞTİRME & MENÜ)
-   ======================================================== */
-.theme-toggle-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-width: 44px !important;
-  min-height: 44px !important;
-  cursor: pointer !important;
-  user-select: none !important;
-  touch-action: manipulation !important;
-  -webkit-tap-highlight-color: rgba(192, 154, 88, 0.25) !important;
-  position: relative !important;
-  z-index: 100002 !important;
-}
-.theme-toggle-btn * {
-  pointer-events: none !important;
-}
-.mobile-menu-trigger {
-  min-height: 44px !important;
-  min-width: 44px !important;
-  cursor: pointer !important;
-  touch-action: manipulation !important;
-  -webkit-tap-highlight-color: rgba(192, 154, 88, 0.25) !important;
-  position: relative !important;
-  z-index: 100002 !important;
-}
-.mobile-menu-trigger * {
-  pointer-events: none !important;
-}
-@media (max-width: 768px) {
-  .nav-right-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    z-index: 100002 !important;
-    position: relative !important;
-  }
-}
-</style>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v38">
+  <script src="/assets/artists-data.js?v=20261109_v38"></script>
 </head>
 <body>
 
@@ -1772,7 +1775,7 @@
     <nav class="site-nav">
     <div class="container nav-inner">
       <!-- SOL: MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) -->
-      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç">
+      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav()" aria-expanded="false" aria-label="Menüyü Aç">
         <span class="nav-hamburger-icon" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -1789,7 +1792,7 @@
 
       <!-- SAĞ AKSİYONLAR (Giriş Yap & Tema Butonu) -->
       <div class="nav-right-actions">
-        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" onclick="window.bireskuToggleTheme(event)" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
           <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
@@ -1917,7 +1920,7 @@
         <article class="artist-card" data-artist-id="ibrahim-balaban" onclick="openArtistProfile('ibrahim-balaban')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam &amp; Yazar</span>
-            <img src="/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg?v=20261109_v37" alt="İbrahim Balaban" loading="lazy">
+            <img src="/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg?v=20261109_v38" alt="İbrahim Balaban" loading="lazy">
           </div>
           <div class="artist-card-body">
             <div>
@@ -1927,9 +1930,10 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Bursa / İstanbul</span>
-              <a href="/dergi/sanatcilar/ibrahim-balaban/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('ibrahim-balaban', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
@@ -1938,7 +1942,7 @@
         <article class="artist-card" data-artist-id="komet" onclick="openArtistProfile('komet')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam &amp; Şair</span>
-            <img src="/assets/komet/komet-pp.jpg?v=20261109_v37" alt="Komet" loading="lazy">
+            <img src="/assets/komet/komet-pp.jpg?v=20261109_v38" alt="Komet" loading="lazy">
           </div>
           <div class="artist-card-body">
             <div>
@@ -1948,9 +1952,10 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Çorum / Paris</span>
-              <a href="/dergi/sanatcilar/komet/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('komet', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
@@ -1959,7 +1964,7 @@
         <article class="artist-card" data-artist-id="mehmet-guleryuz" onclick="openArtistProfile('mehmet-guleryuz')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam &amp; Heykeltıraş</span>
-            <img src="/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261109_v37" alt="Mehmet Güleryüz" loading="lazy">
+            <img src="/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261109_v38" alt="Mehmet Güleryüz" loading="lazy">
           </div>
           <div class="artist-card-body">
             <div>
@@ -1969,9 +1974,10 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 İstanbul / Paris</span>
-              <a href="/dergi/sanatcilar/mehmet-guleryuz/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('mehmet-guleryuz', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
@@ -1980,7 +1986,7 @@
         <article class="artist-card" data-artist-id="gulbin-nurgenc" onclick="openArtistProfile('gulbin-nurgenc')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam &amp; Sanat Eğitmeni</span>
-            <img src="/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261109_v37" alt="Gülbin Nurgenç" loading="lazy">
+            <img src="/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261109_v38" alt="Gülbin Nurgenç" loading="lazy">
           </div>
           <div class="artist-card-body">
             <div>
@@ -1990,9 +1996,10 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 İstanbul / İstanbul</span>
-              <a href="/dergi/sanatcilar/gulbin-nurgenc/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('gulbin-nurgenc', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
@@ -2000,7 +2007,7 @@
         <article class="artist-card" data-artist-id="suleyman-saim-tekcan" onclick="openArtistProfile('suleyman-saim-tekcan')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam &amp; Özgün Baskı Ustası</span>
-            <img src="/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261109_v37" alt="Prof. Süleyman Saim Tekcan" loading="lazy">
+            <img src="/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261109_v38" alt="Prof. Süleyman Saim Tekcan" loading="lazy">
           </div>
           <div class="artist-card-body">
             <div>
@@ -2010,9 +2017,10 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Trabzon / İstanbul</span>
-              <a href="/dergi/sanatcilar/suleyman-saim-tekcan/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('suleyman-saim-tekcan', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
@@ -2029,9 +2037,10 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 İstanbul / Ankara</span>
-              <a href="/dergi/sanatcilar/adnan-turani/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('adnan-turani', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
@@ -2048,16 +2057,17 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Trabzon / Ankara</span>
-              <a href="/dergi/sanatcilar/mustafa-ayaz/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('mustafa-ayaz', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
         <article class="artist-card" data-artist-id="tuncay-umay" onclick="openArtistProfile('tuncay-umay')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam & Sanat Eğitimcisi</span>
-            <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261109_v37" alt="Tuncay Umay" loading="lazy">
+            <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261109_v38" alt="Tuncay Umay" loading="lazy">
           </div>
           <div class="artist-card-body">
             <div>
@@ -2067,16 +2077,17 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Ankara / Ankara</span>
-              <a href="/dergi/sanatcilar/tuncay-umay/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('tuncay-umay', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
         <article class="artist-card" data-artist-id="hikmet-cetinkaya" onclick="openArtistProfile('hikmet-cetinkaya')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam</span>
-            <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261109_v37" alt="Hikmet Çetinkaya" loading="lazy">
+            <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261109_v38" alt="Hikmet Çetinkaya" loading="lazy">
           </div>
           <div class="artist-card-body">
             <div>
@@ -2086,9 +2097,10 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Denizli / Ankara</span>
-              <a href="/dergi/sanatcilar/hikmet-cetinkaya/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('hikmet-cetinkaya', event)">
+              <span class="view-profile-btn">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span></a>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         </article>
@@ -2131,6 +2143,17 @@
     <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
+            <!-- Telif & Kültürel Bildir-Kaldır (Notice & Takedown) Feragatnamesi -->
+      <div class="footer-takedown-notice">
+        <p>
+          Biresku platformunda yer alan tüm sanatçı biyografileri, eser künyeleri ve görsel dökümantasyonlar; 
+          <strong>5846 sayılı FSEK</strong> kapsamında yalnızca çağdaş Türk resim sanatını belgelemek, tanıtmak 
+          ve kültürel miras bilincini yaygınlaştırmak amacıyla iyi niyetle sunulmaktadır. 
+          Eser sahiplerinin veya yasal mirasçılarının talebi halinde ilgili içerikler 
+          <strong>24–48 saat içinde</strong> incelenir, düzenlenir veya yayından kaldırılır: 
+          <a href="mailto:iletisim@biresku.com" class="footer-notice-mail">iletisim@biresku.com</a>
+        </p>
+      </div>
       <div class="footer-legal-line">
         &copy; 2026 <strong class="footer-brand-title">BİRESKU</strong> | <a href="/gizlilik-politikasi/" class="footer-link-item footer-modal-trigger" data-modal="privacyModal">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item footer-modal-trigger" data-modal="contactModal">İletişim</a>
       </div>
@@ -2150,6 +2173,7 @@
         <p>Sitemizde kullanıcıları takip eden veya reklam hedefleyen 3. taraf çerezler bulunmaz. Gece / Gündüz modu gibi görsel tercihleriniz yalnızca kendi cihazınızda (<code>localStorage</code>) saklanır.</p>
         <h4 style="color: var(--accent); margin: 16px 0 8px;">2. Fikri Mülkiyet ve Sanatçı Eser Hakları</h4>
         <p>Platformda sergilenen tüm sanatçı biyografileri, fotoğraflar ve <strong>eser görselleri</strong> 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile korunmaktadır. Eserler sanatçıların veya yasal hak sahiplerinin mülkiyetindedir; izinsiz kopyalanamaz veya ticari amaçla çoğaltılamaz.</p>
+        <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);"><strong style="color: var(--text-heading);">Bildir & Kaldır (Notice & Takedown):</strong> Hak sahiplerinin veya yasal mirasçılarının talebi üzerine ilgili eser ve içerikler <strong>24–48 saat içinde</strong> derhal incelenir, düzenlenir veya yayından kaldırılır: <a href="mailto:iletisim@biresku.com" style="color: var(--accent);">iletisim@biresku.com</a></p>
         <h4 style="color: var(--accent); margin: 16px 0 8px;">3. İletişim & Haklarınız</h4>
         <p>KVKK'nın 11. maddesi kapsamındaki talepleriniz için <a href="mailto:iletisim@biresku.com" style="color: var(--accent);">iletisim@biresku.com</a> adresinden bize ulaşabilirsiniz.</p>
       </div>
@@ -2314,10 +2338,10 @@
               </div>
               <div class="artist-card-footer">
                 <span>📍 ${artist.city || 'Ankara'}</span>
-                <a href="/dergi/sanatcilar/${artist.id}/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('${artist.id}', event)">
+                <span class="view-profile-btn">
                   <span>Özel Alanına Git</span>
                   <span>&rarr;</span>
-                </a>
+                </span>
               </div>
             </div>
           </article>
@@ -2329,8 +2353,7 @@
       }
 }
 
-    function openArtistProfile(artistIdentifier, e) {
-      if (e && !e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) { e.preventDefault(); }
+    function openArtistProfile(artistIdentifier) {
       const artist = findArtist(artistIdentifier);
       if (!artist) {
         console.warn("Sanatçı profili bulunamadı:", artistIdentifier);
@@ -2656,9 +2679,9 @@
 
   </script>
 
-<script src="/assets/auth-client.js?v=20261109_v37"></script>
-<script src="/assets/biresku-auth.js?v=20261109_v37"></script>
-<script src="/assets/biresku-artist-admin.js?v=20261109_v37"></script>
+<script src="/assets/auth-client.js?v=20261109_v38"></script>
+<script src="/assets/biresku-auth.js?v=20261109_v38"></script>
+<script src="/assets/biresku-artist-admin.js?v=20261109_v38"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)

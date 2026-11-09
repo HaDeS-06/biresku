@@ -2987,50 +2987,53 @@
         padding-left: 2px !important;
       }
     }
+  
+    /* ===================================================
+       BİRESKU EDİTORYAL NOTİCE & TAKEDOWN FOOTER BİLEŞENİ
+       (Anti-AI: 2px mimari hatlar, sıfır aşırı yuvarlatma, sıfır yayvan gölge)
+       =================================================== */
+    .footer-takedown-notice {
+      max-width: 940px;
+      margin: 0 auto 20px auto;
+      padding: 14px 22px;
+      background: rgba(28, 29, 36, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      text-align: center;
+    }
+    .footer-takedown-notice p {
+      font-family: var(--font-reading, 'Cormorant Garamond', Georgia, serif);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    .footer-takedown-notice strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    .footer-takedown-notice .footer-notice-mail {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-left: 4px;
+      transition: color 0.2s ease;
+    }
+    .footer-takedown-notice .footer-notice-mail:hover {
+      color: var(--accent-hover);
+    }
+    [data-theme="light"] .footer-takedown-notice {
+      background: rgba(240, 237, 230, 0.6);
+      border-color: var(--border);
+    }
+
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v37">
-<style>
-/* ========================================================
-   WCAG 44x44px MOBIL DOKUNMATIK BUTON STANDARDI (GÖRÜNTÜ DEĞİŞTİRME & MENÜ)
-   ======================================================== */
-.theme-toggle-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-width: 44px !important;
-  min-height: 44px !important;
-  cursor: pointer !important;
-  user-select: none !important;
-  touch-action: manipulation !important;
-  -webkit-tap-highlight-color: rgba(192, 154, 88, 0.25) !important;
-  position: relative !important;
-  z-index: 100002 !important;
-}
-.theme-toggle-btn * {
-  pointer-events: none !important;
-}
-.mobile-menu-trigger {
-  min-height: 44px !important;
-  min-width: 44px !important;
-  cursor: pointer !important;
-  touch-action: manipulation !important;
-  -webkit-tap-highlight-color: rgba(192, 154, 88, 0.25) !important;
-  position: relative !important;
-  z-index: 100002 !important;
-}
-.mobile-menu-trigger * {
-  pointer-events: none !important;
-}
-@media (max-width: 768px) {
-  .nav-right-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    z-index: 100002 !important;
-    position: relative !important;
-  }
-}
-</style>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v38">
 </head>
 <body>
 
@@ -3062,7 +3065,7 @@
     <nav class="site-nav">
     <div class="container nav-inner">
       <!-- SOL: MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) -->
-      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç">
+      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav()" aria-expanded="false" aria-label="Menüyü Aç">
         <span class="nav-hamburger-icon" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -3079,7 +3082,7 @@
 
       <!-- SAĞ AKSİYONLAR (Giriş Yap & Tema Butonu) -->
       <div class="nav-right-actions">
-        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" onclick="window.bireskuToggleTheme(event)" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
           <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
@@ -3433,7 +3436,7 @@
             <!-- Sanatçı 1: İbrahim Balaban (En Yeni / Spot 1) -->
             <a href="/dergi/sanatcilar/#profil=ibrahim-balaban" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg?v=20261109_v37" alt="İbrahim Balaban" loading="lazy">
+                <img src="/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg?v=20261109_v38" alt="İbrahim Balaban" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3454,7 +3457,7 @@
             <!-- Sanatçı 1: Komet (En Yeni / Spot 1) -->
             <a href="/dergi/sanatcilar/#profil=komet" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/komet/komet-pp.jpg?v=20261109_v37" alt="Komet" loading="lazy">
+                <img src="/assets/komet/komet-pp.jpg?v=20261109_v38" alt="Komet" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3475,7 +3478,7 @@
             <!-- Sanatçı 1: Mehmet Güleryüz (En Yeni / Spot 1) -->
             <a href="/dergi/sanatcilar/#profil=mehmet-guleryuz" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261109_v37" alt="Mehmet Güleryüz" loading="lazy">
+                <img src="/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261109_v38" alt="Mehmet Güleryüz" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3496,7 +3499,7 @@
             <!-- Sanatçı 1: Ressam Gülbin Nurgenç (En Yeni / Spot 1) -->
             <a href="/dergi/sanatcilar/#profil=gulbin-nurgenc" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261109_v37" alt="Gülbin Nurgenç" loading="lazy">
+                <img src="/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261109_v38" alt="Gülbin Nurgenç" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3517,7 +3520,7 @@
             <!-- Sanatçı 1: Prof. Süleyman Saim Tekcan -->
             <a href="/dergi/sanatcilar/#profil=suleyman-saim-tekcan" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261109_v37" alt="Prof. Süleyman Saim Tekcan" loading="lazy">
+                <img src="/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261109_v38" alt="Prof. Süleyman Saim Tekcan" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3537,7 +3540,7 @@
             <!-- Sanatçı 1: Ressam Hikmet Çetinkaya -->
             <a href="/dergi/sanatcilar/#profil=hikmet-cetinkaya" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261109_v37" alt="Hikmet Çetinkaya" loading="lazy">
+                <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261109_v38" alt="Hikmet Çetinkaya" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3557,7 +3560,7 @@
             <!-- Sanatçı 2: Ressam Tuncay Umay -->
             <a href="/dergi/sanatcilar/#profil=tuncay-umay" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261109_v37" alt="Tuncay Umay" loading="lazy">
+                <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261109_v38" alt="Tuncay Umay" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3879,6 +3882,17 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
+            <!-- Telif & Kültürel Bildir-Kaldır (Notice & Takedown) Feragatnamesi -->
+      <div class="footer-takedown-notice">
+        <p>
+          Biresku platformunda yer alan tüm sanatçı biyografileri, eser künyeleri ve görsel dökümantasyonlar; 
+          <strong>5846 sayılı FSEK</strong> kapsamında yalnızca çağdaş Türk resim sanatını belgelemek, tanıtmak 
+          ve kültürel miras bilincini yaygınlaştırmak amacıyla iyi niyetle sunulmaktadır. 
+          Eser sahiplerinin veya yasal mirasçılarının talebi halinde ilgili içerikler 
+          <strong>24–48 saat içinde</strong> incelenir, düzenlenir veya yayından kaldırılır: 
+          <a href="mailto:iletisim@biresku.com" class="footer-notice-mail">iletisim@biresku.com</a>
+        </p>
+      </div>
       <div class="footer-legal-line">
         &copy; 2026 <strong class="footer-brand-title">BİRESKU</strong> | <a href="/gizlilik-politikasi/" class="footer-link-item">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item">İletişim</a>
       </div>
@@ -4131,10 +4145,10 @@
     </div>
   </div>
 
-<script src="/assets/artists-data.js?v=20261109_v37"></script>
-<script src="/assets/auth-client.js?v=20261109_v37"></script>
-<script src="/assets/biresku-auth.js?v=20261109_v37"></script>
-<script src="/assets/biresku-artist-admin.js?v=20261109_v37"></script>
+<script src="/assets/artists-data.js?v=20261109_v38"></script>
+<script src="/assets/auth-client.js?v=20261109_v38"></script>
+<script src="/assets/biresku-auth.js?v=20261109_v38"></script>
+<script src="/assets/biresku-artist-admin.js?v=20261109_v38"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)

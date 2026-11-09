@@ -1054,6 +1054,51 @@
         padding-left: 2px !important;
       }
     }
+  
+    /* ===================================================
+       BİRESKU EDİTORYAL NOTİCE & TAKEDOWN FOOTER BİLEŞENİ
+       (Anti-AI: 2px mimari hatlar, sıfır aşırı yuvarlatma, sıfır yayvan gölge)
+       =================================================== */
+    .footer-takedown-notice {
+      max-width: 940px;
+      margin: 0 auto 20px auto;
+      padding: 14px 22px;
+      background: rgba(28, 29, 36, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      text-align: center;
+    }
+    .footer-takedown-notice p {
+      font-family: var(--font-reading, 'Cormorant Garamond', Georgia, serif);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    .footer-takedown-notice strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    .footer-takedown-notice .footer-notice-mail {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-left: 4px;
+      transition: color 0.2s ease;
+    }
+    .footer-takedown-notice .footer-notice-mail:hover {
+      color: var(--accent-hover);
+    }
+    [data-theme="light"] .footer-takedown-notice {
+      background: rgba(240, 237, 230, 0.6);
+      border-color: var(--border);
+    }
+
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v12">
 </head>
@@ -1217,10 +1262,29 @@
       </ul>
     </div>
 
-    <div class="legal-section">
-      <h2>3. Telif Hakları ve Sanatsal Fikri Mülkiyet</h2>
-      <p>Biresku platformunda yayınlanan tüm sanatçı biyografileri, makaleler, eleştiri yazıları, fotoğrafik dökümantasyonlar ve <strong>sanatçıların eser görselleri</strong>, 5846 sayılı Fikir ve Sanat Eserleri Kanunu ve uluslararası telif hakları sözleşmeleri ile korunmaktadır.</p>
-      <p>Platformda sergilenen resim, heykel ve çağdaş sanat eserleri ilgili sanatçıların ya da yasal mirasçılarının / koleksiyonerlerinin mülkiyetindedir. Yazılı izin alınmaksızın bu eserlerin ticari amaçla indirilmesi, çoğaltılması, değiştirilmesi veya başka mecralarda yayınlanması kesinlikle yasaktır.</p>
+        <div class="legal-section" id="telif-ve-bildir-kaldir">
+      <h2>3. Telif Hakları, Kültürel Feragatname ve "Bildir & Kaldır" (Notice & Takedown) Politikası</h2>
+      <p><strong>3.1. İyi Niyetli Kültürel Arşiv ve Sanat Eğitimi Misyonu:</strong><br>
+      Biresku (Birleşmiş Ressamlar Kulübü), bağımsız sanatçıları ve Türk plastik sanatlar tarihine yön vermiş usta isimleri tanıtmayı, eserlerini sanatsal bir arşiv titizliğiyle belgelemeyi amaçlayan ticari olmayan kültürel bir platformdur. Platformumuzda yer alan sanatçı biyografileri, kritik yazıları ve eser görselleri, <strong>5846 sayılı Fikir ve Sanat Eserleri Kanunu’nun (FSEK) 33, 34 ve 40. maddeleri</strong> çerçevesinde; kamuya mal olmuş eserlerin tanıtımı, kamuoyunun sanat konusunda aydınlatılması ve kültürel mirasın korunması ilkelerine sadık kalınarak yayınlanmaktadır.</p>
+
+      <p><strong>3.2. Fikri Mülkiyet Sahipliği ve Koruma:</strong><br>
+      Platformda sergilenen yüksek çözünürlüklü resim, gravür, heykel ve özgün baskı eserlerinin maddi ve manevi tüm fikri hakları ilgili sanatçılara, onların yasal mirasçılarına veya tescilli vakıf/koleksiyon temsilcilerine aittir. Biresku, sergilenen eserler üzerinde hiçbir mülkiyet veya telif hakkı iddia etmez. Bu eserlerin ticari amaçlarla izinsiz çoğaltılması, satılması veya kaynak gösterilmeksizin üçüncü mecralara aktarılması hukuken yasaktır.</p>
+
+      <p><strong>3.3. Doğrudan "Bildir ve Kaldır" (Notice & Takedown) Prosedürü:</strong><br>
+      Biresku, sanatçıların ve yasal hak sahiplerinin manevi haklarına en üst düzeyde saygı duyar. Eser sahibi sanatçılar, kanuni mirasçıları veya resmi telif temsilcileri; herhangi bir yargısal ya da resmi ihtara gerek duymaksızın doğrudan platform yönetimiyle irtibata geçme hakkına sahiptir.</p>
+
+      <div class="takedown-box" style="background: rgba(28, 29, 36, 0.6); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 18px 24px; margin: 20px 0; border-radius: 2px;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--accent); margin-bottom: 10px;">📋 Telif Bildirimi Başvuru Adımları</h3>
+        <p style="margin-bottom: 8px;">Hak sahipliği iddiasında bulunan tarafın aşağıdaki bilgileri <strong>iletisim@biresku.com</strong> adresine iletmesi yeterlidir:</p>
+        <ul style="color: var(--text-muted); line-height: 1.7; padding-left: 20px;">
+          <li><strong>Hak Sahibinin Kimliği:</strong> Eser sahibi sanatçının veya yasal mirasçısının adı, soyadı ve iletişim bilgileri.</li>
+          <li><strong>Konu İçerik / Eser Bilgisi:</strong> Platformumuzda yayından kaldırılması veya düzenlenmesi talep edilen eserin adı ve doğrudan sayfa bağlantısı (URL).</li>
+          <li><strong>Talep Niteliği:</strong> Eser künyesinde/ölçülerinde düzeltme talebi veya eserin platformdan tamamen yayından kaldırılması talebi.</li>
+        </ul>
+      </div>
+
+      <p><strong>3.4. 24–48 Saat İçinde Yayından Kaldırma Taahhüdü:</strong><br>
+      Yetkili bildirim e-posta adresimize (<code>iletisim@biresku.com</code>) ulaştığı andan itibaren teknik ekibimiz başvuruyu ivedilikle incelemeye alır. Hak sahipliği teyit edilen sanat eserleri veya biyografik metinler, bildirimin tebellüğünden itibaren <strong>en geç 24 ile 48 saat içerisinde</strong> platformun tüm dijital dizinlerinden ve sunucularından eksiksiz şekilde kaldırılır veya hak sahibinin tercih ettiği bilgiler doğrultusunda güncellenir.</p>
     </div>
 
     <div class="legal-section">
@@ -1239,6 +1303,17 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+            <!-- Telif & Kültürel Bildir-Kaldır (Notice & Takedown) Feragatnamesi -->
+      <div class="footer-takedown-notice">
+        <p>
+          Biresku platformunda yer alan tüm sanatçı biyografileri, eser künyeleri ve görsel dökümantasyonlar; 
+          <strong>5846 sayılı FSEK</strong> kapsamında yalnızca çağdaş Türk resim sanatını belgelemek, tanıtmak 
+          ve kültürel miras bilincini yaygınlaştırmak amacıyla iyi niyetle sunulmaktadır. 
+          Eser sahiplerinin veya yasal mirasçılarının talebi halinde ilgili içerikler 
+          <strong>24–48 saat içinde</strong> incelenir, düzenlenir veya yayından kaldırılır: 
+          <a href="mailto:iletisim@biresku.com" class="footer-notice-mail">iletisim@biresku.com</a>
+        </p>
+      </div>
       <div class="footer-legal-line">
         &copy; 2026 <strong class="footer-brand-title">BİRESKU</strong> | <a href="/gizlilik-politikasi/" class="footer-link-item">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item">İletişim</a>
       </div>

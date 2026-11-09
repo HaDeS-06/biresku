@@ -1077,6 +1077,51 @@
         padding-left: 2px !important;
       }
     }
+  
+    /* ===================================================
+       BİRESKU EDİTORYAL NOTİCE & TAKEDOWN FOOTER BİLEŞENİ
+       (Anti-AI: 2px mimari hatlar, sıfır aşırı yuvarlatma, sıfır yayvan gölge)
+       =================================================== */
+    .footer-takedown-notice {
+      max-width: 940px;
+      margin: 0 auto 20px auto;
+      padding: 14px 22px;
+      background: rgba(28, 29, 36, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      text-align: center;
+    }
+    .footer-takedown-notice p {
+      font-family: var(--font-reading, 'Cormorant Garamond', Georgia, serif);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    .footer-takedown-notice strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    .footer-takedown-notice .footer-notice-mail {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-left: 4px;
+      transition: color 0.2s ease;
+    }
+    .footer-takedown-notice .footer-notice-mail:hover {
+      color: var(--accent-hover);
+    }
+    [data-theme="light"] .footer-takedown-notice {
+      background: rgba(240, 237, 230, 0.6);
+      border-color: var(--border);
+    }
+
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261108_v12">
 </head>
@@ -1244,12 +1289,30 @@
         </ul>
         <p style="font-size: 0.9rem; color: var(--accent); font-weight: 600;">Başvurular Yayın Kurulu tarafından titizlikle incelenmektedir.</p>
       </div>
+    
+      <div class="contact-card" style="grid-column: 1 / -1; border-left: 3px solid var(--accent); background: rgba(28, 29, 36, 0.5); border-radius: 2px;">
+        <h2>⚖️ Telif Hakları & "Bildir ve Kaldır" (Notice & Takedown) Masası</h2>
+        <p>Biresku, 5846 sayılı FSEK kapsamında eser sahibi sanatçıların ve kanuni mirasçılarının telif ve manevi haklarına azami saygı gösterir. Platformda yer alan biyografi, künye veya eser görsellerine ilişkin düzenleme ve yayından kaldırma talepleriniz için:</p>
+        <p><strong>Öncelikli Başvuru E-postası:</strong> <a href="mailto:iletisim@biresku.com" class="email-link">iletisim@biresku.com</a></p>
+        <p style="margin-top: 10px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6;">Talepler yayın kurulumuz ve hukuk masamızca <strong>24–48 saat içinde</strong> doğrudan değerlendirilip ivedilikle sonuçlandırılır. Detaylı bilgi için <a href="/gizlilik-politikasi/#telif-ve-bildir-kaldir" style="color: var(--accent); text-decoration: underline;">Gizlilik & Telif Politikası</a> sayfamızı inceleyebilirsiniz.</p>
+      </div>
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+            <!-- Telif & Kültürel Bildir-Kaldır (Notice & Takedown) Feragatnamesi -->
+      <div class="footer-takedown-notice">
+        <p>
+          Biresku platformunda yer alan tüm sanatçı biyografileri, eser künyeleri ve görsel dökümantasyonlar; 
+          <strong>5846 sayılı FSEK</strong> kapsamında yalnızca çağdaş Türk resim sanatını belgelemek, tanıtmak 
+          ve kültürel miras bilincini yaygınlaştırmak amacıyla iyi niyetle sunulmaktadır. 
+          Eser sahiplerinin veya yasal mirasçılarının talebi halinde ilgili içerikler 
+          <strong>24–48 saat içinde</strong> incelenir, düzenlenir veya yayından kaldırılır: 
+          <a href="mailto:iletisim@biresku.com" class="footer-notice-mail">iletisim@biresku.com</a>
+        </p>
+      </div>
       <div class="footer-legal-line">
         &copy; 2026 <strong class="footer-brand-title">BİRESKU</strong> | <a href="/gizlilik-politikasi/" class="footer-link-item">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item">İletişim</a>
       </div>
