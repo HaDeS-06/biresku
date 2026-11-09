@@ -1472,3 +1472,19 @@ a, a:visited, a:active, a:focus {
   background: #ef4444 !important;
   color: #fff !important;
 }
+
+/* ===================================================
+   HESAP OLUŞTURMA & YENİ ÜYELİK ASKIYA ALMA (GÖRÜNMEZ YAPILDI)
+   =================================================== */
+#authTabRegisterBtn,
+#authRegisterForm,
+[data-auth-tab="register"],
+.auth-tab-register {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+}
