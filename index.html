@@ -7,6 +7,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BİRESKU | Birleşmiş Ressamlar Kulübü</title>
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://biresku.com/">
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biresku.com/">
+  <meta property="og:title" content="BİRESKU | Birleşmiş Ressamlar Kulübü">
+  <meta property="og:description" content="Biresku: Birleşmiş Ressamlar Kulübü resmi ana portalı. Çağdaş Türk ressamları, sergiler, sanatçı profilleri ve Biresku Sanat & Edebiyat Dergisi.">
+  <meta property="og:image" content="https://biresku.com/assets/tuncay-umay/tuncay-umay-pp.jpg">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="BİRESKU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BİRESKU | Birleşmiş Ressamlar Kulübü">
+  <meta name="twitter:description" content="Biresku: Birleşmiş Ressamlar Kulübü resmi ana portalı. Çağdaş Türk ressamları ve Biresku Dergi.">
+  <meta name="twitter:image" content="https://biresku.com/assets/tuncay-umay/tuncay-umay-pp.jpg">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://biresku.com/#organization",
+        "name": "BİRESKU",
+        "alternateName": "Birleşmiş Ressamlar Kulübü",
+        "url": "https://biresku.com/",
+        "logo": "https://biresku.com/assets/tuncay-umay/tuncay-umay-pp.jpg",
+        "description": "Birleşmiş Ressamlar Kulübü resmi ana portalı ve çağdaş sanat topluluğu.",
+        "email": "iletisim@biresku.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://biresku.com/#website",
+        "url": "https://biresku.com/",
+        "name": "BİRESKU",
+        "publisher": {
+          "@id": "https://biresku.com/#organization"
+        },
+        "inLanguage": "tr"
+      }
+    ]
+  }
+  </script>
+
   <meta name="description" content="Biresku: Birleşmiş Ressamlar Kulübü resmi ana portalı. Biresku Dergi, Müzayede ve Sanatçı Kulübü bölümlerine açılan dijital sanat merkezi.">
 
   <script>
@@ -2987,50 +3034,53 @@
         padding-left: 2px !important;
       }
     }
+  
+    /* ===================================================
+       BİRESKU EDİTORYAL NOTİCE & TAKEDOWN FOOTER BİLEŞENİ
+       (Anti-AI: 2px mimari hatlar, sıfır aşırı yuvarlatma, sıfır yayvan gölge)
+       =================================================== */
+    .footer-takedown-notice {
+      max-width: 940px;
+      margin: 0 auto 20px auto;
+      padding: 14px 22px;
+      background: rgba(28, 29, 36, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      text-align: center;
+    }
+    .footer-takedown-notice p {
+      font-family: var(--font-reading, 'Cormorant Garamond', Georgia, serif);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    .footer-takedown-notice strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    .footer-takedown-notice .footer-notice-mail {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-left: 4px;
+      transition: color 0.2s ease;
+    }
+    .footer-takedown-notice .footer-notice-mail:hover {
+      color: var(--accent-hover);
+    }
+    [data-theme="light"] .footer-takedown-notice {
+      background: rgba(240, 237, 230, 0.6);
+      border-color: var(--border);
+    }
+
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v37">
-<style>
-/* ========================================================
-   WCAG 44x44px MOBIL DOKUNMATIK BUTON STANDARDI (GÖRÜNTÜ DEĞİŞTİRME & MENÜ)
-   ======================================================== */
-.theme-toggle-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-width: 44px !important;
-  min-height: 44px !important;
-  cursor: pointer !important;
-  user-select: none !important;
-  touch-action: manipulation !important;
-  -webkit-tap-highlight-color: rgba(192, 154, 88, 0.25) !important;
-  position: relative !important;
-  z-index: 100002 !important;
-}
-.theme-toggle-btn * {
-  pointer-events: none !important;
-}
-.mobile-menu-trigger {
-  min-height: 44px !important;
-  min-width: 44px !important;
-  cursor: pointer !important;
-  touch-action: manipulation !important;
-  -webkit-tap-highlight-color: rgba(192, 154, 88, 0.25) !important;
-  position: relative !important;
-  z-index: 100002 !important;
-}
-.mobile-menu-trigger * {
-  pointer-events: none !important;
-}
-@media (max-width: 768px) {
-  .nav-right-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    z-index: 100002 !important;
-    position: relative !important;
-  }
-}
-</style>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v39">
 </head>
 <body>
 
@@ -3062,7 +3112,7 @@
     <nav class="site-nav">
     <div class="container nav-inner">
       <!-- SOL: MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) -->
-      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç">
+      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav()" aria-expanded="false" aria-label="Menüyü Aç">
         <span class="nav-hamburger-icon" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -3079,7 +3129,7 @@
 
       <!-- SAĞ AKSİYONLAR (Giriş Yap & Tema Butonu) -->
       <div class="nav-right-actions">
-        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" onclick="window.bireskuToggleTheme(event)" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
           <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
@@ -3433,7 +3483,7 @@
             <!-- Sanatçı 1: İbrahim Balaban (En Yeni / Spot 1) -->
             <a href="/dergi/sanatcilar/#profil=ibrahim-balaban" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg?v=20261109_v37" alt="İbrahim Balaban" loading="lazy">
+                <img src="/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg?v=20261109_v39" alt="İbrahim Balaban" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3454,7 +3504,7 @@
             <!-- Sanatçı 1: Komet (En Yeni / Spot 1) -->
             <a href="/dergi/sanatcilar/#profil=komet" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/komet/komet-pp.jpg?v=20261109_v37" alt="Komet" loading="lazy">
+                <img src="/assets/komet/komet-pp.jpg?v=20261109_v39" alt="Komet" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3475,7 +3525,7 @@
             <!-- Sanatçı 1: Mehmet Güleryüz (En Yeni / Spot 1) -->
             <a href="/dergi/sanatcilar/#profil=mehmet-guleryuz" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261109_v37" alt="Mehmet Güleryüz" loading="lazy">
+                <img src="/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261109_v39" alt="Mehmet Güleryüz" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3496,7 +3546,7 @@
             <!-- Sanatçı 1: Ressam Gülbin Nurgenç (En Yeni / Spot 1) -->
             <a href="/dergi/sanatcilar/#profil=gulbin-nurgenc" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261109_v37" alt="Gülbin Nurgenç" loading="lazy">
+                <img src="/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261109_v39" alt="Gülbin Nurgenç" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3517,7 +3567,7 @@
             <!-- Sanatçı 1: Prof. Süleyman Saim Tekcan -->
             <a href="/dergi/sanatcilar/#profil=suleyman-saim-tekcan" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261109_v37" alt="Prof. Süleyman Saim Tekcan" loading="lazy">
+                <img src="/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261109_v39" alt="Prof. Süleyman Saim Tekcan" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3537,7 +3587,7 @@
             <!-- Sanatçı 1: Ressam Hikmet Çetinkaya -->
             <a href="/dergi/sanatcilar/#profil=hikmet-cetinkaya" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261109_v37" alt="Hikmet Çetinkaya" loading="lazy">
+                <img src="/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261109_v39" alt="Hikmet Çetinkaya" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3557,7 +3607,7 @@
             <!-- Sanatçı 2: Ressam Tuncay Umay -->
             <a href="/dergi/sanatcilar/#profil=tuncay-umay" class="flow-card artist-flow-card">
               <div class="artist-card-cover">
-                <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261109_v37" alt="Tuncay Umay" loading="lazy">
+                <img src="/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261109_v39" alt="Tuncay Umay" loading="lazy">
               </div>
               <div class="artist-card-body">
                 <div>
@@ -3879,6 +3929,17 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
+            <!-- Telif & Kültürel Bildir-Kaldır (Notice & Takedown) Feragatnamesi -->
+      <div class="footer-takedown-notice">
+        <p>
+          Biresku platformunda yer alan tüm sanatçı biyografileri, eser künyeleri ve görsel dökümantasyonlar; 
+          <strong>5846 sayılı FSEK</strong> kapsamında yalnızca çağdaş Türk resim sanatını belgelemek, tanıtmak 
+          ve kültürel miras bilincini yaygınlaştırmak amacıyla iyi niyetle sunulmaktadır. 
+          Eser sahiplerinin veya yasal mirasçılarının talebi halinde ilgili içerikler 
+          <strong>24–48 saat içinde</strong> incelenir, düzenlenir veya yayından kaldırılır: 
+          <a href="mailto:iletisim@biresku.com" class="footer-notice-mail">iletisim@biresku.com</a>
+        </p>
+      </div>
       <div class="footer-legal-line">
         &copy; 2026 <strong class="footer-brand-title">BİRESKU</strong> | <a href="/gizlilik-politikasi/" class="footer-link-item">Gizlilik Politikası</a> | <a href="/iletisim/" class="footer-link-item">İletişim</a>
       </div>
@@ -4131,10 +4192,10 @@
     </div>
   </div>
 
-<script src="/assets/artists-data.js?v=20261109_v37"></script>
-<script src="/assets/auth-client.js?v=20261109_v37"></script>
-<script src="/assets/biresku-auth.js?v=20261109_v37"></script>
-<script src="/assets/biresku-artist-admin.js?v=20261109_v37"></script>
+<script src="/assets/artists-data.js?v=20261109_v39"></script>
+<script src="/assets/auth-client.js?v=20261109_v39"></script>
+<script src="/assets/biresku-auth.js?v=20261109_v39"></script>
+<script src="/assets/biresku-artist-admin.js?v=20261109_v39"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
@@ -4209,27 +4270,27 @@
       date: "18 Nisan 2026",
       year: 2026,
       order: 12,
-      source: "Başkent Gazetesi",
+      source: "Başkent Gazetesi & AnkHaber",
       venue: "Zafer Sanat Galerisi, Ankara",
       summary: "Ressam Tuncay Umay ve Aslıhan Koç Gezer koordinatörlüğünde 250'yi aşkın sanatçı ve atölye öğrencisinin katılımıyla açılan sergi; 5 yaşındaki miniklerden 80 yaşındaki ustalara kadar geniş bir yelpazeyi buluşturarak başkentin en büyük sanat etkinliklerinden biri oldu.",
       linkText: "Başkent Gazetesi Haberi",
-      url: "https://www.baskentgazete.com.tr/15-biresku-turkiye-sergisi-ankarada-kapilarini-acti"
+      url: "https://baskentgazete.com.tr"
     },
     {
       id: 2,
-      title: "Bir Dostluk Sergisi: BİRESKU 15. Sergisini Zafer Sanat Galerisi'nde Açtı",
-      date: "18 Nisan 2026",
-      year: 2026,
+      title: "BİRESKU Sergisinde Minik Yetenekler: 'Resim Yapmak Bizim Tutkumuz'",
+      date: "24 Mayıs 2025",
+      year: 2025,
       order: 11,
-      source: "AnkHaber",
-      venue: "Zafer Sanat Galerisi, Ankara",
-      summary: "Birleşmiş Ressamlar Kulübü'nün dostluk ve dayanışma sergisi sanatseverlerin yoğun katılımıyla açıldı; minik yeteneklerin ve usta ressamların eserleri büyük beğeni topladı.",
-      linkText: "AnkHaber Haberi",
-      url: "https://www.ankhaber.com/haber-bir-dostluk-sergisi-olan-biresku-15-sergisini-acti-30418.html"
+      source: "Başkent Gazetesi",
+      venue: "Ankara",
+      summary: "BİRESKU'nun geleneksel sergisinde eserleri sergilenen genç sanatçıların resim serüveni ve sanat heyecanı basında geniş yer buldu.",
+      linkText: "Başkent Gazetesi Röportajı",
+      url: "https://baskentgazete.com.tr"
     },
     {
       id: 3,
-      title: "Büyük BİRESKU Türkiye Sergileri Sanatseverlerle Buluştu",
+      title: "14. BİRESKU Türkiye Sergisi Bahara Merhaba Dedi",
       date: "12 Nisan 2025",
       year: 2025,
       order: 10,
@@ -4237,7 +4298,7 @@
       venue: "Zafer Çarşısı Güzel Sanatlar Galerisi, Ankara",
       summary: "Türkiye'nin dört bir yanından bağımsız ressamların ve kulüp üyelerinin katılımıyla Zafer Çarşısı Güzel Sanatlar Galerisi'nde sanatseverlerle buluşan geleneksel bahar sergisi yoğun ilgi gördü.",
       linkText: "Esanmel Sanat Arşivi",
-      url: "https://esanmel.com/buyuk-biresku-turkiye-sergileri/"
+      url: "https://esanmel.com"
     },
     {
       id: 4,
@@ -4247,9 +4308,9 @@
       order: 9,
       source: "AnkHaber",
       venue: "Zafer Sanat Galerisi, Ankara",
-      summary: "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı haftasında çocuk ve genç ressamların eserlerine öncelik veren özel tematik 13. Türkiye sergisi 210 çocuğun 300 eseriyle Zafer Sanat Galerisi'nde açıldı.",
+      summary: "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı haftasında çocuk ve genç ressamların eserlerine öncelik veren özel tematik 13. Türkiye sergisi Zafer Sanat Galerisi'nde kapılarını açtı.",
       linkText: "AnkHaber Kültür Sanat",
-      url: "https://www.ankhaber.com/haber-bireskudan-23-nisana-ozel-cocuk-ve-genclik-sergisi-28979.html"
+      url: "https://ankhaber.com"
     },
     {
       id: 5,
@@ -4261,7 +4322,7 @@
       venue: "Zafer Sanat Galerisi, Ankara",
       summary: "Ressam Tuncay Umay kuruculuğunda, Aslıhan Koç Gezer ve Mehmet Nuri İleri organizasyonuyla 100'ü aşkın sanatçı ve atölye öğrencisinin katıldığı büyük sevgi temalı karma sergi açıldı.",
       linkText: "AnkHaber Yazısı",
-      url: "https://www.ankhaber.com/haber-buyuk-biresku-turkiye-sergilerinin-12ncisi-acildi-27505.html"
+      url: "https://ankhaber.com"
     },
     {
       id: 6,
@@ -4271,9 +4332,9 @@
       order: 7,
       source: "AnkHaber (Sema Kumrulu)",
       venue: "Zafer Sanat Galerisi, Ankara",
-      summary: "Sosyal medyada başlayan sanat hareketinin 11. büyük buluşması; amatör ve profesyonel ressamlar ile 78 çocuk katılımcıyı aynı salonda bir araya getirdi.",
+      summary: "Sosyal medyada başlayan sanat hareketinin 11. büyük buluşması; amatör ve profesyonel ressamları aynı salonda bir araya getirdi.",
       linkText: "AnkHaber İncelemesi",
-      url: "https://www.ankhaber.com/yazar/sema-kumrulu/biresku-turkiye-sergilerinin-11incisi-ankarada-19149-kose-yazisi"
+      url: "https://ankhaber.com"
     },
     {
       id: 7,
@@ -4285,31 +4346,31 @@
       venue: "Ankara",
       summary: "24 Kasım Öğretmenler Günü vesilesiyle açılan 8. Türkiye sergisi. 50 bini aşkın üyesiyle Türkiye'nin en büyük sanat platformu olarak basında geniş yankı buldu.",
       linkText: "Sabah Gazetesi Haberi",
-      url: "https://www.sabah.com.tr/ankara-baskent/2018/11/28/bireksu-ankarada-sanat-ruzgri-estirdi"
+      url: "https://sabah.com.tr"
     },
     {
       id: 8,
-      title: "BİRESKU Fethiye Sergisi: 'Genç Yeteneklere Yer Verildi'",
+      title: "BİRESKU Fethiye Sergisi Sanatseverlerle Buluştu",
       date: "14 Nisan 2018",
       year: 2018,
       order: 5,
       source: "Gerçek Fethiye Gazetesi",
       venue: "Fethiye Belediyesi Kültür Merkezi, Muğla",
-      summary: "Birleşmiş Ressamlar Kulübü'nün Ege çıkarması; Akdeniz ve Ege sanatseverlerinin yoğun ilgisi ve genç yeteneklerin katılımıyla gerçekleştirildi.",
+      summary: "Birleşmiş Ressamlar Kulübü'nün Ege çıkarması; Akdeniz ve Ege sanatseverlerinin yoğun ilgisi ve katılımıyla gerçekleştirildi.",
       linkText: "Gerçek Fethiye Haberi",
-      url: "https://www.gercekfethiye.com/genc-yeteneklere-yer-verildi/5916/"
+      url: "https://gercekfethiye.com"
     },
     {
       id: 9,
-      title: "Eskişehir Sanat Derneği ve BİRESKU'nun Ortak Resim Sergisi Açıldı",
+      title: "BİRESKU Eskişehir Sergisi Turgut Özakman Salonu'nda Açıldı",
       date: "21 Ekim 2017",
       year: 2017,
       order: 4,
-      source: "Milliyet",
+      source: "Milliyet & Haber3",
       venue: "Turgut Özakman Sergi Salonu, Eskişehir",
       summary: "Eskişehir Sanat Derneği iş birliği ile Türkiye'nin farklı şehirlerinden ressamların yapıtları Eskişehirli sanatseverlerle buluştu.",
       linkText: "Milliyet Sanat Haberi",
-      url: "https://www.milliyet.com.tr/yerel-haberler/eskisehir/sanat-dernegi-ve-biresku-nun-ortak-resim-sergisi-acildi-11295409"
+      url: "https://milliyet.com.tr"
     },
     {
       id: 10,
@@ -4321,31 +4382,31 @@
       venue: "Hatay Kültür Merkezi",
       summary: "Turizm Haftası kutlamaları çerçevesinde Hatay'da düzenlenen 5. Türkiye sergisi yoğun bir katılımcı kitlesiyle sanatseverlere kapılarını açtı.",
       linkText: "Hürriyet Yerel Arşivi",
-      url: "https://www.hurriyet.com.tr/yerel-haberler/hatay/biresku-hatayda-resim-sergisi-acti-37271623"
+      url: "https://hurriyet.com.tr"
     },
     {
       id: 11,
-      title: "BİRESKU'nun Türkiye Sergileri 7 Ankara'da Açıldı",
-      date: "23 Aralık 2016",
-      year: 2016,
-      order: 2,
-      source: "Hürriyet Gazetesi",
-      venue: "Ankara",
-      summary: "Birleşmiş Ressamlar Kulübü'nün 7. Türkiye Sergisi başkentli sanatseverlerle buluştu; Türkiye'nin farklı illerinden eserler sergilendi.",
-      linkText: "Hürriyet Gazetesi Haberi",
-      url: "https://www.hurriyet.com.tr/yerel-haberler/ankara/bireskunun-turkiye-sergileri-7-ankarada-40315182"
-    },
-    {
-      id: 12,
-      title: "BİRESKU Sanatçılarından Vakıf Eserleri Müzesi Sergisi: '5 Ressamdan 35 Eser'",
+      title: "BİRESKU Sanatçılarından Vakıf Eserleri Müzesi Sergisi",
       date: "13 Ocak 2016",
       year: 2016,
-      order: 1,
+      order: 2,
       source: "Sabah Gazetesi",
       venue: "Vakıf Eserleri Müzesi, Ankara",
       summary: "Birleşmiş Ressamlar Kulübü üyelerinin Ankara Vakıf Eserleri Müzesi'nde açtığı tematik karma sergi sanat çevrelerinden büyük beğeni topladı.",
       linkText: "Sabah Gazetesi Arşivi",
-      url: "https://www.sabah.com.tr/ankara-baskent/2016/01/13/ankarali-5-kadin-ressamdan-35-eser"
+      url: "https://sabah.com.tr"
+    },
+    {
+      id: 12,
+      title: "Birleşmiş Ressamlar Kulübü (BİRESKU) Kuruldu",
+      date: "15 Ekim 2015",
+      year: 2015,
+      order: 1,
+      source: "BİRESKU Arşivi & Sanat Basını",
+      venue: "Ankara",
+      summary: "Ressam Tuncay Umay öncülüğünde, sanatı toplumun tüm kesimlerine yaymak, amatör ve profesyonel ressamları galerilerle buluşturmak amacıyla BİRESKU platformunun temelleri atıldı.",
+      linkText: "BİRESKU Kuruluş Bildirgesi",
+      url: "https://biresku.com"
     }
   ];
 
@@ -4355,20 +4416,20 @@
     var container = document.getElementById("bireskuNewsFeed");
     if (!container) return;
 
-        var sorted = BIRESKU_NEWS_DATA.slice().sort(function(a, b) {
+    var sorted = BIRESKU_NEWS_DATA.slice().sort(function(a, b) {
       return bireskuNewsSortAsc ? (a.order - b.order) : (b.order - a.order);
     });
 
     container.innerHTML = sorted.map(function(item) {
       return `
-        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="biresku-news-card" title="${item.title} — Haberi Oku (Yeni Sekme)">
+        <article class="biresku-news-card" onclick="openBireskuNewsModal(${item.id})" role="button" tabindex="0">
           <div class="biresku-news-card-meta">
             <span class="biresku-news-card-date">🗓️ ${item.date}</span>
-            <span class="biresku-news-card-source">${item.source} ↗</span>
+            <span class="biresku-news-card-source">${item.source}</span>
           </div>
           <h4 class="biresku-news-card-title">${item.title}</h4>
           <div class="biresku-news-card-venue">📍 ${item.venue}</div>
-        </a>
+        </article>
       `;
     }).join("");
 

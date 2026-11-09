@@ -411,7 +411,7 @@ window.ARTISTS_DATA = [
     "category": "Ressam & Sanat Eğitmeni",
     "city": "İstanbul / İstanbul",
     "studio": "Nurgenç Sanat Atölyesi (İstanbul)",
-    "coverImage": "/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261108_v26",
+    "coverImage": "/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261109_v39",
     "shortBio": "Beyoğlu Olgunlaşma Enstitüsü mezunu; desen ve desinatörlük birikimini soyut, fovist ve ekspresyonist estetikle tuvale aktaran ressam ve sanat eğitmeni.",
     "quote": "Sanat sadece gözle görüleni tuvale aktarmak değil; hayatın zorluklarını, kuralların insanlar üzerindeki dayatmasını süzerek en yalın, en saf haline indirgeme çabasıdır. Sanatçının görevi dünyayı olduğu gibi kopyalamak değil, kendi süzgecinden geçirerek ona yeni bir kimlik kazandırmaktır.",
     "biography": [
@@ -425,39 +425,39 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "nurgenc-1",
-        "title": "Soyut Kompozisyon & Denge",
+        "title": "",
         "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "100 × 100 cm",
-        "year": "Özgün Koleksiyon Eseri",
-        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261108_v26",
-        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261108_v26"
+        "dimensions": "",
+        "year": "",
+        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261109_v39",
+        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261109_v39"
       },
       {
         "id": "nurgenc-2",
-        "title": "Fovist Renk Coşkusu",
+        "title": "",
         "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "70 × 90 cm",
-        "year": "Özgün Koleksiyon Eseri",
-        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261108_v26",
-        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261108_v26"
+        "dimensions": "",
+        "year": "",
+        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261109_v39",
+        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261109_v39"
       },
       {
         "id": "nurgenc-3",
-        "title": "Saf Rengin İfadesi",
+        "title": "",
         "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "70 × 100 cm",
-        "year": "Özgün Koleksiyon Eseri",
-        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261108_v26",
-        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261108_v26"
+        "dimensions": "",
+        "year": "",
+        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261109_v39",
+        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261109_v39"
       },
       {
         "id": "nurgenc-4",
-        "title": "Ekspresyonist Devinim",
+        "title": "",
         "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "120 × 85 cm",
-        "year": "Özgün Koleksiyon Eseri",
-        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261108_v26",
-        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261108_v26"
+        "dimensions": "",
+        "year": "",
+        "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261109_v39",
+        "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261109_v39"
       }
     ],
     "addedDate": "2026-11-08",
