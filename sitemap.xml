@@ -23,13 +23,13 @@
     <loc>https://biresku.com/iletisim/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://biresku.com/gizlilik-politikasi/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://biresku.com/dergi/sanatcilar/adnan-turani/</loc>
@@ -121,7 +121,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://biresku.com/assets/tuncay-umay/tuncay-umay-pp.jpg?v=20261108_v26</image:loc>
+      <image:loc>https://biresku.com/assets/tuncay-umay/tuncay-umay-pp.jpg</image:loc>
       <image:title>Tuncay Umay Portresi</image:title>
     </image:image>
     <image:image>
@@ -183,40 +183,40 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg?v=20261108_v26</image:loc>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/hikmet-cetinkaya-pp.jpg</image:loc>
       <image:title>Hikmet Çetinkaya Portresi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26</image:loc>
-      <image:title>Gelincikler — Hikmet Çetinkaya</image:title>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg</image:loc>
+      <image:title>Gelincikler</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26</image:loc>
-      <image:title>Gelincikler — Hikmet Çetinkaya</image:title>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg</image:loc>
+      <image:title>Gelincikler</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26</image:loc>
-      <image:title>Gelincikler — Hikmet Çetinkaya</image:title>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg</image:loc>
+      <image:title>Gelincikler</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26</image:loc>
-      <image:title>Gelincikler — Hikmet Çetinkaya</image:title>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg</image:loc>
+      <image:title>Gelincikler</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26</image:loc>
-      <image:title>Gelincikler — Hikmet Çetinkaya</image:title>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg</image:loc>
+      <image:title>Gelincikler</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26</image:loc>
-      <image:title>Gelincikler — Hikmet Çetinkaya</image:title>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg</image:loc>
+      <image:title>Gelincikler</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26</image:loc>
-      <image:title>Gelincikler — Hikmet Çetinkaya</image:title>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg</image:loc>
+      <image:title>Gelincikler</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26</image:loc>
-      <image:title>Gelincikler — Hikmet Çetinkaya</image:title>
+      <image:loc>https://biresku.com/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg</image:loc>
+      <image:title>Gelincikler</image:title>
     </image:image>
   </url>
   <url>
@@ -225,40 +225,40 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg?v=20261108_v26</image:loc>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/suleyman-saim-tekcan-pp.jpg</image:loc>
       <image:title>Prof. Süleyman Saim Tekcan Portresi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v26</image:loc>
-      <image:title>Atlar (Anıtsal Başyapıt) — Prof. Süleyman Saim Tekcan</image:title>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-100x140.jpg</image:loc>
+      <image:title>Atlar (Anıtsal Başyapıt)</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v26</image:loc>
-      <image:title>Atlar — Prof. Süleyman Saim Tekcan</image:title>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-80x60.jpg</image:loc>
+      <image:title>Atlar</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v26</image:loc>
-      <image:title>Atlar — Prof. Süleyman Saim Tekcan</image:title>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-70x55.jpg</image:loc>
+      <image:title>Atlar</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v26</image:loc>
-      <image:title>Atlar — Prof. Süleyman Saim Tekcan</image:title>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-60x70.jpg</image:loc>
+      <image:title>Atlar</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v26</image:loc>
-      <image:title>Atlar (Özgün Gravür) — Prof. Süleyman Saim Tekcan</image:title>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg</image:loc>
+      <image:title>Atlar (Özgün Gravür)</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v26</image:loc>
-      <image:title>Riva&#039;da Bir Sabah — Prof. Süleyman Saim Tekcan</image:title>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg</image:loc>
+      <image:title>Riva'da Bir Sabah</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v26</image:loc>
-      <image:title>Alacahöyük Sembol — Prof. Süleyman Saim Tekcan</image:title>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg</image:loc>
+      <image:title>Alacahöyük Sembol</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v26</image:loc>
-      <image:title>Figüratif — Prof. Süleyman Saim Tekcan</image:title>
+      <image:loc>https://biresku.com/assets/suleyman-saim-tekcan/figuratif-50x60.jpg</image:loc>
+      <image:title>Figüratif</image:title>
     </image:image>
   </url>
   <url>
@@ -267,24 +267,24 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://biresku.com/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg?v=20261108_v26</image:loc>
+      <image:loc>https://biresku.com/assets/gulbin-nurgenc/gulbin-nurgenc-pp.jpg</image:loc>
       <image:title>Gülbin Nurgenç Portresi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261108_v26</image:loc>
-      <image:title>Soyut Kompozisyon &amp; Denge — Gülbin Nurgenç</image:title>
+      <image:loc>https://biresku.com/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg</image:loc>
+      <image:title>Gülbin Nurgenç Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261108_v26</image:loc>
-      <image:title>Fovist Renk Coşkusu — Gülbin Nurgenç</image:title>
+      <image:loc>https://biresku.com/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg</image:loc>
+      <image:title>Gülbin Nurgenç Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261108_v26</image:loc>
-      <image:title>Saf Rengin İfadesi — Gülbin Nurgenç</image:title>
+      <image:loc>https://biresku.com/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg</image:loc>
+      <image:title>Gülbin Nurgenç Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261108_v26</image:loc>
-      <image:title>Ekspresyonist Devinim — Gülbin Nurgenç</image:title>
+      <image:loc>https://biresku.com/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg</image:loc>
+      <image:title>Gülbin Nurgenç Eseri</image:title>
     </image:image>
   </url>
   <url>
@@ -293,39 +293,39 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg?v=20261108_v32</image:loc>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/mehmet-guleryuz-pp.jpg</image:loc>
       <image:title>Mehmet Güleryüz Portresi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v32</image:loc>
-      <image:title>Oğlum Oğlum — Mehmet Güleryüz</image:title>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg</image:loc>
+      <image:title>Oğlum Oğlum</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v32</image:loc>
-      <image:title>Turnuva — Mehmet Güleryüz</image:title>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/turnuva-90x90.jpg</image:loc>
+      <image:title>Turnuva</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v32</image:loc>
-      <image:title>Her Şey Kontrolümüz Altında — Mehmet Güleryüz</image:title>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg</image:loc>
+      <image:title>Her Şey Kontrolümüz Altında</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v32</image:loc>
-      <image:title>Happy Hours — Mehmet Güleryüz</image:title>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/happy-hours-65x54.jpg</image:loc>
+      <image:title>Happy Hours</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/mucize-2024.jpg?v=20261108_v32</image:loc>
-      <image:title>Mucize — Mehmet Güleryüz</image:title>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/mucize-2024.jpg</image:loc>
+      <image:title>Mucize</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v32</image:loc>
-      <image:title>Erol Akyavaş Portresi — Mehmet Güleryüz</image:title>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg</image:loc>
+      <image:title>Erol Akyavaş Portresi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/erken-donem-1964.jpg?v=20261108_v32</image:loc>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/erken-donem-1964.jpg</image:loc>
       <image:title>Mehmet Güleryüz Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v32</image:loc>
+      <image:loc>https://biresku.com/assets/mehmet-guleryuz/figuratif-58x74.jpg</image:loc>
       <image:title>Mehmet Güleryüz Eseri</image:title>
     </image:image>
   </url>
@@ -335,39 +335,39 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/komet-pp.jpg?v=20261108_v33</image:loc>
+      <image:loc>https://biresku.com/assets/komet/komet-pp.jpg</image:loc>
       <image:title>Komet Portresi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/deux-poids-deux-mesures-65x92.jpg?v=20261108_v33</image:loc>
-      <image:title>Deux Poids, Deux Mesures — Komet</image:title>
+      <image:loc>https://biresku.com/assets/komet/deux-poids-deux-mesures-65x92.jpg</image:loc>
+      <image:title>Deux Poids, Deux Mesures</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/masada-izdusum-186x186.jpg?v=20261108_v33</image:loc>
-      <image:title>Masada İzdüşüm — Komet</image:title>
+      <image:loc>https://biresku.com/assets/komet/masada-izdusum-186x186.jpg</image:loc>
+      <image:title>Masada İzdüşüm</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-100x130.jpg?v=20261108_v33</image:loc>
+      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-100x130.jpg</image:loc>
       <image:title>Komet Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-68x98.jpg?v=20261108_v33</image:loc>
+      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-68x98.jpg</image:loc>
       <image:title>Komet Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-100x120.jpg?v=20261108_v33</image:loc>
+      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-100x120.jpg</image:loc>
       <image:title>Komet Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-60x73.jpg?v=20261108_v33</image:loc>
+      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-60x73.jpg</image:loc>
       <image:title>Komet Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-50x60.jpg?v=20261108_v33</image:loc>
+      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-50x60.jpg</image:loc>
       <image:title>Komet Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-30x40.jpg?v=20261108_v33</image:loc>
+      <image:loc>https://biresku.com/assets/komet/dussel-kompozisyon-30x40.jpg</image:loc>
       <image:title>Komet Eseri</image:title>
     </image:image>
   </url>
@@ -377,39 +377,39 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg?v=20261108_v34</image:loc>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/ibrahim-balaban-pp.jpg</image:loc>
       <image:title>İbrahim Balaban Portresi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/kis-1953-31x47.jpg?v=20261108_v34</image:loc>
-      <image:title>Kış — İbrahim Balaban</image:title>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/kis-1953-31x47.jpg</image:loc>
+      <image:title>Kış</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/gurbetci-1979-70x50.jpg?v=20261108_v34</image:loc>
-      <image:title>Gurbetçi — İbrahim Balaban</image:title>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/gurbetci-1979-70x50.jpg</image:loc>
+      <image:title>Gurbetçi</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/anne-ve-cocuk-1995-35x25.jpg?v=20261108_v34</image:loc>
-      <image:title>Anne ve Çocuk — İbrahim Balaban</image:title>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/anne-ve-cocuk-1995-35x25.jpg</image:loc>
+      <image:title>Anne ve Çocuk</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/koy-kompozisyonu-1976-80x110.jpg?v=20261108_v34</image:loc>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/koy-kompozisyonu-1976-80x110.jpg</image:loc>
       <image:title>İbrahim Balaban Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/anadolu-insani-1965-48x68.jpg?v=20261108_v34</image:loc>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/anadolu-insani-1965-48x68.jpg</image:loc>
       <image:title>İbrahim Balaban Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/koy-yasaminda-emek-1986-50x60.jpg?v=20261108_v34</image:loc>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/koy-yasaminda-emek-1986-50x60.jpg</image:loc>
       <image:title>İbrahim Balaban Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/tarla-hasat-2001-40x50.jpg?v=20261108_v34</image:loc>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/tarla-hasat-2001-40x50.jpg</image:loc>
       <image:title>İbrahim Balaban Eseri</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://biresku.com/assets/ibrahim-balaban/destansi-kompozisyon-1969-70x52.jpg?v=20261108_v34</image:loc>
+      <image:loc>https://biresku.com/assets/ibrahim-balaban/destansi-kompozisyon-1969-70x52.jpg</image:loc>
       <image:title>İbrahim Balaban Eseri</image:title>
     </image:image>
   </url>
