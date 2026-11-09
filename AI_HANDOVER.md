@@ -78,3 +78,27 @@
 
 5. **Katalog İçi Taranabilir Bağlantılar (`dergi/sanatcilar/index.html`):**
    - Sanatçı kartlarındaki butonlar gerçek `<a href="/dergi/sanatcilar/${artist.id}/">` bağlantılarına dönüştürüldü; tarayıcıda tıklandığında modal geçişi korunurken Googlebot'un tüm sanatçı sayfalarını derinlemesine taraması garanti altına alındı.
+
+
+---
+
+## 10. Mobil Görünüm ve Dokunmatik Buton Optimizasyonu (v37.1 / Fix)
+
+> **Tarih:** 9 Kasım 2026  
+> **Ajan:** Biresku Geliştirici & Küratör Ajanı  
+> **Kullanıcı Bildirimi:** *"mobil görünümünde bazı butonlara basılmıyo onları halledermisin görüntü değiştirme"*
+
+### Düzeltilen Mobil Sorunlar ve Yapılan İyileştirmeler:
+1. **Görünüm Değiştirme (Tema / Gündüz-Gece) Dokunmatik Hedef Büyütme (WCAG 44×44px):**
+   - Mobilde 26×26px boyutuna sıkışan ve parmakla basılması zor olan `#themeToggleBtn` butonuna minimum 44×44px dokunmatik hedef boyutu (`min-width: 44px; min-height: 44px;`) kazandırıldı.
+   - Butonun içindeki SVG ve metin elemanlarına `pointer-events: none` verilerek mobil dokunmatik olayların (touch events) doğrudan buton elemanına ulaşması sağlandı.
+   - `touch-action: manipulation` ve `-webkit-tap-highlight-color` eklenerek mobildeki 300ms tıklama gecikmesi sıfırlandı.
+   - Butona doğrudan `onclick="window.bireskuToggleTheme(event)"` bağlandı; böylece sayfa yüklenme sırasından bağımsız olarak ilk dokunuşta anında karanlık/aydınlık görüntü modunu değiştirmesi garanti altına alındı.
+
+2. **Mobil Menü Butonundaki Çift Tetiklenme (Double-Fire) Bug Fix:**
+   - `#mobileNavToggleBtn` butonuna basıldığında hem inline `onclick` hem de `document` üzerindeki dinleyicinin aynı anda çalışması nedeniyle menünün açılıp 0 milisaniyede geri kapanması sorunu giderildi.
+   - Menü açma/kapama fonksiyonu `e.stopPropagation()` ile izole edildi, mobil menü tıklandığında stabil biçimde açılır hale getirildi.
+
+3. **Sanatçı Profil Sayfaları Mobil Header Taşma Düzeltmesi:**
+   - 9 sanatçının bağımsız sayfalarında mobilde yatay taşmaya sebep olan masaüstü menü linkleri küçük ekranlarda (`max-width: 768px`) gizlenerek tema değiştirme butonunun ekran dışına taşması veya üzerine basılamaması engellendi.
+   - Geri dönüş butonu (`.back-btn`) mobilde tam genişlik ve 44px dokunmatik alana sahip yapıldı.

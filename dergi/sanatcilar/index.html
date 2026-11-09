@@ -1709,6 +1709,48 @@
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v37">
   <script src="/assets/artists-data.js?v=20261109_v37"></script>
+<style>
+/* ========================================================
+   WCAG 44x44px MOBIL DOKUNMATIK BUTON STANDARDI (GÖRÜNTÜ DEĞİŞTİRME & MENÜ)
+   ======================================================== */
+.theme-toggle-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: rgba(192, 154, 88, 0.25) !important;
+  position: relative !important;
+  z-index: 100002 !important;
+}
+.theme-toggle-btn * {
+  pointer-events: none !important;
+}
+.mobile-menu-trigger {
+  min-height: 44px !important;
+  min-width: 44px !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: rgba(192, 154, 88, 0.25) !important;
+  position: relative !important;
+  z-index: 100002 !important;
+}
+.mobile-menu-trigger * {
+  pointer-events: none !important;
+}
+@media (max-width: 768px) {
+  .nav-right-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    z-index: 100002 !important;
+    position: relative !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -1730,7 +1772,7 @@
     <nav class="site-nav">
     <div class="container nav-inner">
       <!-- SOL: MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) -->
-      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav()" aria-expanded="false" aria-label="Menüyü Aç">
+      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç">
         <span class="nav-hamburger-icon" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -1747,7 +1789,7 @@
 
       <!-- SAĞ AKSİYONLAR (Giriş Yap & Tema Butonu) -->
       <div class="nav-right-actions">
-        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
+        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" onclick="window.bireskuToggleTheme(event)" aria-label="Gündüz moduna geç" title="Gündüz / Gece Modu">
           <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
