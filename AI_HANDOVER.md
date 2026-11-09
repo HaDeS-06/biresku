@@ -380,3 +380,23 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
 3. **Doğrudan Tıklama Mimarisi:**
    - Haber kartları `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="biresku-news-card">` semantik anchor etiketiyle render edilir.
    - Tıklanan herhangi bir kart aracı bir modal veya ana sayfa olmadan doğrudan ilgili gazetenin özgün haber sayfasına yeni sekmede açılır.
+
+
+---
+
+## 11. Çoklu Ajan Çakışmasız Tam Birleşme ve Mobil Navigasyon Entegrasyonu (v42 Güncellemesi)
+
+> [!NOTE]
+> **Kullanıcı Direktifi:** *"çözüm 2 yi sevdim bende ikinize aynı konumda görev vermem bu sayede ikinizde aynı dosyada aynı anda işlem yapmak zorunda kalmazsınız şuan sen git hub ın en son sürümünü ve kendi özelindeki en son sürümü birleştirip at git huba"*
+
+### Birleştirilen Tüm Bileşenler (Tam Uyum):
+1. **Diğer Ajanın Çalışmaları (Eksiksiz Korundu):**
+   - **12 Doğrulanmış Basın Derin Linki:** Başkent Gazetesi, AnkHaber, Esanmel, Hürriyet, Sabah ve Milliyet arşiv makalelerine doğrudan taranabilir linkler.
+   - **Mobil Menü Çift Tetiklenme (Double-Toggle) Çözümü:** `toggleMobileDropdownNav(event)` ile `stopImmediatePropagation()` eklenerek menünün açılıp hemen kapanma hatası giderildi.
+   - **Evrensel Mobil Gezinme:** 9 statik sanatçı sayfasının tamamına `#mobileNavToggleBtn`, `#mobileNavDropdown` ve `#mobileNavBackdrop` bileşenleri yerleştirildi.
+2. **Bu Oturumun Çalışmaları (Eksiksiz Korundu):**
+   - **Notice & Takedown Footer Bileşeni:** 5846 sayılı FSEK atıflı telif feragatnamesi ve `iletisim@biresku.com` başvuru kanalı tüm sayfalarda mevcut telif satırıyla birleştirildi.
+   - **Gülbin Nurgenç Temizliği:** Uydurma eser isimleri ve boyutları silindi, güncel stüdyo portresi (`v39`/`v42`) yerleştirildi.
+   - **Evrensel SEO Rollout:** `sitemap.xml` (14 URL), `robots.txt`, `canonical`, `robots: index, follow`, OpenGraph, Twitter ve Schema.org (`Organization`, `WebSite`, `VisualArtist`) yapısal verileri entegre edildi.
+3. **Kalıcı Pull-Before-Push Kuralı:**
+   - [`AGENT_PROMPT.md`](file:///C:/Users/ardau/.gemini/antigravity/scratch/biresku-site/AGENT_PROMPT.md) Madde 9 olarak kodlandı; bundan böyle her ajan commit etmeden önce GitHub'daki en güncel dosyayı çekip üzerine birleştirmek zorundadır.
