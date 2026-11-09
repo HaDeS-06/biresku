@@ -699,6 +699,7 @@
       }
 
       // Vitrinleri ve Kataloğu güncelle
+      if (typeof window.bireskuSyncAllArtists === 'function') { window.bireskuSyncAllArtists(); }
       if (typeof syncArtistsRailWithData === 'function') {
         syncArtistsRailWithData();
       }
@@ -922,7 +923,8 @@
           try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
           } catch(e) {}
-          if (typeof syncArtistsRailWithData === 'function') {
+          if (typeof window.bireskuSyncAllArtists === 'function') { window.bireskuSyncAllArtists(); }
+      if (typeof syncArtistsRailWithData === 'function') {
             syncArtistsRailWithData();
           }
         }

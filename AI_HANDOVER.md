@@ -308,3 +308,24 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
    - **"🚀 Sisteme Ekle / Güncelle (Canlı)":** Sanatçıyı anında `window.ARTISTS_DATA`ya ve `biresku_custom_artists_v1` kalıcı deposuna ekler, vitrinde 1. sıraya (en sola) taşır.
    - **"📋 artists-data.js Kodunu Kopyala":** `artists-data.js` dosyasına doğrudan yapıştırılabilecek standart JavaScript / JSON kodunu tek tıkla panoya kopyalar.
    - **"💾 JSON Olarak İndir":** Tek tıkla `[id].json` olarak indirir.
+
+---
+
+## 8. Evrensel Otomatik Senkronizasyon Mimarisi (v37 Güncellemesi)
+
+> [!TIP]
+> **Kullanıcı Talebi:** *"ya otomatik eşitlese ve senkron etse olmazmı hem sanatçılar kısmı hem yeni katılanlar kısmı hemde anasayfadaki yenii katılanlar kısmı"*
+
+### Yapılan Mimari İyileştirmeler:
+1. **Çift Veri Tanımının Kaldırılması (Elimination of Redundant Inline Data):**
+   - Önceden `dergi/index.html` ve `dergi/sanatcilar/index.html` sayfalarında 46.000 karakterlik sabit `window.ARTISTS_DATA = [...]` blokları bulunuyordu. Bu bloklar external scriptin üzerine yazarak sayfaların birbirinden kopmasına yol açıyordu.
+   - Her iki sayfadaki inline bloklar temizlendi ve yerlerine tekil kaynak `/assets/artists-data.js` bağlandı.
+2. **`window.bireskuSyncAllArtists()` Motoru:**
+   - `assets/artists-data.js` dosyasının sonuna evrensel tetikleyici eklendi.
+   - Script yüklendiğinde ya da admin stüdyosundan yeni bir sanatçı eklendiğinde `bireskuSyncAllArtists()` fonksiyonu otomatik çağrılarak:
+     - `index.html` üzerindeki `#artistsRail` akışını,
+     - `dergi/index.html` üzerindeki `#artistsGrid` kartlarını ve `#newArtistsContainer` listesini,
+     - `dergi/sanatcilar/index.html` üzerindeki `#catalogGrid` ve `#artistCountBadge` sayacını,
+     - Özel DOM eventi `biresku:artists-synced` aracılığıyla tek hamlede senkronize eder.
+3. **Yeni Eklenenler Filtresinin Dinamizasyonu:**
+   - `dergi/index.html` içerisindeki `renderNewArtistsFeature()` fonksiyonundaki sabit ID filtreleri kaldırıldı; tüm kayıtlı sanatçılar `.slice().reverse()` formatında Spot 1'den itibaren dinamik olarak listelenmeye başlandı.

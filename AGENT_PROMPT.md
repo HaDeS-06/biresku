@@ -85,9 +85,17 @@ biresku/
 - Biresku kurucusu sanatçı Tuncay Umay bağımsız ressam ve sanat eğitimcisidir.
 - Biyografisinde, unvanında veya kartlarında **"akademisyen"** kelimesi **KESİNLİKLE GEÇMEMELİDİR**.
 
-### 6. KURAL: Çift Dizin Eşitleme (Dual Mirroring)
+### 6. KURAL: Tek Veri Kaynağı (Single Source of Truth) & Otomatik Senkronizasyon
+- **Tüm sanatçı verisinin tek ve mutlak otoritesi:** `assets/artists-data.js` dosyasıdır (ve `dergi/assets/artists-data.js` kopyası).
+- `dergi/index.html` ve `dergi/sanatcilar/index.html` sayfalarında **kesinlikle statik/inline `window.ARTISTS_DATA = [...]` tanımları bulunmaz**. Bu sayfalar veriyi doğrudan `/assets/artists-data.js` dosyasından yükler ve `window.bireskuSyncAllArtists()` motoru sayesinde otomatik olarak render eder.
+- Yeni bir sanatçı eklendiğinde veya güncellendiğinde YALNIZCA `assets/artists-data.js` (ve `dergi/assets/artists-data.js`) dosyasını güncellemek yeterlidir.
+- Sayfalar açıldığında ve veriler yüklendiğinde:
+  1. **Anasayfa vitrini (`#artistsRail`)**
+  2. **Dergi vitrin ızgarası (`#artistsGrid`)**
+  3. **Dergi yeni katılanlar listesi (`#newArtistsContainer`)**
+  4. **Sanatçılar Kataloğu (`#catalogGrid` ve `#artistCountBadge`)**
+  HEPSİ `window.ARTISTS_DATA.slice().reverse()` kuralıyla tek bir merkezden eşzamanlı olarak render olur!
 - Eklenen her görsel hem `assets/[sanatci-id]/` hem de `dergi/assets/[sanatci-id]/` dizinlerine kaydedilmelidir.
-- `assets/artists-data.js` dosyasında yapılan her değişiklik eşzamanlı olarak `dergi/assets/artists-data.js` ve `dergi/sanatcilar/index.html` içerisindeki inline `window.ARTISTS_DATA` bloğuna da yansıtılmalıdır.
 
 ### 7. KURAL: Önbellek Kırma (Cache Busting)
 - HTML ve JS dosyalarındaki script, stil ve görsel çağrılarında sürüm parametresi her dağıtımda 1 artırılır (Örn: `?v=20261109_v35` -> `_v36`).

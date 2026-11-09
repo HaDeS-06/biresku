@@ -770,3 +770,48 @@ window.ARTISTS_DATA = [
     console.warn("Custom artists load error:", e);
   }
 })();
+
+// ========================================================
+// BİRESKU EVRENSEL OTOMATİK SENKRONİZASYON MOTORU
+// ========================================================
+window.bireskuSyncAllArtists = function() {
+  try {
+    // 1. Anasayfa flow rail senkronizasyonu
+    if (typeof window.syncArtistsRailWithData === "function") {
+      window.syncArtistsRailWithData();
+    }
+    // 2. Dergi 'Yeni Eklenen Sanatçılarımız' Grid senkronizasyonu
+    if (typeof window.renderArtistsGrid === "function") {
+      window.renderArtistsGrid();
+    }
+    // 3. Dergi 'Yeni Katılanlar' Liste Vitrini senkronizasyonu
+    if (typeof window.renderNewArtistsFeature === "function") {
+      window.renderNewArtistsFeature();
+    }
+    // 4. Dergi Sanatçılarımız Katalog Sayfası senkronizasyonu
+    if (typeof window.renderCatalog === "function" && typeof window.getArtistsList === "function") {
+      window.currentArtistList = window.getArtistsList();
+      window.renderCatalog(window.currentArtistList);
+    }
+    // 5. Global bildirim fırlat (Tüm dinamik bileşenler için)
+    window.dispatchEvent(new CustomEvent('biresku:artists-synced', {
+      detail: {
+        artists: window.ARTISTS_DATA,
+        count: (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA.length : 0
+      }
+    }));
+  } catch (err) {
+    console.warn("[Biresku Sync] Otomatik senkronizasyon uyarısı:", err);
+  }
+};
+
+// Sayfa ilk yüklendiğinde veya DOM hazır olduğunda senkronize et
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function() {
+    window.bireskuSyncAllArtists();
+  });
+} else {
+  setTimeout(function() {
+    window.bireskuSyncAllArtists();
+  }, 0);
+}
