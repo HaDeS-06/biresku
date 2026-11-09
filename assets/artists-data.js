@@ -755,7 +755,7 @@ window.ARTISTS_DATA = [
     "category": "Ressam, Yazar & Karikatürist",
     "city": "İstanbul / Paris",
     "studio": "Antibes & Paris Atölyeleri",
-    "coverImage": "/assets/abidin-dino/abidin-dino-pp.jpg?v=20261109_v49",
+    "coverImage": "/assets/abidin-dino/abidin-dino-pp.jpg?v=20261109_v50",
     "shortBio": "D Grubu ve Yeniler Grubu kurucularından, Türk resminin ve edebiyatının evrensel çizgisi. Çizgilerinde elleri, yürüyüşü, toprağın çilesini ve çağın tanıklığını Picasso'dan Aragon'a dünya sanatıyla buluşturan efsane usta.",
     "quote": "Resim yapmak benim için soluk almak gibi bir şey. Çizgi, sözün bittiği yerde insanın en yalın çığlığıdır. Mutluluğun resmini yapamadım ama acının, kavganın ve yürüyüşün izini tuvalde bırakabildim.",
     "biography": [
@@ -771,8 +771,8 @@ window.ARTISTS_DATA = [
         "technique": "Mukavva üzerine yağlıboya, imzalı",
         "dimensions": "46 × 38 cm",
         "year": "1937-1938",
-        "image": "/assets/abidin-dino/minotaure-1937.jpg?v=20261109_v49",
-        "imageUrl": "/assets/abidin-dino/minotaure-1937.jpg?v=20261109_v49"
+        "image": "/assets/abidin-dino/minotaure-1937.jpg?v=20261109_v50",
+        "imageUrl": "/assets/abidin-dino/minotaure-1937.jpg?v=20261109_v50"
       },
       {
         "id": "dino-2",
@@ -780,8 +780,8 @@ window.ARTISTS_DATA = [
         "technique": "Kağıt üzerine mürekkep, imzalı",
         "dimensions": "34 × 21 cm",
         "year": "",
-        "image": "/assets/abidin-dino/eller-serisi.jpg?v=20261109_v49",
-        "imageUrl": "/assets/abidin-dino/eller-serisi.jpg?v=20261109_v49"
+        "image": "/assets/abidin-dino/eller-serisi.jpg?v=20261109_v50",
+        "imageUrl": "/assets/abidin-dino/eller-serisi.jpg?v=20261109_v50"
       },
       {
         "id": "dino-3",
@@ -789,8 +789,8 @@ window.ARTISTS_DATA = [
         "technique": "Kağıt üzerine mürekkep, imzalı",
         "dimensions": "27 × 21 cm",
         "year": "",
-        "image": "/assets/abidin-dino/goyadan-esintiler.jpg?v=20261109_v49",
-        "imageUrl": "/assets/abidin-dino/goyadan-esintiler.jpg?v=20261109_v49"
+        "image": "/assets/abidin-dino/goyadan-esintiler.jpg?v=20261109_v50",
+        "imageUrl": "/assets/abidin-dino/goyadan-esintiler.jpg?v=20261109_v50"
       },
       {
         "id": "dino-4",
@@ -798,8 +798,8 @@ window.ARTISTS_DATA = [
         "technique": "Kağıt üzerine akrilik, imzalı",
         "dimensions": "10 × 9 cm",
         "year": "",
-        "image": "/assets/abidin-dino/bir-koy-daha.jpg?v=20261109_v49",
-        "imageUrl": "/assets/abidin-dino/bir-koy-daha.jpg?v=20261109_v49"
+        "image": "/assets/abidin-dino/bir-koy-daha.jpg?v=20261109_v50",
+        "imageUrl": "/assets/abidin-dino/bir-koy-daha.jpg?v=20261109_v50"
       },
       {
         "id": "dino-5",
@@ -807,8 +807,8 @@ window.ARTISTS_DATA = [
         "technique": "Tuval üzerine karışık teknik, imzalı",
         "dimensions": "65 × 50 cm",
         "year": "1992",
-        "image": "/assets/abidin-dino/untitled-figuratif-1992.jpg?v=20261109_v49",
-        "imageUrl": "/assets/abidin-dino/untitled-figuratif-1992.jpg?v=20261109_v49"
+        "image": "/assets/abidin-dino/untitled-figuratif-1992.jpg?v=20261109_v50",
+        "imageUrl": "/assets/abidin-dino/untitled-figuratif-1992.jpg?v=20261109_v50"
       },
       {
         "id": "dino-6",
@@ -816,8 +816,8 @@ window.ARTISTS_DATA = [
         "technique": "Tuval üzerine yağlıboya, imzalı",
         "dimensions": "145 × 114 cm",
         "year": "",
-        "image": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg?v=20261109_v49",
-        "imageUrl": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg?v=20261109_v49"
+        "image": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg?v=20261109_v50",
+        "imageUrl": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg?v=20261109_v50"
       },
       {
         "id": "dino-7",
@@ -825,8 +825,8 @@ window.ARTISTS_DATA = [
         "technique": "Kağıt üzerine guaj, imzalı",
         "dimensions": "51 × 66 cm",
         "year": "",
-        "image": "/assets/abidin-dino/untitled-guaj.jpg?v=20261109_v49",
-        "imageUrl": "/assets/abidin-dino/untitled-guaj.jpg?v=20261109_v49"
+        "image": "/assets/abidin-dino/untitled-guaj.jpg?v=20261109_v50",
+        "imageUrl": "/assets/abidin-dino/untitled-guaj.jpg?v=20261109_v50"
       },
       {
         "id": "dino-8",
@@ -834,8 +834,8 @@ window.ARTISTS_DATA = [
         "technique": "Kağıt üzerine suluboya, imzalı",
         "dimensions": "70 × 50 cm",
         "year": "",
-        "image": "/assets/abidin-dino/untitled-suluboya.jpg?v=20261109_v49",
-        "imageUrl": "/assets/abidin-dino/untitled-suluboya.jpg?v=20261109_v49"
+        "image": "/assets/abidin-dino/untitled-suluboya.jpg?v=20261109_v50",
+        "imageUrl": "/assets/abidin-dino/untitled-suluboya.jpg?v=20261109_v50"
       }
     ],
     "addedDate": "2026-11-09",
