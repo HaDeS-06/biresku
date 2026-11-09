@@ -469,3 +469,23 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
    - `register()` fonksiyonu güvenli şekilde pasifleştirilerek doğrudan askıya alma mesajı dönecek şekilde sınırlandırıldı.
 4. **Önbellek Güncellemesi (Cache-Busting):**
    - Tüm 14 HTML dosyasında `biresku-auth.css` ve `biresku-auth.js` referansları `v=20261109_v45` sürümüne yükseltilerek kullanıcıların tarayıcılarında anında aktif olması sağlandı.
+
+
+---
+
+## 15. WhatsApp & Sosyal Medya Paylaşım Kartı (Open Graph Brand Cover) Düzeltmesi (v46)
+
+> [!IMPORTANT]
+> **Kullanıcı Geri Bildirimi:** *"siteyi bu şekilde paylaştığımızda o fotonun çıkmaması lazım o foto ne alaka"* (WhatsApp'ta biresku.com paylaşıldığında tek bir sanatçının — Tuncay Umay'ın — portresinin çıkması)
+
+### Tespit Edilen Hata:
+- SEO tag'leri eklenirken `index.html` ve `iletisim/index.html` sayfalarındaki `<meta property="og:image">`, `<meta name="twitter:image">` ve Schema.org Organization `logo` alanlarına sehven `assets/tuncay-umay/tuncay-umay-pp.jpg` atanmıştı.
+- WhatsApp veya sosyal medyada `https://biresku.com/` paylaşıldığında kurum kimliği yerine tek bir kişinin portresi önizleme kartında çıkıyordu.
+
+### Çözüm & Yeni Kurumsal Sosyal Kartı:
+1. **Resmi BİRESKU Open Graph Sosyal Kartı (`assets/biresku-og-cover.jpg`):**
+   - 1200 × 630 px uluslararası standart Open Graph ebadında özel kurumsal görsel üretildi.
+   - Koyu müze fümesi (`#0c0d12`) zemin üzerinde tescilli BİRESKU suluboya sergi başlık tablosu (`biresku-banner.jpg`), altın sarısı (`#e5be75`) serif "BİRESKU" marka tipografisi, "BİRLEŞMİŞ RESSAMLAR KULÜBÜ", "UNITED ARTISTS CLUB" ve "Çağdaş Türk Resmi • biresku.com" editoryal kimliği yerleştirildi.
+   - Hem `assets/` hem de `dergi/assets/` dizinlerine senkronize edildi.
+2. **Tüm Sayfalarda Uygulama:**
+   - `index.html`, `dergi/index.html`, `dergi/sanatcilar/index.html`, `iletisim/index.html`, `gizlilik-politikasi/index.html` sayfalarındaki tüm Open Graph (`og:image`, `og:image:width`, `og:image:height`, `og:image:alt`), Twitter Card (`twitter:image`) ve JSON-LD Organization logo/image etiketleri `https://biresku.com/assets/biresku-og-cover.jpg?v=20261109_v46` ile güncellendi.

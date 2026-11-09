@@ -7,6 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BİRESKU | Birleşmiş Ressamlar Kulübü</title>
+  <script src="/assets/biresku-news-data.js?v=20261109_v46"></script>
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://biresku.com/">
   
@@ -15,7 +16,10 @@
   <meta property="og:url" content="https://biresku.com/">
   <meta property="og:title" content="BİRESKU | Birleşmiş Ressamlar Kulübü">
   <meta property="og:description" content="Biresku: Birleşmiş Ressamlar Kulübü resmi ana portalı. Çağdaş Türk ressamları, sergiler, sanatçı profilleri ve Biresku Sanat & Edebiyat Dergisi.">
-  <meta property="og:image" content="https://biresku.com/assets/tuncay-umay/tuncay-umay-pp.jpg">
+  <meta property="og:image" content="https://biresku.com/assets/biresku-og-cover.jpg?v=20261109_v46">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="BİRESKU — Birleşmiş Ressamlar Kulübü">
   <meta property="og:locale" content="tr_TR">
   <meta property="og:site_name" content="BİRESKU">
 
@@ -23,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BİRESKU | Birleşmiş Ressamlar Kulübü">
   <meta name="twitter:description" content="Biresku: Birleşmiş Ressamlar Kulübü resmi ana portalı. Çağdaş Türk ressamları ve Biresku Dergi.">
-  <meta name="twitter:image" content="https://biresku.com/assets/tuncay-umay/tuncay-umay-pp.jpg">
+  <meta name="twitter:image" content="https://biresku.com/assets/biresku-og-cover.jpg?v=20261109_v46">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -36,7 +40,8 @@
         "name": "BİRESKU",
         "alternateName": "Birleşmiş Ressamlar Kulübü",
         "url": "https://biresku.com/",
-        "logo": "https://biresku.com/assets/tuncay-umay/tuncay-umay-pp.jpg",
+        "logo": "https://biresku.com/assets/biresku-og-cover.jpg?v=20261109_v46",
+        "image": "https://biresku.com/assets/biresku-og-cover.jpg?v=20261109_v46",
         "description": "Birleşmiş Ressamlar Kulübü resmi ana portalı ve çağdaş sanat topluluğu.",
         "email": "iletisim@biresku.com"
       },
@@ -3079,6 +3084,22 @@
       border-color: var(--border);
     }
 
+  
+    .biresku-news-card-action {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .biresku-news-card:hover .biresku-news-card-action {
+      color: var(--accent-hover);
+      transform: translateX(3px);
+    }
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v45">
 </head>
@@ -4431,30 +4452,40 @@
 
   var bireskuNewsSortAsc = false; // false = Yeniden Eskiye (default), true = Eskiden Yeniye
 
-  function renderBireskuNews() {
+    function renderBireskuNews() {
     var container = document.getElementById("bireskuNewsFeed");
     if (!container) return;
 
-    var sorted = BIRESKU_NEWS_DATA.slice().sort(function(a, b) {
+    var newsData = (window.BIRESKU_NEWS_DATA && Array.isArray(window.BIRESKU_NEWS_DATA) && window.BIRESKU_NEWS_DATA.length) 
+                   ? window.BIRESKU_NEWS_DATA 
+                   : (typeof BIRESKU_NEWS_DATA !== 'undefined' ? BIRESKU_NEWS_DATA : []);
+    if (!newsData.length) return;
+
+    var sorted = newsData.slice().sort(function(a, b) {
       return bireskuNewsSortAsc ? (a.order - b.order) : (b.order - a.order);
     });
 
     container.innerHTML = sorted.map(function(item) {
       return `
-        <article class="biresku-news-card" onclick="openBireskuNewsModal(${item.id})" role="button" tabindex="0">
+        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="biresku-news-card" title="${item.source} sitesinde haberi oku">
           <div class="biresku-news-card-meta">
             <span class="biresku-news-card-date">🗓️ ${item.date}</span>
-            <span class="biresku-news-card-source">${item.source}</span>
+            <span class="biresku-news-card-source">${item.source} <span style="font-size:0.75em; opacity:0.85;">↗</span></span>
           </div>
           <h4 class="biresku-news-card-title">${item.title}</h4>
           <div class="biresku-news-card-venue">📍 ${item.venue}</div>
-        </article>
+          <div class="biresku-news-card-action">Habere Git (${item.source}) →</div>
+        </a>
       `;
     }).join("");
 
     var lbl = document.getElementById("bireskuNewsSortLabel");
     if (lbl) {
       lbl.textContent = bireskuNewsSortAsc ? "Eskiden Yeniye" : "Yeniden Eskiye";
+    }
+    var countBadge = document.getElementById("bireskuNewsCountBadge");
+    if (countBadge) {
+      countBadge.textContent = sorted.length + " Doğrulanmış Kayıt";
     }
   }
 
