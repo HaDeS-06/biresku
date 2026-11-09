@@ -10,6 +10,10 @@
 
 ## 1. Proje Mimarisi ve Dizin Yapısı
 
+> [!IMPORTANT]
+> **ÇOKLU AJAN (MULTI-AGENT) SENKRONİZASYON PROTOKOLÜ:**
+> Projede birden fazla AI ajanı çalışmaktadır. Birbirinizin yaptığı işlerin üzerine yazmamak ("üst üste çıkmamak") için herhangi bir göreve başlamadan önce **MUTLAKA** GitHub `main` dalındaki en son commit'i ve dosyaları çekiniz. Yeni bir ajan işe başladığında ilk verilecek sistem promptu ana dizindeki [`AGENT_PROMPT.md`](file:///C:/Users/ardau/.gemini/antigravity/scratch/biresku-site/AGENT_PROMPT.md) dosyasında mevcuttur.
+
 Proje saf, modern, bağımlılıksız (Vanilla HTML5 / Modern CSS3 / Modern ES6+ JavaScript) mimariyle inşa edilmiştir. Build tool (Webpack/Vite vb.) zorunluluğu yoktur; dosyalar doğrudan GitHub Pages tarafından statik olarak sunulmaktadır.
 
 ```text
