@@ -413,4 +413,14 @@
       <image:title>İbrahim Balaban Eseri</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://biresku.com/dergi/sanatcilar/abidin-dino/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://biresku.com/assets/abidin-dino/abidin-dino-pp.jpg</image:loc>
+      <image:title>Abidin Dino Portresi</image:title>
+    </image:image>
+  </url>
 </urlset>

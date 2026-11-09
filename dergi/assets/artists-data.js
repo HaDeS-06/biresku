@@ -747,6 +747,99 @@ window.ARTISTS_DATA = [
     ],
     "addedDate": "2026-11-08",
     "period": "1921 – 2019"
+  },
+  {
+    "id": "abidin-dino",
+    "name": "Abidin Dino",
+    "discipline": "Çağdaş Türk Resmi, Çizgi & Figüratif Dışavurumculuk (D Grubu & Yeniler)",
+    "category": "Ressam, Yazar & Karikatürist",
+    "city": "İstanbul / Paris",
+    "studio": "Antibes & Paris Atölyeleri",
+    "coverImage": "/assets/abidin-dino/abidin-dino-pp.jpg?v=20261109_v49",
+    "shortBio": "D Grubu ve Yeniler Grubu kurucularından, Türk resminin ve edebiyatının evrensel çizgisi. Çizgilerinde elleri, yürüyüşü, toprağın çilesini ve çağın tanıklığını Picasso'dan Aragon'a dünya sanatıyla buluşturan efsane usta.",
+    "quote": "Resim yapmak benim için soluk almak gibi bir şey. Çizgi, sözün bittiği yerde insanın en yalın çığlığıdır. Mutluluğun resmini yapamadım ama acının, kavganın ve yürüyüşün izini tuvalde bırakabildim.",
+    "biography": [
+      "1913 yılında İstanbul'da doğan Abidin Dino, çocukluk yıllarını Cenevre ve Paris'te geçirdikten sonra 1925'te ailesiyle İstanbul'a döndü. Robert Kolej'deki eğitimini yarıda bırakıp kendini tümüyle resme, desene ve edebiyata adadı.",
+      "1933 yılında Nurullah Berk, Cemal Tollu, Zeki Faik İzer, Elif Naci ve Zühtü Müridoğlu ile birlikte Türk plastik sanatlar tarihinin dönüm noktası olan 'D Grubu'nu kurdu. 1934'te Sovyetler Birliği'ne giderek Leningrad'da Sergey Yutkeviç'in film stüdyolarında sinema ve dekorasyon eğitimi aldı.",
+      "1941 yılında liman işçilerini, balıkçıları ve emekçileri konu alan 'Yeniler Grubu'nun kuruluşuna öncülük etti. Siyasi duruşu ve yazıları nedeniyle Çorum ve Adana'ya sürgüne gönderildi. Bu dönemde Çukurova pamuk işçilerini, köylüleri ve acının gerçeğini çizgilerine taşıdı; 'Kel' adlı tiyatro oyununu yazdı.",
+      "1952 yılında Paris'e yerleşerek dünya çapında sanatsal üretimini sürdürdü. Pablo Picasso, Tristan Tzara, Louis Aragon ve Yves Montand gibi 20. yüzyılın öncü sanatçılarıyla yakın dostluklar kurdu. Antibes'deki Picasso Müzesi sergileri, 'Eller', 'Parmaklar', 'Yürüyüş' ve 'Goya' dizileriyle dünya sanat literatürüne geçti. 1993 yılında Paris'te hayata gözlerini yuman Dino, geride Türk modernizminin en zengin görsel mirasını bıraktı."
+    ],
+    "artworks": [
+      {
+        "id": "dino-1",
+        "title": "Minotaure",
+        "technique": "Mukavva üzerine yağlıboya, imzalı",
+        "dimensions": "46 × 38 cm",
+        "year": "1937-1938",
+        "image": "/assets/abidin-dino/minotaure-1937.jpg?v=20261109_v49",
+        "imageUrl": "/assets/abidin-dino/minotaure-1937.jpg?v=20261109_v49"
+      },
+      {
+        "id": "dino-2",
+        "title": "Eller Serisi",
+        "technique": "Kağıt üzerine mürekkep, imzalı",
+        "dimensions": "34 × 21 cm",
+        "year": "",
+        "image": "/assets/abidin-dino/eller-serisi.jpg?v=20261109_v49",
+        "imageUrl": "/assets/abidin-dino/eller-serisi.jpg?v=20261109_v49"
+      },
+      {
+        "id": "dino-3",
+        "title": "Goya'dan Esintiler",
+        "technique": "Kağıt üzerine mürekkep, imzalı",
+        "dimensions": "27 × 21 cm",
+        "year": "",
+        "image": "/assets/abidin-dino/goyadan-esintiler.jpg?v=20261109_v49",
+        "imageUrl": "/assets/abidin-dino/goyadan-esintiler.jpg?v=20261109_v49"
+      },
+      {
+        "id": "dino-4",
+        "title": "Bir Köy Daha",
+        "technique": "Kağıt üzerine akrilik, imzalı",
+        "dimensions": "10 × 9 cm",
+        "year": "",
+        "image": "/assets/abidin-dino/bir-koy-daha.jpg?v=20261109_v49",
+        "imageUrl": "/assets/abidin-dino/bir-koy-daha.jpg?v=20261109_v49"
+      },
+      {
+        "id": "dino-5",
+        "title": "",
+        "technique": "Tuval üzerine karışık teknik, imzalı",
+        "dimensions": "65 × 50 cm",
+        "year": "1992",
+        "image": "/assets/abidin-dino/untitled-figuratif-1992.jpg?v=20261109_v49",
+        "imageUrl": "/assets/abidin-dino/untitled-figuratif-1992.jpg?v=20261109_v49"
+      },
+      {
+        "id": "dino-6",
+        "title": "",
+        "technique": "Tuval üzerine yağlıboya, imzalı",
+        "dimensions": "145 × 114 cm",
+        "year": "",
+        "image": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg?v=20261109_v49",
+        "imageUrl": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg?v=20261109_v49"
+      },
+      {
+        "id": "dino-7",
+        "title": "",
+        "technique": "Kağıt üzerine guaj, imzalı",
+        "dimensions": "51 × 66 cm",
+        "year": "",
+        "image": "/assets/abidin-dino/untitled-guaj.jpg?v=20261109_v49",
+        "imageUrl": "/assets/abidin-dino/untitled-guaj.jpg?v=20261109_v49"
+      },
+      {
+        "id": "dino-8",
+        "title": "",
+        "technique": "Kağıt üzerine suluboya, imzalı",
+        "dimensions": "70 × 50 cm",
+        "year": "",
+        "image": "/assets/abidin-dino/untitled-suluboya.jpg?v=20261109_v49",
+        "imageUrl": "/assets/abidin-dino/untitled-suluboya.jpg?v=20261109_v49"
+      }
+    ],
+    "addedDate": "2026-11-09",
+    "period": "1913 — 1993"
   }
 ];
 

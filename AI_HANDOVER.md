@@ -50,7 +50,26 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
 
 ### Kayıtlı 9 Sanatçı ve Kritik Detayları:
 
-### 1. İbrahim Balaban (`id: "ibrahim-balaban"`) — *En Son Eklenen (En Sol / Spot 1)*
+### 1. Abidin Dino (`id: "abidin-dino"`) — *En Son Eklenen (En Sol / Spot 1)*
+- **Kategori / Alan:** Ressam, Yazar & Karikatürist / Çağdaş Türk Resmi, Çizgi & Figüratif Dışavurumculuk (D Grubu & Yeniler)
+- **Dönem / Konum (Doğum / Atölye):** 1913 – 1993 / İstanbul / Paris (Format: Doğum / Atölye: İstanbul / Paris)
+- **Özet:** D Grubu ve Yeniler Grubu kurucularından, Türk resminin ve edebiyatının evrensel çizgisi. Çizgilerinde elleri, yürüyüşü, toprağın çilesini ve çağın tanıklığını Picasso'dan Aragon'a dünya sanatıyla buluşturan efsane usta.
+- **Otantik Sanat Alıntısı:** *"Resim yapmak benim için soluk almak gibi bir şey. Çizgi, sözün bittiği yerde insanın en yalın çığlığıdır. Mutluluğun resmini yapamadım ama acının, kavganın ve yürüyüşün izini tuvalde bırakabildim."*
+- **Gerçek Profil Fotoğrafı:** Wikimedia Commons yüksek çözünürlüklü resmi portre fotoğrafı (`/assets/abidin-dino/abidin-dino-pp.jpg`).
+- **8 Doğrulanmış Eser (Artam Antik A.Ş. Müzayede Arşivi - Sıfır Fabrikasyon / Gerçek Ölçüler):**
+  1. *"Minotaure"* (1937-1938, Mukavva üzerine yağlıboya, imzalı, 46 × 38 cm, Artam 404. Müzayede Lot 60042)
+  2. *"Eller Serisi"* (Kağıt üzerine mürekkep, imzalı, 34 × 21 cm, Artam 405. Müzayede Lot 60454)
+  3. *"Goya'dan Esintiler"* (Kağıt üzerine mürekkep, imzalı, 27 × 21 cm, Artam 405. Müzayede Lot 60453)
+  4. *"Bir Köy Daha"* (Kağıt üzerine akrilik, imzalı, 10 × 9 cm, Artam 404. Müzayede Lot 60043)
+  5. İsimsiz Figüratif Başyapıt (1992, Tuval üzerine karışık teknik, imzalı, 65 × 50 cm, Artam 408. Müzayede Lot 61833) -> `title: ""` (uydurma başlık yok)
+  6. İsimsiz Büyük Kompozisyon (Tuval üzerine yağlıboya, imzalı, 145 × 114 cm, Artam 408. Müzayede Lot 62200) -> `title: ""` (uydurma başlık yok)
+  7. İsimsiz Guaj Kompozisyon (Kağıt üzerine guaj, imzalı, 51 × 66 cm, Artam 405. Müzayede Lot 60383) -> `title: ""` (uydurma başlık yok)
+  8. İsimsiz Suluboya (Kağıt üzerine suluboya, imzalı, 70 × 50 cm, Artam 404. Müzayede Lot 59907) -> `title: ""` (uydurma başlık yok)
+- **Çift Dizin Senkronizasyonu:** Görseller hem `assets/abidin-dino/` hem de `dergi/assets/abidin-dino/` dizinlerinde birebir mevcuttur.
+- **Katalog & Ray Konumu:** Anasayfa `#artistsRail` ve Dergi Sanatçılar `#catalogGrid` üzerinde en solda (Spot 1) yer almaktadır.
+- **Statik Profil:** `dergi/sanatcilar/abidin-dino/index.html` oluşturulmuş, `sitemap.xml` güncellenmiştir.
+
+### 2. İbrahim Balaban (`id: "ibrahim-balaban"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Kategori / Alan:** Ressam & Yazar / Çağdaş Türk Resmi, Toplumsal Gerçekçilik & Anadolu Efsaneleri
 - **Dönem / Konum (Doğum / Atölye):** 1921 – 2019 / Bursa / İstanbul
 - **Özet:** Nâzım Hikmet'in Bursa Cezaevi'nde keşfedip 'Ressam Yunus Emre' olarak adlandırdığı; Anadolu insanını, köy yaşamını ve emeğin destansı kavgasını diyalektik bir tutkuyla tuvale aktaran bilge usta.
@@ -66,7 +85,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   7. Başlıksız Figüratif Eser (2001, Tuval üzerine yağlıboya, imzalı, 40 × 50 cm, Artam 407. Müzayede) -> `title: ""`
   8. Başlıksız Tarihsel Kompozisyon (1969, Tuval üzerine karışık teknik duralite marufle, imzalı, 70 × 52 cm, Artam 398. Müzayede) -> `title: ""`
 
-#### 2. Komet (`id: "komet"`) — *En Son Eklenen (En Sol / Spot 1)*
+#### 3. Komet (`id: "komet"`) — *En Son Eklenen (En Sol / Spot 1)*
 - **Unvan & Disiplin:** Komet (Gürkan Coşkun) — Çağdaş Türk Resmi, Düşsel & Şiirsel Figüratif Dışavurumculuk
 - **Kategori:** Ressam & Şair
 - **Konum (Doğum / Atölye):** Çorum / Paris — Paris & İstanbul Atölyeleri
@@ -86,7 +105,7 @@ Tüm sanatçı profilleri, biyografiler, sergi geçmişleri ve eser koleksiyonla
   8. *(İsmi Belirtilmemiş / Minyatür Figür)* — Tuval üzerine yağlıboya (duralite marufle), imzalı. **30 × 40 cm** (`title: ""`)
 - **Sanat Felsefesi & Estetik:** Şiirsel düşsellik, trajikomik melankoli, arkadan gelen teatral loş ışık ve yabancılaşmış insan figürleri.
 
-#### 3. Mehmet Güleryüz (`id: "mehmet-guleryuz"`)
+#### 4. Mehmet Güleryüz (`id: "mehmet-guleryuz"`)
 - **Unvan & Disiplin:** Mehmet Güleryüz — Çağdaş Türk Resmi, Eleştirel Figürasyon & Dışavurumculuk (Neo-Ekspresyonizm)
 - **Kategori:** Ressam & Heykeltıraş
 - **Konum (Doğum / Atölye):** İstanbul / Paris — Paris & İstanbul Atölyeleri
