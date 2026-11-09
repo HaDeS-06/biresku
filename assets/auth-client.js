@@ -124,12 +124,8 @@
   }
 
   async function register(fullName, email, password, phone = null) {
-    const res = await fetch(API_BASE + "/api/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ full_name: fullName, email, password, phone })
-    });
-    return await res.json();
+    // Hesap oluşturma geçici olarak askıya alındı
+    return { ok: false, error: "Hesap oluşturma geçici olarak askıya alınmıştır." };
   }
 
   async function verifyCode(email, code) {

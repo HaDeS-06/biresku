@@ -166,7 +166,7 @@
             <!-- Giriş / Kayıt Sekmeleri -->
             <div class="auth-tabs-bar">
               <button type="button" id="authTabLoginBtn" class="auth-tab-btn active" onclick="BireskuAuth.switchTab('login')">Giriş Yap</button>
-              <button type="button" id="authTabRegisterBtn" class="auth-tab-btn" onclick="BireskuAuth.switchTab('register')">Yeni Üyelik / Sanatçı</button>
+              <button type="button" id="authTabRegisterBtn" class="auth-tab-btn" onclick="BireskuAuth.switchTab('register')" style="display:none !important;" aria-hidden="true" tabindex="-1">Yeni Üyelik / Sanatçı</button>
               <button type="button" id="authTabOtpBtn" class="auth-tab-btn" onclick="BireskuAuth.switchTab('otp')">Şifresiz Kod (OTP)</button>
             </div>
 
@@ -201,7 +201,8 @@
             </form>
 
             <!-- 2. FORM: YENİ ÜYELİK / SANATÇI KAYDI -->
-            <form id="authRegisterForm" onsubmit="BireskuAuth.handleRegisterSubmit(event)" style="display:none;" autocomplete="on">
+            <!-- 2. FORM: YENİ ÜYELİK / SANATÇI KAYDI (ASKIYA ALINDI / GÖRÜNMEZ) -->
+            <form id="authRegisterForm" onsubmit="BireskuAuth.handleRegisterSubmit(event)" style="display:none !important;" autocomplete="off" aria-hidden="true">
               <div class="auth-input-group">
                 <label for="regNameInput" class="auth-label">Adınız Soyadınız veya Sanatçı Unvanınız</label>
                 <input type="text" id="regNameInput" class="auth-input" placeholder="Örn: Sanatçı veya Sanatsever" required autocomplete="name">
@@ -463,10 +464,13 @@
         otpForm.style.display = 'none';
         loginTabBtn.classList.add('active');
       } else if (tab === 'register') {
-        loginForm.style.display = 'none';
-        regForm.style.display = 'block';
-        otpForm.style.display = 'none';
-        regTabBtn.classList.add('active');
+        // Hesap oluşturma geçici olarak askıya alındı
+        if (loginForm) loginForm.style.display = 'block';
+        if (regForm) regForm.style.display = 'none';
+        if (otpForm) otpForm.style.display = 'none';
+        if (loginTabBtn) loginTabBtn.classList.add('active');
+        this.showAlert('Yeni hesap oluşturma ve üye kaydı geçici olarak askıya alınmıştır.', 'info');
+        return;
       } else if (tab === 'otp') {
         loginForm.style.display = 'none';
         regForm.style.display = 'none';
@@ -536,7 +540,7 @@
 
       if (!account) {
         recordFailedAttempt();
-        this.showAlert('Bu e-posta adresiyle kayıtlı bir hesap bulunamadı. Lütfen "Yeni Üyelik" sekmesinden kayıt oluşturunuz.', 'error');
+        this.showAlert('Bu e-posta adresiyle kayıtlı bir hesap bulunamadı. Lütfen giriş bilgilerinizi kontrol ediniz.', 'error');
         return;
       }
 
@@ -567,9 +571,11 @@
       }, 700);
     },
 
-    // 6. Yeni Üye & Sanatçı Kaydı (KVKK Onaylı)
+    // 6. Yeni Üye & Sanatçı Kaydı (Askıya Alındı)
     handleRegisterSubmit: async function(e) {
-      e.preventDefault();
+      if (e && e.preventDefault) e.preventDefault();
+      this.showAlert('Yeni hesap oluşturma ve üye kaydı geçici olarak askıya alınmıştır.', 'info');
+      return;
       const name = document.getElementById('regNameInput').value.trim();
       const email = document.getElementById('regEmailInput').value.trim().toLowerCase();
       const password = document.getElementById('regPasswordInput').value;

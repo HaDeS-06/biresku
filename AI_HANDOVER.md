@@ -430,7 +430,7 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
 
 ---
 
-## 12. Mobil Menü Butonu Evrensel Sağlamlaştırma (Universal Hardening & ReferenceError Fix - v43)
+## 13. Mobil Menü Butonu Evrensel Sağlamlaştırma (Universal Hardening & ReferenceError Fix - v44)
 
 > [!IMPORTANT]
 > **Kullanıcı Bildirimi & Talep:** *"şuan diğer yapay zeka haberler kısmı ile ilgileniyo sende bu sırada mobilde menü butonu hala tam çalışmıyo onu düzelt"*
@@ -449,3 +449,23 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
   - `openMobileDropdownNav`, `closeMobileDropdownNav` ve `toggleMobileDropdownNav` fonksiyonları eksiksiz bir şekilde entegre edildi.
   - `document.addEventListener("click")` delegasyonu sadece backdrop, menü içi link tıklamaları ve dış tıklamaları kapatma işlemine sınırlandı.
   - Menü butonu tıklandığında anında açılıp kapanma veya tanımsız fonksiyon hatası %100 ortadan kaldırıldı.
+
+---
+
+## 14. Hesap Oluşturma & Yeni Üyelik Arayüzünün Askıya Alınması (v45 Güncellemesi)
+
+> [!IMPORTANT]
+> **Kullanıcı Direktifi:** *"hesap oluşturma kısmını askıya alsana hızlı bir şekilde görünmez yapsan yeeter--- buna devam edebilirsin"*
+
+### Yapılan İşlemler & Kapsam:
+1. **CSS İzolasyonu (`assets/biresku-auth.css`):**
+   - `#authTabRegisterBtn`, `#authRegisterForm`, `[data-auth-tab="register"]` ve `.auth-tab-register` seçicileri `display: none !important; visibility: hidden !important; pointer-events: none !important; opacity: 0 !important; height: 0 !important;` yapılarak arayüzden tamamen kaldırıldı ve görünmez kılındı.
+2. **JavaScript Mantık Koruması (`assets/biresku-auth.js`):**
+   - Modal şablonunda sekme düğmesi ve form varsayılan olarak gizlendi (`style="display:none !important;"`, `aria-hidden="true"`).
+   - `switchTab('register')` fonksiyonu çağrıldığında kayıt sekmesine geçiş engellendi, kullanıcı `login` sekmesinde tutularak *"Yeni hesap oluşturma ve üye kaydı geçici olarak askıya alınmıştır."* bilgilendirme mesajı gösterildi.
+   - `handleRegisterSubmit` fonksiyonu askıya alma uyarısıyla durduruldu; harici form submit girişimleri devre dışı bırakıldı.
+   - Hatalı giriş durumunda *"Yeni Üyelik sekmesinden kayıt oluşturunuz"* yönlendirmesi *"Lütfen giriş bilgilerinizi kontrol ediniz"* olarak güncellendi.
+3. **API İstemci Koruması (`assets/auth-client.js`):**
+   - `register()` fonksiyonu güvenli şekilde pasifleştirilerek doğrudan askıya alma mesajı dönecek şekilde sınırlandırıldı.
+4. **Önbellek Güncellemesi (Cache-Busting):**
+   - Tüm 14 HTML dosyasında `biresku-auth.css` ve `biresku-auth.js` referansları `v=20261109_v45` sürümüne yükseltilerek kullanıcıların tarayıcılarında anında aktif olması sağlandı.
