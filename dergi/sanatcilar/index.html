@@ -1885,10 +1885,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Bursa / İstanbul</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/ibrahim-balaban/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('ibrahim-balaban', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -1907,10 +1906,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Çorum / Paris</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/komet/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('komet', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -1929,10 +1927,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 İstanbul / Paris</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/mehmet-guleryuz/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('mehmet-guleryuz', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -1951,10 +1948,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 İstanbul / İstanbul</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/gulbin-nurgenc/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('gulbin-nurgenc', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -1972,10 +1968,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Trabzon / İstanbul</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/suleyman-saim-tekcan/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('suleyman-saim-tekcan', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -1992,10 +1987,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 İstanbul / Ankara</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/adnan-turani/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('adnan-turani', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -2012,10 +2006,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Trabzon / Ankara</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/mustafa-ayaz/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('mustafa-ayaz', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -2032,10 +2025,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Ankara / Ankara</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/tuncay-umay/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('tuncay-umay', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -2052,10 +2044,9 @@
             </div>
             <div class="artist-card-footer">
               <span>📍 Denizli / Ankara</span>
-              <span class="view-profile-btn">
+              <a href="/dergi/sanatcilar/hikmet-cetinkaya/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('hikmet-cetinkaya', event)">
                 <span>Özel Alanına Git</span>
-                <span>&rarr;</span>
-              </span>
+                <span>&rarr;</span></a>
             </div>
           </div>
         </article>
@@ -2281,10 +2272,10 @@
               </div>
               <div class="artist-card-footer">
                 <span>📍 ${artist.city || 'Ankara'}</span>
-                <span class="view-profile-btn">
+                <a href="/dergi/sanatcilar/${artist.id}/" class="view-profile-btn" style="text-decoration: none;" onclick="openArtistProfile('${artist.id}', event)">
                   <span>Özel Alanına Git</span>
                   <span>&rarr;</span>
-                </span>
+                </a>
               </div>
             </div>
           </article>
@@ -2296,7 +2287,8 @@
       }
 }
 
-    function openArtistProfile(artistIdentifier) {
+    function openArtistProfile(artistIdentifier, e) {
+      if (e && !e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) { e.preventDefault(); }
       const artist = findArtist(artistIdentifier);
       if (!artist) {
         console.warn("Sanatçı profili bulunamadı:", artistIdentifier);

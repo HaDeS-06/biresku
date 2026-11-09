@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://biresku.com/sitemap.xml
