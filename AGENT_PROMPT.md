@@ -98,7 +98,21 @@ biresku/
 - Eklenen her görsel hem `assets/[sanatci-id]/` hem de `dergi/assets/[sanatci-id]/` dizinlerine kaydedilmelidir.
 
 ### 7. KURAL: Önbellek Kırma (Cache Busting)
-- HTML ve JS dosyalarındaki script, stil ve görsel çağrılarında sürüm parametresi her dağıtımda 1 artırılır (Örn: `?v=20261109_v35` -> `_v36`).
+- HTML ve JS dosyalarındaki script, stil ve görsel çağrılarında sürüm parametresi her dağıtımda 1 artırılır (Örn: `?v=20261109_v42` -> `_v43`).
+
+### 8. KURAL: Anti-AI & Kültür-Sanat Tasarım Dili (Kesin Tasarım Yasakları)
+- ❌ **Yasaklar:** Hap şeklinde butonlar (`border-radius: 20px+` veya `9999px`), mor/eflatun/neon renk paletleri, yapay zekâ vari dağınık/sisli gölgeler (`box-shadow: 0 10px 30px rgba(...)`).
+- ✅ **Standartlar:** Jilet gibi net `0px` veya zarif `2px/4px` mimari kenarlar, koyu kömür/füme tonları (`#0c0d10`, `#14151a`), mat antika altın (`#c8a05a`), serif başlıklar (`Playfair Display`, `Cinzel`), editoryal/müze hiyerarşisi.
+
+### 9. KURAL: Çoklu Ajan Çakışma Önleme Protokolü (Pull-Before-Push)
+- Projede birden fazla AI ajanı eşzamanlı çalışabilir.
+- **ASLA** yereldeki eski bir dosya sürümünü doğrudan uzak repoya ezerek yazmayın!
+- Dağıtım öncesinde her zaman GitHub `main` dalındaki en son commit'i ve dosyayı çekip diğer ajanın yaptığı değişiklikleri (örneğin mobil menü düzeltmeleri, tescilli haber linkleri vb.) yerel çalışmanızla birleştirin.
+
+### 10. KURAL: Doğrudan Tıklanabilir Basın & Haber Linkleri (Direct Deep Links)
+- BİRESKU haber kartları aracı bir modal popup açmaz; doğrudan `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="biresku-news-card">` olarak render edilir.
+- Kart tıklandığında kullanıcıyı "tak diye" haberin asıl yayınlandığı siteye yönlendirir.
+- Haber verileri `assets/biresku-news-data.js` ve `assets/biresku-news.json` dosyalarından okunur ve `.github/workflows/biresku_news_bot.yml` tarafından otomatik taranıp güncellenir.
 
 ---
 

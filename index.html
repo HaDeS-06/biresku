@@ -7,6 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BİRESKU | Birleşmiş Ressamlar Kulübü</title>
+  <script src="/assets/biresku-news-data.js?v=20261109_v43"></script>
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://biresku.com/">
   
@@ -3079,6 +3080,23 @@
       border-color: var(--border);
     }
 
+  
+    .biresku-news-card-action {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .biresku-news-card:hover .biresku-news-card-action {
+      color: var(--accent-hover);
+      transform: translateX(3px);
+    }
+
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v42">
 </head>
@@ -4398,30 +4416,38 @@
 
   var bireskuNewsSortAsc = false; // false = Yeniden Eskiye (default), true = Eskiden Yeniye
 
-  function renderBireskuNews() {
+    function renderBireskuNews() {
     var container = document.getElementById("bireskuNewsFeed");
     if (!container) return;
 
-    var sorted = BIRESKU_NEWS_DATA.slice().sort(function(a, b) {
+    var newsData = (window.BIRESKU_NEWS_DATA && Array.isArray(window.BIRESKU_NEWS_DATA)) ? window.BIRESKU_NEWS_DATA : [];
+    if (!newsData.length) return;
+
+    var sorted = newsData.slice().sort(function(a, b) {
       return bireskuNewsSortAsc ? (a.order - b.order) : (b.order - a.order);
     });
 
     container.innerHTML = sorted.map(function(item) {
       return `
-        <article class="biresku-news-card" onclick="openBireskuNewsModal(${item.id})" role="button" tabindex="0">
+        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="biresku-news-card" title="${item.source} sitesinde haberi oku">
           <div class="biresku-news-card-meta">
             <span class="biresku-news-card-date">🗓️ ${item.date}</span>
-            <span class="biresku-news-card-source">${item.source}</span>
+            <span class="biresku-news-card-source">${item.source} <span style="font-size:0.75em; opacity:0.85;">↗</span></span>
           </div>
           <h4 class="biresku-news-card-title">${item.title}</h4>
           <div class="biresku-news-card-venue">📍 ${item.venue}</div>
-        </article>
+          <div class="biresku-news-card-action">Habere Git (${item.source}) →</div>
+        </a>
       `;
     }).join("");
 
     var lbl = document.getElementById("bireskuNewsSortLabel");
     if (lbl) {
       lbl.textContent = bireskuNewsSortAsc ? "Eskiden Yeniye" : "Yeniden Eskiye";
+    }
+    var countBadge = document.getElementById("bireskuNewsCountBadge");
+    if (countBadge) {
+      countBadge.textContent = sorted.length + " Doğrulanmış Kayıt";
     }
   }
 

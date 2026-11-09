@@ -400,3 +400,29 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
    - **Evrensel SEO Rollout:** `sitemap.xml` (14 URL), `robots.txt`, `canonical`, `robots: index, follow`, OpenGraph, Twitter ve Schema.org (`Organization`, `WebSite`, `VisualArtist`) yapısal verileri entegre edildi.
 3. **Kalıcı Pull-Before-Push Kuralı:**
    - [`AGENT_PROMPT.md`](file:///C:/Users/ardau/.gemini/antigravity/scratch/biresku-site/AGENT_PROMPT.md) Madde 9 olarak kodlandı; bundan böyle her ajan commit etmeden önce GitHub'daki en güncel dosyayı çekip üzerine birleştirmek zorundadır.
+
+---
+
+## 12. Otomatik GitHub BİRESKU Haber Botu & Tak Diye Doğrudan Linkleme (v43 Güncellemesi)
+
+> [!IMPORTANT]
+> **Kullanıcı Direktifi:** *"bu arada diğer ajanın yaptığı haber linkleri hala çalışmıyo git huba küçük bi bot kur o biresku ile ilgili kesin olan haberleri bulup siteye eklesin linkle beraber ben sitede habere tıklayınca tak diye hbaerin asıl sitesine gidebiliyim"*
+
+### Neden "Çalışmıyor" Hissi Oluşmuştu?
+1. 12 haber URL'si aslında tamamen aktifti (HTTP 200), ancak `index.html` içinde haber kartları `<article onclick="openBireskuNewsModal(${item.id})">` şeklinde render ediliyordu.
+2. Bu nedenle kullanıcı karta tıkladığında doğrudan habere gitmek yerine site içi bir modal popup açılıyor, kullanıcı "habere gidemedim / link çalışmıyor" algısına kapılıyordu.
+
+### Uygulanan Nihai Çözüm:
+1. **Tak Diye Doğrudan Linkleme (Native `<a>` Linkler):**
+   - Haber kartı aracı modal açmaksızın doğrudan `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="biresku-news-card">` olarak render edilir.
+   - Kartın içinde belirgin bir "Habere Git (Kaynak Adı) →" aksiyon butonu yer alır.
+   - Kartın herhangi bir yerine tıklandığında yeni sekmede anında ve doğrudan haberin asıl yayınlandığı siteye (Başkent Gazetesi, AnkHaber, Hürriyet, Sabah, Milliyet vb.) yönlenir.
+2. **Merkezi Veri Dosyası (`assets/biresku-news-data.js` & `assets/biresku-news.json`):**
+   - Haber verileri artık `index.html` içine gömülü değildir; bağımsız bir JS/JSON veri kaynağı olarak yönetilir. Böylece iki ajanın `index.html` üzerinde çakışması tamamen önlenmiştir.
+3. **Otomatik GitHub Actions Haber Botu (`.github/workflows/biresku_news_bot.yml`):**
+   - Her 12 saatte bir (00:00 ve 12:00 UTC) ve manuel `workflow_dispatch` ile çalışır.
+   - `scripts/fetch_biresku_news.py` betiğini çalıştırır:
+     - 12 kalıcı tescilli BİRESKU haberini çekirdek arşivde tutar.
+     - Google News RSS üzerinden tescilli BİRESKU sergi ve etkinlik haberlerini tarar.
+     - Yeni doğrulanmış haber bulunduğunda `assets/biresku-news-data.js` ve `assets/biresku-news.json` dosyalarını otomatik güncelleyip GitHub'a commit eder.
+

@@ -1,0 +1,31 @@
+name: Biresku Verified News Bot
+
+on:
+  schedule:
+    # Her 12 saatte bir otomatik calisir (00:00 ve 12:00 UTC)
+    - cron: '0 */12 * * *'
+  workflow_dispatch: # Manuel tetikleme butonu
+
+jobs:
+  update-biresku-news:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch and Curate Biresku News
+        run: python scripts/fetch_biresku_news.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Biresku News Bot"
+          git config --global user.email "bot@biresku.com"
+          git add assets/biresku-news-data.js assets/biresku-news.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(news-bot): auto-update Biresku verified news archive [skip ci]" && git push)
