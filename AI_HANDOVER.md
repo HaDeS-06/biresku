@@ -549,3 +549,16 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
    - 9 bağımsız sanatçı sayfasında (`/dergi/sanatcilar/[sanatci-id]/`) yalnızca o sanatçının tekil doğrulanmış stüdyo portresi tek ve sabit `og:image` olarak tanımlıdır; rastgele görsel çekilmesi engellenmiştir.
 3. **Meta (Facebook) Sharing Debugger Uyumluluğu:**
    - `og:image:width` (1200), `og:image:height` (630), `og:image:type` (image/jpeg), `og:image:secure_url` ve `twitter:card` (`summary_large_image`) eksiksiz tanımlanarak scraper'ın tek bir doğru görseli önbelleğe alması garanti edilmiştir.
+
+
+### Güncel Sergi & Fuar Rayı (`#exhibitionsRail` — `index.html`)
+- **Politik Olmayan %100 Sanat İçeriği:** Kullanıcı talimatı doğrultusunda hiçbir politik içerik barındırmayan; doğrudan müze, bienal ve çağdaş sanat fuarlarını içeren 8 doğrulanmış gerçek haber/etkinlik kartı eklendi.
+- **Doğrudan Dış Bağlantı:** Tüm kartlar `target="_blank" rel="noopener noreferrer"` ile doğrudan kurumun resmi sergi veya fuar portalına yönlendirir:
+  1. *Contemporary Istanbul* (`https://www.contemporaryistanbul.com/`)
+  2. *İstanbul Modern Sanat Müzesi* (`https://www.istanbulmodern.org/sergi`)
+  3. *Pera Müzesi* (`https://www.peramuzesi.org.tr/sergi`)
+  4. *Sakıp Sabancı Müzesi* (`https://www.sakipsabancimuzesi.org/muzede-ne-var`)
+  5. *İKSV Bienal* (`https://bienal.iksv.org/tr`)
+  6. *Arter Çağdaş Sanat* (`https://www.arter.org.tr/sergi/1`)
+  7. *Artam Global Art* (`https://artam.com/artam-dergi`)
+  8. *Artful Living Kültür Sanat Ajandası* (`https://www.artfulliving.com.tr/sanat`)
