@@ -489,3 +489,16 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
    - Hem `assets/` hem de `dergi/assets/` dizinlerine senkronize edildi.
 2. **Tüm Sayfalarda Uygulama:**
    - `index.html`, `dergi/index.html`, `dergi/sanatcilar/index.html`, `iletisim/index.html`, `gizlilik-politikasi/index.html` sayfalarındaki tüm Open Graph (`og:image`, `og:image:width`, `og:image:height`, `og:image:alt`), Twitter Card (`twitter:image`) ve JSON-LD Organization logo/image etiketleri `https://biresku.com/assets/biresku-og-cover.jpg?v=20261109_v46` ile güncellendi.
+
+---
+
+## 16. Sosyal Medya & WhatsApp Paylaşımlarında Görselin Tamamen Kaldırılması (v47)
+
+> [!IMPORTANT]
+> **Kullanıcı Direktifi:** *"telefonda hala aynı paylaşırken foto foto olmasın şuan"*
+
+### Uygulanan Karar:
+- Kullanıcının doğrudan talimatı üzerine WhatsApp, Facebook ve Twitter paylaşım kartlarındaki tüm görsel meta etiketleri (`og:image`, `twitter:image`, Schema.org `logo`/`image`) tamamen kaldırıldı.
+- `twitter:card` değeri `summary_large_image` yerine `summary` (yalnızca başlık ve açıklama içeren saf metin kartı) olarak ayarlandı.
+- Paylaşımlarda hiçbir fotoğraf çıkmayacak; yalnızca site adı, başlık ve editoryal açıklama gösterilecektir.
+
