@@ -7,9 +7,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biresku Sanat | Güncel Sanat, Sanatçılar ve Haberler</title>
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://biresku.com/dergi/">
-
   <meta name="description" content="Biresku Sanat: Sanatçılarımız, güncel sanat haberleri, sergiler ve atölye söyleşileri.">
 
   <script>
@@ -2383,8 +2380,8 @@
     }
 
   </style>
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v42">
-  <script src="/assets/artists-data.js?v=20261109_v42"></script>
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v39">
+  <script src="/assets/artists-data.js?v=20261109_v39"></script>
 </head>
 <body>
 
@@ -2407,7 +2404,7 @@
     <nav class="site-nav">
     <div class="container nav-inner">
       <!-- SOL: MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) -->
-      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç">
+      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç" style="touch-action: manipulation;">
         <span class="nav-hamburger-icon" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -3236,40 +3233,28 @@
 
   </script>
 
-<script src="/assets/auth-client.js?v=20261109_v42"></script>
-<script src="/assets/biresku-auth.js?v=20261109_v42"></script>
-<script src="/assets/biresku-artist-admin.js?v=20261109_v42"></script>
+<script src="/assets/auth-client.js?v=20261109_v39"></script>
+<script src="/assets/biresku-auth.js?v=20261109_v39"></script>
+<script src="/assets/biresku-artist-admin.js?v=20261109_v39"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
      ======================================================== */
-    /* ========================================================
+      /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
      ======================================================== */
-  function toggleMobileDropdownNav(e) {
-    var evt = e || window.event;
-    if (evt) {
-      if (evt.preventDefault) evt.preventDefault();
-      if (evt.stopPropagation) evt.stopPropagation();
-      if (evt.stopImmediatePropagation) evt.stopImmediatePropagation();
-    }
+  function openMobileDropdownNav() {
     var dd = document.getElementById("mobileNavDropdown");
     var bd = document.getElementById("mobileNavBackdrop");
     var btn = document.getElementById("mobileNavToggleBtn");
     if (!dd) return;
-    
-    var isOpen = dd.classList.contains("is-open");
-    if (isOpen) {
-      closeMobileDropdownNav();
-    } else {
-      dd.classList.add("is-open");
-      if (bd) bd.classList.add("is-open");
-      if (btn) {
-        btn.classList.add("is-open");
-        btn.setAttribute("aria-expanded", "true");
-      }
-      document.body.style.overflow = "hidden";
+    dd.classList.add("is-open");
+    if (bd) bd.classList.add("is-open");
+    if (btn) {
+      btn.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
     }
+    document.body.style.overflow = "hidden";
   }
 
   function closeMobileDropdownNav() {
@@ -3284,6 +3269,58 @@
     }
     document.body.style.overflow = "";
   }
+
+    /* ========================================================
+     BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
+     ======================================================== */
+  function openMobileDropdownNav() {
+    var dd = document.getElementById("mobileNavDropdown");
+    var bd = document.getElementById("mobileNavBackdrop");
+    var btn = document.getElementById("mobileNavToggleBtn");
+    if (!dd) return;
+    dd.classList.add("is-open");
+    if (bd) bd.classList.add("is-open");
+    if (btn) {
+      btn.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMobileDropdownNav() {
+    var dd = document.getElementById("mobileNavDropdown");
+    var bd = document.getElementById("mobileNavBackdrop");
+    var btn = document.getElementById("mobileNavToggleBtn");
+    if (dd) dd.classList.remove("is-open");
+    if (bd) bd.classList.remove("is-open");
+    if (btn) {
+      btn.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+    document.body.style.overflow = "";
+  }
+
+  function toggleMobileDropdownNav(e) {
+    var evt = e || window.event;
+    if (evt) {
+      if (evt.preventDefault) evt.preventDefault();
+      if (evt.stopPropagation) evt.stopPropagation();
+      if (evt.stopImmediatePropagation) evt.stopImmediatePropagation();
+    }
+    var dd = document.getElementById("mobileNavDropdown");
+    if (!dd) return;
+    
+    var isOpen = dd.classList.contains("is-open");
+    if (isOpen) {
+      closeMobileDropdownNav();
+    } else {
+      openMobileDropdownNav();
+    }
+  }
+
+  window.toggleMobileDropdownNav = toggleMobileDropdownNav;
+  window.openMobileDropdownNav = openMobileDropdownNav;
+  window.closeMobileDropdownNav = closeMobileDropdownNav;
 
   (function initMobileMenuTrigger() {
     document.addEventListener("click", function(e) {

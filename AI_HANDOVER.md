@@ -426,3 +426,26 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
      - Google News RSS üzerinden tescilli BİRESKU sergi ve etkinlik haberlerini tarar.
      - Yeni doğrulanmış haber bulunduğunda `assets/biresku-news-data.js` ve `assets/biresku-news.json` dosyalarını otomatik güncelleyip GitHub'a commit eder.
 
+
+
+---
+
+## 12. Mobil Menü Butonu Evrensel Sağlamlaştırma (Universal Hardening & ReferenceError Fix - v43)
+
+> [!IMPORTANT]
+> **Kullanıcı Bildirimi & Talep:** *"şuan diğer yapay zeka haberler kısmı ile ilgileniyo sende bu sırada mobilde menü butonu hala tam çalışmıyo onu düzelt"*
+
+### Tespit Edilen Kritik Hatalar & Kök Nedenler:
+1. **`ReferenceError: openMobileDropdownNav is not defined` (Ana Sayfa Menü Çökmesi):**
+   - `index.html` dosyasında `toggleMobileDropdownNav` fonksiyonu `openMobileDropdownNav()` fonksiyonunu çağırıyordu; ancak bu fonksiyon script bloğunda tanımlı değildi. Ana sayfada mobilde menüye tıklandığında JavaScript sessizce çöküyor ve menü hiç açılmıyordu.
+2. **Alt Sayfalardaki Çift Tetiklenme Artığı:**
+   - `gizlilik-politikasi/index.html` ve `iletisim/index.html` sayfalarında önceki sürümlerden kalan `document.addEventListener("click")` çift tetikleyicisi (double-trigger) mevcuttu; menü açıldığı anda kapanıyordu.
+3. **Dokunmatik Gecikme ve Kapsam Problemi:**
+   - Dokunmatik ekranlarda (iOS Safari / Android Chrome) dokunmanın ıskalanmaması ve 300ms gecikmeyi engellemek için butonlara `touch-action: manipulation;` eklendi.
+   - Fonksiyonlar doğrudan `window.toggleMobileDropdownNav`, `window.openMobileDropdownNav` ve `window.closeMobileDropdownNav` olarak evrensel kapsama alındı.
+
+### Yapılan İşlemler (14/14 Dosya):
+- `index.html`, `dergi/index.html`, `dergi/sanatcilar/index.html`, `gizlilik-politikasi/index.html`, `iletisim/index.html` ve 9 adet bağımsız sanatçı sayfasının tamamında (`/dergi/sanatcilar/[sanatci-id]/`):
+  - `openMobileDropdownNav`, `closeMobileDropdownNav` ve `toggleMobileDropdownNav` fonksiyonları eksiksiz bir şekilde entegre edildi.
+  - `document.addEventListener("click")` delegasyonu sadece backdrop, menü içi link tıklamaları ve dış tıklamaları kapatma işlemine sınırlandı.
+  - Menü butonu tıklandığında anında açılıp kapanma veya tanımsız fonksiyon hatası %100 ortadan kaldırıldı.

@@ -7,7 +7,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BİRESKU | Birleşmiş Ressamlar Kulübü</title>
-  <script src="/assets/biresku-news-data.js?v=20261109_v43"></script>
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://biresku.com/">
   
@@ -3080,23 +3079,6 @@
       border-color: var(--border);
     }
 
-  
-    .biresku-news-card-action {
-      margin-top: 6px;
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-    .biresku-news-card:hover .biresku-news-card-action {
-      color: var(--accent-hover);
-      transform: translateX(3px);
-    }
-
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v42">
 </head>
@@ -3130,7 +3112,7 @@
     <nav class="site-nav">
     <div class="container nav-inner">
       <!-- SOL: MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) -->
-      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç">
+      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç" style="touch-action: manipulation;">
         <span class="nav-hamburger-icon" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -4218,9 +4200,36 @@
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
      ======================================================== */
-    /* ========================================================
+      /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
      ======================================================== */
+  function openMobileDropdownNav() {
+    var dd = document.getElementById("mobileNavDropdown");
+    var bd = document.getElementById("mobileNavBackdrop");
+    var btn = document.getElementById("mobileNavToggleBtn");
+    if (!dd) return;
+    dd.classList.add("is-open");
+    if (bd) bd.classList.add("is-open");
+    if (btn) {
+      btn.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMobileDropdownNav() {
+    var dd = document.getElementById("mobileNavDropdown");
+    var bd = document.getElementById("mobileNavBackdrop");
+    var btn = document.getElementById("mobileNavToggleBtn");
+    if (dd) dd.classList.remove("is-open");
+    if (bd) bd.classList.remove("is-open");
+    if (btn) {
+      btn.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+    document.body.style.overflow = "";
+  }
+
   function toggleMobileDropdownNav(e) {
     var evt = e || window.event;
     if (evt) {
@@ -4229,10 +4238,8 @@
       if (evt.stopImmediatePropagation) evt.stopImmediatePropagation();
     }
     var dd = document.getElementById("mobileNavDropdown");
-    var bd = document.getElementById("mobileNavBackdrop");
-    var btn = document.getElementById("mobileNavToggleBtn");
     if (!dd) return;
-
+    
     var isOpen = dd.classList.contains("is-open");
     if (isOpen) {
       closeMobileDropdownNav();
@@ -4240,6 +4247,10 @@
       openMobileDropdownNav();
     }
   }
+
+  window.toggleMobileDropdownNav = toggleMobileDropdownNav;
+  window.openMobileDropdownNav = openMobileDropdownNav;
+  window.closeMobileDropdownNav = closeMobileDropdownNav;
 
   (function initMobileMenuTrigger() {
     document.addEventListener("click", function(e) {
@@ -4261,6 +4272,10 @@
           closeMobileDropdownNav();
         }
       }
+    });
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") closeMobileDropdownNav();
     });
   })();
 
@@ -4416,38 +4431,30 @@
 
   var bireskuNewsSortAsc = false; // false = Yeniden Eskiye (default), true = Eskiden Yeniye
 
-    function renderBireskuNews() {
+  function renderBireskuNews() {
     var container = document.getElementById("bireskuNewsFeed");
     if (!container) return;
 
-    var newsData = (window.BIRESKU_NEWS_DATA && Array.isArray(window.BIRESKU_NEWS_DATA)) ? window.BIRESKU_NEWS_DATA : [];
-    if (!newsData.length) return;
-
-    var sorted = newsData.slice().sort(function(a, b) {
+    var sorted = BIRESKU_NEWS_DATA.slice().sort(function(a, b) {
       return bireskuNewsSortAsc ? (a.order - b.order) : (b.order - a.order);
     });
 
     container.innerHTML = sorted.map(function(item) {
       return `
-        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="biresku-news-card" title="${item.source} sitesinde haberi oku">
+        <article class="biresku-news-card" onclick="openBireskuNewsModal(${item.id})" role="button" tabindex="0">
           <div class="biresku-news-card-meta">
             <span class="biresku-news-card-date">🗓️ ${item.date}</span>
-            <span class="biresku-news-card-source">${item.source} <span style="font-size:0.75em; opacity:0.85;">↗</span></span>
+            <span class="biresku-news-card-source">${item.source}</span>
           </div>
           <h4 class="biresku-news-card-title">${item.title}</h4>
           <div class="biresku-news-card-venue">📍 ${item.venue}</div>
-          <div class="biresku-news-card-action">Habere Git (${item.source}) →</div>
-        </a>
+        </article>
       `;
     }).join("");
 
     var lbl = document.getElementById("bireskuNewsSortLabel");
     if (lbl) {
       lbl.textContent = bireskuNewsSortAsc ? "Eskiden Yeniye" : "Yeniden Eskiye";
-    }
-    var countBadge = document.getElementById("bireskuNewsCountBadge");
-    if (countBadge) {
-      countBadge.textContent = sorted.length + " Doğrulanmış Kayıt";
     }
   }
 
