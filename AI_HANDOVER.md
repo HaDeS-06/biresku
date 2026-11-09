@@ -502,3 +502,21 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
 - `twitter:card` değeri `summary_large_image` yerine `summary` (yalnızca başlık ve açıklama içeren saf metin kartı) olarak ayarlandı.
 - Paylaşımlarda hiçbir fotoğraf çıkmayacak; yalnızca site adı, başlık ve editoryal açıklama gösterilecektir.
 
+
+
+---
+
+## 17. Kesin ve Sabit Kurumsal Banner Kararı (v48 Güncellemesi)
+
+> [!IMPORTANT]
+> **Kullanıcı Direktifi:** *"1. TEK VE SABİT GÖRSEL TANIMI: index.html ve tüm statik sanatçı/sayfa şablonlarının `<head>` bölümündeki Open Graph (`og:image`) ve Twitter Card etiketlerini gözden geçir. Rastgele veya birden fazla görselin çekilmesini engellemek için, her sayfada yalnızca tek bir sabit kurumsal banner veya ilgili sayfanın tekil ana görseli olacak şekilde og:image etiketlerini sabitle. 2. Temizleme ve Kontrol: Meta (Facebook) Sharing Debugger aracında 'Scrape Again' yapıldığında tek bir doğru görselin görüneceği şekilde HTML meta tag yapısını güncelle ve AI_HANDOVER.md dosyasına bu kararı işle. banner olarak attığım fotoyu kullan bak nerde paylaşırsam paylaşıyım kim paylaşırsa paylaşşın bu banner çıkıcak demi"*
+
+### Alınan Kati Mimari Karar:
+1. **Kurumsal Sayfalar Tek Sabit Banner:**
+   - `index.html`, `dergi/index.html`, `dergi/sanatcilar/index.html`, `iletisim/index.html`, `gizlilik-politikasi/index.html` sayfalarında `og:image` ve `twitter:image` etiketleri kesin ve değişmez olarak kullanıcının sağladığı resmi suluboya tescilli sergi banner'ına sabitlenmiştir:
+     **`https://biresku.com/assets/biresku-banner.jpg?v=20261109_v48`**
+   - WhatsApp ve Meta link önizlemelerinin kırpılmaması için görsel 1200 × 630 px uluslararası standart ebadında hazırlanmıştır.
+2. **Statik Sanatçı Sayfaları Tek Sabit Portre:**
+   - 9 bağımsız sanatçı sayfasında (`/dergi/sanatcilar/[sanatci-id]/`) yalnızca o sanatçının tekil doğrulanmış stüdyo portresi tek ve sabit `og:image` olarak tanımlıdır; rastgele görsel çekilmesi engellenmiştir.
+3. **Meta (Facebook) Sharing Debugger Uyumluluğu:**
+   - `og:image:width` (1200), `og:image:height` (630), `og:image:type` (image/jpeg), `og:image:secure_url` ve `twitter:card` (`summary_large_image`) eksiksiz tanımlanarak scraper'ın tek bir doğru görseli önbelleğe alması garanti edilmiştir.
