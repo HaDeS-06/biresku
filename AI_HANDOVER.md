@@ -351,3 +351,26 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
 5. **Token ve Güvenlik Denetimi:**
    - Dağıtım öncesi tüm web dosyaları taranarak kaynak kodlarda hiçbir GitHub PAT / Token sızıntısı olmadığı teyit edildi.
    - Önbellek sürümü `?v=20261109_v38` olarak güncellendi.
+
+
+---
+
+## 10. Mobil Menü Çift Tetiklenme (Double-Toggle) Hatasının Giderilmesi ve Evrensel Mobil Menü (v41 Güncellemesi)
+
+> [!IMPORTANT]
+> **Kullanıcı Bildirimi & Talep:** *"mobilde menü butonu hala sorunlu mesela menüye basıp sanatçılara gidip yine menüye basınca açılmıyo"*
+
+### Sorunun Kök Nedeni:
+1. `#mobileNavToggleBtn` üzerinde hem inline `onclick="toggleMobileDropdownNav()"` hem de `document.addEventListener("click")` içinde `if (toggleBtn) { toggleMobileDropdownNav(e); }` delegasyonu bulunuyordu.
+2. Buton tıklandığında inline fonksiyon `event` argümanı almadığı için `e.stopPropagation()` çalışmıyor, tıklama olayı anında `document`e kabarcıklanıyordu (bubbling).
+3. `document` delegasyonu aynı butonu tekrar yakalayıp `toggleMobileDropdownNav` fonksiyonunu 1 milisaniye içinde ikinci kez çalıştırıyor; menü açıldığı anda tekrar kapanarak kullanıcıya "hiç açılmıyor" hissi veriyordu.
+4. Ayrıca statik sanatçı profillerinde (`/dergi/sanatcilar/[id]/`) mobil menü butonu bulunmadığı için kullanıcı profile girdiğinde menüden tamamen mahrum kalıyordu.
+
+### Yapılan Mimari Düzeltmeler:
+1. **Çift Tetikleme Döngüsünün Kırılması:**
+   - `document.addEventListener("click")` içerisinden menü açma/kapatma tetikleyicisi kaldırıldı; dinleyici yalnızca menü dışına tıklama, backdrop tıklaması ve link tıklamalarını kapatma görevine sınırlandı.
+   - Butonun `onclick` özniteliğine doğrudan `toggleMobileDropdownNav(event)` bağlandı.
+   - `toggleMobileDropdownNav` içerisine `evt.stopPropagation()` ve `evt.stopImmediatePropagation()` eklenerek olayın yukarı tırmanması kesin olarak engellendi.
+2. **Evrensel Mobil Gezinme:**
+   - `index.html`, `dergi/index.html` ve `dergi/sanatcilar/index.html` sayfalarının tamamında mobil menü kodları optimize edildi.
+   - Tüm 9 statik sanatçı sayfasına (`/dergi/sanatcilar/tuncay-umay/` vb.) `#mobileNavToggleBtn`, `#mobileNavDropdown` ve `#mobileNavBackdrop` bileşenleri entegre edildi. Kullanıcı artık hangi sayfada veya hangi profilin içinde olursa olsun mobilde menüyü açıp dilediği bölüme kesintisiz geçebilmektedir.

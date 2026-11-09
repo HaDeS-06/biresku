@@ -3112,7 +3112,7 @@
     <nav class="site-nav">
     <div class="container nav-inner">
       <!-- SOL: MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) -->
-      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav()" aria-expanded="false" aria-label="Menüyü Aç">
+      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç">
         <span class="nav-hamburger-icon" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -4200,10 +4200,15 @@
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
      ======================================================== */
+    /* ========================================================
+     BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
+     ======================================================== */
   function toggleMobileDropdownNav(e) {
-    if (e) {
-      if (e.preventDefault) e.preventDefault();
-      if (e.stopPropagation) e.stopPropagation();
+    var evt = e || window.event;
+    if (evt) {
+      if (evt.preventDefault) evt.preventDefault();
+      if (evt.stopPropagation) evt.stopPropagation();
+      if (evt.stopImmediatePropagation) evt.stopImmediatePropagation();
     }
     var dd = document.getElementById("mobileNavDropdown");
     var bd = document.getElementById("mobileNavBackdrop");
@@ -4239,11 +4244,6 @@
 
   (function initMobileMenuTrigger() {
     document.addEventListener("click", function(e) {
-      var toggleBtn = e.target.closest("#mobileNavToggleBtn, .mobile-menu-trigger");
-      if (toggleBtn) {
-        toggleMobileDropdownNav(e);
-        return;
-      }
       var backdrop = e.target.closest("#mobileNavBackdrop, .mobile-nav-backdrop");
       if (backdrop) {
         closeMobileDropdownNav();
@@ -4252,6 +4252,15 @@
       var navRow = e.target.closest(".mobile-nav-row");
       if (navRow) {
         closeMobileDropdownNav();
+        return;
+      }
+      var dd = document.getElementById("mobileNavDropdown");
+      if (dd && dd.classList.contains("is-open")) {
+        var isInsideDropdown = e.target.closest("#mobileNavDropdown, .mobile-nav-dropdown");
+        var isInsideBtn = e.target.closest("#mobileNavToggleBtn, .mobile-menu-trigger");
+        if (!isInsideDropdown && !isInsideBtn) {
+          closeMobileDropdownNav();
+        }
       }
     });
 
