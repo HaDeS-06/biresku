@@ -37,65 +37,65 @@
   },
   {
     "id": 5,
-    "title": "Sinopale: 20 yılda Sinop'u dönüştüren bienal",
-    "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTFBWQjg4N1Z6VDFSelZWUEVjNmcxNVFoci1FVzJtMEh4aE5GNVpVLWpPY3NTZUx3ejFqakxOXzM4UGxUb1E?oc=5",
-    "source": "Aposto",
-    "date": "03 Kasım 2026",
-    "category": "Etkinlik",
-    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 6,
     "title": "İstanbul'un Çağdaş Sanat Galerileri: Sanat Rotanızı Belirleyin",
     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QbGdaaDRKZnVNM2ZCaU1KeXN1S3NFeXdtVUx1RkJqNmYtT0VaaVRvSVQ3eXRFcnJTdFIzZVNrWXhacVlvNWRIOWtHSlZpLXIwYlFnQ1dUNWtCemI2b2FNRENWdmJQR3dsN2kw?oc=5",
     "source": "theMagger",
     "date": "18 Ekim 2026",
     "category": "Galeri",
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "Pablo Picasso Kimdir, Kaç Yaşında Öldü, Nereli? Doğumunda Ölü Sanılan Ünlü Ressamın Hayatı",
     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcmV0X2NYU25Yc0tGaEtJaXljUmU5bmFBOTF3aG5kTW43b0JOa3FvVXNaTnlCQ3NwcUVFSFh6VUpnTlNfV0NRUnBVYkZnQUJVLUlsdXBwaG9nXzI4T3RtZ082eEFkR0ZYVFhvRDFXdHdneXY4eFl1bDBfTnJ5Ty1ZN2ZEWi1uaDdmWHBlZGJ6NmFJRWxqVlM2VmthaWhBTkR2b1lESDVkMmhEdVlkbXFsVWthUjkyQTBaZjFnWQ?oc=5",
     "source": "Onedio",
     "date": "02 Kasım 2026",
     "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 8,
+    "id": 7,
     "title": "Londra’nın konuştuğu genç ressam: Lâl Yılmaz",
     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONVZ5UmVTNDRGSHVOMUVOb0tzVFZMNTJWMFhRWkdXNDNlNDhpdjRxUkJSZkxvUEJoWUhtbFNreVl5YVc3cVc5Sy14cGI2RW8zUTN2WG1XY0dFN3hpTWxad0hkNTdHd1F3bnFuc1FvRDlZdHdTbmRkQXdlZnl2T2ZES3VScUVoUUpi?oc=5",
     "source": "Gazete Oksijen",
     "date": "02 Nisan 2026",
     "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 9,
+    "id": 8,
     "title": "Renkli Zihinler: Ressam Aslı Sayan",
     "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9BbGNpclo5REV1OG5kMmVtZ1NZWldFTHdxaWdSUzd4Ni03ZEVjdXFBeXJwbmdMREtEVjdWdlNsdFhjZ2VkdFVvQUVSaEtSX1FYeUJWV0JNOA?oc=5",
     "source": "Vogue",
     "date": "18 Haziran 2026",
     "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 10,
+    "id": 9,
     "title": "Koç Topluluğu’nun 100. Yılı: \"Yüzyılın İzleri\" Sergisi",
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE55OV9qYUV1QUl5R1JodTNvUWdKUTFhUDJnbmJqTlRwLW9Ia1JuLXhMR3hBWnJ6eVlzeUg0NFg5M09jTWZzeFAtMF9TZ1U1RjlDSWFEVWtfc3FGR3lIN0V2Wmhua0h5LVdP?oc=5",
     "source": "Oggusto",
     "date": "16 Eylül 2026",
     "category": "Sergi",
-    "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 11,
+    "id": 10,
     "title": "8 Mart, 7 kadın ressam…| Haberler",
     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE90eEw1cW5LTUJ1OFlQU2ZUMlZWdk12UDdWRlNYbTFGTkZIRlhuOHlYRWVFZDBiSWExX1psMF9ReENCOG9weDFKMzNFMmlPNTVNZmNtZkhKNVpIeHdlZUlrVXdVdVdGb2p1VVRtd0tpYjR4eGpmdGc?oc=5",
     "source": "Gazete Kadıköy",
     "date": "08 Mart 2026",
     "category": "Sanatçı",
+    "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 11,
+    "title": "Ayla Turan ve Kemal Tufan'ın heykel sergisi Bodrum Golf Club'da sanatseverlerle buluştu",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPaFFiUi1qX253MFJZVUEtcUF2d254VkNIMlRyb1E4OGZPT3JBU1R5amNRNmNBZDNHU2hfVThDR3RBV2tEY2NYdEZvN2luWVVxR2tqTThSY0o2aUJWNEFoVk9oZjE5MVZDTmx6MjNUUWNEM3RxWWx5MUxYZjlTT3VIVDVfa0MyOGt5dk9ONFNFYnZuU1lKZVZ0Wm95eXNFNUZXVVlmbDR4QkpBYjFGcGFHbC1ETHkxanU1Qk16dEkyVmhWLVk?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "14 Temmuz 2026",
+    "category": "Sergi",
     "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80"
   },
   {
@@ -136,10 +136,10 @@
   },
   {
     "id": 16,
-    "title": "Ressam ve Şair İdil Berf ile: Sanat Yolculuğu Üzerine",
-    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5VM09USWh6VjhEc1paWWE4UXBlTkhZa2k5MVlMbVVQWEpmdnE3MmFiVV82OGtnUWFSa2xHUDFiSHNLa3hvRHJZcFk0VmlwUXpYamF2d2xXUWUweVg5cWRBeWRR?oc=5",
-    "source": "theMagger",
-    "date": "09 Ağustos 2022",
+    "title": "Ressam Olduğu Bilinmeyen Ünlüler",
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA3N1liYUJ3SFRPaGJORWtsYzRaNXRHZVNBUXVyZkRjNmwtVlQ5VVlMNy1ILTNXbk1UdWw5czFTYjJFTVNTRUF0V21SemYySng5cFRxRHpSYXpPbVdTQXBvUDhEQlVpYXppSHl4WHNkMA?oc=5",
+    "source": "Oggusto",
+    "date": "01 Nisan 2022",
     "category": "Sanatçı",
     "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
   }
