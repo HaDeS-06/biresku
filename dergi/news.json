@@ -73,10 +73,10 @@
   },
   {
     "id": 9,
-    "title": "8 Mart, 7 kadın ressam…| Haberler",
-    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE90eEw1cW5LTUJ1OFlQU2ZUMlZWdk12UDdWRlNYbTFGTkZIRlhuOHlYRWVFZDBiSWExX1psMF9ReENCOG9weDFKMzNFMmlPNTVNZmNtZkhKNVpIeHdlZUlrVXdVdVdGb2p1VVRtd0tpYjR4eGpmdGc?oc=5",
-    "source": "Gazete Kadıköy",
-    "date": "08 Mart 2026",
+    "title": "Anadolu'yu tuvale taşıyan ressam: Nuri İyem",
+    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOb1RWVnhycGszRXFWT3dKX2xNUjZHMmNWY25aOFBKNkFNbmRDU2x1NjB6Y19SeFVyc2F3Mll0YXBnTjNKV1ZTRmpvSmNqUG9HYzVSalpaWWJDWDJDRXJITHRFQWtaSy04RUVTREN0OHdMRV90eHoxVDFNX1ZDMldnaXA0bjBfYWZz?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "17 Haziran 2026",
     "category": "Sanatçı",
     "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
   },
@@ -91,56 +91,56 @@
   },
   {
     "id": 11,
-    "title": "OGGUSTO Sanat Editörü Seçti: Bienal İzlenimleri ve Dikkat Çekenler",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWEdqazRucVZMd0JuYVROQU1zZ05pWmFYME0yZ1kyeFRQdG5SdUs3MkJuY2p5ZGwyNzlPWDdlMFJ2bDRDVmdpZDlSRFdwdllEVEM3Q08yZUp5Z3NBVXNRV1czZi1yWXBiWUU5bGJvTnFMUGV4V1BPQWh1YXhQTkE3Mk9xQlJNc0h2ZzdvdlZVTFl4dG5RT3l3enFUdDBhSHFnYkFB?oc=5",
-    "source": "Oggusto",
-    "date": "21 Ekim 2025",
-    "category": "Etkinlik",
-    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 12,
     "title": "Ressam Yalçın Gökçebağ'ın karma resim sergisi başkentte sanatseverlerle buluştu",
     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcm5qN1FHU3BjVGlUSFZnWjBBUUROQ24ydFBjRzBtUmVUTVA4SmJyTlRhYjBQX1dpVHpFQ1NYeU1Sd1RubGpHM09GVEpaamowaDJWUExKRVRGUXZuNnRvQl9FeERqcVV6dDViY1dYWUppcHd2WldQTk5sTHBGTWktUGFrVFhKY3ItS3JXNHRoVmh5YmRqREVDRnpaQnNOSmo4LVBLVExBNzZLX2h0Unc2YWxjWE81aUZ4Wnc?oc=5",
     "source": "Anadolu Ajansı",
     "date": "20 Aralık 2025",
     "category": "Resim",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 12,
+    "title": "8 Mart, 7 kadın ressam…| Haberler",
+    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE90eEw1cW5LTUJ1OFlQU2ZUMlZWdk12UDdWRlNYbTFGTkZIRlhuOHlYRWVFZDBiSWExX1psMF9ReENCOG9weDFKMzNFMmlPNTVNZmNtZkhKNVpIeHdlZUlrVXdVdVdGb2p1VVRtd0tpYjR4eGpmdGc?oc=5",
+    "source": "Gazete Kadıköy",
+    "date": "08 Mart 2026",
+    "category": "Sanatçı",
     "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
   },
   {
     "id": 13,
+    "title": "OGGUSTO Sanat Editörü Seçti: Bienal İzlenimleri ve Dikkat Çekenler",
+    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWEdqazRucVZMd0JuYVROQU1zZ05pWmFYME0yZ1kyeFRQdG5SdUs3MkJuY2p5ZGwyNzlPWDdlMFJ2bDRDVmdpZDlSRFdwdllEVEM3Q08yZUp5Z3NBVXNRV1czZi1yWXBiWUU5bGJvTnFMUGV4V1BPQWh1YXhQTkE3Mk9xQlJNc0h2ZzdvdlZVTFl4dG5RT3l3enFUdDBhSHFnYkFB?oc=5",
+    "source": "Oggusto",
+    "date": "21 Ekim 2025",
+    "category": "Etkinlik",
+    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 14,
     "title": "Ressam Pınar Tınç: Alışılmadık Ruhta Düş Durmaz!",
     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOekc2ZEdHdS1nNEJFV2VOV2lLd1lKQkZjNFlvREV1LWg5Y1FZVjFPRVM1Z3ZKXzlRcnExanEzaXlxQ0E4eERkeVRmaElrYzd6a01wbDdWOF9uQ21LSUZuZjNNU2U1MWlDWVFuM0ZrbHFKQzUtWHMtTUNyYVYzOEJkTmZxSERtRGdPWmc?oc=5",
     "source": "Oggusto",
     "date": "01 Eylül 2025",
     "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 14,
+    "id": 15,
     "title": "Evi yanan ressam Erhan: Bir gözümde acı bir gözümde mutluluk",
     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOWh1WmVvSl84SjR1aVMtdm81Yk9uWEw4eTdZczNHVzJZS2dsZl9DN3ZFelBhSjVyaG9oZFloTFRiTzdFUVplZWFTY1RyS0NZbC1Yd1U3QVVpRUFrQU1GSWVDRG82Q1pIU1dCQmZhS1NNWDdPS3lEc0xQMlFNVmlESldSZHAwek5Nb0s0ZEtYd2xnclBuQ0E?oc=5",
     "source": "Bianet",
     "date": "25 Ekim 2021",
     "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 15,
+    "id": 16,
     "title": "Ressam Olduğu Bilinmeyen Ünlüler",
     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA3N1liYUJ3SFRPaGJORWtsYzRaNXRHZVNBUXVyZkRjNmwtVlQ5VVlMNy1ILTNXbk1UdWw5czFTYjJFTVNTRUF0V21SemYySng5cFRxRHpSYXpPbVdTQXBvUDhEQlVpYXppSHl4WHNkMA?oc=5",
     "source": "Oggusto",
     "date": "01 Nisan 2022",
     "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 16,
-    "title": "Yeni Nesil Sanat Galerisi: Muse Contemporary",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRjNpa29TQ2JXek9QNmZsY0c3Y2hHYkt1N3RMNExOdDV3SlpmTnZhOTYtNlhIOHdfelBkQXM3R1Y4RGY3UE9pTXJNa1dBTk9mRjVmZDh2ODhrR0t4UWNfcTlRNE5UbmF5aDVSbXBmd2pBT1R3U2RwMGktWkY2V2FCQ3RsSFl1dWs?oc=5",
-    "source": "Oggusto",
-    "date": "14 Haziran 2021",
-    "category": "Galeri",
     "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
   }
 ]
