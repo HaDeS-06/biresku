@@ -28,20 +28,20 @@
   },
   {
     "id": 4,
-    "title": "Henri Rousseau Kimdir? Naif Sanat Öncüsünün Hayatı ve Eserleri",
-    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQT1pRdUVqREVwM3ZHV3piMTFpZjJyUWNJTDFuNUt1Yy1VODlzNnJ4UmpFTnA2X0JmY1JkbWkxd2xCOWlJa3VhRHN4OGN6eUFhQzh5VEhqMkNySF92blR0MnVWN3ByX2FxSHVrSnNPQU5XdnkwQkNDa3RTS3RQRGhaMmpjYzBQZE5BbWhyRjk2TQ?oc=5",
-    "source": "Oggusto",
-    "date": "20 Temmuz 2026",
-    "category": "Sanat Haberi",
-    "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 5,
     "title": "İstanbul'un Çağdaş Sanat Galerileri: Sanat Rotanızı Belirleyin",
     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QbGdaaDRKZnVNM2ZCaU1KeXN1S3NFeXdtVUx1RkJqNmYtT0VaaVRvSVQ3eXRFcnJTdFIzZVNrWXhacVlvNWRIOWtHSlZpLXIwYlFnQ1dUNWtCemI2b2FNRENWdmJQR3dsN2kw?oc=5",
     "source": "theMagger",
     "date": "18 Ekim 2026",
     "category": "Galeri",
+    "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 5,
+    "title": "Koç Topluluğu’nun 100. Yılı: \"Yüzyılın İzleri\" Sergisi",
+    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE55OV9qYUV1QUl5R1JodTNvUWdKUTFhUDJnbmJqTlRwLW9Ia1JuLXhMR3hBWnJ6eVlzeUg0NFg5M09jTWZzeFAtMF9TZ1U1RjlDSWFEVWtfc3FGR3lIN0V2Wmhua0h5LVdP?oc=5",
+    "source": "Oggusto",
+    "date": "16 Eylül 2026",
+    "category": "Sergi",
     "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
   },
   {
@@ -64,11 +64,11 @@
   },
   {
     "id": 8,
-    "title": "Koç Topluluğu’nun 100. Yılı: \"Yüzyılın İzleri\" Sergisi",
-    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE55OV9qYUV1QUl5R1JodTNvUWdKUTFhUDJnbmJqTlRwLW9Ia1JuLXhMR3hBWnJ6eVlzeUg0NFg5M09jTWZzeFAtMF9TZ1U1RjlDSWFEVWtfc3FGR3lIN0V2Wmhua0h5LVdP?oc=5",
-    "source": "Oggusto",
-    "date": "16 Eylül 2026",
-    "category": "Sergi",
+    "title": "8 Mart, 7 kadın ressam…| Haberler",
+    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE90eEw1cW5LTUJ1OFlQU2ZUMlZWdk12UDdWRlNYbTFGTkZIRlhuOHlYRWVFZDBiSWExX1psMF9ReENCOG9weDFKMzNFMmlPNTVNZmNtZkhKNVpIeHdlZUlrVXdVdVdGb2p1VVRtd0tpYjR4eGpmdGc?oc=5",
+    "source": "Gazete Kadıköy",
+    "date": "08 Mart 2026",
+    "category": "Sanatçı",
     "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
   },
   {
@@ -100,37 +100,37 @@
   },
   {
     "id": 12,
-    "title": "8 Mart, 7 kadın ressam…| Haberler",
-    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE90eEw1cW5LTUJ1OFlQU2ZUMlZWdk12UDdWRlNYbTFGTkZIRlhuOHlYRWVFZDBiSWExX1psMF9ReENCOG9weDFKMzNFMmlPNTVNZmNtZkhKNVpIeHdlZUlrVXdVdVdGb2p1VVRtd0tpYjR4eGpmdGc?oc=5",
-    "source": "Gazete Kadıköy",
-    "date": "08 Mart 2026",
-    "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 13,
     "title": "OGGUSTO Sanat Editörü Seçti: Bienal İzlenimleri ve Dikkat Çekenler",
     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWEdqazRucVZMd0JuYVROQU1zZ05pWmFYME0yZ1kyeFRQdG5SdUs3MkJuY2p5ZGwyNzlPWDdlMFJ2bDRDVmdpZDlSRFdwdllEVEM3Q08yZUp5Z3NBVXNRV1czZi1yWXBiWUU5bGJvTnFMUGV4V1BPQWh1YXhQTkE3Mk9xQlJNc0h2ZzdvdlZVTFl4dG5RT3l3enFUdDBhSHFnYkFB?oc=5",
     "source": "Oggusto",
     "date": "21 Ekim 2025",
     "category": "Etkinlik",
-    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 14,
+    "id": 13,
     "title": "Ressam Pınar Tınç: Alışılmadık Ruhta Düş Durmaz!",
     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOekc2ZEdHdS1nNEJFV2VOV2lLd1lKQkZjNFlvREV1LWg5Y1FZVjFPRVM1Z3ZKXzlRcnExanEzaXlxQ0E4eERkeVRmaElrYzd6a01wbDdWOF9uQ21LSUZuZjNNU2U1MWlDWVFuM0ZrbHFKQzUtWHMtTUNyYVYzOEJkTmZxSERtRGdPWmc?oc=5",
     "source": "Oggusto",
     "date": "01 Eylül 2025",
     "category": "Sanatçı",
+    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 14,
+    "title": "'Parayı Al ve Kaç': Boş tuval teslim eden ressam müzeye 67 bin euro ödemeye mahkum edildi",
+    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9BY2VlQUVhSmlnel9lSnBQMFNidmIzLWdkUER0Qklic1dWRXBmSmw2NWRjUGlzSnhVUDhLU29pTjNiNnd1dXp1YjdjamMzVVVxM0gwUWhuV0FaQUlN0gFiQVVfeXFMTUp6UUowNVphTGZ3bWd3QmFMbG1IdUc1bUl4Y1MtX2RQakNpLTNHRG9DRFJhNFJjVDZvQ29xSm5OSEQ3dTRwdTRHbGNZZ1U3VFgzcmZPckNGVExaRWJsQVF4VFE?oc=5",
+    "source": "BBC",
+    "date": "18 Eylül 2023",
+    "category": "Galeri",
     "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
   },
   {
     "id": 15,
-    "title": "Evi yanan ressam Erhan: Bir gözümde acı bir gözümde mutluluk",
-    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOWh1WmVvSl84SjR1aVMtdm81Yk9uWEw4eTdZczNHVzJZS2dsZl9DN3ZFelBhSjVyaG9oZFloTFRiTzdFUVplZWFTY1RyS0NZbC1Yd1U3QVVpRUFrQU1GSWVDRG82Q1pIU1dCQmZhS1NNWDdPS3lEc0xQMlFNVmlESldSZHAwek5Nb0s0ZEtYd2xnclBuQ0E?oc=5",
-    "source": "Bianet",
-    "date": "25 Ekim 2021",
+    "title": "Guinness Rekorlar Kitabı: Ganalı 1.5 yaşındaki çocuk en genç ressam oldu",
+    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBPT0dtOF9GUTlRZnItb0Y5LWZZTEtPenVPckt6Ny05QV9OM0JhYW9KT2R3LWxhMlNNNlVBRjNmNDY1MS1YUWozUHZHV2VMMFlYMmVhYkVrblVCZXJD0gFiQVVfeXFMTkgtamJUWGFqeXZmN3g5OFZzNzIxWUk5ZEFqcW5hVUNyMDNWaU5TQ2UwcFBRdEhWQnRRdjdWMzRzeFdSYlEzb3F2V01tNS1YNUJmZTktYV9LdFBwSkVjTVBxMXc?oc=5",
+    "source": "BBC",
+    "date": "24 Mayıs 2024",
     "category": "Sanatçı",
     "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
   },
