@@ -562,3 +562,23 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
   6. *Arter Çağdaş Sanat* (`https://www.arter.org.tr/sergi/1`)
   7. *Artam Global Art* (`https://artam.com/artam-dergi`)
   8. *Artful Living Kültür Sanat Ajandası* (`https://www.artfulliving.com.tr/sanat`)
+
+
+---
+
+## 19. Eser İsim & Ölçülerinin Sıfırlanması ve Artam Temizliği (v51 — Canlıya Alındı)
+
+> **Tarih:** 14 Kasım 2026  
+> **Commit SHA:** `1c18b21122f4d6313ce881fcf6bddf6b4be42fd9`  
+> **Canlı Adres:** [biresku.com](https://biresku.com)
+
+### Yapılan Değişiklikler:
+1. **İsim ve Ölçülerin Kaldırılması:**
+   - `assets/artists-data.js` ve `dergi/assets/artists-data.js` içerisindeki tüm sanatçıların eserlerinden `title`, `dimensions`, `technique` ve `year` bilgileri tamamen kaldırıldı.
+   - Sitede sanatçı profillerinde eserler saf görsel (`pure-gallery-card`) olarak sergilenmektedir.
+2. **Artam Referanslarının Arındırılması:**
+   - Hikmet Çetinkaya eserlerindeki `artam-gelincikler-*.jpg` linkleri `gelincikler-*.jpg` olarak normalize edildi, kodlarda ve URL'lerde "artam" ifadesi tamamen temizlendi.
+   - `gelincikler-7.jpg` ve `gelincikler-8.jpg` fiziksel dosyaları depoya yüklendi.
+3. **Canlı Doğrulama:**
+   - Canlı CDN üzerinden `https://biresku.com/assets/artists-data.js` doğrulanarak `artam` ve `title` anahtarlarının tamamen sıfırlandığı teyit edildi.
+
