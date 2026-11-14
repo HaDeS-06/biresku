@@ -423,4 +423,14 @@
       <image:title>Abidin Dino Portresi</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://biresku.com/dergi/sanatcilar/berna-alparslan-ayvali/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://biresku.com/assets/berna-alparslan-ayvali/berna-alparslan-ayvali-pp.jpg</image:loc>
+      <image:title>Berna Alparslan Ayvalı Portresi</image:title>
+    </image:image>
+  </url>
 </urlset>

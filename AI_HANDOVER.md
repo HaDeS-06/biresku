@@ -582,3 +582,25 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
 3. **Canlı Doğrulama:**
    - Canlı CDN üzerinden `https://biresku.com/assets/artists-data.js` doğrulanarak `artam` ve `title` anahtarlarının tamamen sıfırlandığı teyit edildi.
 
+---
+
+## 20. Berna Alparslan Ayvalı Sanatçı Sayfası ve Dergisi Canlıya Alındı (v52)
+
+> **Tarih:** 14 Kasım 2026  
+> **Canlı Adres:** [biresku.com/dergi/sanatcilar/berna-alparslan-ayvali/](https://biresku.com/dergi/sanatcilar/berna-alparslan-ayvali/)  
+> **Kapsam:** Yeni Sanatçı Profili, 9 Doğrulanmış Eser, 14 Sayfalık Biresku Instagram Dergisi PDF, `index.html` Vitrini ve `sitemap.xml`.
+
+### Yapılan Değişiklikler:
+1. **Merkezi Veri Modeli (`assets/artists-data.js` & `dergi/assets/artists-data.js`):**
+   - Berna Alparslan Ayvalı sanatçı kimliği, özgün editoryal biyografisi ve sanat felsefesiyle birlikte sisteme dahil edildi.
+   - 9 adet özgün eseri (karakalem/füzen portreler, Gardenya, at kompozisyonları ve ebru çalışmaları) saf galeri kartı formatında listelendi.
+2. **Statik Sanatçı Sayfası:**
+   - `dergi/sanatcilar/berna-alparslan-ayvali/index.html` sayfası oluşturuldu; SEO meta etiketleri, Schema.org JSON-LD Person/VisualArtwork ve 14 sayfalık özel dergi PDF indirme butonu eklendi.
+3. **Portal & Dergi Entegrasyonu:**
+   - `index.html` sanatçı rayında (`#artistsRail`) en ön sırada yer alması sağlandı.
+   - `dergi/sanatcilar/index.html` kataloğuna ve `ARTIST_ALIASES` yönlendirmelerine eklendi.
+   - `sitemap.xml` güncellendi.
+4. **Varlık Dosyaları:**
+   - `assets/berna-alparslan-ayvali/` ve `dergi/assets/berna-alparslan-ayvali/` dizinleri tüm görsel ve PDF varlıklarıyla senkronize edildi.
+
+
