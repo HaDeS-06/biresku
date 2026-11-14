@@ -2381,7 +2381,7 @@
 
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v45">
-  <script src="/assets/artists-data.js?v=20261114_v60_clean"></script>
+  <script src="/assets/artists-data.js?v=20261114_v70_authentic"></script>
 </head>
 <body>
 
@@ -2699,21 +2699,7 @@
     // ==========================================
     // SANATÇILAR VERİSİ
     // ==========================================
-    // window.ARTISTS_DATA tek kaynak (Single Source of Truth) olarak /assets/artists-data.js?v=20261114_v60_clean dosyasından yüklenir
-    if (!window.ARTISTS_DATA || !Array.isArray(window.ARTISTS_DATA)) {
-      window.ARTISTS_DATA = [];
-    }
-
-
-    // ==========================================
-    // YENİ EKLENEN SANATÇILAR VİTRİNİ (MAKSİMUM 1 HAFTA)
-    // ==========================================
-    
-    // ==========================================
-    // GELİŞMİŞ & HATA TOLERANSLI SANATÇI ÇÖZÜMLEME
-    // ==========================================
-    const ARTIST_ALIASES = {
-      'hikmet-cetin-kaya': 'hikmet-cetinkaya',
+    // window.ARTISTS_DATA tek kaynak (Single Source of Truth) olarak /assets/artists-data.js?v=20261114_v70_authentic'hikmet-cetin-kaya': 'hikmet-cetinkaya',
       'hikmet_cetinkaya': 'hikmet-cetinkaya',
       'hikmetcetinkaya': 'hikmet-cetinkaya',
       'hikmet': 'hikmet-cetinkaya',
@@ -3235,7 +3221,7 @@
 
 <script src="/assets/auth-client.js?v=20261109_v45"></script>
 <script src="/assets/biresku-auth.js?v=20261109_v45"></script>
-<script src="/assets/biresku-artist-admin.js?v=20261114_v60_clean"></script>
+<script src="/assets/biresku-artist-admin.js?v=20261114_v70_authentic"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)

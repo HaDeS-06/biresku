@@ -1,4 +1,4 @@
-// BIRESKU SANATCILAR VERISI
+// BIRESKU SANATCILAR VERISI (v70_authentic_clean)
 window.ARTISTS_DATA = [
   {
     "id": "adnan-turani",
@@ -236,43 +236,43 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "hikmet-cetinkaya-1",
-        "image": "/assets/hikmet-cetinkaya/eser-1.jpg",
-        "imageUrl": "/assets/hikmet-cetinkaya/eser-1.jpg"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-1.jpg",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-1.jpg"
       },
       {
         "id": "hikmet-cetinkaya-2",
-        "image": "/assets/hikmet-cetinkaya/eser-2.jpg",
-        "imageUrl": "/assets/hikmet-cetinkaya/eser-2.jpg"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-2.jpg",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-2.jpg"
       },
       {
         "id": "hikmet-cetinkaya-3",
-        "image": "/assets/hikmet-cetinkaya/eser-3.jpg",
-        "imageUrl": "/assets/hikmet-cetinkaya/eser-3.jpg"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-3.jpg",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-3.jpg"
       },
       {
         "id": "hikmet-cetinkaya-4",
-        "image": "/assets/hikmet-cetinkaya/eser-4.jpg",
-        "imageUrl": "/assets/hikmet-cetinkaya/eser-4.jpg"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-4.jpg",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-4.jpg"
       },
       {
         "id": "hikmet-cetinkaya-5",
-        "image": "/assets/hikmet-cetinkaya/eser-5.jpg",
-        "imageUrl": "/assets/hikmet-cetinkaya/eser-5.jpg"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-5.jpg",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-5.jpg"
       },
       {
         "id": "hikmet-cetinkaya-6",
-        "image": "/assets/hikmet-cetinkaya/eser-6.jpg",
-        "imageUrl": "/assets/hikmet-cetinkaya/eser-6.jpg"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-6.jpg",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-6.jpg"
       },
       {
         "id": "hikmet-cetinkaya-7",
-        "image": "/assets/hikmet-cetinkaya/eser-7.jpg",
-        "imageUrl": "/assets/hikmet-cetinkaya/eser-7.jpg"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-7.jpg",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-7.jpg"
       },
       {
         "id": "hikmet-cetinkaya-8",
-        "image": "/assets/hikmet-cetinkaya/eser-8.jpg",
-        "imageUrl": "/assets/hikmet-cetinkaya/eser-8.jpg"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-8.jpg",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-8.jpg"
       }
     ],
     "addedDate": "2026-11-08"
@@ -298,43 +298,43 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "suleyman-saim-tekcan-1",
-        "image": "/assets/suleyman-saim-tekcan/eser-1.jpg",
-        "imageUrl": "/assets/suleyman-saim-tekcan/eser-1.jpg"
+        "image": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg"
       },
       {
         "id": "suleyman-saim-tekcan-2",
-        "image": "/assets/suleyman-saim-tekcan/eser-2.jpg",
-        "imageUrl": "/assets/suleyman-saim-tekcan/eser-2.jpg"
+        "image": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg"
       },
       {
         "id": "suleyman-saim-tekcan-3",
-        "image": "/assets/suleyman-saim-tekcan/eser-3.jpg",
-        "imageUrl": "/assets/suleyman-saim-tekcan/eser-3.jpg"
+        "image": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg"
       },
       {
         "id": "suleyman-saim-tekcan-4",
-        "image": "/assets/suleyman-saim-tekcan/eser-4.jpg",
-        "imageUrl": "/assets/suleyman-saim-tekcan/eser-4.jpg"
+        "image": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg"
       },
       {
         "id": "suleyman-saim-tekcan-5",
-        "image": "/assets/suleyman-saim-tekcan/eser-5.jpg",
-        "imageUrl": "/assets/suleyman-saim-tekcan/eser-5.jpg"
+        "image": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg",
+        "imageUrl": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg"
       },
       {
         "id": "suleyman-saim-tekcan-6",
-        "image": "/assets/suleyman-saim-tekcan/eser-6.jpg",
-        "imageUrl": "/assets/suleyman-saim-tekcan/eser-6.jpg"
+        "image": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg",
+        "imageUrl": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg"
       },
       {
         "id": "suleyman-saim-tekcan-7",
-        "image": "/assets/suleyman-saim-tekcan/eser-7.jpg",
-        "imageUrl": "/assets/suleyman-saim-tekcan/eser-7.jpg"
+        "image": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg",
+        "imageUrl": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg"
       },
       {
         "id": "suleyman-saim-tekcan-8",
-        "image": "/assets/suleyman-saim-tekcan/eser-8.jpg",
-        "imageUrl": "/assets/suleyman-saim-tekcan/eser-8.jpg"
+        "image": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg",
+        "imageUrl": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg"
       }
     ],
     "addedDate": "2026-11-08",
@@ -404,43 +404,43 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "mehmet-guleryuz-1",
-        "image": "/assets/mehmet-guleryuz/eser-1.jpg",
-        "imageUrl": "/assets/mehmet-guleryuz/eser-1.jpg"
+        "image": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg",
+        "imageUrl": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg"
       },
       {
         "id": "mehmet-guleryuz-2",
-        "image": "/assets/mehmet-guleryuz/eser-2.jpg",
-        "imageUrl": "/assets/mehmet-guleryuz/eser-2.jpg"
+        "image": "/assets/mehmet-guleryuz/turnuva-90x90.jpg",
+        "imageUrl": "/assets/mehmet-guleryuz/turnuva-90x90.jpg"
       },
       {
         "id": "mehmet-guleryuz-3",
-        "image": "/assets/mehmet-guleryuz/eser-3.jpg",
-        "imageUrl": "/assets/mehmet-guleryuz/eser-3.jpg"
+        "image": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg",
+        "imageUrl": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg"
       },
       {
         "id": "mehmet-guleryuz-4",
-        "image": "/assets/mehmet-guleryuz/eser-4.jpg",
-        "imageUrl": "/assets/mehmet-guleryuz/eser-4.jpg"
+        "image": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg",
+        "imageUrl": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg"
       },
       {
         "id": "mehmet-guleryuz-5",
-        "image": "/assets/mehmet-guleryuz/eser-5.jpg",
-        "imageUrl": "/assets/mehmet-guleryuz/eser-5.jpg"
+        "image": "/assets/mehmet-guleryuz/mucize-2024.jpg",
+        "imageUrl": "/assets/mehmet-guleryuz/mucize-2024.jpg"
       },
       {
         "id": "mehmet-guleryuz-6",
-        "image": "/assets/mehmet-guleryuz/eser-6.jpg",
-        "imageUrl": "/assets/mehmet-guleryuz/eser-6.jpg"
+        "image": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg",
+        "imageUrl": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg"
       },
       {
         "id": "mehmet-guleryuz-7",
-        "image": "/assets/mehmet-guleryuz/eser-7.jpg",
-        "imageUrl": "/assets/mehmet-guleryuz/eser-7.jpg"
+        "image": "/assets/mehmet-guleryuz/erken-donem-1964.jpg",
+        "imageUrl": "/assets/mehmet-guleryuz/erken-donem-1964.jpg"
       },
       {
         "id": "mehmet-guleryuz-8",
-        "image": "/assets/mehmet-guleryuz/eser-8.jpg",
-        "imageUrl": "/assets/mehmet-guleryuz/eser-8.jpg"
+        "image": "/assets/mehmet-guleryuz/figuratif-58x74.jpg",
+        "imageUrl": "/assets/mehmet-guleryuz/figuratif-58x74.jpg"
       }
     ],
     "addedDate": "2026-11-08",
@@ -467,43 +467,43 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "komet-1",
-        "image": "/assets/komet/eser-1.jpg",
-        "imageUrl": "/assets/komet/eser-1.jpg"
+        "image": "/assets/komet/deux-poids-deux-mesures-65x92.jpg",
+        "imageUrl": "/assets/komet/deux-poids-deux-mesures-65x92.jpg"
       },
       {
         "id": "komet-2",
-        "image": "/assets/komet/eser-2.jpg",
-        "imageUrl": "/assets/komet/eser-2.jpg"
+        "image": "/assets/komet/masada-izdusum-186x186.jpg",
+        "imageUrl": "/assets/komet/masada-izdusum-186x186.jpg"
       },
       {
         "id": "komet-3",
-        "image": "/assets/komet/eser-3.jpg",
-        "imageUrl": "/assets/komet/eser-3.jpg"
+        "image": "/assets/komet/dussel-kompozisyon-100x130.jpg",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-100x130.jpg"
       },
       {
         "id": "komet-4",
-        "image": "/assets/komet/eser-4.jpg",
-        "imageUrl": "/assets/komet/eser-4.jpg"
+        "image": "/assets/komet/dussel-kompozisyon-68x98.jpg",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-68x98.jpg"
       },
       {
         "id": "komet-5",
-        "image": "/assets/komet/eser-5.jpg",
-        "imageUrl": "/assets/komet/eser-5.jpg"
+        "image": "/assets/komet/dussel-kompozisyon-100x120.jpg",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-100x120.jpg"
       },
       {
         "id": "komet-6",
-        "image": "/assets/komet/eser-6.jpg",
-        "imageUrl": "/assets/komet/eser-6.jpg"
+        "image": "/assets/komet/dussel-kompozisyon-60x73.jpg",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-60x73.jpg"
       },
       {
         "id": "komet-7",
-        "image": "/assets/komet/eser-7.jpg",
-        "imageUrl": "/assets/komet/eser-7.jpg"
+        "image": "/assets/komet/dussel-kompozisyon-50x60.jpg",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-50x60.jpg"
       },
       {
         "id": "komet-8",
-        "image": "/assets/komet/eser-8.jpg",
-        "imageUrl": "/assets/komet/eser-8.jpg"
+        "image": "/assets/komet/dussel-kompozisyon-30x40.jpg",
+        "imageUrl": "/assets/komet/dussel-kompozisyon-30x40.jpg"
       }
     ],
     "addedDate": "2026-11-08",
@@ -530,43 +530,43 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "ibrahim-balaban-1",
-        "image": "/assets/ibrahim-balaban/eser-1.jpg",
-        "imageUrl": "/assets/ibrahim-balaban/eser-1.jpg"
+        "image": "/assets/ibrahim-balaban/kis-1953-31x47.jpg",
+        "imageUrl": "/assets/ibrahim-balaban/kis-1953-31x47.jpg"
       },
       {
         "id": "ibrahim-balaban-2",
-        "image": "/assets/ibrahim-balaban/eser-2.jpg",
-        "imageUrl": "/assets/ibrahim-balaban/eser-2.jpg"
+        "image": "/assets/ibrahim-balaban/gurbetci-1979-70x50.jpg",
+        "imageUrl": "/assets/ibrahim-balaban/gurbetci-1979-70x50.jpg"
       },
       {
         "id": "ibrahim-balaban-3",
-        "image": "/assets/ibrahim-balaban/eser-3.jpg",
-        "imageUrl": "/assets/ibrahim-balaban/eser-3.jpg"
+        "image": "/assets/ibrahim-balaban/anne-ve-cocuk-1995-35x25.jpg",
+        "imageUrl": "/assets/ibrahim-balaban/anne-ve-cocuk-1995-35x25.jpg"
       },
       {
         "id": "ibrahim-balaban-4",
-        "image": "/assets/ibrahim-balaban/eser-4.jpg",
-        "imageUrl": "/assets/ibrahim-balaban/eser-4.jpg"
+        "image": "/assets/ibrahim-balaban/koy-kompozisyonu-1976-80x110.jpg",
+        "imageUrl": "/assets/ibrahim-balaban/koy-kompozisyonu-1976-80x110.jpg"
       },
       {
         "id": "ibrahim-balaban-5",
-        "image": "/assets/ibrahim-balaban/eser-5.jpg",
-        "imageUrl": "/assets/ibrahim-balaban/eser-5.jpg"
+        "image": "/assets/ibrahim-balaban/anadolu-insani-1965-48x68.jpg",
+        "imageUrl": "/assets/ibrahim-balaban/anadolu-insani-1965-48x68.jpg"
       },
       {
         "id": "ibrahim-balaban-6",
-        "image": "/assets/ibrahim-balaban/eser-6.jpg",
-        "imageUrl": "/assets/ibrahim-balaban/eser-6.jpg"
+        "image": "/assets/ibrahim-balaban/koy-yasaminda-emek-1986-50x60.jpg",
+        "imageUrl": "/assets/ibrahim-balaban/koy-yasaminda-emek-1986-50x60.jpg"
       },
       {
         "id": "ibrahim-balaban-7",
-        "image": "/assets/ibrahim-balaban/eser-7.jpg",
-        "imageUrl": "/assets/ibrahim-balaban/eser-7.jpg"
+        "image": "/assets/ibrahim-balaban/tarla-hasat-2001-40x50.jpg",
+        "imageUrl": "/assets/ibrahim-balaban/tarla-hasat-2001-40x50.jpg"
       },
       {
         "id": "ibrahim-balaban-8",
-        "image": "/assets/ibrahim-balaban/eser-8.jpg",
-        "imageUrl": "/assets/ibrahim-balaban/eser-8.jpg"
+        "image": "/assets/ibrahim-balaban/destansi-kompozisyon-1969-70x52.jpg",
+        "imageUrl": "/assets/ibrahim-balaban/destansi-kompozisyon-1969-70x52.jpg"
       }
     ],
     "addedDate": "2026-11-08",
@@ -591,46 +591,112 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "abidin-dino-1",
-        "image": "/assets/abidin-dino/eser-1.jpg",
-        "imageUrl": "/assets/abidin-dino/eser-1.jpg"
+        "image": "/assets/abidin-dino/minotaure-1937.jpg",
+        "imageUrl": "/assets/abidin-dino/minotaure-1937.jpg"
       },
       {
         "id": "abidin-dino-2",
-        "image": "/assets/abidin-dino/eser-2.jpg",
-        "imageUrl": "/assets/abidin-dino/eser-2.jpg"
+        "image": "/assets/abidin-dino/eller-serisi.jpg",
+        "imageUrl": "/assets/abidin-dino/eller-serisi.jpg"
       },
       {
         "id": "abidin-dino-3",
-        "image": "/assets/abidin-dino/eser-3.jpg",
-        "imageUrl": "/assets/abidin-dino/eser-3.jpg"
+        "image": "/assets/abidin-dino/goyadan-esintiler.jpg",
+        "imageUrl": "/assets/abidin-dino/goyadan-esintiler.jpg"
       },
       {
         "id": "abidin-dino-4",
-        "image": "/assets/abidin-dino/eser-4.jpg",
-        "imageUrl": "/assets/abidin-dino/eser-4.jpg"
+        "image": "/assets/abidin-dino/bir-koy-daha.jpg",
+        "imageUrl": "/assets/abidin-dino/bir-koy-daha.jpg"
       },
       {
         "id": "abidin-dino-5",
-        "image": "/assets/abidin-dino/eser-5.jpg",
-        "imageUrl": "/assets/abidin-dino/eser-5.jpg"
+        "image": "/assets/abidin-dino/untitled-figuratif-1992.jpg",
+        "imageUrl": "/assets/abidin-dino/untitled-figuratif-1992.jpg"
       },
       {
         "id": "abidin-dino-6",
-        "image": "/assets/abidin-dino/eser-6.jpg",
-        "imageUrl": "/assets/abidin-dino/eser-6.jpg"
+        "image": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg",
+        "imageUrl": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg"
       },
       {
         "id": "abidin-dino-7",
-        "image": "/assets/abidin-dino/eser-7.jpg",
-        "imageUrl": "/assets/abidin-dino/eser-7.jpg"
+        "image": "/assets/abidin-dino/untitled-guaj.jpg",
+        "imageUrl": "/assets/abidin-dino/untitled-guaj.jpg"
       },
       {
         "id": "abidin-dino-8",
-        "image": "/assets/abidin-dino/eser-8.jpg",
-        "imageUrl": "/assets/abidin-dino/eser-8.jpg"
+        "image": "/assets/abidin-dino/untitled-suluboya.jpg",
+        "imageUrl": "/assets/abidin-dino/untitled-suluboya.jpg"
       }
     ],
     "addedDate": "2026-11-09",
     "period": "1913 — 1993"
   }
 ];
+
+// ========================================================
+// BİRESKU ADMİN PANELİNDEN EKLENEN ÖZEL SANATÇILARI YÜKLE
+// ========================================================
+(function() {
+  try {
+    var raw = localStorage.getItem('biresku_custom_artists_v1');
+    if (raw && window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
+      var customList = JSON.parse(raw);
+      if (Array.isArray(customList)) {
+        customList.forEach(function(item) {
+          if (item && item.id && !window.ARTISTS_DATA.some(function(a) { return a.id === item.id; })) {
+            window.ARTISTS_DATA.push(item);
+          }
+        });
+      }
+    }
+  } catch(e) {
+    console.warn("Custom artists load error:", e);
+  }
+})();
+
+// ========================================================
+// BİRESKU EVRENSEL OTOMATİK SENKRONİZASYON MOTORU
+// ========================================================
+window.bireskuSyncAllArtists = function() {
+  try {
+    // 1. Anasayfa flow rail senkronizasyonu
+    if (typeof window.syncArtistsRailWithData === "function") {
+      window.syncArtistsRailWithData();
+    }
+    // 2. Dergi 'Yeni Eklenen Sanatçılarımız' Grid senkronizasyonu
+    if (typeof window.renderArtistsGrid === "function") {
+      window.renderArtistsGrid();
+    }
+    // 3. Dergi 'Yeni Katılanlar' Liste Vitrini senkronizasyonu
+    if (typeof window.renderNewArtistsFeature === "function") {
+      window.renderNewArtistsFeature();
+    }
+    // 4. Dergi Sanatçılarımız Katalog Sayfası senkronizasyonu
+    if (typeof window.renderCatalog === "function" && typeof window.getArtistsList === "function") {
+      window.currentArtistList = window.getArtistsList();
+      window.renderCatalog(window.currentArtistList);
+    }
+    // 5. Global bildirim fırlat (Tüm dinamik bileşenler için)
+    window.dispatchEvent(new CustomEvent('biresku:artists-synced', {
+      detail: {
+        artists: window.ARTISTS_DATA,
+        count: (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA.length : 0
+      }
+    }));
+  } catch (err) {
+    console.warn("[Biresku Sync] Otomatik senkronizasyon uyarısı:", err);
+  }
+};
+
+// Sayfa ilk yüklendiğinde veya DOM hazır olduğunda senkronize et
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function() {
+    window.bireskuSyncAllArtists();
+  });
+} else {
+  setTimeout(function() {
+    window.bireskuSyncAllArtists();
+  }, 0);
+}

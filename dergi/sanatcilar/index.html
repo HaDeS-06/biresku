@@ -1762,7 +1762,7 @@
 
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v45">
-  <script src="/assets/artists-data.js?v=20261114_v60_clean"></script>
+  <script src="/assets/artists-data.js?v=20261114_v70_authentic"></script>
 </head>
 <body>
 
@@ -2248,16 +2248,7 @@
       "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=600&q=80"
     ];
 
-    // window.ARTISTS_DATA tek kaynak (Single Source of Truth) olarak /assets/artists-data.js?v=20261114_v60_clean dosyasından yüklenir
-    if (!window.ARTISTS_DATA || !Array.isArray(window.ARTISTS_DATA)) {
-      window.ARTISTS_DATA = [];
-    }
-
-// ==========================================
-    // GELİŞMİŞ & HATA TOLERANSLI SANATÇI ÇÖZÜMLEME
-    // ==========================================
-    const ARTIST_ALIASES = {
-      'abidin-dino': 'abidin-dino',
+    // window.ARTISTS_DATA tek kaynak (Single Source of Truth) olarak /assets/artists-data.js?v=20261114_v70_authentic'abidin-dino': 'abidin-dino',
       'abidin_dino': 'abidin-dino',
       'abidindino': 'abidin-dino',
       'abidin': 'abidin-dino',
@@ -2717,7 +2708,7 @@
 
 <script src="/assets/auth-client.js?v=20261109_v45"></script>
 <script src="/assets/biresku-auth.js?v=20261109_v45"></script>
-<script src="/assets/biresku-artist-admin.js?v=20261114_v60_clean"></script>
+<script src="/assets/biresku-artist-admin.js?v=20261114_v70_authentic"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
