@@ -2476,9 +2476,66 @@
       const philParagraphs = Array.isArray(artist.philosophy) ? artist.philosophy.map(p => `<p>${p}</p>`).join("") : `<p>${artist.philosophy || ''}</p>`;
       const quoteHtml = artist.quote ? `<blockquote class="philosophy-quote">"${artist.quote}"</blockquote>` : "";
 
+      
+      let magazineHtml = "";
+      if (artist.id === 'berna-alparslan-ayvali') {
+        magazineHtml = `
+          <section class="magazine-feature-section" id="modalMagazineSection" style="margin-bottom: 2.5rem;">
+            <div style="background: linear-gradient(180deg, rgba(200,162,83,0.14) 0%, rgba(18,20,26,0.98) 100%); border: 1px solid rgba(200,162,83,0.45); border-radius: 20px; padding: 2rem 1.6rem; box-shadow: 0 15px 50px rgba(0,0,0,0.6);">
+              <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 14px; margin-bottom: 1.8rem; border-bottom: 1px solid rgba(200,162,83,0.25); padding-bottom: 1.2rem;">
+                <div>
+                  <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(200,162,83,0.2); border: 1px solid #c8a253; color: #f3cf8a; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">
+                    <span>⭐</span> BİRESKU ÖZEL SAYISI • 14 SAYFA
+                  </div>
+                  <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem; color: #f8f4ee; margin-top: 8px;">
+                    Berna Alparslan Ayvalı Monografi Dergisi
+                  </h3>
+                  <p style="color: #aeb6c6; font-size: 0.92rem; margin-top: 4px;">
+                    14 sayfalık editoryal monografi dergisini çevrimiçi görüntüleyin
+                  </p>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                  <button type="button" id="modalBtnReader" onclick="setModalMagMode('reader')" style="background: #c8a253; color: #0b0c10; font-weight: 700; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">
+                    📖 Sayfa Sayfa Oku
+                  </button>
+                  <button type="button" id="modalBtnGrid" onclick="setModalMagMode('grid')" style="background: rgba(255,255,255,0.08); color: #e2e8f0; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">
+                    🖼️ Tüm Sayfalar (14)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Reader Area -->
+              <div id="modalMagReaderArea" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 680px; gap: 12px; background: rgba(10,12,16,0.9); border: 1px solid rgba(200,162,83,0.35); padding: 8px 18px; border-radius: 30px;">
+                  <button type="button" onclick="navigateModalMag(-1)" style="background: rgba(200,162,83,0.22); color: #f3cf8a; border: 1px solid rgba(200,162,83,0.45); padding: 6px 14px; border-radius: 20px; font-weight: 700; cursor: pointer; font-size: 0.82rem;">◀ Önceki</button>
+                  <div id="modalMagIndicator" style="font-family: 'Cinzel', serif; font-size: 0.9rem; color: #fff; font-weight: 700;">SAYFA 1 / 14 — ÖN KAPAK</div>
+                  <button type="button" onclick="navigateModalMag(1)" style="background: #c8a253; color: #0b0c10; border: none; padding: 6px 14px; border-radius: 20px; font-weight: 700; cursor: pointer; font-size: 0.82rem;">Sonraki ▶</button>
+                </div>
+
+                <div style="position: relative; width: 100%; max-width: 680px; aspect-ratio: 4/5; background: #0b0c10; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.85), 0 0 0 1px rgba(200,162,83,0.35); cursor: pointer;" onclick="navigateModalMag(1)">
+                  <img id="modalMagImg" src="/assets/berna-alparslan-ayvali/dergi/sayfa-01.jpg" alt="BİRESKU Sayfa" style="width: 100%; height: 100%; object-fit: contain;">
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(10,12,16,0.92) 0%, transparent 100%); padding: 18px 24px; color: #fff;">
+                    <div id="modalMagTitle" style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: #f3cf8a; font-weight: 700;">Kapak</div>
+                    <div id="modalMagSub" style="font-size: 0.85rem; color: #e2e8f0; margin-top: 2px;">Görünenin Ardındaki Derinlik ve Duygu</div>
+                  </div>
+                </div>
+
+                <div style="width: 100%; max-width: 800px; overflow-x: auto; padding: 8px 0;">
+                  <div id="modalMagThumbs" style="display: flex; gap: 8px; justify-content: flex-start;"></div>
+                </div>
+              </div>
+
+              <!-- Grid Area -->
+              <div id="modalMagGridArea" style="display: none; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px;"></div>
+            </div>
+          </section>
+        `;
+      }
+
       const deepDiveArea = document.getElementById("profileDeepDiveArea");
+
       if (deepDiveArea) {
-        deepDiveArea.innerHTML = `
+        deepDiveArea.innerHTML = magazineHtml + `
           <div class="artist-deep-dive-grid">
             <section class="artist-section-card">
               <h3 class="artist-section-heading">Biyografi & Sanatsal Yolculuk</h3>
@@ -2862,5 +2919,108 @@
     });
   })();
 </script>
+
+  <!-- MODAL MAGAZINE JS -->
+  <script>
+    const MODAL_MAG_PAGES = [
+      { page: 1, title: "Kapak", sub: "Görünenin Ardındaki Derinlik ve Duygu", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-01.jpg" },
+      { page: 2, title: "Editöryal & Manifesto", sub: "BİRESKU Sayı 01 / Editoryal Takdim", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-02.jpg" },
+      { page: 3, title: "Sanatsal Yaklaşım & Atölye", sub: "Çizginin Ötesindeki Sessiz Dünya", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-03.jpg" },
+      { page: 4, title: "Sanatçı ve Başyapıtı (Tam Boyut)", sub: "Atölyeden Sergiye / Orijinal Kare", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-04.jpg" },
+      { page: 5, title: "Portre Serisi — Elizabeth Taylor", sub: "Bakışlardaki İkonik Işık ve Füzen Hassasiyeti", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-05.jpg" },
+      { page: 6, title: "Portre Serisi — Masumiyet", sub: "Karakalem ve Tinsel Saflık", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-06.jpg" },
+      { page: 7, title: "Portre Serisi — Çocuk Bakışı", sub: "Gözlerin Derinliğindeki Dünya", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-07.jpg" },
+      { page: 8, title: "Gardenya ve Hikâyesi", sub: "Beyaz bir çiçeğin sessizliğinde saklı zarafet...", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-08.jpg" },
+      { page: 9, title: "Asil Duruş — Soylu Beyaz At", sub: "Zarafetin ve Gücün Kompozisyonu", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-09.jpg" },
+      { page: 10, title: "Özgürlüğün Adımı — Rüzgârın Oğlu", sub: "Dinamizm ve Doğal Kuvvet", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-10.jpg" },
+      { page: 11, title: "Gece ve Işık — Dolunayda Koşu", sub: "Dolunayın Altında Zamansız Devinim", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-11.jpg" },
+      { page: 12, title: "Gelenek ve Dinamizm — Ebru Üzerinde At", sub: "Ebru Sanatı ve Figüratif Buluşma", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-12.jpg" },
+      { page: 13, title: "Zarafetin Renkleri — Damlalı Laleler", sub: "Yağmurun ve Çiçeğin Senfonisi", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-13.jpg" },
+      { page: 14, title: "Arka Kapak", sub: "BİRESKU Birleşmiş Ressamlar Kulübü", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-14.jpg" }
+    ];
+    let modalMagCurrentIdx = 0;
+
+    function renderModalMag() {
+      const p = MODAL_MAG_PAGES[modalMagCurrentIdx];
+      const img = document.getElementById("modalMagImg");
+      const title = document.getElementById("modalMagTitle");
+      const sub = document.getElementById("modalMagSub");
+      const ind = document.getElementById("modalMagIndicator");
+      if (img) img.src = p.img;
+      if (title) title.textContent = p.title;
+      if (sub) sub.textContent = p.sub;
+      if (ind) ind.textContent = `SAYFA ${p.page} / 14 — ${p.title.toUpperCase()}`;
+
+      const rail = document.getElementById("modalMagThumbs");
+      if (rail && !rail.hasChildNodes()) {
+        rail.innerHTML = MODAL_MAG_PAGES.map((pg, i) => `
+          <button type="button" onclick="jumpModalMag(${i})" style="flex-shrink: 0; width: 55px; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; border: 2px solid ${i === modalMagCurrentIdx ? '#c8a253' : 'rgba(255,255,255,0.2)'}; background: #000; padding: 0; cursor: pointer;">
+            <img src="${pg.img}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+          </button>
+        `).join("");
+      } else if (rail) {
+        const btns = rail.querySelectorAll("button");
+        btns.forEach((b, i) => {
+          b.style.borderColor = (i === modalMagCurrentIdx) ? "#c8a253" : "rgba(255,255,255,0.2)";
+        });
+      }
+
+      const grid = document.getElementById("modalMagGridArea");
+      if (grid && !grid.hasChildNodes()) {
+        grid.innerHTML = MODAL_MAG_PAGES.map((pg, i) => `
+          <div style="background: rgba(15,18,24,0.9); border: 1px solid rgba(200,162,83,0.25); border-radius: 8px; overflow: hidden; cursor: pointer;" onclick="setModalMagMode('reader'); jumpModalMag(${i});">
+            <div style="aspect-ratio: 4/5; overflow: hidden; background: #000;">
+              <img src="${pg.img}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            </div>
+            <div style="padding: 10px;">
+              <div style="font-size: 0.7rem; color: #c8a253; font-weight: 700;">SAYFA ${pg.page}</div>
+              <div style="font-family: 'Cinzel', serif; font-size: 0.9rem; color: #fff; font-weight: 700;">${pg.title}</div>
+            </div>
+          </div>
+        `).join("");
+      }
+    }
+
+    window.navigateModalMag = function(delta) {
+      const next = modalMagCurrentIdx + delta;
+      if (next >= 0 && next < MODAL_MAG_PAGES.length) {
+        modalMagCurrentIdx = next;
+        renderModalMag();
+      }
+    };
+
+    window.jumpModalMag = function(i) {
+      if (i >= 0 && i < MODAL_MAG_PAGES.length) {
+        modalMagCurrentIdx = i;
+        renderModalMag();
+      }
+    };
+
+    window.setModalMagMode = function(mode) {
+      const r = document.getElementById("modalMagReaderArea");
+      const g = document.getElementById("modalMagGridArea");
+      const br = document.getElementById("modalBtnReader");
+      const bg = document.getElementById("modalBtnGrid");
+      if (mode === "grid") {
+        if (r) r.style.display = "none";
+        if (g) g.style.display = "grid";
+        if (br) { br.style.background = "rgba(255,255,255,0.08)"; br.style.color = "#e2e8f0"; }
+        if (bg) { bg.style.background = "#c8a253"; bg.style.color = "#0b0c10"; }
+      } else {
+        if (r) r.style.display = "flex";
+        if (g) g.style.display = "none";
+        if (br) { br.style.background = "#c8a253"; br.style.color = "#0b0c10"; }
+        if (bg) { bg.style.background = "rgba(255,255,255,0.08)"; bg.style.color = "#e2e8f0"; }
+      }
+    };
+
+    // Hook renderModalMag into openArtistProfile
+    const origOpen = window.openArtistProfile;
+    // We also trigger after open
+    window.addEventListener("load", function() {
+      setTimeout(renderModalMag, 500);
+    });
+  </script>
+
 </body>
 </html>

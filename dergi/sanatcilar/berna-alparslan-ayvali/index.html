@@ -527,13 +527,84 @@
           <div>Atölye: <strong>Ayvalı Atölyesi (Türkiye)</strong></div>
           <div>Kayıtlı Eser: <strong style="color: var(--accent);">9 Eser</strong></div>
         </div>
-        <div style="margin-top: 1.25rem; display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="/assets/berna-alparslan-ayvali/Berna_Alparslan_Ayvali_Dergisi.pdf" target="_blank" download style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #c8a253, #9e7a2b); color: #0f1013; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.92rem; box-shadow: 0 4px 15px rgba(200,162,83,0.3); transition: all 0.2s;">
-            <span>📖</span> Biresku Özel Sayı Dergisi (PDF İndir)
-          </a>
-        </div>
+
       </div>
     </article>
+
+    <!-- ========================================================
+         BİRESKU SANAT DERGİSİ — BERNA ALPARSLAN AYVALI ÖZEL SAYISI (14 SAYFA)
+         ======================================================== -->
+    <section class="magazine-feature-section" id="bireskuMagazineSection" style="margin: 3.5rem 0 4rem 0;">
+      <div style="background: linear-gradient(180deg, rgba(200,162,83,0.12) 0%, rgba(18,20,26,0.98) 100%); border: 1px solid rgba(200,162,83,0.4); border-radius: 20px; padding: 2.2rem 1.8rem; box-shadow: 0 15px 50px rgba(0,0,0,0.6);">
+        
+        <!-- Üst Başlık & Mod Geçişleri -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 2rem; border-bottom: 1px solid rgba(200,162,83,0.25); padding-bottom: 1.4rem;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(200,162,83,0.2); border: 1px solid #c8a253; color: #f3cf8a; padding: 5px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">
+              <span>⭐</span> BİRESKU ÖZEL SAYISI • 14 SAYFA
+            </div>
+            <h2 style="font-family: 'Cinzel', serif; font-size: 2rem; color: #f8f4ee; margin-top: 10px; letter-spacing: 0.03em;">
+              Berna Alparslan Ayvalı Monografi Dergisi
+            </h2>
+            <p style="color: #aeb6c6; font-size: 0.96rem; margin-top: 4px;">
+              Sanatçının editoryal manifestosu, atölye anlatımı, Gardenya öyküsü ve 14 sayfalık tescilli dergi yayını
+            </p>
+          </div>
+
+          <!-- Görünüm Seçenekleri (Okuyucu / Tümü) -->
+          <div style="display: flex; gap: 10px;">
+            <button type="button" id="btnModeReader" onclick="setMagMode('reader')" style="background: #c8a253; color: #0b0c10; font-weight: 700; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-size: 0.88rem; transition: all 0.2s; box-shadow: 0 4px 15px rgba(200,162,83,0.3);">
+              📖 Sayfa Sayfa Oku
+            </button>
+            <button type="button" id="btnModeGrid" onclick="setMagMode('grid')" style="background: rgba(255,255,255,0.08); color: #e2e8f0; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); padding: 10px 18px; border-radius: 8px; cursor: pointer; font-size: 0.88rem; transition: all 0.2s;">
+              🖼️ Tüm Sayfalar (14)
+            </button>
+          </div>
+        </div>
+
+        <!-- 1. ETKİLEŞİMLİ DERGİ OKUYUCU (READER VIEW) -->
+        <div id="magReaderArea" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+          
+          <!-- Navigasyon Kontrol Barı -->
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 720px; gap: 12px; background: rgba(10,12,16,0.9); border: 1px solid rgba(200,162,83,0.35); padding: 10px 20px; border-radius: 30px; box-shadow: 0 6px 20px rgba(0,0,0,0.4);">
+            <button type="button" id="btnMagPrev" onclick="navigateMagPage(-1)" style="background: rgba(200,162,83,0.22); color: #f3cf8a; border: 1px solid rgba(200,162,83,0.45); padding: 8px 18px; border-radius: 20px; font-weight: 700; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; transition: all 0.2s;">
+              <span>◀</span> Önceki
+            </button>
+
+            <div id="magPageIndicator" style="font-family: 'Cinzel', serif; font-size: 0.95rem; color: #fff; letter-spacing: 0.08em; text-align: center; font-weight: 700;">
+              SAYFA 1 / 14 — ÖN KAPAK
+            </div>
+
+            <button type="button" id="btnMagNext" onclick="navigateMagPage(1)" style="background: #c8a253; color: #0b0c10; border: none; padding: 8px 20px; border-radius: 20px; font-weight: 700; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; transition: all 0.2s; box-shadow: 0 2px 10px rgba(200,162,83,0.4);">
+              Sonraki <span>▶</span>
+            </button>
+          </div>
+
+          <!-- Dergi Sayfası Gösterim Çerçevesi (4:5 Oranı) -->
+          <div id="magStage" style="position: relative; width: 100%; max-width: 720px; aspect-ratio: 4/5; background: #0b0c10; border-radius: 14px; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.85), 0 0 0 1px rgba(200,162,83,0.35); cursor: pointer;" onclick="navigateMagPage(1)" title="Sonraki sayfaya geçmek için tıklayın">
+            <img id="magActiveImg" src="/assets/berna-alparslan-ayvali/dergi/sayfa-01.jpg" alt="BİRESKU Sayfa" style="width: 100%; height: 100%; object-fit: contain; transition: opacity 0.22s ease-in-out;">
+            <div id="magActiveCaption" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(10,12,16,0.92) 0%, rgba(10,12,16,0.5) 65%, transparent 100%); padding: 22px 28px; color: #fff;">
+              <div id="magActiveTitle" style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #f3cf8a; font-weight: 700;">Kapak</div>
+              <div id="magActiveSub" style="font-size: 0.88rem; color: #e2e8f0; margin-top: 3px;">Görünenin Ardındaki Derinlik ve Duygu</div>
+            </div>
+          </div>
+
+          <!-- Küçük Resimler Şeridi (Thumbnails Rail) -->
+          <div style="width: 100%; max-width: 900px; overflow-x: auto; padding: 10px 0 6px 0;">
+            <div id="magThumbnailsRail" style="display: flex; gap: 10px; justify-content: flex-start; padding: 4px;">
+              <!-- JS ile dolar -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. TÜM SAYFALAR GALERİSİ (GRID VIEW) -->
+        <div id="magGridArea" style="display: none; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; margin-top: 15px;">
+          <!-- JS ile 14 sayfa dolar -->
+        </div>
+
+      </div>
+    </section>
+
 
     <!-- 2. BIYOGRAFI VE HAYATA BAKISI -->
     <div class="artist-deep-dive-grid">
@@ -632,5 +703,154 @@
   </footer>
 
   <script src="/assets/artists-data.js?v=20261114_v75"></script>
+
+  <!-- BİRESKU SANAT DERGİSİ (14 SAYFA) OKUYUCU MANTIĞI -->
+  <script>
+    (function() {
+      const MAG_PAGES = [
+        { page: 1, title: "Kapak", sub: "Görünenin Ardındaki Derinlik ve Duygu", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-01.jpg" },
+        { page: 2, title: "Editöryal & Manifesto", sub: "BİRESKU Sayı 01 / Editoryal Takdim", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-02.jpg" },
+        { page: 3, title: "Sanatsal Yaklaşım & Atölye", sub: "Çizginin Ötesindeki Sessiz Dünya", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-03.jpg" },
+        { page: 4, title: "Sanatçı ve Başyapıtı (Tam Boyut)", sub: "Atölyeden Sergiye / Orijinal Kare", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-04.jpg" },
+        { page: 5, title: "Portre Serisi — Elizabeth Taylor", sub: "Bakışlardaki İkonik Işık ve Füzen Hassasiyeti", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-05.jpg" },
+        { page: 6, title: "Portre Serisi — Masumiyet", sub: "Karakalem ve Tinsel Saflık", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-06.jpg" },
+        { page: 7, title: "Portre Serisi — Çocuk Bakışı", sub: "Gözlerin Derinliğindeki Dünya", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-07.jpg" },
+        { page: 8, title: "Gardenya ve Hikâyesi", sub: "Beyaz bir çiçeğin sessizliğinde saklı zarafet...", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-08.jpg" },
+        { page: 9, title: "Asil Duruş — Soylu Beyaz At", sub: "Zarafetin ve Gücün Kompozisyonu", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-09.jpg" },
+        { page: 10, title: "Özgürlüğün Adımı — Rüzgârın Oğlu", sub: "Dinamizm ve Doğal Kuvvet", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-10.jpg" },
+        { page: 11, title: "Gece ve Işık — Dolunayda Koşu", sub: "Dolunayın Altında Zamansız Devinim", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-11.jpg" },
+        { page: 12, title: "Gelenek ve Dinamizm — Ebru Üzerinde At", sub: "Ebru Sanatı ve Figüratif Buluşma", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-12.jpg" },
+        { page: 13, title: "Zarafetin Renkleri — Damlalı Laleler", sub: "Yağmurun ve Çiçeğin Senfonisi", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-13.jpg" },
+        { page: 14, title: "Arka Kapak", sub: "BİRESKU Birleşmiş Ressamlar Kulübü", img: "/assets/berna-alparslan-ayvali/dergi/sayfa-14.jpg" }
+      ];
+
+      let currentIndex = 0;
+
+      function renderActivePage() {
+        const item = MAG_PAGES[currentIndex];
+        const imgEl = document.getElementById("magActiveImg");
+        const titleEl = document.getElementById("magActiveTitle");
+        const subEl = document.getElementById("magActiveSub");
+        const indicatorEl = document.getElementById("magPageIndicator");
+        const btnPrev = document.getElementById("btnMagPrev");
+        const btnNext = document.getElementById("btnMagNext");
+
+        if (imgEl) {
+          imgEl.style.opacity = "0.3";
+          imgEl.src = item.img;
+          imgEl.onload = () => { imgEl.style.opacity = "1"; };
+        }
+        if (titleEl) titleEl.textContent = item.title;
+        if (subEl) subEl.textContent = item.sub;
+        if (indicatorEl) {
+          indicatorEl.textContent = `SAYFA ${item.page} / ${MAG_PAGES.length} — ${item.title.toUpperCase()}`;
+        }
+
+        if (btnPrev) btnPrev.disabled = (currentIndex === 0);
+        if (btnNext) btnNext.disabled = (currentIndex === MAG_PAGES.length - 1);
+
+        // Update active thumbnail
+        const thumbs = document.querySelectorAll(".mag-thumb-btn");
+        thumbs.forEach((th, idx) => {
+          if (idx === currentIndex) {
+            th.style.borderColor = "#c8a253";
+            th.style.boxShadow = "0 0 12px rgba(200,162,83,0.6)";
+            th.style.transform = "scale(1.06)";
+          } else {
+            th.style.borderColor = "rgba(255,255,255,0.2)";
+            th.style.boxShadow = "none";
+            th.style.transform = "scale(1)";
+          }
+        });
+      }
+
+      window.navigateMagPage = function(delta) {
+        const next = currentIndex + delta;
+        if (next >= 0 && next < MAG_PAGES.length) {
+          currentIndex = next;
+          renderActivePage();
+        }
+      };
+
+      window.jumpToMagPage = function(idx) {
+        if (idx >= 0 && idx < MAG_PAGES.length) {
+          currentIndex = idx;
+          renderActivePage();
+        }
+      };
+
+      window.setMagMode = function(mode) {
+        const rArea = document.getElementById("magReaderArea");
+        const gArea = document.getElementById("magGridArea");
+        const btnR = document.getElementById("btnModeReader");
+        const btnG = document.getElementById("btnModeGrid");
+
+        if (mode === "grid") {
+          if (rArea) rArea.style.display = "none";
+          if (gArea) gArea.style.display = "grid";
+          if (btnR) {
+            btnR.style.background = "rgba(255,255,255,0.08)";
+            btnR.style.color = "#e2e8f0";
+            btnR.style.boxShadow = "none";
+          }
+          if (btnG) {
+            btnG.style.background = "#c8a253";
+            btnG.style.color = "#0b0c10";
+            btnG.style.boxShadow = "0 4px 15px rgba(200,162,83,0.3)";
+          }
+        } else {
+          if (rArea) rArea.style.display = "flex";
+          if (gArea) gArea.style.display = "none";
+          if (btnR) {
+            btnR.style.background = "#c8a253";
+            btnR.style.color = "#0b0c10";
+            btnR.style.boxShadow = "0 4px 15px rgba(200,162,83,0.3)";
+          }
+          if (btnG) {
+            btnG.style.background = "rgba(255,255,255,0.08)";
+            btnG.style.color = "#e2e8f0";
+            btnG.style.boxShadow = "none";
+          }
+        }
+      };
+
+      // Populate Thumbnails Rail
+      const rail = document.getElementById("magThumbnailsRail");
+      if (rail) {
+        rail.innerHTML = MAG_PAGES.map((p, idx) => `
+          <button type="button" class="mag-thumb-btn" onclick="jumpToMagPage(${idx})" style="flex-shrink: 0; width: 60px; aspect-ratio: 4/5; border-radius: 6px; overflow: hidden; border: 2px solid rgba(255,255,255,0.2); background: #000; padding: 0; cursor: pointer; transition: all 0.2s;" title="Sayfa ${p.page}: ${p.title}">
+            <img src="${p.img}" alt="Sayfa ${p.page}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+          </button>
+        `).join("");
+      }
+
+      // Populate Grid
+      const grid = document.getElementById("magGridArea");
+      if (grid) {
+        grid.innerHTML = MAG_PAGES.map((p, idx) => `
+          <div style="background: rgba(15,18,24,0.9); border: 1px solid rgba(200,162,83,0.25); border-radius: 10px; overflow: hidden; cursor: pointer; transition: all 0.25s;" onclick="setMagMode('reader'); jumpToMagPage(${idx}); window.scrollTo({top: document.getElementById('bireskuMagazineSection').offsetTop - 80, behavior: 'smooth'});">
+            <div style="aspect-ratio: 4/5; overflow: hidden; background: #000;">
+              <img src="${p.img}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
+            </div>
+            <div style="padding: 12px 14px;">
+              <div style="font-size: 0.72rem; color: #c8a253; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">SAYFA ${p.page}</div>
+              <div style="font-family: 'Cinzel', serif; font-size: 0.95rem; color: #fff; font-weight: 700; margin-top: 2px;">${p.title}</div>
+              <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 2px;">${p.sub}</div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // Keyboard left/right arrows
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "ArrowLeft") navigateMagPage(-1);
+        if (e.key === "ArrowRight") navigateMagPage(1);
+      });
+
+      // Initial render
+      renderActivePage();
+    })();
+  </script>
+
 </body>
 </html>
