@@ -633,4 +633,73 @@ window.ARTISTS_DATA = [
     "addedDate": "2026-11-09",
     "period": "1913 — 1993"
   }
+  ,
+  {
+    "id": "berna-alparslan-ayvali",
+    "name": "Berna Alparslan Ayvalı",
+    "discipline": "Çağdaş Türk Sanatı, Realist Portre & Figüratif Kompozisyonlar",
+    "category": "Ressam",
+    "city": "Türkiye",
+    "studio": "Ayvalı Atölyesi",
+    "coverImage": "/assets/berna-alparslan-ayvali/berna-alparslan-ayvali-pp.jpg",
+    "shortBio": "Realist çizgiyi derin bir içsel sezgiyle buluşturan; portrede bir bakışın ardındaki ifadeyi ve tinsel derinliği tuvale taşıyan çağdaş ressam.",
+    "quote": "Resim yapmanın en güzel yanı, fırçayı tutan elin kendi dünyasından usulca sıyrılıp bambaşka bir âleme geçmesidir. Özellikle portrede... Bir bakışın ardına saklanmış ifadeyi anlamak, onu tuvale taşımak, işte o âlemin en büyüleyici yanıdır.",
+    "biography": [
+      "Berna Alparslan Ayvalı, çizgi ve desen tutkusunu genç yaşlardan itibaren geliştirmiş, özellikle realist portre ve figüratif resim alanında özgün bir anlatım dili kurmuş çağdaş Türk ressamıdır. Karakalem, füzen ve yağlıboya tekniklerindeki ustalığı, ışık-gölge geçişlerindeki kusursuz hassasiyeti ve ayrıntılara verdiği önemle dikkat çeker.",
+      "Sanatçı, çalışmalarında insan çehresinin ardındaki psikolojik derinliği ve doğanın soylu devinimini incelikle işler. Çeşitli sergilerde eserlerini sanatseverlerle buluşturan Ayvalı, sanatsal üretimine kendi atölyesinde aralıksız devam etmektedir."
+    ],
+    "philosophy": [
+      "“Benim için resim çizmek, görünenin ardına saklanmış duyguyu yakalamaktır. Realist çizgileri sevsem de, asıl aradığım şey çizginin ötesindeki derinliktir. Eserime bakan birinin o duyguyu hissetmesi, benim için en büyük hazdır.” Sanatçı için resim; görünen biçimlerin mekanik bir tekrarı değil, fırçayı tutan elin kendi dünyasından sıyrılarak başka bir tinsel âleme açılmasıdır.",
+      "Portre çalışmalarında özellikle bakışların taşıdığı duygu yüküne odaklanan Ayvalı, at figürlerindeki dinamizmi ve ebru sanatının akışkan zarafetini de kompozisyonlarına katarak geleneksel desen disipliniyle çağdaş bir duygulanımı sentezler. Sanatının temel gayesi, izleyicinin tualin karşısına geçtiğinde o saklı duyguyu bizzat içinde hissetmesidir."
+    ],
+    "artworks": [
+      {
+        "id": "berna-alparslan-ayvali-1",
+        "image": "/assets/berna-alparslan-ayvali/elizabeth-taylor.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/elizabeth-taylor.jpg"
+      },
+      {
+        "id": "berna-alparslan-ayvali-2",
+        "image": "/assets/berna-alparslan-ayvali/masumiyet-portresi.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/masumiyet-portresi.jpg"
+      },
+      {
+        "id": "berna-alparslan-ayvali-3",
+        "image": "/assets/berna-alparslan-ayvali/cocuk-bakisi.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/cocuk-bakisi.jpg"
+      },
+      {
+        "id": "berna-alparslan-ayvali-4",
+        "image": "/assets/berna-alparslan-ayvali/manolya-ve-dantel.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/manolya-ve-dantel.jpg"
+      },
+      {
+        "id": "berna-alparslan-ayvali-5",
+        "image": "/assets/berna-alparslan-ayvali/soylu-beyaz-at.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/soylu-beyaz-at.jpg"
+      },
+      {
+        "id": "berna-alparslan-ayvali-6",
+        "image": "/assets/berna-alparslan-ayvali/ruzgarin-oglu.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/ruzgarin-oglu.jpg"
+      },
+      {
+        "id": "berna-alparslan-ayvali-7",
+        "image": "/assets/berna-alparslan-ayvali/dolunayda-kosu.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/dolunayda-kosu.jpg"
+      },
+      {
+        "id": "berna-alparslan-ayvali-8",
+        "image": "/assets/berna-alparslan-ayvali/ebru-uzerinde-at.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/ebru-uzerinde-at.jpg"
+      },
+      {
+        "id": "berna-alparslan-ayvali-9",
+        "image": "/assets/berna-alparslan-ayvali/damlali-laleler.jpg",
+        "imageUrl": "/assets/berna-alparslan-ayvali/damlali-laleler.jpg"
+      }
+    ],
+    "addedDate": "2026-11-14",
+    "period": "Çağdaş Dönem"
+  }
 ];
