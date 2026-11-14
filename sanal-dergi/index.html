@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BİRESKU SANAT DERGİSİ — A4 Çift Sayfa Yayılımı & Instagram Monografi Stüdyosu</title>
+  
+  <!-- Lüks Editoryal Tipografi -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========================================================
+       AYDINLIK VE LÜKS EDİTORYAL TEMA (LIGHT LUXURY GALLERY)
+       ======================================================== */
+    :root {
+      --bg-studio: #f1f3f7;
+      --paper-white: #ffffff;
+      --paper-cream: #faf9f6;
+      --text-main: #14161a;
+      --text-dim: #4b5260;
+      --text-muted: #7e8796;
+      --accent-red: #c0392b;
+      --accent-terracotta: #a84a2d;
+      --accent-gold: #bfa15f;
+      --gold-dark: #8c6d2d;
+      --border-light: #e2e5eb;
+      --border-dark: #111111;
+      
+      --font-masthead: 'Montserrat', -apple-system, sans-serif;
+      --font-headline: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+      --font-body: 'Cormorant Garamond', Garamond, Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+
+      /* ISO A4 Oranı: 210mm x 297mm */
+      --page-width: 530px;
+      --page-height: 750px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-studio);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 90px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      background-image: radial-gradient(circle at 50% 0%, #ffffff 0%, #f1f3f7 75%);
+    }
+
+    /* ========================================================
+       AYDINLIK ÜST KONTROL PANELİ
+       ======================================================== */
+    .studio-header {
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .studio-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .studio-brand-logo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .studio-brand-title {
+      font-family: var(--font-headline);
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      color: #0b0c10;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .studio-brand-sub {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      color: var(--accent-gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .badge-a4 {
+      background: #eef2ff;
+      color: #3730a3;
+      border: 1px solid #c7d2fe;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .studio-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mode-switch-group {
+      display: flex;
+      background: #f1f3f7;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 3px;
+    }
+
+    .mode-btn {
+      background: transparent;
+      border: none;
+      color: #555e6d;
+      padding: 7px 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn.active {
+      background: #ffffff;
+      color: #0b0c10;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .artist-select {
+      background: #ffffff;
+      color: #14161a;
+      border: 1px solid var(--border-light);
+      padding: 8px 14px;
+      font-size: 0.84rem;
+      font-weight: 500;
+      border-radius: 5px;
+      outline: none;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      min-width: 210px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .btn-action {
+      background: #ffffff;
+      color: #181a20;
+      border: 1px solid var(--border-light);
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .btn-action:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .btn-print {
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+    }
+
+    .btn-print:hover {
+      background: #0369a1;
+    }
+
+    .btn-download-all {
+      background: linear-gradient(135deg, #c0392b, #891d14);
+      border: none;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(192, 57, 43, 0.3);
+    }
+
+    .btn-download-all:hover {
+      background: linear-gradient(135deg, #d34435, #9c2218);
+    }
+
+    .toast-notice {
+      font-size: 0.78rem;
+      color: #16a34a;
+      font-weight: 600;
+      display: none;
+      margin-left: 6px;
+    }
+
+    /* ========================================================
+       MOD 1: ÇİFT SAYFA DERGİ MODU (ST.PAGEFLIP 3D ENTEGRASYONU)
+       ======================================================== */
+    .magazine-view-wrapper {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .flipbook-nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1060px;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px 8px 0 0;
+      padding: 10px 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .nav-page-indicator {
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #334155;
+    }
+
+    .nav-arrow-btn {
+      background: #f8fafc;
+      border: 1px solid var(--border-light);
+      color: #1e293b;
+      padding: 7px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-arrow-btn:hover:not(:disabled) {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    .nav-arrow-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    /* Flipbook Sahne Konteyneri */
+    .flipbook-stage-container {
+      width: 100%;
+      max-width: 1060px;
+      height: 750px;
+      background: #ffffff;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--border-light);
+      border-radius: 0 0 8px 8px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* St.PageFlip İçin Tekil Sayfa (A4 530x750) */
+    .mag-a4-page {
+      width: 530px;
+      height: 750px;
+      background: var(--paper-white);
+      color: var(--text-main);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 36px 38px 28px 38px;
+      user-select: text;
+    }
+
+    /* Tam Boy Kapak ve Görseller İçin Sıfır Kenarlık */
+    .mag-a4-page.is-fullbleed {
+      padding: 0 !important;
+    }
+
+    /* ========================================================
+       KAPAK ŞABLONU (KENARSIZ TAM SAYFAYA OTURAN KAPAK)
+       ======================================================== */
+    .cover-fullbleed {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 34px 32px 32px 32px;
+      background-size: cover;
+      background-position: center center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .cover-fullbleed::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.52) 0%,
+        rgba(0, 0, 0, 0.05) 30%,
+        rgba(0, 0, 0, 0.2) 60%,
+        rgba(0, 0, 0, 0.88) 100%
+      );
+      z-index: 1;
+    }
+
+    .cover-content-top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .cover-brand-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .cover-qr-box {
+      width: 54px;
+      height: 54px;
+      background: #ffffff;
+      padding: 3px;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+      flex-shrink: 0;
+    }
+
+    .cover-qr-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .cover-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-brand-name {
+      font-family: var(--font-headline);
+      font-size: 2.15rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      color: #ffffff;
+      line-height: 0.95;
+      text-transform: uppercase;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+    }
+
+    .cover-brand-sub {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 5px;
+    }
+
+    .cover-brand-sub .line {
+      width: 22px;
+      height: 1px;
+      background: var(--accent-gold);
+    }
+
+    .cover-brand-sub .label {
+      font-family: var(--font-masthead);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .cover-web-tag {
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: 0.14em;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+      font-weight: 600;
+    }
+
+    .cover-content-bottom {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .cover-artist-badge {
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 7px 18px;
+      border-radius: 6px;
+      font-family: var(--font-masthead);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #ffffff;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .cover-headline-badge {
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-family: var(--font-masthead);
+      font-size: 1.95rem;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      max-width: 95%;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
+    }
+
+    .cover-curator-strip {
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+      font-weight: 600;
+    }
+
+    /* ========================================================
+       3. RESİMDEKİ LÜKS BİRESKU LOGO BLOĞU (ASLA SARMAYAN "BİRESKU")
+       ======================================================== */
+    .biresku-crest-light {
+      text-align: center;
+      padding: 16px 20px 18px 20px;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      width: 100%;
+    }
+
+    .crest-main-title {
+      font-family: var(--font-headline);
+      font-size: 1.55rem; /* Sığacak zarif ölçü */
+      font-weight: 800;
+      letter-spacing: 0.26em;
+      color: #0b0c10;
+      text-transform: uppercase;
+      line-height: 1.1;
+      white-space: nowrap !important; /* ASLA ALT SATIRA GEÇMEZ */
+      padding-left: 0.26em;
+      display: block;
+    }
+
+    .crest-sub-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 8px 0 4px 0;
+    }
+
+    .crest-line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent-gold);
+    }
+
+    .crest-subtitle {
+      font-family: var(--font-masthead);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .crest-en-sub {
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.24em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ========================================================
+       SAYFA İÇ MİZANPAJLARI (GENİŞ, DENGELİ, SIFIR TAŞMA)
+       ======================================================== */
+    .mag-header-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid #000000;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .mag-header-title {
+      font-family: var(--font-masthead);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      color: #000000;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .mag-header-meta {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .mag-footer-strip {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .mag-footer-credit {
+      font-family: var(--font-body);
+      font-size: 0.94rem;
+      font-style: italic;
+      color: var(--accent-terracotta);
+      font-weight: 600;
+    }
+
+    /* EDİTÖRDEN AÇILIŞ SAYFASI (Gereksiz Bürokrasi Sütunu Kaldırıldı!) */
+    .editorial-open-wrap {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .editorial-lead-box {
+      margin-bottom: 18px;
+    }
+
+    .editor-note-title {
+      font-family: var(--font-headline);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #000000;
+      line-height: 1.18;
+    }
+
+    .editor-note-body {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: #2b2b2b;
+      text-align: left;
+    }
+
+    .editorial-featured-art {
+      height: 230px;
+      max-height: 230px;
+      width: 100%;
+      background: #fcfcfd;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .editorial-featured-art img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* BİYOGRAFİ SAYFASI */
+    .bio-spread-headline {
+      font-family: var(--font-headline);
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .bio-spread-subtitle {
+      font-family: var(--font-masthead);
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      color: var(--accent-terracotta);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .bio-spread-body {
+      font-family: var(--font-body);
+      font-size: 1.18rem;
+      line-height: 1.6;
+      color: #242424;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    /* first-letter drop-cap removed for pristine typography */
+
+    /* ALINTI BLOĞU */
+    .quote-pullout {
+      border-left: 3px solid var(--accent-red);
+      padding: 12px 18px;
+      margin: 10px 0 16px 0;
+      background: #faf8f5;
+    }
+
+    .quote-pullout-text {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.45;
+      color: #111111;
+    }
+
+    /* ESER SERGİLEME SAYFASI (İSİMSİZ & ÖLÇÜSÜZ OLABİLEN SAF TABLO SEÇENEĞİ) */
+    .artwork-spread-wrap {
+      height: 480px;
+      max-height: 480px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-bottom: 10px;
+      background: #f8f8fa;
+      border: 1px solid var(--border-light);
+      padding: 12px;
+      position: relative;
+    }
+
+    .artwork-spread-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      display: block;
+    }
+
+    .artwork-info-box {
+      flex-shrink: 0;
+      padding: 4px 0 0 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .artwork-info-box.is-hidden {
+      display: none !important;
+    }
+
+    .artwork-info-title {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 2px;
+    }
+
+    .artwork-info-meta {
+      font-family: var(--font-sans);
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      letter-spacing: 0.03em;
+    }
+
+    .btn-toggle-caption {
+      background: #f1f3f7;
+      border: 1px solid var(--border-light);
+      color: #555e6d;
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-left: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-toggle-caption:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    /* ========================================================
+       HER METİN VE RESMİ OYNAMA / DEĞİŞTİRME ÖZELLİKLERİ
+       ======================================================== */
+    [contenteditable="true"] {
+      cursor: text;
+      outline: 1px dashed transparent;
+      transition: outline 0.2s ease, background 0.2s ease;
+    }
+
+    [contenteditable="true"]:hover {
+      outline: 1px dashed rgba(192, 57, 43, 0.45);
+      background: rgba(192, 57, 43, 0.03);
+    }
+
+    [contenteditable="true"]:focus {
+      outline: 2px solid var(--accent-red) !important;
+      background: rgba(192, 57, 43, 0.06);
+    }
+
+    .image-editable-container {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .image-hover-toolbar {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(17, 24, 39, 0.88);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      transform: translateY(-4px);
+      z-index: 50;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .image-editable-container:hover .image-hover-toolbar {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .image-editable-container.drag-active {
+      outline: 3px dashed var(--accent-red) !important;
+      outline-offset: -3px;
+    }
+
+    /* ========================================================
+       MOD 2: INSTAGRAM GÖRÜNÜMÜ (4:5 POST CAROUSEL)
+       ======================================================== */
+    
+    /* ========================================================
+       MOD 2: INSTAGRAM GÖRÜNÜMÜ (4:5 POST CAROUSEL)
+       ======================================================== */
+    .instagram-view-wrapper {
+      margin: 30px auto 60px auto;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 50px;
+    }
+
+    .insta-top-banner {
+      width: 540px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #f8fafc;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    }
+
+    .insta-banner-info {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .insta-banner-info strong {
+      color: #38bdf8;
+    }
+
+    .insta-card-box {
+      width: 540px;
+      max-width: 540px;
+      min-width: 540px;
+      flex-shrink: 0;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .insta-card-download-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-bottom: none;
+      padding: 8px 14px;
+      border-radius: 8px 8px 0 0;
+      color: #f8fafc;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .btn-slide-download {
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-slide-download:hover {
+      background: #0369a1;
+    }
+
+    .insta-slide {
+      width: 540px;
+      height: 675px;
+      min-width: 540px;
+      min-height: 675px;
+      max-width: 540px;
+      max-height: 675px;
+      background: #ffffff;
+      color: #0f172a;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 28px 18px 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      border-radius: 0 0 8px 8px;
+      border: 1px solid #cbd5e1;
+      border-top: none;
+      flex-shrink: 0;
+    }
+
+    /* Instagram Moduna Özel Tipografi ve İçerik Dengelemesi (Taşmayı Önler) */
+    .insta-slide .mag-header-strip {
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      flex-shrink: 0;
+    }
+
+    .insta-slide .mag-footer-strip {
+      margin-top: auto;
+      padding-top: 8px;
+      border-top: 1px solid #cbd5e1;
+      flex-shrink: 0;
+    }
+
+    .insta-slide .bio-spread-headline {
+      font-size: 1.85rem;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      font-weight: 800;
+      color: #000000;
+      flex-shrink: 0;
+    }
+
+    .insta-slide .bio-spread-subtitle {
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+      color: #64748b;
+    }
+
+    .insta-slide .quote-pullout {
+      padding: 12px 18px;
+      margin: 8px 0 14px 0;
+      border-left: 3px solid var(--accent-red);
+      background: #faf8f5;
+      flex-shrink: 0;
+    }
+
+    .insta-slide .quote-pullout-text {
+      font-size: 1.15rem;
+      line-height: 1.45;
+      font-style: italic;
+      color: #111111;
+    }
+
+    .insta-slide .bio-spread-body {
+      font-size: 1.04rem;
+      line-height: 1.6;
+      color: #1f2937;
+      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .insta-slide .bio-spread-body p {
+      margin: 0;
+      text-align: justify;
+    }
+
+
+    /* ========================================================
+       YAZDIRMA VE A4 BASKI STANDARDI (@media print)
+       ======================================================== */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+      }
+      .studio-header, .flipbook-nav-bar, .mode-switch-group, .insta-card-download-bar, .image-hover-toolbar, .btn-toggle-caption {
+        display: none !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+      .flipbook-stage-container {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: none !important;
+        height: auto !important;
+        display: block !important;
+      }
+      .mag-a4-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        page-break-after: always !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+    }
+  
+    /* ========================================================
+       OPERA & TÜM TARAYICILAR İÇİN İNDİRME MODALI
+       ======================================================== */
+    .download-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(10, 15, 25, 0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 999999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .download-modal-dialog {
+      background: #ffffff;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 680px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      animation: modalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid #e2e8f0;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .download-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .download-modal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #059669;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #a7f3d0;
+    }
+
+    .download-modal-close {
+      background: #f1f5f9;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      transition: all 0.15s;
+    }
+
+    .download-modal-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .download-modal-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 6px 0 4px 0;
+    }
+
+    .download-modal-subtitle {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+
+    .download-modal-preview {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 280px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .download-modal-preview img {
+      max-width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      border-radius: 4px;
+    }
+
+    .download-modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .modal-btn-primary {
+      flex: 2;
+      min-width: 220px;
+      background: #059669;
+      color: #ffffff !important;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 18px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .modal-btn-primary:hover {
+      background: #047857;
+      transform: translateY(-1px);
+    }
+
+    .modal-btn-secondary {
+      flex: 1;
+      min-width: 150px;
+      background: #f1f5f9;
+      color: #334155 !important;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.86rem;
+      padding: 12px 14px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid #cbd5e1;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+
+    .modal-btn-secondary:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .download-modal-footer {
+      font-size: 0.82rem;
+      color: #475569;
+      background: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border-left: 3px solid #059669;
+      line-height: 1.45;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       ÜST STÜDYO KONTROL PANELİ
+       ======================================================== -->
+  <header class="studio-header">
+    <div class="studio-brand-group">
+      <div class="studio-brand-logo">
+        <span class="studio-brand-title">BİRESKU SANAT DERGİSİ</span>
+        <span class="studio-brand-sub">— BİRLEŞMİŞ RESSAMLAR KULÜBÜ —</span>
+      </div>
+      <span class="badge-a4">ISO A4 (210×297)</span>
+    </div>
+
+    <div class="studio-controls">
+      <!-- Görünüm Modu Switcher -->
+      <div class="mode-switch-group">
+        <button class="mode-btn active" id="btnModeSpread" onclick="switchViewMode('spread')">
+          📖 Dergi Boyutu (Videodaki Çift Sayfa)
+        </button>
+        <button class="mode-btn" id="btnModeInsta" onclick="switchViewMode('insta')">
+          📱 Instagram Boyutu (4:5 Post)
+        </button>
+      </div>
+
+      <!-- Sanatçı Seçimi -->
+      <select id="artistSelect" class="artist-select" onchange="onArtistChanged(this.value)">
+        <!-- JS ile dolar -->
+      </select>
+
+      <!-- A4 Baskı / PDF Çıktısı -->
+      <button class="btn-action btn-print" onclick="window.print()">
+        🖨️ A4 Baskı / PDF Al
+      </button>
+
+      <!-- Tümünü İndir -->
+      <button class="btn-action btn-download-all" id="btnDownloadAll" onclick="downloadAllCurrent()">
+        📥 Tüm Dergiyi İndir (PNG)
+      </button>
+
+      <span id="toastMsg" class="toast-notice">İşlem tamamlandı!</span>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       1. DERGİ MODU (ST.PAGEFLIP 3D FLIPBOOK ÇİFT SAYFA)
+       ======================================================== -->
+  <section class="magazine-view-wrapper" id="spreadContainer" style="display: flex;">
+    <!-- Navigasyon Barı -->
+    <div class="flipbook-nav-bar">
+      <button class="nav-arrow-btn" id="btnPrevSpread" disabled onclick="pageFlipInstance && pageFlipInstance.flipPrev()">
+        ◀ Önceki Sayfa
+      </button>
+
+      <div class="nav-page-indicator" id="spreadPageIndicator">
+        ÖN KAPAK (Sayfa 1) • Kapağı Çevirmek İçin Tıklayın veya Sürükleyin
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <button class="nav-arrow-btn" onclick="downloadAllPagesDirectly()">
+          📥 Tüm Sayfaları İndir (PNG)
+        </button>
+        <button class="nav-arrow-btn" id="btnNextSpread" onclick="pageFlipInstance && pageFlipInstance.flipNext()">
+          Sonraki Sayfa ▶
+        </button>
+      </div>
+    </div>
+
+    <!-- Gerçek 3D Flipbook Sahnesi (St.PageFlip) -->
+    <div class="flipbook-stage-container" id="flipbookStageContainer">
+      <div id="flipbookStage" style="width: 1060px; height: 750px;">
+        <!-- Sayfalar JS ile yüklenir -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       2. INSTAGRAM MODU (4:5 POST CAROUSEL)
+       ======================================================== -->
+  <section class="instagram-view-wrapper" id="instaContainer" style="display: none;">
+    <!-- JS ile çizilir -->
+  </section>
+
+  <!-- Gizli Dosya Seçici (Resim Değiştirme İçin) -->
+  <input type="file" id="globalImageInput" accept="image/*" style="display:none;" onchange="handleImageFileSelected(event)">
+
+  <!-- Gerekli Veriler, PageFlip Kütüphanesi ve html2canvas -->
+  <script src="assets/artists-data.js?v=20261114_v70_authentic"></script>
+  <script src="assets/page-flip.browser.js"></script>
+  <script src="assets/html2canvas.min.js"></script>
+
+  <script>
+    let currentMode = 'spread';
+    let currentArtist = null;
+    let pageFlipInstance = null;
+    let activeImageTarget = null;
+
+    // Resim Yolu Çözücü
+    function resolveImg(path) {
+      if (!path) return '';
+      if (path.startsWith('data:') || path.startsWith('blob:') || path.startsWith('http://') || path.startsWith('https://')) return path;
+      if (path.startsWith('/')) {
+        return '.' + path;
+      }
+      return path;
+    }
+
+    // Sanatçılara Özel Başlıklar
+    const HEADLINES = {
+      'abidin-dino': 'MUTLULUĞUN VE ÇİZGİNİN PEŞİNDE',
+      'tuncay-umay': 'IŞIĞIN VE RUHUN DERİN İZLERİ',
+      'ibrahim-balaban': 'BOZKIRIN VE EMEĞİN DESTANSI FIRÇASI',
+      'komet': 'DÜŞLERİN VE GİZEMİN ÇAĞDAŞ ŞAİRİ',
+      'adnan-turani': 'LİRİK SOYUTLAMANIN BÜYÜK USTASI',
+      'mustafa-ayaz': 'KADININ VE DEVİNİMİN TUTKULU SENFONİSİ',
+      'hikmet-cetinkaya': 'GELİNCİKLERİN ÇAĞDAŞ ÇIĞLIĞI',
+      'gulbin-nurgenc': 'RENKLERİN VE DOĞANIN DERİN NEFESİ',
+      'mehmet-guleryuz': 'İNSANIN VE TOPLUMUN ÇIPLAK GERÇEĞİ',
+      'suleyman-saim-tekcan': 'GRAVÜRÜN VE SOYLU ATLARIN BİLGESİ'
+    };
+
+    function initStudio() {
+      if (!window.ARTISTS_DATA || !Array.isArray(window.ARTISTS_DATA) || !window.ARTISTS_DATA.length) {
+        alert('Hata: Sanatçı verisi (artists-data.js) bulunamadı!');
+        return;
+      }
+
+      const selector = document.getElementById('artistSelect');
+      const allArtists = window.ARTISTS_DATA.slice().reverse();
+
+      selector.innerHTML = allArtists.map(a => `<option value="${a.id}">${a.name}</option>`).join('');
+
+      currentArtist = allArtists[0];
+      renderAll();
+    }
+
+    function onArtistChanged(artistId) {
+      currentArtist = window.ARTISTS_DATA.find(a => a.id === artistId) || window.ARTISTS_DATA[0];
+      renderAll();
+    }
+
+    function switchViewMode(mode) {
+      currentMode = mode;
+      const btnSpread = document.getElementById('btnModeSpread');
+      const btnInsta = document.getElementById('btnModeInsta');
+      if (btnSpread) btnSpread.classList.toggle('active', mode === 'spread');
+      if (btnInsta) btnInsta.classList.toggle('active', mode === 'insta');
+
+      const spreadEl = document.getElementById('spreadContainer');
+      const instaEl = document.getElementById('instaContainer');
+
+      if (mode === 'spread') {
+        if (spreadEl) spreadEl.style.display = 'flex';
+        if (instaEl) instaEl.style.display = 'none';
+      } else {
+        if (spreadEl) spreadEl.style.display = 'none';
+        if (instaEl) instaEl.style.display = 'flex';
+      }
+
+      const btnDown = document.getElementById('btnDownloadAll');
+      if (btnDown) {
+        if (mode === 'insta') {
+          btnDown.innerHTML = '📥 Tüm Instagram Postlarını İndir (PNG)';
+        } else {
+          btnDown.innerHTML = '📥 Tüm Sayfaları İndir (PNG)';
+        }
+      }
+
+      renderAll();
+    }
+
+    function renderAll() {
+      if (currentMode === 'spread') {
+        buildPageFlipView();
+      } else {
+        renderInstagramPosts();
+      }
+      setupInteractiveImageHandlers();
+    }
+
+    // Navigasyon barını ve butonları sayfa numarası ile tam senkronize eden yardımcı
+    function updateSpreadIndicatorAndNav(page, totalPages) {
+      if (!totalPages && window.pageFlipInstance) {
+        try { totalPages = window.pageFlipInstance.getPageCount(); } catch(e) {}
+      }
+      totalPages = totalPages || 8;
+
+      let label = '';
+      if (page === 0) {
+        label = 'ÖN KAPAK (Sayfa 1) • Kapağı Çevirmek İçin Tıklayın veya Sürükleyin';
+      } else if (page >= totalPages - 1) {
+        label = `ARKA KAPAK (Sayfa ${totalPages}) • Özel Monografi Kapanışı`;
+      } else {
+        label = `AÇIK DERGİ YAYILIMI • SAYFA ${page + 1} - ${page + 2} (ISO A4 420×297 mm)`;
+      }
+
+      const ind = document.getElementById('spreadPageIndicator');
+      if (ind) ind.innerText = label;
+      const btnPrev = document.getElementById('btnPrevSpread');
+      const btnNext = document.getElementById('btnNextSpread');
+      if (btnPrev) btnPrev.disabled = (page === 0);
+      if (btnNext) btnNext.disabled = (page >= totalPages - 1);
+    }
+
+    // ========================================================
+    // 1. GERÇEK ST.PAGEFLIP 3D FLIPBOOK KURULUMU
+    // ========================================================
+    function buildPageFlipView() {
+      const container = document.getElementById('flipbookStageContainer');
+      if (!container) return;
+
+      // Navigasyon barını ve butonları derhal Ön Kapak durumuna sıfırla
+      updateSpreadIndicatorAndNav(0, 8);
+
+      // Eski instance'ı temizle
+      if (pageFlipInstance) {
+        try { pageFlipInstance.destroy(); } catch(e) {}
+        pageFlipInstance = null;
+        window.pageFlipInstance = null;
+      }
+
+      // Sahneyi daima sıfırdan, temiz ve taze olarak oluştur
+      container.innerHTML = '<div id="flipbookStage" style="width: 1060px; height: 750px; margin: 0 auto; position: relative;"></div>';
+      const stage = document.getElementById('flipbookStage');
+      if (!stage) return;
+
+      const a = currentArtist;
+      const headline = HEADLINES[a.id] || 'GÖRÜNENİN ÖTESİNDE';
+      const artworks = a.artworks || [];
+      const art1 = artworks[0] || {};
+      const art2 = artworks[1] || {};
+      const art3 = artworks[2] || {};
+
+      let bioP1 = (a.biography && a.biography[0]) || a.shortBio || '';
+      let bioP2 = (a.biography && a.biography[1]) || '';
+      let bioP3 = (a.biography && a.biography[2]) || '';
+
+      let philP1 = (a.philosophy && a.philosophy[0]) || a.shortBio || '';
+      let philP2 = (a.philosophy && a.philosophy[1]) || '';
+
+      // 8 Sayfalık Kusursuz A4 Mizanpajı
+      const pagesHtml = [
+        // SAYFA 1: KAPAK (FULL-BLEED)
+        `
+        <div class="mag-a4-page is-fullbleed" id="flipPage1">
+          <div class="cover-fullbleed image-editable-container" id="coverContainer" style="background-image: url('${resolveImg(a.coverImage)}');" data-img-type="background">
+            <img class="cover-bg-img" src="${resolveImg(a.coverImage)}" alt="" onerror="this.style.display='none'" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none;">
+            <div class="image-hover-toolbar" onclick="triggerImageUpload('coverContainer')">
+              📷 Kapak Resmini Değiştir
+            </div>
+
+            <div class="cover-content-top">
+              <div class="cover-brand-block">
+                <div class="cover-qr-box">
+                  <img src="assets/qrcode-biresku.png" alt="QR" onerror="this.src='https://biresku.com/assets/biresku-banner.jpg';">
+                </div>
+                <div class="cover-brand-text">
+                  <div class="cover-brand-name" contenteditable="true">BİRESKU</div>
+                  <div class="cover-brand-sub">
+                    <span class="line"></span>
+                    <span class="label" contenteditable="true">SANAT DERGİSİ</span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="cover-web-tag" contenteditable="true">biresku.com</div>
+            </div>
+
+            <div class="cover-content-bottom">
+              <div class="cover-artist-badge" contenteditable="true">${a.name}</div>
+              <div class="cover-headline-badge" contenteditable="true">${headline}</div>
+              <div class="cover-curator-strip" contenteditable="true">Hazırlayan: Arda Umay</div>
+            </div>
+          </div>
+        </div>
+        `,
+
+        // SAYFA 2: EDİTÖRYAL GİRİŞ & BİRESKU LOGO AMBLEMİ
+        `
+        <div class="mag-a4-page" id="flipPage2">
+          <header class="mag-header-strip">
+            <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+            <span class="mag-header-meta" contenteditable="true">SAYFA 02</span>
+          </header>
+
+          <div class="editorial-open-wrap">
+            <div class="biresku-crest-light">
+              <div class="crest-main-title" contenteditable="true">B İ R E S K U</div>
+              <div class="crest-sub-row">
+                <span class="crest-line"></span>
+                <span class="crest-subtitle" contenteditable="true">BİRLEŞMİŞ RESSAMLAR KULÜBÜ</span>
+                <span class="crest-line"></span>
+              </div>
+              <div class="crest-en-sub" contenteditable="true">UNITED ARTIST CLUB</div>
+            </div>
+
+            <div class="editorial-lead-box">
+              <h3 class="editor-note-title" contenteditable="true">Birlikte Başlayan Yeni Bir Hikâye</h3>
+              <p class="editor-note-body" contenteditable="true">Biresku Sanat Dergisi, Türk plastik sanatlarının usta isimlerini ve kalıcı iz bırakan eserlerini çağdaş editoryal mizanpajla buluşturuyor. Bu özel sayımızda, ${a.name}'nun ölümsüz çizgilerine, sanat felsefesine ve yaşam kavgasının renklerine tanıklık ediyoruz.</p>
+            </div>
+
+            <div class="editorial-featured-art image-editable-container" id="featuredEditorialArt">
+              <div class="image-hover-toolbar" onclick="triggerImageUpload('featuredEditorialArt')">
+                📷 Resmi Değiştir
+              </div>
+              <img src="${resolveImg(art1.imageUrl || art1.image || a.coverImage)}" alt="Öne Çıkan Eser" id="featuredEditorialImg">
+            </div>
+          </div>
+
+          <footer class="mag-footer-strip">
+            <span contenteditable="true">biresku.com</span>
+            <span class="mag-footer-credit" contenteditable="true">Özel Monografi Sayısı</span>
+            <span contenteditable="true">SAYFA 02</span>
+          </footer>
+        </div>
+        `,
+
+        // SAYFA 3: ARŞİV PORTRESİ & BİOGRAFİ GİRİŞİ
+        `
+        <div class="mag-a4-page" id="flipPage3">
+          <header class="mag-header-strip">
+            <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+            <span class="mag-header-meta" contenteditable="true">Arşiv Portresi</span>
+          </header>
+
+          <div class="portrait-spread-wrap image-editable-container" id="portraitSpreadBox">
+            <div class="image-hover-toolbar" onclick="triggerImageUpload('portraitSpreadBox')">
+              📷 Portreyi Değiştir
+            </div>
+            <img src="${resolveImg(a.portraitImage || a.coverImage)}" alt="Sanatçı Portresi" id="portraitSpreadImg">
+          </div>
+
+          <div class="quote-pullout">
+            <div class="quote-pullout-text" contenteditable="true">
+              "${a.quote || 'Resim yapmak benim için soluk almak gibi bir şey. Çizgi, sözün bittiği yerde insanın en yalın çığlığıdır.'}"
+            </div>
+          </div>
+
+          <footer class="mag-footer-strip">
+            <span contenteditable="true">${a.period || ''} • ${a.city || ''}</span>
+            <span contenteditable="true">SAYFA 03</span>
+          </footer>
+        </div>
+        `,
+
+        // SAYFA 4: MONOGRAFİ VE BİYOGRAFİ DETAYI
+        `
+        <div class="mag-a4-page" id="flipPage4">
+          <header class="mag-header-strip">
+            <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+            <span class="mag-header-meta" contenteditable="true">Biyografi &amp; Yaşamı</span>
+          </header>
+
+          <h2 class="bio-spread-headline" contenteditable="true">${a.name}</h2>
+          <div class="bio-spread-subtitle" contenteditable="true">${a.discipline || a.category || 'Çağdaş Türk Resmi'}</div>
+
+          <div class="bio-spread-body">
+            <p contenteditable="true">${bioP1}</p>
+            <p contenteditable="true">${bioP2}</p>
+            <p contenteditable="true">${bioP3}</p>
+          </div>
+
+          <footer class="mag-footer-strip">
+            <span class="mag-footer-credit" contenteditable="true">Biyografi &amp; Yaşamı</span>
+            <span contenteditable="true">SAYFA 04</span>
+          </footer>
+        </div>
+        `,
+
+        // SAYFA 5: SANAT FELSEFESİ VE DÜŞÜNCE DÜNYASI
+        `
+        <div class="mag-a4-page" id="flipPage5">
+          <header class="mag-header-strip">
+            <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+            <span class="mag-header-meta" contenteditable="true">Felsefe &amp; Görüş</span>
+          </header>
+
+          <h2 class="bio-spread-headline" contenteditable="true">Sanatın ve Yaşamın Özü</h2>
+
+          <div class="quote-pullout">
+            <div class="quote-pullout-text" contenteditable="true">
+              "${a.quote || 'Sanat gerçeğin ta kendisidir.'}"
+            </div>
+          </div>
+
+          <div class="bio-spread-body">
+            <p contenteditable="true">${philP1}</p>
+            <p contenteditable="true">${philP2}</p>
+          </div>
+
+          <footer class="mag-footer-strip">
+            <span class="mag-footer-credit" contenteditable="true">Sanat ve Hayat Felsefesi</span>
+            <span contenteditable="true">SAYFA 05</span>
+          </footer>
+        </div>
+        `,
+
+        // SAYFA 6: BAŞYAPIT ESER BÖLÜMÜ
+        `
+        <div class="mag-a4-page" id="flipPage6">
+          <header class="mag-header-strip">
+            <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+            <span class="mag-header-meta" contenteditable="true">Başyapıt Eser</span>
+          </header>
+
+          <div class="artwork-spread-wrap image-editable-container" id="artMasterBox">
+            <div class="image-hover-toolbar" onclick="triggerImageUpload('artMasterBox')">
+              📷 Başyapıtı Değiştir
+            </div>
+            <img src="${resolveImg(art2.imageUrl || art2.image || a.coverImage)}" alt="Başyapıt">
+          </div>
+
+          <div class="artwork-info-box" id="art2InfoBox">
+            <div style="flex: 1; min-width: 0;">
+              <div class="artwork-info-title" contenteditable="true" data-placeholder="Eser Adı">${art2.title ? '"' + art2.title + '"' : '"Eser Adı"'}</div>
+              <div class="artwork-info-meta" contenteditable="true" data-placeholder="Teknik, Yıl veya Koleksiyon Bilgisi">${(art2.technique || art2.dimensions) ? ((art2.technique || '') + (art2.dimensions ? ' • ' + art2.dimensions : '')).trim() : 'Teknik, Yıl veya Koleksiyon Bilgisi'}</div>
+            </div>
+            <button class="btn-toggle-caption" onclick="toggleCaption('art2InfoBox')">👁️ Gizle/Göster</button>
+          </div>
+
+          <footer class="mag-footer-strip">
+            <span contenteditable="true">Koleksiyon Seçkisi</span>
+            <span contenteditable="true">SAYFA 06</span>
+          </footer>
+        </div>
+        `,
+
+        // SAYFA 7: KOLEKSİYON SEÇKİSİ
+        `
+        <div class="mag-a4-page" id="flipPage7">
+          <header class="mag-header-strip">
+            <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+            <span class="mag-header-meta" contenteditable="true">Seçkin Koleksiyon</span>
+          </header>
+
+          <div class="artwork-spread-wrap image-editable-container" id="artGalleryBox">
+            <div class="image-hover-toolbar" onclick="triggerImageUpload('artGalleryBox')">
+              📷 Eseri Değiştir
+            </div>
+            <img src="${resolveImg(art3.imageUrl || art3.image || a.coverImage)}" alt="Koleksiyon">
+          </div>
+
+          <div class="artwork-info-box" id="art3InfoBox">
+            <div style="flex: 1; min-width: 0;">
+              <div class="artwork-info-title" contenteditable="true" data-placeholder="Eser Adı">${art3.title ? '"' + art3.title + '"' : '"Eser Adı"'}</div>
+              <div class="artwork-info-meta" contenteditable="true" data-placeholder="Teknik, Yıl veya Koleksiyon Bilgisi">${(art3.technique || art3.dimensions) ? ((art3.technique || '') + (art3.dimensions ? ' • ' + art3.dimensions : '')).trim() : 'Teknik, Yıl veya Koleksiyon Bilgisi'}</div>
+            </div>
+            <button class="btn-toggle-caption" onclick="toggleCaption('art3InfoBox')">👁️ Gizle/Göster</button>
+          </div>
+
+          <footer class="mag-footer-strip">
+            <span class="mag-footer-credit" contenteditable="true">Koleksiyon Arşivi</span>
+            <span contenteditable="true">SAYFA 07</span>
+          </footer>
+        </div>
+        `,
+
+        // SAYFA 8: ARKA KAPAK & BİRESKU DAVETİ
+        `
+        <div class="mag-a4-page" id="flipPage8">
+          <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; padding: 40px 20px;">
+            <div>
+              <div class="biresku-crest-light" style="margin-bottom: 24px; padding: 22px 28px;">
+                <div class="crest-main-title" contenteditable="true">B İ R E S K U</div>
+                <div class="crest-sub-row">
+                  <span class="crest-line" style="width: 45px;"></span>
+                  <span class="crest-subtitle" contenteditable="true">BİRLEŞMİŞ RESSAMLAR KULÜBÜ</span>
+                  <span class="crest-line" style="width: 45px;"></span>
+                </div>
+                <div class="crest-en-sub" contenteditable="true">UNITED ARTIST CLUB</div>
+              </div>
+              <div style="font-family: var(--font-headline); font-size: 1.7rem; font-weight: 800; color: #000; margin-bottom: 8px;" contenteditable="true">BİRESKU SANAT DERGİSİ</div>
+              <div style="font-family: var(--font-masthead); font-size: 0.78rem; letter-spacing: 0.16em; color: var(--accent-terracotta); text-transform: uppercase; font-weight: 700;" contenteditable="true">Özel Sanatçı Monografileri Dizisi</div>
+            </div>
+
+            <div>
+              <div class="image-editable-container" id="backQrBox" style="width: 130px; height: 130px; margin: 0 auto 16px auto; padding: 6px; background: #fff; border: 1px solid #ccc; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                <img src="assets/qrcode-biresku.png" alt="QR" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+              <div style="font-family: var(--font-masthead); font-size: 0.88rem; color: #111; font-weight: 800; letter-spacing:0.06em;" contenteditable="true">biresku.com</div>
+              <div style="font-size: 0.76rem; color: #666; margin-top: 4px;" contenteditable="true">Tüm sanatçı ve eser arşivini keşfetmek için okutunuz.</div>
+            </div>
+
+            <div style="border-top: 1px solid #e5e5e5; width: 100%; padding-top: 16px; font-size: 0.76rem; color: #666;">
+              <span contenteditable="true">Küratör &amp; Genel Yayın Yönetmeni: <strong>Arda Umay</strong></span><br>
+              <span contenteditable="true">© 2026 Biresku. Tüm hakları saklıdır. Baskı Standardı: ISO A4 (210×297 mm)</span>
+            </div>
+          </div>
+        </div>
+        `
+      ];
+
+      // DOM'a Sayfaları Ekle
+      stage.innerHTML = pagesHtml.join('');
+
+      // Bir sonraki render karesinde PageFlip'i başlat (DOM boyutlarının tam hesaplanması için)
+      setTimeout(() => {
+        if (window.St && window.St.PageFlip) {
+          try {
+            pageFlipInstance = new St.PageFlip(stage, {
+              width: 530,
+              height: 750,
+              size: "fixed",
+              minWidth: 400,
+              maxWidth: 700,
+              minHeight: 565,
+              maxHeight: 950,
+              drawShadow: true,
+              flippingTime: 850,
+              usePortrait: false,
+              startPage: 0,
+              showCover: true,
+              autoSize: true,
+              maxShadowOpacity: 0.5
+            });
+            window.pageFlipInstance = pageFlipInstance;
+
+            pageFlipInstance.loadFromHTML(stage.querySelectorAll('.mag-a4-page'));
+
+            // Metin düzenlenirken sayfanın kazara çevrilmesini engelle
+            stage.querySelectorAll('[contenteditable="true"]').forEach(el => {
+              el.addEventListener('mousedown', (e) => e.stopPropagation());
+              el.addEventListener('click', (e) => e.stopPropagation());
+            });
+
+            // Başlangıç durumunu kesinlikle senkronize et (Sayfa 0 - Ön Kapak)
+            updateSpreadIndicatorAndNav(0, pageFlipInstance.getPageCount());
+
+            pageFlipInstance.on('flip', (e) => {
+              updateSpreadIndicatorAndNav(e.data, pageFlipInstance.getPageCount());
+            });
+
+            // Metin düzenlenirken sayfanın kazara çevrilmesini engelle
+            stage.querySelectorAll('[contenteditable="true"]').forEach(el => {
+              el.addEventListener('mousedown', (e) => e.stopPropagation());
+              el.addEventListener('click', (e) => e.stopPropagation());
+            });
+          } catch(err) {
+            console.error('PageFlip başlatma hatası:', err);
+          }
+        }
+      }, 60);
+
+      setupInteractiveImageHandlers();
+    }
+
+    function toggleCaption(boxId) {
+      const box = document.getElementById(boxId);
+      if (box) {
+        box.classList.toggle('is-hidden');
+      }
+    }
+
+    // ========================================================
+    // 2. INSTAGRAM MODU MİZANPAJLARI (4:5 CAROUSEL POST)
+    // ========================================================
+    function renderInstagramPosts() {
+      const container = document.getElementById('instaContainer');
+      const a = currentArtist;
+      const headline = HEADLINES[a.id] || 'GÖRÜNENİN ÖTESİNDE';
+      const artworks = a.artworks || [];
+
+      let bioParas = (a.biography && a.biography.slice(0, 3)) || [a.shortBio || ''];
+      let philParas = (a.philosophy && a.philosophy.slice(0, 2)) || [a.shortBio || ''];
+
+      let html = '';
+
+      // ÜST BİLGİ VE TOPLU İNDİRME ÇUBUĞU
+      html += `
+        <div class="insta-top-banner">
+          <div class="insta-banner-info">
+            📱 <strong>INSTAGRAM (4:5 POST)</strong> • Her kart tek bir dikey gönderidir (1080×1350 px)
+          </div>
+          <button class="btn-action btn-download-all" onclick="downloadAllPagesDirectly()" style="padding: 8px 16px; font-size: 0.82rem;">
+            📥 Tüm Postları İndir (PNG)
+          </button>
+        </div>
+      `;
+
+      // SLIDE 1: TAM BOY KAPAK (540x675 px - ASLA DIŞARI TAŞMAZ)
+      html += `
+        <div class="insta-card-box">
+          <div class="insta-card-download-bar">
+            <span>KAPAK • POST 01</span>
+            <button class="btn-slide-download" onclick="downloadSingleInstaSlide('insta-slide-1', '${a.id}-insta-01-kapak')">
+              📥 İndir (1080x1350 PNG)
+            </button>
+          </div>
+          <article class="insta-slide" id="insta-slide-1" style="padding: 0 !important; position: relative !important; overflow: hidden !important;">
+            <div class="cover-fullbleed image-editable-container" id="instaCoverContainer" style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; overflow: hidden !important; padding: 34px 32px 32px 32px !important; background-image: url('${resolveImg(a.coverImage)}');" data-img-type="background">
+              <img class="cover-bg-img" src="${resolveImg(a.coverImage)}" alt="" onerror="this.style.display='none'" style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; z-index: 0 !important; pointer-events: none !important;">
+              <div class="image-hover-toolbar" onclick="triggerImageUpload('instaCoverContainer')">
+                📷 Kapak Resmini Değiştir
+              </div>
+
+              <div class="cover-content-top" style="position: relative !important; z-index: 2 !important;">
+                <div class="cover-brand-block">
+                  <div class="cover-qr-box">
+                    <img src="assets/qrcode-biresku.png" alt="QR" onerror="this.src='https://biresku.com/assets/biresku-banner.jpg';">
+                  </div>
+                  <div class="cover-brand-text">
+                    <div class="cover-brand-name" contenteditable="true">BİRESKU</div>
+                    <div class="cover-brand-sub">
+                      <span class="line"></span>
+                      <span class="label" contenteditable="true">SANAT DERGİSİ</span>
+                      <span class="line"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cover-web-tag" contenteditable="true">biresku.com</div>
+              </div>
+
+              <div class="cover-content-bottom" style="position: relative !important; z-index: 2 !important;">
+                <div class="cover-artist-badge" contenteditable="true">${a.name}</div>
+                <div class="cover-headline-badge" contenteditable="true">${headline}</div>
+                <div class="cover-curator-strip" contenteditable="true">Hazırlayan: Arda Umay</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      `;
+
+      // SLIDE 2: BİYOGRAFİ
+      html += `
+        <div class="insta-card-box">
+          <div class="insta-card-download-bar">
+            <button class="btn-slide-download" onclick="downloadSingleInstaSlide('insta-slide-2', '${a.id}-insta-02-biyografi')">
+              📥 İndir (1080x1350 PNG)
+            </button>
+          </div>
+          <article class="insta-slide" id="insta-slide-2">
+            <header class="mag-header-strip">
+              <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+              <span class="mag-header-meta" contenteditable="true">SAYFA 02</span>
+            </header>
+
+            <h2 class="bio-spread-headline" contenteditable="true" style="font-size: 1.85rem;">Biyografi &amp; Yaşamı</h2>
+            <div class="bio-spread-subtitle" contenteditable="true">${a.name} • ${a.period || ''}</div>
+
+            <div class="bio-spread-body">
+              ${bioParas.map(p => `<p contenteditable="true">${p}</p>`).join('')}
+            </div>
+
+            <footer class="mag-footer-strip">
+              <span contenteditable="true">Özel Monografi</span>
+              <span class="mag-footer-credit" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+            </footer>
+          </article>
+        </div>
+      `;
+
+      // SLIDE 3: FELSEFE
+      html += `
+        <div class="insta-card-box">
+          <div class="insta-card-download-bar">
+            <button class="btn-slide-download" onclick="downloadSingleInstaSlide('insta-slide-3', '${a.id}-insta-03-felsefe')">
+              📥 İndir (1080x1350 PNG)
+            </button>
+          </div>
+          <article class="insta-slide" id="insta-slide-3">
+            <header class="mag-header-strip">
+              <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+              <span class="mag-header-meta" contenteditable="true">SAYFA 03</span>
+            </header>
+
+            <h2 class="bio-spread-headline" contenteditable="true" style="font-size: 1.85rem;">Sanat ve Hayat Felsefesi</h2>
+
+            <div class="quote-pullout" style="margin-top: 10px;">
+              <div class="quote-pullout-text" contenteditable="true">"${a.quote || ''}"</div>
+            </div>
+
+            <div class="bio-spread-body">
+              ${philParas.map(p => `<p contenteditable="true">${p}</p>`).join('')}
+            </div>
+
+            <footer class="mag-footer-strip">
+              <span contenteditable="true">Sanat Görüşü</span>
+              <span class="mag-footer-credit" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+            </footer>
+          </article>
+        </div>
+      `;
+
+      // SLIDE 4+: ESERLER
+      if (artworks && artworks.length > 0) {
+        artworks.forEach((art, idx) => {
+          const num = idx + 4;
+          const numStr = num < 10 ? '0' + num : num;
+          const slideId = 'insta-slide-' + num;
+          const imgBoxId = 'instaArtBox_' + idx;
+          const captionId = 'instaCaption_' + idx;
+          const artTitle = art.title ? (art.title.startsWith('"') ? art.title : `"${art.title}"`) : '"Eser Adı"';
+          const artMeta = (art.technique || art.dimensions) 
+            ? `${art.technique || ''} ${art.dimensions ? '• ' + art.dimensions : ''}`.trim() 
+            : 'Teknik, Yıl veya Koleksiyon Bilgisi';
+
+          html += `
+            <div class="insta-card-box">
+              <div class="insta-card-download-bar">
+                <button class="btn-slide-download" onclick="downloadSingleInstaSlide('${slideId}', '${a.id}-insta-${numStr}-eser-${idx+1}')">
+                  📥 İndir (1080x1350 PNG)
+                </button>
+              </div>
+              <article class="insta-slide" id="${slideId}">
+                <header class="mag-header-strip">
+                  <span class="mag-header-title" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+                  <span class="mag-header-meta" contenteditable="true">ESER ${idx + 1} / ${artworks.length}</span>
+                </header>
+
+                <div class="artwork-spread-wrap image-editable-container" id="${imgBoxId}">
+                  <div class="image-hover-toolbar" onclick="triggerImageUpload('${imgBoxId}')">
+                    📷 Eser Resmini Değiştir
+                  </div>
+                  <img src="${resolveImg(art.imageUrl || art.image)}" alt="${art.title || a.name}">
+                </div>
+
+                <div class="artwork-info-box" id="${captionId}">
+                  <div style="flex: 1; min-width: 0;">
+                    <div class="artwork-info-title" contenteditable="true" data-placeholder="Eser Adı">${artTitle}</div>
+                    <div class="artwork-info-meta" contenteditable="true" data-placeholder="Teknik, Yıl veya Koleksiyon Bilgisi">${artMeta}</div>
+                  </div>
+                  <button class="btn-toggle-caption" onclick="toggleCaption('${captionId}')">👁️ Gizle/Göster</button>
+                </div>
+
+                <footer class="mag-footer-strip">
+                  <span contenteditable="true">Koleksiyon Arşivi • ${a.name}</span>
+                  <span class="mag-footer-credit" contenteditable="true">BİRESKU SANAT DERGİSİ</span>
+                </footer>
+              </article>
+            </div>
+          `;
+        });
+      }
+
+      
+      // SLIDE SON: ARKA KAPAK & YAYIN KÜNYESİ (4:5 POST FORMATI)
+      const backSlideNum = (artworks ? artworks.length : 0) + 4;
+      const backSlideNumStr = backSlideNum < 10 ? '0' + backSlideNum : backSlideNum;
+      const backSlideId = 'insta-slide-' + backSlideNum;
+
+      html += `
+        <div class="insta-card-box">
+          <div class="insta-card-download-bar">
+            <span>ARKA KAPAK • POST ${backSlideNumStr}</span>
+            <button class="btn-slide-download" onclick="downloadSingleInstaSlide('${backSlideId}', '${a.id}-insta-${backSlideNumStr}-arka-kapak')">
+              📥 İndir (1080x1350 PNG)
+            </button>
+          </div>
+          <article class="insta-slide" id="${backSlideId}" style="padding: 34px 28px 24px 28px; background: #ffffff;">
+            <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center;">
+              <div>
+                <div class="biresku-crest-light" style="margin-bottom: 20px; padding: 18px 24px;">
+                  <div class="crest-main-title" contenteditable="true">B İ R E S K U</div>
+                  <div class="crest-sub-row">
+                    <span class="crest-line" style="width: 38px;"></span>
+                    <span class="crest-subtitle" contenteditable="true">BİRLEŞMİŞ RESSAMLAR KULÜBÜ</span>
+                    <span class="crest-line" style="width: 38px;"></span>
+                  </div>
+                  <div class="crest-en-sub" contenteditable="true">UNITED ARTIST CLUB</div>
+                </div>
+                <div style="font-family: var(--font-headline); font-size: 1.65rem; font-weight: 800; color: #000; margin-bottom: 6px;" contenteditable="true">BİRESKU SANAT DERGİSİ</div>
+                <div style="font-family: var(--font-masthead); font-size: 0.74rem; letter-spacing: 0.16em; color: var(--accent-terracotta); text-transform: uppercase; font-weight: 700;" contenteditable="true">Özel Sanatçı Monografileri Dizisi</div>
+              </div>
+
+              <div>
+                <div class="image-editable-container" id="instaBackQrBox" style="width: 124px; height: 124px; margin: 0 auto 12px auto; padding: 6px; background: #fff; border: 1px solid #ccc; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                  <img src="assets/qrcode-biresku.png" alt="QR" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div style="font-family: var(--font-masthead); font-size: 0.88rem; color: #111; font-weight: 800; letter-spacing:0.06em;" contenteditable="true">biresku.com</div>
+                <div style="font-size: 0.74rem; color: #666; margin-top: 4px;" contenteditable="true">Tüm sanatçı ve eser arşivini keşfetmek için okutunuz.</div>
+              </div>
+
+              <div style="border-top: 1px solid #e5e5e5; width: 100%; padding-top: 14px; font-size: 0.74rem; color: #666; margin-top: auto;">
+                <span contenteditable="true">Küratör &amp; Genel Yayın Yönetmeni: <strong>Arda Umay</strong></span><br>
+                <span contenteditable="true">© 2026 Biresku. Tüm hakları saklıdır. Baskı Standardı: ISO A4 / Instagram 4:5</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      `;
+
+      container.innerHTML = html;
+      setupInteractiveImageHandlers();
+    }
+
+    // ========================================================
+    // ETKİLEŞİMLİ RESİM YÜKLEME VE SÜRÜKLE-BIRAK (HER RESMİ OYNAMA)
+    // ========================================================
+    function triggerImageUpload(containerId) {
+      activeImageTarget = document.getElementById(containerId);
+      document.getElementById('globalImageInput').click();
+    }
+
+    function handleImageFileSelected(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file || !activeImageTarget) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        applyNewImage(activeImageTarget, e.target.result);
+      };
+      reader.readAsDataURL(file);
+      event.target.value = '';
+    }
+
+    function applyNewImage(targetContainer, dataUrl) {
+      if (!targetContainer) return;
+
+      if (targetContainer.dataset.imgType === 'background') {
+        targetContainer.style.backgroundImage = `url('${dataUrl}')`;
+      } else {
+        const img = targetContainer.querySelector('img');
+        if (img) {
+          img.src = dataUrl;
+        } else {
+          targetContainer.style.backgroundImage = `url('${dataUrl}')`;
+        }
+      }
+
+      showToast('Görsel başarıyla güncellendi!');
+    }
+
+    function setupInteractiveImageHandlers() {
+      document.querySelectorAll('.image-editable-container').forEach(container => {
+        container.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          container.classList.add('drag-active');
+        });
+
+        container.addEventListener('dragleave', () => {
+          container.classList.remove('drag-active');
+        });
+
+        container.addEventListener('drop', (e) => {
+          e.preventDefault();
+          container.classList.remove('drag-active');
+          if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+            const file = e.dataTransfer.files[0];
+            const reader = new FileReader();
+            reader.onload = function(re) {
+              applyNewImage(container, re.target.result);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastMsg');
+      toast.innerText = msg;
+      toast.style.display = 'inline';
+      setTimeout(() => { toast.style.display = 'none'; }, 3000);
+    }
+
+        // ========================================================
+    // GÜVENİLİR VE HATASIZ İNDİRME MOTORU (BLOB + DOM ATTACH)
+    // ========================================================
+    
+    
+    // ========================================================
+    // KUSURSUZ VE SIFIR BAYT HATASIZ İNDİRME MOTORU
+    // ========================================================
+    function prepareCloneForExport(element) {
+      if (!element) return null;
+      const clone = element.cloneNode(true);
+      
+      // PageFlip sınıflarını ve display:none kısıtlamalarını tamamen kaldır
+      clone.classList.remove('stf__item', '--simple', '--hard', '--soft');
+      clone.style.display = 'flex';
+      clone.style.flexDirection = 'column';
+      clone.style.position = 'relative';
+      clone.style.left = '0';
+      clone.style.top = '0';
+      clone.style.visibility = 'visible';
+      clone.style.opacity = '1';
+      clone.style.transform = 'none';
+      clone.style.boxShadow = 'none';
+      clone.style.width = '530px';
+      clone.style.height = '750px';
+      clone.style.minWidth = '530px';
+      clone.style.minHeight = '750px';
+      clone.style.maxWidth = '530px';
+      clone.style.maxHeight = '750px';
+      clone.style.background = '#ffffff';
+
+      // Düzenleme butonlarını ve araç çubuklarını temizle
+      clone.querySelectorAll('.image-hover-toolbar, .btn-toggle-caption, button').forEach(el => el.remove());
+      
+      return clone;
+    }
+
+    function triggerFileDownload(blobOrUrl, fileName) {
+      let downloadUrl = blobOrUrl;
+      if (blobOrUrl instanceof Blob) {
+        downloadUrl = URL.createObjectURL(blobOrUrl);
+        // İndirme tamamlanması için URL'yi 2 dakika boyunca canlı tut
+        setTimeout(() => {
+          try { URL.revokeObjectURL(downloadUrl); } catch(e) {}
+        }, 120000);
+      }
+
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = downloadUrl;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        try { document.body.removeChild(a); } catch(e) {}
+      }, 5000);
+
+      return downloadUrl;
+    }
+
+    function saveCanvasAsFile(canvas, fileName) {
+      return new Promise((resolve, reject) => {
+        try {
+          if (!canvas || canvas.width === 0 || canvas.height === 0) {
+            console.error('Canvas boş veya 0 boyutunda!', canvas);
+            showToast('Hata: Görsel alanı boş.');
+            resolve(null);
+            return;
+          }
+
+          canvas.toBlob(function(blob) {
+            if (blob && blob.size > 0) {
+              const url = triggerFileDownload(blob, fileName);
+              resolve(url);
+            } else {
+              // Fallback to dataURL if toBlob returns empty
+              const dataUrl = canvas.toDataURL('image/png');
+              const url = triggerFileDownload(dataUrl, fileName);
+              resolve(url);
+            }
+          }, 'image/png', 0.98);
+        } catch(err) {
+          console.warn('toBlob başarısız, dataURL deneniyor:', err);
+          try {
+            const dataUrl = canvas.toDataURL('image/png');
+            const url = triggerFileDownload(dataUrl, fileName);
+            resolve(url);
+          } catch(fallbackErr) {
+            console.error('Kayıt hatası:', fallbackErr);
+            showToast('İndirme hatası: ' + fallbackErr.message);
+            resolve(null);
+          }
+        }
+      });
+    }
+
+    
+    // TEK BİR INSTAGRAM POSTUNU İNDİR (4:5 / 1080×1350 px)
+    async function downloadSingleInstaSlide(elementId, fileName) {
+      const slide = document.getElementById(elementId);
+      if (!slide) {
+        showToast('Hata: Slide bulunamadı (' + elementId + ')');
+        return;
+      }
+
+      showToast('Instagram postu hazırlanıyor (1080×1350)...');
+
+      // Klon oluşturarak araç çubuklarını ve butonları temizle
+      const clone = slide.cloneNode(true);
+      clone.querySelectorAll('.image-hover-toolbar, .btn-toggle-caption, button').forEach(el => el.remove());
+      clone.style.width = '540px';
+      clone.style.height = '675px';
+      clone.style.minWidth = '540px';
+      clone.style.minHeight = '675px';
+      clone.style.maxWidth = '540px';
+      clone.style.maxHeight = '675px';
+      clone.style.boxShadow = 'none';
+      clone.style.borderRadius = '0';
+      clone.style.border = 'none';
+      clone.style.visibility = 'visible';
+      clone.style.opacity = '1';
+      clone.style.display = 'flex';
+      clone.style.flexDirection = 'column';
+
+      const exportBox = document.createElement('div');
+      exportBox.style.position = 'fixed';
+      exportBox.style.left = '0';
+      exportBox.style.top = '0';
+      exportBox.style.zIndex = '-9999';
+      exportBox.style.pointerEvents = 'none';
+      exportBox.style.opacity = '1';
+      exportBox.style.visibility = 'visible';
+      exportBox.style.background = '#ffffff';
+      exportBox.appendChild(clone);
+      document.body.appendChild(exportBox);
+
+      // Resimlerin tam yüklenmesini bekle
+      const imgs = Array.from(exportBox.querySelectorAll('img'));
+      await Promise.all(imgs.map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(res => {
+          img.onload = res;
+          img.onerror = res;
+        });
+      }));
+
+      await new Promise(r => setTimeout(r, 120));
+
+      try {
+        const canvas = await html2canvas(exportBox, {
+          scale: 2, // 540x675 -> 1080x1350 px (Instagram 4:5 tam dikey post)
+          useCORS: true,
+          allowTaint: false,
+          backgroundColor: '#ffffff',
+          logging: false,
+          width: 540,
+          height: 675
+        });
+
+        document.body.removeChild(exportBox);
+
+        const fullName = fileName.endsWith('.png') ? fileName : fileName + '.png';
+        await saveCanvasAsFile(canvas, fullName);
+        showToast('✓ İndirildi: ' + fullName);
+      } catch (err) {
+        try { document.body.removeChild(exportBox); } catch(e) {}
+        console.error('Insta post indirme hatası:', err);
+        showToast('İndirme hatası: ' + err.message);
+      }
+    }
+
+    async function downloadSpecificSpread(spIndex) {
+      const exportBox = document.createElement('div');
+      exportBox.style.position = 'fixed';
+      exportBox.style.left = '0';
+      exportBox.style.top = '0';
+      exportBox.style.zIndex = '-9999'; // Kullanıcının görmemesi için arka plana al
+      exportBox.style.pointerEvents = 'none';
+      exportBox.style.opacity = '1'; // Bembeyaz çıkmaması için KESİNLİKLE 1 OLMALI
+      exportBox.style.visibility = 'visible';
+      exportBox.style.background = '#ffffff';
+      exportBox.style.display = 'flex';
+
+      let fileName = '';
+
+      if (spIndex === 0) {
+        // Kapak (Sayfa 01)
+        const p1 = prepareCloneForExport(document.getElementById('flipPage1'));
+        if (!p1) return null;
+        exportBox.appendChild(p1);
+        fileName = `${currentArtist.id}-01-kapak.png`;
+      } else if (spIndex === 4) {
+        // Arka Kapak (Sayfa 08)
+        const pLast = prepareCloneForExport(document.getElementById('flipPage8'));
+        if (!pLast) return null;
+        exportBox.appendChild(pLast);
+        fileName = `${currentArtist.id}-08-arka-kapak.png`;
+      } else {
+        // Çift Sayfa Yayılımları (Sayfa 2-3, Sayfa 4-5, Sayfa 6-7)
+        const leftId = 'flipPage' + (spIndex * 2);
+        const rightId = 'flipPage' + (spIndex * 2 + 1);
+
+        const pLeftEl = document.getElementById(leftId) || document.getElementById('flipPage2');
+        const pRightEl = document.getElementById(rightId) || document.getElementById('flipPage3');
+
+        const pLeft = prepareCloneForExport(pLeftEl);
+        const pRight = prepareCloneForExport(pRightEl);
+
+        if (!pLeft || !pRight) return null;
+
+        exportBox.appendChild(pLeft);
+        exportBox.appendChild(pRight);
+        fileName = `${currentArtist.id}-sayfa-0${spIndex * 2}-0${spIndex * 2 + 1}-yayilim.png`;
+      }
+
+      document.body.appendChild(exportBox);
+
+      // Resimlerin DOM içinde tam decode olduğundan emin ol
+      const imgs = Array.from(exportBox.querySelectorAll('img'));
+      await Promise.all(imgs.map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(res => {
+          img.onload = res;
+          img.onerror = res;
+        });
+      }));
+
+      // Kısa bir render gecikmesi tanıyarak mizanpajın tam oturmasını sağla
+      await new Promise(r => setTimeout(r, 120));
+
+      try {
+        const canvas = await html2canvas(exportBox, {
+          scale: 2, // 1060x1500 px (Ultra HD net baskı kalitesi)
+          useCORS: true,
+          allowTaint: false,
+          backgroundColor: '#ffffff',
+          logging: false
+        });
+
+        document.body.removeChild(exportBox);
+
+        const downloadUrl = await saveCanvasAsFile(canvas, fileName);
+        return { fileName, downloadUrl };
+      } catch (err) {
+        try { document.body.removeChild(exportBox); } catch(e) {}
+        console.error('Yayılım oluşturma hatası:', err);
+        return null;
+      }
+    }
+
+    // TEK TIKLA TÜM DERGİ SAYFALARINI İNDİR
+    async function downloadAllPagesDirectly() {
+      if (currentMode === 'insta') {
+        const slides = Array.from(document.querySelectorAll('.insta-slide'));
+        showToast('Tüm Instagram postları sırayla hazırlanıp indiriliyor...');
+        for (let i = 0; i < slides.length; i++) {
+          const num = i + 1 < 10 ? '0' + (i + 1) : (i + 1);
+          const fileName = `${currentArtist.id}-insta-post-${num}.png`;
+          showToast(`İndiriliyor (${i + 1}/${slides.length}): ${fileName}...`);
+          await downloadSingleInstaSlide(slides[i].id, fileName);
+          await new Promise(r => setTimeout(r, 700));
+        }
+        showToast('🎉 Tüm Instagram postları (1080×1350 px) başarıyla indirildi!');
+        return;
+      }
+
+      // Dergi Modu: 5 Yayılımın (Tüm 8 Sayfanın) Tamamını Sırayla İndir
+      const spreadNames = [
+        'Kapak (Sayfa 01)',
+        'Sayfa 02 - 03 Yayılımı',
+        'Sayfa 04 - 05 Yayılımı',
+        'Sayfa 06 - 07 Yayılımı',
+        'Arka Kapak (Sayfa 08)'
+      ];
+
+      showToast('🚀 Tüm dergi sayfaları sırayla hazırlanıp indiriliyor...');
+
+      for (let sp = 0; sp < 5; sp++) {
+        showToast(`İndiriliyor (${sp + 1}/5): ${spreadNames[sp]}...`);
+        await downloadSpecificSpread(sp);
+        // Tarayıcının dosyayı kaydetmesi ve disk yazımı için bekleme payı
+        await new Promise(r => setTimeout(r, 800));
+      }
+
+      showToast('🎉 Tebrikler! Tüm dergi sayfaları bilgisayarınıza indirildi!');
+    }
+
+    // Mevcut Sayfayı İndir
+    async function downloadCurrentSpread() {
+      const pageIdx = pageFlipInstance ? pageFlipInstance.getCurrentPageIndex() : 0;
+      const totalPages = pageFlipInstance ? pageFlipInstance.getPageCount() : 8;
+
+      let spIndex = 0;
+      if (pageIdx === 0) {
+        spIndex = 0;
+      } else if (pageIdx >= totalPages - 1) {
+        spIndex = 4;
+      } else {
+        spIndex = Math.floor((pageIdx + 1) / 2);
+      }
+
+      showToast('Sayfa yayılımı indiriliyor...');
+      const res = await downloadSpecificSpread(spIndex);
+      if (res) {
+        showToast('✓ İndirildi: ' + res.fileName);
+      }
+    }
+
+    // "Tümünü İndir" butonuna basıldığında
+    async function downloadAllCurrent() {
+      await downloadAllPagesDirectly();
+    }
+
+
+    // ========================================================
+    // SAYFA YÜKLENDİĞİNDE EDİTÖRYAL STÜDYOYU BAŞLAT
+    // ========================================================
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initStudio);
+    } else {
+      initStudio();
+    }
+  </script>
+</body>
+</html>
