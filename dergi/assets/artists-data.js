@@ -236,75 +236,43 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "cetinkaya-1",
-        "title": "Gelincikler",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "80 x 100 cm",
-        "year": "2022",
-        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26",
-        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-1.jpg?v=20261108_v26"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-1.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-1.jpg?v=20261108_v26"
       },
       {
         "id": "cetinkaya-2",
-        "title": "Gelincikler",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "136 x 56 cm",
-        "year": "2021",
-        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26",
-        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-2.jpg?v=20261108_v26"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-2.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-2.jpg?v=20261108_v26"
       },
       {
         "id": "cetinkaya-3",
-        "title": "Gelincikler",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "70 x 70 cm",
-        "year": "2022",
-        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26",
-        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-3.jpg?v=20261108_v26"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-3.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-3.jpg?v=20261108_v26"
       },
       {
         "id": "cetinkaya-4",
-        "title": "Gelincikler",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "50 x 35 cm",
-        "year": "2022",
-        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26",
-        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-4.jpg?v=20261108_v26"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-4.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-4.jpg?v=20261108_v26"
       },
       {
         "id": "cetinkaya-5",
-        "title": "Gelincikler",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "100 x 100 cm",
-        "year": "2022",
-        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26",
-        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-5.jpg?v=20261108_v26"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-5.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-5.jpg?v=20261108_v26"
       },
       {
         "id": "cetinkaya-6",
-        "title": "Gelincikler",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "60 x 30 cm",
-        "year": "2022",
-        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26",
-        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-6.jpg?v=20261108_v26"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-6.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-6.jpg?v=20261108_v26"
       },
       {
         "id": "cetinkaya-7",
-        "title": "Gelincikler",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "50 x 50 cm",
-        "year": "2022",
-        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26",
-        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-7.jpg?v=20261108_v26"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-7.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-7.jpg?v=20261108_v26"
       },
       {
         "id": "cetinkaya-8",
-        "title": "Gelincikler",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "30 x 30 cm",
-        "year": "2022",
-        "image": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26",
-        "imageUrl": "/assets/hikmet-cetinkaya/artam-gelincikler-8.jpg?v=20261108_v26"
+        "image": "/assets/hikmet-cetinkaya/gelincikler-8.jpg?v=20261108_v26",
+        "imageUrl": "/assets/hikmet-cetinkaya/gelincikler-8.jpg?v=20261108_v26"
       }
     ],
     "addedDate": "2026-11-08"
@@ -330,73 +298,41 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "tekcan-1",
-        "title": "Atlar (Anıtsal Başyapıt)",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "100 × 140 cm",
-        "year": "2022",
         "image": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v26",
         "imageUrl": "/assets/suleyman-saim-tekcan/atlar-100x140.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-2",
-        "title": "Atlar",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "80 × 60 cm",
-        "year": "2021",
         "image": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v26",
         "imageUrl": "/assets/suleyman-saim-tekcan/atlar-80x60.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-3",
-        "title": "Atlar",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "70 × 55 cm",
-        "year": "1999",
         "image": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v26",
         "imageUrl": "/assets/suleyman-saim-tekcan/atlar-70x55.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-4",
-        "title": "Atlar",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "60 × 70 cm",
-        "year": "2022",
         "image": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v26",
         "imageUrl": "/assets/suleyman-saim-tekcan/atlar-60x70.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-5",
-        "title": "Atlar (Özgün Gravür)",
-        "technique": "Özgün Baskı Gravür (E.A. 8/20), imzalı",
-        "dimensions": "62 × 70 cm",
-        "year": "1998",
         "image": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v26",
         "imageUrl": "/assets/suleyman-saim-tekcan/atlar-gravur-62x70.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-6",
-        "title": "Riva'da Bir Sabah",
-        "technique": "Kağıt üzerine karışık teknik, imzalı",
-        "dimensions": "69 × 93 cm",
-        "year": "Koleksiyon Eseri",
         "image": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v26",
         "imageUrl": "/assets/suleyman-saim-tekcan/rivada-bir-sabah-69x93.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-7",
-        "title": "Alacahöyük Sembol",
-        "technique": "Özgün Baskı Gravür (Edition 28/50), imzalı",
-        "dimensions": "50 × 31 cm",
-        "year": "1989",
         "image": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v26",
         "imageUrl": "/assets/suleyman-saim-tekcan/alacahoyuk-sembol-50x31.jpg?v=20261108_v26"
       },
       {
         "id": "tekcan-8",
-        "title": "Figüratif",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "50 × 60 cm",
-        "year": "2015",
         "image": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v26",
         "imageUrl": "/assets/suleyman-saim-tekcan/figuratif-50x60.jpg?v=20261108_v26"
       }
@@ -425,37 +361,21 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "nurgenc-1",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "",
-        "year": "",
         "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261109_v39",
         "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-1.jpg?v=20261109_v39"
       },
       {
         "id": "nurgenc-2",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "",
-        "year": "",
         "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261109_v39",
         "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-2.jpg?v=20261109_v39"
       },
       {
         "id": "nurgenc-3",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "",
-        "year": "",
         "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261109_v39",
         "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-3.jpg?v=20261109_v39"
       },
       {
         "id": "nurgenc-4",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya",
-        "dimensions": "",
-        "year": "",
         "image": "/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261109_v39",
         "imageUrl": "/assets/gulbin-nurgenc/soyut-kompozisyon-4.jpg?v=20261109_v39"
       }
@@ -484,73 +404,41 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "guleryuz-1",
-        "title": "Oğlum Oğlum",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "162 × 130 cm",
-        "year": "2000",
         "image": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v32",
         "imageUrl": "/assets/mehmet-guleryuz/oglum-oglum-162x130.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-2",
-        "title": "Turnuva",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "90 × 90 cm",
-        "year": "1996",
         "image": "/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v32",
         "imageUrl": "/assets/mehmet-guleryuz/turnuva-90x90.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-3",
-        "title": "Her Şey Kontrolümüz Altında",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "162 × 130 cm",
-        "year": "2001",
         "image": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v32",
         "imageUrl": "/assets/mehmet-guleryuz/her-sey-kontrolumuz-altinda-162x130.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-4",
-        "title": "Happy Hours",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "65 × 54 cm",
-        "year": "2007",
         "image": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v32",
         "imageUrl": "/assets/mehmet-guleryuz/happy-hours-65x54.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-5",
-        "title": "Mucize",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "90 × 114 cm",
-        "year": "2024",
         "image": "/assets/mehmet-guleryuz/mucize-2024.jpg?v=20261108_v32",
         "imageUrl": "/assets/mehmet-guleryuz/mucize-2024.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-6",
-        "title": "Erol Akyavaş Portresi",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "41 × 46 cm",
-        "year": "1983",
         "image": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v32",
         "imageUrl": "/assets/mehmet-guleryuz/erol-akyavas-portresi-41x46.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-7",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "90 × 98 cm",
-        "year": "1964",
         "image": "/assets/mehmet-guleryuz/erken-donem-1964.jpg?v=20261108_v32",
         "imageUrl": "/assets/mehmet-guleryuz/erken-donem-1964.jpg?v=20261108_v32"
       },
       {
         "id": "guleryuz-8",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "58 × 74 cm",
-        "year": "2000",
         "image": "/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v32",
         "imageUrl": "/assets/mehmet-guleryuz/figuratif-58x74.jpg?v=20261108_v32"
       }
@@ -579,73 +467,41 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "komet-1",
-        "title": "Deux Poids, Deux Mesures",
-        "technique": "Tuval üzerine karışık teknik, imzalı",
-        "dimensions": "65 × 92 cm",
-        "year": "1973",
         "image": "/assets/komet/deux-poids-deux-mesures-65x92.jpg?v=20261108_v33",
         "imageUrl": "/assets/komet/deux-poids-deux-mesures-65x92.jpg?v=20261108_v33"
       },
       {
         "id": "komet-2",
-        "title": "Masada İzdüşüm",
-        "technique": "Tuval üzerine karışık teknik, imzalı",
-        "dimensions": "186 × 186 cm",
-        "year": "2008",
         "image": "/assets/komet/masada-izdusum-186x186.jpg?v=20261108_v33",
         "imageUrl": "/assets/komet/masada-izdusum-186x186.jpg?v=20261108_v33"
       },
       {
         "id": "komet-3",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "100 × 130 cm",
-        "year": "Özgün Koleksiyon Eseri",
         "image": "/assets/komet/dussel-kompozisyon-100x130.jpg?v=20261108_v33",
         "imageUrl": "/assets/komet/dussel-kompozisyon-100x130.jpg?v=20261108_v33"
       },
       {
         "id": "komet-4",
-        "title": "",
-        "technique": "Kağıt üzerine yağlıboya (tuvale marufle), imzalı",
-        "dimensions": "68 × 98 cm",
-        "year": "2001",
         "image": "/assets/komet/dussel-kompozisyon-68x98.jpg?v=20261108_v33",
         "imageUrl": "/assets/komet/dussel-kompozisyon-68x98.jpg?v=20261108_v33"
       },
       {
         "id": "komet-5",
-        "title": "",
-        "technique": "Duralit üzerine yağlıboya, imzalı",
-        "dimensions": "100 × 120 cm",
-        "year": "Özgün Koleksiyon Eseri",
         "image": "/assets/komet/dussel-kompozisyon-100x120.jpg?v=20261108_v33",
         "imageUrl": "/assets/komet/dussel-kompozisyon-100x120.jpg?v=20261108_v33"
       },
       {
         "id": "komet-6",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "60 × 73 cm",
-        "year": "Özgün Koleksiyon Eseri",
         "image": "/assets/komet/dussel-kompozisyon-60x73.jpg?v=20261108_v33",
         "imageUrl": "/assets/komet/dussel-kompozisyon-60x73.jpg?v=20261108_v33"
       },
       {
         "id": "komet-7",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "50 × 60 cm",
-        "year": "2001",
         "image": "/assets/komet/dussel-kompozisyon-50x60.jpg?v=20261108_v33",
         "imageUrl": "/assets/komet/dussel-kompozisyon-50x60.jpg?v=20261108_v33"
       },
       {
         "id": "komet-8",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya (duralite marufle), imzalı",
-        "dimensions": "30 × 40 cm",
-        "year": "Özgün Koleksiyon Eseri",
         "image": "/assets/komet/dussel-kompozisyon-30x40.jpg?v=20261108_v33",
         "imageUrl": "/assets/komet/dussel-kompozisyon-30x40.jpg?v=20261108_v33"
       }
@@ -674,73 +530,41 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "balaban-1",
-        "title": "Kış",
-        "technique": "Kağıt üzerine karışık teknik, imzalı",
-        "dimensions": "31 × 47 cm",
-        "year": "1953",
         "image": "/assets/ibrahim-balaban/kis-1953-31x47.jpg?v=20261108_v34",
         "imageUrl": "/assets/ibrahim-balaban/kis-1953-31x47.jpg?v=20261108_v34"
       },
       {
         "id": "balaban-2",
-        "title": "Gurbetçi",
-        "technique": "Duralit üzerine yağlıboya, imzalı",
-        "dimensions": "70 × 50 cm",
-        "year": "1979",
         "image": "/assets/ibrahim-balaban/gurbetci-1979-70x50.jpg?v=20261108_v34",
         "imageUrl": "/assets/ibrahim-balaban/gurbetci-1979-70x50.jpg?v=20261108_v34"
       },
       {
         "id": "balaban-3",
-        "title": "Anne ve Çocuk",
-        "technique": "Duralit üzerine yağlıboya, imzalı",
-        "dimensions": "35 × 25 cm",
-        "year": "1995",
         "image": "/assets/ibrahim-balaban/anne-ve-cocuk-1995-35x25.jpg?v=20261108_v34",
         "imageUrl": "/assets/ibrahim-balaban/anne-ve-cocuk-1995-35x25.jpg?v=20261108_v34"
       },
       {
         "id": "balaban-4",
-        "title": "",
-        "technique": "Duralit üzerine yağlıboya, imzalı",
-        "dimensions": "80 × 110 cm",
-        "year": "1976",
         "image": "/assets/ibrahim-balaban/koy-kompozisyonu-1976-80x110.jpg?v=20261108_v34",
         "imageUrl": "/assets/ibrahim-balaban/koy-kompozisyonu-1976-80x110.jpg?v=20261108_v34"
       },
       {
         "id": "balaban-5",
-        "title": "",
-        "technique": "Duralit üzerine yağlıboya, imzalı",
-        "dimensions": "48 × 68 cm",
-        "year": "1965",
         "image": "/assets/ibrahim-balaban/anadolu-insani-1965-48x68.jpg?v=20261108_v34",
         "imageUrl": "/assets/ibrahim-balaban/anadolu-insani-1965-48x68.jpg?v=20261108_v34"
       },
       {
         "id": "balaban-6",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "50 × 60 cm",
-        "year": "1986",
         "image": "/assets/ibrahim-balaban/koy-yasaminda-emek-1986-50x60.jpg?v=20261108_v34",
         "imageUrl": "/assets/ibrahim-balaban/koy-yasaminda-emek-1986-50x60.jpg?v=20261108_v34"
       },
       {
         "id": "balaban-7",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "40 × 50 cm",
-        "year": "2001",
         "image": "/assets/ibrahim-balaban/tarla-hasat-2001-40x50.jpg?v=20261108_v34",
         "imageUrl": "/assets/ibrahim-balaban/tarla-hasat-2001-40x50.jpg?v=20261108_v34"
       },
       {
         "id": "balaban-8",
-        "title": "",
-        "technique": "Tuval üzerine karışık teknik (duralite marufle), imzalı",
-        "dimensions": "70 × 52 cm",
-        "year": "1969",
         "image": "/assets/ibrahim-balaban/destansi-kompozisyon-1969-70x52.jpg?v=20261108_v34",
         "imageUrl": "/assets/ibrahim-balaban/destansi-kompozisyon-1969-70x52.jpg?v=20261108_v34"
       }
@@ -767,73 +591,41 @@ window.ARTISTS_DATA = [
     "artworks": [
       {
         "id": "dino-1",
-        "title": "Minotaure",
-        "technique": "Mukavva üzerine yağlıboya, imzalı",
-        "dimensions": "46 × 38 cm",
-        "year": "1937-1938",
         "image": "/assets/abidin-dino/minotaure-1937.jpg?v=20261109_v50",
         "imageUrl": "/assets/abidin-dino/minotaure-1937.jpg?v=20261109_v50"
       },
       {
         "id": "dino-2",
-        "title": "Eller Serisi",
-        "technique": "Kağıt üzerine mürekkep, imzalı",
-        "dimensions": "34 × 21 cm",
-        "year": "",
         "image": "/assets/abidin-dino/eller-serisi.jpg?v=20261109_v50",
         "imageUrl": "/assets/abidin-dino/eller-serisi.jpg?v=20261109_v50"
       },
       {
         "id": "dino-3",
-        "title": "Goya'dan Esintiler",
-        "technique": "Kağıt üzerine mürekkep, imzalı",
-        "dimensions": "27 × 21 cm",
-        "year": "",
         "image": "/assets/abidin-dino/goyadan-esintiler.jpg?v=20261109_v50",
         "imageUrl": "/assets/abidin-dino/goyadan-esintiler.jpg?v=20261109_v50"
       },
       {
         "id": "dino-4",
-        "title": "Bir Köy Daha",
-        "technique": "Kağıt üzerine akrilik, imzalı",
-        "dimensions": "10 × 9 cm",
-        "year": "",
         "image": "/assets/abidin-dino/bir-koy-daha.jpg?v=20261109_v50",
         "imageUrl": "/assets/abidin-dino/bir-koy-daha.jpg?v=20261109_v50"
       },
       {
         "id": "dino-5",
-        "title": "",
-        "technique": "Tuval üzerine karışık teknik, imzalı",
-        "dimensions": "65 × 50 cm",
-        "year": "1992",
         "image": "/assets/abidin-dino/untitled-figuratif-1992.jpg?v=20261109_v50",
         "imageUrl": "/assets/abidin-dino/untitled-figuratif-1992.jpg?v=20261109_v50"
       },
       {
         "id": "dino-6",
-        "title": "",
-        "technique": "Tuval üzerine yağlıboya, imzalı",
-        "dimensions": "145 × 114 cm",
-        "year": "",
         "image": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg?v=20261109_v50",
         "imageUrl": "/assets/abidin-dino/untitled-kompozisyon-buyuk.jpg?v=20261109_v50"
       },
       {
         "id": "dino-7",
-        "title": "",
-        "technique": "Kağıt üzerine guaj, imzalı",
-        "dimensions": "51 × 66 cm",
-        "year": "",
         "image": "/assets/abidin-dino/untitled-guaj.jpg?v=20261109_v50",
         "imageUrl": "/assets/abidin-dino/untitled-guaj.jpg?v=20261109_v50"
       },
       {
         "id": "dino-8",
-        "title": "",
-        "technique": "Kağıt üzerine suluboya, imzalı",
-        "dimensions": "70 × 50 cm",
-        "year": "",
         "image": "/assets/abidin-dino/untitled-suluboya.jpg?v=20261109_v50",
         "imageUrl": "/assets/abidin-dino/untitled-suluboya.jpg?v=20261109_v50"
       }
@@ -842,69 +634,3 @@ window.ARTISTS_DATA = [
     "period": "1913 — 1993"
   }
 ];
-
-// ========================================================
-// BİRESKU ADMİN PANELİNDEN EKLENEN ÖZEL SANATÇILARI YÜKLE
-// ========================================================
-(function() {
-  try {
-    var raw = localStorage.getItem('biresku_custom_artists_v1');
-    if (raw && window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) {
-      var customList = JSON.parse(raw);
-      if (Array.isArray(customList)) {
-        customList.forEach(function(item) {
-          if (item && item.id && !window.ARTISTS_DATA.some(function(a) { return a.id === item.id; })) {
-            window.ARTISTS_DATA.push(item);
-          }
-        });
-      }
-    }
-  } catch(e) {
-    console.warn("Custom artists load error:", e);
-  }
-})();
-
-// ========================================================
-// BİRESKU EVRENSEL OTOMATİK SENKRONİZASYON MOTORU
-// ========================================================
-window.bireskuSyncAllArtists = function() {
-  try {
-    // 1. Anasayfa flow rail senkronizasyonu
-    if (typeof window.syncArtistsRailWithData === "function") {
-      window.syncArtistsRailWithData();
-    }
-    // 2. Dergi 'Yeni Eklenen Sanatçılarımız' Grid senkronizasyonu
-    if (typeof window.renderArtistsGrid === "function") {
-      window.renderArtistsGrid();
-    }
-    // 3. Dergi 'Yeni Katılanlar' Liste Vitrini senkronizasyonu
-    if (typeof window.renderNewArtistsFeature === "function") {
-      window.renderNewArtistsFeature();
-    }
-    // 4. Dergi Sanatçılarımız Katalog Sayfası senkronizasyonu
-    if (typeof window.renderCatalog === "function" && typeof window.getArtistsList === "function") {
-      window.currentArtistList = window.getArtistsList();
-      window.renderCatalog(window.currentArtistList);
-    }
-    // 5. Global bildirim fırlat (Tüm dinamik bileşenler için)
-    window.dispatchEvent(new CustomEvent('biresku:artists-synced', {
-      detail: {
-        artists: window.ARTISTS_DATA,
-        count: (window.ARTISTS_DATA && Array.isArray(window.ARTISTS_DATA)) ? window.ARTISTS_DATA.length : 0
-      }
-    }));
-  } catch (err) {
-    console.warn("[Biresku Sync] Otomatik senkronizasyon uyarısı:", err);
-  }
-};
-
-// Sayfa ilk yüklendiğinde veya DOM hazır olduğunda senkronize et
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", function() {
-    window.bireskuSyncAllArtists();
-  });
-} else {
-  setTimeout(function() {
-    window.bireskuSyncAllArtists();
-  }, 0);
-}
