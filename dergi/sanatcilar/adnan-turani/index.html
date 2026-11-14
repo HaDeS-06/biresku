@@ -59,82 +59,58 @@
           {
             "@type": "VisualArtwork",
             "position": 1,
-            "image": "https://biresku.com/assets/adnan-turani/marmaris-serisi.jpg",
+            "image": "https://biresku.com/assets/adnan-turani/eser-1.jpg",
             "artform": "Painting",
-            "creator": {
-              "@type": "Person",
-              "name": "Prof. Dr. Adnan Turani"
-            }
+            "name": "Özgün Eser"
           },
           {
             "@type": "VisualArtwork",
             "position": 2,
-            "image": "https://biresku.com/assets/adnan-turani/viyolonsel-calan-kadin.jpg",
+            "image": "https://biresku.com/assets/adnan-turani/eser-2.jpg",
             "artform": "Painting",
-            "creator": {
-              "@type": "Person",
-              "name": "Prof. Dr. Adnan Turani"
-            }
+            "name": "Özgün Eser"
           },
           {
             "@type": "VisualArtwork",
             "position": 3,
-            "image": "https://biresku.com/assets/adnan-turani/asiklar-serisi.jpg",
+            "image": "https://biresku.com/assets/adnan-turani/eser-3.jpg",
             "artform": "Painting",
-            "creator": {
-              "@type": "Person",
-              "name": "Prof. Dr. Adnan Turani"
-            }
+            "name": "Özgün Eser"
           },
           {
             "@type": "VisualArtwork",
             "position": 4,
-            "image": "https://biresku.com/assets/adnan-turani/muzisyenler-trio.jpg",
+            "image": "https://biresku.com/assets/adnan-turani/eser-4.jpg",
             "artform": "Painting",
-            "creator": {
-              "@type": "Person",
-              "name": "Prof. Dr. Adnan Turani"
-            }
+            "name": "Özgün Eser"
           },
           {
             "@type": "VisualArtwork",
             "position": 5,
-            "image": "https://biresku.com/assets/adnan-turani/dansci.jpg",
+            "image": "https://biresku.com/assets/adnan-turani/eser-5.jpg",
             "artform": "Painting",
-            "creator": {
-              "@type": "Person",
-              "name": "Prof. Dr. Adnan Turani"
-            }
+            "name": "Özgün Eser"
           },
           {
             "@type": "VisualArtwork",
             "position": 6,
-            "image": "https://biresku.com/assets/adnan-turani/kemanci.jpg",
+            "image": "https://biresku.com/assets/adnan-turani/eser-6.jpg",
             "artform": "Painting",
-            "creator": {
-              "@type": "Person",
-              "name": "Prof. Dr. Adnan Turani"
-            }
+            "name": "Özgün Eser"
           },
           {
             "@type": "VisualArtwork",
             "position": 7,
-            "image": "https://biresku.com/assets/adnan-turani/naturmort.jpg",
+            "image": "https://biresku.com/assets/adnan-turani/eser-7.jpg",
             "artform": "Painting",
-            "creator": {
-              "@type": "Person",
-              "name": "Prof. Dr. Adnan Turani"
-            }
+            "name": "Özgün Eser"
           },
           {
             "@type": "VisualArtwork",
             "position": 8,
-            "image": "https://biresku.com/assets/adnan-turani/sokak-calgicilari.jpg",
+            "image": "https://biresku.com/assets/adnan-turani/eser-8.jpg",
             "artform": "Painting",
-            "creator": {
-              "@type": "Person",
-              "name": "Prof. Dr. Adnan Turani"
-            }
+            "name": "Özgün Eser"
           }
         ]
       }
@@ -776,16 +752,61 @@
         height: 240px;
       }
     }
+  
+    /* ===================================================
+       BİRESKU EDİTORYAL NOTİCE & TAKEDOWN FOOTER BİLEŞENİ
+       (Anti-AI: 2px mimari hatlar, sıfır aşırı yuvarlatma, sıfır yayvan gölge)
+       =================================================== */
+    .footer-takedown-notice {
+      max-width: 940px;
+      margin: 0 auto 20px auto;
+      padding: 14px 22px;
+      background: rgba(28, 29, 36, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      text-align: center;
+    }
+    .footer-takedown-notice p {
+      font-family: var(--font-reading, 'Cormorant Garamond', Georgia, serif);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    .footer-takedown-notice strong {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    .footer-takedown-notice .footer-notice-mail {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-left: 4px;
+      transition: color 0.2s ease;
+    }
+    .footer-takedown-notice .footer-notice-mail:hover {
+      color: var(--accent-hover);
+    }
+    [data-theme="light"] .footer-takedown-notice {
+      background: rgba(240, 237, 230, 0.6);
+      border-color: var(--border);
+    }
+
   </style>
 
-  <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v45">
+  <link rel="stylesheet" href="/assets/biresku-auth.css?v=37">
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
     <div class="header-inner">
-      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç" style="touch-action: manipulation;">
+      <button id="mobileNavToggleBtn" class="mobile-menu-trigger" type="button" onclick="toggleMobileDropdownNav(event)" aria-expanded="false" aria-label="Menüyü Aç">
         <span class="nav-hamburger-icon" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
@@ -915,71 +936,47 @@
       </div>
 
       <div class="artworks-grid">
-        
       <div class="artwork-item pure-gallery-card">
         <div class="artwork-img-wrap" style="height: 320px;">
-          <img src="/assets/adnan-turani/marmaris-serisi.jpg" alt="Prof. Dr. Adnan Turani Eseri" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-auth.css';">
+          <img src="/assets/adnan-turani/marmaris-serisi.jpg" alt="Özgün Eser" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-panorama-banner.jpg';">
         </div>
-        
       </div>
-    
-
       <div class="artwork-item pure-gallery-card">
         <div class="artwork-img-wrap" style="height: 320px;">
-          <img src="/assets/adnan-turani/viyolonsel-calan-kadin.jpg" alt="Prof. Dr. Adnan Turani Eseri" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-auth.css';">
+          <img src="/assets/adnan-turani/viyolonsel-calan-kadin.jpg" alt="Özgün Eser" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-panorama-banner.jpg';">
         </div>
-        
       </div>
-    
-
       <div class="artwork-item pure-gallery-card">
         <div class="artwork-img-wrap" style="height: 320px;">
-          <img src="/assets/adnan-turani/asiklar-serisi.jpg" alt="Prof. Dr. Adnan Turani Eseri" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-auth.css';">
+          <img src="/assets/adnan-turani/asiklar-serisi.jpg" alt="Özgün Eser" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-panorama-banner.jpg';">
         </div>
-        
       </div>
-    
-
       <div class="artwork-item pure-gallery-card">
         <div class="artwork-img-wrap" style="height: 320px;">
-          <img src="/assets/adnan-turani/muzisyenler-trio.jpg" alt="Prof. Dr. Adnan Turani Eseri" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-auth.css';">
+          <img src="/assets/adnan-turani/muzisyenler-trio.jpg" alt="Özgün Eser" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-panorama-banner.jpg';">
         </div>
-        
       </div>
-    
-
       <div class="artwork-item pure-gallery-card">
         <div class="artwork-img-wrap" style="height: 320px;">
-          <img src="/assets/adnan-turani/dansci.jpg" alt="Prof. Dr. Adnan Turani Eseri" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-auth.css';">
+          <img src="/assets/adnan-turani/dansci.jpg" alt="Özgün Eser" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-panorama-banner.jpg';">
         </div>
-        
       </div>
-    
-
       <div class="artwork-item pure-gallery-card">
         <div class="artwork-img-wrap" style="height: 320px;">
-          <img src="/assets/adnan-turani/kemanci.jpg" alt="Prof. Dr. Adnan Turani Eseri" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-auth.css';">
+          <img src="/assets/adnan-turani/kemanci.jpg" alt="Özgün Eser" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-panorama-banner.jpg';">
         </div>
-        
       </div>
-    
-
       <div class="artwork-item pure-gallery-card">
         <div class="artwork-img-wrap" style="height: 320px;">
-          <img src="/assets/adnan-turani/naturmort.jpg" alt="Prof. Dr. Adnan Turani Eseri" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-auth.css';">
+          <img src="/assets/adnan-turani/naturmort.jpg" alt="Özgün Eser" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-panorama-banner.jpg';">
         </div>
-        
       </div>
-    
-
       <div class="artwork-item pure-gallery-card">
         <div class="artwork-img-wrap" style="height: 320px;">
-          <img src="/assets/adnan-turani/sokak-calgicilari.jpg" alt="Prof. Dr. Adnan Turani Eseri" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-auth.css';">
+          <img src="/assets/adnan-turani/sokak-calgicilari.jpg" alt="Özgün Eser" loading="lazy" onerror="this.onerror=null; this.src='/assets/biresku-panorama-banner.jpg';">
         </div>
-        
       </div>
-    
-      </div>
+    </div>
     </section>
   </main>
 
@@ -1010,118 +1007,75 @@
     })();
 
     /* MOBİL MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING) */
-      /* ========================================================
-     BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
-     ======================================================== */
-  function openMobileDropdownNav() {
-    var dd = document.getElementById("mobileNavDropdown");
-    var bd = document.getElementById("mobileNavBackdrop");
-    var btn = document.getElementById("mobileNavToggleBtn");
-    if (!dd) return;
-    dd.classList.add("is-open");
-    if (bd) bd.classList.add("is-open");
-    if (btn) {
-      btn.classList.add("is-open");
-      btn.setAttribute("aria-expanded", "true");
-    }
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeMobileDropdownNav() {
-    var dd = document.getElementById("mobileNavDropdown");
-    var bd = document.getElementById("mobileNavBackdrop");
-    var btn = document.getElementById("mobileNavToggleBtn");
-    if (dd) dd.classList.remove("is-open");
-    if (bd) bd.classList.remove("is-open");
-    if (btn) {
-      btn.classList.remove("is-open");
-      btn.setAttribute("aria-expanded", "false");
-    }
-    document.body.style.overflow = "";
-  }
-
-    /* ========================================================
-     BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)
-     ======================================================== */
-  function openMobileDropdownNav() {
-    var dd = document.getElementById("mobileNavDropdown");
-    var bd = document.getElementById("mobileNavBackdrop");
-    var btn = document.getElementById("mobileNavToggleBtn");
-    if (!dd) return;
-    dd.classList.add("is-open");
-    if (bd) bd.classList.add("is-open");
-    if (btn) {
-      btn.classList.add("is-open");
-      btn.setAttribute("aria-expanded", "true");
-    }
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeMobileDropdownNav() {
-    var dd = document.getElementById("mobileNavDropdown");
-    var bd = document.getElementById("mobileNavBackdrop");
-    var btn = document.getElementById("mobileNavToggleBtn");
-    if (dd) dd.classList.remove("is-open");
-    if (bd) bd.classList.remove("is-open");
-    if (btn) {
-      btn.classList.remove("is-open");
-      btn.setAttribute("aria-expanded", "false");
-    }
-    document.body.style.overflow = "";
-  }
-
-  function toggleMobileDropdownNav(e) {
-    var evt = e || window.event;
-    if (evt) {
-      if (evt.preventDefault) evt.preventDefault();
-      if (evt.stopPropagation) evt.stopPropagation();
-      if (evt.stopImmediatePropagation) evt.stopImmediatePropagation();
-    }
-    var dd = document.getElementById("mobileNavDropdown");
-    if (!dd) return;
-    
-    var isOpen = dd.classList.contains("is-open");
-    if (isOpen) {
-      closeMobileDropdownNav();
-    } else {
-      openMobileDropdownNav();
-    }
-  }
-
-  window.toggleMobileDropdownNav = toggleMobileDropdownNav;
-  window.openMobileDropdownNav = openMobileDropdownNav;
-  window.closeMobileDropdownNav = closeMobileDropdownNav;
-
-  (function initMobileMenuTrigger() {
-    document.addEventListener("click", function(e) {
-      var backdrop = e.target.closest("#mobileNavBackdrop, .mobile-nav-backdrop");
-      if (backdrop) {
-        closeMobileDropdownNav();
-        return;
-      }
-      var navRow = e.target.closest(".mobile-nav-row");
-      if (navRow) {
-        closeMobileDropdownNav();
-        return;
+    function toggleMobileDropdownNav(e) {
+      var evt = e || window.event;
+      if (evt) {
+        if (evt.preventDefault) evt.preventDefault();
+        if (evt.stopPropagation) evt.stopPropagation();
+        if (evt.stopImmediatePropagation) evt.stopImmediatePropagation();
       }
       var dd = document.getElementById("mobileNavDropdown");
-      if (dd && dd.classList.contains("is-open")) {
-        var isInsideDropdown = e.target.closest("#mobileNavDropdown, .mobile-nav-dropdown");
-        var isInsideBtn = e.target.closest("#mobileNavToggleBtn, .mobile-menu-trigger");
-        if (!isInsideDropdown && !isInsideBtn) {
-          closeMobileDropdownNav();
+      var bd = document.getElementById("mobileNavBackdrop");
+      var btn = document.getElementById("mobileNavToggleBtn");
+      if (!dd) return;
+      
+      var isOpen = dd.classList.contains("is-open");
+      if (isOpen) {
+        closeMobileDropdownNav();
+      } else {
+        dd.classList.add("is-open");
+        if (bd) bd.classList.add("is-open");
+        if (btn) {
+          btn.classList.add("is-open");
+          btn.setAttribute("aria-expanded", "true");
         }
+        document.body.style.overflow = "hidden";
       }
-    });
+    }
 
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") closeMobileDropdownNav();
-    });
-  })();
+    function closeMobileDropdownNav() {
+      var dd = document.getElementById("mobileNavDropdown");
+      var bd = document.getElementById("mobileNavBackdrop");
+      var btn = document.getElementById("mobileNavToggleBtn");
+      if (dd) dd.classList.remove("is-open");
+      if (bd) bd.classList.remove("is-open");
+      if (btn) {
+        btn.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+      document.body.style.overflow = "";
+    }
+
+    (function initMobileMenuTrigger() {
+      document.addEventListener("click", function(e) {
+        var backdrop = e.target.closest("#mobileNavBackdrop, .mobile-nav-backdrop");
+        if (backdrop) {
+          closeMobileDropdownNav();
+          return;
+        }
+        var navRow = e.target.closest(".mobile-nav-row");
+        if (navRow) {
+          closeMobileDropdownNav();
+          return;
+        }
+        var dd = document.getElementById("mobileNavDropdown");
+        if (dd && dd.classList.contains("is-open")) {
+          var isInsideDropdown = e.target.closest("#mobileNavDropdown, .mobile-nav-dropdown");
+          var isInsideBtn = e.target.closest("#mobileNavToggleBtn, .mobile-menu-trigger");
+          if (!isInsideDropdown && !isInsideBtn) {
+            closeMobileDropdownNav();
+          }
+        }
+      });
+
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") closeMobileDropdownNav();
+      });
+    })();
   </script>
 
   <script src="/assets/artists-data.js?v=37"></script>
-  <script src="/assets/biresku-auth.js?v=20261109_v45"></script>
+  <script src="/assets/biresku-auth.js?v=37"></script>
   <script src="/assets/biresku-artist-admin.js?v=37"></script>
 </body>
 </html>
