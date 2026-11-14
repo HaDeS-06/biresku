@@ -15,6 +15,15 @@
 
 (function(window) {
   'use strict';
+  // FORCE-PURGE STALE ARTIST CACHE FROM LOCALSTORAGE
+  try {
+    const rawStale = localStorage.getItem('biresku_custom_artists_v1');
+    if (rawStale && (rawStale.includes('artam') || rawStale.includes('rivada') || rawStale.includes('Riva') || rawStale.includes('Özgün Koleksiyon Eseri'))) {
+      localStorage.removeItem('biresku_custom_artists_v1');
+      console.log('[Biresku] Stale localStorage purged successfully.');
+    }
+  } catch(e) {}
+
 
   const STORAGE_KEY = 'biresku_custom_artists_v1';
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB

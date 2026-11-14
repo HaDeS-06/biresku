@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <script>
+    try {
+      var s = localStorage.getItem('biresku_custom_artists_v1');
+      if (s && (s.indexOf('artam') !== -1 || s.indexOf('rivada') !== -1 || s.indexOf('Riva') !== -1)) {
+        localStorage.removeItem('biresku_custom_artists_v1');
+      }
+    } catch(e) {}
+  </script>
+  
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -1753,7 +1762,7 @@
 
   </style>
   <link rel="stylesheet" href="/assets/biresku-auth.css?v=20261109_v45">
-  <script src="/assets/artists-data.js?v=20261109_v50"></script>
+  <script src="/assets/artists-data.js?v=20261114_v60_clean"></script>
 </head>
 <body>
 
@@ -2239,7 +2248,7 @@
       "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=600&q=80"
     ];
 
-    // window.ARTISTS_DATA tek kaynak (Single Source of Truth) olarak /assets/artists-data.js dosyasından yüklenir
+    // window.ARTISTS_DATA tek kaynak (Single Source of Truth) olarak /assets/artists-data.js?v=20261114_v60_clean dosyasından yüklenir
     if (!window.ARTISTS_DATA || !Array.isArray(window.ARTISTS_DATA)) {
       window.ARTISTS_DATA = [];
     }
@@ -2708,7 +2717,7 @@
 
 <script src="/assets/auth-client.js?v=20261109_v45"></script>
 <script src="/assets/biresku-auth.js?v=20261109_v45"></script>
-<script src="/assets/biresku-artist-admin.js?v=20261109_v39"></script>
+<script src="/assets/biresku-artist-admin.js?v=20261114_v60_clean"></script>
 <script>
   /* ========================================================
      BİRESKU MOBİL DROPDOWN MENÜ YÖNETİMİ (ROBUST & NON-BLOCKING)

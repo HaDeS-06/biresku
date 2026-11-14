@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <script>
+    try {
+      var s = localStorage.getItem('biresku_custom_artists_v1');
+      if (s && (s.indexOf('artam') !== -1 || s.indexOf('rivada') !== -1 || s.indexOf('Riva') !== -1)) {
+        localStorage.removeItem('biresku_custom_artists_v1');
+      }
+    } catch(e) {}
+  </script>
+  
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -1102,8 +1111,8 @@
     })();
   </script>
 
-  <script src="/assets/artists-data.js?v=37"></script>
+  <script src="/assets/artists-data.js?v=20261114_v60_clean"></script>
   <script src="/assets/biresku-auth.js?v=37"></script>
-  <script src="/assets/biresku-artist-admin.js?v=37"></script>
+  <script src="/assets/biresku-artist-admin.js?v=20261114_v60_clean"></script>
 </body>
 </html>
