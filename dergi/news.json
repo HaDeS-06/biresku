@@ -37,47 +37,47 @@
   },
   {
     "id": 5,
-    "title": "Londra’nın konuştuğu genç ressam: Lâl Yılmaz",
-    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONVZ5UmVTNDRGSHVOMUVOb0tzVFZMNTJWMFhRWkdXNDNlNDhpdjRxUkJSZkxvUEJoWUhtbFNreVl5YVc3cVc5Sy14cGI2RW8zUTN2WG1XY0dFN3hpTWxad0hkNTdHd1F3bnFuc1FvRDlZdHdTbmRkQXdlZnl2T2ZES3VScUVoUUpi?oc=5",
-    "source": "Gazete Oksijen",
-    "date": "02 Nisan 2026",
-    "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 6,
     "title": "PAÜ’de “Çağdaş Sanat Sergisi”",
     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBmS210ZHR4eXNXOFhlVS1CWDgtbEVDYkJUbjRyMmFhX3pLeDJIMXpPQ2RXTmJqWnphS0NQbTlxalhKYVpDMjBwRnpmRWliSkkxUl9VU2M4OEVNeDVHZ1dGMmVvalBKTEJW?oc=5",
     "source": "PAU HABER",
     "date": "11 Mart 2026",
     "category": "Sergi",
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "Renkli Zihinler: Ressam Aslı Sayan",
     "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9BbGNpclo5REV1OG5kMmVtZ1NZWldFTHdxaWdSUzd4Ni03ZEVjdXFBeXJwbmdMREtEVjdWdlNsdFhjZ2VkdFVvQUVSaEtSX1FYeUJWV0JNOA?oc=5",
     "source": "Vogue",
     "date": "18 Haziran 2026",
     "category": "Sanatçı",
-    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 8,
+    "id": 7,
     "title": "OGGUSTO Sanat Editörü Seçti: Bienal İzlenimleri ve Dikkat Çekenler",
     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWEdqazRucVZMd0JuYVROQU1zZ05pWmFYME0yZ1kyeFRQdG5SdUs3MkJuY2p5ZGwyNzlPWDdlMFJ2bDRDVmdpZDlSRFdwdllEVEM3Q08yZUp5Z3NBVXNRV1czZi1yWXBiWUU5bGJvTnFMUGV4V1BPQWh1YXhQTkE3Mk9xQlJNc0h2ZzdvdlZVTFl4dG5RT3l3enFUdDBhSHFnYkFB?oc=5",
     "source": "Oggusto",
     "date": "21 Ekim 2025",
     "category": "Etkinlik",
-    "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 9,
+    "id": 8,
     "title": "\"Saltanat Dizeleri\" sergisi Dolmabahçe Sarayı Sanat Galerisi'nde sanatseverlerle buluştu",
     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPeURudFY5VXdkcVFCOS1kcWFGOWJpY1VxUlMteVIwOFZNZDQ5NTdwM19PeFRWVGs4dnc0bnMzckx4Ui1mc2Y2Nm01MWxUb0dlWFdyMlh5Wk5vS2huaVJUVXJoYXVHdkNRSkt0SjFCTTF4SUs5dURZRVo5cUtmbE44Q01iRkxreTU3UUs2WDZIQWg0VG1DVnZZdFZBY0hFcGplSDNvSGtDYkV1LWN5UV9XcS1qaDFlUm1YdHRDSWhtQlRKSFU?oc=5",
     "source": "Anadolu Ajansı",
     "date": "20 Ekim 2026",
     "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 9,
+    "title": "Ressam Pınar Tınç: Alışılmadık Ruhta Düş Durmaz!",
+    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOekc2ZEdHdS1nNEJFV2VOV2lLd1lKQkZjNFlvREV1LWg5Y1FZVjFPRVM1Z3ZKXzlRcnExanEzaXlxQ0E4eERkeVRmaElrYzd6a01wbDdWOF9uQ21LSUZuZjNNU2U1MWlDWVFuM0ZrbHFKQzUtWHMtTUNyYVYzOEJkTmZxSERtRGdPWmc?oc=5",
+    "source": "Oggusto",
+    "date": "01 Eylül 2025",
+    "category": "Sanatçı",
     "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
   },
   {
@@ -136,11 +136,11 @@
   },
   {
     "id": 16,
-    "title": "Ressam Pınar Tınç: Alışılmadık Ruhta Düş Durmaz!",
-    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOekc2ZEdHdS1nNEJFV2VOV2lLd1lKQkZjNFlvREV1LWg5Y1FZVjFPRVM1Z3ZKXzlRcnExanEzaXlxQ0E4eERkeVRmaElrYzd6a01wbDdWOF9uQ21LSUZuZjNNU2U1MWlDWVFuM0ZrbHFKQzUtWHMtTUNyYVYzOEJkTmZxSERtRGdPWmc?oc=5",
-    "source": "Oggusto",
-    "date": "01 Eylül 2025",
-    "category": "Sanatçı",
+    "title": "'Parayı Al ve Kaç': Boş tuval teslim eden ressam müzeye 67 bin euro ödemeye mahkum edildi",
+    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9BY2VlQUVhSmlnel9lSnBQMFNidmIzLWdkUER0Qklic1dWRXBmSmw2NWRjUGlzSnhVUDhLU29pTjNiNnd1dXp1YjdjamMzVVVxM0gwUWhuV0FaQUlN0gFiQVVfeXFMTUp6UUowNVphTGZ3bWd3QmFMbG1IdUc1bUl4Y1MtX2RQakNpLTNHRG9DRFJhNFJjVDZvQ29xSm5OSEQ3dTRwdTRHbGNZZ1U3VFgzcmZPckNGVExaRWJsQVF4VFE?oc=5",
+    "source": "BBC",
+    "date": "18 Eylül 2023",
+    "category": "Galeri",
     "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
   }
 ]
