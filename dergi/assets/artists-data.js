@@ -711,7 +711,7 @@ window.ARTISTS_DATA = [
     "studio": "Çekmeköy Sanat Atölyesi, İstanbul",
     "coverImage": "/assets/alev-ozas/alev-ozas-pp.jpg",
     "shortBio": "İstanbul'un bin yıllık mimari silüetini ve Boğaz'ın yaşayan ruhunu taşist fırça darbeleri ve ritmik renk armonileriyle tuvale aktaran çağdaş Türk ressamı.",
-    "quote": "İstanbul benim için taş ve topraktan ibaret bir coğrafya değil; fırçamın her dokunuşunda nefes alan yaşayan bir ruhtur. Galata’nın vakur duruşu, Süleymaniye’nin göğe açılan kubbeleri ve Boğaz’ın binbir tonunda atan nabız; benim hem hafızam, hem sığınağım hem de tuvalime döktüğüm en saf aşkımdır.",
+    "quote": "İstanbul sizin için ne anlam ifade ediyor, sadece bir şehir mi yoksa daha fazlası mı? [Sanatçı Alev Özas'ın yanıtı için ayrılmıştır]",
     "biography": [
       "Alev Özas, 1977 yılında İstanbul’da doğdu. Küçük yaşlardan itibaren resim tutkusunun peşinden giderek Marmara Üniversitesi Güzel Sanatlar Fakültesi Resim Bölümü’ne girdi. Fakültede Prof. Dr. Ramiz Aydın atölyesinde renk, armoni ve taşizm (lekesel anlatım) disiplinlerinde yetkinleşti ve 2003 yılında başarıyla mezun oldu.",
       "2005 - 2012 yılları arasında Türk çağdaş sanatının en büyük ustalarından Prof. Dr. Devrim Erbil'in özel atölyesinde 8 yıl boyunca baş asistanlık görevini yürüttü; usta sanatçıyla birlikte çok sayıda anıtsal proje ve uluslararası sergiye imza attı.",
