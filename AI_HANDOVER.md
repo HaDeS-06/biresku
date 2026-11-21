@@ -604,3 +604,29 @@ Kullanıcının *"2. fotodaki gibi bir görüntüde istiyorum ben orda mesela bi
    - `assets/berna-alparslan-ayvali/` ve `dergi/assets/berna-alparslan-ayvali/` dizinleri tüm görsel ve PDF varlıklarıyla senkronize edildi.
 
 
+
+### 21. Alev Özas Sanatçı Alanı, 15 Sayfalık Dijital Dergi & Koleksiyon Entegrasyonu (2026-11-21)
+1. **Sanatçı Kimliği & Portföy:**
+   - Alev Özas (Doğum 1977 İstanbul, Marmara Üniversitesi GSF Ramiz Aydın atölyesi mezunu).
+   - 8 yıl Prof. Dr. Devrim Erbil'in özel atölyesinde baş asistanlık yapmıştır; 2012'den beri Çekmeköy atölyesinde bağımsız üretmektedir.
+   - Cumhuriyetin 100. yılına ithafen canlı performansla 100 günde tamamlanan 3x50m tek parça anıtsal tuval **"Dev İstanbul"** başyapıtının yaratıcısıdır (Guinness Rekorlar Kitabı adayı).
+   - Koleksiyon: 10 seçkin tuval üzeri yağlıboya eseri tescillendi.
+   - Özel Söyleşi Sorusu: *"İstanbul sizin için ne anlam ifade ediyor, sadece bir şehir mi yoksa daha fazlası mı?"* sanatçının felsefi cevabıyla sayfada öne çıkarıldı.
+2. **15 Sayfalık BİRESKU Monografi Dergisi:**
+   - 1080x1350 dikey Instagram / editoryal formatında 15 sayfa hazırlandı.
+   - Sayfa 01: Kapak (İstanbul'un Renk ve Çizgideki Ritmi).
+   - Sayfa 02: Editöryal & Manifesto (Kentin Ruhu, Fırçanın İzi).
+   - Sayfa 03: Özel Soru & Söyleşi (Kullanıcı sorusu ve sanatçının cevabı, altın çerçeveli kutu).
+   - Sayfa 04: Atölyeden Sergiye & Dev İstanbul (Atölyede fırça başında ve 50 metrelik devasa tuval önünde 2 görsel + tarihi anlatım).
+   - Sayfalar 05-14: 10 Master Eser galerisi.
+   - Sayfa 15: Arka Kapak & Biresku Künye.
+   - Masaüstü: `Alev_Ozas_Instagram_Gorselleri/` ve `Alev_Ozas_Instagram_Dergisi.pdf`.
+3. **Statik Sanatçı Sayfası & İnteraktif Dergi Okuyucu:**
+   - `dergi/sanatcilar/alev-ozas/index.html` oluşturuldu.
+   - Sitede indirme butonu yerine sayfa içi akıcı **interaktif dergi okuyucu** (`bireskuMagazineSection`), minyatür geçiş şeridi (thumbnails rail) ve tüm sayfaları ızgara modunda açma imkanı entegre edildi.
+   - Çift atölye görseli (`alev-ozas-atolye.jpg` ve `alev-ozas-dev-istanbul.jpg`) ve 10 saf eser kartı eklendi.
+4. **Katalog, Ray ve SEO Entegrasyonu:**
+   - `assets/artists-data.js` ve `dergi/assets/artists-data.js`: `alev-ozas` kaydı ve 10 eseri eklendi.
+   - `dergi/sanatcilar/index.html`: `#catalogGrid` başına Alev Özas kartı ve `ARTIST_ALIASES` eklendi.
+   - `index.html`: `#artistsRail` akışının ilk sırasına Alev Özas flow kartı eklendi.
+   - `sitemap.xml`: `https://biresku.com/dergi/sanatcilar/alev-ozas/` eklendi.

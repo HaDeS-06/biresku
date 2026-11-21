@@ -1926,6 +1926,29 @@
       <!-- Sanatçı Kartları -->
       <div class="artists-catalog-grid" id="catalogGrid">
 
+        <!-- Sanatçı: Alev Özas (En Yeni Sanatçımız) -->
+        <article class="artist-card" data-artist-id="alev-ozas" onclick="location.href='/dergi/sanatcilar/alev-ozas/'">
+          <div class="artist-card-cover">
+            <span class="artist-card-badge">Ressam</span>
+            <img src="/assets/alev-ozas/alev-ozas-pp.jpg" alt="Alev Özas" loading="lazy">
+          </div>
+          <div class="artist-card-body">
+            <div>
+              <h3 class="artist-name">Alev Özas</h3>
+              <div class="artist-discipline">Çağdaş Türk Sanatı, Post-Empresyonist Şehir Peyzajı &amp; Taşizm</div>
+              <p class="artist-statement">İstanbul'un bin yıllık mimari silüetini ve Boğaz'ın yaşayan ruhunu taşist fırça darbeleri ve ritmik renk armonileriyle tuvale aktaran çağdaş Türk ressamı. 8 yıl Devrim Erbil atölyesinde yetişen sanatçı, 50 metrelik 'Dev İstanbul' projesinin yaratıcısıdır.</p>
+            </div>
+            <div class="artist-card-footer">
+              <span>📍 Çekmeköy, İstanbul</span>
+              <span class="view-profile-btn">
+                <span>Özel Sayfasına Git</span>
+                <span>&rarr;</span>
+              </span>
+            </div>
+          </div>
+        </article>
+
+
         <article class="artist-card" data-artist-id="abidin-dino" onclick="openArtistProfile('abidin-dino')">
           <div class="artist-card-cover">
             <span class="artist-card-badge">Ressam, Yazar &amp; Karikatürist</span>
@@ -2272,6 +2295,11 @@
 
     // window.ARTISTS_DATA tek kaynak (Single Source of Truth) olarak /assets/artists-data.js dosyasından yüklenir.
     const ARTIST_ALIASES = {
+      'alev-ozas': 'alev-ozas',
+      'alev_ozas': 'alev-ozas',
+      'alevozas': 'alev-ozas',
+      'alev': 'alev-ozas',
+      'ozas': 'alev-ozas',
       'berna-alparslan-ayvali': 'berna-alparslan-ayvali',
       'berna_alparslan_ayvali': 'berna-alparslan-ayvali',
       'bernaalparslan': 'berna-alparslan-ayvali',
@@ -2422,6 +2450,10 @@
 
     function openArtistProfile(artistIdentifier) {
       const artist = findArtist(artistIdentifier);
+      if (artist && artist.id === 'alev-ozas') {
+        window.location.href = '/dergi/sanatcilar/alev-ozas/';
+        return;
+      }
       if (!artist) {
         console.warn("Sanatçı profili bulunamadı:", artistIdentifier);
         return;

@@ -433,4 +433,14 @@
       <image:title>Berna Alparslan Ayvalı Portresi</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://biresku.com/dergi/sanatcilar/alev-ozas/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://biresku.com/assets/alev-ozas/alev-ozas-pp.jpg</image:loc>
+      <image:title>Alev Özas Portresi</image:title>
+    </image:image>
+  </url>
 </urlset>

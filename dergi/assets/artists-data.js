@@ -701,5 +701,110 @@ window.ARTISTS_DATA = [
     ],
     "addedDate": "2026-11-14",
     "period": "Çağdaş Dönem"
+  },
+  {
+    "id": "alev-ozas",
+    "name": "Alev Özas",
+    "discipline": "Çağdaş Türk Sanatı, Post-Empresyonist Şehir Peyzajı & Taşizm",
+    "category": "Ressam",
+    "city": "İstanbul",
+    "studio": "Çekmeköy Sanat Atölyesi, İstanbul",
+    "coverImage": "/assets/alev-ozas/alev-ozas-pp.jpg",
+    "shortBio": "İstanbul'un bin yıllık mimari silüetini ve Boğaz'ın yaşayan ruhunu taşist fırça darbeleri ve ritmik renk armonileriyle tuvale aktaran çağdaş Türk ressamı.",
+    "quote": "İstanbul benim için taş ve topraktan ibaret bir coğrafya değil; fırçamın her dokunuşunda nefes alan yaşayan bir ruhtur. Galata’nın vakur duruşu, Süleymaniye’nin göğe açılan kubbeleri ve Boğaz’ın binbir tonunda atan nabız; benim hem hafızam, hem sığınağım hem de tuvalime döktüğüm en saf aşkımdır.",
+    "biography": [
+      "Alev Özas, 1977 yılında İstanbul’da doğdu. Küçük yaşlardan itibaren resim tutkusunun peşinden giderek Marmara Üniversitesi Güzel Sanatlar Fakültesi Resim Bölümü’ne girdi. Fakültede Prof. Dr. Ramiz Aydın atölyesinde renk, armoni ve taşizm (lekesel anlatım) disiplinlerinde yetkinleşti ve 2003 yılında başarıyla mezun oldu.",
+      "2005 - 2012 yılları arasında Türk çağdaş sanatının en büyük ustalarından Prof. Dr. Devrim Erbil'in özel atölyesinde 8 yıl boyunca baş asistanlık görevini yürüttü; usta sanatçıyla birlikte çok sayıda anıtsal proje ve uluslararası sergiye imza attı.",
+      "2012 yılında kendi bağımsız atölyesini (Çekmeköy, İstanbul) kurarak özgün tarzını derinleştirdi. Bugüne kadar 80'in üzerinde karma sergi, sanat fuarı ve 10 kişisel sergide eserlerini sanatseverlerle buluşturdu.",
+      "Cumhuriyetin 100. yılına ithafen Ataşehir Watergarden'da 100 günde canlı performansla tamamladığı 3x50 metrelik tek parça tuval 'Dev İstanbul' projesiyle Guinness Dünya Rekorları adaylığına taşınmış ve Türk sanat tarihine geçmiştir."
+    ],
+    "philosophy": [
+      "Sanat anlayışı, İstanbul'un bin yıllık mimari silüetini ve dinamizmini ritmik çizgiler ve canlı lekesel katmanlarla (taşizm) yeniden inşa etmektir. Şehri statik bir fotoğraf gibi değil, sürekli devinen, nefes alan, renklerin birbirine karıştığı bir armoni olarak tuvale taşır.",
+      "“İstanbul sizin için ne anlam ifade ediyor, sadece bir şehir mi yoksa daha fazlası mı?” sorusuna sanatçı şu cevabı vermektedir: “İstanbul benim için taş ve topraktan ibaret bir coğrafya değil; fırçamın her dokunuşunda nefes alan yaşayan bir ruhtur. 8 yıl boyunca Devrim Erbil atölyesinde şehre yukardan ve derinlemesine bakmayı öğrendim. İstanbul bana göre çizgilerin ritme, renklerin ise sonsuz bir melodiye dönüştüğü canlı bir tuvaldir.”"
+    ],
+    "artworks": [
+      {
+        "id": "alev-ozas-1",
+        "title": "Galata Kulesi ve Boğaz Panoraması",
+        "image": "/assets/alev-ozas/eser-01.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-01.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2024"
+      },
+      {
+        "id": "alev-ozas-2",
+        "title": "Haliç ve Topkapı Sarayı",
+        "image": "/assets/alev-ozas/eser-02.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-02.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2023"
+      },
+      {
+        "id": "alev-ozas-3",
+        "title": "Süleymaniye ve Galata Kulesi",
+        "image": "/assets/alev-ozas/eser-03.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-03.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2023"
+      },
+      {
+        "id": "alev-ozas-4",
+        "title": "Ayasofya ve Sultanahmet — Kızıl Alacakaranlık",
+        "image": "/assets/alev-ozas/eser-04.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-04.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2023"
+      },
+      {
+        "id": "alev-ozas-5",
+        "title": "Gece Mavisi Altında Galata ve Sultanahmet",
+        "image": "/assets/alev-ozas/eser-05.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-05.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2024"
+      },
+      {
+        "id": "alev-ozas-6",
+        "title": "Tarihi Yarımada ve Ayasofya",
+        "image": "/assets/alev-ozas/eser-06.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-06.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2021"
+      },
+      {
+        "id": "alev-ozas-7",
+        "title": "Beyazıt Kapısı ve Yangın Kulesi",
+        "image": "/assets/alev-ozas/eser-07.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-07.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2024"
+      },
+      {
+        "id": "alev-ozas-8",
+        "title": "Sultanahmet Meydanı ve Dikilitaş",
+        "image": "/assets/alev-ozas/eser-08.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-08.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2024"
+      },
+      {
+        "id": "alev-ozas-9",
+        "title": "Galata Kulesi ve Haliç — Magenta Akşamı",
+        "image": "/assets/alev-ozas/eser-09.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-09.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2024"
+      },
+      {
+        "id": "alev-ozas-10",
+        "title": "Kobalt ve Gece Mavisi Galata Panoraması",
+        "image": "/assets/alev-ozas/eser-10.jpg",
+        "imageUrl": "/assets/alev-ozas/eser-10.jpg",
+        "technique": "Tuval Üzeri Yağlıboya",
+        "year": "2024"
+      }
+    ],
+    "addedDate": "2026-11-21",
+    "period": "Çağdaş Dönem"
   }
 ];
