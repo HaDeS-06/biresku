@@ -1,1 +1,146 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "Józef Czapski Sergisi: Paris Modern Sanat Müzesi’nde Polonyalı ressam",
+    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNU2Frc1V3amUtck9meEFLYUZuNDJ5TnBmTF9qSjJ0TzY0TV9zbGJNaExQcXBlMVJmR1VtRUtFNmZiZ3hvQ3ktaENOUmQ2NVhodkl6TjVDS1ZnR29XOHpsMmxMbGQ2UEhrREdEbWJmcHlXWHVNT0hodW9SLXlRcHI5cDZodzJyYnI3N1RaM25nWVVBWno5R3dKRjRra2FfTldDcVp4NW5iTmYzWUFrZmVpT295VlA0dlhCa1JXbTZ0M01GaGZnUDQzVEFvOW5IX2Jxb0NtRWczRnpURVhsUzZOYXdjWVdYOC1U?oc=5",
+    "source": "Sortir à Paris",
+    "date": "27 Kasım 2026",
+    "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 2,
+    "title": "Sanat Tutkunları İçin 9 Rota: Frieze, Art Basel ve Bienal Durakları",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaU1DOHRPNDJnZGZyM2lncWtUbHVKSDFpQjJXQ2ZpWmRuWGVXbWgyMEpQRVVMdFNXQk82TXFtWmc5NkN6cHFRSEdqTTk1X1g0eTJPYW1WZDNESFVERnh3Q1h6eHd1d3g3eWFtSnp4cmdwcnljRFhuTl9pTk84VW00V0FVVjBCUnNQN3dKT2lZR3lvdnJNVVlyOGoyNnlRNkoybGtFTUc5dThTeklHWXV0b1A4c9IBuAFBVV95cUxPVUxERDNKSjVKRlczMnNPYW9PVmQ1T2poS3BEOVdnbEtpaGFDamJoQV9QZi1FNVNhell1S194ZjlBd0pLd1dCMC1BOVRhdVZJYzM3SDZhYXQ0OVVja1A2NmRPSlYtaWladzZTRGFOWldnSG5HQ1ltNENEc3l3ekxRUjBqUktZdC0yTDVOQ25kaG5uVTBUM0ZXRWVMN0E2Q1JHLW9mTVFPcVcwdUJjY1QtaERydU02S0t5?oc=5",
+    "source": "alem.com.tr",
+    "date": "25 Kasım 2026",
+    "category": "Etkinlik",
+    "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 3,
+    "title": "TBB Hukuk Müzesi ARTANKARA 7. Çağdaş Sanat Fuarı’nda",
+    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTUUyUmtuckR5c3YwV2h1VlBkTDFJX1ZadW9lNnd1OTAwT1BtTUU0dGV1RExvNjlRdWpLTm5qVG9yVVZCUWFMQVlnTFJuSk5RZTFaTTAtazFnWDFTbkc1ZXFIYWM0T3k4UEV0cExtdUJEUHJRYzhtRWlJX3BUWkZsbzNFelR4cDVXSzRUcGw5TU5tRnZTbDhZ?oc=5",
+    "source": "Türkiye Barolar Birliği",
+    "date": "22 Kasım 2026",
+    "category": "Galeri",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 4,
+    "title": "UYA Sanat Galerisi, Muhammet Mağ'ın \"hattızar\" sergisiyle kapılarını açtı",
+    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxORzRzQmViVUUtNVdNeF8wTk1tbXN6UTN6YTg0WkxseU9Ja3FVWWpIVzV3WDRXejlTV3NubHBsdUR6YUEwd2FWVzNoa2dtazZkQmxzenp0akliOHQ0Z0MzZWxid2VVRGdlclpUN19uTlVJQXloTWs4WmJqS2NKb1l1My0tTld5R01NY0lWUW5MdnVWN2RwV0ptSHBVSVQ0dkZ1VDJ3RkVGeFA2OERIMXc?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "07 Kasım 2026",
+    "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 5,
+    "title": "Kütahyalı ressam Ahmet Yakupoğlu doğumunun 106. yılında unutulmadı",
+    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNVHpqeHh6RDhtazdkSU8xR3BGa1JiekR6cnUxYjJENTFPa3ZDVXNMblNyWEdmNkwxTW9VNDBaeW8zQ2J2Y3Q5MXVySHQ2cDdtY1BLbDdMOUV3VEhyMmxBUVNDcmZiMlI4b3hkd3hVX2E2aFVXNWhVRWhJV0JfZEpPVEt4WnFlNEoxU0VOd1RHaE95a29iVHdadzFB?oc=5",
+    "source": "Kütahya'dan Haber",
+    "date": "23 Kasım 2026",
+    "category": "Sanatçı",
+    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 6,
+    "title": "Elazığlı ressam adayından anlamlı bağış: İki aylık emeğini satıp Gazze’ye gönderdi",
+    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQS25kdS1qdGYwWjBjM0pNeWxVZEU2S2x0NFZEUlZjQ2didFFOQ24yUGNKcWdRVUFONXlVUHpmRGhRRWxOUmJLUnNiZ1ZYaVhXUmtFOHFFZ0hlZ3lLQVkxaDFGWUEwd2RpeWtwR0IxSVlCSXNnZExBaGQ4UnFzTzJ6LVBOSlRCeXd0Y1FOeHFHRTNLRmc2S0wwRmVjMjl5ak5OUkdpNDVaUzBSZ053UUxMNWlnTDR0dFpsbERmQ0NHQdIBzwFBVV95cUxNWW9mV1Via2phbk1mcEM1eUVGNzdERmlnTWF0QUcxVVNIVjdvMnNveXhjSzgyeUJEcW0xUnktYlRuU2YyN0hRRUhQbm95eUFwM1NkU1NwTWszQVhnQ0FNU0ZwdGpHWFZYS1FWNEUzeWxwWHg3QVUzVWRJRmV0andhdmtzVF9LN3gzY0hsa0x1eGMwWVJhME1Ua3J0STg3dExZSTBZWkFiZjEyQ29xV1FPakxqNkdTVGQzNGtJX3l0azVnem5pRU9SSk4yWDNfa2M?oc=5",
+    "source": "Kars Hakimiyet",
+    "date": "27 Kasım 2026",
+    "category": "Sanatçı",
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 7,
+    "title": "Venedik Bienali 61. Uluslararası Sanat Sergisi Türkiye Pavyonu açıldı",
+    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQczhOMXBCMGxtbUpFXzhhS05QWlc2b1dsSmRtd2hkMlpuR0ZLVGktcWVza21pTENialAyazN3YkV6MHp4TVZ0bUgwN2MxVDhCYUJ6cVNRTmwyRkxXNm9OM1RBbS1IOVpTMExjOWpmSmpQZ2JXblJWU0tqUUdPYVlQeVdfWkhKa0R1X2JldktsXzB1RWZ1bVNtLWZodGhuZ2s?oc=5",
+    "source": "İstanbul Kültür Sanat Vakfı | İKSV",
+    "date": "05 Mayıs 2026",
+    "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 8,
+    "title": "Koç Topluluğu’nun 100. Yılı: \"Yüzyılın İzleri\" Sergisi",
+    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE55OV9qYUV1QUl5R1JodTNvUWdKUTFhUDJnbmJqTlRwLW9Ia1JuLXhMR3hBWnJ6eVlzeUg0NFg5M09jTWZzeFAtMF9TZ1U1RjlDSWFEVWtfc3FGR3lIN0V2Wmhua0h5LVdP?oc=5",
+    "source": "Oggusto",
+    "date": "16 Eylül 2026",
+    "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 9,
+    "title": "PAÜ’de “Çağdaş Sanat Sergisi”",
+    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBmS210ZHR4eXNXOFhlVS1CWDgtbEVDYkJUbjRyMmFhX3pLeDJIMXpPQ2RXTmJqWnphS0NQbTlxalhKYVpDMjBwRnpmRWliSkkxUl9VU2M4OEVNeDVHZ1dGMmVvalBKTEJW?oc=5",
+    "source": "PAU HABER",
+    "date": "11 Mart 2026",
+    "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 10,
+    "title": "Anadolu'yu tuvale taşıyan ressam: Nuri İyem",
+    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOb1RWVnhycGszRXFWT3dKX2xNUjZHMmNWY25aOFBKNkFNbmRDU2x1NjB6Y19SeFVyc2F3Mll0YXBnTjNKV1ZTRmpvSmNqUG9HYzVSalpaWWJDWDJDRXJITHRFQWtaSy04RUVTREN0OHdMRV90eHoxVDFNX1ZDMldnaXA0bjBfYWZz?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "17 Haziran 2026",
+    "category": "Sanatçı",
+    "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 11,
+    "title": "\"Saltanat Dizeleri\" sergisi Dolmabahçe Sarayı Sanat Galerisi'nde sanatseverlerle buluştu",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPeURudFY5VXdkcVFCOS1kcWFGOWJpY1VxUlMteVIwOFZNZDQ5NTdwM19PeFRWVGs4dnc0bnMzckx4Ui1mc2Y2Nm01MWxUb0dlWFdyMlh5Wk5vS2huaVJUVXJoYXVHdkNRSkt0SjFCTTF4SUs5dURZRVo5cUtmbE44Q01iRkxreTU3UUs2WDZIQWg0VG1DVnZZdFZBY0hFcGplSDNvSGtDYkV1LWN5UV9XcS1qaDFlUm1YdHRDSWhtQlRKSFU?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "20 Ekim 2026",
+    "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 12,
+    "title": "Kapadokya'daki \"Çağdaş Sanat Müzesi\" bölgenin kültür turizmine katkı sunuyor",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQR2pTWVA5bmNaenU1RHdXV0NDcVJvX3YzUkZIVEI3NjFsRFZ3YVdETmt1UFZxc0drSWVJdVU1dW9wajU4a1VYYlBFcmM3dUhmSnBYRWtVUGd3VGhjcUF4QXlZRklXVDV2cFJfYVVLQmVPYUloWDZFMVpmekpta1hSOURNanRKNkxsVGxFTHEtUUNlOW1qVjI0b1RDR3UzLUNRZ2FzclY1LVlFTlhPeTdaMGRHSQ?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "24 Mayıs 2026",
+    "category": "Galeri",
+    "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 13,
+    "title": "Ressam Nazende Yücel'in \"Yediveren Kadınlar\" sergisi Ankara'da açıldı",
+    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxORHVheExCOUJtaGpFNEYta2hqb25VNTNXT2NJSG92UkFKX05nZ1hMd3R5bUtDMkhwS0dyS0ZUV2QxelVxTUZ3UHA2bDRmMWt5eWJaeDUtamY1cUtab21uS1ZBRkdmRVQzWmtMTGJsNWhycVZwcGZlNzZvaGtGQkNIdkZDTDFTenZaeWxMWDdjOVJnWGZmOEpzYjh5ZUFuWjRyWTBjcjA1RnA?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "24 Nisan 2026",
+    "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 14,
+    "title": "Ayla Turan ve Kemal Tufan'ın heykel sergisi Bodrum Golf Club'da sanatseverlerle buluştu",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPaFFiUi1qX253MFJZVUEtcUF2d254VkNIMlRyb1E4OGZPT3JBU1R5amNRNmNBZDNHU2hfVThDR3RBV2tEY2NYdEZvN2luWVVxR2tqTThSY0o2aUJWNEFoVk9oZjE5MVZDTmx6MjNUUWNEM3RxWWx5MUxYZjlTT3VIVDVfa0MyOGt5dk9ONFNFYnZuU1lKZVZ0Wm95eXNFNUZXVVlmbDR4QkpBYjFGcGFHbC1ETHkxanU1Qk16dEkyVmhWLVk?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "14 Temmuz 2026",
+    "category": "Sergi",
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 15,
+    "title": "Ressam imam Adnan Yıldırım, 13. resim sergisinde İstanbul'u konu edindi",
+    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQ09JamNTMTBoWHk3b1NYVVJlR196WVlxM1E0Mzd4ZkZPTVNQN3l1enJjaF9ONlVNMndRNG9kcXJWUTBPMWZEbzBZZ2QzQUlpTGZ0cnN1UWljMTA1SFllaGNJMXppX0JUUmYyNWFjYUVicTdHaUswTkVyT1QzQzBSLUZkdVFlbmxhNG9wNTE3NV8tWE9fYnVmRXdNSHNtUnUyeTM4R0JWSHc2YzVl?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "06 Şubat 2026",
+    "category": "Resim",
+    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 16,
+    "title": "Suudi Arabistan'da \"Diriyah Çağdaş Sanat Bienali\"nin üçüncü edisyonu başladı",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPR3U5SjBfZUtOODRRTm5WLTdaWGF6MHl1bzJGaHZrVWc0bWZDaUlYTHZValdnNnAzdXRBaVVOc0Y3NjJVZjVYQTZ5aTNpUV9pSXhOUkp2LTNhRWkxYjlFRWxjNERMUWhWSy1nQzZHTTcwd3ZGbW5LQ3V5X1JKUlJHZnNFMFpmcVpwSEJENHJpX0twTEpsekhwMWNyemxWeEEyVWNhQU50RjRJLWk1VGVDOXlzYw?oc=5",
+    "source": "Anadolu Ajansı",
+    "date": "30 Ocak 2026",
+    "category": "Etkinlik",
+    "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
+  }
+]
