@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "title": "Józef Czapski Sergisi: Paris Modern Sanat Müzesi’nde Polonyalı ressam",
-    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNU2Frc1V3amUtck9meEFLYUZuNDJ5TnBmTF9qSjJ0TzY0TV9zbGJNaExQcXBlMVJmR1VtRUtFNmZiZ3hvQ3ktaENOUmQ2NVhodkl6TjVDS1ZnR29XOHpsMmxMbGQ2UEhrREdEbWJmcHlXWHVNT0hodW9SLXlRcHI5cDZodzJyYnI3N1RaM25nWVVBWno5R3dKRjRra2FfTldDcVp4NW5iTmYzWUFrZmVpT295VlA0dlhCa1JXbTZ0M01GaGZnUDQzVEFvOW5IX2Jxb0NtRWczRnpURVhsUzZOYXdjWVdYOC1U?oc=5",
-    "source": "Sortir à Paris",
-    "date": "27 Kasım 2026",
-    "category": "Sergi",
-    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 2,
     "title": "Sanat Tutkunları İçin 9 Rota: Frieze, Art Basel ve Bienal Durakları",
     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaU1DOHRPNDJnZGZyM2lncWtUbHVKSDFpQjJXQ2ZpWmRuWGVXbWgyMEpQRVVMdFNXQk82TXFtWmc5NkN6cHFRSEdqTTk1X1g0eTJPYW1WZDNESFVERnh3Q1h6eHd1d3g3eWFtSnp4cmdwcnljRFhuTl9pTk84VW00V0FVVjBCUnNQN3dKT2lZR3lvdnJNVVlyOGoyNnlRNkoybGtFTUc5dThTeklHWXV0b1A4c9IBuAFBVV95cUxPVUxERDNKSjVKRlczMnNPYW9PVmQ1T2poS3BEOVdnbEtpaGFDamJoQV9QZi1FNVNhell1S194ZjlBd0pLd1dCMC1BOVRhdVZJYzM3SDZhYXQ0OVVja1A2NmRPSlYtaWladzZTRGFOWldnSG5HQ1ltNENEc3l3ekxRUjBqUktZdC0yTDVOQ25kaG5uVTBUM0ZXRWVMN0E2Q1JHLW9mTVFPcVcwdUJjY1QtaERydU02S0t5?oc=5",
     "source": "alem.com.tr",
     "date": "25 Kasım 2026",
     "category": "Etkinlik",
-    "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 3,
+    "id": 2,
     "title": "Çanakkale Bienali 2026: Sanatçılar, Mekânlar, Eserler ve Program",
     "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1QZlZiRzJXSzZ3SmVLVm4yTmRJRFZtQVFxMUZvemtZa2l5SWVCa0I3dThMSGpRSUs5Mk1RNWlIN3hQMTNGQTgyY1QxZkhMTWZPRTY4YklxWWsxMHM?oc=5",
     "source": "Oggusto",
     "date": "23 Kasım 2026",
     "category": "Etkinlik",
-    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 4,
+    "id": 3,
     "title": "TBB Hukuk Müzesi ARTANKARA 7. Çağdaş Sanat Fuarı’nda",
     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTUUyUmtuckR5c3YwV2h1VlBkTDFJX1ZadW9lNnd1OTAwT1BtTUU0dGV1RExvNjlRdWpLTm5qVG9yVVZCUWFMQVlnTFJuSk5RZTFaTTAtazFnWDFTbkc1ZXFIYWM0T3k4UEV0cExtdUJEUHJRYzhtRWlJX3BUWkZsbzNFelR4cDVXSzRUcGw5TU5tRnZTbDhZ?oc=5",
     "source": "Türkiye Barolar Birliği",
     "date": "22 Kasım 2026",
     "category": "Galeri",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 4,
+    "title": "Józef Czapski Sergisi: Paris Modern Sanat Müzesi’nde Polonyalı ressam",
+    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNU2Frc1V3amUtck9meEFLYUZuNDJ5TnBmTF9qSjJ0TzY0TV9zbGJNaExQcXBlMVJmR1VtRUtFNmZiZ3hvQ3ktaENOUmQ2NVhodkl6TjVDS1ZnR29XOHpsMmxMbGQ2UEhrREdEbWJmcHlXWHVNT0hodW9SLXlRcHI5cDZodzJyYnI3N1RaM25nWVVBWno5R3dKRjRra2FfTldDcVp4NW5iTmYzWUFrZmVpT295VlA0dlhCa1JXbTZ0M01GaGZnUDQzVEFvOW5IX2Jxb0NtRWczRnpURVhsUzZOYXdjWVdYOC1U?oc=5",
+    "source": "Sortir à Paris",
+    "date": "27 Kasım 2026",
+    "category": "Sergi",
     "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
   },
   {
@@ -82,11 +82,11 @@
   },
   {
     "id": 10,
-    "title": "Elazığlı ressam adayından anlamlı bağış: İki aylık emeğini satıp Gazze’ye gönderdi",
-    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQS25kdS1qdGYwWjBjM0pNeWxVZEU2S2x0NFZEUlZjQ2didFFOQ24yUGNKcWdRVUFONXlVUHpmRGhRRWxOUmJLUnNiZ1ZYaVhXUmtFOHFFZ0hlZ3lLQVkxaDFGWUEwd2RpeWtwR0IxSVlCSXNnZExBaGQ4UnFzTzJ6LVBOSlRCeXd0Y1FOeHFHRTNLRmc2S0wwRmVjMjl5ak5OUkdpNDVaUzBSZ053UUxMNWlnTDR0dFpsbERmQ0NHQdIBzwFBVV95cUxNWW9mV1Via2phbk1mcEM1eUVGNzdERmlnTWF0QUcxVVNIVjdvMnNveXhjSzgyeUJEcW0xUnktYlRuU2YyN0hRRUhQbm95eUFwM1NkU1NwTWszQVhnQ0FNU0ZwdGpHWFZYS1FWNEUzeWxwWHg3QVUzVWRJRmV0andhdmtzVF9LN3gzY0hsa0x1eGMwWVJhME1Ua3J0STg3dExZSTBZWkFiZjEyQ29xV1FPakxqNkdTVGQzNGtJX3l0azVnem5pRU9SSk4yWDNfa2M?oc=5",
-    "source": "Kars Hakimiyet",
-    "date": "27 Kasım 2026",
-    "category": "Sanatçı",
+    "title": "İTÜ Sıfır Atık Proje Bienali, Sürdürülebilir İnovasyonun Kapılarını Araladı",
+    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONThCUENGaG4wRE9DVWtRMGdDYk94ZEh5Z3ZWN1pPb3J2SzhNeHNhNG5oRlVMNmZla0xwV0xaU1J0QVhpelBFLVJVdVI1YTdaMlFhbzFHUW9oVGczTGM1VHJyTVRfUGJXQVU5SlY1aHMtbkNZU0U2a185cExzLVBvZDhqaTFoVkhnTmJXQ0g4ejNXeW5LR1JMUnhuMW5IRWJqaTdFOUNKSzMzOHd2dndqemp2Y0VheUhGdjZHbXdwcUR1QQ?oc=5",
+    "source": "İTÜ Haberler",
+    "date": "04 Haziran 2026",
+    "category": "Etkinlik",
     "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=300&q=80"
   },
   {
@@ -100,46 +100,46 @@
   },
   {
     "id": 12,
-    "title": "İTÜ Sıfır Atık Proje Bienali, Sürdürülebilir İnovasyonun Kapılarını Araladı",
-    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONThCUENGaG4wRE9DVWtRMGdDYk94ZEh5Z3ZWN1pPb3J2SzhNeHNhNG5oRlVMNmZla0xwV0xaU1J0QVhpelBFLVJVdVI1YTdaMlFhbzFHUW9oVGczTGM1VHJyTVRfUGJXQVU5SlY1aHMtbkNZU0U2a185cExzLVBvZDhqaTFoVkhnTmJXQ0g4ejNXeW5LR1JMUnhuMW5IRWJqaTdFOUNKSzMzOHd2dndqemp2Y0VheUhGdjZHbXdwcUR1QQ?oc=5",
-    "source": "İTÜ Haberler",
-    "date": "04 Haziran 2026",
-    "category": "Etkinlik",
-    "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 13,
     "title": "YAZAR ORHAN PAMUK, RESSAM UTRILLO’DAN NASIL ETKİLENDİĞİNİ ANLATIYOR",
     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQOVZtemlmbnQwMjJWUmtET01RbFJBX2M4aDZjTTllN0E4NWdya2k5R2hTZEV6WGhKMDg4aml5T2FPM2pUS1IyQ3dGX2Q4MjFiNTFVR0R4d1E1MlBveHYtQ0VsR0Npd3E1N0NRRElqeElyelpqS2xYNWFCMXJ5d05mbTVzaVRCdjNCNHBHdldvS3VNOEhsbGxTMkxB?oc=5",
     "source": "Sanatatak",
     "date": "14 Eylül 2026",
     "category": "Sanatçı",
+    "image": "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 13,
+    "title": "Türkiye’de Görülmesi Gereken 2026 Sergileri",
+    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBmaHZFX04tZV9JTlFXY3lDUW5SVktVSHN5Tl9XM052eE4tXzZRMExMazhEVlIteGxCUHM3M20wc0toLVFjVnplS2J2SG1oMjBNRjhqTm8wMWZvSlB6azZSZnFOYmFqaGZwYkhN?oc=5",
+    "source": "Oggusto",
+    "date": "03 Kasım 2026",
+    "category": "Sergi",
     "image": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80"
   },
   {
     "id": 14,
-    "title": "Türkiye’de Görülmesi Gereken 2026 Sergileri",
-    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBmaHZFX04tZV9JTlFXY3lDUW5SVktVSHN5Tl9XM052eE4tXzZRMExMazhEVlIteGxCUHM3M20wc0toLVFjVnplS2J2SG1oMjBNRjhqTm8wMWZvSlB6azZSZnFOYmFqaGZwYkhN?oc=5",
-    "source": "oggusto.com",
-    "date": "03 Kasım 2026",
-    "category": "Sergi",
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
-  },
-  {
-    "id": 15,
     "title": "Tarihi Gelin Hamamı sanat galerisi olarak hizmet veriyor",
     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVjdFSTJsYnA5WnVxYWg2TmloOHVkdWoxMmFHTW9ialZHc2FlaHFWNkUycjN4X0tPc1JYMXNOa3RMZ0Y0ME1vY3kyOFpEUGNBZERNTm1hUThreHJ1NUUyWGJyME1sUHY4Qmd1TXByNG9wY0JOdEtyRHFBZjZsODE5TnlzQUxPX0pseF9kUHFlYkJpNWRjTFBoQUxaNkl4YUtmV3VRSlBJcDFmaU5MeUExUXpITzZZaFktMmxuNg?oc=5",
     "source": "Habertürk",
     "date": "18 Kasım 2026",
     "category": "Galeri",
-    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=300&q=80"
   },
   {
-    "id": 16,
+    "id": 15,
     "title": "Ressam Frank Bowling'in eserleri Türkiye'de ilk kez sanatseverlerle buluşuyor",
     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUk1xSllUam0yeXZONDNvbk05cFNXeUNqc1IxcEo2ZUVVRDRPNHRjVUZoemNZQnVpVThoZFNmdUF5bUtCaUJQNUlvbF8tajNYVlE5bTEwU0FBeE5ZdTJTY1RyRW1MRHhac29Zb09zdEl3RXlwT1hXS2JXUy1rdlU3QnNlSm4xOGZsTFBfWkppblFNalBfV2tTeVZ2WV9NZG1ZTG9IeHFmMU1VNkZtWC1mWGZ4N0NyZw?oc=5",
     "source": "Anadolu Ajansı",
     "date": "29 Eylül 2026",
+    "category": "Sanatçı",
+    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": 16,
+    "title": "Ressam Süleyman Saim Tekcan hayatını kaybetti",
+    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1Jc19hUTFZam1DVVBHRjNBMEZjdS1Id1NtTXROamNSQ2o0Y0xfMnNFNVY0OUVkR2IzRllyRTNaUWZHc2lHLWhqZklDcFVZcVEwNnF2cFBqdGVTaHlRbnJacFFpMFhQQzlHUUdPNXZySTZfYmtjekQ0WTN4Yw?oc=5",
+    "source": "Diken",
+    "date": "18 Ekim 2026",
     "category": "Sanatçı",
     "image": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=300&q=80"
   }
